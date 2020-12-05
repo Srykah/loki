@@ -1,0 +1,20 @@
+loki_create_lib(
+    NAME common
+    HEADERS
+        Color.hpp
+        IterAadapters.hpp
+        Matrix.hpp
+        Matrix.inl
+        Random.hpp
+        hashing/All.hpp
+        hashing/CombineHash.hpp
+        hashing/IterHash.hpp
+        hashing/PairHash.hpp
+        hashing/TupleHash.hpp
+    SOURCES
+        Random.cpp
+    PUBLIC_DEPS
+        sfml-graphics
+        sfml-window
+        sfml-system
+        nlohmann_json::nlohmann_json)
