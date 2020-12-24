@@ -17,8 +17,11 @@ class ScreenStack;
 
 class Screen {
  public:
-  explicit Screen(ScreenStack& stack) : stack(stack) {}
+  explicit Screen(ScreenStack& stack);
   virtual ~Screen() = default;
+
+  virtual void init();
+  [[nodiscard]] bool isReady() const;
 
   virtual bool update(sf::Time delta) = 0;
   virtual bool updateView(sf::Time delta) = 0;
@@ -38,6 +41,7 @@ class Screen {
   bool handleSignal(Signal& signal);
 
  private:
+  bool ready;
   std::unordered_map<Signal::Trigger, std::function<bool(std::any)>>
       signalHandlers;
 

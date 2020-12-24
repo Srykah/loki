@@ -15,6 +15,15 @@ namespace loki::screens {
 ScreenStack::~ScreenStack() = default;
 
 void ScreenStack::update(sf::Time delta) {
+  // init new screens in order
+  // new screens may be added while doing this
+  for (std::size_t i{0u}; i < stack.size(); ++i) {
+    if (!stack[i]->isReady()) {
+      stack[i]->init();
+    }
+  }
+
+  // now update in reverse order and stop if told to
   for (const auto& screen : common::reversed(stack)) {
     if (!screen->update(delta)) {
       break;
