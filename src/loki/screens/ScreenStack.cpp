@@ -24,8 +24,8 @@ void ScreenStack::update(sf::Time delta) {
   }
 
   // now update in reverse order and stop if told to
-  for (const auto& screen : common::reversed(stack)) {
-    if (!screen->update(delta)) {
+  for (std::size_t i{stack.size()-1}; i >= 0; --i) {
+    if (!stack[i]->update(delta)) {
       break;
     }
   }
@@ -61,21 +61,22 @@ void ScreenStack::draw(sf::RenderTarget& target,
 }
 
 void ScreenStack::sendSignal(Signal signal) {
-  for (const auto& screen : common::reversed(stack)) {
-    if (screen.get() != signal.trigger.origin &&
-        !screen->handleSignal(signal)) {
+  for (std::size_t i{stack.size()-1}; i >= 0; --i) {
+    if (stack[i].get() == signal.trigger.origin) {
+      continue;
+    }
+    if (!stack[i]->handleSignal(signal)) {
       break;
     }
   }
 }
 
 void ScreenStack::close(const Screen* screen) {
-  const auto it =
-      std::remove_if(stack.begin(), stack.end(),
-                     [screen](const auto& ptr) { return ptr.get() == screen; });
-  if (it != stack.end()) {
-    sendSignal({it->get(), "close"});
-    stack.erase(it, stack.end());
+  const auto pred = [screen](const auto& ptr) { return ptr.get() == screen; };
+  if (std::find_if(stack.begin(), stack.end(), pred) != stack.end()) {
+    sendSignal({screen, "close"});
+    // stack could have been changed, search again
+    stack.erase(std::remove_if(stack.begin(), stack.end(), pred), stack.end());
   }
 }
 
