@@ -3,10 +3,6 @@
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
-#ifdef __CLION_IDE_
-#include "Screen.hpp"
-#pragma once
-#endif
 
 namespace loki::screens {
 
@@ -17,6 +13,7 @@ void Screen::registerSignalHandler(const Signal::Trigger& trigger,
     return std::apply(fun, std::any_cast<std::tuple<Args...>>(args));
   });
 }
+
 template <typename Fun>
 void Screen::registerSignalHandler(const Signal::Trigger& trigger,
                            Fun fun) {
