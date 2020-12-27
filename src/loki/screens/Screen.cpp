@@ -7,6 +7,16 @@
 
 namespace loki::screens {
 
+Screen::Screen(ScreenStack& stack): stack(stack), ready(false) {}
+
+void Screen::init() {
+  ready = true;
+}
+
+bool Screen::isReady() const {
+  return ready;
+}
+
 bool Screen::handleSignal(Signal& signal) {
   auto it = signalHandlers.find(signal.trigger);
   if (it == signalHandlers.end()) {
@@ -34,7 +44,6 @@ void Screen::removeSignalHandler(const Signal::Trigger& trigger) {
     }
   }
 }
-
 void Screen::clearAllSignalHandlers() {
   signalHandlers.clear();
 }
