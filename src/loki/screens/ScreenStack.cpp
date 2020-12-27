@@ -24,7 +24,7 @@ void ScreenStack::update(sf::Time delta) {
   }
 
   // now update in reverse order and stop if told to
-  for (std::size_t i{stack.size()-1}; i >= 0; --i) {
+  for (int i(stack.size() - 1); i >= 0; --i) {
     if (!stack[i]->update(delta)) {
       break;
     }
@@ -61,7 +61,7 @@ void ScreenStack::draw(sf::RenderTarget& target,
 }
 
 void ScreenStack::sendSignal(Signal signal) {
-  for (std::size_t i{stack.size()-1}; i >= 0; --i) {
+  for (int i(stack.size() - 1); i >= 0; --i) {
     if (stack[i].get() == signal.trigger.origin) {
       continue;
     }
