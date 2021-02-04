@@ -8,6 +8,9 @@
 
 namespace loki::gui {
 
+TextBoxController::TextBoxController(input::EventHandler& eventHandler)
+    : eventHandler(eventHandler) {}
+
 void TextBoxController::hide() {
   Widget::hide();
   view->hide();
@@ -57,7 +60,9 @@ void TextBoxController::setView(AbstractTextBox* _view) {
 }
 
 void TextBoxController::handleInputs() {
-
+  if (!hasEnded() && eventHandler.getInputState("ok").status == loki::input::InputState::TRIGGERED) {
+    advance();
+  }
 }
 
 bool TextBoxController::hasEnded() const {
@@ -111,15 +116,19 @@ void TextBoxController::advance() {
         space = true;
       }
     } else if (*it == '|') {
-      // wordwrap character : we count past and remember to add a separator if needed
+      // wordwrap character : we count past and remember to add a separator if
+      // needed
       ++it;
       separator = true;
     } else {
       // get next word (part)
       static const sf::String wordSeparators("| \n");
-      auto wordEndIt = std::find_first_of(it, std::as_const(str).end(), wordSeparators.begin(), wordSeparators.end());
+      auto wordEndIt =
+          std::find_first_of(it, std::as_const(str).end(),
+                             wordSeparators.begin(), wordSeparators.end());
       // *wordEndIt is now a wordSeparator or the end of str
-      sf::String nextWord = std::basic_string<sf::Uint32>(it, wordEndIt); // *wordEndIt excluded
+      sf::String nextWord =
+          std::basic_string<sf::Uint32>(it, wordEndIt);  // *wordEndIt excluded
 
       // see if it fits in the current line
       sf::String testLine = lines.back() + nextWord;
@@ -127,7 +136,8 @@ void TextBoxController::advance() {
         testLine += '-';
       }
       if (view->canFitInLine(testLine, lines.size() - 1)) {
-        it = wordEndIt; // here *it becomes the separator / end of str so it can be analysed later
+        it = wordEndIt;  // here *it becomes the separator / end of str so it
+                         // can be analysed later
         if (space) {
           lines.back() += ' ';
           space = false;
@@ -140,7 +150,8 @@ void TextBoxController::advance() {
         }
         if (lines.size() == view->getLineCount()) {
           break;
-          // note : we do not change it so the current word will be kept for later
+          // note : we do not change it so the current word will be kept for
+          // later
         } else {
           lines.emplace_back(nextWord);
         }

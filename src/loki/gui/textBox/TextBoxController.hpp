@@ -7,6 +7,7 @@
 
 #include <SFML/System/String.hpp>
 #include <loki/gui/base/Widget.hpp>
+#include <loki/input/service/EventHandler.hpp>
 
 namespace loki::gui {
 
@@ -14,7 +15,7 @@ class AbstractTextBox;
 
 class TextBoxController : public Widget {
  public:
-  TextBoxController() = default;
+  explicit TextBoxController(loki::input::EventHandler& eventHandler);
   ~TextBoxController() override = default;
 
   void hide() override;
@@ -34,10 +35,13 @@ class TextBoxController : public Widget {
   [[nodiscard]] bool hasEnded() const;
 
  private:
+  void advance();
+
+ private:
   AbstractTextBox* view = nullptr;
+  loki::input::EventHandler& eventHandler;
   sf::String str;
   sf::String::ConstIterator it;
-  void advance();
 };
 
 }
