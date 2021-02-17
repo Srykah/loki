@@ -29,7 +29,7 @@ class TextBoxController : public Widget {
   void setView(AbstractTextBox* view);
   void setString(const sf::String& str);
 
-  void handleInputs();
+  void advance();
 
   [[nodiscard]] bool hasEnded() const;
 
@@ -37,7 +37,6 @@ class TextBoxController : public Widget {
   AbstractTextBox* view = nullptr;
   sf::String str;
   sf::String::ConstIterator it;
-  void advance();
 };
 
 }
