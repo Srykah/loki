@@ -8,9 +8,6 @@
 
 namespace loki::gui {
 
-TextBoxController::TextBoxController(input::EventHandler& eventHandler)
-    : eventHandler(eventHandler) {}
-
 void TextBoxController::hide() {
   Widget::hide();
   view->hide();
@@ -57,12 +54,6 @@ void TextBoxController::setView(AbstractTextBox* _view) {
   view->setEnabled(isEnabled());
   view->setFocused(isFocused());
   view->setActive(isActive());
-}
-
-void TextBoxController::handleInputs() {
-  if (!hasEnded() && eventHandler.getInputState("ok").status == loki::input::InputState::TRIGGERED) {
-    advance();
-  }
 }
 
 bool TextBoxController::hasEnded() const {
