@@ -53,7 +53,7 @@ loki_print_variables_with_pattern(SFML)
 
 set(LOKI_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 add_subdirectory(src/loki/common)
-add_subdirectory(src/loki/cutscene)
+add_subdirectory(src/loki/anim)
 add_subdirectory(src/loki/gui)
 add_subdirectory(src/loki/input)
 add_subdirectory(src/loki/screens)

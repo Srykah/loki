@@ -5,4 +5,4 @@
  */
 #pragma once
 
-#include "TimedAction.hpp"
+#include "Animated.hpp"

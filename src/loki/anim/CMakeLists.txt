@@ -1,13 +1,11 @@
 loki_create_lib(
-	NAME cutscene
+	NAME anim
 	HEADERS
 	All.hpp
-	TimedAction.hpp
+	Animated.hpp
 	SOURCES
-	dummy.cpp
+	Animated.cpp
 	PUBLIC_DEPS
 	loki::common
 	sfml-graphics
-	sfml-window
-	sfml-system
 )
