@@ -75,6 +75,7 @@ add_subdirectory(src/loki/json)
 add_subdirectory(src/loki/screens)
 add_subdirectory(src/loki/sprites)
 add_subdirectory(src/loki/styles)
+add_subdirectory(src/loki/text)
 add_subdirectory(src/loki/tiles)
 add_subdirectory(src/loki/window)
 ## docs
