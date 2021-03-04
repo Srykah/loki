@@ -11,12 +11,19 @@ AnimationView::AnimationView(
     const sf::Texture* extTexture)
 : data(data)
 , frameIndex(0)
-, timeSinceLastFrame(sf::Time::Zero) {
+, curFrameStartTime(sf::Time::Zero) {
   if (data.texture.has_value()) {
     sprite.setTexture(data.texture.value());
   } else {
     sprite.setTexture(*extTexture);
   }
+
+  sf::Time totalDuration;
+  for (const auto& frame : data.frames) {
+    totalDuration += frame.duration;
+  }
+  setDuration(totalDuration);
+
   updateCurrentFrame();
 }
 
@@ -27,12 +34,17 @@ void AnimationView::draw(
   target.draw(sprite, states);
 }
 
-void AnimationView::update(const sf::Time& delta) {
+void AnimationView::update(sf::Time delta) {
+  Animated::update(delta);
   bool needUpdate = false;
-  timeSinceLastFrame += delta;
-  while (timeSinceLastFrame >= data.frames.at(frameIndex).duration) {
-    timeSinceLastFrame -= data.frames.at(frameIndex).duration;
-    frameIndex = (frameIndex + 1) % data.frames.size();
+  while (getElapsedTime() - curFrameStartTime >= data.frames.at(frameIndex).duration) {
+    curFrameStartTime += data.frames.at(frameIndex).duration;
+    ++frameIndex;
+    if (frameIndex == data.frames.size()) {
+      frameIndex = 0;
+      setElapsedTime(getElapsedTime() - curFrameStartTime);
+      curFrameStartTime = sf::Time::Zero;
+    }
     needUpdate = true;
   }
   if (needUpdate) {

@@ -4,10 +4,11 @@
  * \copyright GNU GPL v3.0
  */
 #include "Animated.hpp"
+#include <algorithm>
 
 namespace loki::anim {
 
-Animated::Animated(sf::Time duration, bool isRepeated) : duration(duration), repeated(isRepeated) {}
+Animated::Animated(sf::Time duration) : duration(duration) {}
 
 void Animated::setDuration(sf::Time _duration) {
   duration = _duration;
@@ -18,28 +19,12 @@ sf::Time Animated::getDuration() const {
 }
 
 bool Animated::hasEnded() const {
-  return paused && elapsedTime == duration;
-}
-
-void Animated::restart() {
-  elapsedTime = sf::Time::Zero;
+  return elapsedTime >= duration;
 }
 
 void Animated::update(sf::Time delta) {
-  if (!paused) {
+  if (!hasEnded()) {
     elapsedTime += delta;
-    if (elapsedTime > duration) {
-      auto overtime = elapsedTime - duration;
-      elapsedTime = duration;
-      updateImpl();
-      if (repeated) {
-        restart();
-        elapsedTime = overtime;
-        updateImpl();
-      } else {
-        pause();
-      }
-    }
   }
 }
 
@@ -51,24 +36,12 @@ float Animated::getProgression() const {
   return elapsedTime / duration;
 }
 
-void Animated::setRepeated(bool _repeated) {
-  repeated = _repeated;
+void Animated::setElapsedTime(sf::Time _elapsedTime) {
+  elapsedTime = std::clamp(_elapsedTime, sf::Time::Zero, duration);
 }
 
-bool Animated::isRepeated() const {
-  return repeated;
-}
-
-void Animated::pause() {
-  paused = true;
-}
-
-void Animated::unpause() {
-  paused = false;
-}
-
-bool Animated::isPaused() const {
-  return paused;
+void Animated::setProgression(float progression) {
+  elapsedTime = std::clamp(progression * duration, sf::Time::Zero, duration);
 }
 
 }

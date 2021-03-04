@@ -7,10 +7,11 @@
 
 #include "AnimationView.hpp"
 #include "loki/sprites/model/SpriteData.hpp"
+#include "loki/anim/Animated.hpp"
 
 namespace loki::sprites {
 
-class SpriteView : public sf::Drawable, public sf::Transformable {
+class SpriteView : public anim::Animated, public sf::Drawable, public sf::Transformable {
  public:
   SpriteView() = default;
   explicit SpriteView(const SpriteData& data);
@@ -19,7 +20,7 @@ class SpriteView : public sf::Drawable, public sf::Transformable {
 
   void setAnim(const std::string& anim);
 
-  void update(const sf::Time& delta);
+  void update(sf::Time delta) override;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
 
