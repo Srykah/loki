@@ -25,6 +25,7 @@ struct AnimationData {
 
   std::optional<sf::Texture> texture;
   std::vector<FrameData> frames;
+  bool repeated = false;
 };
 
 }
