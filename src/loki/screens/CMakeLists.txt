@@ -11,6 +11,7 @@ loki_create_lib(
         ScreenStack.cpp
     PUBLIC_DEPS
         loki::common
+				loki::hash
         sfml-graphics
         sfml-window
         sfml-system)
