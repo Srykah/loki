@@ -6,7 +6,7 @@
 #pragma once
 
 #include <any>
-#include <loki/common/hashing/CombineHash.hpp>
+#include <loki/hash/CombineHash.hpp>
 #include <string>
 #include <variant>
 
@@ -33,7 +33,7 @@ namespace std {
 template <>
 struct hash<loki::screens::Signal::Trigger> {
   bool operator()(const loki::screens::Signal::Trigger& trigger) const {
-    return loki::common::combineHash(trigger.origin, trigger.signalName);
+    return loki::hash::combineHash(trigger.origin, trigger.signalName);
   }
 };
 
