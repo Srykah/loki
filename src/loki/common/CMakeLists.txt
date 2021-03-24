@@ -6,11 +6,6 @@ loki_create_lib(
         Matrix.hpp
         Matrix.inl
         Random.hpp
-        hashing/All.hpp
-        hashing/CombineHash.hpp
-        hashing/IterHash.hpp
-        hashing/PairHash.hpp
-        hashing/TupleHash.hpp
     SOURCES
         Random.cpp
     PUBLIC_DEPS

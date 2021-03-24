@@ -3,11 +3,9 @@
 #include <functional>
 #include <type_traits>
 
-namespace loki::common {
+namespace loki::hash {
 
-constexpr std::size_t combineHashImpl(std::size_t seed) {
-    return seed;
-}
+constexpr std::size_t combineHashImpl(std::size_t seed);
 
 template <typename T, typename... Args>
 std::size_t combineHashImpl(std::size_t seed, const T& val, const Args&... args) {
@@ -108,7 +106,7 @@ size_t combineHashSym(const Args& ... args) {
      */
 }
 
-} // end namespace loki::common
+} // end namespace loki::hash
 
 /**
  * \defgroup UTILS_COMBINEHASH Hash combination functions

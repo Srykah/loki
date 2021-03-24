@@ -1,7 +1,7 @@
 #pragma once
 #include "CombineHash.hpp"
 
-namespace loki::common {
+namespace loki::hash {
 
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Helper functor for hashing tuples
