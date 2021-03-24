@@ -22,11 +22,18 @@ include(cmake/InstallHelpers.cmake)
 
 ### Dependencies
 
+# Add the cmake folder so the FindSphinx module is found
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
 ## Libs ROOTs
 
 # JSON
 set(nlohmann_json_ROOT "" CACHE PATH "nlohmann/json root directory. Leave blank for system default.")
 loki_print_variables(nlohmann_json_ROOT)
+
+# FMT
+set(fmt_ROOT "" CACHE PATH "fmt root directory. Leave blank for system default.")
+loki_print_variables(fmt_ROOT)
 
 # SFML
 set(SFML_ROOT "" CACHE PATH "SFML root directory. Leave blank for system default.")
@@ -35,11 +42,18 @@ loki_print_variables(SFML_ROOT)
 ## Add libs
 
 # JSON
-find_package(nlohmann_json 3.7 REQUIRED CONFIG)
+find_package(nlohmann_json 3.9 REQUIRED CONFIG)
 if(NOT nlohmann_json_FOUND)
     message(FATAL_ERROR "nlohmann/json not found; You should set nlohmann_json_ROOT to the nlohmann/json path")
 endif()
 loki_print_variables_with_pattern(nlohmann_json)
+
+# FMT
+find_package(fmt 7 REQUIRED CONFIG)
+if(NOT fmt_FOUND)
+    message(FATAL_ERROR "fmt not found; You should set fmt_ROOT to the fmt path")
+endif()
+loki_print_variables_with_pattern(fmt)
 
 # SFML
 set(SFML_STATIC_LIBRARIES $<NOT:${BUILD_SHARED_LIBS}>)
@@ -63,6 +77,8 @@ add_subdirectory(src/loki/sprites)
 add_subdirectory(src/loki/styles)
 add_subdirectory(src/loki/tiles)
 add_subdirectory(src/loki/window)
+## docs
+add_subdirectory(docs)
 
 ### Installation (for ease of use with other CMake projects)
 
