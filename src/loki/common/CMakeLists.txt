@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME common
     HEADERS
-        Color.hpp
         IterAadapters.hpp
         Matrix.hpp
         Matrix.inl
