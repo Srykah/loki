@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME sprites
     HEADERS
-        All.hpp
         model/AnimationData.hpp
         model/SpriteData.hpp
         view/AnimationView.hpp

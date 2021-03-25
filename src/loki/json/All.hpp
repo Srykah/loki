@@ -8,5 +8,6 @@
 #include "Color.hpp"
 #include "Optional.hpp"
 #include "Rect.hpp"
+#include "String.hpp"
 #include "Time.hpp"
 #include "Vector2.hpp"

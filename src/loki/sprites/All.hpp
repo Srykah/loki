@@ -5,8 +5,7 @@
  */
 #pragma once
 
-#include "loki/sprites/model/AnimationData.hpp"
-#include "loki/sprites/model/SpriteData.hpp"
-
-#include "loki/sprites/view/AnimationView.hpp"
-#include "loki/sprites/view/SpriteView.hpp"
+#include "model/AnimationData.hpp"
+#include "model/SpriteData.hpp"
+#include "view/AnimationView.hpp"
+#include "view/SpriteView.hpp"

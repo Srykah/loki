@@ -5,5 +5,5 @@
  */
 #pragma once
 
-#include "Style.hpp"
-#include "Window.hpp"
+#include "ShapeStyle.hpp"
+#include "TextStyle.hpp"

@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME input
     HEADERS
-        All.hpp
         model/InputSettings.hpp
         model/InputState.hpp
         model/InputType.hpp

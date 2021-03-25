@@ -1,7 +1,6 @@
 loki_create_lib(
 	NAME gui
 	HEADERS
-	All.hpp
 	base/Widget.hpp
 	frame/AbstractFrame.hpp
 	frame/RectangleShapeFrame.hpp

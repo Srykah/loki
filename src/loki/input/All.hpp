@@ -5,6 +5,8 @@
  */
 #pragma once
 
-#include "loki/input/model/InputSettings.hpp"
-
-#include "loki/input/service/EventHandler.hpp"
+#include "model/InputSettings.hpp"
+#include "model/InputState.hpp"
+#include "model/InputType.hpp"
+#include "model/PlayerConfig.hpp"
+#include "service/EventHandler.hpp"
