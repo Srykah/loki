@@ -5,7 +5,7 @@
  */
 #include "MapData.hpp"
 #include <fstream>
-#include <loki/common/Color.hpp>
+#include <loki/json/Color.hpp>
 #include <nlohmann/json.hpp>
 
 namespace loki::tiles {

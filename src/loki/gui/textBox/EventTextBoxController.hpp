@@ -1,5 +1,5 @@
 /*!
- * \file EventTextBoxController.hpp.h
+ * \file EventTextBoxController.hpp
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
