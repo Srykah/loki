@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "Property.hpp"
-#include <loki/common/Color.hpp>
+#include <loki/json/Color.hpp>
 
 namespace loki::tiles {
 
