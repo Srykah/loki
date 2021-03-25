@@ -5,5 +5,4 @@
  */
 #pragma once
 
-#include "Style.hpp"
-#include "Window.hpp"
+@LIB_ALL_INCLUDES@

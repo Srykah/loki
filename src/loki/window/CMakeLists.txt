@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME window
     HEADERS
-        All.hpp
         Style.hpp
         Window.hpp
     SOURCES

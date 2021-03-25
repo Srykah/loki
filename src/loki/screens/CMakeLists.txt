@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME screens
     HEADERS
-        All.hpp
         Screen.hpp
         Screen.inl
         ScreenStack.hpp

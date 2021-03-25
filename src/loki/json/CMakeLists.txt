@@ -1,7 +1,6 @@
 loki_create_lib(
 	NAME json
 	HEADERS
-	All.hpp
 	Color.hpp
 	Optional.hpp
 	Rect.hpp

@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME tiles
     HEADERS
-        All.hpp
         model/MapData.hpp
         model/ObjectData.hpp
         model/ObjectLayerData.hpp
