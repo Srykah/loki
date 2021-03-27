@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "MapView.hpp"
-#include <loki/common/IterAadapters.hpp>
+#include <loki/common/IterAdapters.hpp>
 #include "ObjectLayerView.hpp"
 #include "TileLayerView.hpp"
 
