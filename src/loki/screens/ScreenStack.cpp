@@ -6,7 +6,7 @@
 
 #include "ScreenStack.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
-#include <loki/common/IterAadapters.hpp>
+#include <loki/common/IterAdapters.hpp>
 #include <variant>
 #include "Screen.hpp"
 

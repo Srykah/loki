@@ -5,7 +5,8 @@
  */
 #pragma once
 
-#include "IterAadapters.hpp"
+#include "Interpolate.hpp"
+#include "IterAdapters.hpp"
 #include "Matrix.hpp"
 #include "Matrix.inl"
 #include "Random.hpp"

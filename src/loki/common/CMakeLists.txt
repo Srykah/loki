@@ -1,10 +1,13 @@
 loki_create_lib(
     NAME common
     HEADERS
-        IterAadapters.hpp
+				Interpolate.hpp
+				IterAdapters.hpp
         Matrix.hpp
         Matrix.inl
         Random.hpp
+	  INTERNAL_HEADERS
+				impl/Interpolate.hxx
     SOURCES
         Random.cpp
     PUBLIC_DEPS
