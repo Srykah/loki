@@ -5,7 +5,5 @@
  */
 #pragma once
 
-#include "model/AnimationData.hpp"
 #include "model/SpriteData.hpp"
-#include "view/AnimationView.hpp"
 #include "view/SpriteView.hpp"
