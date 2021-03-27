@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "EventHandler.hpp"
-#include <loki/common/IterAadapters.hpp>
+#include <loki/common/IterAdapters.hpp>
 
 namespace loki::input {
 
