@@ -10,3 +10,6 @@
 #include "Matrix.hpp"
 #include "Matrix.inl"
 #include "Random.hpp"
+#include "TemplateHelpers.hpp"
+#include "Vector4.hpp"
+#include "VertexArrayIterator.hpp"
