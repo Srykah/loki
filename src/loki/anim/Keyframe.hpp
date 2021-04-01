@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #pragma once
-#include <loki/json/All_old.hpp>
+#include <loki/json/All.hpp>
 #include <nlohmann/json.hpp>
 #include <optional>
 

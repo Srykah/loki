@@ -4,10 +4,10 @@
  * \copyright GNU GPL v3.0
  */
 #pragma once
+#include <SFML/System/Time.hpp>
 #include <charconv>
-#include <nlohmann/json.hpp>
-#include <fmt/format.h>
 #include <loki/common/Interpolate.hpp>
+#include <nlohmann/json.hpp>
 #include "Keyframe.hpp"
 
 namespace loki::anim {
