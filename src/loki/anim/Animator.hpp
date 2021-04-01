@@ -5,31 +5,27 @@
  */
 #pragma once
 
-#include "AnimationData.hpp"
+#include "AnimationViewData.hpp"
 
 namespace loki::anim {
 
 template <typename T>
 class Animator {
  public:
-  Animator(T& animated, const AnimationData& data);
+  Animator(T& animated, const AnimationViewData& viewData);
 
+  void start();
   void update(sf::Time delta);
   [[nodiscard]] bool hasEnded() const;
-  void restart();
+  void pause();
+  void unpause();
 
  private:
   T& animated;
-  const AnimationData& data;
-  Keyframe base;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipOrigin;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipPos;
-  std::shared_ptr<common::InterpolationBase<float, float>> ipRot;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipScale;
-  std::shared_ptr<common::InterpolationBase<float, sf::Color>> ipColor;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipTexRectPos;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipTexRectSize;
+  const AnimationViewData& viewData;
+  Keyframe baseKeyframe;
   sf::Time elapsedTime;
+  bool isPaused = false;
 };
 
 }
