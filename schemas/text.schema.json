@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "loki-text-alpha",
+  "$defs": {
+    "FontStyle": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/FontStyleEnum"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FontStyleEnum"
+          }
+        }
+      ]
+    },
+    "FontStyleEnum": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "bold",
+        "italic"
+      ]
+    },
+    "TextAnimation": {
+      "allOf": [
+        {
+          "$ref": "animation.schema.json#/$defs/Animation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "$ref": "sfml.schema.json#/$defs/Duration"
+            }
+          }
+        }
+      ]
+    },
+    "TextStyle": {
+      "type": "object",
+      "properties": {
+        "font": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "color": {
+          "$ref": "sfml.schema.json#/$defs/Color"
+        },
+        "fontStyle": {
+          "$ref": "#/$defs/FontStyle"
+        },
+        "lineHeight": {
+          "type": "number"
+        },
+        "letterSpacing": {
+          "type": "number"
+        }
+      }
+    },
+    "AnimatedTextStyle": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/TextStyle"
+        },
+        {
+          "properties": {
+            "appear": {
+              "$ref": "#/$defs/TextAnimation"
+            },
+            "animation": {
+              "$ref": "animation.schema.json#/$defs/Animation"
+            },
+            "disappear": {
+              "$ref": "animation.schema.json#/$defs/Animation"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

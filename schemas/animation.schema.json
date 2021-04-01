@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "loki-animation-alpha",
+  "$defs": {
+    "Animation": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "$ref": "sfml.schema.json#/$defs/Duration"
+        },
+        "repeat": {
+          "type": "boolean"
+        },
+        "interpolation": {
+          "$ref": "#/$defs/InterpolationType"
+        },
+        "keyframes": {
+          "type": "object",
+          "patternProperties": {
+            "^[1-9]?[0-9]%$": {
+              "$ref": "#/$defs/Keyframe"
+            }
+          },
+          "required": [
+            "0%",
+            "100%"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "InterpolationType": {
+      "type": "string",
+      "enum": ["none", "linear", "cubic"]
+    },
+    "Keyframe": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "$ref": "sfml.schema.json#/$defs/Vector2f"
+        },
+        "position": {
+          "$ref": "sfml.schema.json#/$defs/Vector2f",
+          "default": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "scale": {
+          "$ref": "sfml.schema.json#/$defs/Vector2f",
+          "default": {
+            "x": 1.0,
+            "y": 1.0
+          }
+        },
+        "color": {
+          "$ref": "sfml.schema.json#/$defs/Color",
+          "default": "#ffffff"
+        },
+        "textureRect": {
+          "$ref": "sfml.schema.json#/$defs/IntRect"
+        }
+      }
+    },
+    "Sprite": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string"
+        },
+        "animations": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/Animation"
+          }
+        }
+      }
+    }
+  }
+}

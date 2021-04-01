@@ -1,10 +1,20 @@
 loki_create_lib(
 	NAME anim
 	HEADERS
-	Animated.hpp
+	AnimationViewData.hpp
+	AnimationData.hpp
+	Animator.hpp
+	Keyframe.hpp
+	INTERNAL_HEADERS
+	impl/ADLHelpers.hpp
+	impl/Animator.hxx
+	impl/TemplateHelpers.hpp
 	SOURCES
-	Animated.cpp
+	AnimationViewData.cpp
+	AnimationData.cpp
 	PUBLIC_DEPS
 	loki::common
 	sfml-graphics
+	nlohmann_json::nlohmann_json
+	fmt::fmt
 )
