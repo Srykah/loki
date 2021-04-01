@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include "Animation.hpp"
+#include "AnimationViewData.hpp"
 #include "AnimationData.hpp"
 #include "Animator.hpp"
 #include "Keyframe.hpp"

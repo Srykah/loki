@@ -11,11 +11,12 @@
 
 namespace loki::anim {
 
-class Animation {
+class AnimationViewData {
  public:
-  explicit Animation(const AnimationData& data);
+  explicit AnimationViewData(const AnimationData& data);
 
   [[nodiscard]] const sf::Time& getDuration() const;
+  [[nodiscard]] bool isRepeated() const;
 
   [[nodiscard]] sf::Vector2f getOrigin(sf::Time instant) const;
   [[nodiscard]] sf::Vector2f getPosition(sf::Time instant) const;
@@ -27,6 +28,7 @@ class Animation {
 
  private:
   const sf::Time duration;
+  const bool repeat;
   std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipOrigin;
   std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipPos;
   std::shared_ptr<common::InterpolationBase<float, float>> ipRot;

@@ -3,7 +3,7 @@
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
-#include "Animation.hpp"
+#include "AnimationViewData.hpp"
 
 #include <SFML/Graphics/Transformable.hpp>
 
@@ -25,28 +25,28 @@ using CubIp = loki::common::LinearInterpolation<float, T>; // todo
 
 namespace loki::anim {
 
-Animation::Animation(const AnimationData& data)
-: duration(data.duration) {
+AnimationViewData::AnimationViewData(const AnimationData& data)
+    : duration(data.duration), repeat(data.repeat) {
   if (data.keyframes.size() >= 2) {
     auto end = data.keyframes.end();
     --end;
     const auto& [firstTime, firstKeyframe] = *data.keyframes.begin();
     const auto& [lastTime, lastKeyframe] = *end;
 
-#define TEST_ANIMATED_FEATURE(feature, ip, Type, def) \
-    if (firstKeyframe.feature.has_value() && lastKeyframe.feature.has_value()) { \
-      IpPts<Type> points; \
-      for (const auto& [time, keyframe] : data.keyframes) { \
-        points.emplace_back(time, keyframe.feature.value_or(def)); \
-      } \
-      if (data.interpolation == common::InterpolationType::NONE) { \
-        ip = std::make_shared<NoneIp<Type>>(points); \
-      } else if (data.interpolation == common::InterpolationType::LINEAR) { \
-        ip = std::make_shared<LinIp<Type>>(points); \
-      } else if (data.interpolation == common::InterpolationType::CUBIC) { \
-        ip = std::make_shared<CubIp<Type>>(points); \
-      } \
-    }
+#define TEST_ANIMATED_FEATURE(feature, ip, Type, def)                          \
+  if (firstKeyframe.feature.has_value() && lastKeyframe.feature.has_value()) { \
+    IpPts<Type> points;                                                        \
+    for (const auto& [time, keyframe] : data.keyframes) {                      \
+      points.emplace_back(time, keyframe.feature.value_or(def));               \
+    }                                                                          \
+    if (data.interpolation == common::InterpolationType::NONE) {               \
+      ip = std::make_shared<NoneIp<Type>>(points);                             \
+    } else if (data.interpolation == common::InterpolationType::LINEAR) {      \
+      ip = std::make_shared<LinIp<Type>>(points);                              \
+    } else if (data.interpolation == common::InterpolationType::CUBIC) {       \
+      ip = std::make_shared<CubIp<Type>>(points);                              \
+    }                                                                          \
+  }
 
     TEST_ANIMATED_FEATURE(origin, ipOrigin, sf::Vector2f, sf::Vector2f {})
     TEST_ANIMATED_FEATURE(position, ipPos, sf::Vector2f, sf::Vector2f {})
@@ -83,43 +83,46 @@ Animation::Animation(const AnimationData& data)
         ipTexRect = std::make_shared<CubIp<common::Vector4f>>(points);
       }
     }
-
   }
 }
 
-const sf::Time& Animation::getDuration() const {
+const sf::Time& AnimationViewData::getDuration() const {
   return duration;
 }
 
-sf::Vector2f Animation::getOrigin(sf::Time instant) const {
+bool AnimationViewData::isRepeated() const {
+  return repeat;
+}
+
+sf::Vector2f AnimationViewData::getOrigin(sf::Time instant) const {
   if (ipOrigin) {
     return ipOrigin->interpolate(instant / duration);
   }
-  return sf::Vector2f {};
+  return sf::Vector2f{};
 }
 
-sf::Vector2f Animation::getPosition(sf::Time instant) const {
+sf::Vector2f AnimationViewData::getPosition(sf::Time instant) const {
   if (ipPos) {
     return ipPos->interpolate(instant / duration);
   }
-  return sf::Vector2f {};
+  return sf::Vector2f{};
 }
 
-float Animation::getRotation(sf::Time instant) const {
+float AnimationViewData::getRotation(sf::Time instant) const {
   if (ipRot) {
     return ipRot->interpolate(instant / duration);
   }
   return 0;
 }
 
-sf::Vector2f Animation::getScale(sf::Time instant) const {
+sf::Vector2f AnimationViewData::getScale(sf::Time instant) const {
   if (ipScale) {
     return ipScale->interpolate(instant / duration);
   }
-  return sf::Vector2f {1.f, 1.f};
+  return sf::Vector2f{1.f, 1.f};
 }
 
-sf::Transform Animation::getTransform(sf::Time instant) const {
+sf::Transform AnimationViewData::getTransform(sf::Time instant) const {
   sf::Transformable tr;
   tr.setOrigin(getOrigin(instant));
   tr.setPosition(getPosition(instant));
@@ -128,18 +131,17 @@ sf::Transform Animation::getTransform(sf::Time instant) const {
   return tr.getTransform();
 }
 
-sf::Color Animation::getColor(sf::Time instant) const {
+sf::Color AnimationViewData::getColor(sf::Time instant) const {
   if (ipColor) {
     return common::toColor(ipColor->interpolate(instant / duration));
   }
   return sf::Color::White;
 }
-
-sf::IntRect Animation::getTextureRect(sf::Time instant) const {
+sf::IntRect AnimationViewData::getTextureRect(sf::Time instant) const {
   if (ipTexRect) {
     return common::toRect<int>(ipTexRect->interpolate(instant / duration));
   }
-  return sf::IntRect {};
+  return sf::IntRect{};
 }
 
 }
