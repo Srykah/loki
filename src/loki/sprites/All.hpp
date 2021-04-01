@@ -5,5 +5,6 @@
  */
 #pragma once
 
-#include "model/SpriteData.hpp"
-#include "view/SpriteView.hpp"
+#include "Sprite.hpp"
+#include "SpriteData.hpp"
+#include "SpriteViewData.hpp"
