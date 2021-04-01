@@ -21,7 +21,7 @@ function(loki_target_install_files target)
 endfunction()
 
 # Configuring All includes header
-function(loki_configure_all_includes_header)
+function(loki_configure_all_hpp)
     cmake_parse_arguments(LIB "" "" "HEADERS" ${ARGN})
     list(TRANSFORM LIB_HEADERS REPLACE ".+" "#include \"\\0\"" OUTPUT_VARIABLE LIB_INCLUDES)
     list(JOIN LIB_INCLUDES "\n" LIB_ALL_INCLUDES)
@@ -30,17 +30,33 @@ endfunction()
 
 # Complete lib creation helper
 function(loki_create_lib)
-    cmake_parse_arguments(LIB "" "NAME" "HEADERS;INTERNAL_HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS;INTERFACE_DEPS" ${ARGN})
-    loki_configure_all_includes_header(HEADERS ${LIB_HEADERS})
-    add_library(${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} ${LIB_SOURCES} All.hpp)
+    cmake_parse_arguments(LIB "INTERFACE" "NAME" "HEADERS;INTERNAL_HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS;INTERFACE_DEPS" ${ARGN})
+    loki_configure_all_hpp(HEADERS ${LIB_HEADERS})
+    if (LIB_INTERFACE)
+        if (DEFINED LIB_SOURCES AND NOT LIB_SOURCES STREQUAL "")
+            message(FATAL_ERROR "Interface library can't have .cpp files")
+        endif ()
+        if (DEFINED LIB_PRIVATE_DEPS AND NOT LIB_PRIVATE_DEPS STREQUAL "")
+            message(FATAL_ERROR "Interface library can't have private dependencies")
+        endif ()
+        add_library(${LIB_NAME} INTERFACE)
+        target_sources(${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp)
+        target_link_libraries(${LIB_NAME} INTERFACE ${LIB_PUBLIC_DEPS} ${LIB_INTERFACE_DEPS})
+    else ()
+        add_library(${LIB_NAME})
+        target_sources(${LIB_NAME}
+          PUBLIC ${LIB_HEADERS} All.hpp
+          INTERFACE ${LIB_INTERNAL_HEADERS}
+          PRIVATE ${LIB_SOURCES})
+        target_link_libraries(${LIB_NAME}
+          PUBLIC "${LIB_PUBLIC_DEPS}"
+          INTERFACE "${LIB_INTERFACE_DEPS}"
+          PRIVATE "${LIB_PRIVATE_DEPS}")
+    endif ()
     add_library(loki::${LIB_NAME} ALIAS ${LIB_NAME})
-    target_link_libraries(${LIB_NAME}
-            PRIVATE "${LIB_PRIVATE_DEPS}"
-            PUBLIC "${LIB_PUBLIC_DEPS}"
-            INTERFACE "${LIB_INTERFACE_DEPS}")
-    target_include_directories(${LIB_NAME} PUBLIC
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
-            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+    target_include_directories(${LIB_NAME} INTERFACE
+      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
+      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
     loki_add_lib_prefix(${LIB_NAME})
     loki_target_install_files(${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp)
     install(TARGETS ${LIB_NAME} EXPORT loki_targets)

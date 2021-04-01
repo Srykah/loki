@@ -5,7 +5,9 @@
 
 namespace loki::hash {
 
-constexpr std::size_t combineHashImpl(std::size_t seed);
+constexpr std::size_t combineHashImpl(std::size_t seed) {
+  return seed;
+}
 
 template <typename T, typename... Args>
 std::size_t combineHashImpl(std::size_t seed, const T& val, const Args&... args) {
