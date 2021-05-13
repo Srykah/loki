@@ -1,5 +1,5 @@
 /*!
- * \file Stylesheet.hpp.h
+ * \file Stylesheet.hpp
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
@@ -7,22 +7,26 @@
 
 #include <filesystem>
 #include <nlohmann/json.hpp>
+#include <SFML/System/String.hpp>
 #include "AnimatedTextStyle.hpp"
 
 namespace loki::text {
 
 class Stylesheet {
  public:
-  void load(std::filesystem::path path);
-  void load(nlohmann::json data);
+  void setStyle(sf::String styleName, const AnimatedTextStyle& defaultStyle);
+  void setDefaultStyle(const AnimatedTextStyle& defaultStyle);
+  [[nodiscard]] const AnimatedTextStyle& getStyle(const sf::String& styleName) const;
+  [[nodiscard]] const AnimatedTextStyle& getDefaultStyle() const;
 
-  void setDefault(AnimatedTextStyle defaultStyle);
-
-  const AnimatedTextStyle& getStyle(std::string styleName) const;
+  [[nodiscard]] AnimatedTextStyle getNewStyleFromBase(
+      const AnimatedTextStyle& base,
+      const std::vector<sf::String>& styleNames) const;
 
  private:
-  AnimatedTextStyle defaultStyle;
-  std::map<std::string, AnimatedTextStyle> styles;
+  std::map<sf::String, AnimatedTextStyle> styles;
 };
+
+void from_json(const nlohmann::json& json, Stylesheet& ss);
 
 }  // namespace loki::text

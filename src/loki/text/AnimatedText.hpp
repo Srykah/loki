@@ -9,17 +9,15 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
-#include "AnimatedGlyph.hpp"
 #include "Stylesheet.hpp"
+#include "impl/AnimatedGlyph.hpp"
 
 namespace loki::text {
 
 class AnimatedText : public sf::Drawable, public sf::Transformable {
  public:
-  using FontGetter = std::function<sf::Font&(std::string)>;
-
- public:
-  AnimatedText(const sf::String& string, const Stylesheet& stylesheet, const FontGetter& fontGetter);
+  AnimatedText(const sf::String& string, const AnimatedTextStyle& style);
+  ~AnimatedText() = default;
 
   void update(sf::Time delta);
   void draw(sf::RenderTarget& target,
@@ -27,11 +25,15 @@ class AnimatedText : public sf::Drawable, public sf::Transformable {
 
   void skip();
 
+  sf::FloatRect getLocalBounds();
+
  private:
+  sf::Time skippingMoment;
+  sf::Time elapsedTime;
   sf::String string;
-  const Stylesheet& stylesheet;
-  const FontGetter& fontGetter;
+  const AnimatedTextStyle& style;
   sf::VertexArray vertices;
+  std::vector<impl::AnimatedGlyph> glyphs;
 
   void init();
 };

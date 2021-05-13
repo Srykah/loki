@@ -7,4 +7,5 @@ loki_create_lib(
         ShapeStyle.cpp
         TextStyle.cpp
     PUBLIC_DEPS
-        sfml-graphics)
+        sfml-graphics
+				nlohmann_json::nlohmann_json)

@@ -10,16 +10,14 @@
 
 namespace nlohmann {
 
+template <>
 struct adl_serializer<sf::String> {
-static void to_json(json& j, const sf::String& str) {
-  j = str.toUtf8();
-}
+  static void to_json(json& j, const sf::String& str) { j = str.toUtf8(); }
 
-static void from_json(const json& j, sf::String& str) {
-  auto json_str = j.get<std::string>();
-  str = sf::String::fromUtf8(json_str.begin(), json_str.end());
-}
-
+  static void from_json(const json& j, sf::String& str) {
+    auto json_str = j.get<std::string>();
+    str = sf::String::fromUtf8(json_str.begin(), json_str.end());
+  }
 };
 
 }  // namespace nlohmann

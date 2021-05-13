@@ -4,6 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "AnimationData.hpp"
+#include <fmt/format.h>
 
 namespace {
 
