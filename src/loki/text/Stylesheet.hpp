@@ -14,7 +14,7 @@ namespace loki::text {
 
 class Stylesheet {
  public:
-  void setStyle(sf::String styleName, const AnimatedTextStyle& defaultStyle);
+  void setStyle(const sf::String& styleName, const AnimatedTextStyle& defaultStyle);
   void setDefaultStyle(const AnimatedTextStyle& defaultStyle);
   [[nodiscard]] const AnimatedTextStyle& getStyle(const sf::String& styleName) const;
   [[nodiscard]] const AnimatedTextStyle& getDefaultStyle() const;

@@ -24,7 +24,7 @@ const AnimatedTextStyle& Stylesheet::getStyle(const sf::String& styleName) const
   return styles.at(styleName);
 }
 
-void Stylesheet::setStyle(sf::String styleName,
+void Stylesheet::setStyle(const sf::String& styleName,
                           const AnimatedTextStyle& defaultStyle) {
   styles.emplace(styleName, defaultStyle);
 }
