@@ -141,4 +141,28 @@ auto zip(T& t, U& u) { return ZipWrapper<T,U>(t,u); }
 template <typename T, typename U>
 auto czip(T& t, U& u) { return ZipWrapper<const T, const U>(t,u); }
 
+////////////////////////////////////////////////////////////////////////////////
+/// Drop
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename T>
+class DropWrapper {
+ public:
+  using iterator = typename T::iterator;
+  DropWrapper(T& t, std::size_t count): container(t), dropCount(count) {}
+
+  iterator begin() const { return std::advance(container.begin() + dropCount); }
+  iterator end() const { return container.end(); }
+
+ private:
+  T& container;
+  std::size_t dropCount;
+}; // class DropWrapper
+
+template <typename T>
+auto drop(T& t, std::size_t count) { return DropWrapper<T>(t, count); }
+
+template <typename T>
+auto cdrop(T& t, std::size_t count) { return DropWrapper<const T>(t, count); }
+
 }
