@@ -1,7 +1,6 @@
 loki_create_lib(
     NAME common
     HEADERS
-				Interpolate.hpp
 				IterAdapters.hpp
         Matrix.hpp
         Matrix.inl
@@ -10,7 +9,6 @@ loki_create_lib(
 				Vector4.hpp
 				VertexArrayIterator.hpp
 	  INTERNAL_HEADERS
-				impl/Interpolate.hxx
 				impl/is_detected.hxx
 				impl/Vector4.hxx
     SOURCES

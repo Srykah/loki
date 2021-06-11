@@ -6,7 +6,7 @@
 #pragma once
 #include <SFML/System/Time.hpp>
 #include <charconv>
-#include <loki/common/Interpolate.hpp>
+#include <loki/math/Interpolate.hpp>
 #include <nlohmann/json.hpp>
 #include "Keyframe.hpp"
 
