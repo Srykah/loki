@@ -9,7 +9,7 @@ loki_create_lib(
 	SpriteData.cpp
 	SpriteViewData.cpp
 	PUBLIC_DEPS
-	loki::common
+	loki::anim
 	sfml-graphics
 	sfml-window
 	sfml-system)

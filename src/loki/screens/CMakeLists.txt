@@ -11,6 +11,4 @@ loki_create_lib(
     PUBLIC_DEPS
         loki::common
 				loki::hash
-        sfml-graphics
-        sfml-window
-        sfml-system)
+        sfml-graphics)

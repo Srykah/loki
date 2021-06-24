@@ -11,6 +11,4 @@ loki_create_lib(
 	Color.cpp
 	PUBLIC_DEPS
 	sfml-graphics
-	sfml-window
-	sfml-system
 	nlohmann_json::nlohmann_json)

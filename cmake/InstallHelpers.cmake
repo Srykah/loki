@@ -1,5 +1,6 @@
-# GNUInstallDirs
+# Helpers
 include(GNUInstallDirs)
+include(CMakePrintHelpers)
 
 # Lib prefixing
 macro(loki_add_lib_prefix target)
@@ -60,4 +61,13 @@ function(loki_create_lib)
     loki_add_lib_prefix(${LIB_NAME})
     loki_target_install_files(${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp)
     install(TARGETS ${LIB_NAME} EXPORT loki_targets)
+endfunction()
+
+function(loki_create_all_target LOKI_MODULE_LIST)
+    cmake_print_variables(LOKI_MODULE_LIST)
+    add_library(all_libs INTERFACE)
+    add_library(loki::all_libs ALIAS all_libs)
+    list(TRANSFORM LOKI_MODULE_LIST PREPEND "loki::" OUTPUT_VARIABLE LOKI_MODULE_ALIAS_LIST)
+    target_link_libraries(all_libs INTERFACE ${LOKI_MODULE_ALIAS_LIST})
+    install(TARGETS all_libs EXPORT loki_targets)
 endfunction()

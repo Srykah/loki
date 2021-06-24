@@ -14,6 +14,8 @@ loki_create_lib(
 	AnimationData.cpp
 	PUBLIC_DEPS
 	loki::common
+	loki::math
+	loki::json
 	sfml-graphics
 	nlohmann_json::nlohmann_json
 	fmt::fmt

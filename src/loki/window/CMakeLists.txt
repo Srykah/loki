@@ -7,7 +7,5 @@ loki_create_lib(
         Style.cpp
         Window.cpp
     PUBLIC_DEPS
-        loki::common
-        sfml-graphics
-        sfml-window
-        sfml-system)
+				loki::math
+        sfml-graphics)

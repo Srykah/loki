@@ -8,5 +8,4 @@ loki_create_lib(
 	SOURCES
 	StateMachine.cpp
 	PUBLIC_DEPS
-	loki::common
 	sfml-system)
