@@ -28,6 +28,4 @@ loki_create_lib(
     PUBLIC_DEPS
         loki::common
         sfml-graphics
-        sfml-window
-        sfml-system
         nlohmann_json::nlohmann_json)

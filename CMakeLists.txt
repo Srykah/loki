@@ -66,22 +66,28 @@ loki_print_variables_with_pattern(SFML)
 ### Core CMake stuff
 
 set(LOKI_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-add_subdirectory(src/loki/common)
-add_subdirectory(src/loki/anim)
-add_subdirectory(src/loki/gui)
-add_subdirectory(src/loki/hash)
-add_subdirectory(src/loki/input)
-add_subdirectory(src/loki/json)
-add_subdirectory(src/loki/math)
-add_subdirectory(src/loki/screens)
-add_subdirectory(src/loki/shapes)
-add_subdirectory(src/loki/sprites)
-add_subdirectory(src/loki/states)
-add_subdirectory(src/loki/styles)
-add_subdirectory(src/loki/text)
-add_subdirectory(src/loki/tiles)
-add_subdirectory(src/loki/tpl)
-add_subdirectory(src/loki/window)
+set(LOKI_MODULE_LIST
+  common
+  anim
+  gui
+  hash
+  input
+  json
+  math
+  screens
+  shapes
+  sprites
+  states
+  styles
+  text
+  tiles
+  tpl
+  window)
+foreach(LOKI_MODULE_NAME IN LISTS LOKI_MODULE_LIST)
+    add_subdirectory(src/loki/${LOKI_MODULE_NAME})
+endforeach()
+## All modules target
+loki_create_all_target("${LOKI_MODULE_LIST}")
 ## docs
 add_subdirectory(docs)
 

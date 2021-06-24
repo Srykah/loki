@@ -7,7 +7,4 @@ loki_create_lib(
 	Capsule.cpp
 	RoundedRectangle.cpp
 	PUBLIC_DEPS
-	loki::common
-	sfml-graphics
-	sfml-window
-	sfml-system)
+	sfml-graphics)

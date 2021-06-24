@@ -16,6 +16,4 @@ loki_create_lib(
 				VertexArrayIterator.cpp
     PUBLIC_DEPS
         sfml-graphics
-        sfml-window
-        sfml-system
         nlohmann_json::nlohmann_json)

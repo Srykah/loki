@@ -7,5 +7,4 @@ loki_create_lib(
 	SOURCES
 	TemplateEngine.cpp
 	PUBLIC_DEPS
-	loki::common
 	fmt::fmt)

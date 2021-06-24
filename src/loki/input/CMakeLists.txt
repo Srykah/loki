@@ -12,5 +12,4 @@ loki_create_lib(
         service/EventHandler.cpp
     PUBLIC_DEPS
         loki::common
-        sfml-window
-        sfml-system)
+        sfml-window)
