@@ -23,6 +23,9 @@ class MapView : public sf::Transformable {
   const std::vector<std::unique_ptr<LayerView>>& getLayers() const {
     return layers;
   }
+  const LayerView& getLayer(std::size_t index) const {
+    return *layers.at(index);
+  }
 
   const sf::RectangleShape& getBackground() const {
     return background;
