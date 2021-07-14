@@ -7,3 +7,4 @@
 
 #include "Interpolate.hpp"
 #include "LinAlg2D.hpp"
+#include "Rect.hpp"
