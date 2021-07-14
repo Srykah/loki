@@ -34,6 +34,9 @@ class Window {
   void draw(const sf::Drawable& drawable, sf::RenderStates states = sf::RenderStates());
   void display();
 
+  [[nodiscard]] bool isOpen() const { return window.isOpen(); }
+  void close() { window.close(); }
+
  private:
   sf::Vector2f getLetterboxedViewportSize();
   sf::Vector2f getIntegerZoomViewportSize();
