@@ -30,4 +30,4 @@ sf::Color parseHTMLColor(const std::string& htmlCode) {
   return color;
 }
 
-}  // namespace loki::json
+}  // namespace loki::common
