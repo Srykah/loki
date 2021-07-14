@@ -5,33 +5,59 @@
  */
 #include "Window.hpp"
 #include <SFML/Window/Event.hpp>
+#include <loki/math/Rect.hpp>
+#include <loki/math/Vector2.hpp>
 
 namespace loki::window {
 
-Window::Window(sf::Vector2u renderArea,
+Window::Window(sf::Vector2f renderSize,
                const sf::String& title,
                Style style,
                const sf::ContextSettings& settings,
                sf::Vector2u minimumSize)
-    : Window(renderArea,
+    : Window(renderSize,
              style.contains(Style::FULLSCREEN)
                  ? sf::VideoMode::getFullscreenModes()[0]
-                 : sf::VideoMode(renderArea.x, renderArea.y),
+                 : sf::VideoMode(renderSize.x, renderSize.y),
              title,
              style,
              settings,
              minimumSize) {}
 
-Window::Window(sf::Vector2u renderArea,
+Window::Window(sf::Vector2f renderSize,
                sf::VideoMode mode,
                const sf::String& title,
                Style style,
                const sf::ContextSettings& settings,
                sf::Vector2u minimumSize)
-    : size(renderArea), minimumSize(minimumSize), style(style) {
-  window.create(sf::VideoMode(renderArea.x, renderArea.y), title,
-                style.toSFMLWindowStyle(), settings);
-  setViewport();
+    : window(mode, title, style.toSFMLWindowStyle(), settings),
+      renderSize(renderSize),
+      minimumSize(minimumSize),
+      style(style) {
+  setView(sf::View{renderSize / 2.f, renderSize});
+}
+
+void Window::setView(sf::View view) {
+  sf::Vector2f viewportSize{1.f, 1.f};
+  if (style.contains(Style::INTEGER_ZOOM_RATIO)) {
+    viewportSize = getIntegerZoomViewportSize();
+  } else if (style.contains(Style::LETTERBOXED_ZOOM)) {
+    viewportSize = getLetterboxedViewportSize();
+  }
+  sf::FloatRect viewport{sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f,
+                         viewportSize};
+  view.setViewport(math::compMult(viewport, view.getViewport()));
+  window.setView(view);
+}
+
+void Window::setViewCenter(const sf::Vector2f& center) {
+  auto view = window.getView();
+  view.setCenter(center);
+  window.setView(view);
+}
+
+const sf::View& Window::getDefaultView() const {
+  return window.getDefaultView();
 }
 
 bool Window::pollEvent(sf::Event& event) {
@@ -39,49 +65,12 @@ bool Window::pollEvent(sf::Event& event) {
 
   if (event.type == sf::Event::Resized) {
     guardMinimumSize();
-    setViewport();
+    setView(window.getView());
+    event.size.width = window.getSize().x;
+    event.size.height = window.getSize().y;
   }
 
   return res;
-}
-
-void Window::setViewport() {
-  float windowRatio = float(window.getSize().x) / float(window.getSize().y);
-  float internalRatio = float(size.x) / float(size.y);
-  sf::View view{window.getView()};
-  sf::Vector2f viewportSize{1.f, 1.f};
-  if (bool(style & Style::LETTERBOXED_ZOOM)) {
-    if (windowRatio >= internalRatio) {  // window too wide
-      viewportSize = {window.getSize().y * internalRatio, 1.f};
-    } else {  // window too tall
-      viewportSize = {1.f, window.getSize().x / internalRatio};
-    }
-  } else if (bool(style & Style::INTEGER_ZOOM_RATIO)) {
-    unsigned int integerRatio;
-    if (windowRatio >= internalRatio) {  // window too wide
-      integerRatio = window.getSize().y / size.y;
-    } else {  // window too tall
-      integerRatio = window.getSize().x / size.x;
-    }
-    viewportSize = {float(size.x * integerRatio) / float(window.getSize().x),
-                    float(size.y * integerRatio) / float(window.getSize().y)};
-  }
-  view.setViewport(
-      {sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f, viewportSize});
-  window.setView(view);
-}
-
-sf::Uint32 Window::getWindowStyle() {
-  return static_cast<sf::Uint32>(style) & ((1u << 4u) - 1u);
-}
-
-void Window::guardMinimumSize() {
-  window.setSize(sf::Vector2u{std::max(window.getSize().x, minimumSize.x),
-                              std::max(window.getSize().y, minimumSize.y)});
-}
-
-void Window::setView(sf::View view) {
-  window.setView(view);
 }
 
 void Window::clear(sf::Color color) {
@@ -94,6 +83,39 @@ void Window::draw(const sf::Drawable& drawable, sf::RenderStates states) {
 
 void Window::display() {
   window.display();
+}
+
+sf::Vector2f Window::getLetterboxedViewportSize() {
+  auto windowWidth = window.getSize().x;
+  auto windowHeight = window.getSize().y;
+  float windowRatio = float(windowWidth) / float(windowHeight);
+  float renderRatio = renderSize.x / renderSize.y;
+
+  if (windowRatio >= renderRatio) {  // window too wide
+    return {(windowHeight * renderRatio) / windowWidth, 1.f};
+  } else {  // window too tall
+    return {1.f, (windowWidth / renderRatio) / windowHeight};
+  }
+}
+
+sf::Vector2f Window::getIntegerZoomViewportSize() {
+  auto windowWidth = window.getSize().x;
+  auto windowHeight = window.getSize().y;
+  float windowRatio = float(windowWidth) / float(windowHeight);
+  float renderRatio = renderSize.x / renderSize.y;
+  float integerRatio;  // actually an int
+
+  if (windowRatio >= renderRatio) {  // window too wide
+    integerRatio = std::floor(windowHeight / renderSize.y);
+  } else {  // window too tall
+    integerRatio = std::floor(windowWidth / renderSize.x);
+  }
+
+  return integerRatio *
+         math::compDiv(renderSize, sf::Vector2{windowWidth, windowHeight});
+}
+void Window::guardMinimumSize() {
+  window.setSize(math::compMax(window.getSize(), minimumSize));
 }
 
 }  // namespace loki::window
