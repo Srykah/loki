@@ -14,7 +14,8 @@ namespace loki::tiles {
 struct ObjectLayerData {
   std::string name;
   std::vector<ObjectData> objects;
+
+  ObjectLayerData(const nlohmann::json& data);
 };
 
 }
-

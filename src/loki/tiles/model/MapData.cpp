@@ -28,9 +28,9 @@ bool MapData::load(const std::filesystem::path& filePath,
                           jsonData.at("height").get<unsigned int>()};
   for (const auto& layerData : std::as_const(jsonData.at("layers"))) {
     if (layerData.at("type").get<std::string>() == "tilelayer") {
-      layers.emplace_back(TileLayerData { layerData });
-    } else if (layerData.at("type").get<std::string>() == "objectlayer") {
-      layers.emplace_back(ObjectLayerData { layerData });
+      layers.emplace_back(TileLayerData{layerData});
+    } else if (layerData.at("type").get<std::string>() == "objectgroup") {
+      layers.emplace_back(ObjectLayerData{layerData});
     }
   }
   if (jsonData.contains("properties")) {
