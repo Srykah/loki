@@ -12,8 +12,8 @@ namespace loki::math {
 
 // linalg
 
-template <class T>
-T dot(const sf::Vector2<T>& a, const sf::Vector2<T>& b) {
+template <class T, class U>
+auto dot(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
   return a.x * b.x + a.y * b.y;
 }
 
@@ -22,14 +22,41 @@ T norm(const sf::Vector2<T>& a) {
   return std::sqrt(dot(a, a));
 }
 
-template <class T>
-T det(const sf::Vector2<T>& a, const sf::Vector2<T>& b) {
+template <class T, class U>
+auto det(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
   return a.x * b.y - a.y * b.x;
 }
 
 template <class T>
 sf::Vector2<T> unit(const sf::Vector2<T>& a) {
   return a / norm(a);
+}
+
+// component-wise
+
+template <class T, class U, class Op>
+auto compOp(const sf::Vector2<T>& a, const sf::Vector2<U>& b, const Op& op) {
+  return sf::Vector2{op(a.x, b.x), op(a.y, b.y)};
+}
+
+template <class T, class U>
+auto compMult(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
+  return sf::Vector2{a.x * b.x, a.y * b.y};
+}
+
+template <class T, class U>
+auto compDiv(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
+  return sf::Vector2{a.x / b.x, a.y / b.y};
+}
+
+template <class T, class U>
+auto compMin(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
+  return sf::Vector2{std::min(a.x, b.x), std::min(a.y, b.y)};
+}
+
+template <class T, class U>
+auto compMax(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
+  return sf::Vector2{std::max(a.x, b.x), std::max(a.y, b.y)};
 }
 
 // transforms
