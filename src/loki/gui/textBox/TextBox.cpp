@@ -45,7 +45,7 @@ void TextBox::setLines(std::vector<sf::String> lineData) {
     textStyle.applyTo(lines.back());
     lines.back().setPosition(
         {frame->getInternalBounds().left,
-         frame->getInternalBounds().top + textStyle.lineSpacing * float(textStyle.characterSize) * i});
+         frame->getInternalBounds().top + textStyle.lineSpacing.value_or(1.f) * float(textStyle.characterSize.value_or(30.f)) * i});
     lines.back().setString(lineData[i]);
   }
 }
