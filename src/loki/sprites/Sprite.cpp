@@ -37,4 +37,12 @@ void Sprite::resetSprite() {
   sprite.setColor(sf::Color::White);
 }
 
+sf::FloatRect Sprite::getLocalBounds() const {
+  return sprite.getLocalBounds();
+}
+
+sf::FloatRect Sprite::getGlobalBounds() const {
+  return getTransform().transformRect(sprite.getGlobalBounds());
+}
+
 }  // namespace loki::sprites
