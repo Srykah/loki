@@ -5,7 +5,7 @@
  */
 
 #include <loki/anim/Animator.hpp>
-#include <loki/math/LinAlg2D.hpp>
+#include <loki/math/Vector2.hpp>
 
 #include "ADLHelpers.hpp"
 #include "TemplateHelpers.hpp"
