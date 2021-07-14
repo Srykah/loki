@@ -14,13 +14,13 @@ class Window {
  public:
   Window(sf::Vector2u renderArea,
          const sf::String& title,
-         Style style,
+         Style style = Style::DEFAULT,
          const sf::ContextSettings& settings = sf::ContextSettings(),
          sf::Vector2u minimumSize = {});
   Window(sf::Vector2u renderArea,
          sf::VideoMode mode,
          const sf::String& title,
-         Style style,
+         Style style = Style::DEFAULT,
          const sf::ContextSettings& settings = sf::ContextSettings(),
          sf::Vector2u minimumSize = {});
 

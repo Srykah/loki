@@ -14,7 +14,7 @@ Window::Window(sf::Vector2u renderArea,
                const sf::ContextSettings& settings,
                sf::Vector2u minimumSize)
     : Window(renderArea,
-             bool(style& Style::FULLSCREEN)
+             style.contains(Style::FULLSCREEN)
                  ? sf::VideoMode::getFullscreenModes()[0]
                  : sf::VideoMode(renderArea.x, renderArea.y),
              title,
@@ -30,7 +30,7 @@ Window::Window(sf::Vector2u renderArea,
                sf::Vector2u minimumSize)
     : size(renderArea), minimumSize(minimumSize), style(style) {
   window.create(sf::VideoMode(renderArea.x, renderArea.y), title,
-                getWindowStyle(), settings);
+                style.toSFMLWindowStyle(), settings);
   setViewport();
 }
 
