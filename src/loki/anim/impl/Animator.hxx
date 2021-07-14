@@ -5,19 +5,12 @@
  */
 
 #include <loki/anim/Animator.hpp>
+#include <loki/math/LinAlg2D.hpp>
 
 #include "ADLHelpers.hpp"
 #include "TemplateHelpers.hpp"
 
 namespace loki::anim {
-
-namespace impl {
-
-sf::Vector2f compMult(const sf::Vector2f& a, const sf::Vector2f& b) {
-  return sf::Vector2f{a.x * b.x, a.y * b.y};
-}
-
-}  // namespace impl
 
 template <typename T>
 Animator<T>::Animator(T& animated, const AnimationViewData& viewData)
@@ -66,7 +59,7 @@ void Animator<T>::update(sf::Time delta) {
                 viewData.getPosition(elapsedTime) + *baseKeyframe.position);
     setRotation(animated,
                 viewData.getRotation(elapsedTime) + *baseKeyframe.rotation);
-    setScale(animated, impl::compMult(viewData.getScale(elapsedTime),
+    setScale(animated, math::compMult(viewData.getScale(elapsedTime),
                                       *baseKeyframe.scale));
     setColor(animated, viewData.getColor(elapsedTime) * *baseKeyframe.color);
     setTextureRect(animated, viewData.getTextureRect(elapsedTime));
