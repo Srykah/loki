@@ -19,10 +19,13 @@ class Sprite : public sf::Drawable, public sf::Transformable {
 
   void update(sf::Time delta);
 
+  sf::FloatRect getLocalBounds() const;
+  sf::FloatRect getGlobalBounds() const;
+
+ private:
   void draw(sf::RenderTarget& target,
             sf::RenderStates states = sf::RenderStates()) const override;
 
- private:
   void resetSprite();
 
  private:
