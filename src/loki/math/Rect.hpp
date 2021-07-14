@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <SFML/System/Rect.hpp>
+#include <SFML/Graphics/Rect.hpp>
 #include <cmath>
 
 namespace loki::math {
