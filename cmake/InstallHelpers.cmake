@@ -40,15 +40,10 @@ function(loki_create_lib)
         if (DEFINED LIB_PRIVATE_DEPS AND NOT LIB_PRIVATE_DEPS STREQUAL "")
             message(FATAL_ERROR "Interface library can't have private dependencies")
         endif ()
-        add_library(${LIB_NAME} INTERFACE)
-        target_sources(${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp)
+        add_library(${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp)
         target_link_libraries(${LIB_NAME} INTERFACE ${LIB_PUBLIC_DEPS} ${LIB_INTERFACE_DEPS})
     else ()
-        add_library(${LIB_NAME})
-        target_sources(${LIB_NAME}
-          PUBLIC ${LIB_HEADERS} All.hpp
-          INTERFACE ${LIB_INTERNAL_HEADERS}
-          PRIVATE ${LIB_SOURCES})
+        add_library(${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp ${LIB_SOURCES})
         target_link_libraries(${LIB_NAME}
           PUBLIC "${LIB_PUBLIC_DEPS}"
           INTERFACE "${LIB_INTERFACE_DEPS}"
