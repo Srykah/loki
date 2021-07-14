@@ -35,8 +35,9 @@ ObjectData loadObjectData(const nlohmann::json& jsonDatum) {
     };
   } else if (jsonDatum.value<bool>("point", false)) {
     return PointObjectData {
-        jsonDatum.at("x").get<float>(),
-        jsonDatum.at("y").get<float>(),
+        jsonDatum.value("name", std::string{}),
+        sf::Vector2f {jsonDatum.at("x").get<float>(),
+        jsonDatum.at("y").get<float>()},
     };
   } else if (jsonDatum.contains("polygon")) {
     PolygonObjectData polygonObjectData;

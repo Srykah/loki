@@ -21,17 +21,17 @@ bool TilesetData::load(const std::filesystem::path& path) {
   if (!texture.loadFromFile((path.parent_path() / imageFilename).string())) {
     return false;
   }
-  name = json.at("name").get<std::string>();
-  tileSize = sf::Vector2u {
-      json.at("tilewidth").get<unsigned int>(),
-      json.at("tileheight").get<unsigned int>(),
-  };
+  json.at("name").get_to(name);
+  json.at("tilewidth").get_to(tileSize.x);
+  json.at("tileheight").get_to(tileSize.y);
   dimensions = sf::Vector2u {
-      json.at("imagewidth").get<unsigned int>() / tileSize.x,
-      json.at("imageheight").get<unsigned int>() / tileSize.y,
+      json.at("imagewidth").get<int>() / tileSize.x,
+      json.at("imageheight").get<int>() / tileSize.y,
   };
-  for (const auto& tileData : std::as_const(json.at("tiles"))) {
-    tiles.emplace(tileData.at("id").get<int>(), tileData);
+  if (json.contains("tiles")) {
+    for (const auto& tileData : std::as_const(json.at("tiles"))) {
+      tiles.emplace(tileData.at("id").get<int>(), tileData);
+    }
   }
   if (json.contains("properties")) {
     loadPropertyMap(properties, json.at("properties"));

@@ -27,7 +27,10 @@ struct RectangleObjectData {
   sf::FloatRect rect;
   float rotation = 0.f;
 };
-using PointObjectData = sf::Vector2f;
+struct PointObjectData {
+  std::string name;
+  sf::Vector2f position;
+};
 struct PolygonObjectData {
   std::vector<sf::Vector2f> vertices;
 };
