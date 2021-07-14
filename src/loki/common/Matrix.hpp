@@ -16,7 +16,7 @@ class Matrix {
   template<typename Iterator>
   Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  T& operator[](std::pair<std::size_t, std::size_t> coords) { return const_cast<T&>(static_cast<const Matrix<T>&>(&this)[coords]); }
+  T& operator[](std::pair<std::size_t, std::size_t> coords) { return const_cast<T&>(static_cast<const Matrix<T>&>(*this)[coords]); }
   const T& operator[](std::pair<std::size_t, std::size_t> coords) const { return data[coords.first + width * coords.second]; }
 
   typename std::vector<T>::iterator begin() { return data.begin(); }
