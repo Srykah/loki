@@ -1,5 +1,5 @@
 /*!
- * \file LinAlg2D.hpp
+ * \file Vector2.hpp
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
