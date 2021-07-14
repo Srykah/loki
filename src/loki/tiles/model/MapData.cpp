@@ -11,17 +11,18 @@
 namespace loki::tiles {
 
 MapData::MapData(const std::filesystem::path& filePath,
-         const TilesetLoader& tilesetLoader) {
+                 const TilesetLoader& tilesetLoader) {
   load(filePath, tilesetLoader);
 }
 
 bool MapData::load(const std::filesystem::path& filePath,
-               const MapData::TilesetLoader& tilesetLoader) {
+                   const MapData::TilesetLoader& tilesetLoader) {
   std::ifstream file(filePath);
   nlohmann::json jsonData;
   file >> jsonData;
   for (const auto& tilesetData : std::as_const(jsonData.at("tilesets"))) {
-    auto tilesetFilepath = std::filesystem::path{tilesetData.at("source").get<std::string>()};
+    auto tilesetFilepath = std::filesystem::path{
+        filePath.parent_path() / tilesetData.at("source").get<std::string>()};
     tilesets.emplace_back(tilesetLoader(tilesetFilepath));
   }
   gridSize = sf::Vector2u{jsonData.at("width").get<unsigned int>(),
@@ -37,7 +38,8 @@ bool MapData::load(const std::filesystem::path& filePath,
     loadPropertyMap(properties, jsonData.at("properties"));
   }
   if (jsonData.contains("backgroundcolor")) {
-    backgroundColor = common::parseHTMLColor(jsonData.at("backgroundcolor").get<std::string>());
+    backgroundColor = common::parseHTMLColor(
+        jsonData.at("backgroundcolor").get<std::string>());
   }
 
   return true;
