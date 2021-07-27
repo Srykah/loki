@@ -4,8 +4,8 @@
  * \copyright GNU GPL v3.0
  */
 #include "TemplateEngine.hpp"
-#include <fmt/format.h>
 #include <fmt/args.h>
+#include <fmt/format.h>
 
 namespace loki::tpl {
 

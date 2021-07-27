@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <optional>
 #include <SFML/Graphics/Text.hpp>
 #include <nlohmann/json.hpp>
+#include <optional>
 
 namespace loki::styles {
 
