@@ -5,6 +5,7 @@
  */
 #include "TextBoxController.hpp"
 #include "AbstractTextBox.hpp"
+#include <vector>
 
 namespace loki::gui {
 
@@ -72,7 +73,7 @@ void TextBoxController::setString(const sf::String& _str) {
 }
 
 void TextBoxController::advance() {
-  auto lines = std::vector<sf::String>(1);
+  std::vector<sf::String> lines(1);
   bool separator = false;
   bool space = false;
   while (true) {
