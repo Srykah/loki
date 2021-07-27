@@ -5,6 +5,7 @@
  */
 #include "TemplateEngine.hpp"
 #include <fmt/format.h>
+#include <fmt/args.h>
 
 namespace loki::tpl {
 

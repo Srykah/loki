@@ -5,10 +5,11 @@
  */
 #pragma once
 
+#include <loki/gui/base/Widget.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/String.hpp>
-#include <loki/gui/base/Widget.hpp>
+#include <vector>
 
 namespace loki::gui {
 

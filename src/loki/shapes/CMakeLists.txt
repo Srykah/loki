@@ -9,3 +9,7 @@ loki_create_lib(
   PUBLIC_DEPS
     sfml-graphics
 )
+
+if(MSVC)
+  target_compile_definitions(shapes PRIVATE _USE_MATH_DEFINES)
+endif()

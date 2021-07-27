@@ -10,3 +10,7 @@ loki_create_lib(
     sfml-graphics
     nlohmann_json::nlohmann_json
 )
+
+if(MSVC)
+  target_compile_definitions(math INTERFACE _USE_MATH_DEFINES)
+endif()
