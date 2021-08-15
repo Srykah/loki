@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1states_1_1_transition" kind="struct" language="C++" prot="public">
+    <compoundname>loki::states::Transition</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1states_1_1_transition_1a575463fabf6a1fae5d1a0b43ec4833b1" prot="public" static="no" mutable="no">
+        <type>StateIndex</type>
+        <definition>StateIndex loki::states::Transition::from</definition>
+        <argsstring></argsstring>
+        <name>from</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="34" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1states_1_1_transition_1ae919a29bbec22bfb0fc544af4b3066e9" prot="public" static="no" mutable="no">
+        <type>StateIndex</type>
+        <definition>StateIndex loki::states::Transition::to</definition>
+        <argsstring></argsstring>
+        <name>to</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="34" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1states_1_1_transition_1a317ebdbd975411cb69b2ca6245623d54" prot="public" static="no" mutable="no">
+        <type>std::function&lt; bool()&gt;</type>
+        <definition>std::function&lt;bool()&gt; loki::states::Transition::isActive</definition>
+        <argsstring></argsstring>
+        <name>isActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="35" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1states_1_1_transition_1ac2b4efa9bf61c5ec76e212c80c9a1b6d" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>std::function&lt;void()&gt; loki::states::Transition::onTrigger</definition>
+        <argsstring></argsstring>
+        <name>onTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="36" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1states_1_1_transition_1a391d033139a034e1f11b0738a6abb3c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::states::Transition::Transition</definition>
+        <argsstring>(StateIndex from, StateIndex to, std::function&lt; bool()&gt; isActive, std::function&lt; void()&gt; onTrigger=nullptr)</argsstring>
+        <name>Transition</name>
+        <param>
+          <type>StateIndex</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>StateIndex</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool()&gt;</type>
+          <declname>isActive</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>onTrigger</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="15" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="15" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1states_1_1_transition_1a1de8e86517e873d6ad38b7c4d2ab3a56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Enum</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_enum_v&lt; Enum &gt;, bool &gt;</type>
+            <defval>true</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::states::Transition::Transition</definition>
+        <argsstring>(Enum from, Enum to, const std::function&lt; bool()&gt; &amp;isActive, const std::function&lt; void()&gt; &amp;onTrigger=nullptr)</argsstring>
+        <name>Transition</name>
+        <param>
+          <type>Enum</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>Enum</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; bool()&gt; &amp;</type>
+          <declname>isActive</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; void()&gt; &amp;</type>
+          <declname>onTrigger</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="25" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="25" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp" bodystart="14" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structloki_1_1states_1_1_transition_1a575463fabf6a1fae5d1a0b43ec4833b1" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>from</name></member>
+      <member refid="structloki_1_1states_1_1_transition_1a317ebdbd975411cb69b2ca6245623d54" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>isActive</name></member>
+      <member refid="structloki_1_1states_1_1_transition_1ac2b4efa9bf61c5ec76e212c80c9a1b6d" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>onTrigger</name></member>
+      <member refid="structloki_1_1states_1_1_transition_1ae919a29bbec22bfb0fc544af4b3066e9" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>to</name></member>
+      <member refid="structloki_1_1states_1_1_transition_1a391d033139a034e1f11b0738a6abb3c5" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>Transition</name></member>
+      <member refid="structloki_1_1states_1_1_transition_1a1de8e86517e873d6ad38b7c4d2ab3a56" prot="public" virt="non-virtual"><scope>loki::states::Transition</scope><name>Transition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

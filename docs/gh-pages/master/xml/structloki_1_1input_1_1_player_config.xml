@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1input_1_1_player_config" kind="struct" language="C++" prot="public">
+    <compoundname>loki::input::PlayerConfig</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1input_1_1_player_config_1abb23acd3a1f0a094b8cc1738a0bafefd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::input::PlayerConfig::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" line="13" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1input_1_1_player_config_1a86312fa64c84997fc2971065ed04cb09" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int loki::input::PlayerConfig::joystickId</definition>
+        <argsstring></argsstring>
+        <name>joystickId</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" line="14" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::input::PlayerConfig</label>
+        <link refid="structloki_1_1input_1_1_player_config"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/PlayerConfig.hpp" bodystart="12" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structloki_1_1input_1_1_player_config_1abb23acd3a1f0a094b8cc1738a0bafefd" prot="public" virt="non-virtual"><scope>loki::input::PlayerConfig</scope><name>config</name></member>
+      <member refid="structloki_1_1input_1_1_player_config_1a86312fa64c84997fc2971065ed04cb09" prot="public" virt="non-virtual"><scope>loki::input::PlayerConfig</scope><name>joystickId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

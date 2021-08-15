@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_terrain_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::TerrainData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_terrain_data_1a98be0611ccbf790a2a45ebd52e140fcd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TerrainData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="19" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_terrain_data_1a1745e51f6c9b23e77c87748fa4cd6fc0" prot="public" static="no" mutable="no">
+        <type>PropertyMap</type>
+        <definition>PropertyMap loki::tiles::TerrainData::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="20" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_terrain_data_1ad786c282a9715af144e127255cbb60a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::TerrainData::TerrainData</definition>
+        <argsstring>()=default</argsstring>
+        <name>TerrainData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="14" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_terrain_data_1af84c3f576dd3d3ce838c2061690a8230" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::TerrainData::TerrainData</definition>
+        <argsstring>(const nlohmann::json &amp;jsonData)</argsstring>
+        <name>TerrainData</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>jsonData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="15" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_terrain_data_1aaf5db4746ee0bc89e7916f81f1256533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::tiles::TerrainData::load</definition>
+        <argsstring>(const nlohmann::json &amp;jsonData)</argsstring>
+        <name>load</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>jsonData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="17" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.cpp" bodystart="14" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="1">
+        <label>loki::tiles::TerrainData</label>
+        <link refid="structloki_1_1tiles_1_1_terrain_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::map&lt; std::string, PropertyData &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp" bodystart="13" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_terrain_data_1aaf5db4746ee0bc89e7916f81f1256533" prot="public" virt="non-virtual"><scope>loki::tiles::TerrainData</scope><name>load</name></member>
+      <member refid="structloki_1_1tiles_1_1_terrain_data_1a98be0611ccbf790a2a45ebd52e140fcd" prot="public" virt="non-virtual"><scope>loki::tiles::TerrainData</scope><name>name</name></member>
+      <member refid="structloki_1_1tiles_1_1_terrain_data_1a1745e51f6c9b23e77c87748fa4cd6fc0" prot="public" virt="non-virtual"><scope>loki::tiles::TerrainData</scope><name>properties</name></member>
+      <member refid="structloki_1_1tiles_1_1_terrain_data_1ad786c282a9715af144e127255cbb60a0" prot="public" virt="non-virtual"><scope>loki::tiles::TerrainData</scope><name>TerrainData</name></member>
+      <member refid="structloki_1_1tiles_1_1_terrain_data_1af84c3f576dd3d3ce838c2061690a8230" prot="public" virt="non-virtual"><scope>loki::tiles::TerrainData</scope><name>TerrainData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

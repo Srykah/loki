@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1sprites" kind="namespace" language="C++">
+    <compoundname>loki::sprites</compoundname>
+    <innerclass refid="classloki_1_1sprites_1_1_sprite" prot="public">loki::sprites::Sprite</innerclass>
+    <innerclass refid="structloki_1_1sprites_1_1_sprite_data" prot="public">loki::sprites::SpriteData</innerclass>
+    <innerclass refid="structloki_1_1sprites_1_1_sprite_view_data" prot="public">loki::sprites::SpriteViewData</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_sprite_data_8cpp_1a451975980f89767e14d05e539d901d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::sprites::to_json</definition>
+        <argsstring>(nlohmann::json &amp;json, const SpriteData &amp;data)</argsstring>
+        <name>to_json</name>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1sprites_1_1_sprite_data" kindref="compound">SpriteData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.cpp" line="11" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.cpp" bodystart="11" bodyend="18" declfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.hpp" declline="20" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_sprite_data_8cpp_1adcbdd7fe9b2b423dc04649daa49888f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::sprites::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;json, SpriteData &amp;data)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1sprites_1_1_sprite_data" kindref="compound">SpriteData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.cpp" line="20" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.cpp" bodystart="20" bodyend="27" declfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteData.hpp" declline="21" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/Sprite.cpp" line="8" column="1"/>
+  </compounddef>
+</doxygen>

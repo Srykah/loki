@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_tile_layer_view_8cpp" kind="file" language="C++">
+    <compoundname>TileLayerView.cpp</compoundname>
+    <includes refid="_tile_layer_view_8hpp" local="yes">TileLayerView.hpp</includes>
+    <includes refid="_map_view_8hpp" local="yes">MapView.hpp</includes>
+    <incdepgraph>
+      <node id="21">
+        <label>ObjectLayerData.hpp</label>
+        <link refid="_object_layer_data_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>loki/tiles/model/MapData.hpp</label>
+        <link refid="_map_data_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="19">
+        <label>MapView.hpp</label>
+        <link refid="_map_view_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>filesystem</label>
+      </node>
+      <node id="12">
+        <label>variant</label>
+      </node>
+      <node id="15">
+        <label>TileData.hpp</label>
+        <link refid="_tile_data_8hpp_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>LayerView.hpp</label>
+        <link refid="_layer_view_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ObjectData.hpp</label>
+        <link refid="_object_data_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>Matrix.inl</label>
+        <link refid="_matrix_8inl"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.cpp</label>
+        <link refid="_tile_layer_view_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="2">
+        <label>TileLayerView.hpp</label>
+        <link refid="_tile_layer_view_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+      <node id="14">
+        <label>TerrainData.hpp</label>
+        <link refid="_terrain_data_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>loki/tiles/model/TileLayerData.hpp</label>
+        <link refid="_tile_layer_data_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Property.hpp</label>
+        <link refid="_property_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="16">
+        <label>SFML/System/Time.hpp</label>
+      </node>
+      <node id="13">
+        <label>loki/tiles/model/TilesetData.hpp</label>
+        <link refid="_tileset_data_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>SFML/System.hpp</label>
+      </node>
+      <node id="4">
+        <label>loki/common/Matrix.hpp</label>
+        <link refid="_matrix_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tiles">loki::tiles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;TileLayerView.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_map_view_8hpp" kindref="compound">MapView.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::tiles<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">TileLayerView::TileLayerView(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MapView<sp/>&amp;parent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>layerId)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">:<sp/>LayerView(parent)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">,<sp/>vertices(sf::Quads)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">,<sp/>layerData(std::get&lt;TileLayerData&gt;(parent.getData().layers.at(layerId)))</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">,<sp/>gridSize(parent.getData().gridSize)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">,<sp/>tilesetData(*parent.getData().tilesets.at(0))<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>vertices.resize(gridSize.x<sp/>*<sp/>gridSize.y<sp/>*<sp/>4);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y{0u};<sp/>y<sp/>&lt;<sp/>gridSize.y;<sp/>++y)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x{0u};<sp/>x<sp/>&lt;<sp/>gridSize.x;<sp/>++x)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>initVertices(x,<sp/>y);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileId<sp/>=<sp/>layerData.data[{x,y}]-1;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tileId<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setTileTransparent(x,y);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tilesetData.tiles.count(tileId)<sp/>&amp;&amp;<sp/>!tilesetData.tiles.at(tileId).animation.empty())<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tileViewData.emplace(tileId,<sp/>TileViewData<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Time::Zero,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setTile(x,<sp/>y,<sp/>tilesetData.tiles.at(tileId).animation.at(0).tileId);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setTile(x,<sp/>y,<sp/>tileId);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TileLayerView::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Time&amp;<sp/>delta)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;&amp;<sp/>[tileId,<sp/>tileViewDatum]:<sp/>tileViewData)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>tileData<sp/>=<sp/>tilesetData.tiles.at(tileId);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>needUpdate<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>tileViewDatum.timeSinceLastFrame<sp/>+=<sp/>delta;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(tileViewDatum.timeSinceLastFrame<sp/>&gt;=<sp/>tileData.animation.at(tileViewDatum.frameIndex).duration)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tileViewDatum.timeSinceLastFrame<sp/>-=<sp/>tileData.animation.at(tileViewDatum.frameIndex).duration;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tileViewDatum.frameIndex<sp/>=<sp/>(tileViewDatum.frameIndex<sp/>+<sp/>1)<sp/>%<sp/>tileData.animation.size();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>needUpdate<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(needUpdate)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x{0};<sp/>x<sp/>&lt;<sp/>gridSize.x;<sp/>++x)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y{0};<sp/>y<sp/>&lt;<sp/>gridSize.y;<sp/>++y)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(layerData.data[{x,y}]-1<sp/>==<sp/>tileId)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setTile(x,y,tileData.animation.at(tileViewDatum.frameIndex).tileId);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TileLayerView::draw(sf::RenderTarget&amp;<sp/>target,<sp/>sf::RenderStates<sp/>states)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>states.transform<sp/>*=<sp/>getParentTransform();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>states.texture<sp/>=<sp/>&amp;tilesetData.texture;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>target.draw(vertices,<sp/>states);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TileLayerView::initVertices(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileWidth<sp/>=<sp/>tilesetData.tileSize.x;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileHeight<sp/>=<sp/>tilesetData.tileSize.y;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>{<sp/>(x<sp/>+<sp/>gridSize.x<sp/>*<sp/>y)<sp/>*<sp/>4<sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tilePositionOrigin<sp/>=<sp/>sf::Vector2f<sp/>(</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tileWidth<sp/>*<sp/>x,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tileHeight<sp/>*<sp/>y</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>vertices[<sp/>i<sp/>].position<sp/>=<sp/>tilePositionOrigin;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>vertices[i+1].position<sp/>=<sp/>tilePositionOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>tileWidth,<sp/>0.f<sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>vertices[i+2].position<sp/>=<sp/>tilePositionOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>tileWidth,<sp/>tileHeight<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>vertices[i+3].position<sp/>=<sp/>tilePositionOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>0.f,<sp/>tileHeight<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TileLayerView::setTile(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tileId)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>{<sp/>(x<sp/>+<sp/>gridSize.x<sp/>*<sp/>y)<sp/>*<sp/>4<sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileWidth<sp/>=<sp/>tilesetData.tileSize.x;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileHeight<sp/>=<sp/>tilesetData.tileSize.y;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tileTexCoordsOrigin<sp/>=<sp/>sf::Vector2f<sp/>(</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(tileId<sp/>%<sp/>tilesetData.dimensions.x)<sp/>*<sp/>tileWidth,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(tileId<sp/>/<sp/>tilesetData.dimensions.x)<sp/>*<sp/>tileHeight</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>vertices[<sp/>i<sp/>].texCoords<sp/>=<sp/>tileTexCoordsOrigin;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>vertices[i+1].texCoords<sp/>=<sp/>tileTexCoordsOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>tileWidth,<sp/>0.f<sp/>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>vertices[i+2].texCoords<sp/>=<sp/>tileTexCoordsOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>tileWidth,<sp/>tileHeight<sp/>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>vertices[i+3].texCoords<sp/>=<sp/>tileTexCoordsOrigin<sp/>+<sp/>sf::Vector2f<sp/>(<sp/>0.f,<sp/>tileHeight<sp/>);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TileLayerView::setTileTransparent(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>{<sp/>(x<sp/>+<sp/>gridSize.x<sp/>*<sp/>y)<sp/>*<sp/>4<sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>vertices[<sp/>i<sp/>].color<sp/>=<sp/>sf::Color::Transparent;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>vertices[i+1].color<sp/>=<sp/>sf::Color::Transparent;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>vertices[i+2].color<sp/>=<sp/>sf::Color::Transparent;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>vertices[i+3].color<sp/>=<sp/>sf::Color::Transparent;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.cpp"/>
+  </compounddef>
+</doxygen>

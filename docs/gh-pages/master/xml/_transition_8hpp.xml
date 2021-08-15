@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_transition_8hpp" kind="file" language="C++">
+    <compoundname>Transition.hpp</compoundname>
+    <includes local="no">functional</includes>
+    <includes local="no">utility</includes>
+    <includes refid="_state_index_8hpp" local="yes">StateIndex.hpp</includes>
+    <includedby refid="_state_machine_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp</includedby>
+    <includedby refid="states_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/states/All.hpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>StateIndex.hpp</label>
+        <link refid="_state_index_8hpp"/>
+      </node>
+      <node id="3">
+        <label>utility</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp</label>
+        <link refid="_transition_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp</label>
+        <link refid="_state_machine_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp</label>
+        <link refid="_state_machine_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp</label>
+        <link refid="_transition_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/All.hpp</label>
+        <link refid="states_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1states_1_1_transition" prot="public">loki::states::Transition</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1states">loki::states</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_state_index_8hpp" kindref="compound">StateIndex.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::states<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structloki_1_1states_1_1_transition" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref>(StateIndex<sp/>from,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateIndex<sp/>to,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">()&gt;<sp/><sp/>isActive,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/><sp/>onTrigger<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>from(from),</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>to(to),</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isActive(std::move(isActive)),</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>onTrigger(std::move(onTrigger))<sp/>{}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Enum,<sp/>std::enable_if_t&lt;std::is_enum_v&lt;Enum&gt;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;<sp/>=<sp/>true&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref>(Enum<sp/>from,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Enum<sp/>to,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">()&gt;&amp;<sp/>isActive,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;<sp/>onTrigger<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">StateIndex</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(from),</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">StateIndex</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(to),</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isActive,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>onTrigger)<sp/>{}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>StateIndex<sp/>from,<sp/>to;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>std::function&lt;bool()&gt;<sp/>isActive;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>std::function&lt;void()&gt;<sp/>onTrigger;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>loki::states</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/Transition.hpp"/>
+  </compounddef>
+</doxygen>

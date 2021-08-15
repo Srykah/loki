@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_tileset_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::TilesetData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1ad177fbc2af27adef0dcfd90612c0d652" prot="public" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture loki::tiles::TilesetData::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="33" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a82c128f17f9b58b8b4b8041a49b57886" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TilesetData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="34" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a75a5ee2d145a6d8e54be81cbd2f586f4" prot="public" static="no" mutable="no">
+        <type>ObjectAlignement</type>
+        <definition>ObjectAlignement loki::tiles::TilesetData::objectAlignement</definition>
+        <argsstring></argsstring>
+        <name>objectAlignement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="35" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1ac5c399eb46b8b68df86f25d3fe74ddd9" prot="public" static="no" mutable="no">
+        <type>PropertyMap</type>
+        <definition>PropertyMap loki::tiles::TilesetData::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="36" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a406e418592bd7f9e949d2511b18839bc" prot="public" static="no" mutable="no">
+        <type>sf::Vector2u</type>
+        <definition>sf::Vector2u loki::tiles::TilesetData::tileSize</definition>
+        <argsstring></argsstring>
+        <name>tileSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="37" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a638afd878f76aa00300917513be06200" prot="public" static="no" mutable="no">
+        <type>sf::Vector2u</type>
+        <definition>sf::Vector2u loki::tiles::TilesetData::dimensions</definition>
+        <argsstring></argsstring>
+        <name>dimensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="38" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a9e3e5b5130211ad22b52dc12b1b1bc1c" prot="public" static="no" mutable="no">
+        <type>std::map&lt; int, <ref refid="structloki_1_1tiles_1_1_tile_data" kindref="compound">TileData</ref> &gt;</type>
+        <definition>std::map&lt;int, TileData&gt; loki::tiles::TilesetData::tiles</definition>
+        <argsstring></argsstring>
+        <name>tiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="39" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tileset_data_1a2598d8e0c06a45e4f51e3daf161b37d7" prot="public" static="no" mutable="no">
+        <type>std::map&lt; int, <ref refid="structloki_1_1tiles_1_1_terrain_data" kindref="compound">TerrainData</ref> &gt;</type>
+        <definition>std::map&lt;int, TerrainData&gt; loki::tiles::TilesetData::terrains</definition>
+        <argsstring></argsstring>
+        <name>terrains</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="40" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_tileset_data_1a0aa3a08a29231042361b665ffac7a3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::TilesetData::TilesetData</definition>
+        <argsstring>()=default</argsstring>
+        <name>TilesetData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="28" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_tileset_data_1a52f92d19df928551d203ef660e2c00e1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::TilesetData::TilesetData</definition>
+        <argsstring>(const std::filesystem::path &amp;path)</argsstring>
+        <name>TilesetData</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="29" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_tileset_data_1a8f80601715526b601341499de2a0a17d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::tiles::TilesetData::load</definition>
+        <argsstring>(const std::filesystem::path &amp;path)</argsstring>
+        <name>load</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="31" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.cpp" bodystart="15" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>std::vector&lt; loki::tiles::Frame &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::tiles::TilesetData</label>
+        <link refid="structloki_1_1tiles_1_1_tileset_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>tiles</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>terrains</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::map&lt; int, loki::tiles::TerrainData &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>loki::tiles::Frame</label>
+        <link refid="structloki_1_1tiles_1_1_frame"/>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="5">
+        <label>loki::tiles::TileData</label>
+        <link refid="structloki_1_1tiles_1_1_tile_data"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>animation</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>loki::tiles::TerrainData</label>
+        <link refid="structloki_1_1tiles_1_1_terrain_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::map&lt; int, loki::tiles::TileData &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::map&lt; std::string, PropertyData &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="27" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="27" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a638afd878f76aa00300917513be06200" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>dimensions</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a8f80601715526b601341499de2a0a17d" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>load</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a82c128f17f9b58b8b4b8041a49b57886" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>name</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a75a5ee2d145a6d8e54be81cbd2f586f4" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>objectAlignement</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1ac5c399eb46b8b68df86f25d3fe74ddd9" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>properties</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a2598d8e0c06a45e4f51e3daf161b37d7" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>terrains</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1ad177fbc2af27adef0dcfd90612c0d652" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>texture</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a9e3e5b5130211ad22b52dc12b1b1bc1c" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>tiles</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a0aa3a08a29231042361b665ffac7a3af" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>TilesetData</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a52f92d19df928551d203ef660e2c00e1" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>TilesetData</name></member>
+      <member refid="structloki_1_1tiles_1_1_tileset_data_1a406e418592bd7f9e949d2511b18839bc" prot="public" virt="non-virtual"><scope>loki::tiles::TilesetData</scope><name>tileSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

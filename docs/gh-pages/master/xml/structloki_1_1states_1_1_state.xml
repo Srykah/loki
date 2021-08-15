@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1states_1_1_state" kind="struct" language="C++" prot="public">
+    <compoundname>loki::states::State</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1states_1_1_state_1a8dcd427850c52bb2e6d0308f2c84883a" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>std::function&lt;void()&gt; loki::states::State::onEnter</definition>
+        <argsstring></argsstring>
+        <name>onEnter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" line="14" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1states_1_1_state_1a4d30e9826e4162ee709409e86aa45898" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void(sf::Time)&gt;</type>
+        <definition>std::function&lt;void(sf::Time)&gt; loki::states::State::onUpdate</definition>
+        <argsstring></argsstring>
+        <name>onUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" line="15" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1states_1_1_state_1aefb0dc0a65180b4f1f12d93426aa84d8" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>std::function&lt;void()&gt; loki::states::State::onLeave</definition>
+        <argsstring></argsstring>
+        <name>onLeave</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" line="16" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" bodystart="13" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structloki_1_1states_1_1_state_1a8dcd427850c52bb2e6d0308f2c84883a" prot="public" virt="non-virtual"><scope>loki::states::State</scope><name>onEnter</name></member>
+      <member refid="structloki_1_1states_1_1_state_1aefb0dc0a65180b4f1f12d93426aa84d8" prot="public" virt="non-virtual"><scope>loki::states::State</scope><name>onLeave</name></member>
+      <member refid="structloki_1_1states_1_1_state_1a4d30e9826e4162ee709409e86aa45898" prot="public" virt="non-virtual"><scope>loki::states::State</scope><name>onUpdate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

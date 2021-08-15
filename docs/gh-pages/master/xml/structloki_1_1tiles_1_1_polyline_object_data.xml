@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_polyline_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::PolylineObjectData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_polyline_object_data_1a84ade23ba5cba62d9d7c97f6a4e53bbe" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; sf::Vector2f &gt;</type>
+        <definition>std::vector&lt;sf::Vector2f&gt; loki::tiles::PolylineObjectData::vertices</definition>
+        <argsstring></argsstring>
+        <name>vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="38" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::vector&lt; sf::Vector2f &gt;</label>
+      </node>
+      <node id="1">
+        <label>loki::tiles::PolylineObjectData</label>
+        <link refid="structloki_1_1tiles_1_1_polyline_object_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>vertices</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="37" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="37" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_polyline_object_data_1a84ade23ba5cba62d9d7c97f6a4e53bbe" prot="public" virt="non-virtual"><scope>loki::tiles::PolylineObjectData</scope><name>vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

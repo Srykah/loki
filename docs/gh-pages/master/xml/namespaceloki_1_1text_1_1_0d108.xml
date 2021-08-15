@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1text_1_1_0d108" kind="namespace" language="C++">
+    <compoundname>loki::text::@108</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" line="11" column="1"/>
+  </compounddef>
+</doxygen>

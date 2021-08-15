@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_signal_8hpp" kind="file" language="C++">
+    <compoundname>Signal.hpp</compoundname>
+    <includes local="no">any</includes>
+    <includes refid="_combine_hash_8hpp" local="no">loki/hash/CombineHash.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">variant</includes>
+    <includedby refid="_screen_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp</includedby>
+    <includedby refid="screens_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/screens/All.hpp</includedby>
+    <includedby refid="_screen_stack_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/screens/ScreenStack.hpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>functional</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp</label>
+        <link refid="_signal_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>variant</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>any</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="3">
+        <label>loki/hash/CombineHash.hpp</label>
+        <link refid="_combine_hash_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/ScreenStack.hpp</label>
+        <link refid="_screen_stack_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp</label>
+        <link refid="_signal_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp</label>
+        <link refid="_screen_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/ScreenStack.cpp</label>
+        <link refid="_screen_stack_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp</label>
+        <link refid="_screen_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/screens/All.hpp</label>
+        <link refid="screens_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1screens_1_1_signal" prot="public">loki::screens::Signal</innerclass>
+    <innerclass refid="structloki_1_1screens_1_1_signal_1_1_trigger" prot="public">loki::screens::Signal::Trigger</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4" prot="public">std::hash&lt; loki::screens::Signal::Trigger &gt;</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1screens">loki::screens</innernamespace>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;any&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;loki/hash/CombineHash.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::screens<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Screen;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structloki_1_1screens_1_1_signal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1screens_1_1_signal" kindref="compound">Signal</ref><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="structloki_1_1screens_1_1_signal_1_1_trigger" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Trigger</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classloki_1_1screens_1_1_screen" kindref="compound">Screen</ref>*<sp/>origin;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>signalName;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Trigger</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>origin<sp/>==<sp/>other.origin<sp/>&amp;&amp;<sp/>signalName<sp/>==<sp/>other.signalName;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>}<sp/>trigger;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>std::any<sp/>value<sp/>=<sp/>std::monostate<sp/>{};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>loki::screens</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">std<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="34" refid="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;loki::screens::Signal::Trigger&gt;<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">loki::screens::Signal::Trigger</ref>&amp;<sp/>trigger)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>loki::hash::combineHash(trigger.origin,<sp/>trigger.signalName);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>std</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp"/>
+  </compounddef>
+</doxygen>

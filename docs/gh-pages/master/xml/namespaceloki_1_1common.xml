@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1common" kind="namespace" language="C++">
+    <compoundname>loki::common</compoundname>
+    <innerclass refid="classloki_1_1common_1_1_enumerate_wrapper" prot="public">loki::common::EnumerateWrapper</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_reversed_wrapper" prot="public">loki::common::ReversedWrapper</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_zip_wrapper" prot="public">loki::common::ZipWrapper</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_drop_wrapper" prot="public">loki::common::DropWrapper</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_matrix" prot="public">loki::common::Matrix</innerclass>
+    <innerclass refid="structloki_1_1common_1_1true__type" prot="public">loki::common::true_type</innerclass>
+    <innerclass refid="structloki_1_1common_1_1false__type" prot="public">loki::common::false_type</innerclass>
+    <innerclass refid="structloki_1_1common_1_1identity__type" prot="public">loki::common::identity_type</innerclass>
+    <innerclass refid="structloki_1_1common_1_1nonesuch" prot="public">loki::common::nonesuch</innerclass>
+    <innerclass refid="structloki_1_1common_1_1_vector4" prot="public">loki::common::Vector4</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_vertex_array_iterator" prot="public">loki::common::VertexArrayIterator</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_vertex_array_const_iterator" prot="public">loki::common::VertexArrayConstIterator</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_interpolation_base" prot="public">loki::common::InterpolationBase</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_none_interpolation" prot="public">loki::common::NoneInterpolation</innerclass>
+    <innerclass refid="classloki_1_1common_1_1_linear_interpolation" prot="public">loki::common::LinearInterpolation</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>InterpolationType</name>
+        <enumvalue id="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55aaac544aacc3615aada24897a215f5046" prot="public">
+          <name>LINEAR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55accd681e34e5e40fbce74618c3ccffcff" prot="public">
+          <name>CUBIC</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="common_2_template_helpers_8hpp_1ac619c06fd9996e21ff24e97089f574ef" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>template&lt; class... &gt; class</type>
+            <declname>Op</declname>
+            <defname>Op</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>typename <ref refid="structimpl_1_1detector" kindref="compound">impl::detector</ref>&lt; void, Op, Args... &gt;::type</type>
+        <definition>using loki::common::detected_t = typedef typename impl::detector&lt;void, Op, Args...&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>detected_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="35" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_vector4_8hpp_1a9970411ba9faf56e9cdef8856cb8cf0b" prot="public" static="no">
+        <type><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; float &gt;</type>
+        <definition>using loki::common::Vector4f = typedef Vector4&lt;float&gt;</definition>
+        <argsstring></argsstring>
+        <name>Vector4f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" line="49" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_vector4_8hpp_1ac1d70221ac3e9930419d1b65e17c7fb7" prot="public" static="no">
+        <type><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; int &gt;</type>
+        <definition>using loki::common::Vector4i = typedef Vector4&lt;int&gt;</definition>
+        <argsstring></argsstring>
+        <name>Vector4i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" line="50" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_interpolate_8hxx_1abf27b8fe5ea1e3c42c829714be8eaa5e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class Iter</type>
+          </param>
+        </templateparamlist>
+        <type>typename std::iterator_traits&lt; Iter &gt;::value_type::first_type</type>
+        <definition>using loki::common::FirstPointedType = typedef typename std::iterator_traits&lt;Iter&gt;::value_type::first_type</definition>
+        <argsstring></argsstring>
+        <name>FirstPointedType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="11" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_interpolate_8hxx_1aa0a4f0407ff6dc33be3d25ac135c2463" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class Iter</type>
+          </param>
+        </templateparamlist>
+        <type>typename std::iterator_traits&lt; Iter &gt;::value_type::second_type</type>
+        <definition>using loki::common::SecondPointedType = typedef typename std::iterator_traits&lt;Iter&gt;::value_type::second_type</definition>
+        <argsstring></argsstring>
+        <name>SecondPointedType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_interpolate_8hxx_1aca75000b6d3ea1b281fdbee5d9deadc6" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+        </templateparamlist>
+        <type>FirstPointedType&lt; decltype(std::begin(std::declval&lt; std::decay&lt; Container &gt; &gt;()))&gt;</type>
+        <definition>using loki::common::FirstContainedType = typedef FirstPointedType&lt;decltype(std::begin(std::declval&lt;std::decay&lt;Container&gt; &gt;()))&gt;</definition>
+        <argsstring></argsstring>
+        <name>FirstContainedType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="17" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_interpolate_8hxx_1ac53a16b72a9ce73f1f8cef3797819302" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+        </templateparamlist>
+        <type>SecondPointedType&lt; decltype(std::begin(std::declval&lt; std::decay&lt; Container &gt; &gt;()))&gt;</type>
+        <definition>using loki::common::SecondContainedType = typedef SecondPointedType&lt;decltype(std::begin(std::declval&lt;std::decay&lt;Container&gt; &gt;()))&gt;</definition>
+        <argsstring></argsstring>
+        <name>SecondContainedType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="20" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="common_2_template_helpers_8hpp_1a17b8b6353052d9932a076a53abd529c8" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>template&lt; class... &gt; class</type>
+            <declname>Op</declname>
+            <defname>Op</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool loki::common::is_detected</definition>
+        <argsstring></argsstring>
+        <name>is_detected</name>
+        <initializer>= <ref refid="structimpl_1_1detector" kindref="compound">impl::detector</ref>&lt;void, Op, Args...&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="32" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="common_2_template_helpers_8hpp_1a90deab0e70d874df9db33eb6b10af228" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>template&lt; class... &gt; class</type>
+            <declname>Op</declname>
+            <defname>Op</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool loki::common::is_detected_as_true</definition>
+        <argsstring></argsstring>
+        <name>is_detected_as_true</name>
+        <initializer>= std::conjunction_v&lt;
+    <ref refid="structimpl_1_1detector" kindref="compound">impl::detector</ref>&lt;void, Op, Args...&gt;,
+    detected_t&lt;Op, Args...&gt;
+&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="38" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_vector4_8hxx_1a485d1418ebe980868b63e9f334b9ca84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename A</type>
+          </param>
+          <param>
+            <type>typename B</type>
+          </param>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename D</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::Vector4</definition>
+        <argsstring>(A a, B b, C c, D d) -&gt; Vector4&lt; std::common_type&lt; A, B, C, D &gt;&gt;</argsstring>
+        <name>Vector4</name>
+        <param>
+          <type>A</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>B</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>C</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>D</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="18" column="1" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" declline="18" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_vector4_8hxx_1a03ae9bee22b39abe3053d0eb7cdf15ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt;</type>
+        <definition>Vector4&lt; T &gt; loki::common::operator*</definition>
+        <argsstring>(const T &amp;t, const Vector4&lt; T &gt; &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="81" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" bodystart="81" bodyend="83" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" declline="37" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="_vector4_8hxx_1a8c61f0b28508c0652d8944d2c52f3468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt;</type>
+        <definition>Vector4&lt; T &gt; loki::common::fromRect</definition>
+        <argsstring>(const sf::Rect&lt; U &gt; &amp;rect)</argsstring>
+        <name>fromRect</name>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="101" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" bodystart="101" bodyend="103" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" declline="40" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="_vector4_8hxx_1a876ec50e1834cd57b25daf528d7c7ce5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Rect&lt; U &gt;</type>
+        <definition>sf::Rect&lt; U &gt; loki::common::toRect</definition>
+        <argsstring>(const Vector4&lt; T &gt; &amp;v)</argsstring>
+        <name>toRect</name>
+        <param>
+          <type>const <ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="106" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" bodystart="106" bodyend="108" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" declline="42" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="_vector4_8hxx_1a687244dd5d5a60a4fea7ceb8aed6fe73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt;</type>
+        <definition>Vector4&lt; T &gt; loki::common::fromColor</definition>
+        <argsstring>(const sf::Color &amp;color)</argsstring>
+        <name>fromColor</name>
+        <param>
+          <type>const sf::Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="111" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" bodystart="111" bodyend="113" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" declline="45" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="_vector4_8hxx_1a844a3fc291ef9084734be679b181b11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Color</type>
+        <definition>sf::Color loki::common::toColor</definition>
+        <argsstring>(const Vector4&lt; T &gt; &amp;v)</argsstring>
+        <name>toColor</name>
+        <param>
+          <type>const <ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="116" column="11" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" bodystart="116" bodyend="122" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp" declline="47" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1aef4eb0ada349dde1ac184bbf207986e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::enumerate</definition>
+        <argsstring>(T &amp;t)</argsstring>
+        <name>enumerate</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="53" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1afdd2a4ee46d2ee44a9a5a29d383aedb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::cenumerate</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>cenumerate</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="56" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1a900f8688e2cde7ce5e1da58a5ff2b666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::reversed</definition>
+        <argsstring>(T &amp;t)</argsstring>
+        <name>reversed</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="80" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1aa20151487efbd1b78bbcb9505a0643be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::creversed</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>creversed</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="83" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1a523e38608f65d4b6ae94fddc616bb247" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::zip</definition>
+        <argsstring>(T &amp;t, U &amp;u)</argsstring>
+        <name>zip</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="139" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1a28286df34f6109a0d710b7807cd988be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::czip</definition>
+        <argsstring>(T &amp;t, U &amp;u)</argsstring>
+        <name>czip</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="142" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1a1388ee8952e4f4a71484af6ee8ff5381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::drop</definition>
+        <argsstring>(T &amp;t, std::size_t count)</argsstring>
+        <name>drop</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="163" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="_iter_adapters_8hpp_1aaa5e5ec2530acf3094d43dbcd7462f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::common::cdrop</definition>
+        <argsstring>(T &amp;t, std::size_t count)</argsstring>
+        <name>cdrop</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="166" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="166" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="_random_8cpp_1a54c6d30af748fb35de339d57d1c85960" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::common::roll0to100</definition>
+        <argsstring>(int thres)</argsstring>
+        <name>roll0to100</name>
+        <param>
+          <type>int</type>
+          <declname>thres</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/Random.cpp" line="17" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Random.cpp" bodystart="17" bodyend="19" declfile="D:/prog/cpp/custom_libs/loki/src/loki/common/Random.hpp" declline="10" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="json_2_color_8hpp_1a0eecab865659665473531ddf1a24b148" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string loki::common::getHTMLColor</definition>
+        <argsstring>(const sf::Color &amp;color)</argsstring>
+        <name>getHTMLColor</name>
+        <param>
+          <type>const sf::Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="15" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" bodystart="15" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="json_2_color_8hpp_1aeddf6c17ca5594d7f816fc638832ec33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>sf::Color</type>
+        <definition>sf::Color loki::common::parseHTMLColor</definition>
+        <argsstring>(const std::string &amp;htmlCode)</argsstring>
+        <name>parseHTMLColor</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>htmlCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="26" column="18" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" bodystart="26" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_interpolate_8hxx_1a07350da4f1f6106fc9d6ad3a74b4ba5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Iter</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::NoneInterpolation</definition>
+        <argsstring>(Iter, Iter) -&gt; NoneInterpolation&lt; FirstPointedType&lt; Iter &gt;, SecondPointedType&lt; Iter &gt;&gt;</argsstring>
+        <name>NoneInterpolation</name>
+        <param>
+          <type>Iter</type>
+        </param>
+        <param>
+          <type>Iter</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="26" column="1" declfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" declline="26" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_interpolate_8hxx_1a0e7fc56a105b2522d8682f4b830e972f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::NoneInterpolation</definition>
+        <argsstring>(Container) -&gt; NoneInterpolation&lt; FirstContainedType&lt; Container &gt;, SecondContainedType&lt; Container &gt;&gt;</argsstring>
+        <name>NoneInterpolation</name>
+        <param>
+          <type>Container</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="29" column="1" declfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" declline="29" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_interpolate_8hxx_1a666296c02f4a256111174b33abdf0bcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Iter</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::LinearInterpolation</definition>
+        <argsstring>(Iter, Iter) -&gt; LinearInterpolation&lt; FirstPointedType&lt; Iter &gt;, SecondPointedType&lt; Iter &gt;&gt;</argsstring>
+        <name>LinearInterpolation</name>
+        <param>
+          <type>Iter</type>
+        </param>
+        <param>
+          <type>Iter</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="47" column="1" declfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" declline="47" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_interpolate_8hxx_1a591ab418954e0267c8dcd84577992bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::LinearInterpolation</definition>
+        <argsstring>(Container) -&gt; LinearInterpolation&lt; FirstContainedType&lt; Container &gt;, SecondContainedType&lt; Container &gt;&gt;</argsstring>
+        <name>LinearInterpolation</name>
+        <param>
+          <type>Container</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" line="50" column="1" declfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" declline="50" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_interpolate_8hpp_1aa95ed717ef8002151158b2bd0bba29cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::NLOHMANN_JSON_SERIALIZE_ENUM</definition>
+        <argsstring>(InterpolationType, { { InterpolationType::NONE, &quot;none&quot; }, { InterpolationType::LINEAR, &quot;linear&quot; }, { InterpolationType::CUBIC, &quot;cubic&quot; }, }) template&lt; typename In</argsstring>
+        <name>NLOHMANN_JSON_SERIALIZE_ENUM</name>
+        <param>
+          <type>InterpolationType</type>
+        </param>
+        <param>
+          <type>{ { InterpolationType::NONE, &quot;none&quot; }, { InterpolationType::LINEAR, &quot;linear&quot; }, { InterpolationType::CUBIC, &quot;cubic&quot; }, }</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="18" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/Vector4.hxx" line="7" column="1"/>
+  </compounddef>
+</doxygen>

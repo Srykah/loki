@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kind="class" language="C++" prot="public">
+    <compoundname>loki::common::EnumerateWrapper::iterator</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ad0bf7b7dd1bd1905ad6acb49489465ed" prot="private" static="no">
+        <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, typename T::const_iterator, typename T::iterator &gt;</type>
+        <definition>using loki::common::EnumerateWrapper&lt; T &gt;::iterator::inner_iterator =  std::conditional_t&lt; std::is_const_v&lt;T&gt;, typename T::const_iterator, typename T::iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>inner_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="19" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a16e2643d23cc36fcfe84c434f84f59d4" prot="private" static="no">
+        <type>typename std::iterator_traits&lt; inner_iterator &gt;::reference</type>
+        <definition>using loki::common::EnumerateWrapper&lt; T &gt;::iterator::inner_reference =  typename std::iterator_traits&lt;inner_iterator&gt;::reference</definition>
+        <argsstring></argsstring>
+        <name>inner_reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="23" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1abe2bcc58256db93b9fa0734742bcb7dc" prot="public" static="no">
+        <type>std::pair&lt; size_t, inner_reference &gt;</type>
+        <definition>using loki::common::EnumerateWrapper&lt; T &gt;::iterator::reference =  std::pair&lt;size_t, inner_reference&gt;</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="26" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a77e481fc237ae016a9110173a0ecc32f" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t loki::common::EnumerateWrapper&lt; T &gt;::iterator::_pos</definition>
+        <argsstring></argsstring>
+        <name>_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="39" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a7fdbb2665694a5bde827a7282a0e943d" prot="private" static="no" mutable="no">
+        <type>inner_iterator</type>
+        <definition>inner_iterator loki::common::EnumerateWrapper&lt; T &gt;::iterator::_it</definition>
+        <argsstring></argsstring>
+        <name>_it</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="40" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6043a73154f9d4e45f4822b5eb54429d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::EnumerateWrapper&lt; T &gt;::iterator::iterator</definition>
+        <argsstring>(inner_iterator it)</argsstring>
+        <name>iterator</name>
+        <param>
+          <type>inner_iterator</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="28" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a1cd53ddbce662b848c2e334c924fcad4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>reference</type>
+        <definition>reference loki::common::EnumerateWrapper&lt; T &gt;::iterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="30" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ae54b3c5e1f723c718c6ce56480483228" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kindref="compound">iterator</ref> &amp;</type>
+        <definition>iterator&amp; loki::common::EnumerateWrapper&lt; T &gt;::iterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="32" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6a0c86e232e320c28a6d8a64d4606e30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator loki::common::EnumerateWrapper&lt; T &gt;::iterator::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="33" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a68ea2e262dd4c79d065c43d8e8e7f884" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::common::EnumerateWrapper&lt; T &gt;::iterator::operator==</definition>
+        <argsstring>(iterator const &amp;it) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kindref="compound">iterator</ref> const &amp;</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="35" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a850b59ba3e7175ad0afed020b849541e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::common::EnumerateWrapper&lt; T &gt;::iterator::operator!=</definition>
+        <argsstring>(iterator const &amp;it) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type><ref refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kindref="compound">iterator</ref> const &amp;</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="36" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="36" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="18" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="18" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a7fdbb2665694a5bde827a7282a0e943d" prot="private" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>_it</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a77e481fc237ae016a9110173a0ecc32f" prot="private" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>_pos</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ad0bf7b7dd1bd1905ad6acb49489465ed" prot="private" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>inner_iterator</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a16e2643d23cc36fcfe84c434f84f59d4" prot="private" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>inner_reference</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6043a73154f9d4e45f4822b5eb54429d" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>iterator</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a850b59ba3e7175ad0afed020b849541e" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>operator!=</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a1cd53ddbce662b848c2e334c924fcad4" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>operator*</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ae54b3c5e1f723c718c6ce56480483228" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>operator++</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6a0c86e232e320c28a6d8a64d4606e30" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>operator++</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a68ea2e262dd4c79d065c43d8e8e7f884" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>operator==</name></member>
+      <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1abe2bcc58256db93b9fa0734742bcb7dc" prot="public" virt="non-virtual"><scope>loki::common::EnumerateWrapper::iterator</scope><name>reference</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

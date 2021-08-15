@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_rectangle_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::RectangleObjectData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_rectangle_object_data_1ad66585f24bd70d75eaf9a25d276844d8" prot="public" static="no" mutable="no">
+        <type>sf::FloatRect</type>
+        <definition>sf::FloatRect loki::tiles::RectangleObjectData::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="27" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_rectangle_object_data_1ad6721579a018f067bd72cdea9fb55794" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::tiles::RectangleObjectData::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="28" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="26" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="26" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_rectangle_object_data_1ad66585f24bd70d75eaf9a25d276844d8" prot="public" virt="non-virtual"><scope>loki::tiles::RectangleObjectData</scope><name>rect</name></member>
+      <member refid="structloki_1_1tiles_1_1_rectangle_object_data_1ad6721579a018f067bd72cdea9fb55794" prot="public" virt="non-virtual"><scope>loki::tiles::RectangleObjectData</scope><name>rotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

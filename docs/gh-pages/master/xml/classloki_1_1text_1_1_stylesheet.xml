@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1text_1_1_stylesheet" kind="class" language="C++" prot="public">
+    <compoundname>loki::text::Stylesheet</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1text_1_1_stylesheet_1a10c85e1672c84f3780c6efe09246bcf6" prot="private" static="no" mutable="no">
+        <type>std::map&lt; sf::String, <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &gt;</type>
+        <definition>std::map&lt;sf::String, AnimatedTextStyle&gt; loki::text::Stylesheet::styles</definition>
+        <argsstring></argsstring>
+        <name>styles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="27" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1text_1_1_stylesheet_1a0c43df0b1970e27cea9e21824d8ce822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::Stylesheet::setStyle</definition>
+        <argsstring>(const sf::String &amp;styleName, const AnimatedTextStyle &amp;defaultStyle)</argsstring>
+        <name>setStyle</name>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>styleName</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>defaultStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="17" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_stylesheet_1a073e86f9c8f4fd32bbf50ecf06754652" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::Stylesheet::setDefaultStyle</definition>
+        <argsstring>(const AnimatedTextStyle &amp;defaultStyle)</argsstring>
+        <name>setDefaultStyle</name>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>defaultStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="18" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_stylesheet_1a3f766de5d82f279591d8fd0f2851498a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+        <definition>const AnimatedTextStyle &amp; loki::text::Stylesheet::getStyle</definition>
+        <argsstring>(const sf::String &amp;styleName) const</argsstring>
+        <name>getStyle</name>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>styleName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="19" column="28" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_stylesheet_1a4ec2dcb34beef199949a89f499a24038" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+        <definition>const AnimatedTextStyle &amp; loki::text::Stylesheet::getDefaultStyle</definition>
+        <argsstring>() const</argsstring>
+        <name>getDefaultStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="20" column="28" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_stylesheet_1a15c9b3d922201be34c3689493ba13ace" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref></type>
+        <definition>AnimatedTextStyle loki::text::Stylesheet::getNewStyleFromBase</definition>
+        <argsstring>(const AnimatedTextStyle &amp;base, const std::vector&lt; sf::String &gt; &amp;styleNames) const</argsstring>
+        <name>getNewStyleFromBase</name>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; sf::String &gt; &amp;</type>
+          <declname>styleNames</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="22" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp" bodystart="13" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a4ec2dcb34beef199949a89f499a24038" prot="public" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>getDefaultStyle</name></member>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a15c9b3d922201be34c3689493ba13ace" prot="public" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>getNewStyleFromBase</name></member>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a3f766de5d82f279591d8fd0f2851498a" prot="public" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>getStyle</name></member>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a073e86f9c8f4fd32bbf50ecf06754652" prot="public" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>setDefaultStyle</name></member>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a0c43df0b1970e27cea9e21824d8ce822" prot="public" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>setStyle</name></member>
+      <member refid="classloki_1_1text_1_1_stylesheet_1a10c85e1672c84f3780c6efe09246bcf6" prot="private" virt="non-virtual"><scope>loki::text::Stylesheet</scope><name>styles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

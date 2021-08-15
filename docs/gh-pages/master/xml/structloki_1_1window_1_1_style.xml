@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1window_1_1_style" kind="struct" language="C++" prot="public">
+    <compoundname>loki::window::Style</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1a5cfda675bf9c2e93951b68f62b02846c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::NONE</definition>
+        <argsstring></argsstring>
+        <name>NONE</name>
+        <initializer>{sf::Style::None}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="13" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1ae4cddcf06d56b58cc79056ad2d2bc4c2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::TITLEBAR</definition>
+        <argsstring></argsstring>
+        <name>TITLEBAR</name>
+        <initializer>{sf::Style::Titlebar}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="14" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1ae3062f58ed296bb8056f2764ca3e0109" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::RESIZE</definition>
+        <argsstring></argsstring>
+        <name>RESIZE</name>
+        <initializer>{sf::Style::Resize}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="15" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1ac143497cdbd17651bbc2fa10dee78e16" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::CLOSE</definition>
+        <argsstring></argsstring>
+        <name>CLOSE</name>
+        <initializer>{sf::Style::Close}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="16" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1afdb37bba0d808e0a893c1e4b804c4e4a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::FULLSCREEN</definition>
+        <argsstring></argsstring>
+        <name>FULLSCREEN</name>
+        <initializer>{sf::Style::Fullscreen}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="17" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1aa711c3995df721166c3fa32e2f993b80" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::LETTERBOXED_ZOOM</definition>
+        <argsstring></argsstring>
+        <name>LETTERBOXED_ZOOM</name>
+        <initializer>{LETTERBOXED_ZOOM_VALUE}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="18" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1a78feec8ace47c0b640e2a3b18c709e16" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::INTEGER_ZOOM_RATIO</definition>
+        <argsstring></argsstring>
+        <name>INTEGER_ZOOM_RATIO</name>
+        <initializer>{INTEGER_ZOOM_RATIO_VALUE}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="19" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1a9e1f1f6f6eb37415b7bc3e32c9b41941" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>const Style loki::window::Style::DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT</name>
+        <initializer>{sf::Style::Default | LETTERBOXED_ZOOM_VALUE}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="20" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1window_1_1_style_1ae990f19b8adf4120b1ad35bf98a2cece" prot="public" static="no" mutable="no">
+        <type>sf::Uint32</type>
+        <definition>sf::Uint32 loki::window::Style::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="22" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1window_1_1_style_1a64527e9047eb4b5d381732c47b69d507" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref> &amp;</type>
+        <definition>Style &amp; loki::window::Style::operator|=</definition>
+        <argsstring>(Style second)</argsstring>
+        <name>operator|=</name>
+        <param>
+          <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+          <declname>second</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="24" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1window_1_1_style_1abf523bafe0b347423040e1c44f306fd5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>Style loki::window::Style::operator|</definition>
+        <argsstring>(Style second) const</argsstring>
+        <name>operator|</name>
+        <param>
+          <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+          <declname>second</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="25" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1window_1_1_style_1a78977ca3fad1e146ebad8ee28582a38d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::window::Style::contains</definition>
+        <argsstring>(Style flags) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="26" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1window_1_1_style_1ae6bca77239458877bcd7a2208db7d817" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Uint32</type>
+        <definition>sf::Uint32 loki::window::Style::toSFMLWindowStyle</definition>
+        <argsstring>() const</argsstring>
+        <name>toSFMLWindowStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="27" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::window::Style</label>
+        <link refid="structloki_1_1window_1_1_style"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>CLOSE</edgelabel>
+          <edgelabel>DEFAULT</edgelabel>
+          <edgelabel>FULLSCREEN</edgelabel>
+          <edgelabel>INTEGER_ZOOM_RATIO</edgelabel>
+          <edgelabel>LETTERBOXED_ZOOM</edgelabel>
+          <edgelabel>NONE</edgelabel>
+          <edgelabel>RESIZE</edgelabel>
+          <edgelabel>TITLEBAR</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Style.hpp" bodystart="12" bodyend="28"/>
+    <listofallmembers>
+      <member refid="structloki_1_1window_1_1_style_1ac143497cdbd17651bbc2fa10dee78e16" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>CLOSE</name></member>
+      <member refid="structloki_1_1window_1_1_style_1a78977ca3fad1e146ebad8ee28582a38d" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>contains</name></member>
+      <member refid="structloki_1_1window_1_1_style_1a9e1f1f6f6eb37415b7bc3e32c9b41941" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>DEFAULT</name></member>
+      <member refid="structloki_1_1window_1_1_style_1afdb37bba0d808e0a893c1e4b804c4e4a" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>FULLSCREEN</name></member>
+      <member refid="structloki_1_1window_1_1_style_1a78feec8ace47c0b640e2a3b18c709e16" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>INTEGER_ZOOM_RATIO</name></member>
+      <member refid="structloki_1_1window_1_1_style_1aa711c3995df721166c3fa32e2f993b80" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>LETTERBOXED_ZOOM</name></member>
+      <member refid="structloki_1_1window_1_1_style_1a5cfda675bf9c2e93951b68f62b02846c" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>NONE</name></member>
+      <member refid="structloki_1_1window_1_1_style_1abf523bafe0b347423040e1c44f306fd5" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>operator|</name></member>
+      <member refid="structloki_1_1window_1_1_style_1a64527e9047eb4b5d381732c47b69d507" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>operator|=</name></member>
+      <member refid="structloki_1_1window_1_1_style_1ae3062f58ed296bb8056f2764ca3e0109" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>RESIZE</name></member>
+      <member refid="structloki_1_1window_1_1_style_1ae4cddcf06d56b58cc79056ad2d2bc4c2" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>TITLEBAR</name></member>
+      <member refid="structloki_1_1window_1_1_style_1ae6bca77239458877bcd7a2208db7d817" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>toSFMLWindowStyle</name></member>
+      <member refid="structloki_1_1window_1_1_style_1ae990f19b8adf4120b1ad35bf98a2cece" prot="public" virt="non-virtual"><scope>loki::window::Style</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

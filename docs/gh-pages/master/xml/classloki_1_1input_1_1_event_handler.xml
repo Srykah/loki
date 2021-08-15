@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1input_1_1_event_handler" kind="class" language="C++" prot="public">
+    <compoundname>loki::input::EventHandler</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classloki_1_1input_1_1_event_handler_1ac8da0ad0427aa0d35ce51ae53e44a9e4" prot="private" static="no">
+        <type>std::map&lt; std::string, <ref refid="structloki_1_1input_1_1_input_state" kindref="compound">InputState</ref> &gt;</type>
+        <definition>using loki::input::EventHandler::PlayerInputStates =  std::map&lt;std::string, InputState&gt;</definition>
+        <argsstring></argsstring>
+        <name>PlayerInputStates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="26" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1input_1_1_event_handler_1a8d220de7ce9f67a25873e9575c353cf0" prot="private" static="no" mutable="no">
+        <type><ref refid="structloki_1_1input_1_1_input_settings" kindref="compound">InputSettings</ref></type>
+        <definition>InputSettings loki::input::EventHandler::settings</definition>
+        <argsstring></argsstring>
+        <name>settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="29" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1input_1_1_event_handler_1a54fe037bef873754e0a18afff0245307" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; PlayerInputStates &gt;</type>
+        <definition>std::vector&lt;PlayerInputStates&gt; loki::input::EventHandler::playerInputStates</definition>
+        <argsstring></argsstring>
+        <name>playerInputStates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="30" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1input_1_1_event_handler_1a06c8362ace280a5a8e814d7effe4e88c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structloki_1_1input_1_1_player_config" kindref="compound">PlayerConfig</ref> &gt;</type>
+        <definition>std::vector&lt;PlayerConfig&gt; loki::input::EventHandler::playerConfigs</definition>
+        <argsstring></argsstring>
+        <name>playerConfigs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="31" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a7a2832ad8204239b143882cdde5dc734" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::input::EventHandler::EventHandler</definition>
+        <argsstring>()=default</argsstring>
+        <name>EventHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="17" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a99cfc76e85f509f0eea4c143254aca60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::input::EventHandler::setSettings</definition>
+        <argsstring>(InputSettings _settings)</argsstring>
+        <name>setSettings</name>
+        <param>
+          <type><ref refid="structloki_1_1input_1_1_input_settings" kindref="compound">InputSettings</ref></type>
+          <declname>_settings</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="19" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a08955e533af7c1236a230eb41289ad78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::input::EventHandler::setPlayerConfig</definition>
+        <argsstring>(PlayerConfig &amp;&amp;playerConfig, int playerId=0)</argsstring>
+        <name>setPlayerConfig</name>
+        <param>
+          <type><ref refid="structloki_1_1input_1_1_player_config" kindref="compound">PlayerConfig</ref> &amp;&amp;</type>
+          <declname>playerConfig</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>playerId</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="20" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="16" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1aed47af4167aa76e82f6dbde5a54970ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::input::EventHandler::update</definition>
+        <argsstring>(const sf::Time &amp;delta)</argsstring>
+        <name>update</name>
+        <param>
+          <type>const sf::Time &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="22" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="45" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a3352731c8489123b5d504b85cb75fef3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1input_1_1_input_state" kindref="compound">InputState</ref></type>
+        <definition>InputState loki::input::EventHandler::getInputState</definition>
+        <argsstring>(const std::string &amp;inputName, int playerId=0) const</argsstring>
+        <name>getInputState</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>inputName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>playerId</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="23" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="103" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a9d03adbbdf4ad374b7a2f11f3ac21e78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::input::EventHandler::resetStates</definition>
+        <argsstring>(int playerId)</argsstring>
+        <name>resetStates</name>
+        <param>
+          <type>int</type>
+          <declname>playerId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="34" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="27" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a1950364393683fd9c6c6003e42a3386f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::input::EventHandler::resetTransitions</definition>
+        <argsstring>()</argsstring>
+        <name>resetTransitions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="35" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="61" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a06ca0dd95c70a4be317a91bba5f5766d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::input::EventHandler::isActive</definition>
+        <argsstring>(const InputTrigger &amp;trigger, int joystickId)</argsstring>
+        <name>isActive</name>
+        <param>
+          <type>const InputTrigger &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>joystickId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="36" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="73" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1input_1_1_event_handler_1a009c173ec314986953e381d22190fed2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::input::EventHandler::updateState</definition>
+        <argsstring>(InputState &amp;inputState, bool active)</argsstring>
+        <name>updateState</name>
+        <param>
+          <type><ref refid="structloki_1_1input_1_1_input_state" kindref="compound">InputState</ref> &amp;</type>
+          <declname>inputState</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="37" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp" bodystart="95" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp" bodystart="15" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classloki_1_1input_1_1_event_handler_1a7a2832ad8204239b143882cdde5dc734" prot="public" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>EventHandler</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a3352731c8489123b5d504b85cb75fef3" prot="public" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>getInputState</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a06ca0dd95c70a4be317a91bba5f5766d" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>isActive</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a06c8362ace280a5a8e814d7effe4e88c" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>playerConfigs</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1ac8da0ad0427aa0d35ce51ae53e44a9e4" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>PlayerInputStates</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a54fe037bef873754e0a18afff0245307" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>playerInputStates</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a9d03adbbdf4ad374b7a2f11f3ac21e78" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>resetStates</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a1950364393683fd9c6c6003e42a3386f" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>resetTransitions</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a08955e533af7c1236a230eb41289ad78" prot="public" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>setPlayerConfig</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a99cfc76e85f509f0eea4c143254aca60" prot="public" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>setSettings</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a8d220de7ce9f67a25873e9575c353cf0" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>settings</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1aed47af4167aa76e82f6dbde5a54970ed" prot="public" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>update</name></member>
+      <member refid="classloki_1_1input_1_1_event_handler_1a009c173ec314986953e381d22190fed2" prot="private" virt="non-virtual"><scope>loki::input::EventHandler</scope><name>updateState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_tuple_hash_sym" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::TupleHashSym</compoundname>
+    <includes refid="_tuple_hash_8hpp" local="no">TupleHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Tuple</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_tuple_hash_sym_1a4e8c095c5aa62a5a1f77ea0213388e2b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t loki::hash::TupleHashSym&lt; Tuple &gt;::operator()</definition>
+        <argsstring>(const Tuple &amp;val) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Tuple &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Symmetric hash operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tuple to hash symmetrically </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A symmetric tuple of the pair (order doesn&apos;t matter) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="34" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="34" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functor for hashing tuples symetrically. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>This functor only makes sense if all arguments of the tuple can compare equal to one another... </para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tuple</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the std::tuple </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="30" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="30" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_tuple_hash_sym_1a4e8c095c5aa62a5a1f77ea0213388e2b" prot="public" virt="non-virtual"><scope>loki::hash::TupleHashSym</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

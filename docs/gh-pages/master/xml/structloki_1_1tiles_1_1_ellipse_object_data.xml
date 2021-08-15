@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_ellipse_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::EllipseObjectData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_ellipse_object_data_1a01d66db447df95966c9474074bdd4752" prot="public" static="no" mutable="no">
+        <type>sf::FloatRect</type>
+        <definition>sf::FloatRect loki::tiles::EllipseObjectData::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="23" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_ellipse_object_data_1a9bf1c3f94752369af3f63f29f7f2c4e2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::tiles::EllipseObjectData::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="24" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="22" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="22" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_ellipse_object_data_1a01d66db447df95966c9474074bdd4752" prot="public" virt="non-virtual"><scope>loki::tiles::EllipseObjectData</scope><name>rect</name></member>
+      <member refid="structloki_1_1tiles_1_1_ellipse_object_data_1a9bf1c3f94752369af3f63f29f7f2c4e2" prot="public" virt="non-virtual"><scope>loki::tiles::EllipseObjectData</scope><name>rotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

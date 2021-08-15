@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_2bc1df544e36d2cc79f9178bd4971bfd" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/text</compoundname>
+    <innerdir refid="dir_53d4fe9736c0f91011bfc97299909222">D:/prog/cpp/custom_libs/loki/src/loki/text/impl</innerdir>
+    <innerfile refid="text_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_animated_text_8cpp">AnimatedText.cpp</innerfile>
+    <innerfile refid="_animated_text_8hpp">AnimatedText.hpp</innerfile>
+    <innerfile refid="_animated_text_style_8cpp">AnimatedTextStyle.cpp</innerfile>
+    <innerfile refid="_animated_text_style_8hpp">AnimatedTextStyle.hpp</innerfile>
+    <innerfile refid="_annotated_text_8cpp">AnnotatedText.cpp</innerfile>
+    <innerfile refid="_annotated_text_8hpp">AnnotatedText.hpp</innerfile>
+    <innerfile refid="_stylesheet_8cpp">Stylesheet.cpp</innerfile>
+    <innerfile refid="_stylesheet_8hpp">Stylesheet.hpp</innerfile>
+    <innerfile refid="_text_animation_view_data_8cpp">TextAnimationViewData.cpp</innerfile>
+    <innerfile refid="_text_animation_view_data_8hpp">TextAnimationViewData.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_animation_data_8cpp" kind="file" language="C++">
+    <compoundname>AnimationData.cpp</compoundname>
+    <includes refid="_animation_data_8hpp" local="yes">AnimationData.hpp</includes>
+    <includes local="no">fmt/format.h</includes>
+    <incdepgraph>
+      <node id="19">
+        <label>Time.hpp</label>
+        <link refid="_time_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="13">
+        <label>Optional.hpp</label>
+        <link refid="_optional_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>charconv</label>
+      </node>
+      <node id="2">
+        <label>AnimationData.hpp</label>
+        <link refid="_animation_data_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="21">
+        <label>SFML/System/Vector2.hpp</label>
+      </node>
+      <node id="18">
+        <label>SFML/System/String.hpp</label>
+      </node>
+      <node id="15">
+        <label>Rect.hpp</label>
+        <link refid="json_2_rect_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Keyframe.hpp</label>
+        <link refid="_keyframe_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Color.hpp</label>
+        <link refid="json_2_color_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Vector2.hpp</label>
+        <link refid="json_2_vector2_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>loki/json/All.hpp</label>
+        <link refid="json_2_all_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>loki/math/Interpolate.hpp</label>
+        <link refid="_interpolate_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="14">
+        <label>optional</label>
+      </node>
+      <node id="7">
+        <label>impl/Interpolate.hxx</label>
+        <link refid="_interpolate_8hxx"/>
+      </node>
+      <node id="16">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+      <node id="17">
+        <label>String.hpp</label>
+        <link refid="_string_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp</label>
+        <link refid="_animation_data_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SFML/System/Time.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1anim">loki::anim</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_animation_data_8hpp" kindref="compound">AnimationData.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fmt/format.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">std::string<sp/>toPercent(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fmt::format(</highlight><highlight class="stringliteral">&quot;{:.2f}%&quot;</highlight><highlight class="normal">,<sp/>100.f<sp/>*<sp/>val);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fromPercent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>str)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strtof(str.c_str(),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>/<sp/>100.f;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::anim<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>to_json(nlohmann::json&amp;<sp/>json,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AnimationData&amp;<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>json[</highlight><highlight class="stringliteral">&quot;duration&quot;</highlight><highlight class="normal">]<sp/>=<sp/>data.duration;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>json[</highlight><highlight class="stringliteral">&quot;repeat&quot;</highlight><highlight class="normal">]<sp/>=<sp/>data.repeat;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>json[</highlight><highlight class="stringliteral">&quot;interpolation&quot;</highlight><highlight class="normal">]<sp/>=<sp/>data.interpolation;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[time,<sp/>keyframe]<sp/>:<sp/>data.keyframes)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>json[</highlight><highlight class="stringliteral">&quot;keyframes&quot;</highlight><highlight class="normal">].emplace(toPercent(time),<sp/>keyframe);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>from_json(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>json,<sp/>AnimationData&amp;<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>json.at(</highlight><highlight class="stringliteral">&quot;duration&quot;</highlight><highlight class="normal">).get_to(data.duration);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>json.at(</highlight><highlight class="stringliteral">&quot;repeat&quot;</highlight><highlight class="normal">).get_to(data.repeat);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>json.at(</highlight><highlight class="stringliteral">&quot;interpolation&quot;</highlight><highlight class="normal">).get_to(data.interpolation);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[percent,<sp/>keyframe]<sp/>:<sp/>json.at(</highlight><highlight class="stringliteral">&quot;keyframes&quot;</highlight><highlight class="normal">).items())<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>keyframe.get_to(data.keyframes[fromPercent(percent)]);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp"/>
+  </compounddef>
+</doxygen>

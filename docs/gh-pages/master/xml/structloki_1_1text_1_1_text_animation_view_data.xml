@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1text_1_1_text_animation_view_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::text::TextAnimationViewData</compoundname>
+    <basecompoundref refid="classloki_1_1anim_1_1_animation_view_data" prot="public" virt="non-virtual">loki::anim::AnimationViewData</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1text_1_1_text_animation_view_data_1a35368866baceb45e5ba7ebf7b38fb3b0" prot="public" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time loki::text::TextAnimationViewData::dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp" line="15" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1text_1_1_text_animation_view_data_1a73a7e2fb2638891f2a5832b78034e83a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::text::TextAnimationViewData::TextAnimationViewData</definition>
+        <argsstring>(const anim::AnimationData &amp;animationData, sf::Time dt)</argsstring>
+        <name>TextAnimationViewData</name>
+        <param>
+          <type>const <ref refid="structloki_1_1anim_1_1_animation_data" kindref="compound">anim::AnimationData</ref> &amp;</type>
+          <declname>animationData</declname>
+        </param>
+        <param>
+          <type>sf::Time</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp" line="13" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.cpp" bodystart="10" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>loki::text::TextAnimationViewData</label>
+        <link refid="structloki_1_1text_1_1_text_animation_view_data"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::anim::AnimationViewData</label>
+        <link refid="classloki_1_1anim_1_1_animation_view_data"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::text::TextAnimationViewData</label>
+        <link refid="structloki_1_1text_1_1_text_animation_view_data"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::anim::AnimationViewData</label>
+        <link refid="classloki_1_1anim_1_1_animation_view_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp" bodystart="12" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1af926b5e0b8a18a2b952de8349f473d35" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>AnimationViewData</name></member>
+      <member refid="structloki_1_1text_1_1_text_animation_view_data_1a35368866baceb45e5ba7ebf7b38fb3b0" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>dt</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a74548d733acbb83c8e68811f384f1dce" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getColor</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1ab01256b8585e82e4e86bb817da6f089e" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getDuration</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afd1e7864ebfef65ca4e23317292e16b5" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getOrigin</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1aece118d8222123f64b26de7b2a95ff82" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getPosition</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a1fce74d435d6bcc9106a5fffeeef3c15" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getRotation</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a28e02f7169d07609ca1b0f6d1def5e03" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getScale</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afff744eb6df42f44ec546fe75a389f1e" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getTextureRect</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a294348854e3a3ca36908160335c3a406" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>getTransform</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afbedcfbf62814a376ab4835aca563e2e" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>isRepeated</name></member>
+      <member refid="structloki_1_1text_1_1_text_animation_view_data_1a73a7e2fb2638891f2a5832b78034e83a" prot="public" virt="non-virtual"><scope>loki::text::TextAnimationViewData</scope><name>TextAnimationViewData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

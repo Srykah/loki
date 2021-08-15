@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_none_interpolation" kind="class" language="C++" prot="public">
+    <compoundname>loki::common::NoneInterpolation</compoundname>
+    <basecompoundref refid="classloki_1_1common_1_1_interpolation_base" prot="public" virt="non-virtual">loki::common::InterpolationBase&lt; In, Out &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename In</type>
+      </param>
+      <param>
+        <type>typename Out</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1common_1_1_none_interpolation_1ae56b124ffff17509c8fca57366b03d0a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; In, Out &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;In, Out&gt; &gt; loki::common::NoneInterpolation&lt; In, Out &gt;::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="44" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_none_interpolation_1a50212ee3293b02d6061b21a8831569ca" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::common::NoneInterpolation&lt; In, Out &gt;::NoneInterpolation</definition>
+        <argsstring>(Args &amp;&amp;... args)</argsstring>
+        <name>NoneInterpolation</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="38" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_none_interpolation_1a9715dc43eae472b627b77c37787fd705" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::NoneInterpolation&lt; In, Out &gt;::~NoneInterpolation</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~NoneInterpolation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="39" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_none_interpolation_1a7a316abfc89f638e7742bd4a03ee7c21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>Out</type>
+        <definition>Out loki::common::NoneInterpolation&lt; In, Out &gt;::interpolate</definition>
+        <argsstring>(const In &amp;x) const override</argsstring>
+        <name>interpolate</name>
+        <reimplements refid="classloki_1_1common_1_1_interpolation_base_1a1c0910cb231accb2e992370bf1fe749e">interpolate</reimplements>
+        <param>
+          <type>const In &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="41" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/impl/Interpolate.hxx" bodystart="32" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>loki::common::NoneInterpolation&lt; In, Out &gt;</label>
+        <link refid="classloki_1_1common_1_1_none_interpolation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::common::InterpolationBase&lt; In, Out &gt;</label>
+        <link refid="classloki_1_1common_1_1_interpolation_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::common::NoneInterpolation&lt; In, Out &gt;</label>
+        <link refid="classloki_1_1common_1_1_none_interpolation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::common::InterpolationBase&lt; In, Out &gt;</label>
+        <link refid="classloki_1_1common_1_1_interpolation_base"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="35" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="35" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_none_interpolation_1a7a316abfc89f638e7742bd4a03ee7c21" prot="public" virt="virtual"><scope>loki::common::NoneInterpolation</scope><name>interpolate</name></member>
+      <member refid="classloki_1_1common_1_1_none_interpolation_1a50212ee3293b02d6061b21a8831569ca" prot="public" virt="non-virtual"><scope>loki::common::NoneInterpolation</scope><name>NoneInterpolation</name></member>
+      <member refid="classloki_1_1common_1_1_interpolation_base_1a2a377206db392cf37366f05b81e90f07" prot="public" virt="virtual"><scope>loki::common::NoneInterpolation</scope><name>operator()</name></member>
+      <member refid="classloki_1_1common_1_1_none_interpolation_1ae56b124ffff17509c8fca57366b03d0a" prot="private" virt="non-virtual"><scope>loki::common::NoneInterpolation</scope><name>points</name></member>
+      <member refid="classloki_1_1common_1_1_interpolation_base_1a2befea657fd0258cbc9d46e258c571cc" prot="public" virt="virtual"><scope>loki::common::NoneInterpolation</scope><name>~InterpolationBase</name></member>
+      <member refid="classloki_1_1common_1_1_none_interpolation_1a9715dc43eae472b627b77c37787fd705" prot="public" virt="non-virtual"><scope>loki::common::NoneInterpolation</scope><name>~NoneInterpolation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

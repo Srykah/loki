@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_interpolation_base" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>loki::common::InterpolationBase</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_interpolation_base_1a2befea657fd0258cbc9d46e258c571cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual loki::common::InterpolationBase::~InterpolationBase</definition>
+        <argsstring>()=default</argsstring>
+        <name>~InterpolationBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="27" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_interpolation_base_1a1c0910cb231accb2e992370bf1fe749e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>Out</type>
+        <definition>virtual Out loki::common::InterpolationBase::interpolate</definition>
+        <argsstring>(const In &amp;x) const =0</argsstring>
+        <name>interpolate</name>
+        <reimplementedby refid="classloki_1_1common_1_1_none_interpolation_1a7a316abfc89f638e7742bd4a03ee7c21">interpolate</reimplementedby>
+        <reimplementedby refid="classloki_1_1common_1_1_linear_interpolation_1a9a908440fdade8b8b3267574da60aeb6">interpolate</reimplementedby>
+        <param>
+          <type>const In &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="28" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_interpolation_base_1a2a377206db392cf37366f05b81e90f07" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>Out</type>
+        <definition>virtual Out loki::common::InterpolationBase::operator()</definition>
+        <argsstring>(const In &amp;x) const final</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const In &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="29" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" line="25" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Interpolate.hpp" bodystart="25" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_interpolation_base_1a1c0910cb231accb2e992370bf1fe749e" prot="public" virt="pure-virtual"><scope>loki::common::InterpolationBase</scope><name>interpolate</name></member>
+      <member refid="classloki_1_1common_1_1_interpolation_base_1a2a377206db392cf37366f05b81e90f07" prot="public" virt="virtual"><scope>loki::common::InterpolationBase</scope><name>operator()</name></member>
+      <member refid="classloki_1_1common_1_1_interpolation_base_1a2befea657fd0258cbc9d46e258c571cc" prot="public" virt="virtual"><scope>loki::common::InterpolationBase</scope><name>~InterpolationBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

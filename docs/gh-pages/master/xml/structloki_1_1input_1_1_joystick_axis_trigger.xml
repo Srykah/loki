@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1input_1_1_joystick_axis_trigger" kind="struct" language="C++" prot="public">
+    <compoundname>loki::input::JoystickAxisTrigger</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceae" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Direction</name>
+        <enumvalue id="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaeaab6c31432785221bae58327ef5f6ea58" prot="public">
+          <name>POSITIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaea50546bf973283065b6ccf09faf7a580a" prot="public">
+          <name>NEGATIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaea6328e5e3186c227a021ef2ff77e40197" prot="public">
+          <name>BOTH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="19" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1input_1_1_joystick_axis_trigger_1a442d5aff3c94d23e32652c3d519c956c" prot="public" static="no" mutable="no">
+        <type>sf::Joystick::Axis</type>
+        <definition>sf::Joystick::Axis loki::input::JoystickAxisTrigger::axis</definition>
+        <argsstring></argsstring>
+        <name>axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="18" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1input_1_1_joystick_axis_trigger_1a7505bbb55c77afae9a2d2ef94202fbd3" prot="public" static="no" mutable="no">
+        <type>enum loki::input::JoystickAxisTrigger::Direction</type>
+        <definition>enum loki::input::JoystickAxisTrigger::Direction loki::input::JoystickAxisTrigger::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="23" column="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1input_1_1_joystick_axis_trigger_1adbcf8debba4159cfac7a58c50a770239" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::input::JoystickAxisTrigger::deadZone</definition>
+        <argsstring></argsstring>
+        <name>deadZone</name>
+        <initializer>= 30.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="24" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="17" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="17" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1a442d5aff3c94d23e32652c3d519c956c" prot="public" virt="non-virtual"><scope>loki::input::JoystickAxisTrigger</scope><name>axis</name></member>
+      <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1adbcf8debba4159cfac7a58c50a770239" prot="public" virt="non-virtual"><scope>loki::input::JoystickAxisTrigger</scope><name>deadZone</name></member>
+      <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceae" prot="public" virt="non-virtual"><scope>loki::input::JoystickAxisTrigger</scope><name>Direction</name></member>
+      <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1a7505bbb55c77afae9a2d2ef94202fbd3" prot="public" virt="non-virtual"><scope>loki::input::JoystickAxisTrigger</scope><name>direction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

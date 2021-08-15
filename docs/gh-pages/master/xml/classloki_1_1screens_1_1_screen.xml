@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1screens_1_1_screen" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>loki::screens::Screen</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1screens_1_1_screen_1afe048f1501525ecb3bdfe0bdec45742c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::screens::Screen::ready</definition>
+        <argsstring></argsstring>
+        <name>ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="44" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1screens_1_1_screen_1ad5314959c26d8645eff4073acf92adb5" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Signal::Trigger</ref>, std::function&lt; bool(std::any)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;Signal::Trigger, std::function&lt;bool(std::any)&gt; &gt; loki::screens::Screen::signalHandlers</definition>
+        <argsstring></argsstring>
+        <name>signalHandlers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="46" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classloki_1_1screens_1_1_screen_1a700153d98e696f931a2fa507175c7e60" prot="protected" static="no" mutable="no">
+        <type><ref refid="classloki_1_1screens_1_1_screen_stack" kindref="compound">ScreenStack</ref> &amp;</type>
+        <definition>ScreenStack&amp; loki::screens::Screen::stack</definition>
+        <argsstring></argsstring>
+        <name>stack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="49" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a2b8115f7cc183a2cad0b6be225f72921" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::screens::Screen::Screen</definition>
+        <argsstring>(ScreenStack &amp;stack)</argsstring>
+        <name>Screen</name>
+        <param>
+          <type><ref refid="classloki_1_1screens_1_1_screen_stack" kindref="compound">ScreenStack</ref> &amp;</type>
+          <declname>stack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="20" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1aa9da7c5a3d2776b51b91d0f2eb27eb5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual loki::screens::Screen::~Screen</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Screen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="21" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a480b4ae1aa0ec85653d9a074a1491372" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::screens::Screen::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="23" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a0d8cbd621a748176aaa845f8f077ec87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::screens::Screen::isReady</definition>
+        <argsstring>() const</argsstring>
+        <name>isReady</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="24" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1ae4bed5b048fe97e30790533e763d9284" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool loki::screens::Screen::update</definition>
+        <argsstring>(sf::Time delta)=0</argsstring>
+        <name>update</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="26" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a1291ca66e52464a1dd2c7849607a7057" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool loki::screens::Screen::updateView</definition>
+        <argsstring>(sf::Time delta)=0</argsstring>
+        <name>updateView</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="27" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a49a63660aad93ef99afbb5d0cdcdaa1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool loki::screens::Screen::render</definition>
+        <argsstring>(sf::RenderTarget &amp;target, sf::RenderStates states) const =0</argsstring>
+        <name>render</name>
+        <param>
+          <type>sf::RenderTarget &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>sf::RenderStates</type>
+          <declname>states</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="28" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1ab3370a116c978eec543bf1eedf63a140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::screens::Screen::registerSignalHandler</definition>
+        <argsstring>(const Signal::Trigger &amp;trigger, std::function&lt; bool()&gt; fun)</argsstring>
+        <name>registerSignalHandler</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Signal::Trigger</ref> &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool()&gt;</type>
+          <declname>fun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="31" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a7493160835e0b177caf9853416c02fab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::screens::Screen::registerSignalHandler</definition>
+        <argsstring>(const Signal::Trigger &amp;trigger, std::function&lt; bool(Args...)&gt; fun)</argsstring>
+        <name>registerSignalHandler</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Signal::Trigger</ref> &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool(Args...)&gt;</type>
+          <declname>fun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="34" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.inl" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a07ef36af735d214cf2af5bcf8856bda0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fun</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::screens::Screen::registerSignalHandler</definition>
+        <argsstring>(const Signal::Trigger &amp;trigger, Fun fun)</argsstring>
+        <name>registerSignalHandler</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Signal::Trigger</ref> &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>Fun</type>
+          <declname>fun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="37" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.inl" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1aa5f3bec93699a6fd2447374047db6aaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::screens::Screen::removeSignalHandler</definition>
+        <argsstring>(const Signal::Trigger &amp;trigger)</argsstring>
+        <name>removeSignalHandler</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Signal::Trigger</ref> &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="39" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="38" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1a9642339cc45c9c8add232ce213e761dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::screens::Screen::clearAllSignalHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>clearAllSignalHandlers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="40" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1screens_1_1_screen_1ad51dcebe7cb1f2d4edaa1bd0fb75812c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::screens::Screen::handleSignal</definition>
+        <argsstring>(Signal &amp;signal)</argsstring>
+        <name>handleSignal</name>
+        <param>
+          <type><ref refid="structloki_1_1screens_1_1_signal" kindref="compound">Signal</ref> &amp;</type>
+          <declname>signal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="41" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.cpp" bodystart="20" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::screens::Screen</label>
+        <link refid="classloki_1_1screens_1_1_screen"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>stack</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::screens::ScreenStack</label>
+        <link refid="classloki_1_1screens_1_1_screen_stack"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" line="18" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Screen.hpp" bodystart="18" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classloki_1_1screens_1_1_screen_1a9642339cc45c9c8add232ce213e761dc" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>clearAllSignalHandlers</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1ad51dcebe7cb1f2d4edaa1bd0fb75812c" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>handleSignal</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a480b4ae1aa0ec85653d9a074a1491372" prot="public" virt="virtual"><scope>loki::screens::Screen</scope><name>init</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a0d8cbd621a748176aaa845f8f077ec87" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>isReady</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1afe048f1501525ecb3bdfe0bdec45742c" prot="private" virt="non-virtual"><scope>loki::screens::Screen</scope><name>ready</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1ab3370a116c978eec543bf1eedf63a140" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>registerSignalHandler</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a7493160835e0b177caf9853416c02fab" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>registerSignalHandler</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a07ef36af735d214cf2af5bcf8856bda0" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>registerSignalHandler</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1aa5f3bec93699a6fd2447374047db6aaf" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>removeSignalHandler</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a49a63660aad93ef99afbb5d0cdcdaa1f" prot="public" virt="pure-virtual"><scope>loki::screens::Screen</scope><name>render</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a2b8115f7cc183a2cad0b6be225f72921" prot="public" virt="non-virtual"><scope>loki::screens::Screen</scope><name>Screen</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1ad5314959c26d8645eff4073acf92adb5" prot="private" virt="non-virtual"><scope>loki::screens::Screen</scope><name>signalHandlers</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a700153d98e696f931a2fa507175c7e60" prot="protected" virt="non-virtual"><scope>loki::screens::Screen</scope><name>stack</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1ae4bed5b048fe97e30790533e763d9284" prot="public" virt="pure-virtual"><scope>loki::screens::Screen</scope><name>update</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1a1291ca66e52464a1dd2c7849607a7057" prot="public" virt="pure-virtual"><scope>loki::screens::Screen</scope><name>updateView</name></member>
+      <member refid="classloki_1_1screens_1_1_screen_1aa9da7c5a3d2776b51b91d0f2eb27eb5e" prot="public" virt="virtual"><scope>loki::screens::Screen</scope><name>~Screen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

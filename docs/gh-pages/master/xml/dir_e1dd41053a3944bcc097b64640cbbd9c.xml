@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e1dd41053a3944bcc097b64640cbbd9c" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/hash</compoundname>
+    <innerfile refid="hash_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_combine_hash_8hpp">CombineHash.hpp</innerfile>
+    <innerfile refid="_iter_hash_8hpp">IterHash.hpp</innerfile>
+    <innerfile refid="_pair_hash_8hpp">PairHash.hpp</innerfile>
+    <innerfile refid="_tuple_hash_8hpp">TupleHash.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/"/>
+  </compounddef>
+</doxygen>

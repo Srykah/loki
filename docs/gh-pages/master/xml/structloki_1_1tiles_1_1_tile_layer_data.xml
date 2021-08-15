@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_tile_layer_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::TileLayerData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1af8cac5dfcdadd41a818527a7d6e4f176" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int loki::tiles::TileLayerData::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="18" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1aa1b2a3767af027806f47c9d8757df33f" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TileLayerData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="19" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1a7ceb419bed283729b87c2583854f1ab2" prot="public" static="no" mutable="no">
+        <type><ref refid="classloki_1_1common_1_1_matrix" kindref="compound">common::Matrix</ref>&lt; int &gt;</type>
+        <definition>common::Matrix&lt;int&gt; loki::tiles::TileLayerData::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="20" column="18" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1a1020e741c96f52d97d0bbf9463548eca" prot="public" static="no" mutable="no">
+        <type>PropertyMap</type>
+        <definition>PropertyMap loki::tiles::TileLayerData::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="21" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1a3577e80107155156e3e950ce940fcdd4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::tiles::TileLayerData::opacity</definition>
+        <argsstring></argsstring>
+        <name>opacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="22" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_data_1ab56912b41fd84d385d387f6aae98e237" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::tiles::TileLayerData::visible</definition>
+        <argsstring></argsstring>
+        <name>visible</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="23" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1tiles_1_1_tile_layer_data_1a5774554b918400d0312c42c3f26926d7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::TileLayerData::TileLayerData</definition>
+        <argsstring>(const nlohmann::json &amp;layerData)</argsstring>
+        <name>TileLayerData</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>layerData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="16" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.cpp" bodystart="10" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::tiles::TileLayerData</label>
+        <link refid="structloki_1_1tiles_1_1_tile_layer_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="5">
+        <label>loki::common::Matrix&lt; int &gt;</label>
+        <link refid="classloki_1_1common_1_1_matrix"/>
+      </node>
+      <node id="4">
+        <label>std::map&lt; std::string, PropertyData &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a7ceb419bed283729b87c2583854f1ab2" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>data</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1af8cac5dfcdadd41a818527a7d6e4f176" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>id</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1aa1b2a3767af027806f47c9d8757df33f" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>name</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a3577e80107155156e3e950ce940fcdd4" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>opacity</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a1020e741c96f52d97d0bbf9463548eca" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>properties</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a5774554b918400d0312c42c3f26926d7" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>TileLayerData</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_data_1ab56912b41fd84d385d387f6aae98e237" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerData</scope><name>visible</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

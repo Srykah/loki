@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_b172c821305f6bd4c7973efbfe329432" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/common</compoundname>
+    <innerdir refid="dir_4acb19a563bce90fc20c6e1a57ec0d72">D:/prog/cpp/custom_libs/loki/src/loki/common/impl</innerdir>
+    <innerfile refid="common_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="common_2_color_8hpp">Color.hpp</innerfile>
+    <innerfile refid="_iter_adapters_8hpp">IterAdapters.hpp</innerfile>
+    <innerfile refid="_matrix_8hpp">Matrix.hpp</innerfile>
+    <innerfile refid="_matrix_8inl">Matrix.inl</innerfile>
+    <innerfile refid="_random_8cpp">Random.cpp</innerfile>
+    <innerfile refid="_random_8hpp">Random.hpp</innerfile>
+    <innerfile refid="common_2_template_helpers_8hpp">TemplateHelpers.hpp</innerfile>
+    <innerfile refid="_vector4_8hpp">Vector4.hpp</innerfile>
+    <innerfile refid="_vertex_array_iterator_8cpp">VertexArrayIterator.cpp</innerfile>
+    <innerfile refid="_vertex_array_iterator_8hpp">VertexArrayIterator.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/"/>
+  </compounddef>
+</doxygen>

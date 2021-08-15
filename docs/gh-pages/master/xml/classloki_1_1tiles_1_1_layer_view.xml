@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1tiles_1_1_layer_view" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>loki::tiles::LayerView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Drawable</basecompoundref>
+    <derivedcompoundref refid="classloki_1_1tiles_1_1_object_layer_view" prot="public" virt="non-virtual">loki::tiles::ObjectLayerView</derivedcompoundref>
+    <derivedcompoundref refid="classloki_1_1tiles_1_1_tile_layer_view" prot="public" virt="non-virtual">loki::tiles::TileLayerView</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1tiles_1_1_layer_view_1ae1bf0959bae8f3689d7526cbce62b1cd" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classloki_1_1tiles_1_1_map_view" kindref="compound">MapView</ref> &amp;</type>
+        <definition>const MapView&amp; loki::tiles::LayerView::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" line="24" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1tiles_1_1_layer_view_1ace4d2a707bb79cc8bbfc4eb62f18ba8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::tiles::LayerView::LayerView</definition>
+        <argsstring>(const MapView &amp;parent)</argsstring>
+        <name>LayerView</name>
+        <param>
+          <type>const <ref refid="classloki_1_1tiles_1_1_map_view" kindref="compound">MapView</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" line="13" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" bodystart="13" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1tiles_1_1_layer_view_1a4a25fb543bf7f62d7f19bf3d87996def" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void loki::tiles::LayerView::update</definition>
+        <argsstring>(const sf::Time &amp;delta)=0</argsstring>
+        <name>update</name>
+        <reimplementedby refid="classloki_1_1tiles_1_1_tile_layer_view_1a76149f170b9f593dc77537ad8570e8d4">update</reimplementedby>
+        <reimplementedby refid="classloki_1_1tiles_1_1_object_layer_view_1aad20ed08a9322bc79beb4f77fc610179">update</reimplementedby>
+        <param>
+          <type>const sf::Time &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" line="16" column="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classloki_1_1tiles_1_1_layer_view_1acafa72aa51c2fc43193358dcb08d3f5e" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>sf::Transform</type>
+        <definition>sf::Transform loki::tiles::LayerView::getParentTransform</definition>
+        <argsstring>() const</argsstring>
+        <name>getParentTransform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" line="19" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="4">
+        <label>loki::tiles::TileLayerView</label>
+        <link refid="classloki_1_1tiles_1_1_tile_layer_view"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::tiles::LayerView</label>
+        <link refid="classloki_1_1tiles_1_1_layer_view"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::tiles::ObjectLayerView</label>
+        <link refid="classloki_1_1tiles_1_1_object_layer_view"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::tiles::LayerView</label>
+        <link refid="classloki_1_1tiles_1_1_layer_view"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" line="11" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp" bodystart="11" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classloki_1_1tiles_1_1_layer_view_1acafa72aa51c2fc43193358dcb08d3f5e" prot="protected" virt="non-virtual"><scope>loki::tiles::LayerView</scope><name>getParentTransform</name></member>
+      <member refid="classloki_1_1tiles_1_1_layer_view_1ace4d2a707bb79cc8bbfc4eb62f18ba8c" prot="public" virt="non-virtual"><scope>loki::tiles::LayerView</scope><name>LayerView</name></member>
+      <member refid="classloki_1_1tiles_1_1_layer_view_1ae1bf0959bae8f3689d7526cbce62b1cd" prot="private" virt="non-virtual"><scope>loki::tiles::LayerView</scope><name>parent</name></member>
+      <member refid="classloki_1_1tiles_1_1_layer_view_1a4a25fb543bf7f62d7f19bf3d87996def" prot="public" virt="pure-virtual"><scope>loki::tiles::LayerView</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_animation_view_data_8hpp" kind="file" language="C++">
+    <compoundname>AnimationViewData.hpp</compoundname>
+    <includes local="no">SFML/Graphics/Transform.hpp</includes>
+    <includes refid="_vector4_8hpp" local="no">loki/common/Vector4.hpp</includes>
+    <includes refid="_animation_data_8hpp" local="yes">AnimationData.hpp</includes>
+    <includedby refid="_animation_view_data_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp</includedby>
+    <includedby refid="anim_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/anim/All.hpp</includedby>
+    <includedby refid="_animator_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp</includedby>
+    <includedby refid="_sprite_view_data_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp</includedby>
+    <includedby refid="_text_animation_view_data_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp</includedby>
+    <incdepgraph>
+      <node id="22">
+        <label>Time.hpp</label>
+        <link refid="_time_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Optional.hpp</label>
+        <link refid="_optional_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>charconv</label>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics/Transform.hpp</label>
+      </node>
+      <node id="7">
+        <label>AnimationData.hpp</label>
+        <link refid="_animation_data_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="24">
+        <label>SFML/System/Vector2.hpp</label>
+      </node>
+      <node id="21">
+        <label>SFML/System/String.hpp</label>
+      </node>
+      <node id="19">
+        <label>Rect.hpp</label>
+        <link refid="json_2_rect_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Keyframe.hpp</label>
+        <link refid="_keyframe_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Color.hpp</label>
+        <link refid="json_2_color_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Vector2.hpp</label>
+        <link refid="json_2_vector2_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>loki/json/All.hpp</label>
+        <link refid="json_2_all_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp</label>
+        <link refid="_animation_view_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>loki/math/Interpolate.hpp</label>
+        <link refid="_interpolate_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="18">
+        <label>optional</label>
+      </node>
+      <node id="12">
+        <label>impl/Interpolate.hxx</label>
+        <link refid="_interpolate_8hxx"/>
+      </node>
+      <node id="3">
+        <label>loki/common/Vector4.hpp</label>
+        <link refid="_vector4_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>impl/Vector4.hxx</label>
+        <link refid="_vector4_8hxx"/>
+      </node>
+      <node id="5">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+      <node id="20">
+        <label>String.hpp</label>
+        <link refid="_string_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="8">
+        <label>SFML/System/Time.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="13">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.cpp</label>
+        <link refid="_animated_text_8cpp"/>
+      </node>
+      <node id="19">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.cpp</label>
+        <link refid="_text_animation_view_data_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/All.hpp</label>
+        <link refid="sprites_2_all_8hpp"/>
+      </node>
+      <node id="17">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp</label>
+        <link refid="_stylesheet_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/Sprite.hpp</label>
+        <link refid="_sprite_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp</label>
+        <link refid="_animated_text_style_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp</label>
+        <link refid="_text_animation_view_data_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.hpp</label>
+        <link refid="_animated_text_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx</label>
+        <link refid="_animator_8hxx"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp</label>
+        <link refid="_stylesheet_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp</label>
+        <link refid="_animation_view_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp</label>
+        <link refid="_sprite_view_data_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp</label>
+        <link refid="_animated_glyph_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp</label>
+        <link refid="_animator_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/All.hpp</label>
+        <link refid="anim_2_all_8hpp"/>
+      </node>
+      <node id="14">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp</label>
+        <link refid="_annotated_text_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.cpp</label>
+        <link refid="_sprite_view_data_8cpp"/>
+      </node>
+      <node id="15">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/All.hpp</label>
+        <link refid="text_2_all_8hpp"/>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp</label>
+        <link refid="_animated_glyph_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classloki_1_1anim_1_1_animation_view_data" prot="public">loki::anim::AnimationViewData</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1anim">loki::anim</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Transform.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_vector4_8hpp" kindref="compound">loki/common/Vector4.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_animation_data_8hpp" kindref="compound">AnimationData.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::anim<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classloki_1_1anim_1_1_animation_view_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classloki_1_1anim_1_1_animation_view_data" kindref="compound">AnimationViewData</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classloki_1_1anim_1_1_animation_view_data" kindref="compound">AnimationViewData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1anim_1_1_animation_data" kindref="compound">AnimationData</ref>&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Time&amp;<sp/>getDuration()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isRepeated()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::Vector2f<sp/>getOrigin(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::Vector2f<sp/>getPosition(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getRotation(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::Vector2f<sp/>getScale(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::Transform<sp/>getTransform(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::Color<sp/>getColor(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>sf::IntRect<sp/>getTextureRect(sf::Time<sp/>instant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Time<sp/>duration;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>sf::Vector2f&gt;&gt;<sp/>ipOrigin;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>sf::Vector2f&gt;&gt;<sp/>ipPos;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>float&gt;&gt;<sp/>ipRot;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>sf::Vector2f&gt;&gt;<sp/>ipScale;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>common::Vector4f&gt;&gt;<sp/>ipColor;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;common::InterpolationBase&lt;float,<sp/>common::Vector4f&gt;&gt;<sp/>ipTexRect;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp"/>
+  </compounddef>
+</doxygen>

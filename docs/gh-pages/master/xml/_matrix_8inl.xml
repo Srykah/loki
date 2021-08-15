@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_matrix_8inl" kind="file" language="C++">
+    <compoundname>Matrix.inl</compoundname>
+    <includedby refid="_matrix_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/common/Matrix.hpp</includedby>
+    <includedby refid="common_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/common/All.hpp</includedby>
+    <invincdepgraph>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp</label>
+        <link refid="_map_data_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.hpp</label>
+        <link refid="_map_view_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.cpp</label>
+        <link refid="_object_layer_view_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp</label>
+        <link refid="_layer_view_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/Matrix.inl</label>
+        <link refid="_matrix_8inl"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</label>
+        <link refid="tiles_2_all_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp</label>
+        <link refid="_tile_layer_view_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/All.hpp</label>
+        <link refid="common_2_all_8hpp"/>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp</label>
+        <link refid="_tile_layer_data_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.cpp</label>
+        <link refid="_map_view_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.hpp</label>
+        <link refid="_object_layer_view_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/Matrix.hpp</label>
+        <link refid="_matrix_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1common">loki::common</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::common<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Iterator&gt;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">Matrix&lt;T&gt;::Matrix(std::size_t<sp/>width,<sp/>std::size_t<sp/>height,<sp/>Iterator<sp/>iterator)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>width(width),<sp/>height(height)<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>data.reserve(width<sp/>*<sp/>height);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>std::copy_n(iterator,<sp/>width<sp/>*<sp/>height,<sp/>std::back_inserter(data));</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">Matrix&lt;T&gt;::Matrix(std::size_t<sp/>width,<sp/>std::size_t<sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>defaultValue)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">:<sp/>width(width)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">,<sp/>height(height)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">,<sp/>data(width<sp/>*<sp/>height,<sp/>defaultValue)<sp/>{}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/Matrix.inl"/>
+  </compounddef>
+</doxygen>

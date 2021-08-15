@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_pair_are_equal_sym" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::PairAreEqualSym</compoundname>
+    <includes refid="_pair_hash_8hpp" local="no">PairHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Pair1</type>
+      </param>
+      <param>
+        <type>class Pair2</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_pair_are_equal_sym_1ac38dd922dfe3842d4a68c12f3141a812" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::hash::PairAreEqualSym&lt; Pair1, Pair2 &gt;::operator()</definition>
+        <argsstring>(const Pair1 &amp;lhs, const Pair2 &amp;rhs) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Pair1 &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Pair2 &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>No-order comparison operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left-hand side pair to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right-hand side pair to compare </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if both pair represent the same (mathematical) set, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="50" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functor for comparing pairs where order of arguments doesn&apos;t matter. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="warning"><para>This functor only exists for pairs where the two arguments can compare equal to one another ! </para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Pair1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the first std::pair </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Pair2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the second std::pair </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="45" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="45" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_pair_are_equal_sym_1ac38dd922dfe3842d4a68c12f3141a812" prot="public" virt="non-virtual"><scope>loki::hash::PairAreEqualSym</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

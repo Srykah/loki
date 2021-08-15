@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>nlohmann::adl_serializer&lt; sf::Color &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1a25df54a4427b175080d05417cbb0469e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void nlohmann::adl_serializer&lt; sf::Color &gt;::to_json</definition>
+        <argsstring>(json &amp;j, const sf::Color &amp;color)</argsstring>
+        <name>to_json</name>
+        <param>
+          <type>json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const sf::Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="43" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1aed2ca465a0af20aa3830e47d634623d5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void nlohmann::adl_serializer&lt; sf::Color &gt;::from_json</definition>
+        <argsstring>(const json &amp;j, sf::Color &amp;color)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>sf::Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="47" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" bodystart="47" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="42" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" bodystart="42" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1aed2ca465a0af20aa3830e47d634623d5" prot="public" virt="non-virtual"><scope>nlohmann::adl_serializer&lt; sf::Color &gt;</scope><name>from_json</name></member>
+      <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1a25df54a4427b175080d05417cbb0469e" prot="public" virt="non-virtual"><scope>nlohmann::adl_serializer&lt; sf::Color &gt;</scope><name>to_json</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

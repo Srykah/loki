@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1shapes_1_1_rounded_rectangle" kind="class" language="C++" prot="public">
+    <compoundname>loki::shapes::RoundedRectangle</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Shape</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1shapes_1_1_rounded_rectangle_1aa674df58bc4c927dc838f95cf07d236a" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::shapes::RoundedRectangle::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="25" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1shapes_1_1_rounded_rectangle_1ae502a04ad2be1a8273ca0af288773a65" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::shapes::RoundedRectangle::borderRadius</definition>
+        <argsstring></argsstring>
+        <name>borderRadius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="26" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1shapes_1_1_rounded_rectangle_1af5fb30c9f0587ad655f73f8ccec0a1e5" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t loki::shapes::RoundedRectangle::borderPointCount</definition>
+        <argsstring></argsstring>
+        <name>borderPointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="27" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_rounded_rectangle_1a22203c582c5a235843f145dd76b78aac" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::shapes::RoundedRectangle::RoundedRectangle</definition>
+        <argsstring>(sf::Vector2f size, float borderRadius, std::size_t borderPointCount=7)</argsstring>
+        <name>RoundedRectangle</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>borderRadius</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>borderPointCount</declname>
+          <defval>7</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="14" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.cpp" bodystart="11" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_rounded_rectangle_1a7ce09ad9a8a64f7fff2d9f2c510ca97c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::shapes::RoundedRectangle::~RoundedRectangle</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~RoundedRectangle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="17" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_rounded_rectangle_1ab324176eefec32ea056486bd7e5fbce4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t loki::shapes::RoundedRectangle::getPointCount</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="18" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.cpp" bodystart="20" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_rounded_rectangle_1ace6ffe34fbba7bad38a199d02f6c029e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::shapes::RoundedRectangle::getPoint</definition>
+        <argsstring>(std::size_t index) const override</argsstring>
+        <name>getPoint</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="19" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.cpp" bodystart="28" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_rounded_rectangle_1a4d20f74fa55599f4d1a3480994f647d1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::shapes::RoundedRectangle::getQuadrantOrigin</definition>
+        <argsstring>(std::size_t quadrant) const</argsstring>
+        <name>getQuadrantOrigin</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>quadrant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="22" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.cpp" bodystart="40" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>sf::Shape</label>
+      </node>
+      <node id="1">
+        <label>loki::shapes::RoundedRectangle</label>
+        <link refid="classloki_1_1shapes_1_1_rounded_rectangle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>sf::Shape</label>
+      </node>
+      <node id="1">
+        <label>loki::shapes::RoundedRectangle</label>
+        <link refid="classloki_1_1shapes_1_1_rounded_rectangle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/RoundedRectangle.hpp" bodystart="12" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1af5fb30c9f0587ad655f73f8ccec0a1e5" prot="private" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>borderPointCount</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ae502a04ad2be1a8273ca0af288773a65" prot="private" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>borderRadius</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ace6ffe34fbba7bad38a199d02f6c029e" prot="public" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>getPoint</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ab324176eefec32ea056486bd7e5fbce4" prot="public" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>getPointCount</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a4d20f74fa55599f4d1a3480994f647d1" prot="private" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>getQuadrantOrigin</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a22203c582c5a235843f145dd76b78aac" prot="public" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>RoundedRectangle</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1aa674df58bc4c927dc838f95cf07d236a" prot="private" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>size</name></member>
+      <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a7ce09ad9a8a64f7fff2d9f2c510ca97c" prot="public" virt="non-virtual"><scope>loki::shapes::RoundedRectangle</scope><name>~RoundedRectangle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

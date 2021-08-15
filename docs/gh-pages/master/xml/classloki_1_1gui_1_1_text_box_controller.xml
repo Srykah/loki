@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_text_box_controller" kind="class" language="C++" prot="public">
+    <compoundname>loki::gui::TextBoxController</compoundname>
+    <basecompoundref refid="classloki_1_1gui_1_1_widget" prot="public" virt="non-virtual">loki::gui::Widget</basecompoundref>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_event_text_box_controller" prot="public" virt="non-virtual">loki::gui::EventTextBoxController</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_box_controller_1abc05b7b8035f610f070aef3cb7e9558c" prot="private" static="no" mutable="no">
+        <type><ref refid="classloki_1_1gui_1_1_abstract_text_box" kindref="compound">AbstractTextBox</ref> *</type>
+        <definition>AbstractTextBox* loki::gui::TextBoxController::view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="37" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_box_controller_1a4f9ba4af2d7e58a68ba103449d721c03" prot="private" static="no" mutable="no">
+        <type>sf::String</type>
+        <definition>sf::String loki::gui::TextBoxController::str</definition>
+        <argsstring></argsstring>
+        <name>str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="38" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_box_controller_1abd7aa0412962ab8e7df8d1c4d00d3ce4" prot="private" static="no" mutable="no">
+        <type>sf::String::ConstIterator</type>
+        <definition>sf::String::ConstIterator loki::gui::TextBoxController::it</definition>
+        <argsstring></argsstring>
+        <name>it</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="39" column="29" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a5bfa7ad004d7a6b67b6523a3400870eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::gui::TextBoxController::TextBoxController</definition>
+        <argsstring>()=default</argsstring>
+        <name>TextBoxController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="17" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a0679fc341696a5782814b6f3bd765f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::gui::TextBoxController::~TextBoxController</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~TextBoxController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="18" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a9205b12357ae7fc3724197fdf52d3b0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::hide</definition>
+        <argsstring>() override</argsstring>
+        <name>hide</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1a7cebdeaf8e4684d9a95d093f9cafc15c">hide</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="20" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a0f77de71e6caaeadfb6fb224b0d8eab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::unhide</definition>
+        <argsstring>() override</argsstring>
+        <name>unhide</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1aea2a1c5649b66c343e9b45be099e854b">unhide</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="21" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a0d1fb86c22ebc074f87361dd80a4686d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::enable</definition>
+        <argsstring>() override</argsstring>
+        <name>enable</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1ab5c0ec32554ac9fe1bcac587187d5abf">enable</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="22" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a8ab3b303d4d503f0b99e2be678cdb403" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::disable</definition>
+        <argsstring>() override</argsstring>
+        <name>disable</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1a2aeaf04efa1f4e455a8a0d0df703a30e">disable</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="23" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1ac9e05495ae77248ef43cb807db97920d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::focus</definition>
+        <argsstring>() override</argsstring>
+        <name>focus</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1a958fbf8e597c061612c1ccbf1e5e1c27">focus</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="24" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1ac5f438596ceb70114717920fd1a8c8e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::unfocus</definition>
+        <argsstring>() override</argsstring>
+        <name>unfocus</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1a53feb9a9fad030095c4e5aca6ae2e509">unfocus</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="25" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a7bc6a00be962587b78919547806c8865" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::activate</definition>
+        <argsstring>() override</argsstring>
+        <name>activate</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1ab23287b78714c61f0583ef826165c49f">activate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="26" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a821abb03b79e976a3073077ba5735114" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::deactivate</definition>
+        <argsstring>() override</argsstring>
+        <name>deactivate</name>
+        <reimplements refid="classloki_1_1gui_1_1_widget_1abfe60f649c84b19d2620ef66779c9368">deactivate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="27" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a0b858cc210725a2ef4e2551685caf110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::setView</definition>
+        <argsstring>(AbstractTextBox *view)</argsstring>
+        <name>setView</name>
+        <param>
+          <type><ref refid="classloki_1_1gui_1_1_abstract_text_box" kindref="compound">AbstractTextBox</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="29" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="51" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a10047a0852b519f1f0ef34aa0dd7ffcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::setString</definition>
+        <argsstring>(const sf::String &amp;str)</argsstring>
+        <name>setString</name>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="30" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="63" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a8a7d285b92673bb25d65ac7b8f1aa833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextBoxController::advance</definition>
+        <argsstring>()</argsstring>
+        <name>advance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="32" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="74" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_box_controller_1a51c34f8b59423ad0187ef5a089e05a62" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::gui::TextBoxController::hasEnded</definition>
+        <argsstring>() const</argsstring>
+        <name>hasEnded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="34" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="1">
+        <label>loki::gui::TextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_text_box_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::gui::EventTextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_event_text_box_controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="1">
+        <label>loki::gui::TextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_text_box_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBoxController.hpp" bodystart="15" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a7bc6a00be962587b78919547806c8865" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>activate</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a8a7d285b92673bb25d65ac7b8f1aa833" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>advance</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a821abb03b79e976a3073077ba5735114" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>deactivate</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a8ab3b303d4d503f0b99e2be678cdb403" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>disable</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0d1fb86c22ebc074f87361dd80a4686d" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>enable</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1ac9e05495ae77248ef43cb807db97920d" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>focus</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a51c34f8b59423ad0187ef5a089e05a62" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>hasEnded</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a9205b12357ae7fc3724197fdf52d3b0f" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>hide</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>isActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>isEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>isFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>isHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1abd7aa0412962ab8e7df8d1c4d00d3ce4" prot="private" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>it</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>setActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>setEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>setFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>setHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a10047a0852b519f1f0ef34aa0dd7ffcf" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>setString</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0b858cc210725a2ef4e2551685caf110" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>setView</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a4f9ba4af2d7e58a68ba103449d721c03" prot="private" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>str</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a5bfa7ad004d7a6b67b6523a3400870eb" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>TextBoxController</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1ac5f438596ceb70114717920fd1a8c8e1" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>unfocus</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0f77de71e6caaeadfb6fb224b0d8eab5" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>unhide</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1abc05b7b8035f610f070aef3cb7e9558c" prot="private" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>view</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0679fc341696a5782814b6f3bd765f96" prot="public" virt="non-virtual"><scope>loki::gui::TextBoxController</scope><name>~TextBoxController</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" prot="public" virt="virtual"><scope>loki::gui::TextBoxController</scope><name>~Widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_capsule_8hpp" kind="file" language="C++">
+    <compoundname>Capsule.hpp</compoundname>
+    <includes local="no">SFML/Graphics/Shape.hpp</includes>
+    <includedby refid="shapes_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/shapes/All.hpp</includedby>
+    <includedby refid="_capsule_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp</label>
+        <link refid="_capsule_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics/Shape.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp</label>
+        <link refid="_capsule_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/shapes/All.hpp</label>
+        <link refid="shapes_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classloki_1_1shapes_1_1_capsule" prot="public">loki::shapes::Capsule</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1shapes">loki::shapes</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Shape.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::shapes<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classloki_1_1shapes_1_1_capsule" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classloki_1_1shapes_1_1_capsule" kindref="compound">Capsule</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>sf::Shape<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classloki_1_1shapes_1_1_capsule" kindref="compound">Capsule</ref>(sf::Vector2f<sp/>size,<sp/>std::size_t<sp/>borderPointCount<sp/>=<sp/>15);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>~<ref refid="classloki_1_1shapes_1_1_capsule" kindref="compound">Capsule</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>std::size_t<sp/>getPointCount()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>sf::Vector2f<sp/>getPoint(std::size_t<sp/>index)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>sf::Vector2f<sp/>size;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>std::size_t<sp/>borderPointCount;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1states" kind="namespace" language="C++">
+    <compoundname>loki::states</compoundname>
+    <innerclass refid="structloki_1_1states_1_1_state" prot="public">loki::states::State</innerclass>
+    <innerclass refid="classloki_1_1states_1_1_state_machine" prot="public">loki::states::StateMachine</innerclass>
+    <innerclass refid="structloki_1_1states_1_1_transition" prot="public">loki::states::Transition</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_state_index_8hpp_1ac76e7bfb2b3c31f519e04b80e8f1c56f" prot="public" static="no">
+        <type>unsigned long long int</type>
+        <definition>using loki::states::StateIndex = typedef unsigned long long int</definition>
+        <argsstring></argsstring>
+        <name>StateIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_state_index_8hpp_1a09e6490c3296ec395e7b2bfa1331d776" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr StateIndex</type>
+        <definition>constexpr StateIndex loki::states::ANY</definition>
+        <argsstring></argsstring>
+        <name>ANY</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" line="11" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_state_index_8hpp_1af1b934e189d4b2a26c29b79fcddf1edc" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr StateIndex</type>
+        <definition>constexpr StateIndex loki::states::NONE</definition>
+        <argsstring></argsstring>
+        <name>NONE</name>
+        <initializer>= -2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" line="12" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateIndex.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp" line="11" column="1"/>
+  </compounddef>
+</doxygen>

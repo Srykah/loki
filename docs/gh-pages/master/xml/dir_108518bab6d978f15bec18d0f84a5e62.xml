@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_108518bab6d978f15bec18d0f84a5e62" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/gui/list</compoundname>
+    <innerfile refid="_list_controller_8cpp">ListController.cpp</innerfile>
+    <innerfile refid="_list_controller_8hpp">ListController.hpp</innerfile>
+    <innerfile refid="_text_list_8cpp">TextList.cpp</innerfile>
+    <innerfile refid="_text_list_8hpp">TextList.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/"/>
+  </compounddef>
+</doxygen>

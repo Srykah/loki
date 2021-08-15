@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1hash" kind="namespace" language="C++">
+    <compoundname>loki::hash</compoundname>
+    <innerclass refid="structloki_1_1hash_1_1_iter_hash" prot="public">loki::hash::IterHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_hash" prot="public">loki::hash::PairHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_hash_sym" prot="public">loki::hash::PairHashSym</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_are_equal_sym" prot="public">loki::hash::PairAreEqualSym</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_tuple_hash" prot="public">loki::hash::TupleHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_tuple_hash_sym" prot="public">loki::hash::TupleHashSym</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_iter_hash_8hpp_1a5cf7c7517c80ad2120881c9c8faf466e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_iter_hash" kindref="compound">IterHash</ref>&lt; std::vector&lt; T &gt; &gt;</type>
+        <definition>using loki::hash::VectorHash = typedef IterHash&lt;std::vector&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>VectorHash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" line="24" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_pair_hash_8hpp_1a6492d2e587be46dceb90a25e93a92af8" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename S</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_pair_hash" kindref="compound">PairHash</ref>&lt; std::pair&lt; S, T &gt; &gt;</type>
+        <definition>using loki::hash::MakePairHash = typedef PairHash&lt;std::pair&lt;S, T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MakePairHash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="20" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_pair_hash_8hpp_1a80e0376645a77c27f2a422028a177609" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename S</type>
+          </param>
+          <param>
+            <type>typename T</type>
+            <defval>S</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_pair_hash_sym" kindref="compound">PairHashSym</ref>&lt; std::pair&lt; S, T &gt; &gt;</type>
+        <definition>using loki::hash::MakePairHashSym = typedef PairHashSym&lt;std::pair&lt;S, T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MakePairHashSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="37" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_pair_hash_8hpp_1a748faab52c14bba1397d89943ab4c2ad" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename S</type>
+          </param>
+          <param>
+            <type>typename T</type>
+            <defval>S</defval>
+          </param>
+          <param>
+            <type>typename U</type>
+            <defval>S</defval>
+          </param>
+          <param>
+            <type>typename V</type>
+            <defval>T</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_pair_are_equal_sym" kindref="compound">PairAreEqualSym</ref>&lt; std::pair&lt; S, T &gt;, std::pair&lt; U, V &gt; &gt;</type>
+        <definition>using loki::hash::MakePairAreEqualSym = typedef PairAreEqualSym&lt;std::pair&lt;S, T&gt;, std::pair&lt;U, V&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MakePairAreEqualSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="57" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_tuple_hash_8hpp_1a818a63a39acd0b3d911aec3d89fb9b7b" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_tuple_hash" kindref="compound">TupleHash</ref>&lt; std::tuple&lt; Args... &gt; &gt;</type>
+        <definition>using loki::hash::MakeTupleHash = typedef TupleHash&lt;std::tuple&lt;Args...&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MakeTupleHash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="23" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_tuple_hash_8hpp_1a4f9f682fd1ef05718e6c49c9de246ff5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structloki_1_1hash_1_1_tuple_hash_sym" kindref="compound">TupleHashSym</ref>&lt; std::tuple&lt; Args... &gt; &gt;</type>
+        <definition>using loki::hash::MakeTupleHashSym = typedef TupleHashSym&lt;std::tuple&lt;Args...&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MakeTupleHashSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="44" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_combine_hash_8hpp_1aa8305eb9eeb6ea7734df9549de46e172" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr std::size_t</type>
+        <definition>constexpr std::size_t loki::hash::combineHashImpl</definition>
+        <argsstring>(std::size_t seed)</argsstring>
+        <name>combineHashImpl</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="8" column="23" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="_combine_hash_8hpp_1aed3b0112ec55ef93fcdf9e2d5df82665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t loki::hash::combineHashImpl</definition>
+        <argsstring>(std::size_t seed, const T &amp;val, const Args &amp;... args)</argsstring>
+        <name>combineHashImpl</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>seed</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="13" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="_combine_hash_8hpp_1ae559a1fe05f847ed2fe362b0cfe6defd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t loki::hash::combineHash</definition>
+        <argsstring>(const Args &amp;... args)</argsstring>
+        <name>combineHash</name>
+        <param>
+          <type>const Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="20" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h_1ga14c2a32c34750444fca67ed0098465d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>size_t</type>
+        <definition>size_t loki::hash::combineHashSym</definition>
+        <argsstring>(const Args &amp;... args)</argsstring>
+        <name>combineHashSym</name>
+        <param>
+          <type>const Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Hashes all arguments and combines them symmetrically. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In opposition to combineHash, <computeroutput>combineHashSym</computeroutput> doesn&apos;t care about order between the arguments. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of <computeroutput>args</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The values to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash combination of the arguments where order doesn&apos;t matter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="99" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" bodystart="99" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="6" column="1"/>
+  </compounddef>
+</doxygen>

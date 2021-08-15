@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacenlohmann" kind="namespace" language="C++">
+    <compoundname>nlohmann</compoundname>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4" prot="public">nlohmann::adl_serializer&lt; sf::Color &gt;</innerclass>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01std_1_1optional_3_01_t_01_4_01_4" prot="public">nlohmann::adl_serializer&lt; std::optional&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_rect_3_01_t_01_4_01_4" prot="public">nlohmann::adl_serializer&lt; sf::Rect&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4" prot="public">nlohmann::adl_serializer&lt; sf::String &gt;</innerclass>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_time_01_4" prot="public">nlohmann::adl_serializer&lt; sf::Time &gt;</innerclass>
+    <innerclass refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_vector2_3_01_t_01_4_01_4" prot="public">nlohmann::adl_serializer&lt; sf::Vector2&lt; T &gt; &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/Color.hpp" line="39" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_state_8hpp" kind="file" language="C++">
+    <compoundname>State.hpp</compoundname>
+    <includes local="no">functional</includes>
+    <includes local="no">SFMl/System/Time.hpp</includes>
+    <includedby refid="_state_machine_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp</includedby>
+    <includedby refid="states_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/states/All.hpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>SFMl/System/Time.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp</label>
+        <link refid="_state_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp</label>
+        <link refid="_state_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp</label>
+        <link refid="_state_machine_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp</label>
+        <link refid="_state_machine_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/states/All.hpp</label>
+        <link refid="states_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1states_1_1_state" prot="public">loki::states::State</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1states">loki::states</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFMl/System/Time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::states<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structloki_1_1states_1_1_state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1states_1_1_state" kindref="compound">State</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>std::function&lt;void()&gt;<sp/>onEnter;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>std::function&lt;void(sf::Time)&gt;<sp/>onUpdate;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>std::function&lt;void()&gt;<sp/>onLeave<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/State.hpp"/>
+  </compounddef>
+</doxygen>

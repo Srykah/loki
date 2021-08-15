@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1input_1_1_input_state" kind="struct" language="C++" prot="public">
+    <compoundname>loki::input::InputState</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Status</name>
+        <enumvalue id="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa4dda5e6db55dfda466c8531bc95be9cd" prot="public">
+          <name>INACTIVE</name>
+          <initializer>= 0b00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aaa82e95f23994acc794bb017fe207281b" prot="public">
+          <name>TRIGGERED</name>
+          <initializer>= 0b11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa26bd59c9bea91c42427939971da08e2e" prot="public">
+          <name>ACTIVE</name>
+          <initializer>= 0b01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa297ee421499f89a014877bf6b95f5d88" prot="public">
+          <name>ENDED</name>
+          <initializer>= 0b10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="11" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1input_1_1_input_state_1ad5707057de8ae141b4337fa5ba50e593" prot="public" static="no" mutable="no">
+        <type>enum loki::input::InputState::Status</type>
+        <definition>enum loki::input::InputState::Status loki::input::InputState::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <initializer>= Status::INACTIVE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="16" column="11"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1input_1_1_input_state_1a5e5b4502fa32f49b45ebc837ffd22ec5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::input::InputState::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="18" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_state_1a5dc2db2cb5dbe4e78b2bd232301d356d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::input::InputState::isActive</definition>
+        <argsstring>() const</argsstring>
+        <name>isActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="20" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_state_1ab12f932b73aa5cb36da47ac350921dc8" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::input::InputState::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="21" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_state_1a8f41c2b3dfee652758d4f1fae6f38e27" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::input::InputState::hasChanged</definition>
+        <argsstring>() const</argsstring>
+        <name>hasChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="22" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp" bodystart="10" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa26bd59c9bea91c42427939971da08e2e" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>ACTIVE</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa297ee421499f89a014877bf6b95f5d88" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>ENDED</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a8f41c2b3dfee652758d4f1fae6f38e27" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>hasChanged</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa4dda5e6db55dfda466c8531bc95be9cd" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>INACTIVE</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5dc2db2cb5dbe4e78b2bd232301d356d" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>isActive</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1ab12f932b73aa5cb36da47ac350921dc8" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>operator bool</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43a" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>Status</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1ad5707057de8ae141b4337fa5ba50e593" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>status</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aaa82e95f23994acc794bb017fe207281b" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>TRIGGERED</name></member>
+      <member refid="structloki_1_1input_1_1_input_state_1a5e5b4502fa32f49b45ebc837ffd22ec5" prot="public" virt="non-virtual"><scope>loki::input::InputState</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

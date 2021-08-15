@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_input_state_8hpp" kind="file" language="C++">
+    <compoundname>InputState.hpp</compoundname>
+    <includedby refid="input_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/input/All.hpp</includedby>
+    <includedby refid="_event_handler_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp</label>
+        <link refid="_event_handler_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/All.hpp</label>
+        <link refid="gui_2_all_8hpp"/>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/All.hpp</label>
+        <link refid="input_2_all_8hpp"/>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp</label>
+        <link refid="_event_text_box_controller_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp</label>
+        <link refid="_input_state_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp</label>
+        <link refid="_event_handler_8cpp"/>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp</label>
+        <link refid="_event_text_box_controller_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1input_1_1_input_state" prot="public">loki::input::InputState</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1input">loki::input</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::input<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="structloki_1_1input_1_1_input_state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1input_1_1_input_state" kindref="compound">InputState</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>Status<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>INACTIVE<sp/>=<sp/>0b00,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>TRIGGERED<sp/>=<sp/>0b11,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>ACTIVE<sp/>=<sp/>0b01,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>ENDED<sp/>=<sp/>0b10</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>}<sp/>status<sp/>=<sp/>Status::INACTIVE;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>0.f;<sp/></highlight><highlight class="comment">//<sp/>[-1;<sp/>1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isActive()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status<sp/>==<sp/>Status::TRIGGERED<sp/>||<sp/>status<sp/>==<sp/>Status::ACTIVE;<sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isActive();<sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasChanged()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status<sp/>==<sp/>Status::TRIGGERED<sp/>||<sp/>status<sp/>==<sp/>Status::ENDED;<sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputState.hpp"/>
+  </compounddef>
+</doxygen>

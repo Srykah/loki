@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki" kind="namespace" language="C++">
+    <compoundname>loki</compoundname>
+    <innernamespace refid="namespaceloki_1_1anim">loki::anim</innernamespace>
+    <innernamespace refid="namespaceloki_1_1common">loki::common</innernamespace>
+    <innernamespace refid="namespaceloki_1_1gui">loki::gui</innernamespace>
+    <innernamespace refid="namespaceloki_1_1hash">loki::hash</innernamespace>
+    <innernamespace refid="namespaceloki_1_1input">loki::input</innernamespace>
+    <innernamespace refid="namespaceloki_1_1math">loki::math</innernamespace>
+    <innernamespace refid="namespaceloki_1_1screens">loki::screens</innernamespace>
+    <innernamespace refid="namespaceloki_1_1shapes">loki::shapes</innernamespace>
+    <innernamespace refid="namespaceloki_1_1sprites">loki::sprites</innernamespace>
+    <innernamespace refid="namespaceloki_1_1states">loki::states</innernamespace>
+    <innernamespace refid="namespaceloki_1_1styles">loki::styles</innernamespace>
+    <innernamespace refid="namespaceloki_1_1text">loki::text</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tiles">loki::tiles</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tpl">loki::tpl</innernamespace>
+    <innernamespace refid="namespaceloki_1_1window">loki::window</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" line="21" column="1"/>
+  </compounddef>
+</doxygen>

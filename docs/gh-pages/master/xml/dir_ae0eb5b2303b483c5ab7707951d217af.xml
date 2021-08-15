@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_ae0eb5b2303b483c5ab7707951d217af" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/sprites</compoundname>
+    <innerfile refid="sprites_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_sprite_8cpp">Sprite.cpp</innerfile>
+    <innerfile refid="_sprite_8hpp">Sprite.hpp</innerfile>
+    <innerfile refid="_sprite_data_8cpp">SpriteData.cpp</innerfile>
+    <innerfile refid="_sprite_data_8hpp">SpriteData.hpp</innerfile>
+    <innerfile refid="_sprite_view_data_8cpp">SpriteViewData.cpp</innerfile>
+    <innerfile refid="_sprite_view_data_8hpp">SpriteViewData.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/"/>
+  </compounddef>
+</doxygen>

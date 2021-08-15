@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_bc8735bb45e48ea72c56ed3820fe74de" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/input/service</compoundname>
+    <innerfile refid="_event_handler_8cpp">EventHandler.cpp</innerfile>
+    <innerfile refid="_event_handler_8hpp">EventHandler.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/service/"/>
+  </compounddef>
+</doxygen>

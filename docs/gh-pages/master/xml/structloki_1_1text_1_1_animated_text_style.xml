@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1text_1_1_animated_text_style" kind="struct" language="C++" prot="public">
+    <compoundname>loki::text::AnimatedTextStyle</compoundname>
+    <basecompoundref refid="structloki_1_1styles_1_1_text_style" prot="public" virt="non-virtual">loki::styles::TextStyle</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1text_1_1_animated_text_style_1a6ced18cc6f10208c7628e9571e7b24d9" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structloki_1_1text_1_1_text_animation_view_data" kindref="compound">TextAnimationViewData</ref> &gt;</type>
+        <definition>std::optional&lt;TextAnimationViewData&gt; loki::text::AnimatedTextStyle::appear</definition>
+        <argsstring></argsstring>
+        <name>appear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="14" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1text_1_1_animated_text_style_1aaafc04b7ac0cb3e09f28fed65e23a51f" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structloki_1_1text_1_1_text_animation_view_data" kindref="compound">TextAnimationViewData</ref> &gt;</type>
+        <definition>std::optional&lt;TextAnimationViewData&gt; loki::text::AnimatedTextStyle::animation</definition>
+        <argsstring></argsstring>
+        <name>animation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="15" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1text_1_1_animated_text_style_1a88e831ba9cb0b21dc96ed4c6030cc7a2" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structloki_1_1text_1_1_text_animation_view_data" kindref="compound">TextAnimationViewData</ref> &gt;</type>
+        <definition>std::optional&lt;TextAnimationViewData&gt; loki::text::AnimatedTextStyle::disappear</definition>
+        <argsstring></argsstring>
+        <name>disappear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="16" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1text_1_1_animated_text_style_1a3ba0d0e950e11bcefe824cae37c67b44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+        <definition>AnimatedTextStyle &amp; loki::text::AnimatedTextStyle::overrideWith</definition>
+        <argsstring>(const AnimatedTextStyle &amp;other)</argsstring>
+        <name>overrideWith</name>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="18" column="21" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.cpp" bodystart="10" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1text_1_1_animated_text_style_1a0d2de72160f666d0a28d8688e68409ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref></type>
+        <definition>AnimatedTextStyle loki::text::AnimatedTextStyle::cloneAndOverrideWith</definition>
+        <argsstring>(const AnimatedTextStyle &amp;other) const</argsstring>
+        <name>cloneAndOverrideWith</name>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="19" column="21" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>loki::styles::TextStyle</label>
+        <link refid="structloki_1_1styles_1_1_text_style"/>
+      </node>
+      <node id="1">
+        <label>loki::text::AnimatedTextStyle</label>
+        <link refid="structloki_1_1text_1_1_animated_text_style"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>loki::styles::TextStyle</label>
+        <link refid="structloki_1_1styles_1_1_text_style"/>
+      </node>
+      <node id="1">
+        <label>loki::text::AnimatedTextStyle</label>
+        <link refid="structloki_1_1text_1_1_animated_text_style"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp" bodystart="13" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structloki_1_1text_1_1_animated_text_style_1aaafc04b7ac0cb3e09f28fed65e23a51f" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>animation</name></member>
+      <member refid="structloki_1_1text_1_1_animated_text_style_1a6ced18cc6f10208c7628e9571e7b24d9" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>appear</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a1e135391a69cbff444d4e7aa3bbc0d1d" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>applyTo</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aba09c3e1f6b0e344e735d98390d1d911" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>characterSize</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a83f8ef715f532c5d60f51db040b6e9e2" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>characterStyle</name></member>
+      <member refid="structloki_1_1text_1_1_animated_text_style_1a0d2de72160f666d0a28d8688e68409ac" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>cloneAndOverrideWith</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a8902eb4827cec5bb957ea161efe6429d" prot="public" virt="non-virtual" ambiguityscope="loki::styles::TextStyle::"><scope>loki::text::AnimatedTextStyle</scope><name>cloneAndOverrideWith</name></member>
+      <member refid="structloki_1_1text_1_1_animated_text_style_1a88e831ba9cb0b21dc96ed4c6030cc7a2" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>disappear</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1acf6a949209b17a56697ce75c1419a2d8" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>fillColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1adba09bf2caa9efe209f43964ded7aa53" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>font</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a266855ed927fedd3a04a8b13b6434dc2" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>fromDefaults</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa9f6930acc2feb8f7a21d44350df98fc" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>getSpaceWidth</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa4985624462f0e9e7c94c5d1adad8a13" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>letterSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a3904375b98c08e84cffe5ac081a1992a" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>lineSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a02112167064d0925681ec79b9052c07c" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>load</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a61e3121ac12df7e9d3cfca86b2fd9ddb" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>outlineColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa231ba986f69107b7f2d0384745e108b" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>outlineThickness</name></member>
+      <member refid="structloki_1_1text_1_1_animated_text_style_1a3ba0d0e950e11bcefe824cae37c67b44" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>overrideWith</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aaa0b7a59a0dd2dbfaf44b853738d3d4f" prot="public" virt="non-virtual" ambiguityscope="loki::styles::TextStyle::"><scope>loki::text::AnimatedTextStyle</scope><name>overrideWith</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a587c803155b4838d3d4e8579db82e0b1" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withCharacterSize</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1ad217ab7650032669d54156276870455b" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withCharacterStyle</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a46ac2b6393c75556ec8553f9677adf2e" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withFillColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a11ab349e2adcbbb10d95189cfefedb26" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withFont</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a902ffc80d6c8250f00d8cc11981d2ce4" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withLetterSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1af63fcd8b9f187acb1aaee9bd25095e3b" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withLineSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1ac321ca8e160d3b9ad335015da3e62ce1" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withOutlineColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a3d0d2e8f36d28e7066759a367b87faf9" prot="public" virt="non-virtual"><scope>loki::text::AnimatedTextStyle</scope><name>withOutlineThickness</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

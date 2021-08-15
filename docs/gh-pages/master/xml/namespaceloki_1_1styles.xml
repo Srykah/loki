@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1styles" kind="namespace" language="C++">
+    <compoundname>loki::styles</compoundname>
+    <innerclass refid="structloki_1_1styles_1_1_shape_style" prot="public">loki::styles::ShapeStyle</innerclass>
+    <innerclass refid="structloki_1_1styles_1_1_text_style" prot="public">loki::styles::TextStyle</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_text_style_8hpp_1a88dd3705e7e5402b9217013182145315" prot="public" static="no">
+        <type>std::function&lt; sf::Font &amp;(std::string)&gt;</type>
+        <definition>using loki::styles::FontGetter = typedef std::function&lt;sf::Font&amp;(std::string)&gt;</definition>
+        <argsstring></argsstring>
+        <name>FontGetter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/ShapeStyle.cpp" line="8" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_pair_hash_sym" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::PairHashSym</compoundname>
+    <includes refid="_pair_hash_8hpp" local="no">PairHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Pair</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_pair_hash_sym_1a744088fa6f5247415a4ee9cee0289f41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t loki::hash::PairHashSym&lt; Pair &gt;::operator()</definition>
+        <argsstring>(const Pair &amp;val) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Pair &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Symmetric hash operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pair to hash symmetrically </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A symmetric hash of the pair (order doesn&apos;t matter) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="31" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functor for hashing pairs symetrically. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>This functor only makes sense if the arguments of the pair can compare equal to one another... </para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Pair</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the std::pair </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="27" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="27" bodyend="34"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_pair_hash_sym_1a744088fa6f5247415a4ee9cee0289f41" prot="public" virt="non-virtual"><scope>loki::hash::PairHashSym</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

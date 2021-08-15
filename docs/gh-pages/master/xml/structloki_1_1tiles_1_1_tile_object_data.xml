@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_tile_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::TileObjectData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_object_data_1a898a60acee75ecb55c4cad62e99450fc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int loki::tiles::TileObjectData::globalTileId</definition>
+        <argsstring></argsstring>
+        <name>globalTileId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="16" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_object_data_1a9bdb787fd9cb2253122d08cbae72185a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TileObjectData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="17" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_object_data_1a1eef642806c87734c5da73fa02565e26" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TileObjectData::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="18" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_object_data_1a54cc6a4ea9a380f8f022942e8f056996" prot="public" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::tiles::TileObjectData::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="19" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_object_data_1acde6e922a9ba9b221ca14a4cbeaef457" prot="public" static="no" mutable="no">
+        <type>PropertyMap</type>
+        <definition>PropertyMap loki::tiles::TileObjectData::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="20" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="1">
+        <label>loki::tiles::TileObjectData</label>
+        <link refid="structloki_1_1tiles_1_1_tile_object_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>properties</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::map&lt; std::string, PropertyData &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="15" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_tile_object_data_1a898a60acee75ecb55c4cad62e99450fc" prot="public" virt="non-virtual"><scope>loki::tiles::TileObjectData</scope><name>globalTileId</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_object_data_1a9bdb787fd9cb2253122d08cbae72185a" prot="public" virt="non-virtual"><scope>loki::tiles::TileObjectData</scope><name>name</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_object_data_1a54cc6a4ea9a380f8f022942e8f056996" prot="public" virt="non-virtual"><scope>loki::tiles::TileObjectData</scope><name>position</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_object_data_1acde6e922a9ba9b221ca14a4cbeaef457" prot="public" virt="non-virtual"><scope>loki::tiles::TileObjectData</scope><name>properties</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_object_data_1a1eef642806c87734c5da73fa02565e26" prot="public" virt="non-virtual"><scope>loki::tiles::TileObjectData</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

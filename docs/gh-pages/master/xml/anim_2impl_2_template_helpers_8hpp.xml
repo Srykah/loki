@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="anim_2impl_2_template_helpers_8hpp" kind="file" language="C++">
+    <compoundname>TemplateHelpers.hpp</compoundname>
+    <includes local="no">SFML/System/Vector2.hpp</includes>
+    <includes local="no">SFML/Graphics/Rect.hpp</includes>
+    <includes local="no">SFML/Graphics/Color.hpp</includes>
+    <includedby refid="_a_d_l_helpers_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp</includedby>
+    <includedby refid="_animator_8hxx" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>SFML/System/Vector2.hpp</label>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/TemplateHelpers.hpp</label>
+        <link refid="anim_2impl_2_template_helpers_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/All.hpp</label>
+        <link refid="sprites_2_all_8hpp"/>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/Sprite.hpp</label>
+        <link refid="_sprite_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx</label>
+        <link refid="_animator_8hxx"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/TemplateHelpers.hpp</label>
+        <link refid="anim_2impl_2_template_helpers_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp</label>
+        <link refid="_a_d_l_helpers_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp</label>
+        <link refid="_animator_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/All.hpp</label>
+        <link refid="anim_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1anim">loki::anim</innernamespace>
+    <innernamespace refid="namespaceloki_1_1anim_1_1impl">loki::anim::impl</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="anim_2impl_2_template_helpers_8hpp_1a7456bba413aaab592012977b07379bc3" prot="public" static="no">
+        <name>LOKI_ANIM_FEATURE_TEST</name>
+        <param><defname>Feature</defname></param>
+        <param><defname>Type</defname></param>
+        <initializer>template &lt;typename T&gt; using has_get##Feature = std::is_same&lt;std::decay_t&lt;std::invoke_result_t&lt;decltype(&amp;T::get##Feature), T&gt;&gt;, Type&gt;; \
+template &lt;typename T&gt; using has_set##Feature = std::is_invocable&lt;decltype(&amp;T::set##Feature), T, Type&amp;&amp;&gt;;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/TemplateHelpers.hpp" line="14" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/TemplateHelpers.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/System/Vector2.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Rect.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Color.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::anim::impl<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOKI_ANIM_FEATURE_TEST(Feature,<sp/>Type)<sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor">template<sp/>&lt;typename<sp/>T&gt;<sp/>using<sp/>has_get##Feature<sp/>=<sp/>std::is_same&lt;std::decay_t&lt;std::invoke_result_t&lt;decltype(&amp;T::get##Feature),<sp/>T&gt;&gt;,<sp/>Type&gt;;<sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor">template<sp/>&lt;typename<sp/>T&gt;<sp/>using<sp/>has_set##Feature<sp/>=<sp/>std::is_invocable&lt;decltype(&amp;T::set##Feature),<sp/>T,<sp/>Type&amp;&amp;&gt;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(Origin,<sp/>sf::Vector2f)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(Position,<sp/>sf::Vector2f)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(Rotation,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(Scale,<sp/>sf::Vector2f)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(Color,<sp/>sf::Color)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(FillColor,<sp/>sf::Color)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">LOKI_ANIM_FEATURE_TEST(TextureRect,<sp/>sf::IntRect)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>LOKI_ANIM_FEATURE_TEST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/TemplateHelpers.hpp"/>
+  </compounddef>
+</doxygen>

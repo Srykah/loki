@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1tpl_1_1_template_engine" kind="class" language="C++" prot="public">
+    <compoundname>loki::tpl::TemplateEngine</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1tpl_1_1_template_engine_1a753305f590bc5b3c6a099f4c1a9d84a1" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::function&lt; std::string()&gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::function&lt;std::string()&gt; &gt; loki::tpl::TemplateEngine::refs</definition>
+        <argsstring></argsstring>
+        <name>refs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="25" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1tpl_1_1_template_engine_1a693cb33c5d7788a1dbe25b433958aef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::tpl::TemplateEngine::addRef</definition>
+        <argsstring>(const std::string &amp;name, const T &amp;t)</argsstring>
+        <name>addRef</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="17" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/impl/TemplateEngine.hxx" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1tpl_1_1_template_engine_1aec10efdd8f16d22d5fce995ba021d47e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::tpl::TemplateEngine::addPtr</definition>
+        <argsstring>(const std::string &amp;name, const T *t)</argsstring>
+        <name>addPtr</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="19" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/impl/TemplateEngine.hxx" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1tpl_1_1_template_engine_1a9b4cd41bff0f4e2b517cd8814f2b19c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::tpl::TemplateEngine::addLambdaRef</definition>
+        <argsstring>(const std::string &amp;name, const std::function&lt; std::string()&gt; &amp;gen)</argsstring>
+        <name>addLambdaRef</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; std::string()&gt; &amp;</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="20" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1tpl_1_1_template_engine_1a8b7ef0d21c19e5a7e6b365b32401863b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string loki::tpl::TemplateEngine::fill</definition>
+        <argsstring>(const std::string &amp;tpl)</argsstring>
+        <name>fill</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tpl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="22" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.cpp" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tpl/TemplateEngine.hpp" bodystart="14" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classloki_1_1tpl_1_1_template_engine_1a9b4cd41bff0f4e2b517cd8814f2b19c6" prot="public" virt="non-virtual"><scope>loki::tpl::TemplateEngine</scope><name>addLambdaRef</name></member>
+      <member refid="classloki_1_1tpl_1_1_template_engine_1aec10efdd8f16d22d5fce995ba021d47e" prot="public" virt="non-virtual"><scope>loki::tpl::TemplateEngine</scope><name>addPtr</name></member>
+      <member refid="classloki_1_1tpl_1_1_template_engine_1a693cb33c5d7788a1dbe25b433958aef9" prot="public" virt="non-virtual"><scope>loki::tpl::TemplateEngine</scope><name>addRef</name></member>
+      <member refid="classloki_1_1tpl_1_1_template_engine_1a8b7ef0d21c19e5a7e6b365b32401863b" prot="public" virt="non-virtual"><scope>loki::tpl::TemplateEngine</scope><name>fill</name></member>
+      <member refid="classloki_1_1tpl_1_1_template_engine_1a753305f590bc5b3c6a099f4c1a9d84a1" prot="private" virt="non-virtual"><scope>loki::tpl::TemplateEngine</scope><name>refs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

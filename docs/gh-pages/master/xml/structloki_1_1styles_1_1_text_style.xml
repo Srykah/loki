@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1styles_1_1_text_style" kind="struct" language="C++" prot="public">
+    <compoundname>loki::styles::TextStyle</compoundname>
+    <derivedcompoundref refid="structloki_1_1text_1_1_animated_text_style" prot="public" virt="non-virtual">loki::text::AnimatedTextStyle</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1aba09c3e1f6b0e344e735d98390d1d911" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; unsigned int &gt;</type>
+        <definition>std::optional&lt;unsigned int&gt; loki::styles::TextStyle::characterSize</definition>
+        <argsstring></argsstring>
+        <name>characterSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="16" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1a83f8ef715f532c5d60f51db040b6e9e2" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Text::Style &gt;</type>
+        <definition>std::optional&lt;sf::Text::Style&gt; loki::styles::TextStyle::characterStyle</definition>
+        <argsstring></argsstring>
+        <name>characterStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="17" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1acf6a949209b17a56697ce75c1419a2d8" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Color &gt;</type>
+        <definition>std::optional&lt;sf::Color&gt; loki::styles::TextStyle::fillColor</definition>
+        <argsstring></argsstring>
+        <name>fillColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="18" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1adba09bf2caa9efe209f43964ded7aa53" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Font * &gt;</type>
+        <definition>std::optional&lt;sf::Font*&gt; loki::styles::TextStyle::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="19" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1aa4985624462f0e9e7c94c5d1adad8a13" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; float &gt;</type>
+        <definition>std::optional&lt;float&gt; loki::styles::TextStyle::letterSpacing</definition>
+        <argsstring></argsstring>
+        <name>letterSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="20" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1a3904375b98c08e84cffe5ac081a1992a" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; float &gt;</type>
+        <definition>std::optional&lt;float&gt; loki::styles::TextStyle::lineSpacing</definition>
+        <argsstring></argsstring>
+        <name>lineSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="21" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1a61e3121ac12df7e9d3cfca86b2fd9ddb" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Color &gt;</type>
+        <definition>std::optional&lt;sf::Color&gt; loki::styles::TextStyle::outlineColor</definition>
+        <argsstring></argsstring>
+        <name>outlineColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="22" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1styles_1_1_text_style_1aa231ba986f69107b7f2d0384745e108b" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; float &gt;</type>
+        <definition>std::optional&lt;float&gt; loki::styles::TextStyle::outlineThickness</definition>
+        <argsstring></argsstring>
+        <name>outlineThickness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="23" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a266855ed927fedd3a04a8b13b6434dc2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref></type>
+        <definition>TextStyle loki::styles::TextStyle::fromDefaults</definition>
+        <argsstring>()</argsstring>
+        <name>fromDefaults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="25" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="10" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a587c803155b4838d3d4e8579db82e0b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withCharacterSize</definition>
+        <argsstring>(unsigned int characterSize)</argsstring>
+        <name>withCharacterSize</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>characterSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="27" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1ad217ab7650032669d54156276870455b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withCharacterStyle</definition>
+        <argsstring>(sf::Text::Style characterStyle)</argsstring>
+        <name>withCharacterStyle</name>
+        <param>
+          <type>sf::Text::Style</type>
+          <declname>characterStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="28" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a46ac2b6393c75556ec8553f9677adf2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withFillColor</definition>
+        <argsstring>(sf::Color fillColor)</argsstring>
+        <name>withFillColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>fillColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="29" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a11ab349e2adcbbb10d95189cfefedb26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withFont</definition>
+        <argsstring>(sf::Font *font)</argsstring>
+        <name>withFont</name>
+        <param>
+          <type>sf::Font *</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="30" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a902ffc80d6c8250f00d8cc11981d2ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withLetterSpacing</definition>
+        <argsstring>(float letterSpacing)</argsstring>
+        <name>withLetterSpacing</name>
+        <param>
+          <type>float</type>
+          <declname>letterSpacing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="31" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1af63fcd8b9f187acb1aaee9bd25095e3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withLineSpacing</definition>
+        <argsstring>(float lineSpacing)</argsstring>
+        <name>withLineSpacing</name>
+        <param>
+          <type>float</type>
+          <declname>lineSpacing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="32" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1ac321ca8e160d3b9ad335015da3e62ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withOutlineColor</definition>
+        <argsstring>(sf::Color outlineColor)</argsstring>
+        <name>withOutlineColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>outlineColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="33" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a3d0d2e8f36d28e7066759a367b87faf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::withOutlineThickness</definition>
+        <argsstring>(float outlineThickness)</argsstring>
+        <name>withOutlineThickness</name>
+        <param>
+          <type>float</type>
+          <declname>outlineThickness</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="34" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a02112167064d0925681ec79b9052c07c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::styles::TextStyle::load</definition>
+        <argsstring>(const nlohmann::json &amp;data, const FontGetter &amp;fontGetter)</argsstring>
+        <name>load</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const FontGetter &amp;</type>
+          <declname>fontGetter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="36" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a1e135391a69cbff444d4e7aa3bbc0d1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::styles::TextStyle::applyTo</definition>
+        <argsstring>(sf::Text &amp;text) const</argsstring>
+        <name>applyTo</name>
+        <param>
+          <type>sf::Text &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="37" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="64" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1aa9f6930acc2feb8f7a21d44350df98fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float loki::styles::TextStyle::getSpaceWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpaceWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="39" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="91" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1aaa0b7a59a0dd2dbfaf44b853738d3d4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+        <definition>TextStyle &amp; loki::styles::TextStyle::overrideWith</definition>
+        <argsstring>(const TextStyle &amp;other)</argsstring>
+        <name>overrideWith</name>
+        <param>
+          <type>const <ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="41" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="103" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1styles_1_1_text_style_1a8902eb4827cec5bb957ea161efe6429d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref></type>
+        <definition>TextStyle loki::styles::TextStyle::cloneAndOverrideWith</definition>
+        <argsstring>(const TextStyle &amp;other) const</argsstring>
+        <name>cloneAndOverrideWith</name>
+        <param>
+          <type>const <ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="42" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp" bodystart="131" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>loki::styles::TextStyle</label>
+        <link refid="structloki_1_1styles_1_1_text_style"/>
+      </node>
+      <node id="2">
+        <label>loki::text::AnimatedTextStyle</label>
+        <link refid="structloki_1_1text_1_1_animated_text_style"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp" bodystart="15" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structloki_1_1styles_1_1_text_style_1a1e135391a69cbff444d4e7aa3bbc0d1d" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>applyTo</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aba09c3e1f6b0e344e735d98390d1d911" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>characterSize</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a83f8ef715f532c5d60f51db040b6e9e2" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>characterStyle</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a8902eb4827cec5bb957ea161efe6429d" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>cloneAndOverrideWith</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1acf6a949209b17a56697ce75c1419a2d8" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>fillColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1adba09bf2caa9efe209f43964ded7aa53" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>font</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a266855ed927fedd3a04a8b13b6434dc2" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>fromDefaults</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa9f6930acc2feb8f7a21d44350df98fc" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>getSpaceWidth</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa4985624462f0e9e7c94c5d1adad8a13" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>letterSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a3904375b98c08e84cffe5ac081a1992a" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>lineSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a02112167064d0925681ec79b9052c07c" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>load</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a61e3121ac12df7e9d3cfca86b2fd9ddb" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>outlineColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aa231ba986f69107b7f2d0384745e108b" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>outlineThickness</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1aaa0b7a59a0dd2dbfaf44b853738d3d4f" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>overrideWith</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a587c803155b4838d3d4e8579db82e0b1" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withCharacterSize</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1ad217ab7650032669d54156276870455b" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withCharacterStyle</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a46ac2b6393c75556ec8553f9677adf2e" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withFillColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a11ab349e2adcbbb10d95189cfefedb26" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withFont</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a902ffc80d6c8250f00d8cc11981d2ce4" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withLetterSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1af63fcd8b9f187acb1aaee9bd25095e3b" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withLineSpacing</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1ac321ca8e160d3b9ad335015da3e62ce1" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withOutlineColor</name></member>
+      <member refid="structloki_1_1styles_1_1_text_style_1a3d0d2e8f36d28e7066759a367b87faf9" prot="public" virt="non-virtual"><scope>loki::styles::TextStyle</scope><name>withOutlineThickness</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

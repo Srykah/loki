@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1anim_1_1_animation_view_data" kind="class" language="C++" prot="public">
+    <compoundname>loki::anim::AnimationViewData</compoundname>
+    <derivedcompoundref refid="structloki_1_1text_1_1_text_animation_view_data" prot="public" virt="non-virtual">loki::text::TextAnimationViewData</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1a1d1c05ac75c80b2802ef027c83a2cf28" prot="private" static="no" mutable="no">
+        <type>const sf::Time</type>
+        <definition>const sf::Time loki::anim::AnimationViewData::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="30" column="18" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1a53702db38074d1e2825a799ccb152cb9" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool loki::anim::AnimationViewData::repeat</definition>
+        <argsstring></argsstring>
+        <name>repeat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="31" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1add19b5c8508a80f4dc543a4b873b8d59" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, sf::Vector2f &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, sf::Vector2f&gt; &gt; loki::anim::AnimationViewData::ipOrigin</definition>
+        <argsstring></argsstring>
+        <name>ipOrigin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="32" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1a60686a97ecfc95d93c0dffdb247131f7" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, sf::Vector2f &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, sf::Vector2f&gt; &gt; loki::anim::AnimationViewData::ipPos</definition>
+        <argsstring></argsstring>
+        <name>ipPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="33" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1af07f00fc47045cf97fcd819435feac97" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, float &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, float&gt; &gt; loki::anim::AnimationViewData::ipRot</definition>
+        <argsstring></argsstring>
+        <name>ipRot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="34" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1a02ca2e08df0c8f6f72c8ee8924f4602c" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, sf::Vector2f &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, sf::Vector2f&gt; &gt; loki::anim::AnimationViewData::ipScale</definition>
+        <argsstring></argsstring>
+        <name>ipScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="35" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1a60fda7edc2472a5d63ba785e2c7f6a79" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, <ref refid="structloki_1_1common_1_1_vector4" kindref="compound">common::Vector4f</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, common::Vector4f&gt; &gt; loki::anim::AnimationViewData::ipColor</definition>
+        <argsstring></argsstring>
+        <name>ipColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="36" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animation_view_data_1ab8315ebbf61e8f9244e5594095bfdd51" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classloki_1_1common_1_1_interpolation_base" kindref="compound">common::InterpolationBase</ref>&lt; float, <ref refid="structloki_1_1common_1_1_vector4" kindref="compound">common::Vector4f</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;common::InterpolationBase&lt;float, common::Vector4f&gt; &gt; loki::anim::AnimationViewData::ipTexRect</definition>
+        <argsstring></argsstring>
+        <name>ipTexRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="37" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1af926b5e0b8a18a2b952de8349f473d35" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::anim::AnimationViewData::AnimationViewData</definition>
+        <argsstring>(const AnimationData &amp;data)</argsstring>
+        <name>AnimationViewData</name>
+        <param>
+          <type>const <ref refid="structloki_1_1anim_1_1_animation_data" kindref="compound">AnimationData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="16" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="28" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1ab01256b8585e82e4e86bb817da6f089e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Time &amp;</type>
+        <definition>const sf::Time &amp; loki::anim::AnimationViewData::getDuration</definition>
+        <argsstring>() const</argsstring>
+        <name>getDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="18" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1afbedcfbf62814a376ab4835aca563e2e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::anim::AnimationViewData::isRepeated</definition>
+        <argsstring>() const</argsstring>
+        <name>isRepeated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="19" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1afd1e7864ebfef65ca4e23317292e16b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::AnimationViewData::getOrigin</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getOrigin</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="21" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1aece118d8222123f64b26de7b2a95ff82" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::AnimationViewData::getPosition</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getPosition</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="22" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="104" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1a1fce74d435d6bcc9106a5fffeeef3c15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float loki::anim::AnimationViewData::getRotation</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getRotation</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="23" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="111" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1a28e02f7169d07609ca1b0f6d1def5e03" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::AnimationViewData::getScale</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getScale</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="24" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1a294348854e3a3ca36908160335c3a406" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Transform</type>
+        <definition>sf::Transform loki::anim::AnimationViewData::getTransform</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getTransform</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="25" column="18" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="125" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1a74548d733acbb83c8e68811f384f1dce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Color</type>
+        <definition>sf::Color loki::anim::AnimationViewData::getColor</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getColor</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="26" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animation_view_data_1afff744eb6df42f44ec546fe75a389f1e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::IntRect</type>
+        <definition>sf::IntRect loki::anim::AnimationViewData::getTextureRect</definition>
+        <argsstring>(sf::Time instant) const</argsstring>
+        <name>getTextureRect</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>instant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="27" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.cpp" bodystart="140" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>loki::text::TextAnimationViewData</label>
+        <link refid="structloki_1_1text_1_1_text_animation_view_data"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::anim::AnimationViewData</label>
+        <link refid="classloki_1_1anim_1_1_animation_view_data"/>
+      </node>
+    </inheritancegraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp" bodystart="14" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1af926b5e0b8a18a2b952de8349f473d35" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>AnimationViewData</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a1d1c05ac75c80b2802ef027c83a2cf28" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>duration</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a74548d733acbb83c8e68811f384f1dce" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getColor</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1ab01256b8585e82e4e86bb817da6f089e" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getDuration</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afd1e7864ebfef65ca4e23317292e16b5" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getOrigin</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1aece118d8222123f64b26de7b2a95ff82" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getPosition</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a1fce74d435d6bcc9106a5fffeeef3c15" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getRotation</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a28e02f7169d07609ca1b0f6d1def5e03" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getScale</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afff744eb6df42f44ec546fe75a389f1e" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getTextureRect</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a294348854e3a3ca36908160335c3a406" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>getTransform</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a60fda7edc2472a5d63ba785e2c7f6a79" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipColor</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1add19b5c8508a80f4dc543a4b873b8d59" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipOrigin</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a60686a97ecfc95d93c0dffdb247131f7" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipPos</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1af07f00fc47045cf97fcd819435feac97" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipRot</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a02ca2e08df0c8f6f72c8ee8924f4602c" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipScale</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1ab8315ebbf61e8f9244e5594095bfdd51" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>ipTexRect</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1afbedcfbf62814a376ab4835aca563e2e" prot="public" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>isRepeated</name></member>
+      <member refid="classloki_1_1anim_1_1_animation_view_data_1a53702db38074d1e2825a799ccb152cb9" prot="private" virt="non-virtual"><scope>loki::anim::AnimationViewData</scope><name>repeat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

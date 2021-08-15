@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1shapes_1_1_capsule" kind="class" language="C++" prot="public">
+    <compoundname>loki::shapes::Capsule</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Shape</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1shapes_1_1_capsule_1ab72abfa8112f68340e5f5bb62c809b27" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::shapes::Capsule::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="20" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1shapes_1_1_capsule_1a7eb1a28b2c5a7c1877f882efbb46877f" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t loki::shapes::Capsule::borderPointCount</definition>
+        <argsstring></argsstring>
+        <name>borderPointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="21" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_capsule_1a3a6b4bbdb7c061fed017803fa1aaa88b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::shapes::Capsule::Capsule</definition>
+        <argsstring>(sf::Vector2f size, std::size_t borderPointCount=15)</argsstring>
+        <name>Capsule</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>borderPointCount</declname>
+          <defval>15</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="14" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_capsule_1a0abb8b3d6f896e783d1e042b0110b033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::shapes::Capsule::~Capsule</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Capsule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="15" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_capsule_1a747bc4d9221a1ddc2adda5c6be1816c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t loki::shapes::Capsule::getPointCount</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="16" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1shapes_1_1_capsule_1ae5213f450e60a6b2d2e5a2f545ae3668" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::shapes::Capsule::getPoint</definition>
+        <argsstring>(std::size_t index) const override</argsstring>
+        <name>getPoint</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="17" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.cpp" bodystart="20" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>loki::shapes::Capsule</label>
+        <link refid="classloki_1_1shapes_1_1_capsule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sf::Shape</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::shapes::Capsule</label>
+        <link refid="classloki_1_1shapes_1_1_capsule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sf::Shape</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/shapes/Capsule.hpp" bodystart="12" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classloki_1_1shapes_1_1_capsule_1a7eb1a28b2c5a7c1877f882efbb46877f" prot="private" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>borderPointCount</name></member>
+      <member refid="classloki_1_1shapes_1_1_capsule_1a3a6b4bbdb7c061fed017803fa1aaa88b" prot="public" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>Capsule</name></member>
+      <member refid="classloki_1_1shapes_1_1_capsule_1ae5213f450e60a6b2d2e5a2f545ae3668" prot="public" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>getPoint</name></member>
+      <member refid="classloki_1_1shapes_1_1_capsule_1a747bc4d9221a1ddc2adda5c6be1816c3" prot="public" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>getPointCount</name></member>
+      <member refid="classloki_1_1shapes_1_1_capsule_1ab72abfa8112f68340e5f5bb62c809b27" prot="private" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>size</name></member>
+      <member refid="classloki_1_1shapes_1_1_capsule_1a0abb8b3d6f896e783d1e042b0110b033" prot="public" virt="non-virtual"><scope>loki::shapes::Capsule</scope><name>~Capsule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_8934bef9e1929daad09ae15c1ed68613" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/gui</compoundname>
+    <innerdir refid="dir_5a7c74be6ecd4cc09bb6e0cc0e119582">D:/prog/cpp/custom_libs/loki/src/loki/gui/base</innerdir>
+    <innerdir refid="dir_3811df268dbd934f2ff801f270ac55ae">D:/prog/cpp/custom_libs/loki/src/loki/gui/frame</innerdir>
+    <innerdir refid="dir_108518bab6d978f15bec18d0f84a5e62">D:/prog/cpp/custom_libs/loki/src/loki/gui/list</innerdir>
+    <innerdir refid="dir_e4bcf2a40b106cf6e83169dc4532fe03">D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox</innerdir>
+    <innerfile refid="gui_2_all_8hpp">All.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/"/>
+  </compounddef>
+</doxygen>

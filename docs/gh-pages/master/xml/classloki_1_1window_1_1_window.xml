@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1window_1_1_window" kind="class" language="C++" prot="public">
+    <compoundname>loki::window::Window</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1window_1_1_window_1a88c404c5ae595abc92bdc000452752e6" prot="private" static="no" mutable="no">
+        <type>sf::RenderWindow</type>
+        <definition>sf::RenderWindow loki::window::Window::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="46" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1window_1_1_window_1a5d954b74fa86439ceaab168c8d273e9d" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::window::Window::renderSize</definition>
+        <argsstring></argsstring>
+        <name>renderSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="47" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1window_1_1_window_1afa3ed4a903ea182a8eb690a3bc5e805a" prot="private" static="no" mutable="no">
+        <type>sf::Vector2u</type>
+        <definition>sf::Vector2u loki::window::Window::minimumSize</definition>
+        <argsstring></argsstring>
+        <name>minimumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="48" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1window_1_1_window_1aee9079e59c56dc4037e741f5e1d5c28e" prot="private" static="no" mutable="no">
+        <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+        <definition>Style loki::window::Window::style</definition>
+        <argsstring></argsstring>
+        <name>style</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="49" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1abb0c0635f1df6679f99bde1ba5fd2750" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::window::Window::Window</definition>
+        <argsstring>(sf::Vector2f renderSize, const sf::String &amp;title, Style style=Style::DEFAULT, const sf::ContextSettings &amp;settings=sf::ContextSettings(), sf::Vector2u minimumSize={})</argsstring>
+        <name>Window</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>renderSize</declname>
+        </param>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+          <declname>style</declname>
+          <defval>Style::DEFAULT</defval>
+        </param>
+        <param>
+          <type>const sf::ContextSettings &amp;</type>
+          <declname>settings</declname>
+          <defval>sf::ContextSettings()</defval>
+        </param>
+        <param>
+          <type>sf::Vector2u</type>
+          <declname>minimumSize</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="15" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="13" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1add9b8b59722a9a324a09caf815d8daee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::window::Window::Window</definition>
+        <argsstring>(sf::Vector2f renderSize, sf::VideoMode mode, const sf::String &amp;title, Style style=Style::DEFAULT, const sf::ContextSettings &amp;settings=sf::ContextSettings(), sf::Vector2u minimumSize={})</argsstring>
+        <name>Window</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>renderSize</declname>
+        </param>
+        <param>
+          <type>sf::VideoMode</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1window_1_1_style" kindref="compound">Style</ref></type>
+          <declname>style</declname>
+          <defval>Style::DEFAULT</defval>
+        </param>
+        <param>
+          <type>const sf::ContextSettings &amp;</type>
+          <declname>settings</declname>
+          <defval>sf::ContextSettings()</defval>
+        </param>
+        <param>
+          <type>sf::Vector2u</type>
+          <declname>minimumSize</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="20" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="27" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1a6e4f3f698c94d2ef1b3e9d0134237ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::setView</definition>
+        <argsstring>(sf::View view)</argsstring>
+        <name>setView</name>
+        <param>
+          <type>sf::View</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="27" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="40" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1a0591cb00193d245c3f129936e03c7225" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::setViewCenter</definition>
+        <argsstring>(const sf::Vector2f &amp;center)</argsstring>
+        <name>setViewCenter</name>
+        <param>
+          <type>const sf::Vector2f &amp;</type>
+          <declname>center</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="28" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1aee8aef61d3ee850d40aef054e589b00b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::View &amp;</type>
+        <definition>const sf::View &amp; loki::window::Window::getDefaultView</definition>
+        <argsstring>() const</argsstring>
+        <name>getDefaultView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="29" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1adedd03f14590417d83fef0045cc27229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::window::Window::pollEvent</definition>
+        <argsstring>(sf::Event &amp;event)</argsstring>
+        <name>pollEvent</name>
+        <param>
+          <type>sf::Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="31" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="63" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1a86ac6fe60cd3d1aabf7d33b1e06391dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::clear</definition>
+        <argsstring>(sf::Color color=sf::Color::Black)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+          <defval>sf::Color::Black</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="33" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1a2b2d4002d5a503a5fc8c2362405f586b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::draw</definition>
+        <argsstring>(const sf::Drawable &amp;drawable, sf::RenderStates states=sf::RenderStates())</argsstring>
+        <name>draw</name>
+        <param>
+          <type>const sf::Drawable &amp;</type>
+          <declname>drawable</declname>
+        </param>
+        <param>
+          <type>sf::RenderStates</type>
+          <declname>states</declname>
+          <defval>sf::RenderStates()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="34" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1ac1d342523156813b617900488cce5823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::display</definition>
+        <argsstring>()</argsstring>
+        <name>display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="35" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1aa233a01976ae844f38f3e84cda086f6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::window::Window::isOpen</definition>
+        <argsstring>() const</argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="37" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1acbb55ce2e3f60d10ebfea2f922ee6a20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="38" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="38" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1a5cfd2d5e372310071109bad06226d27c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::window::Window::getLetterboxedViewportSize</definition>
+        <argsstring>()</argsstring>
+        <name>getLetterboxedViewportSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="41" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="88" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1aa2cd897ded83826534296f5c258695f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::window::Window::getIntegerZoomViewportSize</definition>
+        <argsstring>()</argsstring>
+        <name>getIntegerZoomViewportSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="42" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="101" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1window_1_1_window_1ada317a3fadcc46d845ca39123f1ec2b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::window::Window::guardMinimumSize</definition>
+        <argsstring>()</argsstring>
+        <name>guardMinimumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="43" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.cpp" bodystart="117" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/window/Window.hpp" bodystart="13" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classloki_1_1window_1_1_window_1a86ac6fe60cd3d1aabf7d33b1e06391dd" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>clear</name></member>
+      <member refid="classloki_1_1window_1_1_window_1acbb55ce2e3f60d10ebfea2f922ee6a20" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>close</name></member>
+      <member refid="classloki_1_1window_1_1_window_1ac1d342523156813b617900488cce5823" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>display</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a2b2d4002d5a503a5fc8c2362405f586b" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>draw</name></member>
+      <member refid="classloki_1_1window_1_1_window_1aee8aef61d3ee850d40aef054e589b00b" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>getDefaultView</name></member>
+      <member refid="classloki_1_1window_1_1_window_1aa2cd897ded83826534296f5c258695f1" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>getIntegerZoomViewportSize</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a5cfd2d5e372310071109bad06226d27c" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>getLetterboxedViewportSize</name></member>
+      <member refid="classloki_1_1window_1_1_window_1ada317a3fadcc46d845ca39123f1ec2b7" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>guardMinimumSize</name></member>
+      <member refid="classloki_1_1window_1_1_window_1aa233a01976ae844f38f3e84cda086f6a" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>isOpen</name></member>
+      <member refid="classloki_1_1window_1_1_window_1afa3ed4a903ea182a8eb690a3bc5e805a" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>minimumSize</name></member>
+      <member refid="classloki_1_1window_1_1_window_1adedd03f14590417d83fef0045cc27229" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>pollEvent</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a5d954b74fa86439ceaab168c8d273e9d" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>renderSize</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a6e4f3f698c94d2ef1b3e9d0134237ead" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>setView</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a0591cb00193d245c3f129936e03c7225" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>setViewCenter</name></member>
+      <member refid="classloki_1_1window_1_1_window_1aee9079e59c56dc4037e741f5e1d5c28e" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>style</name></member>
+      <member refid="classloki_1_1window_1_1_window_1a88c404c5ae595abc92bdc000452752e6" prot="private" virt="non-virtual"><scope>loki::window::Window</scope><name>window</name></member>
+      <member refid="classloki_1_1window_1_1_window_1abb0c0635f1df6679f99bde1ba5fd2750" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>Window</name></member>
+      <member refid="classloki_1_1window_1_1_window_1add9b8b59722a9a324a09caf815d8daee" prot="public" virt="non-virtual"><scope>loki::window::Window</scope><name>Window</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

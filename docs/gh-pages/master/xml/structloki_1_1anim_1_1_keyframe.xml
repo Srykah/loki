@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1anim_1_1_keyframe" kind="struct" language="C++" prot="public">
+    <compoundname>loki::anim::Keyframe</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1afe6bb1c845c412ef6a40a9cc24b04ffe" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Vector2f &gt;</type>
+        <definition>std::optional&lt;sf::Vector2f&gt; loki::anim::Keyframe::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="14" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1a71af1ab1d1d9fa51fa5620a8f4bedf5c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Vector2f &gt;</type>
+        <definition>std::optional&lt;sf::Vector2f&gt; loki::anim::Keyframe::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="15" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1a1d8bd9557bb249ac55e1e8df0b4b0179" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; float &gt;</type>
+        <definition>std::optional&lt;float&gt; loki::anim::Keyframe::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="16" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1a55edc1f48e8714dfb054f50ecf6ad013" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Vector2f &gt;</type>
+        <definition>std::optional&lt;sf::Vector2f&gt; loki::anim::Keyframe::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="17" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1a240e409908cce9af9e40142c3540fb10" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::Color &gt;</type>
+        <definition>std::optional&lt;sf::Color&gt; loki::anim::Keyframe::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="18" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_keyframe_1a739c4b78ae8aedffae41acaff1b4120c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; sf::IntRect &gt;</type>
+        <definition>std::optional&lt;sf::IntRect&gt; loki::anim::Keyframe::textureRect</definition>
+        <argsstring></argsstring>
+        <name>textureRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="19" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="13" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structloki_1_1anim_1_1_keyframe_1a240e409908cce9af9e40142c3540fb10" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>color</name></member>
+      <member refid="structloki_1_1anim_1_1_keyframe_1afe6bb1c845c412ef6a40a9cc24b04ffe" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>origin</name></member>
+      <member refid="structloki_1_1anim_1_1_keyframe_1a71af1ab1d1d9fa51fa5620a8f4bedf5c" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>position</name></member>
+      <member refid="structloki_1_1anim_1_1_keyframe_1a1d8bd9557bb249ac55e1e8df0b4b0179" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>rotation</name></member>
+      <member refid="structloki_1_1anim_1_1_keyframe_1a55edc1f48e8714dfb054f50ecf6ad013" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>scale</name></member>
+      <member refid="structloki_1_1anim_1_1_keyframe_1a739c4b78ae8aedffae41acaff1b4120c" prot="public" virt="non-virtual"><scope>loki::anim::Keyframe</scope><name>textureRect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

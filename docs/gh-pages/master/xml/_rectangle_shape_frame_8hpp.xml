@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_rectangle_shape_frame_8hpp" kind="file" language="C++">
+    <compoundname>RectangleShapeFrame.hpp</compoundname>
+    <includes local="no">SFML/Graphics/RectangleShape.hpp</includes>
+    <includes refid="_shape_style_8hpp" local="no">loki/styles/ShapeStyle.hpp</includes>
+    <includes refid="_abstract_frame_8hpp" local="yes">AbstractFrame.hpp</includes>
+    <includedby refid="_rectangle_shape_frame_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/RectangleShapeFrame.cpp</includedby>
+    <includedby refid="gui_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/gui/All.hpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>SFML/Graphics/Transformable.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/RectangleShapeFrame.hpp</label>
+        <link refid="_rectangle_shape_frame_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics/RectangleShape.hpp</label>
+      </node>
+      <node id="9">
+        <label>SFML/Graphics/Drawable.hpp</label>
+      </node>
+      <node id="6">
+        <label>SFML/Graphics/Texture.hpp</label>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="3">
+        <label>loki/styles/ShapeStyle.hpp</label>
+        <link refid="_shape_style_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+      <node id="7">
+        <label>SFML/Graphics/Shape.hpp</label>
+      </node>
+      <node id="8">
+        <label>AbstractFrame.hpp</label>
+        <link refid="_abstract_frame_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/All.hpp</label>
+        <link refid="gui_2_all_8hpp"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/RectangleShapeFrame.hpp</label>
+        <link refid="_rectangle_shape_frame_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/RectangleShapeFrame.cpp</label>
+        <link refid="_rectangle_shape_frame_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classloki_1_1gui_1_1_rectangle_shape_frame" prot="public">loki::gui::RectangleShapeFrame</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1gui">loki::gui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/RectangleShape.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;loki/styles/ShapeStyle.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_abstract_frame_8hpp" kindref="compound">AbstractFrame.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::gui<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classloki_1_1gui_1_1_rectangle_shape_frame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classloki_1_1gui_1_1_rectangle_shape_frame" kindref="compound">RectangleShapeFrame</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classloki_1_1gui_1_1_abstract_frame" kindref="compound">AbstractFrame</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><ref refid="classloki_1_1gui_1_1_rectangle_shape_frame" kindref="compound">RectangleShapeFrame</ref>(sf::Vector2f<sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>padding,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1styles_1_1_shape_style" kindref="compound">styles::ShapeStyle</ref>&amp;<sp/>style);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>sf::FloatRect<sp/>getInternalBounds()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>draw(sf::RenderTarget&amp;<sp/>target,<sp/>sf::RenderStates<sp/>states)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>padding;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>sf::RectangleShape<sp/>shape;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/RectangleShapeFrame.hpp"/>
+  </compounddef>
+</doxygen>

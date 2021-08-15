@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structimpl_1_1detector" kind="struct" language="C++" prot="public">
+    <compoundname>impl::detector</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">false_type</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">identity_type&lt; nonesuch &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+      </param>
+      <param>
+        <type>template&lt; class... &gt;</type>
+        <declname>class</declname>
+        <defname>class</defname>
+      </param>
+      <param>
+        <type>class...</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>false_type</label>
+      </node>
+      <node id="3">
+        <label>identity_type&lt; nonesuch &gt;</label>
+      </node>
+      <node id="1">
+        <label>impl::detector&lt; class, class,... &gt;</label>
+        <link refid="structimpl_1_1detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>false_type</label>
+      </node>
+      <node id="3">
+        <label>identity_type&lt; nonesuch &gt;</label>
+      </node>
+      <node id="1">
+        <label>impl::detector&lt; class, class,... &gt;</label>
+        <link refid="structimpl_1_1detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx" bodystart="10" bodyend="10"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

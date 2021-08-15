@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1input_1_1_input_settings" kind="struct" language="C++" prot="public">
+    <compoundname>loki::input::InputSettings</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structloki_1_1input_1_1_input_settings_1a322a7ab35e63beabd56db54f5477faac" prot="public" static="no">
+        <type>std::map&lt; std::string, std::vector&lt; InputTrigger &gt; &gt;</type>
+        <definition>using loki::input::InputSettings::Config =  std::map&lt;std::string, std::vector&lt;InputTrigger&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>Config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="24" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1input_1_1_input_settings_1a5fbc33824c4c7e163fd32e4b70b60ccc" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, Config &gt;</type>
+        <definition>std::map&lt;std::string, Config&gt; loki::input::InputSettings::configs</definition>
+        <argsstring></argsstring>
+        <name>configs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="26" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_settings_1a76ea1291ca6ed9edce5b9f495234834b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::input::InputSettings::InputSettings</definition>
+        <argsstring>()=default</argsstring>
+        <name>InputSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="18" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_settings_1a3ebdfdfe7b468dc16bd239469493e3dc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::input::InputSettings::InputSettings</definition>
+        <argsstring>(const std::filesystem::path &amp;filepath)</argsstring>
+        <name>InputSettings</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="19" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1input_1_1_input_settings_1a974b6db833959a4afd3fdb50719926b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::input::InputSettings::load</definition>
+        <argsstring>(const std::filesystem::path &amp;filepath)</argsstring>
+        <name>load</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="21" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.cpp" bodystart="16" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>K</label>
+      </node>
+      <node id="5">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>loki::input::InputSettings</label>
+        <link refid="structloki_1_1input_1_1_input_settings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>configs</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::map&lt; std::string, Config &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" line="17" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp" bodystart="17" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structloki_1_1input_1_1_input_settings_1a322a7ab35e63beabd56db54f5477faac" prot="public" virt="non-virtual"><scope>loki::input::InputSettings</scope><name>Config</name></member>
+      <member refid="structloki_1_1input_1_1_input_settings_1a5fbc33824c4c7e163fd32e4b70b60ccc" prot="public" virt="non-virtual"><scope>loki::input::InputSettings</scope><name>configs</name></member>
+      <member refid="structloki_1_1input_1_1_input_settings_1a76ea1291ca6ed9edce5b9f495234834b" prot="public" virt="non-virtual"><scope>loki::input::InputSettings</scope><name>InputSettings</name></member>
+      <member refid="structloki_1_1input_1_1_input_settings_1a3ebdfdfe7b468dc16bd239469493e3dc" prot="public" virt="non-virtual"><scope>loki::input::InputSettings</scope><name>InputSettings</name></member>
+      <member refid="structloki_1_1input_1_1_input_settings_1a974b6db833959a4afd3fdb50719926b6" prot="public" virt="non-virtual"><scope>loki::input::InputSettings</scope><name>load</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

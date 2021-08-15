@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_vertex_array_iterator" kind="class" language="C++" prot="public">
+    <compoundname>loki::common::VertexArrayIterator</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1common_1_1_vertex_array_iterator_1aa94d1f7e3e18b1930fa58aa912cb0d89" prot="private" static="no" mutable="no">
+        <type>sf::VertexArray &amp;</type>
+        <definition>sf::VertexArray&amp; loki::common::VertexArrayIterator::va</definition>
+        <argsstring></argsstring>
+        <name>va</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="33" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1common_1_1_vertex_array_iterator_1a8e234c955e9346af1ab9dcdc471c67a9" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int loki::common::VertexArrayIterator::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="34" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a7b965948254841c52c69af72485ab0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::VertexArrayIterator::VertexArrayIterator</definition>
+        <argsstring>(sf::VertexArray &amp;va, std::size_t index)</argsstring>
+        <name>VertexArrayIterator</name>
+        <param>
+          <type>sf::VertexArray &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="14" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1aaf3ca74db75601845025e8ceacb0122f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+        <definition>VertexArrayIterator &amp; loki::common::VertexArrayIterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="16" column="23" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1af91bf72d35c3c48c6842344f79a4a531" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref></type>
+        <definition>VertexArrayIterator loki::common::VertexArrayIterator::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="17" column="24" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1abfe06866cf3fb31cf8cc1dd742b4d773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+        <definition>VertexArrayIterator &amp; loki::common::VertexArrayIterator::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="18" column="23" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a5fdf0be58d800a78cf10001ff79b2049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref></type>
+        <definition>VertexArrayIterator loki::common::VertexArrayIterator::operator--</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator--</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="19" column="24" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a4acbe4a95148eb7f6702adbfb2441220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+        <definition>VertexArrayIterator &amp; loki::common::VertexArrayIterator::operator+=</definition>
+        <argsstring>(long long int x)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>long long int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="20" column="23" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a998a205a7399c6bd8666855f3ae05412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+        <definition>VertexArrayIterator &amp; loki::common::VertexArrayIterator::operator-=</definition>
+        <argsstring>(long long int x)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>long long int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="21" column="23" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a1980f604fe652553f390da8c8b3bdc5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref></type>
+        <definition>VertexArrayIterator loki::common::VertexArrayIterator::operator+</definition>
+        <argsstring>(long long int x) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>long long int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="22" column="24" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a387b59f71a47abfe3dee6dafe86256b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref></type>
+        <definition>VertexArrayIterator loki::common::VertexArrayIterator::operator-</definition>
+        <argsstring>(long long int x) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>long long int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="23" column="24" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a7a129deff237efc4c071ca71a110c0cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Vertex &amp;</type>
+        <definition>const sf::Vertex &amp; loki::common::VertexArrayIterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="25" column="20" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a056733d00efe484177055e6a83cea3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vertex &amp;</type>
+        <definition>sf::Vertex &amp; loki::common::VertexArrayIterator::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="26" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a797c9e1e42825a5680da22bfbf88be7b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vertex *</type>
+        <definition>sf::Vertex * loki::common::VertexArrayIterator::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="27" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1a22ffc49c2e6c382a05b97abb06695c83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::common::VertexArrayIterator::operator==</definition>
+        <argsstring>(const VertexArrayIterator &amp;other)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="29" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_vertex_array_iterator_1ad1e0b047643352b7e0e6f7eab0b7b0d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::common::VertexArrayIterator::operator!=</definition>
+        <argsstring>(const VertexArrayIterator &amp;other)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">VertexArrayIterator</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="30" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.cpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" line="12" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/VertexArrayIterator.hpp" bodystart="12" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a8e234c955e9346af1ab9dcdc471c67a9" prot="private" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>index</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1ad1e0b047643352b7e0e6f7eab0b7b0d3" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator!=</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a7a129deff237efc4c071ca71a110c0cd" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator*</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a056733d00efe484177055e6a83cea3af" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator*</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a1980f604fe652553f390da8c8b3bdc5d" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator+</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1aaf3ca74db75601845025e8ceacb0122f" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator++</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1af91bf72d35c3c48c6842344f79a4a531" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator++</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a4acbe4a95148eb7f6702adbfb2441220" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator+=</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a387b59f71a47abfe3dee6dafe86256b6" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator-</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1abfe06866cf3fb31cf8cc1dd742b4d773" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator--</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a5fdf0be58d800a78cf10001ff79b2049" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator--</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a998a205a7399c6bd8666855f3ae05412" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator-=</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a797c9e1e42825a5680da22bfbf88be7b" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator-&gt;</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a22ffc49c2e6c382a05b97abb06695c83" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>operator==</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1aa94d1f7e3e18b1930fa58aa912cb0d89" prot="private" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>va</name></member>
+      <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a7b965948254841c52c69af72485ab0bc" prot="public" virt="non-virtual"><scope>loki::common::VertexArrayIterator</scope><name>VertexArrayIterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

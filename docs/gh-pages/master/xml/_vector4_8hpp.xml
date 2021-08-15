@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_vector4_8hpp" kind="file" language="C++">
+    <compoundname>Vector4.hpp</compoundname>
+    <includes local="no">SFML/Graphics/Color.hpp</includes>
+    <includes local="no">SFML/Graphics/Rect.hpp</includes>
+    <includes refid="_vector4_8hxx" local="yes">impl/Vector4.hxx</includes>
+    <includedby refid="_animation_view_data_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp</includedby>
+    <includedby refid="common_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/common/All.hpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp</label>
+        <link refid="_vector4_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>impl/Vector4.hxx</label>
+        <link refid="_vector4_8hxx"/>
+      </node>
+      <node id="3">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="14">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.cpp</label>
+        <link refid="_animated_text_8cpp"/>
+      </node>
+      <node id="20">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.cpp</label>
+        <link refid="_text_animation_view_data_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/All.hpp</label>
+        <link refid="sprites_2_all_8hpp"/>
+      </node>
+      <node id="18">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp</label>
+        <link refid="_stylesheet_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/Sprite.hpp</label>
+        <link refid="_sprite_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp</label>
+        <link refid="_animated_text_style_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.hpp</label>
+        <link refid="_text_animation_view_data_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.hpp</label>
+        <link refid="_animated_text_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx</label>
+        <link refid="_animator_8hxx"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp</label>
+        <link refid="_stylesheet_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationViewData.hpp</label>
+        <link refid="_animation_view_data_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/All.hpp</label>
+        <link refid="common_2_all_8hpp"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp</label>
+        <link refid="_vector4_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp</label>
+        <link refid="_sprite_view_data_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp</label>
+        <link refid="_animated_glyph_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp</label>
+        <link refid="_animator_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/All.hpp</label>
+        <link refid="anim_2_all_8hpp"/>
+      </node>
+      <node id="15">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp</label>
+        <link refid="_annotated_text_8hpp_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.cpp</label>
+        <link refid="_sprite_view_data_8cpp"/>
+      </node>
+      <node id="16">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/All.hpp</label>
+        <link refid="text_2_all_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp</label>
+        <link refid="_animated_glyph_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1common_1_1_vector4" prot="public">loki::common::Vector4</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1common">loki::common</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Color.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Rect.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::common<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="14" refid="structloki_1_1common_1_1_vector4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>T<sp/>a<sp/>=<sp/>T{},<sp/>b<sp/>=<sp/>T{},<sp/>c<sp/>=<sp/>T{},<sp/>d<sp/>=<sp/>T{};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>A,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>B,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>C,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>D&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>(A&amp;&amp;<sp/>a,<sp/>B&amp;&amp;<sp/>b,<sp/>C&amp;&amp;<sp/>c,<sp/>D&amp;&amp;<sp/>d);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;U&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator-()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>operator+=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>operator-=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator-(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>operator*=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>operator/=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator/(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>fromRect(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Rect&lt;U&gt;&amp;<sp/>rect);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">sf::Rect&lt;U&gt;<sp/>toRect(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref><sp/>fromColor(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Color&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">sf::Color<sp/>toColor(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;T&gt;</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4f</ref><sp/>=<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;float&gt;</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4i</ref><sp/>=<sp/><ref refid="structloki_1_1common_1_1_vector4" kindref="compound">Vector4&lt;int&gt;</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector4_8hxx" kindref="compound">impl/Vector4.hxx</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/Vector4.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1common_1_1false__type" kind="struct" language="C++" prot="public">
+    <compoundname>loki::common::false_type</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structloki_1_1common_1_1false__type_1aef86aeb040e12e3032773a431629da78" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool loki::common::false_type::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="15" column="25" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="14" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structloki_1_1common_1_1false__type_1aef86aeb040e12e3032773a431629da78" prot="public" virt="non-virtual"><scope>loki::common::false_type</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

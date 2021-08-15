@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_5a7c74be6ecd4cc09bb6e0cc0e119582" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/gui/base</compoundname>
+    <innerfile refid="_widget_8cpp">Widget.cpp</innerfile>
+    <innerfile refid="_widget_8hpp">Widget.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/"/>
+  </compounddef>
+</doxygen>

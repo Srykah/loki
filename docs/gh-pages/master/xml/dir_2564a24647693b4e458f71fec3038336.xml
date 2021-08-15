@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_2564a24647693b4e458f71fec3038336" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/screens</compoundname>
+    <innerfile refid="screens_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_screen_8cpp">Screen.cpp</innerfile>
+    <innerfile refid="_screen_8hpp">Screen.hpp</innerfile>
+    <innerfile refid="_screen_8inl">Screen.inl</innerfile>
+    <innerfile refid="_screen_stack_8cpp">ScreenStack.cpp</innerfile>
+    <innerfile refid="_screen_stack_8hpp">ScreenStack.hpp</innerfile>
+    <innerfile refid="_signal_8hpp">Signal.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1text_1_1impl_1_1_animated_glyph" kind="class" language="C++" prot="public">
+    <compoundname>loki::text::impl::AnimatedGlyph</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Transformable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a7a7bbe9eb174436cc0d92962aa46a436" prot="private" static="no" mutable="no">
+        <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">common::VertexArrayIterator</ref></type>
+        <definition>common::VertexArrayIterator loki::text::impl::AnimatedGlyph::vaIt</definition>
+        <argsstring></argsstring>
+        <name>vaIt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="31" column="31" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a61eda6975b6b7d117614935bc083d03e" prot="private" static="no" mutable="no">
+        <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+        <definition>const AnimatedTextStyle&amp; loki::text::impl::AnimatedGlyph::style</definition>
+        <argsstring></argsstring>
+        <name>style</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="32" column="27" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a5d41156f0e817423366a75db30370b48" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::text::impl::AnimatedGlyph::basePos[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>basePos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="33" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a189c43051b0c89bfbe3609a749640cba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::text::impl::AnimatedGlyph::AnimatedGlyph</definition>
+        <argsstring>(const sf::Glyph &amp;glyph, const AnimatedTextStyle &amp;style, common::VertexArrayIterator vaIt, float x)</argsstring>
+        <name>AnimatedGlyph</name>
+        <param>
+          <type>const sf::Glyph &amp;</type>
+          <declname>glyph</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <type><ref refid="classloki_1_1common_1_1_vertex_array_iterator" kindref="compound">common::VertexArrayIterator</ref></type>
+          <declname>vaIt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="17" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp" bodystart="10" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a565c91775a5f557ddddedbaab09613d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::impl::AnimatedGlyph::updateVertices</definition>
+        <argsstring>(const sf::Transform &amp;transform, const sf::Color &amp;color)</argsstring>
+        <name>updateVertices</name>
+        <param>
+          <type>const sf::Transform &amp;</type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>const sf::Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="22" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp" bodystart="64" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1aa581efa1e6b4adcf887c2f02a429209d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::impl::AnimatedGlyph::initBasePos</definition>
+        <argsstring>(const sf::Glyph &amp;glyph, float x)</argsstring>
+        <name>initBasePos</name>
+        <param>
+          <type>const sf::Glyph &amp;</type>
+          <declname>glyph</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="26" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp" bodystart="26" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1impl_1_1_animated_glyph_1a8f37cccbf8c8a08f9d52cefc08862093" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::impl::AnimatedGlyph::initTexRect</definition>
+        <argsstring>(const sf::Glyph &amp;glyph)</argsstring>
+        <name>initTexRect</name>
+        <param>
+          <type>const sf::Glyph &amp;</type>
+          <declname>glyph</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="28" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp" bodystart="44" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>loki::text::impl::AnimatedGlyph</label>
+        <link refid="classloki_1_1text_1_1impl_1_1_animated_glyph"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sf::Transformable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::text::impl::AnimatedGlyph</label>
+        <link refid="classloki_1_1text_1_1impl_1_1_animated_glyph"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sf::Transformable</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp" bodystart="15" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a189c43051b0c89bfbe3609a749640cba" prot="public" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>AnimatedGlyph</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a5d41156f0e817423366a75db30370b48" prot="private" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>basePos</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1aa581efa1e6b4adcf887c2f02a429209d" prot="private" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>initBasePos</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a8f37cccbf8c8a08f9d52cefc08862093" prot="private" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>initTexRect</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a61eda6975b6b7d117614935bc083d03e" prot="private" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>style</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a565c91775a5f557ddddedbaab09613d2" prot="public" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>updateVertices</name></member>
+      <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a7a7bbe9eb174436cc0d92962aa46a436" prot="private" virt="non-virtual"><scope>loki::text::impl::AnimatedGlyph</scope><name>vaIt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

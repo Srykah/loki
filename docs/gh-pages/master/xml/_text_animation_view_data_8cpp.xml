@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_text_animation_view_data_8cpp" kind="file" language="C++">
+    <compoundname>TextAnimationViewData.cpp</compoundname>
+    <includes refid="_text_animation_view_data_8hpp" local="yes">TextAnimationViewData.hpp</includes>
+    <incdepgraph>
+      <node id="24">
+        <label>Time.hpp</label>
+        <link refid="_time_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.cpp</label>
+        <link refid="_text_animation_view_data_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Optional.hpp</label>
+        <link refid="_optional_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>charconv</label>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Transform.hpp</label>
+      </node>
+      <node id="9">
+        <label>AnimationData.hpp</label>
+        <link refid="_animation_data_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>TextAnimationViewData.hpp</label>
+        <link refid="_text_animation_view_data_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>SFML/System/Vector2.hpp</label>
+      </node>
+      <node id="23">
+        <label>SFML/System/String.hpp</label>
+      </node>
+      <node id="21">
+        <label>Rect.hpp</label>
+        <link refid="json_2_rect_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Keyframe.hpp</label>
+        <link refid="_keyframe_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Color.hpp</label>
+        <link refid="json_2_color_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Vector2.hpp</label>
+        <link refid="json_2_vector2_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>loki/json/All.hpp</label>
+        <link refid="json_2_all_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki/anim/AnimationViewData.hpp</label>
+        <link refid="_animation_view_data_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>loki/math/Interpolate.hpp</label>
+        <link refid="_interpolate_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="20">
+        <label>optional</label>
+      </node>
+      <node id="14">
+        <label>impl/Interpolate.hxx</label>
+        <link refid="_interpolate_8hxx"/>
+      </node>
+      <node id="5">
+        <label>loki/common/Vector4.hpp</label>
+        <link refid="_vector4_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>impl/Vector4.hxx</label>
+        <link refid="_vector4_8hxx"/>
+      </node>
+      <node id="7">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+      <node id="22">
+        <label>String.hpp</label>
+        <link refid="_string_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="10">
+        <label>SFML/System/Time.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1text">loki::text</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;TextAnimationViewData.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::text<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">TextAnimationViewData::TextAnimationViewData(</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>anim::AnimationData&amp;<sp/>animationData,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Time<sp/>dt)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">:<sp/>AnimationViewData(animationData)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">,<sp/>dt(dt)<sp/>{}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/TextAnimationViewData.cpp"/>
+  </compounddef>
+</doxygen>

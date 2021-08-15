@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_terrain_data_8hpp" kind="file" language="C++">
+    <compoundname>TerrainData.hpp</compoundname>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="_property_8hpp" local="yes">Property.hpp</includes>
+    <includedby refid="_terrain_data_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.cpp</includedby>
+    <includedby refid="_tileset_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp</includedby>
+    <includedby refid="tiles_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>filesystem</label>
+      </node>
+      <node id="7">
+        <label>variant</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp</label>
+        <link refid="_terrain_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Property.hpp</label>
+        <link refid="_property_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nlohmann/json.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp</label>
+        <link refid="_map_data_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.hpp</label>
+        <link refid="_map_view_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.cpp</label>
+        <link refid="_object_layer_view_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp</label>
+        <link refid="_layer_view_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.cpp</label>
+        <link refid="_terrain_data_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</label>
+        <link refid="tiles_2_all_8hpp"/>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp</label>
+        <link refid="_tile_layer_view_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp</label>
+        <link refid="_terrain_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.cpp</label>
+        <link refid="_map_view_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.hpp</label>
+        <link refid="_object_layer_view_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp</label>
+        <link refid="_tileset_data_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1tiles_1_1_terrain_data" prot="public">loki::tiles::TerrainData</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tiles">loki::tiles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Property.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::tiles<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structloki_1_1tiles_1_1_terrain_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_terrain_data" kindref="compound">TerrainData</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1tiles_1_1_terrain_data" kindref="compound">TerrainData</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1tiles_1_1_terrain_data" kindref="compound">TerrainData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>jsonData);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>load(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>jsonData);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>std::string<sp/>name;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>PropertyMap<sp/>properties;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp"/>
+  </compounddef>
+</doxygen>

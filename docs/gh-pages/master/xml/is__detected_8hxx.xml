@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="is__detected_8hxx" kind="file" language="C++">
+    <compoundname>is_detected.hxx</compoundname>
+    <includedby refid="common_2_template_helpers_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx</label>
+        <link refid="is__detected_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/All.hpp</label>
+        <link refid="sprites_2_all_8hpp"/>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp</label>
+        <link refid="common_2_template_helpers_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/sprites/Sprite.hpp</label>
+        <link refid="_sprite_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx</label>
+        <link refid="_animator_8hxx"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/common/All.hpp</label>
+        <link refid="common_2_all_8hpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp</label>
+        <link refid="_a_d_l_helpers_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp</label>
+        <link refid="_animator_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/anim/All.hpp</label>
+        <link refid="anim_2_all_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structimpl_1_1detector" prot="public">impl::detector</innerclass>
+    <innerclass refid="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4" prot="public">impl::detector&lt; std::void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</innerclass>
+    <innernamespace refid="namespaceimpl">impl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">impl<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;</highlight></codeline>
+<codeline lineno="10" refid="structimpl_1_1detector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structimpl_1_1detector" kindref="compound">detector</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>false_type,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>identity_type&lt;nonesuch&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Op,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
+<codeline lineno="13" refid="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structimpl_1_1detector" kindref="compound">detector</ref>&lt;std::void_t&lt;Op&lt;Args...&gt;&gt;,<sp/>Op,<sp/>Args...&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>true_type,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>identity_type&lt;Op&lt;Args...&gt;&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>impl;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx"/>
+  </compounddef>
+</doxygen>

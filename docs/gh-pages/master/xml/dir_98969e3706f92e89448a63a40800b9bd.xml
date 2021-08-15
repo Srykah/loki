@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_98969e3706f92e89448a63a40800b9bd" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/math</compoundname>
+    <innerdir refid="dir_6b057e456ae49e7c7b0d592bd7cacd57">D:/prog/cpp/custom_libs/loki/src/loki/math/impl</innerdir>
+    <innerfile refid="math_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_interpolate_8hpp">Interpolate.hpp</innerfile>
+    <innerfile refid="math_2_rect_8hpp">Rect.hpp</innerfile>
+    <innerfile refid="math_2_vector2_8hpp">Vector2.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/"/>
+  </compounddef>
+</doxygen>

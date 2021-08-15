@@ -1,0 +1,1326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classloki_1_1gui_1_1_abstract_frame" kind="class"><name>loki::gui::AbstractFrame</name>
+    <member refid="classloki_1_1gui_1_1_abstract_frame_1ad4b230c6e17a275a3383beed3fc078fc" kind="function"><name>getInternalBounds</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_abstract_text_box" kind="class"><name>loki::gui::AbstractTextBox</name>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1adb14f11bdfd774940492e34e0fc26c2e" kind="function"><name>~AbstractTextBox</name></member>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1ab0b91261535737bc245d00604dd7a131" kind="function"><name>hasEnded</name></member>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1a26b55e2e8a7f3bf96709293266bf3e27" kind="function"><name>canFitInLine</name></member>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1a24c4787b6c99983fb88dcd282ab9a2e5" kind="function"><name>getLineCount</name></member>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1a170229c5408225a839684f98c79ca6c6" kind="function"><name>setLines</name></member>
+    <member refid="classloki_1_1gui_1_1_abstract_text_box_1ad5a8bb85295b916175d8696e5be5c5c2" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; sf::Color &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1a25df54a4427b175080d05417cbb0469e" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_color_01_4_1aed2ca465a0af20aa3830e47d634623d5" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_rect_3_01_t_01_4_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; sf::Rect&lt; T &gt; &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_rect_3_01_t_01_4_01_4_1a3d37c2db306ef841a4628c8453ffc8ae" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_rect_3_01_t_01_4_01_4_1ab3882b5ae3943dce4645ea928da5c136" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; sf::String &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1aea8f09e0c72d5aabf89fb2b83d9676e5" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1a1cc8c8a746e1173cb4f47bc94078820e" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_time_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; sf::Time &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_time_01_4_1aa4f6b331c0687f1f4a00a79b2708f552" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_time_01_4_1a0c8decf60062efb76e72b7134040f915" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_vector2_3_01_t_01_4_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; sf::Vector2&lt; T &gt; &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_vector2_3_01_t_01_4_01_4_1a53ba696dbd91b42b8b90eda105ff1785" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_vector2_3_01_t_01_4_01_4_1a3bb8be199e61367b139a02c27f998daa" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="structnlohmann_1_1adl__serializer_3_01std_1_1optional_3_01_t_01_4_01_4" kind="struct"><name>nlohmann::adl_serializer&lt; std::optional&lt; T &gt; &gt;</name>
+    <member refid="structnlohmann_1_1adl__serializer_3_01std_1_1optional_3_01_t_01_4_01_4_1a09ba0101fa2f4ca8748b0e6b70937945" kind="function"><name>to_json</name></member>
+    <member refid="structnlohmann_1_1adl__serializer_3_01std_1_1optional_3_01_t_01_4_01_4_1af4203029ef3de16b53c7b88fcdf4d4fe" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="classloki_1_1text_1_1impl_1_1_animated_glyph" kind="class"><name>loki::text::impl::AnimatedGlyph</name>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a7a7bbe9eb174436cc0d92962aa46a436" kind="variable"><name>vaIt</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a61eda6975b6b7d117614935bc083d03e" kind="variable"><name>style</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a5d41156f0e817423366a75db30370b48" kind="variable"><name>basePos</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a189c43051b0c89bfbe3609a749640cba" kind="function"><name>AnimatedGlyph</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a565c91775a5f557ddddedbaab09613d2" kind="function"><name>updateVertices</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1aa581efa1e6b4adcf887c2f02a429209d" kind="function"><name>initBasePos</name></member>
+    <member refid="classloki_1_1text_1_1impl_1_1_animated_glyph_1a8f37cccbf8c8a08f9d52cefc08862093" kind="function"><name>initTexRect</name></member>
+  </compound>
+  <compound refid="classloki_1_1text_1_1_animated_text" kind="class"><name>loki::text::AnimatedText</name>
+    <member refid="classloki_1_1text_1_1_animated_text_1ab7812b55ea41ba290e83756aa25a3135" kind="variable"><name>skippingMoment</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a6dc97ec5bf0d3ada2bde7368053d9c7c" kind="variable"><name>elapsedTime</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1ace260fdf6e9298314e253f24ce8d3c72" kind="variable"><name>string</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a690dcde042a537ec0f838a7ea55fab72" kind="variable"><name>style</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1ad668c811d11b8b8b4caa3f74f47af804" kind="variable"><name>vertices</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1aed2e9f7d380f3faca210f1f004cc2d96" kind="variable"><name>glyphs</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1ad73df5ca51e6d8d7896682f5c8fc0e1f" kind="function"><name>AnimatedText</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a723655405ee2f3d544f3bb049d49c3cf" kind="function"><name>~AnimatedText</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a4df4421c4792d0023ad831cdc2954661" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1acd9e874f0137bdf831ce255d894ee7e3" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a35ce9d6bc0d5ffcec5b8513121245ac7" kind="function"><name>skip</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a0fee776f0c0e510b361e9fc1df0271a8" kind="function"><name>getLocalBounds</name></member>
+    <member refid="classloki_1_1text_1_1_animated_text_1a47a2f0f1728a810acd29c8909f4d3cc2" kind="function"><name>init</name></member>
+  </compound>
+  <compound refid="structloki_1_1text_1_1_animated_text_style" kind="struct"><name>loki::text::AnimatedTextStyle</name>
+    <member refid="structloki_1_1text_1_1_animated_text_style_1a6ced18cc6f10208c7628e9571e7b24d9" kind="variable"><name>appear</name></member>
+    <member refid="structloki_1_1text_1_1_animated_text_style_1aaafc04b7ac0cb3e09f28fed65e23a51f" kind="variable"><name>animation</name></member>
+    <member refid="structloki_1_1text_1_1_animated_text_style_1a88e831ba9cb0b21dc96ed4c6030cc7a2" kind="variable"><name>disappear</name></member>
+    <member refid="structloki_1_1text_1_1_animated_text_style_1a3ba0d0e950e11bcefe824cae37c67b44" kind="function"><name>overrideWith</name></member>
+    <member refid="structloki_1_1text_1_1_animated_text_style_1a0d2de72160f666d0a28d8688e68409ac" kind="function"><name>cloneAndOverrideWith</name></member>
+  </compound>
+  <compound refid="structloki_1_1anim_1_1_animation_data" kind="struct"><name>loki::anim::AnimationData</name>
+    <member refid="structloki_1_1anim_1_1_animation_data_1a5d2c8505f2da82670b1809daa358679b" kind="variable"><name>duration</name></member>
+    <member refid="structloki_1_1anim_1_1_animation_data_1af022fc4012ca47fd58d460c2dfe14e1a" kind="variable"><name>repeat</name></member>
+    <member refid="structloki_1_1anim_1_1_animation_data_1abe71c159662b6f76ecba390e23ef9be9" kind="variable"><name>interpolation</name></member>
+    <member refid="structloki_1_1anim_1_1_animation_data_1ae28d20f21c4d95ca6d387e767775c716" kind="variable"><name>keyframes</name></member>
+  </compound>
+  <compound refid="classloki_1_1anim_1_1_animation_view_data" kind="class"><name>loki::anim::AnimationViewData</name>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a1d1c05ac75c80b2802ef027c83a2cf28" kind="variable"><name>duration</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a53702db38074d1e2825a799ccb152cb9" kind="variable"><name>repeat</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1add19b5c8508a80f4dc543a4b873b8d59" kind="variable"><name>ipOrigin</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a60686a97ecfc95d93c0dffdb247131f7" kind="variable"><name>ipPos</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1af07f00fc47045cf97fcd819435feac97" kind="variable"><name>ipRot</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a02ca2e08df0c8f6f72c8ee8924f4602c" kind="variable"><name>ipScale</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a60fda7edc2472a5d63ba785e2c7f6a79" kind="variable"><name>ipColor</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1ab8315ebbf61e8f9244e5594095bfdd51" kind="variable"><name>ipTexRect</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1af926b5e0b8a18a2b952de8349f473d35" kind="function"><name>AnimationViewData</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1ab01256b8585e82e4e86bb817da6f089e" kind="function"><name>getDuration</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1afbedcfbf62814a376ab4835aca563e2e" kind="function"><name>isRepeated</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1afd1e7864ebfef65ca4e23317292e16b5" kind="function"><name>getOrigin</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1aece118d8222123f64b26de7b2a95ff82" kind="function"><name>getPosition</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a1fce74d435d6bcc9106a5fffeeef3c15" kind="function"><name>getRotation</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a28e02f7169d07609ca1b0f6d1def5e03" kind="function"><name>getScale</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a294348854e3a3ca36908160335c3a406" kind="function"><name>getTransform</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1a74548d733acbb83c8e68811f384f1dce" kind="function"><name>getColor</name></member>
+    <member refid="classloki_1_1anim_1_1_animation_view_data_1afff744eb6df42f44ec546fe75a389f1e" kind="function"><name>getTextureRect</name></member>
+  </compound>
+  <compound refid="classloki_1_1anim_1_1_animator" kind="class"><name>loki::anim::Animator</name>
+    <member refid="classloki_1_1anim_1_1_animator_1a18bbd8b45ab74790ebd70a96dd7712f2" kind="variable"><name>animated</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a6274619d482e23a82a1a57eba2ab2af8" kind="variable"><name>viewData</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a5d062388db809fa9c05ed8e09e6d97b2" kind="variable"><name>baseKeyframe</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a5ad50a60fe8086e37f6686870ea86d3a" kind="variable"><name>elapsedTime</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a914ed838a4e732d6a3433cc011a135a5" kind="variable"><name>isPaused</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1aa5583f6b3732227f1e6b477cbbd8d834" kind="function"><name>Animator</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1ae119a85daa053434d43aecf04eee550f" kind="function"><name>start</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a97e51f1a4345129b1b30c2a8590b60c9" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1ad6e52812ba42714256fd9c7577d65dbe" kind="function"><name>hasEnded</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1a87cd4905fbd66c1937275ea4103204dd" kind="function"><name>pause</name></member>
+    <member refid="classloki_1_1anim_1_1_animator_1ab62b0111d667a9b503a5ca614758c95f" kind="function"><name>unpause</name></member>
+  </compound>
+  <compound refid="classloki_1_1text_1_1_annotated_text" kind="class"><name>loki::text::AnnotatedText</name>
+    <member refid="classloki_1_1text_1_1_annotated_text_1a3045ca527d6f79d89ead47bdadd41110" kind="variable"><name>blocks</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1ac6adaa053b3e5d40609cf60ae0ba4b04" kind="function"><name>AnnotatedText</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1a1fff3711075f15929325a7d6f4bebefc" kind="function"><name>AnnotatedText</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1a3c30c0b29881353dfe40677045937654" kind="function"><name>setString</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1af9d84a03552d09e87ad9051e4fc10447" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1a74c11a9b559c05b7041e876e70706e2c" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1af28b0e2a381e97d8852df0e838be14c0" kind="function"><name>skip</name></member>
+    <member refid="classloki_1_1text_1_1_annotated_text_1a81d649f2641b2526f4da16a92ff1a61e" kind="function"><name>closeBlock</name></member>
+  </compound>
+  <compound refid="classloki_1_1shapes_1_1_capsule" kind="class"><name>loki::shapes::Capsule</name>
+    <member refid="classloki_1_1shapes_1_1_capsule_1ab72abfa8112f68340e5f5bb62c809b27" kind="variable"><name>size</name></member>
+    <member refid="classloki_1_1shapes_1_1_capsule_1a7eb1a28b2c5a7c1877f882efbb46877f" kind="variable"><name>borderPointCount</name></member>
+    <member refid="classloki_1_1shapes_1_1_capsule_1a3a6b4bbdb7c061fed017803fa1aaa88b" kind="function"><name>Capsule</name></member>
+    <member refid="classloki_1_1shapes_1_1_capsule_1a0abb8b3d6f896e783d1e042b0110b033" kind="function"><name>~Capsule</name></member>
+    <member refid="classloki_1_1shapes_1_1_capsule_1a747bc4d9221a1ddc2adda5c6be1816c3" kind="function"><name>getPointCount</name></member>
+    <member refid="classloki_1_1shapes_1_1_capsule_1ae5213f450e60a6b2d2e5a2f545ae3668" kind="function"><name>getPoint</name></member>
+  </compound>
+  <compound refid="structimpl_1_1detector" kind="struct"><name>impl::detector</name>
+  </compound>
+  <compound refid="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4" kind="struct"><name>impl::detector&lt; std::void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</name>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_drop_wrapper" kind="class"><name>loki::common::DropWrapper</name>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a2e2cfbd24ee01f8f54bbc412b434d2c8" kind="typedef"><name>iterator</name></member>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a6a885efbb35f57334e27da57d972898c" kind="variable"><name>container</name></member>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a9719c5b5b63d0ed15ee2489ee1713bce" kind="variable"><name>dropCount</name></member>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a8ddbd3afd66f0956c5286aeeace5a864" kind="function"><name>DropWrapper</name></member>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a6ed06c1575256cf6647ccc3b582fe931" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_drop_wrapper_1a583caedc6d84907cbbeebfc26e31562f" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_ellipse_object_data" kind="struct"><name>loki::tiles::EllipseObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_ellipse_object_data_1a01d66db447df95966c9474074bdd4752" kind="variable"><name>rect</name></member>
+    <member refid="structloki_1_1tiles_1_1_ellipse_object_data_1a9bf1c3f94752369af3f63f29f7f2c4e2" kind="variable"><name>rotation</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_enumerate_wrapper" kind="class"><name>loki::common::EnumerateWrapper</name>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1a08d8c5fbe41357f3ace4e1ab91cfdc72" kind="variable"><name>container</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1adca2882f2f692b0e007cb7bb20e4b403" kind="function"><name>EnumerateWrapper</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1ad11e83c378341a563ecfaa28bf5055e2" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1a5cb46297fa99a5fa183ccca5077b933a" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="classloki_1_1input_1_1_event_handler" kind="class"><name>loki::input::EventHandler</name>
+    <member refid="classloki_1_1input_1_1_event_handler_1ac8da0ad0427aa0d35ce51ae53e44a9e4" kind="typedef"><name>PlayerInputStates</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a8d220de7ce9f67a25873e9575c353cf0" kind="variable"><name>settings</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a54fe037bef873754e0a18afff0245307" kind="variable"><name>playerInputStates</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a06c8362ace280a5a8e814d7effe4e88c" kind="variable"><name>playerConfigs</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a7a2832ad8204239b143882cdde5dc734" kind="function"><name>EventHandler</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a99cfc76e85f509f0eea4c143254aca60" kind="function"><name>setSettings</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a08955e533af7c1236a230eb41289ad78" kind="function"><name>setPlayerConfig</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1aed47af4167aa76e82f6dbde5a54970ed" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a3352731c8489123b5d504b85cb75fef3" kind="function"><name>getInputState</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a9d03adbbdf4ad374b7a2f11f3ac21e78" kind="function"><name>resetStates</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a1950364393683fd9c6c6003e42a3386f" kind="function"><name>resetTransitions</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a06ca0dd95c70a4be317a91bba5f5766d" kind="function"><name>isActive</name></member>
+    <member refid="classloki_1_1input_1_1_event_handler_1a009c173ec314986953e381d22190fed2" kind="function"><name>updateState</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_event_text_box_controller" kind="class"><name>loki::gui::EventTextBoxController</name>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1a3c19e55a14b26098efa731ef7303efca" kind="variable"><name>eventHandler</name></member>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1abd4a2e5e638332b31d2794090c6add2c" kind="variable"><name>inputName</name></member>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1ae6f71c21308f40ab15db829ed3b0892c" kind="function"><name>EventTextBoxController</name></member>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1a7782a60c5532f5fdf7c9dfc9c9c33627" kind="function"><name>setInputName</name></member>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1ac4d575825815d9e434ed053492cfbbd7" kind="function"><name>getInputName</name></member>
+    <member refid="classloki_1_1gui_1_1_event_text_box_controller_1af2aeb7cb4ab61b05afdcb73b71858e04" kind="function"><name>handleInputs</name></member>
+  </compound>
+  <compound refid="structloki_1_1common_1_1false__type" kind="struct"><name>loki::common::false_type</name>
+    <member refid="structloki_1_1common_1_1false__type_1aef86aeb040e12e3032773a431629da78" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_frame" kind="struct"><name>loki::tiles::Frame</name>
+    <member refid="structloki_1_1tiles_1_1_frame_1a3be7ff4b49cd405d41027c673e589e54" kind="variable"><name>tileId</name></member>
+    <member refid="structloki_1_1tiles_1_1_frame_1a4f7691439b36b4b5437a01ce1c3f8c41" kind="variable"><name>duration</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4" kind="struct"><name>std::hash&lt; loki::screens::Signal::Trigger &gt;</name>
+    <member refid="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4_1af4d195dc943b62f46f33e31f43568dea" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1common_1_1identity__type" kind="struct"><name>loki::common::identity_type</name>
+    <member refid="structloki_1_1common_1_1identity__type_1a92228bb0872a950ca9cf8d5b26abd584" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structloki_1_1input_1_1_input_settings" kind="struct"><name>loki::input::InputSettings</name>
+    <member refid="structloki_1_1input_1_1_input_settings_1a322a7ab35e63beabd56db54f5477faac" kind="typedef"><name>Config</name></member>
+    <member refid="structloki_1_1input_1_1_input_settings_1a5fbc33824c4c7e163fd32e4b70b60ccc" kind="variable"><name>configs</name></member>
+    <member refid="structloki_1_1input_1_1_input_settings_1a76ea1291ca6ed9edce5b9f495234834b" kind="function"><name>InputSettings</name></member>
+    <member refid="structloki_1_1input_1_1_input_settings_1a3ebdfdfe7b468dc16bd239469493e3dc" kind="function"><name>InputSettings</name></member>
+    <member refid="structloki_1_1input_1_1_input_settings_1a974b6db833959a4afd3fdb50719926b6" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="structloki_1_1input_1_1_input_state" kind="struct"><name>loki::input::InputState</name>
+    <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43a" kind="enum"><name>Status</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa4dda5e6db55dfda466c8531bc95be9cd" kind="enumvalue"><name>INACTIVE</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aaa82e95f23994acc794bb017fe207281b" kind="enumvalue"><name>TRIGGERED</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa26bd59c9bea91c42427939971da08e2e" kind="enumvalue"><name>ACTIVE</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5d35d52f35e22cb541a7b153e775b43aa297ee421499f89a014877bf6b95f5d88" kind="enumvalue"><name>ENDED</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1ad5707057de8ae141b4337fa5ba50e593" kind="variable"><name>status</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5e5b4502fa32f49b45ebc837ffd22ec5" kind="variable"><name>value</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a5dc2db2cb5dbe4e78b2bd232301d356d" kind="function"><name>isActive</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1ab12f932b73aa5cb36da47ac350921dc8" kind="function"><name>operator bool</name></member>
+    <member refid="structloki_1_1input_1_1_input_state_1a8f41c2b3dfee652758d4f1fae6f38e27" kind="function"><name>hasChanged</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_interpolation_base" kind="class"><name>loki::common::InterpolationBase</name>
+    <member refid="classloki_1_1common_1_1_interpolation_base_1a2befea657fd0258cbc9d46e258c571cc" kind="function"><name>~InterpolationBase</name></member>
+    <member refid="classloki_1_1common_1_1_interpolation_base_1a1c0910cb231accb2e992370bf1fe749e" kind="function"><name>interpolate</name></member>
+    <member refid="classloki_1_1common_1_1_interpolation_base_1a2a377206db392cf37366f05b81e90f07" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator" kind="class"><name>loki::common::EnumerateWrapper::iterator</name>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ad0bf7b7dd1bd1905ad6acb49489465ed" kind="typedef"><name>inner_iterator</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a16e2643d23cc36fcfe84c434f84f59d4" kind="typedef"><name>inner_reference</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1abe2bcc58256db93b9fa0734742bcb7dc" kind="typedef"><name>reference</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a77e481fc237ae016a9110173a0ecc32f" kind="variable"><name>_pos</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a7fdbb2665694a5bde827a7282a0e943d" kind="variable"><name>_it</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6043a73154f9d4e45f4822b5eb54429d" kind="function"><name>iterator</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a1cd53ddbce662b848c2e334c924fcad4" kind="function"><name>operator*</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1ae54b3c5e1f723c718c6ce56480483228" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a6a0c86e232e320c28a6d8a64d4606e30" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a68ea2e262dd4c79d065c43d8e8e7f884" kind="function"><name>operator==</name></member>
+    <member refid="classloki_1_1common_1_1_enumerate_wrapper_1_1iterator_1a850b59ba3e7175ad0afed020b849541e" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator" kind="class"><name>loki::common::ZipWrapper::iterator</name>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a5ba0f7014e7b3b1ca3952f583471923c" kind="typedef"><name>inner_iterator1</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1aa19dc3d2c2160c5c2787357d497056da" kind="typedef"><name>inner_reference1</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a5ffea47125e12cc2cf86163753677911" kind="typedef"><name>inner_iterator2</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a7957e98f21910a678c0e85f1381aa2d5" kind="typedef"><name>inner_reference2</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a47726e511861de000df214efa736cf01" kind="typedef"><name>reference</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1aea0eb30d3ed8c1ce36ea99b5926f61a2" kind="variable"><name>_it1</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a217cac4ea1eae4fa1e5f55d2965f20fd" kind="variable"><name>_it2</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1ae7fa3a5a4c00d04e7f6edf76cadf89e3" kind="function"><name>iterator</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a447626387fd8a8542e55bfffcf63a7e7" kind="function"><name>operator*</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1ab4782e7520b9e48ad32bac1bde8286f5" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1afc486c2891ba07f88285353712d19b98" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a31dc4a950ebc2b8ce813bcc6911a7dee" kind="function"><name>operator==</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator_1a668f605be6b2959b7fb13f35fdef7196" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_iter_hash" kind="struct"><name>loki::hash::IterHash</name>
+    <member refid="structloki_1_1hash_1_1_iter_hash_1a510905c3d2da03ac28ec1f5910b55072" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1input_1_1_joystick_axis_trigger" kind="struct"><name>loki::input::JoystickAxisTrigger</name>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceae" kind="enum"><name>Direction</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaeaab6c31432785221bae58327ef5f6ea58" kind="enumvalue"><name>POSITIVE</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaea50546bf973283065b6ccf09faf7a580a" kind="enumvalue"><name>NEGATIVE</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1aa179f58b09f511db787282c3e932ceaea6328e5e3186c227a021ef2ff77e40197" kind="enumvalue"><name>BOTH</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1a442d5aff3c94d23e32652c3d519c956c" kind="variable"><name>axis</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1a7505bbb55c77afae9a2d2ef94202fbd3" kind="variable"><name>direction</name></member>
+    <member refid="structloki_1_1input_1_1_joystick_axis_trigger_1adbcf8debba4159cfac7a58c50a770239" kind="variable"><name>deadZone</name></member>
+  </compound>
+  <compound refid="structloki_1_1anim_1_1_keyframe" kind="struct"><name>loki::anim::Keyframe</name>
+    <member refid="structloki_1_1anim_1_1_keyframe_1afe6bb1c845c412ef6a40a9cc24b04ffe" kind="variable"><name>origin</name></member>
+    <member refid="structloki_1_1anim_1_1_keyframe_1a71af1ab1d1d9fa51fa5620a8f4bedf5c" kind="variable"><name>position</name></member>
+    <member refid="structloki_1_1anim_1_1_keyframe_1a1d8bd9557bb249ac55e1e8df0b4b0179" kind="variable"><name>rotation</name></member>
+    <member refid="structloki_1_1anim_1_1_keyframe_1a55edc1f48e8714dfb054f50ecf6ad013" kind="variable"><name>scale</name></member>
+    <member refid="structloki_1_1anim_1_1_keyframe_1a240e409908cce9af9e40142c3540fb10" kind="variable"><name>color</name></member>
+    <member refid="structloki_1_1anim_1_1_keyframe_1a739c4b78ae8aedffae41acaff1b4120c" kind="variable"><name>textureRect</name></member>
+  </compound>
+  <compound refid="classloki_1_1tiles_1_1_layer_view" kind="class"><name>loki::tiles::LayerView</name>
+    <member refid="classloki_1_1tiles_1_1_layer_view_1ae1bf0959bae8f3689d7526cbce62b1cd" kind="variable"><name>parent</name></member>
+    <member refid="classloki_1_1tiles_1_1_layer_view_1ace4d2a707bb79cc8bbfc4eb62f18ba8c" kind="function"><name>LayerView</name></member>
+    <member refid="classloki_1_1tiles_1_1_layer_view_1a4a25fb543bf7f62d7f19bf3d87996def" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1tiles_1_1_layer_view_1acafa72aa51c2fc43193358dcb08d3f5e" kind="function"><name>getParentTransform</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_linear_interpolation" kind="class"><name>loki::common::LinearInterpolation</name>
+    <member refid="classloki_1_1common_1_1_linear_interpolation_1a89afb1f24ec8e82321db8502860cfad3" kind="variable"><name>points</name></member>
+    <member refid="classloki_1_1common_1_1_linear_interpolation_1afbcd2c11436d1a44d4abde5f94be0762" kind="function"><name>LinearInterpolation</name></member>
+    <member refid="classloki_1_1common_1_1_linear_interpolation_1a6ba3d2604ed93394ee569aeb49386951" kind="function"><name>~LinearInterpolation</name></member>
+    <member refid="classloki_1_1common_1_1_linear_interpolation_1a9a908440fdade8b8b3267574da60aeb6" kind="function"><name>interpolate</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_list_controller" kind="class"><name>loki::gui::ListController</name>
+    <member refid="classloki_1_1gui_1_1_list_controller_1a8f6e0686304d69150c06f4b225aef095" kind="function"><name>addElement</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_map_data" kind="struct"><name>loki::tiles::MapData</name>
+    <member refid="structloki_1_1tiles_1_1_map_data_1acebc53e5da46027f450bf60adee945ff" kind="typedef"><name>TilesetLoader</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1ac7799ecbe32b1d97d8a603557bcd5e5e" kind="variable"><name>gridSize</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1a821c55368c1f737ae9364e93ff20af61" kind="variable"><name>layers</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1ae07c1b44ae2a6c426e809bea8f974d05" kind="variable"><name>properties</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1a593643cd0f4cf32b61b35343ad9967af" kind="variable"><name>tilesets</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1af0ea97857f05fd5ffcaaadd64498a25d" kind="variable"><name>renderOrder</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1adfd4e7a58a5d120b2aca9935b52172a9" kind="variable"><name>backgroundColor</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1a92886bf7dd7ae52e505a0a5886796e7e" kind="function"><name>MapData</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1a40a4291be4d79d8af71a75707c858618" kind="function"><name>MapData</name></member>
+    <member refid="structloki_1_1tiles_1_1_map_data_1a89098c094cf9c2719b5d3e69533ded5d" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="classloki_1_1tiles_1_1_map_view" kind="class"><name>loki::tiles::MapView</name>
+    <member refid="classloki_1_1tiles_1_1_map_view_1af298d9c1e9ecc002f8a6d779687b304b" kind="variable"><name>data</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1aef2eea46c5014c8a08efb36ebde0ea57" kind="variable"><name>layers</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1a9e3f241be33990a7eea7038d0875e710" kind="variable"><name>background</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1a90cb16eb363d3c5384ab389949990ef9" kind="function"><name>MapView</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1a5149c9efbf1e803034387ef29dec4af0" kind="function"><name>MapView</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1a98fb0483b4909f40905b9964eb01e0be" kind="function"><name>setData</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1ac63ef761f3b9748a81e9e7fdb8dbf45b" kind="function"><name>getData</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1a9347212cd22854593974d0ff02693eb1" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1acb108a7cc62e04ed8a03a0d19c600e97" kind="function"><name>getLayers</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1afe2f62c4b6e19bdfe84922f02772e46b" kind="function"><name>getLayer</name></member>
+    <member refid="classloki_1_1tiles_1_1_map_view_1aaa3ec13a65bc4eef77e40f918ccffba0" kind="function"><name>getBackground</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_matrix" kind="class"><name>loki::common::Matrix</name>
+    <member refid="classloki_1_1common_1_1_matrix_1a4ca812a16aaaac418130ab8e742e3e22" kind="variable"><name>data</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1ac6cc96e788da0ec17cab01df4fdf90b7" kind="variable"><name>height</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a378e952e81847fc52ce92f8542903aaf" kind="variable"><name>width</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1ad5538605c4760ab40c043168dcf5303e" kind="function"><name>Matrix</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a5ccebf09d5110c93a5eea61c63646f97" kind="function"><name>Matrix</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a54510d3b2b2ce4c25edadcc1122e8ec2" kind="function"><name>Matrix</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a0438e4bb40d3d210c6a0bc439334a8c6" kind="function"><name>operator[]</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a0e53daee17aa1ba09aaa4d536d0deb91" kind="function"><name>operator[]</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a780b0a68867d4470a92bf59d34312c7d" kind="function"><name>getWidth</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a81af74484316855f0530a790231b742b" kind="function"><name>getHeight</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a0037798b14815af3433508ce7fde0ee2" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1afaef359c437fcaab178b674a63db5b23" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a14c5c74c3bcee83d5446718a3c8270cc" kind="function"><name>cbegin</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1ac3dadff0b8591b93a405779fc4662140" kind="function"><name>end</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1a7fa16adb5eaf27b7af646b744c248e51" kind="function"><name>end</name></member>
+    <member refid="classloki_1_1common_1_1_matrix_1ace3a9db06ba7d7ed5eb25dc675187d29" kind="function"><name>cend</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_none_interpolation" kind="class"><name>loki::common::NoneInterpolation</name>
+    <member refid="classloki_1_1common_1_1_none_interpolation_1ae56b124ffff17509c8fca57366b03d0a" kind="variable"><name>points</name></member>
+    <member refid="classloki_1_1common_1_1_none_interpolation_1a50212ee3293b02d6061b21a8831569ca" kind="function"><name>NoneInterpolation</name></member>
+    <member refid="classloki_1_1common_1_1_none_interpolation_1a9715dc43eae472b627b77c37787fd705" kind="function"><name>~NoneInterpolation</name></member>
+    <member refid="classloki_1_1common_1_1_none_interpolation_1a7a316abfc89f638e7742bd4a03ee7c21" kind="function"><name>interpolate</name></member>
+  </compound>
+  <compound refid="structloki_1_1common_1_1nonesuch" kind="struct"><name>loki::common::nonesuch</name>
+    <member refid="structloki_1_1common_1_1nonesuch_1ac69ff4bc7f59126ca0bfccbcadd81d9c" kind="function"><name>~nonesuch</name></member>
+    <member refid="structloki_1_1common_1_1nonesuch_1afe481cd1c92dbf4c7fb3a248d97c6fdc" kind="function"><name>nonesuch</name></member>
+    <member refid="structloki_1_1common_1_1nonesuch_1a3f4a96b358717fdd21beb4179e563cfd" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_object_layer_data" kind="struct"><name>loki::tiles::ObjectLayerData</name>
+    <member refid="structloki_1_1tiles_1_1_object_layer_data_1ad89c86f733870144cab85e91ed69b781" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_object_layer_data_1ad57ea1af7d1594d29168dee5b67cf959" kind="variable"><name>objects</name></member>
+    <member refid="structloki_1_1tiles_1_1_object_layer_data_1ae9ea8a132689c59bf4069e31682f6cf8" kind="function"><name>ObjectLayerData</name></member>
+  </compound>
+  <compound refid="classloki_1_1tiles_1_1_object_layer_view" kind="class"><name>loki::tiles::ObjectLayerView</name>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1a159b49b8792c9772f3c3efc80f29bdf8" kind="friend"><name>MapView</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1a99a8e37c28e5b6da78cc1b281835bd70" kind="variable"><name>layerData</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1af068cbc0ac16c54ba61cafd6591bdfd5" kind="variable"><name>objects</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1aefb8a203cc64768dc64eec14ff96cc0e" kind="function"><name>ObjectLayerView</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1ac4d96c7caca5487499cf0f8d5b759b4a" kind="function"><name>initObjects</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1a113fe6f0b634a89833120b83dc536ada" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1tiles_1_1_object_layer_view_1aad20ed08a9322bc79beb4f77fc610179" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_pair_are_equal_sym" kind="struct"><name>loki::hash::PairAreEqualSym</name>
+    <member refid="structloki_1_1hash_1_1_pair_are_equal_sym_1ac38dd922dfe3842d4a68c12f3141a812" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_pair_hash" kind="struct"><name>loki::hash::PairHash</name>
+    <member refid="structloki_1_1hash_1_1_pair_hash_1a2443fe295e4b03d69d83014c4aeee01d" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_pair_hash_sym" kind="struct"><name>loki::hash::PairHashSym</name>
+    <member refid="structloki_1_1hash_1_1_pair_hash_sym_1a744088fa6f5247415a4ee9cee0289f41" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1input_1_1_player_config" kind="struct"><name>loki::input::PlayerConfig</name>
+    <member refid="structloki_1_1input_1_1_player_config_1abb23acd3a1f0a094b8cc1738a0bafefd" kind="variable"><name>config</name></member>
+    <member refid="structloki_1_1input_1_1_player_config_1a86312fa64c84997fc2971065ed04cb09" kind="variable"><name>joystickId</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_point_object_data" kind="struct"><name>loki::tiles::PointObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_point_object_data_1a61e79cb570bf4ab94585632b8c8984cc" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_point_object_data_1a4748bf953c8ec38ad5a05997553a8d81" kind="variable"><name>position</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_polygon_object_data" kind="struct"><name>loki::tiles::PolygonObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_polygon_object_data_1aedb1215adfa440ba7818f3aa9f134737" kind="variable"><name>vertices</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_polyline_object_data" kind="struct"><name>loki::tiles::PolylineObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_polyline_object_data_1a84ade23ba5cba62d9d7c97f6a4e53bbe" kind="variable"><name>vertices</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_rectangle_object_data" kind="struct"><name>loki::tiles::RectangleObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_rectangle_object_data_1ad66585f24bd70d75eaf9a25d276844d8" kind="variable"><name>rect</name></member>
+    <member refid="structloki_1_1tiles_1_1_rectangle_object_data_1ad6721579a018f067bd72cdea9fb55794" kind="variable"><name>rotation</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_rectangle_shape_frame" kind="class"><name>loki::gui::RectangleShapeFrame</name>
+    <member refid="classloki_1_1gui_1_1_rectangle_shape_frame_1a1acb6d02c8aa0ac2184148402af8655a" kind="variable"><name>padding</name></member>
+    <member refid="classloki_1_1gui_1_1_rectangle_shape_frame_1a762ce214a019b1ea4fc40f00308d08f7" kind="variable"><name>shape</name></member>
+    <member refid="classloki_1_1gui_1_1_rectangle_shape_frame_1aedfd51bbe800a5aed79fb1bd47b255e0" kind="function"><name>RectangleShapeFrame</name></member>
+    <member refid="classloki_1_1gui_1_1_rectangle_shape_frame_1a3a90b6ad28520aac85d543c50d1462c2" kind="function"><name>getInternalBounds</name></member>
+    <member refid="classloki_1_1gui_1_1_rectangle_shape_frame_1a0b50dcca3a7f43274e54e36a233e9fa8" kind="function"><name>draw</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_reversed_wrapper" kind="class"><name>loki::common::ReversedWrapper</name>
+    <member refid="classloki_1_1common_1_1_reversed_wrapper_1a90d7982a70c7e465608c73b75ade1966" kind="typedef"><name>iterator</name></member>
+    <member refid="classloki_1_1common_1_1_reversed_wrapper_1a62e4fba6c4514741fcd221e6ce6e895f" kind="variable"><name>container</name></member>
+    <member refid="classloki_1_1common_1_1_reversed_wrapper_1a777f64b5792e80b718476b78659163a5" kind="function"><name>ReversedWrapper</name></member>
+    <member refid="classloki_1_1common_1_1_reversed_wrapper_1a743f0648a84602566969e61a015354c7" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_reversed_wrapper_1a9a5bae00599d4d1afce424c4ac743f20" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="classloki_1_1shapes_1_1_rounded_rectangle" kind="class"><name>loki::shapes::RoundedRectangle</name>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1aa674df58bc4c927dc838f95cf07d236a" kind="variable"><name>size</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ae502a04ad2be1a8273ca0af288773a65" kind="variable"><name>borderRadius</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1af5fb30c9f0587ad655f73f8ccec0a1e5" kind="variable"><name>borderPointCount</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a22203c582c5a235843f145dd76b78aac" kind="function"><name>RoundedRectangle</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a7ce09ad9a8a64f7fff2d9f2c510ca97c" kind="function"><name>~RoundedRectangle</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ab324176eefec32ea056486bd7e5fbce4" kind="function"><name>getPointCount</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1ace6ffe34fbba7bad38a199d02f6c029e" kind="function"><name>getPoint</name></member>
+    <member refid="classloki_1_1shapes_1_1_rounded_rectangle_1a4d20f74fa55599f4d1a3480994f647d1" kind="function"><name>getQuadrantOrigin</name></member>
+  </compound>
+  <compound refid="classloki_1_1screens_1_1_screen" kind="class"><name>loki::screens::Screen</name>
+    <member refid="classloki_1_1screens_1_1_screen_1afe048f1501525ecb3bdfe0bdec45742c" kind="variable"><name>ready</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1ad5314959c26d8645eff4073acf92adb5" kind="variable"><name>signalHandlers</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a700153d98e696f931a2fa507175c7e60" kind="variable"><name>stack</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a2b8115f7cc183a2cad0b6be225f72921" kind="function"><name>Screen</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1aa9da7c5a3d2776b51b91d0f2eb27eb5e" kind="function"><name>~Screen</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a480b4ae1aa0ec85653d9a074a1491372" kind="function"><name>init</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a0d8cbd621a748176aaa845f8f077ec87" kind="function"><name>isReady</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1ae4bed5b048fe97e30790533e763d9284" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a1291ca66e52464a1dd2c7849607a7057" kind="function"><name>updateView</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a49a63660aad93ef99afbb5d0cdcdaa1f" kind="function"><name>render</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1ab3370a116c978eec543bf1eedf63a140" kind="function"><name>registerSignalHandler</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a7493160835e0b177caf9853416c02fab" kind="function"><name>registerSignalHandler</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a07ef36af735d214cf2af5bcf8856bda0" kind="function"><name>registerSignalHandler</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1aa5f3bec93699a6fd2447374047db6aaf" kind="function"><name>removeSignalHandler</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1a9642339cc45c9c8add232ce213e761dc" kind="function"><name>clearAllSignalHandlers</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_1ad51dcebe7cb1f2d4edaa1bd0fb75812c" kind="function"><name>handleSignal</name></member>
+  </compound>
+  <compound refid="classloki_1_1screens_1_1_screen_stack" kind="class"><name>loki::screens::ScreenStack</name>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a3a8f2acd18f43845db97d64f2494a308" kind="variable"><name>stack</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a8a28fc9b3d31d0a6a395c89eba5bdfdc" kind="function"><name>~ScreenStack</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a09fc97d6782195dc322af1fea3269889" kind="function"><name>push</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a27397c17d95d84131c67ddbd5d8ef999" kind="function"><name>close</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1ad687fe5f67a168c6132cd8f290f4ee31" kind="function"><name>closeAbove</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a3fea6c1b7ab4aab7ab3a78466a154839" kind="function"><name>clear</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a61c629c3c7ba60858c5aeeac02a91083" kind="function"><name>sendSignal</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a909374b32b12bda0f39f13c420732654" kind="function"><name>empty</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a1a81c2dff7bdae253a747f4e97abe365" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1screens_1_1_screen_stack_1a38a9236cf40bd94fef786cef70464683" kind="function"><name>draw</name></member>
+  </compound>
+  <compound refid="structloki_1_1styles_1_1_shape_style" kind="struct"><name>loki::styles::ShapeStyle</name>
+    <member refid="structloki_1_1styles_1_1_shape_style_1a271eb57f13de18236e4b11c7a8625cc7" kind="variable"><name>texture</name></member>
+    <member refid="structloki_1_1styles_1_1_shape_style_1a460599264a214d69f30de07701bfd1c3" kind="variable"><name>textureRect</name></member>
+    <member refid="structloki_1_1styles_1_1_shape_style_1ad3e7066848b17174069ee05aceb767ac" kind="variable"><name>fillColor</name></member>
+    <member refid="structloki_1_1styles_1_1_shape_style_1a4ed241148e4ddfac66a3fc72ad4e8971" kind="variable"><name>outlineColor</name></member>
+    <member refid="structloki_1_1styles_1_1_shape_style_1a39300a1054cf96d3e633fdd0e046a3ac" kind="variable"><name>outlineThickness</name></member>
+    <member refid="structloki_1_1styles_1_1_shape_style_1ae36ced3a2aa213419ca89e26b3607e17" kind="function"><name>applyTo</name></member>
+  </compound>
+  <compound refid="structloki_1_1screens_1_1_signal" kind="struct"><name>loki::screens::Signal</name>
+    <member refid="structloki_1_1screens_1_1_signal_1a27b3d854af16efde957dbe54c42b899a" kind="variable"><name>trigger</name></member>
+    <member refid="structloki_1_1screens_1_1_signal_1acd10dd3e244a7ea08eec21636ef90d7d" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="classloki_1_1sprites_1_1_sprite" kind="class"><name>loki::sprites::Sprite</name>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a8dbd8be31deb6fdf68ea8ff485c4512d" kind="variable"><name>viewData</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a935bd34943e8f8f1e26c6d0f300065eb" kind="variable"><name>sprite</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a53926a865e01bf5ae4ca554993a8a287" kind="variable"><name>animator</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a19ac3603d927c596475162fb9c7ffeb3" kind="function"><name>Sprite</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a29022746a85dc0d6d774309da9df3ca4" kind="function"><name>setAnim</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1ab85796ba880672305c279d6b7ce21d97" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a3aa475cabda973276b0ac400d3e6003f" kind="function"><name>getLocalBounds</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1af12da9f791487ca060dadc7a06147c73" kind="function"><name>getGlobalBounds</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a94e320a6155852a3864bd6d91a7dfc99" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1sprites_1_1_sprite_1a51ff9beadf104c37f213f0a4cde1074d" kind="function"><name>resetSprite</name></member>
+  </compound>
+  <compound refid="structloki_1_1sprites_1_1_sprite_data" kind="struct"><name>loki::sprites::SpriteData</name>
+    <member refid="structloki_1_1sprites_1_1_sprite_data_1a3b3bf0555164749c03d5ce155754f1e2" kind="variable"><name>animations</name></member>
+    <member refid="structloki_1_1sprites_1_1_sprite_data_1a9c0b7c4cc60da29a591a34ec343b4671" kind="variable"><name>texturePath</name></member>
+  </compound>
+  <compound refid="structloki_1_1sprites_1_1_sprite_view_data" kind="struct"><name>loki::sprites::SpriteViewData</name>
+    <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ad0fb6467487bd520d519f088dfb0318d" kind="variable"><name>animations</name></member>
+    <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ab7e23aa66fa514e78a05b902072d7a56" kind="variable"><name>texture</name></member>
+    <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ae2146403d01a88cfd594c556c620aa5d" kind="function"><name>SpriteViewData</name></member>
+  </compound>
+  <compound refid="structloki_1_1states_1_1_state" kind="struct"><name>loki::states::State</name>
+    <member refid="structloki_1_1states_1_1_state_1a8dcd427850c52bb2e6d0308f2c84883a" kind="variable"><name>onEnter</name></member>
+    <member refid="structloki_1_1states_1_1_state_1a4d30e9826e4162ee709409e86aa45898" kind="variable"><name>onUpdate</name></member>
+    <member refid="structloki_1_1states_1_1_state_1aefb0dc0a65180b4f1f12d93426aa84d8" kind="variable"><name>onLeave</name></member>
+  </compound>
+  <compound refid="classloki_1_1states_1_1_state_machine" kind="class"><name>loki::states::StateMachine</name>
+    <member refid="classloki_1_1states_1_1_state_machine_1a56c4572182247aaa9cfeab4ed75c5c11" kind="typedef"><name>enable_if_enum</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1acdee60224573e38d5f567bb500f0b0b2" kind="variable"><name>curState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a692111db481c8fbdf6ee60f68da904d9" kind="variable"><name>states</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1abf12e245d1a8e56a4ee12abb610c493f" kind="variable"><name>transitions</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1af52ce11cc85c3cede2567b49f6523798" kind="function"><name>StateMachine</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a6d6209077a4d6d1eaa53100a4f041fa3" kind="function"><name>StateMachine</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a0ed1c68edb0ae7c8f7ab0e444c0f46bc" kind="function"><name>addState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a47dd3b32410b957d5680b43e7ab3fa5e" kind="function"><name>addState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1addc55f7881cbe9f51a1796194a62cf69" kind="function"><name>addTransition</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a36cd2880caf7e0e7fc32b9482f1d4e32" kind="function"><name>shrinkToFit</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1ab9cf1073d41207bc6c54f069e67ffb66" kind="function"><name>setCurrentState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a7d790fcead06e9945055fe5fb33dcb8d" kind="function"><name>setCurrentState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1aaf0fe3f0972493c671592278a1bdf065" kind="function"><name>getCurrentState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a4759d1988f10c5dd455c0e545cf9aff9" kind="function"><name>getCurrentState</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1a49cb1cbb82122c918b75fb523b1d01eb" kind="function"><name>update</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1afa3489d662c1cf8a4c82c625ab4777db" kind="function"><name>setCurrentStateWithTrigger</name></member>
+    <member refid="classloki_1_1states_1_1_state_machine_1ab12ac1af422eb665589c126169512938" kind="function"><name>checkTransitions</name></member>
+  </compound>
+  <compound refid="structloki_1_1window_1_1_style" kind="struct"><name>loki::window::Style</name>
+    <member refid="structloki_1_1window_1_1_style_1a5cfda675bf9c2e93951b68f62b02846c" kind="variable"><name>NONE</name></member>
+    <member refid="structloki_1_1window_1_1_style_1ae4cddcf06d56b58cc79056ad2d2bc4c2" kind="variable"><name>TITLEBAR</name></member>
+    <member refid="structloki_1_1window_1_1_style_1ae3062f58ed296bb8056f2764ca3e0109" kind="variable"><name>RESIZE</name></member>
+    <member refid="structloki_1_1window_1_1_style_1ac143497cdbd17651bbc2fa10dee78e16" kind="variable"><name>CLOSE</name></member>
+    <member refid="structloki_1_1window_1_1_style_1afdb37bba0d808e0a893c1e4b804c4e4a" kind="variable"><name>FULLSCREEN</name></member>
+    <member refid="structloki_1_1window_1_1_style_1aa711c3995df721166c3fa32e2f993b80" kind="variable"><name>LETTERBOXED_ZOOM</name></member>
+    <member refid="structloki_1_1window_1_1_style_1a78feec8ace47c0b640e2a3b18c709e16" kind="variable"><name>INTEGER_ZOOM_RATIO</name></member>
+    <member refid="structloki_1_1window_1_1_style_1a9e1f1f6f6eb37415b7bc3e32c9b41941" kind="variable"><name>DEFAULT</name></member>
+    <member refid="structloki_1_1window_1_1_style_1ae990f19b8adf4120b1ad35bf98a2cece" kind="variable"><name>value</name></member>
+    <member refid="structloki_1_1window_1_1_style_1a64527e9047eb4b5d381732c47b69d507" kind="function"><name>operator|=</name></member>
+    <member refid="structloki_1_1window_1_1_style_1abf523bafe0b347423040e1c44f306fd5" kind="function"><name>operator|</name></member>
+    <member refid="structloki_1_1window_1_1_style_1a78977ca3fad1e146ebad8ee28582a38d" kind="function"><name>contains</name></member>
+    <member refid="structloki_1_1window_1_1_style_1ae6bca77239458877bcd7a2208db7d817" kind="function"><name>toSFMLWindowStyle</name></member>
+  </compound>
+  <compound refid="classloki_1_1text_1_1_stylesheet" kind="class"><name>loki::text::Stylesheet</name>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a10c85e1672c84f3780c6efe09246bcf6" kind="variable"><name>styles</name></member>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a0c43df0b1970e27cea9e21824d8ce822" kind="function"><name>setStyle</name></member>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a073e86f9c8f4fd32bbf50ecf06754652" kind="function"><name>setDefaultStyle</name></member>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a3f766de5d82f279591d8fd0f2851498a" kind="function"><name>getStyle</name></member>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a4ec2dcb34beef199949a89f499a24038" kind="function"><name>getDefaultStyle</name></member>
+    <member refid="classloki_1_1text_1_1_stylesheet_1a15c9b3d922201be34c3689493ba13ace" kind="function"><name>getNewStyleFromBase</name></member>
+  </compound>
+  <compound refid="classloki_1_1tpl_1_1_template_engine" kind="class"><name>loki::tpl::TemplateEngine</name>
+    <member refid="classloki_1_1tpl_1_1_template_engine_1a753305f590bc5b3c6a099f4c1a9d84a1" kind="variable"><name>refs</name></member>
+    <member refid="classloki_1_1tpl_1_1_template_engine_1a693cb33c5d7788a1dbe25b433958aef9" kind="function"><name>addRef</name></member>
+    <member refid="classloki_1_1tpl_1_1_template_engine_1aec10efdd8f16d22d5fce995ba021d47e" kind="function"><name>addPtr</name></member>
+    <member refid="classloki_1_1tpl_1_1_template_engine_1a9b4cd41bff0f4e2b517cd8814f2b19c6" kind="function"><name>addLambdaRef</name></member>
+    <member refid="classloki_1_1tpl_1_1_template_engine_1a8b7ef0d21c19e5a7e6b365b32401863b" kind="function"><name>fill</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_terrain_data" kind="struct"><name>loki::tiles::TerrainData</name>
+    <member refid="structloki_1_1tiles_1_1_terrain_data_1a98be0611ccbf790a2a45ebd52e140fcd" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_terrain_data_1a1745e51f6c9b23e77c87748fa4cd6fc0" kind="variable"><name>properties</name></member>
+    <member refid="structloki_1_1tiles_1_1_terrain_data_1ad786c282a9715af144e127255cbb60a0" kind="function"><name>TerrainData</name></member>
+    <member refid="structloki_1_1tiles_1_1_terrain_data_1af84c3f576dd3d3ce838c2061690a8230" kind="function"><name>TerrainData</name></member>
+    <member refid="structloki_1_1tiles_1_1_terrain_data_1aaf5db4746ee0bc89e7916f81f1256533" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="structloki_1_1text_1_1_text_animation_view_data" kind="struct"><name>loki::text::TextAnimationViewData</name>
+    <member refid="structloki_1_1text_1_1_text_animation_view_data_1a35368866baceb45e5ba7ebf7b38fb3b0" kind="variable"><name>dt</name></member>
+    <member refid="structloki_1_1text_1_1_text_animation_view_data_1a73a7e2fb2638891f2a5832b78034e83a" kind="function"><name>TextAnimationViewData</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_text_box" kind="class"><name>loki::gui::TextBox</name>
+    <member refid="classloki_1_1gui_1_1_text_box_1a6be28e57fccf92eb7300ee5a42a9ee9d" kind="variable"><name>lineCount</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a699994cdbeabeb0d5e72240ce6d0cfac" kind="variable"><name>textStyle</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a7f714e7f2d206fb91b451506d17a4959" kind="variable"><name>frame</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a2fbf4945e0212124f15bd1c4a7f34172" kind="variable"><name>lines</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a80391578c8661a569851a2fa598b7ae3" kind="function"><name>TextBox</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a02ac9b4be59a53ba0a55130f07f0c07b" kind="function"><name>hasEnded</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1abc61e57b8b6aa6c768ac97b8c6490ab4" kind="function"><name>canFitInLine</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1ac401ca7b6b4ecd67d8b7682e0ba54b64" kind="function"><name>getLineCount</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a788e5f47d3e826b7d73ad2c7f5fef4c7" kind="function"><name>setLines</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a94c9e7e0b4ec773c570ca148f6beadfa" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_1a5dc39fec0cec80728a1a325140615925" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_text_box_controller" kind="class"><name>loki::gui::TextBoxController</name>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1abc05b7b8035f610f070aef3cb7e9558c" kind="variable"><name>view</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a4f9ba4af2d7e58a68ba103449d721c03" kind="variable"><name>str</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1abd7aa0412962ab8e7df8d1c4d00d3ce4" kind="variable"><name>it</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a5bfa7ad004d7a6b67b6523a3400870eb" kind="function"><name>TextBoxController</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a0679fc341696a5782814b6f3bd765f96" kind="function"><name>~TextBoxController</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a9205b12357ae7fc3724197fdf52d3b0f" kind="function"><name>hide</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a0f77de71e6caaeadfb6fb224b0d8eab5" kind="function"><name>unhide</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a0d1fb86c22ebc074f87361dd80a4686d" kind="function"><name>enable</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a8ab3b303d4d503f0b99e2be678cdb403" kind="function"><name>disable</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1ac9e05495ae77248ef43cb807db97920d" kind="function"><name>focus</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1ac5f438596ceb70114717920fd1a8c8e1" kind="function"><name>unfocus</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a7bc6a00be962587b78919547806c8865" kind="function"><name>activate</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a821abb03b79e976a3073077ba5735114" kind="function"><name>deactivate</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a0b858cc210725a2ef4e2551685caf110" kind="function"><name>setView</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a10047a0852b519f1f0ef34aa0dd7ffcf" kind="function"><name>setString</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a8a7d285b92673bb25d65ac7b8f1aa833" kind="function"><name>advance</name></member>
+    <member refid="classloki_1_1gui_1_1_text_box_controller_1a51c34f8b59423ad0187ef5a089e05a62" kind="function"><name>hasEnded</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_text_list" kind="class"><name>loki::gui::TextList</name>
+    <member refid="classloki_1_1gui_1_1_text_list_1a81a776d55138350ae66dc29c8c0e6b7c" kind="variable"><name>textStyle</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a0d4a05f3a4080fc3ca2457fc800d1e8e" kind="variable"><name>spacing</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a08c3a00fd937c3e66af7f765a7d8a213" kind="variable"><name>selection</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1ad9edf66072fbbac39802ed8a5c3c79dd" kind="variable"><name>items</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a53bfdb2539a7932b629ef388d50e6212" kind="function"><name>TextList</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a6aaa4d64eb0dc921486f9d00fb5eac4e" kind="function"><name>setTextStyle</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a9e8a054e8f065c916aa2c9bda51cbcfa" kind="function"><name>setSpacing</name></member>
+    <member refid="classloki_1_1gui_1_1_text_list_1a55ca38c7ea66f9914c8ef8102e4aa3c1" kind="function"><name>draw</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_text_object_data" kind="struct"><name>loki::tiles::TextObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22fed" kind="enum"><name>HorizontalAlign</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda684d325a7303f52e64011467ff5c5758" kind="enumvalue"><name>LEFT</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22fedac397289ee45877be0cd49811fe245b4e" kind="enumvalue"><name>CENTER</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda21507b40c80068eda19865706fdc2403" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda1a8c137fb3ff9dc6fa1a59e8743fc1e9" kind="enumvalue"><name>JUSTIFY</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20" kind="enum"><name>VerticalAlign</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20a6705777b712ee811e76fb07162081d63" kind="enumvalue"><name>TOP</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20ac397289ee45877be0cd49811fe245b4e" kind="enumvalue"><name>CENTER</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20a1fabf63de5c96c78e2a40805bcdeb73b" kind="enumvalue"><name>BOTTOM</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a2f16cea97da5fd466f0573acb4e601d8" kind="variable"><name>rect</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a871995c0bf2a3f1e81abd44298e96ede" kind="variable"><name>style</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a5ac149e8c83a43adf8b5bd04b2e7c36b" kind="variable"><name>color</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1ab0b8833a6468d55f5006f79bf699d303" kind="variable"><name>fontFamily</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1aa43fa48197b2f97783090b172f932fca" kind="variable"><name>size</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a61f132569dc832d2da070ff3118b83f4" kind="variable"><name>text</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a4207afe3d0e3dd393831409ceba01b79" kind="variable"><name>wrap</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1a19de016cbaf4750f1a5da62c0c1062fb" kind="variable"><name>horizontalAlign</name></member>
+    <member refid="structloki_1_1tiles_1_1_text_object_data_1aa5332877605e7a17872155295cb67f77" kind="variable"><name>verticalAlign</name></member>
+  </compound>
+  <compound refid="structloki_1_1styles_1_1_text_style" kind="struct"><name>loki::styles::TextStyle</name>
+    <member refid="structloki_1_1styles_1_1_text_style_1aba09c3e1f6b0e344e735d98390d1d911" kind="variable"><name>characterSize</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a83f8ef715f532c5d60f51db040b6e9e2" kind="variable"><name>characterStyle</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1acf6a949209b17a56697ce75c1419a2d8" kind="variable"><name>fillColor</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1adba09bf2caa9efe209f43964ded7aa53" kind="variable"><name>font</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1aa4985624462f0e9e7c94c5d1adad8a13" kind="variable"><name>letterSpacing</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a3904375b98c08e84cffe5ac081a1992a" kind="variable"><name>lineSpacing</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a61e3121ac12df7e9d3cfca86b2fd9ddb" kind="variable"><name>outlineColor</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1aa231ba986f69107b7f2d0384745e108b" kind="variable"><name>outlineThickness</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a266855ed927fedd3a04a8b13b6434dc2" kind="function"><name>fromDefaults</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a587c803155b4838d3d4e8579db82e0b1" kind="function"><name>withCharacterSize</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1ad217ab7650032669d54156276870455b" kind="function"><name>withCharacterStyle</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a46ac2b6393c75556ec8553f9677adf2e" kind="function"><name>withFillColor</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a11ab349e2adcbbb10d95189cfefedb26" kind="function"><name>withFont</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a902ffc80d6c8250f00d8cc11981d2ce4" kind="function"><name>withLetterSpacing</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1af63fcd8b9f187acb1aaee9bd25095e3b" kind="function"><name>withLineSpacing</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1ac321ca8e160d3b9ad335015da3e62ce1" kind="function"><name>withOutlineColor</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a3d0d2e8f36d28e7066759a367b87faf9" kind="function"><name>withOutlineThickness</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a02112167064d0925681ec79b9052c07c" kind="function"><name>load</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a1e135391a69cbff444d4e7aa3bbc0d1d" kind="function"><name>applyTo</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1aa9f6930acc2feb8f7a21d44350df98fc" kind="function"><name>getSpaceWidth</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1aaa0b7a59a0dd2dbfaf44b853738d3d4f" kind="function"><name>overrideWith</name></member>
+    <member refid="structloki_1_1styles_1_1_text_style_1a8902eb4827cec5bb957ea161efe6429d" kind="function"><name>cloneAndOverrideWith</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_tile_data" kind="struct"><name>loki::tiles::TileData</name>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1af0c9d411b024c3def7dd19a421c8f49e" kind="variable"><name>animation</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1a9217fa86bf16c84af5e855775ca4c1a4" kind="variable"><name>properties</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1a305c1c4e4682c4e3ab0ab0186eee47d4" kind="variable"><name>terrain</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1a39a65cfa536fb974edff25f7e0b78d6e" kind="function"><name>TileData</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1a6f02c277b9ca417a68b2772cea2a25f5" kind="function"><name>TileData</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_data_1a2a3980870c0b0c9c5aa0b360e9d192d9" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_tile_layer_data" kind="struct"><name>loki::tiles::TileLayerData</name>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1af8cac5dfcdadd41a818527a7d6e4f176" kind="variable"><name>id</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1aa1b2a3767af027806f47c9d8757df33f" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a7ceb419bed283729b87c2583854f1ab2" kind="variable"><name>data</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a1020e741c96f52d97d0bbf9463548eca" kind="variable"><name>properties</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a3577e80107155156e3e950ce940fcdd4" kind="variable"><name>opacity</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1ab56912b41fd84d385d387f6aae98e237" kind="variable"><name>visible</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_data_1a5774554b918400d0312c42c3f26926d7" kind="function"><name>TileLayerData</name></member>
+  </compound>
+  <compound refid="classloki_1_1tiles_1_1_tile_layer_view" kind="class"><name>loki::tiles::TileLayerView</name>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a159b49b8792c9772f3c3efc80f29bdf8" kind="friend"><name>MapView</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a6c1ae1093cf608c6c96c0d3fe1a05566" kind="variable"><name>layerData</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a09b67e08a33a1203ded63f2047416c9e" kind="variable"><name>gridSize</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a76d857185f622ee4f8e028803f279072" kind="variable"><name>tilesetData</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1aa471b6e098a371f5edc8f8024b332c93" kind="variable"><name>vertices</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a53a695010d15e6902a1356471f1d3ae4" kind="variable"><name>tileViewData</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a4bad8487de073b5247c8030a7fefa3cd" kind="function"><name>TileLayerView</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a7c1b43a119327ab6334c1f637e90b508" kind="function"><name>initVertices</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a348fc764718edc638e4325e378af8114" kind="function"><name>setTile</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1aad293ebeed84113a11e3968d46fd4663" kind="function"><name>setTileTransparent</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a7b3c0f257be671597f9789a6d9af5b70" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1tiles_1_1_tile_layer_view_1a76149f170b9f593dc77537ad8570e8d4" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_tile_object_data" kind="struct"><name>loki::tiles::TileObjectData</name>
+    <member refid="structloki_1_1tiles_1_1_tile_object_data_1a898a60acee75ecb55c4cad62e99450fc" kind="variable"><name>globalTileId</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_object_data_1a9bdb787fd9cb2253122d08cbae72185a" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_object_data_1a1eef642806c87734c5da73fa02565e26" kind="variable"><name>type</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_object_data_1a54cc6a4ea9a380f8f022942e8f056996" kind="variable"><name>position</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_object_data_1acde6e922a9ba9b221ca14a4cbeaef457" kind="variable"><name>properties</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_tileset_data" kind="struct"><name>loki::tiles::TilesetData</name>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1ad177fbc2af27adef0dcfd90612c0d652" kind="variable"><name>texture</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a82c128f17f9b58b8b4b8041a49b57886" kind="variable"><name>name</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a75a5ee2d145a6d8e54be81cbd2f586f4" kind="variable"><name>objectAlignement</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1ac5c399eb46b8b68df86f25d3fe74ddd9" kind="variable"><name>properties</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a406e418592bd7f9e949d2511b18839bc" kind="variable"><name>tileSize</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a638afd878f76aa00300917513be06200" kind="variable"><name>dimensions</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a9e3e5b5130211ad22b52dc12b1b1bc1c" kind="variable"><name>tiles</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a2598d8e0c06a45e4f51e3daf161b37d7" kind="variable"><name>terrains</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a0aa3a08a29231042361b665ffac7a3af" kind="function"><name>TilesetData</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a52f92d19df928551d203ef660e2c00e1" kind="function"><name>TilesetData</name></member>
+    <member refid="structloki_1_1tiles_1_1_tileset_data_1a8f80601715526b601341499de2a0a17d" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data" kind="struct"><name>loki::tiles::TileLayerView::TileViewData</name>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a2c3548e3a1ef8b99721af4f85a401125" kind="variable"><name>frameIndex</name></member>
+    <member refid="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a44e2af0158b07c90002d8101d0723592" kind="variable"><name>timeSinceLastFrame</name></member>
+  </compound>
+  <compound refid="structloki_1_1states_1_1_transition" kind="struct"><name>loki::states::Transition</name>
+    <member refid="structloki_1_1states_1_1_transition_1a575463fabf6a1fae5d1a0b43ec4833b1" kind="variable"><name>from</name></member>
+    <member refid="structloki_1_1states_1_1_transition_1ae919a29bbec22bfb0fc544af4b3066e9" kind="variable"><name>to</name></member>
+    <member refid="structloki_1_1states_1_1_transition_1a317ebdbd975411cb69b2ca6245623d54" kind="variable"><name>isActive</name></member>
+    <member refid="structloki_1_1states_1_1_transition_1ac2b4efa9bf61c5ec76e212c80c9a1b6d" kind="variable"><name>onTrigger</name></member>
+    <member refid="structloki_1_1states_1_1_transition_1a391d033139a034e1f11b0738a6abb3c5" kind="function"><name>Transition</name></member>
+    <member refid="structloki_1_1states_1_1_transition_1a1de8e86517e873d6ad38b7c4d2ab3a56" kind="function"><name>Transition</name></member>
+  </compound>
+  <compound refid="structloki_1_1screens_1_1_signal_1_1_trigger" kind="struct"><name>loki::screens::Signal::Trigger</name>
+    <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a7733a67ab83f8155592424f4c0e12dba" kind="variable"><name>origin</name></member>
+    <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a8b229c3103a549324f465470c0e02c86" kind="variable"><name>signalName</name></member>
+    <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a013e232fbafea484caf4d0362b1b83fe" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="structloki_1_1common_1_1true__type" kind="struct"><name>loki::common::true_type</name>
+    <member refid="structloki_1_1common_1_1true__type_1a31090991be5eed0a44462f7f50d4c29a" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_tuple_hash" kind="struct"><name>loki::hash::TupleHash</name>
+    <member refid="structloki_1_1hash_1_1_tuple_hash_1a65bb7f0e194edaa2dd27cb687447e74a" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1hash_1_1_tuple_hash_sym" kind="struct"><name>loki::hash::TupleHashSym</name>
+    <member refid="structloki_1_1hash_1_1_tuple_hash_sym_1a4e8c095c5aa62a5a1f77ea0213388e2b" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structloki_1_1common_1_1_vector4" kind="struct"><name>loki::common::Vector4</name>
+    <member refid="structloki_1_1common_1_1_vector4_1a2a3541b8e941d6d5686d8b11b587a0a8" kind="variable"><name>a</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a6c88ca57a4cabb1cd34660925e2a927a" kind="variable"><name>b</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a2b9bbfb781006c30af4f1b1441a425e0" kind="variable"><name>c</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a14d170f1fe03f1c39a238eaabc2524d1" kind="variable"><name>d</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1afed6dae296bf75eaf73133a5a6940a14" kind="function"><name>Vector4</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1adf26ab4b0d3ce5ad79bc327f47f046c7" kind="function"><name>Vector4</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a44afe580f4f677a9c0080f308e92653d" kind="function"><name>Vector4</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a099f0c34fbde59d9353d7fff805941c5" kind="function"><name>operator-</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a6cef148dfbce57f7cda001fc8978ff30" kind="function"><name>operator+=</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1acfa77c0507e876e34bd71dcd504863db" kind="function"><name>operator-=</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a50279c7eeaf7fca8062ee3b1a8cf11e5" kind="function"><name>operator+</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1aae11a86bf857932e16b019f5ab013001" kind="function"><name>operator-</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a8864306267f896ef25d57e57949018ed" kind="function"><name>operator*=</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a18fb0fc420065a94da527b1aa34ee4aa" kind="function"><name>operator/=</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a4aa1a579f42b09c5bc608afb74aaf78c" kind="function"><name>operator*</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1a3977aefee489e082bcad0457b05483b1" kind="function"><name>operator/</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1ab2e722cc8ca74255bde0e15d589c8c1e" kind="function"><name>operator==</name></member>
+    <member refid="structloki_1_1common_1_1_vector4_1aadb0c7193b15e46ff9f0458589b657dc" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_vertex_array_const_iterator" kind="class"><name>loki::common::VertexArrayConstIterator</name>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a5ae3de38836354d210c3269c2b50c6e4" kind="variable"><name>va</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a9db508d5008a26295d6db166f3ad80f3" kind="variable"><name>index</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a7c7109b23ceb13cab3c62dbb763c581f" kind="function"><name>VertexArrayConstIterator</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1ac8993fd859873c6a841384bd8b39f7d4" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a9fa4ebb146fb52c609740c63eb00087b" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1afbe48ac1c1fc677493692d9f88238309" kind="function"><name>operator--</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1ab68b69c12872c03d1bf7f744745bf4c0" kind="function"><name>operator--</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1afa8f12f4d407f61ce0eff64e5af49ac6" kind="function"><name>operator+=</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a270e700978230f69faa8da9ee375fb64" kind="function"><name>operator-=</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a6d2afba12edf8bfbf28b5efd4f055a8c" kind="function"><name>operator==</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a6e385b2bd584c288f9a5c0df53136134" kind="function"><name>operator!=</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_const_iterator_1a260ea6631bf71f2e88560a9add58d7d9" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_vertex_array_iterator" kind="class"><name>loki::common::VertexArrayIterator</name>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1aa94d1f7e3e18b1930fa58aa912cb0d89" kind="variable"><name>va</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a8e234c955e9346af1ab9dcdc471c67a9" kind="variable"><name>index</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a7b965948254841c52c69af72485ab0bc" kind="function"><name>VertexArrayIterator</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1aaf3ca74db75601845025e8ceacb0122f" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1af91bf72d35c3c48c6842344f79a4a531" kind="function"><name>operator++</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1abfe06866cf3fb31cf8cc1dd742b4d773" kind="function"><name>operator--</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a5fdf0be58d800a78cf10001ff79b2049" kind="function"><name>operator--</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a4acbe4a95148eb7f6702adbfb2441220" kind="function"><name>operator+=</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a998a205a7399c6bd8666855f3ae05412" kind="function"><name>operator-=</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a1980f604fe652553f390da8c8b3bdc5d" kind="function"><name>operator+</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a387b59f71a47abfe3dee6dafe86256b6" kind="function"><name>operator-</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a7a129deff237efc4c071ca71a110c0cd" kind="function"><name>operator*</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a056733d00efe484177055e6a83cea3af" kind="function"><name>operator*</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a797c9e1e42825a5680da22bfbf88be7b" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1a22ffc49c2e6c382a05b97abb06695c83" kind="function"><name>operator==</name></member>
+    <member refid="classloki_1_1common_1_1_vertex_array_iterator_1ad1e0b047643352b7e0e6f7eab0b7b0d3" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classloki_1_1gui_1_1_widget" kind="class"><name>loki::gui::Widget</name>
+    <member refid="classloki_1_1gui_1_1_widget_1a7b33a45fc4fa239195891c6d7651ffd6" kind="variable"><name>hidden</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a438213d71a36c023805768ac3e5686a0" kind="variable"><name>enabled</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1ad6f92b24d7fb58550b15250378ea635c" kind="variable"><name>focused</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a25be278483cee9959f97d3bb0e819b6d" kind="variable"><name>active</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" kind="function"><name>~Widget</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a7cebdeaf8e4684d9a95d093f9cafc15c" kind="function"><name>hide</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1aea2a1c5649b66c343e9b45be099e854b" kind="function"><name>unhide</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" kind="function"><name>setHidden</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" kind="function"><name>isHidden</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1ab5c0ec32554ac9fe1bcac587187d5abf" kind="function"><name>enable</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a2aeaf04efa1f4e455a8a0d0df703a30e" kind="function"><name>disable</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" kind="function"><name>setEnabled</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" kind="function"><name>isEnabled</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a958fbf8e597c061612c1ccbf1e5e1c27" kind="function"><name>focus</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a53feb9a9fad030095c4e5aca6ae2e509" kind="function"><name>unfocus</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" kind="function"><name>setFocused</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" kind="function"><name>isFocused</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1ab23287b78714c61f0583ef826165c49f" kind="function"><name>activate</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1abfe60f649c84b19d2620ef66779c9368" kind="function"><name>deactivate</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" kind="function"><name>setActive</name></member>
+    <member refid="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" kind="function"><name>isActive</name></member>
+  </compound>
+  <compound refid="classloki_1_1window_1_1_window" kind="class"><name>loki::window::Window</name>
+    <member refid="classloki_1_1window_1_1_window_1a88c404c5ae595abc92bdc000452752e6" kind="variable"><name>window</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a5d954b74fa86439ceaab168c8d273e9d" kind="variable"><name>renderSize</name></member>
+    <member refid="classloki_1_1window_1_1_window_1afa3ed4a903ea182a8eb690a3bc5e805a" kind="variable"><name>minimumSize</name></member>
+    <member refid="classloki_1_1window_1_1_window_1aee9079e59c56dc4037e741f5e1d5c28e" kind="variable"><name>style</name></member>
+    <member refid="classloki_1_1window_1_1_window_1abb0c0635f1df6679f99bde1ba5fd2750" kind="function"><name>Window</name></member>
+    <member refid="classloki_1_1window_1_1_window_1add9b8b59722a9a324a09caf815d8daee" kind="function"><name>Window</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a6e4f3f698c94d2ef1b3e9d0134237ead" kind="function"><name>setView</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a0591cb00193d245c3f129936e03c7225" kind="function"><name>setViewCenter</name></member>
+    <member refid="classloki_1_1window_1_1_window_1aee8aef61d3ee850d40aef054e589b00b" kind="function"><name>getDefaultView</name></member>
+    <member refid="classloki_1_1window_1_1_window_1adedd03f14590417d83fef0045cc27229" kind="function"><name>pollEvent</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a86ac6fe60cd3d1aabf7d33b1e06391dd" kind="function"><name>clear</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a2b2d4002d5a503a5fc8c2362405f586b" kind="function"><name>draw</name></member>
+    <member refid="classloki_1_1window_1_1_window_1ac1d342523156813b617900488cce5823" kind="function"><name>display</name></member>
+    <member refid="classloki_1_1window_1_1_window_1aa233a01976ae844f38f3e84cda086f6a" kind="function"><name>isOpen</name></member>
+    <member refid="classloki_1_1window_1_1_window_1acbb55ce2e3f60d10ebfea2f922ee6a20" kind="function"><name>close</name></member>
+    <member refid="classloki_1_1window_1_1_window_1a5cfd2d5e372310071109bad06226d27c" kind="function"><name>getLetterboxedViewportSize</name></member>
+    <member refid="classloki_1_1window_1_1_window_1aa2cd897ded83826534296f5c258695f1" kind="function"><name>getIntegerZoomViewportSize</name></member>
+    <member refid="classloki_1_1window_1_1_window_1ada317a3fadcc46d845ca39123f1ec2b7" kind="function"><name>guardMinimumSize</name></member>
+  </compound>
+  <compound refid="classloki_1_1common_1_1_zip_wrapper" kind="class"><name>loki::common::ZipWrapper</name>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1a11189b16885af3b3b5c4eb461ecb58ec" kind="variable"><name>container1</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1a6900ee65064206cc437fc0e9757bf6de" kind="variable"><name>container2</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1a7c0ed9ea78f269d389869831f70b2c4b" kind="function"><name>ZipWrapper</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1a4b188363dbb245d0bcdbec691779ae15" kind="function"><name>begin</name></member>
+    <member refid="classloki_1_1common_1_1_zip_wrapper_1a8216bf5bcfe5b42eb75a3c3fea663583" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="namespace_0d0" kind="namespace"><name>@0</name>
+  </compound>
+  <compound refid="namespace_0d17" kind="namespace"><name>@17</name>
+  </compound>
+  <compound refid="namespace_0d63" kind="namespace"><name>@63</name>
+  </compound>
+  <compound refid="namespaceimpl" kind="namespace"><name>impl</name>
+  </compound>
+  <compound refid="namespaceloki" kind="namespace"><name>loki</name>
+  </compound>
+  <compound refid="namespaceloki_1_1anim" kind="namespace"><name>loki::anim</name>
+    <member refid="_animation_data_8cpp_1a32b81640e5269d45791342e9ed5f773a" kind="function"><name>to_json</name></member>
+    <member refid="_animation_data_8cpp_1ab40a2e4b711aa7e1f24ad4d4cc56bcc7" kind="function"><name>from_json</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a9e1b0a31d426adee44b77d9503189ff6" kind="function"><name>getOrigin</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a0bee3b2872217a573a9256a887029abc" kind="function"><name>setOrigin</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a77e3ea6bc313d56c3da9fbbcfc9f1506" kind="function"><name>getPosition</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a9bc9ffbd2cabab8702e22b83e82d37c6" kind="function"><name>setPosition</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1acae64660e4488496ec390a87bf576076" kind="function"><name>getRotation</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1abdca58669a7e8171adb9b3baac117b91" kind="function"><name>setRotation</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a4ae684ab6b5f55cc2d6d938f1d9a9b30" kind="function"><name>getScale</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a6e5bf489c1863a986369b98b90df82b1" kind="function"><name>setScale</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a7bb48d2e24bcb8152245304a127b3c82" kind="function"><name>getColor</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a6aba35655c7b60980d53fb16babbc52a" kind="function"><name>setColor</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1a941715911f890952066f9cc8cdc2d6f4" kind="function"><name>getTextureRect</name></member>
+    <member refid="_a_d_l_helpers_8hpp_1ab31822c014b5ccece5a6931d637102f1" kind="function"><name>setTextureRect</name></member>
+    <member refid="_keyframe_8hpp_1a95c38c8107e2e0b3146cee7fa1a0d1a4" kind="function"><name>to_json</name></member>
+    <member refid="_keyframe_8hpp_1af1bb30d18d393bd85c02e5463f0d6375" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1anim_1_1editor" kind="namespace"><name>loki::anim::editor</name>
+  </compound>
+  <compound refid="namespaceloki_1_1anim_1_1impl" kind="namespace"><name>loki::anim::impl</name>
+  </compound>
+  <compound refid="namespaceloki_1_1common" kind="namespace"><name>loki::common</name>
+    <member refid="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55" kind="enum"><name>InterpolationType</name></member>
+    <member refid="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55ab50339a10e1de285ac99d4c3990b8693" kind="enumvalue"><name>NONE</name></member>
+    <member refid="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55aaac544aacc3615aada24897a215f5046" kind="enumvalue"><name>LINEAR</name></member>
+    <member refid="_interpolate_8hpp_1ae4deb1a4ed88b4e62265c2a4b8ac5e55accd681e34e5e40fbce74618c3ccffcff" kind="enumvalue"><name>CUBIC</name></member>
+    <member refid="common_2_template_helpers_8hpp_1ac619c06fd9996e21ff24e97089f574ef" kind="typedef"><name>detected_t</name></member>
+    <member refid="_vector4_8hpp_1a9970411ba9faf56e9cdef8856cb8cf0b" kind="typedef"><name>Vector4f</name></member>
+    <member refid="_vector4_8hpp_1ac1d70221ac3e9930419d1b65e17c7fb7" kind="typedef"><name>Vector4i</name></member>
+    <member refid="_interpolate_8hxx_1abf27b8fe5ea1e3c42c829714be8eaa5e" kind="typedef"><name>FirstPointedType</name></member>
+    <member refid="_interpolate_8hxx_1aa0a4f0407ff6dc33be3d25ac135c2463" kind="typedef"><name>SecondPointedType</name></member>
+    <member refid="_interpolate_8hxx_1aca75000b6d3ea1b281fdbee5d9deadc6" kind="typedef"><name>FirstContainedType</name></member>
+    <member refid="_interpolate_8hxx_1ac53a16b72a9ce73f1f8cef3797819302" kind="typedef"><name>SecondContainedType</name></member>
+    <member refid="common_2_template_helpers_8hpp_1a17b8b6353052d9932a076a53abd529c8" kind="variable"><name>is_detected</name></member>
+    <member refid="common_2_template_helpers_8hpp_1a90deab0e70d874df9db33eb6b10af228" kind="variable"><name>is_detected_as_true</name></member>
+    <member refid="_vector4_8hxx_1a485d1418ebe980868b63e9f334b9ca84" kind="function"><name>Vector4</name></member>
+    <member refid="_vector4_8hxx_1a03ae9bee22b39abe3053d0eb7cdf15ba" kind="function"><name>operator*</name></member>
+    <member refid="_vector4_8hxx_1a8c61f0b28508c0652d8944d2c52f3468" kind="function"><name>fromRect</name></member>
+    <member refid="_vector4_8hxx_1a876ec50e1834cd57b25daf528d7c7ce5" kind="function"><name>toRect</name></member>
+    <member refid="_vector4_8hxx_1a687244dd5d5a60a4fea7ceb8aed6fe73" kind="function"><name>fromColor</name></member>
+    <member refid="_vector4_8hxx_1a844a3fc291ef9084734be679b181b11d" kind="function"><name>toColor</name></member>
+    <member refid="_iter_adapters_8hpp_1aef4eb0ada349dde1ac184bbf207986e8" kind="function"><name>enumerate</name></member>
+    <member refid="_iter_adapters_8hpp_1afdd2a4ee46d2ee44a9a5a29d383aedb2" kind="function"><name>cenumerate</name></member>
+    <member refid="_iter_adapters_8hpp_1a900f8688e2cde7ce5e1da58a5ff2b666" kind="function"><name>reversed</name></member>
+    <member refid="_iter_adapters_8hpp_1aa20151487efbd1b78bbcb9505a0643be" kind="function"><name>creversed</name></member>
+    <member refid="_iter_adapters_8hpp_1a523e38608f65d4b6ae94fddc616bb247" kind="function"><name>zip</name></member>
+    <member refid="_iter_adapters_8hpp_1a28286df34f6109a0d710b7807cd988be" kind="function"><name>czip</name></member>
+    <member refid="_iter_adapters_8hpp_1a1388ee8952e4f4a71484af6ee8ff5381" kind="function"><name>drop</name></member>
+    <member refid="_iter_adapters_8hpp_1aaa5e5ec2530acf3094d43dbcd7462f2c" kind="function"><name>cdrop</name></member>
+    <member refid="_random_8cpp_1a54c6d30af748fb35de339d57d1c85960" kind="function"><name>roll0to100</name></member>
+    <member refid="json_2_color_8hpp_1a0eecab865659665473531ddf1a24b148" kind="function"><name>getHTMLColor</name></member>
+    <member refid="json_2_color_8hpp_1aeddf6c17ca5594d7f816fc638832ec33" kind="function"><name>parseHTMLColor</name></member>
+    <member refid="_interpolate_8hxx_1a07350da4f1f6106fc9d6ad3a74b4ba5e" kind="function"><name>NoneInterpolation</name></member>
+    <member refid="_interpolate_8hxx_1a0e7fc56a105b2522d8682f4b830e972f" kind="function"><name>NoneInterpolation</name></member>
+    <member refid="_interpolate_8hxx_1a666296c02f4a256111174b33abdf0bcb" kind="function"><name>LinearInterpolation</name></member>
+    <member refid="_interpolate_8hxx_1a591ab418954e0267c8dcd84577992bdb" kind="function"><name>LinearInterpolation</name></member>
+    <member refid="_interpolate_8hpp_1aa95ed717ef8002151158b2bd0bba29cf" kind="function"><name>NLOHMANN_JSON_SERIALIZE_ENUM</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1gui" kind="namespace"><name>loki::gui</name>
+  </compound>
+  <compound refid="namespaceloki_1_1hash" kind="namespace"><name>loki::hash</name>
+    <member refid="_iter_hash_8hpp_1a5cf7c7517c80ad2120881c9c8faf466e" kind="typedef"><name>VectorHash</name></member>
+    <member refid="_pair_hash_8hpp_1a6492d2e587be46dceb90a25e93a92af8" kind="typedef"><name>MakePairHash</name></member>
+    <member refid="_pair_hash_8hpp_1a80e0376645a77c27f2a422028a177609" kind="typedef"><name>MakePairHashSym</name></member>
+    <member refid="_pair_hash_8hpp_1a748faab52c14bba1397d89943ab4c2ad" kind="typedef"><name>MakePairAreEqualSym</name></member>
+    <member refid="_tuple_hash_8hpp_1a818a63a39acd0b3d911aec3d89fb9b7b" kind="typedef"><name>MakeTupleHash</name></member>
+    <member refid="_tuple_hash_8hpp_1a4f9f682fd1ef05718e6c49c9de246ff5" kind="typedef"><name>MakeTupleHashSym</name></member>
+    <member refid="_combine_hash_8hpp_1aa8305eb9eeb6ea7734df9549de46e172" kind="function"><name>combineHashImpl</name></member>
+    <member refid="_combine_hash_8hpp_1aed3b0112ec55ef93fcdf9e2d5df82665" kind="function"><name>combineHashImpl</name></member>
+    <member refid="_combine_hash_8hpp_1ae559a1fe05f847ed2fe362b0cfe6defd" kind="function"><name>combineHash</name></member>
+    <member refid="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h_1ga14c2a32c34750444fca67ed0098465d2" kind="function"><name>combineHashSym</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1input" kind="namespace"><name>loki::input</name>
+    <member refid="_input_type_8hpp_1a24440142e49008ec3752eb44b99bf6a5" kind="typedef"><name>MouseButtonTrigger</name></member>
+    <member refid="_input_type_8hpp_1a4964da079d8b805b6fb62c31e43a239a" kind="typedef"><name>KeyTrigger</name></member>
+    <member refid="_input_type_8hpp_1a7c3811be95d6d7c4ae1c59c89d613c53" kind="typedef"><name>InputTrigger</name></member>
+    <member refid="_input_type_8cpp_1a8afb5b01df69348bf52a815684bf9bd6" kind="function"><name>loadTrigger</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1math" kind="namespace"><name>loki::math</name>
+    <member refid="math_2_rect_8hpp_1ad4cbc8493f08ce914ef534ee2697988b" kind="function"><name>compOp</name></member>
+    <member refid="math_2_rect_8hpp_1a6364ec93108f29835c5f455004e80485" kind="function"><name>compMult</name></member>
+    <member refid="math_2_rect_8hpp_1ac6862cb48af6ba3e0d3097f4b8472faf" kind="function"><name>compDiv</name></member>
+    <member refid="math_2_rect_8hpp_1a52f4076c7e15529ded0e5b7f2bd7d73a" kind="function"><name>compMin</name></member>
+    <member refid="math_2_rect_8hpp_1a67ee480a5b3e4604ecbda61a981f47e3" kind="function"><name>compMax</name></member>
+    <member refid="math_2_vector2_8hpp_1a944d5694928410dcdac35d596526b727" kind="function"><name>dot</name></member>
+    <member refid="math_2_vector2_8hpp_1acc8ce394e6c9b1794b56ea6682b681fa" kind="function"><name>norm</name></member>
+    <member refid="math_2_vector2_8hpp_1afe1d652551a186e11275823ecf28b4a1" kind="function"><name>det</name></member>
+    <member refid="math_2_vector2_8hpp_1acd12af97e14d955c2d81fd97806376a7" kind="function"><name>unit</name></member>
+    <member refid="math_2_vector2_8hpp_1aaf46403880030b6d85f84ee9415fc8c1" kind="function"><name>compOp</name></member>
+    <member refid="math_2_vector2_8hpp_1acd6c347a6f38be1d167c8667a9500a35" kind="function"><name>compMult</name></member>
+    <member refid="math_2_vector2_8hpp_1a3d98e1da9e0bdc982e5115222a778b7f" kind="function"><name>compDiv</name></member>
+    <member refid="math_2_vector2_8hpp_1a6e05d7fcbb70a2ab1f4d7b7101fff88c" kind="function"><name>compMin</name></member>
+    <member refid="math_2_vector2_8hpp_1a7b5cc6c2de05e517bbf2d443f02eb942" kind="function"><name>compMax</name></member>
+    <member refid="math_2_vector2_8hpp_1ab04e5947f389b178465de699a4b51646" kind="function"><name>cw90</name></member>
+    <member refid="math_2_vector2_8hpp_1a81d5e61379ab6501471025bbb1c44939" kind="function"><name>ccw90</name></member>
+    <member refid="math_2_vector2_8hpp_1ad2a5f95d8751b65288051c5252322548" kind="function"><name>minCoord</name></member>
+    <member refid="math_2_vector2_8hpp_1a86e2c3e8f11df5461e41349d04d0887b" kind="function"><name>maxCoord</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1screens" kind="namespace"><name>loki::screens</name>
+  </compound>
+  <compound refid="namespaceloki_1_1shapes" kind="namespace"><name>loki::shapes</name>
+  </compound>
+  <compound refid="namespaceloki_1_1sprites" kind="namespace"><name>loki::sprites</name>
+    <member refid="_sprite_data_8cpp_1a451975980f89767e14d05e539d901d35" kind="function"><name>to_json</name></member>
+    <member refid="_sprite_data_8cpp_1adcbdd7fe9b2b423dc04649daa49888f8" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1states" kind="namespace"><name>loki::states</name>
+    <member refid="_state_index_8hpp_1ac76e7bfb2b3c31f519e04b80e8f1c56f" kind="typedef"><name>StateIndex</name></member>
+    <member refid="_state_index_8hpp_1a09e6490c3296ec395e7b2bfa1331d776" kind="variable"><name>ANY</name></member>
+    <member refid="_state_index_8hpp_1af1b934e189d4b2a26c29b79fcddf1edc" kind="variable"><name>NONE</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1styles" kind="namespace"><name>loki::styles</name>
+    <member refid="_text_style_8hpp_1a88dd3705e7e5402b9217013182145315" kind="typedef"><name>FontGetter</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1text" kind="namespace"><name>loki::text</name>
+    <member refid="_stylesheet_8hpp_1aa28f2bc99b8e1fd9a68ba086863a3eab" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1text_1_1_0d108" kind="namespace"><name>loki::text::@108</name>
+  </compound>
+  <compound refid="namespaceloki_1_1text_1_1impl" kind="namespace"><name>loki::text::impl</name>
+  </compound>
+  <compound refid="namespaceloki_1_1tiles" kind="namespace"><name>loki::tiles</name>
+    <member refid="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172" kind="enum"><name>RenderOrder</name></member>
+    <member refid="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172ad904e5818165807101f4603409bd15ab" kind="enumvalue"><name>RIGHT_DOWN</name></member>
+    <member refid="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a1e01c60be1a0b8ed84f7f1ab35d01daa" kind="enumvalue"><name>RIGHT_UP</name></member>
+    <member refid="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a16a9066375b3b3aaa9c8eb4313411db2" kind="enumvalue"><name>LEFT_DOWN</name></member>
+    <member refid="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a478a4e9640e7519838d34b473e233b2a" kind="enumvalue"><name>LEFT_UP</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29" kind="enum"><name>ObjectAlignement</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a1c04cc3823d476c3017238679a0fdf52" kind="enumvalue"><name>UNSPECIFIED</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a747385047b85ae751f83adb36435a3c1" kind="enumvalue"><name>TOP_LEFT</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a6705777b712ee811e76fb07162081d63" kind="enumvalue"><name>TOP</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a901d87dedda8db733f5e6d34c4eb5fe0" kind="enumvalue"><name>TOP_RIGHT</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a684d325a7303f52e64011467ff5c5758" kind="enumvalue"><name>LEFT</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29ac397289ee45877be0cd49811fe245b4e" kind="enumvalue"><name>CENTER</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a21507b40c80068eda19865706fdc2403" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a8d81ac82421d1b03da58fccb9174892e" kind="enumvalue"><name>BOTTOM_LEFT</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a1fabf63de5c96c78e2a40805bcdeb73b" kind="enumvalue"><name>BOTTOM</name></member>
+    <member refid="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a341b72aaab1308a3e6667af1e52f5def" kind="enumvalue"><name>BOTTOM_RIGHT</name></member>
+    <member refid="_map_data_8hpp_1a050e341574ec7a30ac94cb3376938c6d" kind="typedef"><name>LayerData</name></member>
+    <member refid="_object_data_8hpp_1a2cdb6c8470f21ab326f969aefed87c33" kind="typedef"><name>ObjectData</name></member>
+    <member refid="_property_8hpp_1a237caf1ffd2b2cab0a6cb0b394b02ab0" kind="typedef"><name>PropertyData</name></member>
+    <member refid="_property_8hpp_1ae09ff11fb3880a3e8ec82d90326f99ab" kind="typedef"><name>PropertyMap</name></member>
+    <member refid="_object_data_8cpp_1a77144330587b8ebb96c1aa5609ab2599" kind="function"><name>loadObjectData</name></member>
+    <member refid="_property_8cpp_1ac73ad7f7feb2716d8f9fbb007a48994d" kind="function"><name>loadPropertyMap</name></member>
+    <member refid="_property_8cpp_1adca37bcde2d53e595084dafe41c04777" kind="function"><name>getPropertyMap</name></member>
+  </compound>
+  <compound refid="namespaceloki_1_1tpl" kind="namespace"><name>loki::tpl</name>
+  </compound>
+  <compound refid="namespaceloki_1_1window" kind="namespace"><name>loki::window</name>
+  </compound>
+  <compound refid="namespaceloki_1_1window_1_1_0d145" kind="namespace"><name>loki::window::@145</name>
+  </compound>
+  <compound refid="namespacenlohmann" kind="namespace"><name>nlohmann</name>
+  </compound>
+  <compound refid="namespacesf" kind="namespace"><name>sf</name>
+    <member refid="_vertex_array_iterator_8cpp_1a96682571e55c453b8187a7c776db5c09" kind="function"><name>begin</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a6065e7d456ab54f6f6ffa16b82ec42cf" kind="function"><name>begin</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a633e0ba47a528972d80149cfa45411e2" kind="function"><name>cbegin</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1ab0b4e5e6686b29522c57b74b32baac1c" kind="function"><name>cbegin</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a506e90e85bb92a9865315b2c7dea695b" kind="function"><name>end</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a931b5f3f210230570f41fd4c3e74dd91" kind="function"><name>end</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a307b6781928072bc981eaca01aadab99" kind="function"><name>cend</name></member>
+    <member refid="_vertex_array_iterator_8cpp_1a3b2c8abf84314b656399a65f68c56c2a" kind="function"><name>cend</name></member>
+    <member refid="_vertex_array_iterator_8hpp_1aa5fb9f184366ecf868ac1f783bc94b6a" kind="function"><name>begin</name></member>
+    <member refid="_vertex_array_iterator_8hpp_1aff3e4f93ea981fafcd16cb377467b9bd" kind="function"><name>cbegin</name></member>
+    <member refid="_vertex_array_iterator_8hpp_1a068a60b19fb66f5eff6e03e2cfe5861e" kind="function"><name>end</name></member>
+    <member refid="_vertex_array_iterator_8hpp_1a55b0ed312e2d29fe6843d6c0a56554c3" kind="function"><name>cend</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_anim_editor_8cpp" kind="file"><name>AnimEditor.cpp</name>
+  </compound>
+  <compound refid="_anim_editor_8hpp" kind="file"><name>AnimEditor.hpp</name>
+  </compound>
+  <compound refid="anim_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="anim-editor_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="common_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="gui_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="hash_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="input_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="json_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="math_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="screens_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="shapes_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="sprites_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="states_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="styles_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="text_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="tiles_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="tpl_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="window_2_all_8hpp" kind="file"><name>All.hpp</name>
+  </compound>
+  <compound refid="_animation_data_8cpp" kind="file"><name>AnimationData.cpp</name>
+  </compound>
+  <compound refid="_animation_data_8hpp" kind="file"><name>AnimationData.hpp</name>
+  </compound>
+  <compound refid="_animation_view_data_8cpp" kind="file"><name>AnimationViewData.cpp</name>
+    <member refid="_animation_view_data_8cpp_1a7e99d46fbac876238aaf7ea39abdb998" kind="define"><name>TEST_ANIMATED_FEATURE</name></member>
+  </compound>
+  <compound refid="_animation_view_data_8hpp" kind="file"><name>AnimationViewData.hpp</name>
+  </compound>
+  <compound refid="_animator_8hpp" kind="file"><name>Animator.hpp</name>
+  </compound>
+  <compound refid="_a_d_l_helpers_8hpp" kind="file"><name>ADLHelpers.hpp</name>
+  </compound>
+  <compound refid="_animator_8hxx" kind="file"><name>Animator.hxx</name>
+  </compound>
+  <compound refid="anim_2impl_2_template_helpers_8hpp" kind="file"><name>TemplateHelpers.hpp</name>
+    <member refid="anim_2impl_2_template_helpers_8hpp_1a7456bba413aaab592012977b07379bc3" kind="define"><name>LOKI_ANIM_FEATURE_TEST</name></member>
+  </compound>
+  <compound refid="common_2_template_helpers_8hpp" kind="file"><name>TemplateHelpers.hpp</name>
+  </compound>
+  <compound refid="_keyframe_8hpp" kind="file"><name>Keyframe.hpp</name>
+    <member refid="_keyframe_8hpp_1ad7a9d9561120a7ccbb7126d6948accd3" kind="define"><name>LOKI_GET_OPTIONAL_FIELD</name></member>
+  </compound>
+  <compound refid="common_2_color_8hpp" kind="file"><name>Color.hpp</name>
+  </compound>
+  <compound refid="json_2_color_8hpp" kind="file"><name>Color.hpp</name>
+  </compound>
+  <compound refid="is__detected_8hxx" kind="file"><name>is_detected.hxx</name>
+  </compound>
+  <compound refid="_vector4_8hxx" kind="file"><name>Vector4.hxx</name>
+  </compound>
+  <compound refid="_iter_adapters_8hpp" kind="file"><name>IterAdapters.hpp</name>
+  </compound>
+  <compound refid="_matrix_8hpp" kind="file"><name>Matrix.hpp</name>
+  </compound>
+  <compound refid="_matrix_8inl" kind="file"><name>Matrix.inl</name>
+  </compound>
+  <compound refid="_random_8cpp" kind="file"><name>Random.cpp</name>
+  </compound>
+  <compound refid="_random_8hpp" kind="file"><name>Random.hpp</name>
+  </compound>
+  <compound refid="_vector4_8hpp" kind="file"><name>Vector4.hpp</name>
+  </compound>
+  <compound refid="_vertex_array_iterator_8cpp" kind="file"><name>VertexArrayIterator.cpp</name>
+  </compound>
+  <compound refid="_vertex_array_iterator_8hpp" kind="file"><name>VertexArrayIterator.hpp</name>
+  </compound>
+  <compound refid="_widget_8cpp" kind="file"><name>Widget.cpp</name>
+  </compound>
+  <compound refid="_widget_8hpp" kind="file"><name>Widget.hpp</name>
+  </compound>
+  <compound refid="_abstract_frame_8cpp" kind="file"><name>AbstractFrame.cpp</name>
+  </compound>
+  <compound refid="_abstract_frame_8hpp" kind="file"><name>AbstractFrame.hpp</name>
+  </compound>
+  <compound refid="_rectangle_shape_frame_8cpp" kind="file"><name>RectangleShapeFrame.cpp</name>
+  </compound>
+  <compound refid="_rectangle_shape_frame_8hpp" kind="file"><name>RectangleShapeFrame.hpp</name>
+  </compound>
+  <compound refid="_list_controller_8cpp" kind="file"><name>ListController.cpp</name>
+  </compound>
+  <compound refid="_list_controller_8hpp" kind="file"><name>ListController.hpp</name>
+  </compound>
+  <compound refid="_text_list_8cpp" kind="file"><name>TextList.cpp</name>
+  </compound>
+  <compound refid="_text_list_8hpp" kind="file"><name>TextList.hpp</name>
+  </compound>
+  <compound refid="_abstract_text_box_8hpp" kind="file"><name>AbstractTextBox.hpp</name>
+  </compound>
+  <compound refid="_event_text_box_controller_8cpp" kind="file"><name>EventTextBoxController.cpp</name>
+  </compound>
+  <compound refid="_event_text_box_controller_8hpp" kind="file"><name>EventTextBoxController.hpp</name>
+  </compound>
+  <compound refid="_text_box_8cpp" kind="file"><name>TextBox.cpp</name>
+  </compound>
+  <compound refid="_text_box_8hpp" kind="file"><name>TextBox.hpp</name>
+  </compound>
+  <compound refid="_text_box_controller_8cpp" kind="file"><name>TextBoxController.cpp</name>
+  </compound>
+  <compound refid="_text_box_controller_8hpp" kind="file"><name>TextBoxController.hpp</name>
+  </compound>
+  <compound refid="_combine_hash_8hpp" kind="file"><name>CombineHash.hpp</name>
+  </compound>
+  <compound refid="_iter_hash_8hpp" kind="file"><name>IterHash.hpp</name>
+  </compound>
+  <compound refid="_pair_hash_8hpp" kind="file"><name>PairHash.hpp</name>
+  </compound>
+  <compound refid="_tuple_hash_8hpp" kind="file"><name>TupleHash.hpp</name>
+  </compound>
+  <compound refid="_input_settings_8cpp" kind="file"><name>InputSettings.cpp</name>
+  </compound>
+  <compound refid="_input_settings_8hpp" kind="file"><name>InputSettings.hpp</name>
+  </compound>
+  <compound refid="_input_state_8hpp" kind="file"><name>InputState.hpp</name>
+  </compound>
+  <compound refid="_input_type_8cpp" kind="file"><name>InputType.cpp</name>
+  </compound>
+  <compound refid="_input_type_8hpp" kind="file"><name>InputType.hpp</name>
+  </compound>
+  <compound refid="_player_config_8hpp" kind="file"><name>PlayerConfig.hpp</name>
+  </compound>
+  <compound refid="_event_handler_8cpp" kind="file"><name>EventHandler.cpp</name>
+  </compound>
+  <compound refid="_event_handler_8hpp" kind="file"><name>EventHandler.hpp</name>
+  </compound>
+  <compound refid="_optional_8hpp" kind="file"><name>Optional.hpp</name>
+  </compound>
+  <compound refid="json_2_rect_8hpp" kind="file"><name>Rect.hpp</name>
+  </compound>
+  <compound refid="math_2_rect_8hpp" kind="file"><name>Rect.hpp</name>
+  </compound>
+  <compound refid="_string_8hpp" kind="file"><name>String.hpp</name>
+  </compound>
+  <compound refid="_time_8hpp" kind="file"><name>Time.hpp</name>
+  </compound>
+  <compound refid="json_2_vector2_8hpp" kind="file"><name>Vector2.hpp</name>
+  </compound>
+  <compound refid="math_2_vector2_8hpp" kind="file"><name>Vector2.hpp</name>
+  </compound>
+  <compound refid="_interpolate_8hxx" kind="file"><name>Interpolate.hxx</name>
+  </compound>
+  <compound refid="_interpolate_8hpp" kind="file"><name>Interpolate.hpp</name>
+  </compound>
+  <compound refid="_screen_8cpp" kind="file"><name>Screen.cpp</name>
+  </compound>
+  <compound refid="_screen_8hpp" kind="file"><name>Screen.hpp</name>
+  </compound>
+  <compound refid="_screen_8inl" kind="file"><name>Screen.inl</name>
+  </compound>
+  <compound refid="_screen_stack_8cpp" kind="file"><name>ScreenStack.cpp</name>
+  </compound>
+  <compound refid="_screen_stack_8hpp" kind="file"><name>ScreenStack.hpp</name>
+  </compound>
+  <compound refid="_signal_8hpp" kind="file"><name>Signal.hpp</name>
+  </compound>
+  <compound refid="_capsule_8cpp" kind="file"><name>Capsule.cpp</name>
+  </compound>
+  <compound refid="_capsule_8hpp" kind="file"><name>Capsule.hpp</name>
+  </compound>
+  <compound refid="_rounded_rectangle_8cpp" kind="file"><name>RoundedRectangle.cpp</name>
+  </compound>
+  <compound refid="_rounded_rectangle_8hpp" kind="file"><name>RoundedRectangle.hpp</name>
+  </compound>
+  <compound refid="_sprite_8cpp" kind="file"><name>Sprite.cpp</name>
+  </compound>
+  <compound refid="_sprite_8hpp" kind="file"><name>Sprite.hpp</name>
+  </compound>
+  <compound refid="_sprite_data_8cpp" kind="file"><name>SpriteData.cpp</name>
+  </compound>
+  <compound refid="_sprite_data_8hpp" kind="file"><name>SpriteData.hpp</name>
+  </compound>
+  <compound refid="_sprite_view_data_8cpp" kind="file"><name>SpriteViewData.cpp</name>
+  </compound>
+  <compound refid="_sprite_view_data_8hpp" kind="file"><name>SpriteViewData.hpp</name>
+  </compound>
+  <compound refid="_state_8hpp" kind="file"><name>State.hpp</name>
+  </compound>
+  <compound refid="_state_index_8hpp" kind="file"><name>StateIndex.hpp</name>
+  </compound>
+  <compound refid="_state_machine_8cpp" kind="file"><name>StateMachine.cpp</name>
+  </compound>
+  <compound refid="_state_machine_8hpp" kind="file"><name>StateMachine.hpp</name>
+  </compound>
+  <compound refid="_transition_8hpp" kind="file"><name>Transition.hpp</name>
+  </compound>
+  <compound refid="_shape_style_8cpp" kind="file"><name>ShapeStyle.cpp</name>
+  </compound>
+  <compound refid="_shape_style_8hpp" kind="file"><name>ShapeStyle.hpp</name>
+  </compound>
+  <compound refid="_text_style_8cpp" kind="file"><name>TextStyle.cpp</name>
+  </compound>
+  <compound refid="_text_style_8hpp" kind="file"><name>TextStyle.hpp</name>
+  </compound>
+  <compound refid="_animated_text_8cpp" kind="file"><name>AnimatedText.cpp</name>
+  </compound>
+  <compound refid="_animated_text_8hpp" kind="file"><name>AnimatedText.hpp</name>
+  </compound>
+  <compound refid="_animated_text_style_8cpp" kind="file"><name>AnimatedTextStyle.cpp</name>
+  </compound>
+  <compound refid="_animated_text_style_8hpp" kind="file"><name>AnimatedTextStyle.hpp</name>
+  </compound>
+  <compound refid="_annotated_text_8cpp" kind="file"><name>AnnotatedText.cpp</name>
+  </compound>
+  <compound refid="_annotated_text_8hpp" kind="file"><name>AnnotatedText.hpp</name>
+  </compound>
+  <compound refid="_animated_glyph_8cpp" kind="file"><name>AnimatedGlyph.cpp</name>
+  </compound>
+  <compound refid="_animated_glyph_8hpp" kind="file"><name>AnimatedGlyph.hpp</name>
+  </compound>
+  <compound refid="_stylesheet_8cpp" kind="file"><name>Stylesheet.cpp</name>
+  </compound>
+  <compound refid="_stylesheet_8hpp" kind="file"><name>Stylesheet.hpp</name>
+  </compound>
+  <compound refid="_text_animation_view_data_8cpp" kind="file"><name>TextAnimationViewData.cpp</name>
+  </compound>
+  <compound refid="_text_animation_view_data_8hpp" kind="file"><name>TextAnimationViewData.hpp</name>
+  </compound>
+  <compound refid="_map_data_8cpp" kind="file"><name>MapData.cpp</name>
+  </compound>
+  <compound refid="_map_data_8hpp" kind="file"><name>MapData.hpp</name>
+  </compound>
+  <compound refid="_object_data_8cpp" kind="file"><name>ObjectData.cpp</name>
+  </compound>
+  <compound refid="_object_data_8hpp" kind="file"><name>ObjectData.hpp</name>
+  </compound>
+  <compound refid="_object_layer_data_8cpp" kind="file"><name>ObjectLayerData.cpp</name>
+  </compound>
+  <compound refid="_object_layer_data_8hpp" kind="file"><name>ObjectLayerData.hpp</name>
+  </compound>
+  <compound refid="_property_8cpp" kind="file"><name>Property.cpp</name>
+  </compound>
+  <compound refid="_property_8hpp" kind="file"><name>Property.hpp</name>
+  </compound>
+  <compound refid="_terrain_data_8cpp" kind="file"><name>TerrainData.cpp</name>
+  </compound>
+  <compound refid="_terrain_data_8hpp" kind="file"><name>TerrainData.hpp</name>
+  </compound>
+  <compound refid="_tile_data_8cpp" kind="file"><name>TileData.cpp</name>
+  </compound>
+  <compound refid="_tile_data_8hpp" kind="file"><name>TileData.hpp</name>
+  </compound>
+  <compound refid="_tile_layer_data_8cpp" kind="file"><name>TileLayerData.cpp</name>
+  </compound>
+  <compound refid="_tile_layer_data_8hpp" kind="file"><name>TileLayerData.hpp</name>
+  </compound>
+  <compound refid="_tileset_data_8cpp" kind="file"><name>TilesetData.cpp</name>
+  </compound>
+  <compound refid="_tileset_data_8hpp" kind="file"><name>TilesetData.hpp</name>
+  </compound>
+  <compound refid="_layer_view_8hpp" kind="file"><name>LayerView.hpp</name>
+  </compound>
+  <compound refid="_map_view_8cpp" kind="file"><name>MapView.cpp</name>
+  </compound>
+  <compound refid="_map_view_8hpp" kind="file"><name>MapView.hpp</name>
+  </compound>
+  <compound refid="_object_layer_view_8cpp" kind="file"><name>ObjectLayerView.cpp</name>
+  </compound>
+  <compound refid="_object_layer_view_8hpp" kind="file"><name>ObjectLayerView.hpp</name>
+  </compound>
+  <compound refid="_tile_layer_view_8cpp" kind="file"><name>TileLayerView.cpp</name>
+  </compound>
+  <compound refid="_tile_layer_view_8hpp" kind="file"><name>TileLayerView.hpp</name>
+  </compound>
+  <compound refid="_template_engine_8hxx" kind="file"><name>TemplateEngine.hxx</name>
+  </compound>
+  <compound refid="_template_engine_8cpp" kind="file"><name>TemplateEngine.cpp</name>
+  </compound>
+  <compound refid="_template_engine_8hpp" kind="file"><name>TemplateEngine.hpp</name>
+  </compound>
+  <compound refid="_style_8cpp" kind="file"><name>Style.cpp</name>
+  </compound>
+  <compound refid="_style_8hpp" kind="file"><name>Style.hpp</name>
+  </compound>
+  <compound refid="_window_8cpp" kind="file"><name>Window.cpp</name>
+  </compound>
+  <compound refid="_window_8hpp" kind="file"><name>Window.hpp</name>
+  </compound>
+  <compound refid="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h" kind="group"><name>UTILS_COMBINEHASH</name>
+    <member refid="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h_1ga14c2a32c34750444fca67ed0098465d2" kind="function"><name>combineHashSym</name></member>
+  </compound>
+  <compound refid="dir_e662339c44282ec858da85778d705c2f" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/anim</name>
+  </compound>
+  <compound refid="dir_d14e901c1bac15a023f986b3a0ffc54a" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/anim-editor</name>
+  </compound>
+  <compound refid="dir_5a7c74be6ecd4cc09bb6e0cc0e119582" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/gui/base</name>
+  </compound>
+  <compound refid="dir_b172c821305f6bd4c7973efbfe329432" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/common</name>
+  </compound>
+  <compound refid="dir_3811df268dbd934f2ff801f270ac55ae" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/gui/frame</name>
+  </compound>
+  <compound refid="dir_8934bef9e1929daad09ae15c1ed68613" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/gui</name>
+  </compound>
+  <compound refid="dir_e1dd41053a3944bcc097b64640cbbd9c" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/hash</name>
+  </compound>
+  <compound refid="dir_92dcb596f2f215507ed44e5fa6b9f91f" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/anim/impl</name>
+  </compound>
+  <compound refid="dir_4acb19a563bce90fc20c6e1a57ec0d72" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/common/impl</name>
+  </compound>
+  <compound refid="dir_6b057e456ae49e7c7b0d592bd7cacd57" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/math/impl</name>
+  </compound>
+  <compound refid="dir_53d4fe9736c0f91011bfc97299909222" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/text/impl</name>
+  </compound>
+  <compound refid="dir_aad29f1c842751732687a45f12dbd111" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/tpl/impl</name>
+  </compound>
+  <compound refid="dir_394969687a2b1ebd8f94fd209da84e69" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/input</name>
+  </compound>
+  <compound refid="dir_83c401964b5df11aa8b45e08a4a4cd9a" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/json</name>
+  </compound>
+  <compound refid="dir_108518bab6d978f15bec18d0f84a5e62" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/gui/list</name>
+  </compound>
+  <compound refid="dir_8df0645665522d3f5c319aadcc33df36" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki</name>
+  </compound>
+  <compound refid="dir_98969e3706f92e89448a63a40800b9bd" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/math</name>
+  </compound>
+  <compound refid="dir_d8dcaf2110b725d772962848345484c4" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/input/model</name>
+  </compound>
+  <compound refid="dir_c45d14c972cb40d65462fd44e36fa6be" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model</name>
+  </compound>
+  <compound refid="dir_2564a24647693b4e458f71fec3038336" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/screens</name>
+  </compound>
+  <compound refid="dir_bc8735bb45e48ea72c56ed3820fe74de" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/input/service</name>
+  </compound>
+  <compound refid="dir_4cef2acbfccebad503cb67f49b26edce" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/shapes</name>
+  </compound>
+  <compound refid="dir_ae0eb5b2303b483c5ab7707951d217af" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/sprites</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src</name>
+  </compound>
+  <compound refid="dir_0c7667fe1eb61eb699fc46db7d5aba76" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/states</name>
+  </compound>
+  <compound refid="dir_01f9d661c6c18855211ff1c319c6b8d7" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/styles</name>
+  </compound>
+  <compound refid="dir_2bc1df544e36d2cc79f9178bd4971bfd" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/text</name>
+  </compound>
+  <compound refid="dir_e4bcf2a40b106cf6e83169dc4532fe03" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox</name>
+  </compound>
+  <compound refid="dir_cd90177934d24a82a47ae2125d47dcb5" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/tiles</name>
+  </compound>
+  <compound refid="dir_af0ec7e3d047b9e21dc7b2d3abdbab24" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/tpl</name>
+  </compound>
+  <compound refid="dir_ccd93eabf2cfc7a8a4eb1603b5bb95d7" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view</name>
+  </compound>
+  <compound refid="dir_41d29500f910f92332a74f1df5a4330f" kind="dir"><name>D:/prog/cpp/custom_libs/loki/src/loki/window</name>
+  </compound>
+</doxygenindex>

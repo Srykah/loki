@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1common_1_1nonesuch" kind="struct" language="C++" prot="public">
+    <compoundname>loki::common::nonesuch</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1common_1_1nonesuch_1ac69ff4bc7f59126ca0bfccbcadd81d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::nonesuch::~nonesuch</definition>
+        <argsstring>()=delete</argsstring>
+        <name>~nonesuch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="24" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1common_1_1nonesuch_1afe481cd1c92dbf4c7fb3a248d97c6fdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::nonesuch::nonesuch</definition>
+        <argsstring>(nonesuch const &amp;)=delete</argsstring>
+        <name>nonesuch</name>
+        <param>
+          <type><ref refid="structloki_1_1common_1_1nonesuch" kindref="compound">nonesuch</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="25" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structloki_1_1common_1_1nonesuch_1a3f4a96b358717fdd21beb4179e563cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::common::nonesuch::operator=</definition>
+        <argsstring>(nonesuch const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structloki_1_1common_1_1nonesuch" kindref="compound">nonesuch</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="26" column="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" line="23" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/TemplateHelpers.hpp" bodystart="23" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structloki_1_1common_1_1nonesuch_1afe481cd1c92dbf4c7fb3a248d97c6fdc" prot="public" virt="non-virtual"><scope>loki::common::nonesuch</scope><name>nonesuch</name></member>
+      <member refid="structloki_1_1common_1_1nonesuch_1a3f4a96b358717fdd21beb4179e563cfd" prot="public" virt="non-virtual"><scope>loki::common::nonesuch</scope><name>operator=</name></member>
+      <member refid="structloki_1_1common_1_1nonesuch_1ac69ff4bc7f59126ca0bfccbcadd81d9c" prot="public" virt="non-virtual"><scope>loki::common::nonesuch</scope><name>~nonesuch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

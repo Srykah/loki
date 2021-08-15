@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_83c401964b5df11aa8b45e08a4a4cd9a" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/json</compoundname>
+    <innerfile refid="json_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="json_2_color_8hpp">Color.hpp</innerfile>
+    <innerfile refid="_optional_8hpp">Optional.hpp</innerfile>
+    <innerfile refid="json_2_rect_8hpp">Rect.hpp</innerfile>
+    <innerfile refid="_string_8hpp">String.hpp</innerfile>
+    <innerfile refid="_time_8hpp">Time.hpp</innerfile>
+    <innerfile refid="json_2_vector2_8hpp">Vector2.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/"/>
+  </compounddef>
+</doxygen>

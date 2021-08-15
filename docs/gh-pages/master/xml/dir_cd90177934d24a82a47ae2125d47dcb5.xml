@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_cd90177934d24a82a47ae2125d47dcb5" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/tiles</compoundname>
+    <innerdir refid="dir_c45d14c972cb40d65462fd44e36fa6be">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model</innerdir>
+    <innerdir refid="dir_ccd93eabf2cfc7a8a4eb1603b5bb95d7">D:/prog/cpp/custom_libs/loki/src/loki/tiles/view</innerdir>
+    <innerfile refid="tiles_2_all_8hpp">All.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_point_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::PointObjectData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_point_object_data_1a61e79cb570bf4ab94585632b8c8984cc" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::PointObjectData::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="31" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_point_object_data_1a4748bf953c8ec38ad5a05997553a8d81" prot="public" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::tiles::PointObjectData::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="32" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="1">
+        <label>loki::tiles::PointObjectData</label>
+        <link refid="structloki_1_1tiles_1_1_point_object_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="30" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="30" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_point_object_data_1a61e79cb570bf4ab94585632b8c8984cc" prot="public" virt="non-virtual"><scope>loki::tiles::PointObjectData</scope><name>name</name></member>
+      <member refid="structloki_1_1tiles_1_1_point_object_data_1a4748bf953c8ec38ad5a05997553a8d81" prot="public" virt="non-virtual"><scope>loki::tiles::PointObjectData</scope><name>position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

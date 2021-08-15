@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_reversed_wrapper" kind="class" language="C++" prot="public">
+    <compoundname>loki::common::ReversedWrapper</compoundname>
+    <includes refid="_iter_adapters_8hpp" local="no">IterAdapters.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classloki_1_1common_1_1_reversed_wrapper_1a90d7982a70c7e465608c73b75ade1966" prot="public" static="no">
+        <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, typename T::const_reverse_iterator, typename T::reverse_iterator &gt;</type>
+        <definition>using loki::common::ReversedWrapper&lt; T &gt;::iterator =  std::conditional_t&lt; std::is_const_v&lt;T&gt;, typename T::const_reverse_iterator, typename T::reverse_iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="65" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1common_1_1_reversed_wrapper_1a62e4fba6c4514741fcd221e6ce6e895f" prot="private" static="no" mutable="no">
+        <type>T &amp;</type>
+        <definition>T&amp; loki::common::ReversedWrapper&lt; T &gt;::container</definition>
+        <argsstring></argsstring>
+        <name>container</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="76" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_reversed_wrapper_1a777f64b5792e80b718476b78659163a5" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::ReversedWrapper&lt; T &gt;::ReversedWrapper</definition>
+        <argsstring>(T &amp;t)</argsstring>
+        <name>ReversedWrapper</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="70" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_reversed_wrapper_1a743f0648a84602566969e61a015354c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator loki::common::ReversedWrapper&lt; T &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="72" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_reversed_wrapper_1a9a5bae00599d4d1afce424c4ac743f20" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator loki::common::ReversedWrapper&lt; T &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="73" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reversed. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="63" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="63" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_reversed_wrapper_1a743f0648a84602566969e61a015354c7" prot="public" virt="non-virtual"><scope>loki::common::ReversedWrapper</scope><name>begin</name></member>
+      <member refid="classloki_1_1common_1_1_reversed_wrapper_1a62e4fba6c4514741fcd221e6ce6e895f" prot="private" virt="non-virtual"><scope>loki::common::ReversedWrapper</scope><name>container</name></member>
+      <member refid="classloki_1_1common_1_1_reversed_wrapper_1a9a5bae00599d4d1afce424c4ac743f20" prot="public" virt="non-virtual"><scope>loki::common::ReversedWrapper</scope><name>end</name></member>
+      <member refid="classloki_1_1common_1_1_reversed_wrapper_1a90d7982a70c7e465608c73b75ade1966" prot="public" virt="non-virtual"><scope>loki::common::ReversedWrapper</scope><name>iterator</name></member>
+      <member refid="classloki_1_1common_1_1_reversed_wrapper_1a777f64b5792e80b718476b78659163a5" prot="public" virt="non-virtual"><scope>loki::common::ReversedWrapper</scope><name>ReversedWrapper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

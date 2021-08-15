@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1tiles" kind="namespace" language="C++">
+    <compoundname>loki::tiles</compoundname>
+    <innerclass refid="structloki_1_1tiles_1_1_map_data" prot="public">loki::tiles::MapData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_tile_object_data" prot="public">loki::tiles::TileObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_ellipse_object_data" prot="public">loki::tiles::EllipseObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_rectangle_object_data" prot="public">loki::tiles::RectangleObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_point_object_data" prot="public">loki::tiles::PointObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_polygon_object_data" prot="public">loki::tiles::PolygonObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_polyline_object_data" prot="public">loki::tiles::PolylineObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_text_object_data" prot="public">loki::tiles::TextObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_object_layer_data" prot="public">loki::tiles::ObjectLayerData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_terrain_data" prot="public">loki::tiles::TerrainData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_frame" prot="public">loki::tiles::Frame</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_tile_data" prot="public">loki::tiles::TileData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_tile_layer_data" prot="public">loki::tiles::TileLayerData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_tileset_data" prot="public">loki::tiles::TilesetData</innerclass>
+    <innerclass refid="classloki_1_1tiles_1_1_layer_view" prot="public">loki::tiles::LayerView</innerclass>
+    <innerclass refid="classloki_1_1tiles_1_1_map_view" prot="public">loki::tiles::MapView</innerclass>
+    <innerclass refid="classloki_1_1tiles_1_1_object_layer_view" prot="public">loki::tiles::ObjectLayerView</innerclass>
+    <innerclass refid="classloki_1_1tiles_1_1_tile_layer_view" prot="public">loki::tiles::TileLayerView</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RenderOrder</name>
+        <enumvalue id="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172ad904e5818165807101f4603409bd15ab" prot="public">
+          <name>RIGHT_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a1e01c60be1a0b8ed84f7f1ab35d01daa" prot="public">
+          <name>RIGHT_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a16a9066375b3b3aaa9c8eb4313411db2" prot="public">
+          <name>LEFT_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_map_data_8hpp_1ad8df13097d6f8952b2e49e72ed716172a478a4e9640e7519838d34b473e233b2a" prot="public">
+          <name>LEFT_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="enum" id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ObjectAlignement</name>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a1c04cc3823d476c3017238679a0fdf52" prot="public">
+          <name>UNSPECIFIED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a747385047b85ae751f83adb36435a3c1" prot="public">
+          <name>TOP_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a6705777b712ee811e76fb07162081d63" prot="public">
+          <name>TOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a901d87dedda8db733f5e6d34c4eb5fe0" prot="public">
+          <name>TOP_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a684d325a7303f52e64011467ff5c5758" prot="public">
+          <name>LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29ac397289ee45877be0cd49811fe245b4e" prot="public">
+          <name>CENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a21507b40c80068eda19865706fdc2403" prot="public">
+          <name>RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a8d81ac82421d1b03da58fccb9174892e" prot="public">
+          <name>BOTTOM_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a1fabf63de5c96c78e2a40805bcdeb73b" prot="public">
+          <name>BOTTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_tileset_data_8hpp_1aba8705a241d692d75e13e7d9a7c6fa29a341b72aaab1308a3e6667af1e52f5def" prot="public">
+          <name>BOTTOM_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp" bodystart="14" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_map_data_8hpp_1a050e341574ec7a30ac94cb3376938c6d" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="structloki_1_1tiles_1_1_tile_layer_data" kindref="compound">TileLayerData</ref>, <ref refid="structloki_1_1tiles_1_1_object_layer_data" kindref="compound">ObjectLayerData</ref> &gt;</type>
+        <definition>using loki::tiles::LayerData = typedef std::variant&lt;TileLayerData, ObjectLayerData&gt;</definition>
+        <argsstring></argsstring>
+        <name>LayerData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp" line="16" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_object_data_8hpp_1a2cdb6c8470f21ab326f969aefed87c33" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="structloki_1_1tiles_1_1_tile_object_data" kindref="compound">TileObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_ellipse_object_data" kindref="compound">EllipseObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_rectangle_object_data" kindref="compound">RectangleObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_point_object_data" kindref="compound">PointObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_polygon_object_data" kindref="compound">PolygonObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_polyline_object_data" kindref="compound">PolylineObjectData</ref>, <ref refid="structloki_1_1tiles_1_1_text_object_data" kindref="compound">TextObjectData</ref> &gt;</type>
+        <definition>using loki::tiles::ObjectData = typedef std::variant&lt; TileObjectData, EllipseObjectData, RectangleObjectData, PointObjectData, PolygonObjectData, PolylineObjectData, TextObjectData&gt;</definition>
+        <argsstring></argsstring>
+        <name>ObjectData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="60" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_property_8hpp_1a237caf1ffd2b2cab0a6cb0b394b02ab0" prot="public" static="no">
+        <type>std::variant&lt; std::string, int, float, bool, sf::Color &gt;</type>
+        <definition>using loki::tiles::PropertyData = typedef std::variant&lt;std::string, int, float, bool, sf::Color&gt;</definition>
+        <argsstring></argsstring>
+        <name>PropertyData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_property_8hpp_1ae09ff11fb3880a3e8ec82d90326f99ab" prot="public" static="no">
+        <type>std::map&lt; std::string, PropertyData &gt;</type>
+        <definition>using loki::tiles::PropertyMap = typedef std::map&lt;std::string, PropertyData&gt;</definition>
+        <argsstring></argsstring>
+        <name>PropertyMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" line="16" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_object_data_8cpp_1a77144330587b8ebb96c1aa5609ab2599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ObjectData</type>
+        <definition>ObjectData loki::tiles::loadObjectData</definition>
+        <argsstring>(const nlohmann::json &amp;jsonDatum)</argsstring>
+        <name>loadObjectData</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>jsonDatum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.cpp" line="10" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.cpp" bodystart="10" bodyend="65" declfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" declline="69" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="_property_8cpp_1ac73ad7f7feb2716d8f9fbb007a48994d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::tiles::loadPropertyMap</definition>
+        <argsstring>(PropertyMap &amp;propertyMap, const nlohmann::json &amp;propArray)</argsstring>
+        <name>loadPropertyMap</name>
+        <param>
+          <type>PropertyMap &amp;</type>
+          <declname>propertyMap</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>propArray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp" line="11" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp" bodystart="11" bodyend="29" declfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" declline="18" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_property_8cpp_1adca37bcde2d53e595084dafe41c04777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyMap</type>
+        <definition>PropertyMap loki::tiles::getPropertyMap</definition>
+        <argsstring>(const nlohmann::json &amp;propArray)</argsstring>
+        <name>getPropertyMap</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>propArray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp" line="31" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp" bodystart="31" bodyend="35" declfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp" declline="19" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.cpp" line="11" column="1"/>
+  </compounddef>
+</doxygen>

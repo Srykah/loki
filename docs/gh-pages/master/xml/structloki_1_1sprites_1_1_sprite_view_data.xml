@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1sprites_1_1_sprite_view_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::sprites::SpriteViewData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1sprites_1_1_sprite_view_data_1ad0fb6467487bd520d519f088dfb0318d" prot="public" static="no" mutable="no">
+        <type>std::map&lt; sf::String, <ref refid="classloki_1_1anim_1_1_animation_view_data" kindref="compound">anim::AnimationViewData</ref> &gt;</type>
+        <definition>std::map&lt;sf::String, anim::AnimationViewData&gt; loki::sprites::SpriteViewData::animations</definition>
+        <argsstring></argsstring>
+        <name>animations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" line="19" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1sprites_1_1_sprite_view_data_1ab7e23aa66fa514e78a05b902072d7a56" prot="public" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture loki::sprites::SpriteViewData::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" line="20" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1sprites_1_1_sprite_view_data_1ae2146403d01a88cfd594c556c620aa5d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::sprites::SpriteViewData::SpriteViewData</definition>
+        <argsstring>(const SpriteData &amp;data, const std::filesystem::path &amp;cd=std::filesystem::current_path())</argsstring>
+        <name>SpriteViewData</name>
+        <param>
+          <type>const <ref refid="structloki_1_1sprites_1_1_sprite_data" kindref="compound">SpriteData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>cd</declname>
+          <defval>std::filesystem::current_path()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" line="15" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.cpp" bodystart="11" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::sprites::SpriteViewData</label>
+        <link refid="structloki_1_1sprites_1_1_sprite_view_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>animations</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::anim::AnimationViewData</label>
+        <link refid="classloki_1_1anim_1_1_animation_view_data"/>
+      </node>
+      <node id="2">
+        <label>std::map&lt; sf::String, loki::anim::AnimationViewData &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/sprites/SpriteViewData.hpp" bodystart="14" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ad0fb6467487bd520d519f088dfb0318d" prot="public" virt="non-virtual"><scope>loki::sprites::SpriteViewData</scope><name>animations</name></member>
+      <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ae2146403d01a88cfd594c556c620aa5d" prot="public" virt="non-virtual"><scope>loki::sprites::SpriteViewData</scope><name>SpriteViewData</name></member>
+      <member refid="structloki_1_1sprites_1_1_sprite_view_data_1ab7e23aa66fa514e78a05b902072d7a56" prot="public" virt="non-virtual"><scope>loki::sprites::SpriteViewData</scope><name>texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

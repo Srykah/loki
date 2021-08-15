@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data" kind="struct" language="C++" prot="private">
+    <compoundname>loki::tiles::TileLayerView::TileViewData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a2c3548e3a1ef8b99721af4f85a401125" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int loki::tiles::TileLayerView::TileViewData::frameIndex</definition>
+        <argsstring></argsstring>
+        <name>frameIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" line="21" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a44e2af0158b07c90002d8101d0723592" prot="public" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time loki::tiles::TileLayerView::TileViewData::timeSinceLastFrame</definition>
+        <argsstring></argsstring>
+        <name>timeSinceLastFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" line="22" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" line="20" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp" bodystart="20" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a2c3548e3a1ef8b99721af4f85a401125" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerView::TileViewData</scope><name>frameIndex</name></member>
+      <member refid="structloki_1_1tiles_1_1_tile_layer_view_1_1_tile_view_data_1a44e2af0158b07c90002d8101d0723592" prot="public" virt="non-virtual"><scope>loki::tiles::TileLayerView::TileViewData</scope><name>timeSinceLastFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

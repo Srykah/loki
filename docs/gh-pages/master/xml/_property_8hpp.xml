@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_property_8hpp" kind="file" language="C++">
+    <compoundname>Property.hpp</compoundname>
+    <includes local="no">SFML/Graphics/Color.hpp</includes>
+    <includes local="no">filesystem</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">variant</includes>
+    <includedby refid="_object_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp</includedby>
+    <includedby refid="_map_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp</includedby>
+    <includedby refid="_terrain_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp</includedby>
+    <includedby refid="_property_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp</includedby>
+    <includedby refid="_tile_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp</includedby>
+    <includedby refid="_tile_layer_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp</includedby>
+    <includedby refid="_tileset_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp</includedby>
+    <includedby refid="tiles_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>filesystem</label>
+      </node>
+      <node id="6">
+        <label>variant</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp</label>
+        <link refid="_property_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nlohmann/json.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectLayerData.hpp</label>
+        <link refid="_object_layer_data_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp</label>
+        <link refid="_map_data_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.cpp</label>
+        <link refid="_property_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.hpp</label>
+        <link refid="_map_view_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.cpp</label>
+        <link refid="_object_layer_view_8cpp"/>
+      </node>
+      <node id="18">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp</label>
+        <link refid="_tile_data_8hpp_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp</label>
+        <link refid="_layer_view_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp</label>
+        <link refid="_object_data_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectLayerData.cpp</label>
+        <link refid="_object_layer_data_8cpp"/>
+      </node>
+      <node id="15">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.cpp</label>
+        <link refid="_terrain_data_8cpp"/>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</label>
+        <link refid="tiles_2_all_8hpp"/>
+      </node>
+      <node id="13">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp</label>
+        <link refid="_tile_layer_view_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TerrainData.hpp</label>
+        <link refid="_terrain_data_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileLayerData.hpp</label>
+        <link refid="_tile_layer_data_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp</label>
+        <link refid="_property_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.cpp</label>
+        <link refid="_map_view_8cpp"/>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.hpp</label>
+        <link refid="_object_layer_view_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.cpp</label>
+        <link refid="_tile_data_8cpp"/>
+      </node>
+      <node id="16">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TilesetData.hpp</label>
+        <link refid="_tileset_data_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.cpp</label>
+        <link refid="_object_data_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tiles">loki::tiles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Color.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::tiles<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>PropertyData<sp/>=<sp/>std::variant&lt;std::string,<sp/>int,<sp/>float,<sp/>bool,<sp/>sf::Color&gt;;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>PropertyMap<sp/>=<sp/>std::map&lt;std::string,<sp/>PropertyData&gt;;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>loadPropertyMap(PropertyMap&amp;<sp/>propertyMap,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>propArray);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">PropertyMap<sp/>getPropertyMap(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>propArray);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>loki::tiles</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/Property.hpp"/>
+  </compounddef>
+</doxygen>

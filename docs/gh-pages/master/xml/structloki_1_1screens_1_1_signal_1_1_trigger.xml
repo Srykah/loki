@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1screens_1_1_signal_1_1_trigger" kind="struct" language="C++" prot="public">
+    <compoundname>loki::screens::Signal::Trigger</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1screens_1_1_signal_1_1_trigger_1a7733a67ab83f8155592424f4c0e12dba" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classloki_1_1screens_1_1_screen" kindref="compound">Screen</ref> *</type>
+        <definition>const Screen* loki::screens::Signal::Trigger::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="19" column="18" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1screens_1_1_signal_1_1_trigger_1a8b229c3103a549324f465470c0e02c86" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::screens::Signal::Trigger::signalName</definition>
+        <argsstring></argsstring>
+        <name>signalName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="20" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1screens_1_1_signal_1_1_trigger_1a013e232fbafea484caf4d0362b1b83fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::screens::Signal::Trigger::operator==</definition>
+        <argsstring>(const Trigger &amp;other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">Trigger</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="22" column="10" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="6">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>loki::screens::Screen</label>
+        <link refid="classloki_1_1screens_1_1_screen"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>stack</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::screens::Signal::Trigger</label>
+        <link refid="structloki_1_1screens_1_1_signal_1_1_trigger"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>origin</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>signalName</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::screens::ScreenStack</label>
+        <link refid="classloki_1_1screens_1_1_screen_stack"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::string</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="18" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="18" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a013e232fbafea484caf4d0362b1b83fe" prot="public" virt="non-virtual"><scope>loki::screens::Signal::Trigger</scope><name>operator==</name></member>
+      <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a7733a67ab83f8155592424f4c0e12dba" prot="public" virt="non-virtual"><scope>loki::screens::Signal::Trigger</scope><name>origin</name></member>
+      <member refid="structloki_1_1screens_1_1_signal_1_1_trigger_1a8b229c3103a549324f465470c0e02c86" prot="public" virt="non-virtual"><scope>loki::screens::Signal::Trigger</scope><name>signalName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

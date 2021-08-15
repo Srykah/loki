@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_ccd93eabf2cfc7a8a4eb1603b5bb95d7" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view</compoundname>
+    <innerfile refid="_layer_view_8hpp">LayerView.hpp</innerfile>
+    <innerfile refid="_map_view_8cpp">MapView.cpp</innerfile>
+    <innerfile refid="_map_view_8hpp">MapView.hpp</innerfile>
+    <innerfile refid="_object_layer_view_8cpp">ObjectLayerView.cpp</innerfile>
+    <innerfile refid="_object_layer_view_8hpp">ObjectLayerView.hpp</innerfile>
+    <innerfile refid="_tile_layer_view_8cpp">TileLayerView.cpp</innerfile>
+    <innerfile refid="_tile_layer_view_8hpp">TileLayerView.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/"/>
+  </compounddef>
+</doxygen>

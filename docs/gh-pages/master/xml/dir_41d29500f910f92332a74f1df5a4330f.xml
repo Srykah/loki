@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_41d29500f910f92332a74f1df5a4330f" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/window</compoundname>
+    <innerfile refid="window_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_style_8cpp">Style.cpp</innerfile>
+    <innerfile refid="_style_8hpp">Style.hpp</innerfile>
+    <innerfile refid="_window_8cpp">Window.cpp</innerfile>
+    <innerfile refid="_window_8hpp">Window.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/window/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_shape_style_8cpp" kind="file" language="C++">
+    <compoundname>ShapeStyle.cpp</compoundname>
+    <includes refid="_shape_style_8hpp" local="yes">ShapeStyle.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/styles/ShapeStyle.cpp</label>
+        <link refid="_shape_style_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SFML/Graphics/Texture.hpp</label>
+      </node>
+      <node id="3">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="2">
+        <label>ShapeStyle.hpp</label>
+        <link refid="_shape_style_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics/Rect.hpp</label>
+      </node>
+      <node id="6">
+        <label>SFML/Graphics/Shape.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1styles">loki::styles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ShapeStyle.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::styles<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShapeStyle::applyTo(sf::Shape&amp;<sp/>shape)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>shape.setTexture(texture);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(textureRect<sp/>!=<sp/>sf::IntRect<sp/>{})<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>shape.setTextureRect(textureRect);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>shape.setFillColor(fillColor);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>shape.setOutlineColor(outlineColor);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>shape.setOutlineThickness(outlineThickness);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/ShapeStyle.cpp"/>
+  </compounddef>
+</doxygen>

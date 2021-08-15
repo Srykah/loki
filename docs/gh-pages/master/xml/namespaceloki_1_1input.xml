@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1input" kind="namespace" language="C++">
+    <compoundname>loki::input</compoundname>
+    <innerclass refid="structloki_1_1input_1_1_input_settings" prot="public">loki::input::InputSettings</innerclass>
+    <innerclass refid="structloki_1_1input_1_1_input_state" prot="public">loki::input::InputState</innerclass>
+    <innerclass refid="structloki_1_1input_1_1_joystick_axis_trigger" prot="public">loki::input::JoystickAxisTrigger</innerclass>
+    <innerclass refid="structloki_1_1input_1_1_player_config" prot="public">loki::input::PlayerConfig</innerclass>
+    <innerclass refid="classloki_1_1input_1_1_event_handler" prot="public">loki::input::EventHandler</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_input_type_8hpp_1a24440142e49008ec3752eb44b99bf6a5" prot="public" static="no">
+        <type>sf::Mouse::Button</type>
+        <definition>using loki::input::MouseButtonTrigger = typedef sf::Mouse::Button</definition>
+        <argsstring></argsstring>
+        <name>MouseButtonTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_input_type_8hpp_1a4964da079d8b805b6fb62c31e43a239a" prot="public" static="no">
+        <type>unsigned int sf::Keyboard::Key</type>
+        <definition>using loki::input::KeyTrigger = typedef unsigned int sf::Keyboard::Key</definition>
+        <argsstring></argsstring>
+        <name>KeyTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="16" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_input_type_8hpp_1a7c3811be95d6d7c4ae1c59c89d613c53" prot="public" static="no">
+        <type>std::variant&lt; MouseButtonTrigger, JoystickButtonTrigger, KeyTrigger, <ref refid="structloki_1_1input_1_1_joystick_axis_trigger" kindref="compound">JoystickAxisTrigger</ref> &gt;</type>
+        <definition>using loki::input::InputTrigger = typedef std::variant&lt;MouseButtonTrigger, JoystickButtonTrigger, KeyTrigger, JoystickAxisTrigger&gt;</definition>
+        <argsstring></argsstring>
+        <name>InputTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" line="26" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_input_type_8cpp_1a8afb5b01df69348bf52a815684bf9bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>InputTrigger</type>
+        <definition>InputTrigger loki::input::loadTrigger</definition>
+        <argsstring>(const nlohmann::json &amp;triggerDatum)</argsstring>
+        <name>loadTrigger</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>triggerDatum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.cpp" line="52" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.cpp" bodystart="52" bodyend="72" declfile="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp" declline="28" declcolumn="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.cpp" line="10" column="1"/>
+  </compounddef>
+</doxygen>

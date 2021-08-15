@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1text" kind="namespace" language="C++">
+    <compoundname>loki::text</compoundname>
+    <innerclass refid="classloki_1_1text_1_1_animated_text" prot="public">loki::text::AnimatedText</innerclass>
+    <innerclass refid="structloki_1_1text_1_1_animated_text_style" prot="public">loki::text::AnimatedTextStyle</innerclass>
+    <innerclass refid="classloki_1_1text_1_1_annotated_text" prot="public">loki::text::AnnotatedText</innerclass>
+    <innerclass refid="classloki_1_1text_1_1_stylesheet" prot="public">loki::text::Stylesheet</innerclass>
+    <innerclass refid="structloki_1_1text_1_1_text_animation_view_data" prot="public">loki::text::TextAnimationViewData</innerclass>
+    <innernamespace refid="namespaceloki_1_1text_1_1impl">loki::text::impl</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_stylesheet_8hpp_1aa28f2bc99b8e1fd9a68ba086863a3eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;json, Stylesheet &amp;ss)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type><ref refid="classloki_1_1text_1_1_stylesheet" kindref="compound">Stylesheet</ref> &amp;</type>
+          <declname>ss</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" line="30" column="6" declfile="D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp" declline="30" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.cpp" line="10" column="1"/>
+  </compounddef>
+</doxygen>

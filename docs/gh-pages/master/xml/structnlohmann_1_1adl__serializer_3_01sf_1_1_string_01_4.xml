@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>nlohmann::adl_serializer&lt; sf::String &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1aea8f09e0c72d5aabf89fb2b83d9676e5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void nlohmann::adl_serializer&lt; sf::String &gt;::to_json</definition>
+        <argsstring>(json &amp;j, const sf::String &amp;str)</argsstring>
+        <name>to_json</name>
+        <param>
+          <type>json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" line="15" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1a1cc8c8a746e1173cb4f47bc94078820e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void nlohmann::adl_serializer&lt; sf::String &gt;::from_json</definition>
+        <argsstring>(const json &amp;j, sf::String &amp;str)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>sf::String &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" line="17" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" line="14" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/json/String.hpp" bodystart="14" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1a1cc8c8a746e1173cb4f47bc94078820e" prot="public" virt="non-virtual"><scope>nlohmann::adl_serializer&lt; sf::String &gt;</scope><name>from_json</name></member>
+      <member refid="structnlohmann_1_1adl__serializer_3_01sf_1_1_string_01_4_1aea8f09e0c72d5aabf89fb2b83d9676e5" prot="public" virt="non-virtual"><scope>nlohmann::adl_serializer&lt; sf::String &gt;</scope><name>to_json</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

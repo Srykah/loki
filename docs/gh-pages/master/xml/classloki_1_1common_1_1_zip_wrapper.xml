@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1common_1_1_zip_wrapper" kind="class" language="C++" prot="public">
+    <compoundname>loki::common::ZipWrapper</compoundname>
+    <includes refid="_iter_adapters_8hpp" local="no">IterAdapters.hpp</includes>
+    <innerclass refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator" prot="public">loki::common::ZipWrapper::iterator</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename U</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1common_1_1_zip_wrapper_1a11189b16885af3b3b5c4eb461ecb58ec" prot="private" static="no" mutable="no">
+        <type>T &amp;</type>
+        <definition>T&amp; loki::common::ZipWrapper&lt; T, U &gt;::container1</definition>
+        <argsstring></argsstring>
+        <name>container1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="134" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1common_1_1_zip_wrapper_1a6900ee65064206cc437fc0e9757bf6de" prot="private" static="no" mutable="no">
+        <type>U &amp;</type>
+        <definition>U&amp; loki::common::ZipWrapper&lt; T, U &gt;::container2</definition>
+        <argsstring></argsstring>
+        <name>container2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="135" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1common_1_1_zip_wrapper_1a7c0ed9ea78f269d389869831f70b2c4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>loki::common::ZipWrapper&lt; T, U &gt;::ZipWrapper</definition>
+        <argsstring>(T &amp;t, U &amp;u)</argsstring>
+        <name>ZipWrapper</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="128" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_zip_wrapper_1a4b188363dbb245d0bcdbec691779ae15" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator loki::common::ZipWrapper&lt; T, U &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="130" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1common_1_1_zip_wrapper_1a8216bf5bcfe5b42eb75a3c3fea663583" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classloki_1_1common_1_1_zip_wrapper_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator loki::common::ZipWrapper&lt; T, U &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="131" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="131" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Zip. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" line="90" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/IterAdapters.hpp" bodystart="90" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classloki_1_1common_1_1_zip_wrapper_1a4b188363dbb245d0bcdbec691779ae15" prot="public" virt="non-virtual"><scope>loki::common::ZipWrapper</scope><name>begin</name></member>
+      <member refid="classloki_1_1common_1_1_zip_wrapper_1a11189b16885af3b3b5c4eb461ecb58ec" prot="private" virt="non-virtual"><scope>loki::common::ZipWrapper</scope><name>container1</name></member>
+      <member refid="classloki_1_1common_1_1_zip_wrapper_1a6900ee65064206cc437fc0e9757bf6de" prot="private" virt="non-virtual"><scope>loki::common::ZipWrapper</scope><name>container2</name></member>
+      <member refid="classloki_1_1common_1_1_zip_wrapper_1a8216bf5bcfe5b42eb75a3c3fea663583" prot="public" virt="non-virtual"><scope>loki::common::ZipWrapper</scope><name>end</name></member>
+      <member refid="classloki_1_1common_1_1_zip_wrapper_1a7c0ed9ea78f269d389869831f70b2c4b" prot="public" virt="non-virtual"><scope>loki::common::ZipWrapper</scope><name>ZipWrapper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

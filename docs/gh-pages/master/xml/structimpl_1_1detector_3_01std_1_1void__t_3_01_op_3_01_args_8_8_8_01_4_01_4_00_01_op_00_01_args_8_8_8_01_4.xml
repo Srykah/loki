@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>impl::detector&lt; std::void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">true_type</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">identity_type&lt; Op&lt; Args... &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>template&lt; class... &gt; class</type>
+        <declname>Op</declname>
+        <defname>Op</defname>
+      </param>
+      <param>
+        <type>class...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>true_type</label>
+      </node>
+      <node id="1">
+        <label>impl::detector&lt; std::void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</label>
+        <link refid="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>identity_type&lt; Op&lt; Args... &gt; &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>true_type</label>
+      </node>
+      <node id="1">
+        <label>impl::detector&lt; std::void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</label>
+        <link refid="structimpl_1_1detector_3_01std_1_1void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>identity_type&lt; Op&lt; Args... &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/common/impl/is_detected.hxx" bodystart="13" bodyend="13"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

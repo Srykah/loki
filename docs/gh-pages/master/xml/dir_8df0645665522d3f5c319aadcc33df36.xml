@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_8df0645665522d3f5c319aadcc33df36" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki</compoundname>
+    <innerdir refid="dir_e662339c44282ec858da85778d705c2f">D:/prog/cpp/custom_libs/loki/src/loki/anim</innerdir>
+    <innerdir refid="dir_d14e901c1bac15a023f986b3a0ffc54a">D:/prog/cpp/custom_libs/loki/src/loki/anim-editor</innerdir>
+    <innerdir refid="dir_b172c821305f6bd4c7973efbfe329432">D:/prog/cpp/custom_libs/loki/src/loki/common</innerdir>
+    <innerdir refid="dir_8934bef9e1929daad09ae15c1ed68613">D:/prog/cpp/custom_libs/loki/src/loki/gui</innerdir>
+    <innerdir refid="dir_e1dd41053a3944bcc097b64640cbbd9c">D:/prog/cpp/custom_libs/loki/src/loki/hash</innerdir>
+    <innerdir refid="dir_394969687a2b1ebd8f94fd209da84e69">D:/prog/cpp/custom_libs/loki/src/loki/input</innerdir>
+    <innerdir refid="dir_83c401964b5df11aa8b45e08a4a4cd9a">D:/prog/cpp/custom_libs/loki/src/loki/json</innerdir>
+    <innerdir refid="dir_98969e3706f92e89448a63a40800b9bd">D:/prog/cpp/custom_libs/loki/src/loki/math</innerdir>
+    <innerdir refid="dir_2564a24647693b4e458f71fec3038336">D:/prog/cpp/custom_libs/loki/src/loki/screens</innerdir>
+    <innerdir refid="dir_4cef2acbfccebad503cb67f49b26edce">D:/prog/cpp/custom_libs/loki/src/loki/shapes</innerdir>
+    <innerdir refid="dir_ae0eb5b2303b483c5ab7707951d217af">D:/prog/cpp/custom_libs/loki/src/loki/sprites</innerdir>
+    <innerdir refid="dir_0c7667fe1eb61eb699fc46db7d5aba76">D:/prog/cpp/custom_libs/loki/src/loki/states</innerdir>
+    <innerdir refid="dir_01f9d661c6c18855211ff1c319c6b8d7">D:/prog/cpp/custom_libs/loki/src/loki/styles</innerdir>
+    <innerdir refid="dir_2bc1df544e36d2cc79f9178bd4971bfd">D:/prog/cpp/custom_libs/loki/src/loki/text</innerdir>
+    <innerdir refid="dir_cd90177934d24a82a47ae2125d47dcb5">D:/prog/cpp/custom_libs/loki/src/loki/tiles</innerdir>
+    <innerdir refid="dir_af0ec7e3d047b9e21dc7b2d3abdbab24">D:/prog/cpp/custom_libs/loki/src/loki/tpl</innerdir>
+    <innerdir refid="dir_41d29500f910f92332a74f1df5a4330f">D:/prog/cpp/custom_libs/loki/src/loki/window</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/"/>
+  </compounddef>
+</doxygen>

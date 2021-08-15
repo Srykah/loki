@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_01f9d661c6c18855211ff1c319c6b8d7" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/styles</compoundname>
+    <innerfile refid="styles_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_shape_style_8cpp">ShapeStyle.cpp</innerfile>
+    <innerfile refid="_shape_style_8hpp">ShapeStyle.hpp</innerfile>
+    <innerfile refid="_text_style_8cpp">TextStyle.cpp</innerfile>
+    <innerfile refid="_text_style_8hpp">TextStyle.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/"/>
+  </compounddef>
+</doxygen>

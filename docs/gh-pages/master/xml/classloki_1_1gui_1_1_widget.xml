@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_widget" kind="class" language="C++" prot="public">
+    <compoundname>loki::gui::Widget</compoundname>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_abstract_text_box" prot="public" virt="non-virtual">loki::gui::AbstractTextBox</derivedcompoundref>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_list_controller" prot="public" virt="non-virtual">loki::gui::ListController</derivedcompoundref>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_text_box_controller" prot="public" virt="non-virtual">loki::gui::TextBoxController</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_widget_1a7b33a45fc4fa239195891c6d7651ffd6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::hidden</definition>
+        <argsstring></argsstring>
+        <name>hidden</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="35" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_widget_1a438213d71a36c023805768ac3e5686a0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="36" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_widget_1ad6f92b24d7fb58550b15250378ea635c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::focused</definition>
+        <argsstring></argsstring>
+        <name>focused</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="37" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_widget_1a25be278483cee9959f97d3bb0e819b6d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="38" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual loki::gui::Widget::~Widget</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Widget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="12" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a7cebdeaf8e4684d9a95d093f9cafc15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::hide</definition>
+        <argsstring>()</argsstring>
+        <name>hide</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a9205b12357ae7fc3724197fdf52d3b0f">hide</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="14" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1aea2a1c5649b66c343e9b45be099e854b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::unhide</definition>
+        <argsstring>()</argsstring>
+        <name>unhide</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a0f77de71e6caaeadfb6fb224b0d8eab5">unhide</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="15" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::setHidden</definition>
+        <argsstring>(bool _hidden) final</argsstring>
+        <name>setHidden</name>
+        <param>
+          <type>bool</type>
+          <declname>_hidden</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="16" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="18" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::isHidden</definition>
+        <argsstring>() const</argsstring>
+        <name>isHidden</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="17" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1ab5c0ec32554ac9fe1bcac587187d5abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::enable</definition>
+        <argsstring>()</argsstring>
+        <name>enable</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a0d1fb86c22ebc074f87361dd80a4686d">enable</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="19" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a2aeaf04efa1f4e455a8a0d0df703a30e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::disable</definition>
+        <argsstring>()</argsstring>
+        <name>disable</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a8ab3b303d4d503f0b99e2be678cdb403">disable</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="20" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::setEnabled</definition>
+        <argsstring>(bool _enabled) final</argsstring>
+        <name>setEnabled</name>
+        <param>
+          <type>bool</type>
+          <declname>_enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="21" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::isEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isEnabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="22" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a958fbf8e597c061612c1ccbf1e5e1c27" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::focus</definition>
+        <argsstring>()</argsstring>
+        <name>focus</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1ac9e05495ae77248ef43cb807db97920d">focus</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="24" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a53feb9a9fad030095c4e5aca6ae2e509" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::unfocus</definition>
+        <argsstring>()</argsstring>
+        <name>unfocus</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1ac5f438596ceb70114717920fd1a8c8e1">unfocus</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="25" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::setFocused</definition>
+        <argsstring>(bool _focused) final</argsstring>
+        <name>setFocused</name>
+        <param>
+          <type>bool</type>
+          <declname>_focused</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="26" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::isFocused</definition>
+        <argsstring>() const</argsstring>
+        <name>isFocused</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="27" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1ab23287b78714c61f0583ef826165c49f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::activate</definition>
+        <argsstring>()</argsstring>
+        <name>activate</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a7bc6a00be962587b78919547806c8865">activate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="29" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1abfe60f649c84b19d2620ef66779c9368" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::deactivate</definition>
+        <argsstring>()</argsstring>
+        <name>deactivate</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_controller_1a821abb03b79e976a3073077ba5735114">deactivate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="30" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void loki::gui::Widget::setActive</definition>
+        <argsstring>(bool _active) final</argsstring>
+        <name>setActive</name>
+        <param>
+          <type>bool</type>
+          <declname>_active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="31" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::gui::Widget::isActive</definition>
+        <argsstring>() const</argsstring>
+        <name>isActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="32" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>loki::gui::AbstractTextBox</label>
+        <link refid="classloki_1_1gui_1_1_abstract_text_box"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="5">
+        <label>loki::gui::TextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_text_box_controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::gui::TextBox</label>
+        <link refid="classloki_1_1gui_1_1_text_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>loki::gui::EventTextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_event_text_box_controller"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>loki::gui::ListController</label>
+        <link refid="classloki_1_1gui_1_1_list_controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/base/Widget.hpp" bodystart="10" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_widget_1ab23287b78714c61f0583ef826165c49f" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>activate</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a25be278483cee9959f97d3bb0e819b6d" prot="private" virt="non-virtual"><scope>loki::gui::Widget</scope><name>active</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1abfe60f649c84b19d2620ef66779c9368" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>deactivate</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a2aeaf04efa1f4e455a8a0d0df703a30e" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>disable</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1ab5c0ec32554ac9fe1bcac587187d5abf" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>enable</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a438213d71a36c023805768ac3e5686a0" prot="private" virt="non-virtual"><scope>loki::gui::Widget</scope><name>enabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a958fbf8e597c061612c1ccbf1e5e1c27" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>focus</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1ad6f92b24d7fb58550b15250378ea635c" prot="private" virt="non-virtual"><scope>loki::gui::Widget</scope><name>focused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a7b33a45fc4fa239195891c6d7651ffd6" prot="private" virt="non-virtual"><scope>loki::gui::Widget</scope><name>hidden</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a7cebdeaf8e4684d9a95d093f9cafc15c" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>hide</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" prot="public" virt="non-virtual"><scope>loki::gui::Widget</scope><name>isActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" prot="public" virt="non-virtual"><scope>loki::gui::Widget</scope><name>isEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" prot="public" virt="non-virtual"><scope>loki::gui::Widget</scope><name>isFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" prot="public" virt="non-virtual"><scope>loki::gui::Widget</scope><name>isHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>setActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>setEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>setFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>setHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a53feb9a9fad030095c4e5aca6ae2e509" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>unfocus</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1aea2a1c5649b66c343e9b45be099e854b" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>unhide</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" prot="public" virt="virtual"><scope>loki::gui::Widget</scope><name>~Widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

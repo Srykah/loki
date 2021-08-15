@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_c45d14c972cb40d65462fd44e36fa6be" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model</compoundname>
+    <innerfile refid="_map_data_8cpp">MapData.cpp</innerfile>
+    <innerfile refid="_map_data_8hpp">MapData.hpp</innerfile>
+    <innerfile refid="_object_data_8cpp">ObjectData.cpp</innerfile>
+    <innerfile refid="_object_data_8hpp">ObjectData.hpp</innerfile>
+    <innerfile refid="_object_layer_data_8cpp">ObjectLayerData.cpp</innerfile>
+    <innerfile refid="_object_layer_data_8hpp">ObjectLayerData.hpp</innerfile>
+    <innerfile refid="_property_8cpp">Property.cpp</innerfile>
+    <innerfile refid="_property_8hpp">Property.hpp</innerfile>
+    <innerfile refid="_terrain_data_8cpp">TerrainData.cpp</innerfile>
+    <innerfile refid="_terrain_data_8hpp">TerrainData.hpp</innerfile>
+    <innerfile refid="_tile_data_8cpp">TileData.cpp</innerfile>
+    <innerfile refid="_tile_data_8hpp">TileData.hpp</innerfile>
+    <innerfile refid="_tile_layer_data_8cpp">TileLayerData.cpp</innerfile>
+    <innerfile refid="_tile_layer_data_8hpp">TileLayerData.hpp</innerfile>
+    <innerfile refid="_tileset_data_8cpp">TilesetData.cpp</innerfile>
+    <innerfile refid="_tileset_data_8hpp">TilesetData.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/"/>
+  </compounddef>
+</doxygen>

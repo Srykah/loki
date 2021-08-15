@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_0c7667fe1eb61eb699fc46db7d5aba76" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/states</compoundname>
+    <innerfile refid="states_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_state_8hpp">State.hpp</innerfile>
+    <innerfile refid="_state_index_8hpp">StateIndex.hpp</innerfile>
+    <innerfile refid="_state_machine_8cpp">StateMachine.cpp</innerfile>
+    <innerfile refid="_state_machine_8hpp">StateMachine.hpp</innerfile>
+    <innerfile refid="_transition_8hpp">Transition.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/"/>
+  </compounddef>
+</doxygen>

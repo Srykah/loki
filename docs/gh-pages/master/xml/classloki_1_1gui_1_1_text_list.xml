@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_text_list" kind="class" language="C++" prot="public">
+    <compoundname>loki::gui::TextList</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Drawable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sf::Transformable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_list_1a81a776d55138350ae66dc29c8c0e6b7c" prot="private" static="no" mutable="no">
+        <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">styles::TextStyle</ref></type>
+        <definition>styles::TextStyle loki::gui::TextList::textStyle</definition>
+        <argsstring></argsstring>
+        <name>textStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="24" column="21" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_list_1a0d4a05f3a4080fc3ca2457fc800d1e8e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float loki::gui::TextList::spacing</definition>
+        <argsstring></argsstring>
+        <name>spacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="25" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_list_1a08c3a00fd937c3e66af7f765a7d8a213" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int loki::gui::TextList::selection</definition>
+        <argsstring></argsstring>
+        <name>selection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="26" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_text_list_1ad9edf66072fbbac39802ed8a5c3c79dd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; sf::Text &gt;</type>
+        <definition>std::vector&lt;sf::Text&gt; loki::gui::TextList::items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="27" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_list_1a53bfdb2539a7932b629ef388d50e6212" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::gui::TextList::TextList</definition>
+        <argsstring>(sf::Font &amp;font)</argsstring>
+        <name>TextList</name>
+        <param>
+          <type>sf::Font &amp;</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="17" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.cpp" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_list_1a6aaa4d64eb0dc921486f9d00fb5eac4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextList::setTextStyle</definition>
+        <argsstring>(styles::TextStyle textStyle)</argsstring>
+        <name>setTextStyle</name>
+        <param>
+          <type><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">styles::TextStyle</ref></type>
+          <declname>textStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="18" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_list_1a9e8a054e8f065c916aa2c9bda51cbcfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextList::setSpacing</definition>
+        <argsstring>(float spacing)</argsstring>
+        <name>setSpacing</name>
+        <param>
+          <type>float</type>
+          <declname>spacing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="19" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.cpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_text_list_1a55ca38c7ea66f9914c8ef8102e4aa3c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::TextList::draw</definition>
+        <argsstring>(sf::RenderTarget &amp;target, sf::RenderStates states=sf::RenderStates()) const override</argsstring>
+        <name>draw</name>
+        <param>
+          <type>sf::RenderTarget &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>sf::RenderStates</type>
+          <declname>states</declname>
+          <defval>sf::RenderStates()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="21" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::gui::TextList</label>
+        <link refid="classloki_1_1gui_1_1_text_list"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::gui::TextList</label>
+        <link refid="classloki_1_1gui_1_1_text_list"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_text_list_1a55ca38c7ea66f9914c8ef8102e4aa3c1" prot="public" virt="non-virtual"><scope>loki::gui::TextList</scope><name>draw</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1ad9edf66072fbbac39802ed8a5c3c79dd" prot="private" virt="non-virtual"><scope>loki::gui::TextList</scope><name>items</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a08c3a00fd937c3e66af7f765a7d8a213" prot="private" virt="non-virtual"><scope>loki::gui::TextList</scope><name>selection</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a9e8a054e8f065c916aa2c9bda51cbcfa" prot="public" virt="non-virtual"><scope>loki::gui::TextList</scope><name>setSpacing</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a6aaa4d64eb0dc921486f9d00fb5eac4e" prot="public" virt="non-virtual"><scope>loki::gui::TextList</scope><name>setTextStyle</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a0d4a05f3a4080fc3ca2457fc800d1e8e" prot="private" virt="non-virtual"><scope>loki::gui::TextList</scope><name>spacing</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a53bfdb2539a7932b629ef388d50e6212" prot="public" virt="non-virtual"><scope>loki::gui::TextList</scope><name>TextList</name></member>
+      <member refid="classloki_1_1gui_1_1_text_list_1a81a776d55138350ae66dc29c8c0e6b7c" prot="private" virt="non-virtual"><scope>loki::gui::TextList</scope><name>textStyle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

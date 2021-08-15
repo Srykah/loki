@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_frame" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::Frame</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_frame_1a3be7ff4b49cd405d41027c673e589e54" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int loki::tiles::Frame::tileId</definition>
+        <argsstring></argsstring>
+        <name>tileId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" line="14" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_frame_1a4f7691439b36b4b5437a01ce1c3f8c41" prot="public" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time loki::tiles::Frame::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" line="15" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/TileData.hpp" bodystart="13" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_frame_1a4f7691439b36b4b5437a01ce1c3f8c41" prot="public" virt="non-virtual"><scope>loki::tiles::Frame</scope><name>duration</name></member>
+      <member refid="structloki_1_1tiles_1_1_frame_1a3be7ff4b49cd405d41027c673e589e54" prot="public" virt="non-virtual"><scope>loki::tiles::Frame</scope><name>tileId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

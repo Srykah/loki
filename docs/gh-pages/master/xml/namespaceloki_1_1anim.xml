@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1anim" kind="namespace" language="C++">
+    <compoundname>loki::anim</compoundname>
+    <innerclass refid="structloki_1_1anim_1_1_animation_data" prot="public">loki::anim::AnimationData</innerclass>
+    <innerclass refid="classloki_1_1anim_1_1_animation_view_data" prot="public">loki::anim::AnimationViewData</innerclass>
+    <innerclass refid="classloki_1_1anim_1_1_animator" prot="public">loki::anim::Animator</innerclass>
+    <innerclass refid="structloki_1_1anim_1_1_keyframe" prot="public">loki::anim::Keyframe</innerclass>
+    <innernamespace refid="namespaceloki_1_1anim_1_1editor">loki::anim::editor</innernamespace>
+    <innernamespace refid="namespaceloki_1_1anim_1_1impl">loki::anim::impl</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_animation_data_8cpp_1a32b81640e5269d45791342e9ed5f773a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::to_json</definition>
+        <argsstring>(nlohmann::json &amp;json, const AnimationData &amp;data)</argsstring>
+        <name>to_json</name>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1anim_1_1_animation_data" kindref="compound">AnimationData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" line="23" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" bodystart="23" bodyend="30" declfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" declline="22" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_animation_data_8cpp_1ab40a2e4b711aa7e1f24ad4d4cc56bcc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;json, AnimationData &amp;data)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1anim_1_1_animation_data" kindref="compound">AnimationData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" line="32" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" bodystart="32" bodyend="39" declfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" declline="23" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a9e1b0a31d426adee44b77d9503189ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::getOrigin</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getOrigin</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="15" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="15" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a0bee3b2872217a573a9256a887029abc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setOrigin</definition>
+        <argsstring>(T &amp;animated, sf::Vector2f origin)</argsstring>
+        <name>setOrigin</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="23" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a77e3ea6bc313d56c3da9fbbcfc9f1506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::getPosition</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getPosition</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="32" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a9bc9ffbd2cabab8702e22b83e82d37c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setPosition</definition>
+        <argsstring>(T &amp;animated, sf::Vector2f position)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="40" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1acae64660e4488496ec390a87bf576076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float loki::anim::getRotation</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getRotation</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="49" column="7" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1abdca58669a7e8171adb9b3baac117b91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setRotation</definition>
+        <argsstring>(T &amp;animated, float rotation)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="57" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a4ae684ab6b5f55cc2d6d938f1d9a9b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f loki::anim::getScale</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getScale</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="66" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a6e5bf489c1863a986369b98b90df82b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setScale</definition>
+        <argsstring>(T &amp;animated, sf::Vector2f scale)</argsstring>
+        <name>setScale</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="74" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a7bb48d2e24bcb8152245304a127b3c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Color</type>
+        <definition>sf::Color loki::anim::getColor</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getColor</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="83" column="11" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="83" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a6aba35655c7b60980d53fb16babbc52a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setColor</definition>
+        <argsstring>(T &amp;animated, sf::Color color)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="93" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1a941715911f890952066f9cc8cdc2d6f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::IntRect</type>
+        <definition>sf::IntRect loki::anim::getTextureRect</definition>
+        <argsstring>(T &amp;animated)</argsstring>
+        <name>getTextureRect</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="104" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="104" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_d_l_helpers_8hpp_1ab31822c014b5ccece5a6931d637102f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::anim::setTextureRect</definition>
+        <argsstring>(T &amp;animated, sf::IntRect textureRect)</argsstring>
+        <name>setTextureRect</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>sf::IntRect</type>
+          <declname>textureRect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" line="112" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/ADLHelpers.hpp" bodystart="112" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="_keyframe_8hpp_1a95c38c8107e2e0b3146cee7fa1a0d1a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::to_json</definition>
+        <argsstring>(nlohmann::json &amp;nlohmann_json_j, const Keyframe &amp;nlohmann_json_t)</argsstring>
+        <name>to_json</name>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>nlohmann_json_j</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1anim_1_1_keyframe" kindref="compound">Keyframe</ref> &amp;</type>
+          <declname>nlohmann_json_t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="22" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="22" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_keyframe_8hpp_1af1bb30d18d393bd85c02e5463f0d6375" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;nlohmann_json_j, Keyframe &amp;nlohmann_json_t)</argsstring>
+        <name>from_json</name>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>nlohmann_json_j</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1anim_1_1_keyframe" kindref="compound">Keyframe</ref> &amp;</type>
+          <declname>nlohmann_json_t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" line="32" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Keyframe.hpp" bodystart="32" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.cpp" line="21" column="1"/>
+  </compounddef>
+</doxygen>

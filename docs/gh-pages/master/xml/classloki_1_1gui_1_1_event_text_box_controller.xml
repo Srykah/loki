@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_event_text_box_controller" kind="class" language="C++" prot="public">
+    <compoundname>loki::gui::EventTextBoxController</compoundname>
+    <basecompoundref refid="classloki_1_1gui_1_1_text_box_controller" prot="public" virt="non-virtual">loki::gui::TextBoxController</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_event_text_box_controller_1a3c19e55a14b26098efa731ef7303efca" prot="private" static="no" mutable="no">
+        <type><ref refid="classloki_1_1input_1_1_event_handler" kindref="compound">loki::input::EventHandler</ref> &amp;</type>
+        <definition>loki::input::EventHandler&amp; loki::gui::EventTextBoxController::eventHandler</definition>
+        <argsstring></argsstring>
+        <name>eventHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="24" column="29" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1gui_1_1_event_text_box_controller_1abd4a2e5e638332b31d2794090c6add2c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::gui::EventTextBoxController::inputName</definition>
+        <argsstring></argsstring>
+        <name>inputName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="25" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_event_text_box_controller_1ae6f71c21308f40ab15db829ed3b0892c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::gui::EventTextBoxController::EventTextBoxController</definition>
+        <argsstring>(loki::input::EventHandler &amp;eventHandler, std::string inputName)</argsstring>
+        <name>EventTextBoxController</name>
+        <param>
+          <type><ref refid="classloki_1_1input_1_1_event_handler" kindref="compound">loki::input::EventHandler</ref> &amp;</type>
+          <declname>eventHandler</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>inputName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="15" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_event_text_box_controller_1a7782a60c5532f5fdf7c9dfc9c9c33627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::EventTextBoxController::setInputName</definition>
+        <argsstring>(std::string inputName)</argsstring>
+        <name>setInputName</name>
+        <param>
+          <type>std::string</type>
+          <declname>inputName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="18" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_event_text_box_controller_1ac4d575825815d9e434ed053492cfbbd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; loki::gui::EventTextBoxController::getInputName</definition>
+        <argsstring>() const</argsstring>
+        <name>getInputName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="19" column="22" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_event_text_box_controller_1af2aeb7cb4ab61b05afdcb73b71858e04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::gui::EventTextBoxController::handleInputs</definition>
+        <argsstring>()</argsstring>
+        <name>handleInputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="21" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="2">
+        <label>loki::gui::TextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_text_box_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::gui::EventTextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_event_text_box_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="2">
+        <label>loki::gui::TextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_text_box_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::gui::EventTextBoxController</label>
+        <link refid="classloki_1_1gui_1_1_event_text_box_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp" bodystart="13" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a7bc6a00be962587b78919547806c8865" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>activate</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a8a7d285b92673bb25d65ac7b8f1aa833" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>advance</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a821abb03b79e976a3073077ba5735114" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>deactivate</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a8ab3b303d4d503f0b99e2be678cdb403" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>disable</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0d1fb86c22ebc074f87361dd80a4686d" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>enable</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1a3c19e55a14b26098efa731ef7303efca" prot="private" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>eventHandler</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1ae6f71c21308f40ab15db829ed3b0892c" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>EventTextBoxController</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1ac9e05495ae77248ef43cb807db97920d" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>focus</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1ac4d575825815d9e434ed053492cfbbd7" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>getInputName</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1af2aeb7cb4ab61b05afdcb73b71858e04" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>handleInputs</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a51c34f8b59423ad0187ef5a089e05a62" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>hasEnded</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a9205b12357ae7fc3724197fdf52d3b0f" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>hide</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1abd4a2e5e638332b31d2794090c6add2c" prot="private" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>inputName</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>isActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>isEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>isFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>isHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>setActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>setEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>setFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>setHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_event_text_box_controller_1a7782a60c5532f5fdf7c9dfc9c9c33627" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>setInputName</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a10047a0852b519f1f0ef34aa0dd7ffcf" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>setString</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0b858cc210725a2ef4e2551685caf110" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>setView</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a5bfa7ad004d7a6b67b6523a3400870eb" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>TextBoxController</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1ac5f438596ceb70114717920fd1a8c8e1" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>unfocus</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0f77de71e6caaeadfb6fb224b0d8eab5" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>unhide</name></member>
+      <member refid="classloki_1_1gui_1_1_text_box_controller_1a0679fc341696a5782814b6f3bd765f96" prot="public" virt="non-virtual"><scope>loki::gui::EventTextBoxController</scope><name>~TextBoxController</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" prot="public" virt="virtual"><scope>loki::gui::EventTextBoxController</scope><name>~Widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

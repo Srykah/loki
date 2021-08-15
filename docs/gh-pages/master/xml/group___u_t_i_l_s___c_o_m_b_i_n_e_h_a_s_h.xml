@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h" kind="group">
+    <compoundname>UTILS_COMBINEHASH</compoundname>
+    <title>Hash combination functions</title>
+    <innerclass refid="structloki_1_1hash_1_1_iter_hash" prot="public">loki::hash::IterHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_hash" prot="public">loki::hash::PairHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_hash_sym" prot="public">loki::hash::PairHashSym</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_pair_are_equal_sym" prot="public">loki::hash::PairAreEqualSym</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_tuple_hash" prot="public">loki::hash::TupleHash</innerclass>
+    <innerclass refid="structloki_1_1hash_1_1_tuple_hash_sym" prot="public">loki::hash::TupleHashSym</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h_1ga14c2a32c34750444fca67ed0098465d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>size_t</type>
+        <definition>size_t loki::hash::combineHashSym</definition>
+        <argsstring>(const Args &amp;... args)</argsstring>
+        <name>combineHashSym</name>
+        <param>
+          <type>const Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Hashes all arguments and combines them symmetrically. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In opposition to combineHash, <computeroutput>combineHashSym</computeroutput> doesn&apos;t care about order between the arguments. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of <computeroutput>args</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The values to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash combination of the arguments where order doesn&apos;t matter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" line="99" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/CombineHash.hpp" bodystart="99" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hash combination helper functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Helper functions designed to be able to easily combine hashes. You can simply hash a bunch of values together like so : <programlisting><codeline><highlight class="normal">int<sp/>x<sp/>=<sp/>42;</highlight></codeline>
+<codeline><highlight class="normal">char<sp/>y<sp/>=<sp/>&apos;B&apos;;</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>z<sp/>=<sp/>3.1415f;</highlight></codeline>
+<codeline><highlight class="normal">std::complex&lt;double&gt;<sp/>t<sp/>=<sp/>-1i;</highlight></codeline>
+<codeline><highlight class="normal">size_t<sp/>hash1<sp/>=<sp/>combineHash(x,<sp/>y,<sp/>z,<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal">size_t<sp/>hash2<sp/>=<sp/>combineHash(t,<sp/>x,<sp/>y,<sp/>z);</highlight></codeline>
+<codeline><highlight class="normal">size_t<sp/>hashSym1<sp/>=<sp/>combineHashSym(x,<sp/>y,<sp/>z,<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal">size_t<sp/>hashSym2<sp/>=<sp/>combineHashSym(t,<sp/>x,<sp/>y,<sp/>z);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>For the normal version, <bold>order is important :</bold> <computeroutput>hash1</computeroutput> will most likely differ from <computeroutput>hash2</computeroutput>. If you need to hash values so that order doesn&apos;t matter, use <ref refid="group___u_t_i_l_s___c_o_m_b_i_n_e_h_a_s_h_1ga14c2a32c34750444fca67ed0098465d2" kindref="member">combineHashSym()</ref> (zwj;l<computeroutput>hashSym1 == hashSym2</computeroutput> here).</para>
+</simplesect>
+This header also defines functors for hashing <computeroutput>std::pair</computeroutput> and <computeroutput>std::tuple</computeroutput>, so you can easiy use them as keys in <computeroutput>std::unordered_map</computeroutput> for example. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

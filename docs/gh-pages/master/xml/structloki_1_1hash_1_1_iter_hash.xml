@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_iter_hash" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::IterHash</compoundname>
+    <includes refid="_iter_hash_8hpp" local="no">IterHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Iterable</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_iter_hash_1a510905c3d2da03ac28ec1f5910b55072" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t loki::hash::IterHash&lt; Iterable &gt;::operator()</definition>
+        <argsstring>(const Iterable &amp;iterable) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Iterable &amp;</type>
+          <declname>iterable</declname>
+        </param>
+        <briefdescription>
+<para>Hash operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Iterable to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash of the Iterable (order matters) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" line="14" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" bodystart="14" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hash specialization for Iterable types (like std::vector) </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the iterable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/IterHash.hpp" bodystart="10" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_iter_hash_1a510905c3d2da03ac28ec1f5910b55072" prot="public" virt="non-virtual"><scope>loki::hash::IterHash</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

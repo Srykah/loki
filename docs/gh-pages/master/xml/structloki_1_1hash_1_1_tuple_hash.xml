@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_tuple_hash" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::TupleHash</compoundname>
+    <includes refid="_tuple_hash_8hpp" local="no">TupleHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Tuple</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_tuple_hash_1a65bb7f0e194edaa2dd27cb687447e74a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t loki::hash::TupleHash&lt; Tuple &gt;::operator()</definition>
+        <argsstring>(const Tuple &amp;val) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Tuple &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Hash operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tuple to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash of the tuple (order matters) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="14" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="14" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functor for hashing tuples. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tuple</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the std::tuple </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/TupleHash.hpp" bodystart="10" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_tuple_hash_1a65bb7f0e194edaa2dd27cb687447e74a" prot="public" virt="non-virtual"><scope>loki::hash::TupleHash</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e662339c44282ec858da85778d705c2f" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/anim</compoundname>
+    <innerdir refid="dir_92dcb596f2f215507ed44e5fa6b9f91f">D:/prog/cpp/custom_libs/loki/src/loki/anim/impl</innerdir>
+    <innerfile refid="anim_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_animation_data_8cpp">AnimationData.cpp</innerfile>
+    <innerfile refid="_animation_data_8hpp">AnimationData.hpp</innerfile>
+    <innerfile refid="_animation_view_data_8cpp">AnimationViewData.cpp</innerfile>
+    <innerfile refid="_animation_view_data_8hpp">AnimationViewData.hpp</innerfile>
+    <innerfile refid="_animator_8hpp">Animator.hpp</innerfile>
+    <innerfile refid="_keyframe_8hpp">Keyframe.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/"/>
+  </compounddef>
+</doxygen>

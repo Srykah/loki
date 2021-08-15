@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1tiles_1_1_text_object_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::tiles::TextObjectData</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22fed" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>HorizontalAlign</name>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda684d325a7303f52e64011467ff5c5758" prot="public">
+          <name>LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22fedac397289ee45877be0cd49811fe245b4e" prot="public">
+          <name>CENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda21507b40c80068eda19865706fdc2403" prot="public">
+          <name>RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22feda1a8c137fb3ff9dc6fa1a59e8743fc1e9" prot="public">
+          <name>JUSTIFY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="48" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="enum" id="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>VerticalAlign</name>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20a6705777b712ee811e76fb07162081d63" prot="public">
+          <name>TOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20ac397289ee45877be0cd49811fe245b4e" prot="public">
+          <name>CENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20a1fabf63de5c96c78e2a40805bcdeb73b" prot="public">
+          <name>BOTTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="54" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="54" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a2f16cea97da5fd466f0573acb4e601d8" prot="public" static="no" mutable="no">
+        <type>sf::FloatRect</type>
+        <definition>sf::FloatRect loki::tiles::TextObjectData::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="41" column="17" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a871995c0bf2a3f1e81abd44298e96ede" prot="public" static="no" mutable="no">
+        <type>sf::Text::Style</type>
+        <definition>sf::Text::Style loki::tiles::TextObjectData::style</definition>
+        <argsstring></argsstring>
+        <name>style</name>
+        <initializer>= sf::Text::Style::Regular</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="42" column="19" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a5ac149e8c83a43adf8b5bd04b2e7c36b" prot="public" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color loki::tiles::TextObjectData::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <initializer>= sf::Color::Black</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="43" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1ab0b8833a6468d55f5006f79bf699d303" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TextObjectData::fontFamily</definition>
+        <argsstring></argsstring>
+        <name>fontFamily</name>
+        <initializer>= &quot;sans-serif&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="44" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1aa43fa48197b2f97783090b172f932fca" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int loki::tiles::TextObjectData::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="45" column="16" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a61f132569dc832d2da070ff3118b83f4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string loki::tiles::TextObjectData::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="46" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a4207afe3d0e3dd393831409ceba01b79" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::tiles::TextObjectData::wrap</definition>
+        <argsstring></argsstring>
+        <name>wrap</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="47" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1a19de016cbaf4750f1a5da62c0c1062fb" prot="public" static="no" mutable="no">
+        <type>enum loki::tiles::TextObjectData::HorizontalAlign</type>
+        <definition>enum loki::tiles::TextObjectData::HorizontalAlign loki::tiles::TextObjectData::horizontalAlign</definition>
+        <argsstring></argsstring>
+        <name>horizontalAlign</name>
+        <initializer>= HorizontalAlign::LEFT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="53" column="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1tiles_1_1_text_object_data_1aa5332877605e7a17872155295cb67f77" prot="public" static="no" mutable="no">
+        <type>enum loki::tiles::TextObjectData::VerticalAlign</type>
+        <definition>enum loki::tiles::TextObjectData::VerticalAlign loki::tiles::TextObjectData::verticalAlign</definition>
+        <argsstring></argsstring>
+        <name>verticalAlign</name>
+        <initializer>= VerticalAlign::TOP</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="58" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>loki::tiles::TextObjectData</label>
+        <link refid="structloki_1_1tiles_1_1_text_object_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>fontFamily</edgelabel>
+          <edgelabel>text</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" line="40" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp" bodystart="40" bodyend="59"/>
+    <listofallmembers>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a5ac149e8c83a43adf8b5bd04b2e7c36b" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>color</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1ab0b8833a6468d55f5006f79bf699d303" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>fontFamily</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a21042d20cfd71c8a0b1a0476ace22fed" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>HorizontalAlign</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a19de016cbaf4750f1a5da62c0c1062fb" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>horizontalAlign</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a2f16cea97da5fd466f0573acb4e601d8" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>rect</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1aa43fa48197b2f97783090b172f932fca" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>size</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a871995c0bf2a3f1e81abd44298e96ede" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>style</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a61f132569dc832d2da070ff3118b83f4" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>text</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a1f8acd2d47f35b8ecf8474ac48473e20" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>VerticalAlign</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1aa5332877605e7a17872155295cb67f77" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>verticalAlign</name></member>
+      <member refid="structloki_1_1tiles_1_1_text_object_data_1a4207afe3d0e3dd393831409ceba01b79" prot="public" virt="non-virtual"><scope>loki::tiles::TextObjectData</scope><name>wrap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

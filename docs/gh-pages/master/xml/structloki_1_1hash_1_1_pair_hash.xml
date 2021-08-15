@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1hash_1_1_pair_hash" kind="struct" language="C++" prot="public">
+    <compoundname>loki::hash::PairHash</compoundname>
+    <includes refid="_pair_hash_8hpp" local="no">PairHash.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Pair</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structloki_1_1hash_1_1_pair_hash_1a2443fe295e4b03d69d83014c4aeee01d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t loki::hash::PairHash&lt; Pair &gt;::operator()</definition>
+        <argsstring>(const Pair &amp;val) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Pair &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Hash operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pair to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash of the pair (order matters) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="14" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functor for hashing pairs. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Pair</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the std::pair </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" line="10" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/hash/PairHash.hpp" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structloki_1_1hash_1_1_pair_hash_1a2443fe295e4b03d69d83014c4aeee01d" prot="public" virt="non-virtual"><scope>loki::hash::PairHash</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

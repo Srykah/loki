@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1states_1_1_state_machine" kind="class" language="C++" prot="public">
+    <compoundname>loki::states::StateMachine</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classloki_1_1states_1_1_state_machine_1a56c4572182247aaa9cfeab4ed75c5c11" prot="private" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, bool &gt;</type>
+        <definition>using loki::states::StateMachine::enable_if_enum =  std::enable_if_t&lt;std::is_enum_v&lt;T&gt;, bool&gt;</definition>
+        <argsstring></argsstring>
+        <name>enable_if_enum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="19" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1states_1_1_state_machine_1acdee60224573e38d5f567bb500f0b0b2" prot="private" static="no" mutable="no">
+        <type>StateIndex</type>
+        <definition>StateIndex loki::states::StateMachine::curState</definition>
+        <argsstring></argsstring>
+        <name>curState</name>
+        <initializer>= NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="45" column="14" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1states_1_1_state_machine_1a692111db481c8fbdf6ee60f68da904d9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structloki_1_1states_1_1_state" kindref="compound">State</ref> &gt;</type>
+        <definition>std::vector&lt;State&gt; loki::states::StateMachine::states</definition>
+        <argsstring></argsstring>
+        <name>states</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="46" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1states_1_1_state_machine_1abf12e245d1a8e56a4ee12abb610c493f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref> &gt;</type>
+        <definition>std::vector&lt;Transition&gt; loki::states::StateMachine::transitions</definition>
+        <argsstring></argsstring>
+        <name>transitions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="47" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1af52ce11cc85c3cede2567b49f6523798" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::states::StateMachine::StateMachine</definition>
+        <argsstring>(std::size_t size=0)</argsstring>
+        <name>StateMachine</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="22" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a6d6209077a4d6d1eaa53100a4f041fa3" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Enum</type>
+          </param>
+          <param>
+            <type>enable_if_enum&lt; Enum &gt;</type>
+            <defval>true</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>loki::states::StateMachine::StateMachine</definition>
+        <argsstring>(Enum count)</argsstring>
+        <name>StateMachine</name>
+        <param>
+          <type>Enum</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="24" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a0ed1c68edb0ae7c8f7ab0e444c0f46bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::addState</definition>
+        <argsstring>(StateIndex index, State state)</argsstring>
+        <name>addState</name>
+        <param>
+          <type>StateIndex</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="structloki_1_1states_1_1_state" kindref="compound">State</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="27" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="15" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a47dd3b32410b957d5680b43e7ab3fa5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Enum</type>
+          </param>
+          <param>
+            <type>enable_if_enum&lt; Enum &gt;</type>
+            <defval>true</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::states::StateMachine::addState</definition>
+        <argsstring>(Enum e, const State &amp;state)</argsstring>
+        <name>addState</name>
+        <param>
+          <type>Enum</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1states_1_1_state" kindref="compound">State</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="29" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1addc55f7881cbe9f51a1796194a62cf69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::addTransition</definition>
+        <argsstring>(Transition transition)</argsstring>
+        <name>addTransition</name>
+        <param>
+          <type><ref refid="structloki_1_1states_1_1_transition" kindref="compound">Transition</ref></type>
+          <declname>transition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="30" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a36cd2880caf7e0e7fc32b9482f1d4e32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::shrinkToFit</definition>
+        <argsstring>()</argsstring>
+        <name>shrinkToFit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="31" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1ab9cf1073d41207bc6c54f069e67ffb66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::setCurrentState</definition>
+        <argsstring>(StateIndex index)</argsstring>
+        <name>setCurrentState</name>
+        <param>
+          <type>StateIndex</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="32" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a7d790fcead06e9945055fe5fb33dcb8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Enum</type>
+          </param>
+          <param>
+            <type>enable_if_enum&lt; Enum &gt;</type>
+            <defval>true</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void loki::states::StateMachine::setCurrentState</definition>
+        <argsstring>(Enum e)</argsstring>
+        <name>setCurrentState</name>
+        <param>
+          <type>Enum</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="34" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1aaf0fe3f0972493c671592278a1bdf065" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>StateIndex</type>
+        <definition>StateIndex loki::states::StateMachine::getCurrentState</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="35" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a4759d1988f10c5dd455c0e545cf9aff9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Enum</type>
+          </param>
+          <param>
+            <type>enable_if_enum&lt; Enum &gt;</type>
+            <defval>true</defval>
+          </param>
+        </templateparamlist>
+        <type>Enum</type>
+        <definition>Enum loki::states::StateMachine::getCurrentState</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="37" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1a49cb1cbb82122c918b75fb523b1d01eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::update</definition>
+        <argsstring>(sf::Time delta)</argsstring>
+        <name>update</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="38" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="31" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1afa3489d662c1cf8a4c82c625ab4777db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::setCurrentStateWithTrigger</definition>
+        <argsstring>(StateIndex to, const std::function&lt; void()&gt; &amp;onTrigger=nullptr)</argsstring>
+        <name>setCurrentStateWithTrigger</name>
+        <param>
+          <type>StateIndex</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; void()&gt; &amp;</type>
+          <declname>onTrigger</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="41" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="48" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1states_1_1_state_machine_1ab12ac1af422eb665589c126169512938" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::states::StateMachine::checkTransitions</definition>
+        <argsstring>()</argsstring>
+        <name>checkTransitions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="42" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.cpp" bodystart="38" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" line="16" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/states/StateMachine.hpp" bodystart="16" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classloki_1_1states_1_1_state_machine_1a0ed1c68edb0ae7c8f7ab0e444c0f46bc" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>addState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a47dd3b32410b957d5680b43e7ab3fa5e" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>addState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1addc55f7881cbe9f51a1796194a62cf69" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>addTransition</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1ab12ac1af422eb665589c126169512938" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>checkTransitions</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1acdee60224573e38d5f567bb500f0b0b2" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>curState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a56c4572182247aaa9cfeab4ed75c5c11" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>enable_if_enum</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1aaf0fe3f0972493c671592278a1bdf065" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>getCurrentState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a4759d1988f10c5dd455c0e545cf9aff9" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>getCurrentState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1ab9cf1073d41207bc6c54f069e67ffb66" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>setCurrentState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a7d790fcead06e9945055fe5fb33dcb8d" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>setCurrentState</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1afa3489d662c1cf8a4c82c625ab4777db" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>setCurrentStateWithTrigger</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a36cd2880caf7e0e7fc32b9482f1d4e32" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>shrinkToFit</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1af52ce11cc85c3cede2567b49f6523798" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>StateMachine</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a6d6209077a4d6d1eaa53100a4f041fa3" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>StateMachine</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a692111db481c8fbdf6ee60f68da904d9" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>states</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1abf12e245d1a8e56a4ee12abb610c493f" prot="private" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>transitions</name></member>
+      <member refid="classloki_1_1states_1_1_state_machine_1a49cb1cbb82122c918b75fb523b1d01eb" prot="public" virt="non-virtual"><scope>loki::states::StateMachine</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

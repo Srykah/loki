@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceloki_1_1math" kind="namespace" language="C++">
+    <compoundname>loki::math</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="math_2_rect_8hpp_1ad4cbc8493f08ce914ef534ee2697988b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class Op</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compOp</definition>
+        <argsstring>(const sf::Rect&lt; T &gt; &amp;a, const sf::Rect&lt; U &gt; &amp;b, const Op &amp;op)</argsstring>
+        <name>compOp</name>
+        <param>
+          <type>const sf::Rect&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const Op &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="16" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_rect_8hpp_1a6364ec93108f29835c5f455004e80485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMult</definition>
+        <argsstring>(const sf::Rect&lt; T &gt; &amp;a, const sf::Rect&lt; U &gt; &amp;b)</argsstring>
+        <name>compMult</name>
+        <param>
+          <type>const sf::Rect&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="22" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_rect_8hpp_1ac6862cb48af6ba3e0d3097f4b8472faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compDiv</definition>
+        <argsstring>(const sf::Rect&lt; T &gt; &amp;a, const sf::Rect&lt; U &gt; &amp;b)</argsstring>
+        <name>compDiv</name>
+        <param>
+          <type>const sf::Rect&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="28" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_rect_8hpp_1a52f4076c7e15529ded0e5b7f2bd7d73a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMin</definition>
+        <argsstring>(const sf::Rect&lt; T &gt; &amp;a, const sf::Rect&lt; U &gt; &amp;b)</argsstring>
+        <name>compMin</name>
+        <param>
+          <type>const sf::Rect&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="34" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_rect_8hpp_1a67ee480a5b3e4604ecbda61a981f47e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMax</definition>
+        <argsstring>(const sf::Rect&lt; T &gt; &amp;a, const sf::Rect&lt; U &gt; &amp;b)</argsstring>
+        <name>compMax</name>
+        <param>
+          <type>const sf::Rect&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Rect&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="40" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a944d5694928410dcdac35d596526b727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::dot</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>dot</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="16" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1acc8ce394e6c9b1794b56ea6682b681fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T loki::math::norm</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>norm</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="21" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1afe1d652551a186e11275823ecf28b4a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::det</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>det</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="26" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1acd12af97e14d955c2d81fd97806376a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2&lt; T &gt;</type>
+        <definition>sf::Vector2&lt;T&gt; loki::math::unit</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>unit</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="31" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1aaf46403880030b6d85f84ee9415fc8c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class Op</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compOp</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b, const Op &amp;op)</argsstring>
+        <name>compOp</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const Op &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="38" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1acd6c347a6f38be1d167c8667a9500a35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMult</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>compMult</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="43" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a3d98e1da9e0bdc982e5115222a778b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compDiv</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>compDiv</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="48" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a6e05d7fcbb70a2ab1f4d7b7101fff88c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMin</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>compMin</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="53" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a7b5cc6c2de05e517bbf2d443f02eb942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto loki::math::compMax</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a, const sf::Vector2&lt; U &gt; &amp;b)</argsstring>
+        <name>compMax</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2&lt; U &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="58" column="6" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1ab04e5947f389b178465de699a4b51646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2&lt; T &gt;</type>
+        <definition>sf::Vector2&lt;T&gt; loki::math::cw90</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>cw90</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="71" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a81d5e61379ab6501471025bbb1c44939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>sf::Vector2&lt; T &gt;</type>
+        <definition>sf::Vector2&lt;T&gt; loki::math::ccw90</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>ccw90</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="76" column="13" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1ad2a5f95d8751b65288051c5252322548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T loki::math::minCoord</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>minCoord</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="83" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="math_2_vector2_8hpp_1a86e2c3e8f11df5461e41349d04d0887b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T loki::math::maxCoord</definition>
+        <argsstring>(const sf::Vector2&lt; T &gt; &amp;a)</argsstring>
+        <name>maxCoord</name>
+        <param>
+          <type>const sf::Vector2&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" line="88" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/math/Vector2.hpp" bodystart="88" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/math/Rect.hpp" line="11" column="1"/>
+  </compounddef>
+</doxygen>

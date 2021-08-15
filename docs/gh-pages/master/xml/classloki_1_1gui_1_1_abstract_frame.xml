@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_abstract_frame" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>loki::gui::AbstractFrame</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Drawable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sf::Transformable</basecompoundref>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_rectangle_shape_frame" prot="public" virt="non-virtual">loki::gui::RectangleShapeFrame</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_frame_1ad4b230c6e17a275a3383beed3fc078fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>sf::FloatRect</type>
+        <definition>virtual sf::FloatRect loki::gui::AbstractFrame::getInternalBounds</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getInternalBounds</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_rectangle_shape_frame_1a3a90b6ad28520aac85d543c50d1462c2">getInternalBounds</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/AbstractFrame.hpp" line="15" column="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="4">
+        <label>loki::gui::RectangleShapeFrame</label>
+        <link refid="classloki_1_1gui_1_1_rectangle_shape_frame"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>loki::gui::AbstractFrame</label>
+        <link refid="classloki_1_1gui_1_1_abstract_frame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::gui::AbstractFrame</label>
+        <link refid="classloki_1_1gui_1_1_abstract_frame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/AbstractFrame.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/frame/AbstractFrame.hpp" bodystart="13" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_abstract_frame_1ad4b230c6e17a275a3383beed3fc078fc" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractFrame</scope><name>getInternalBounds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

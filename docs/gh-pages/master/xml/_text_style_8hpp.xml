@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_text_style_8hpp" kind="file" language="C++">
+    <compoundname>TextStyle.hpp</compoundname>
+    <includes local="no">SFML/Graphics/Text.hpp</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="_text_list_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp</includedby>
+    <includedby refid="_text_box_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBox.hpp</includedby>
+    <includedby refid="styles_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/styles/All.hpp</includedby>
+    <includedby refid="_text_style_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp</includedby>
+    <includedby refid="_animated_text_style_8hpp" local="no">D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp</label>
+        <link refid="_text_style_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics/Text.hpp</label>
+      </node>
+      <node id="3">
+        <label>nlohmann/json.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.cpp</label>
+        <link refid="_animated_text_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/All.hpp</label>
+        <link refid="gui_2_all_8hpp"/>
+      </node>
+      <node id="15">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.hpp</label>
+        <link refid="_stylesheet_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/list/TextList.hpp</label>
+        <link refid="_text_list_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBox.hpp</label>
+        <link refid="_text_box_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.cpp</label>
+        <link refid="_text_style_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedTextStyle.hpp</label>
+        <link refid="_animated_text_style_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnimatedText.hpp</label>
+        <link refid="_animated_text_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/Stylesheet.cpp</label>
+        <link refid="_stylesheet_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp</label>
+        <link refid="_text_style_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.cpp</label>
+        <link refid="_animated_glyph_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/styles/All.hpp</label>
+        <link refid="styles_2_all_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp</label>
+        <link refid="_annotated_text_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/All.hpp</label>
+        <link refid="text_2_all_8hpp"/>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/text/impl/AnimatedGlyph.hpp</label>
+        <link refid="_animated_glyph_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/TextBox.cpp</label>
+        <link refid="_text_box_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1styles_1_1_text_style" prot="public">loki::styles::TextStyle</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1styles">loki::styles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics/Text.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::styles<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>FontGetter<sp/>=<sp/>std::function&lt;sf::Font&amp;(std::string)&gt;;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structloki_1_1styles_1_1_text_style" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>std::optional&lt;unsigned<sp/>int&gt;<sp/>characterSize;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>std::optional&lt;sf::Text::Style&gt;<sp/>characterStyle;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>std::optional&lt;sf::Color&gt;<sp/>fillColor;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>std::optional&lt;sf::Font*&gt;<sp/>font;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>std::optional&lt;float&gt;<sp/>letterSpacing;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>std::optional&lt;float&gt;<sp/>lineSpacing;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>std::optional&lt;sf::Color&gt;<sp/>outlineColor;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>std::optional&lt;float&gt;<sp/>outlineThickness;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref><sp/>fromDefaults();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withCharacterSize(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>characterSize);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withCharacterStyle(sf::Text::Style<sp/>characterStyle);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withFillColor(sf::Color<sp/>fillColor);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withFont(sf::Font*<sp/>font);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withLetterSpacing(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>letterSpacing);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withLineSpacing(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lineSpacing);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withOutlineColor(sf::Color<sp/>outlineColor);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>withOutlineThickness(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>outlineThickness);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>load(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FontGetter&amp;<sp/>fontGetter);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>applyTo(sf::Text&amp;<sp/>text)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getSpaceWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>overrideWith(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>other);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref><sp/>cloneAndOverrideWith(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structloki_1_1styles_1_1_text_style" kindref="compound">TextStyle</ref>&amp;<sp/>other)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>loki::gui</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/styles/TextStyle.hpp"/>
+  </compounddef>
+</doxygen>

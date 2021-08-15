@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; loki::screens::Signal::Trigger &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4_1af4d195dc943b62f46f33e31f43568dea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool std::hash&lt; loki::screens::Signal::Trigger &gt;::operator()</definition>
+        <argsstring>(const loki::screens::Signal::Trigger &amp;trigger) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const <ref refid="structloki_1_1screens_1_1_signal_1_1_trigger" kindref="compound">loki::screens::Signal::Trigger</ref> &amp;</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="35" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" line="34" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/screens/Signal.hpp" bodystart="34" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01loki_1_1screens_1_1_signal_1_1_trigger_01_4_1af4d195dc943b62f46f33e31f43568dea" prot="public" virt="non-virtual"><scope>std::hash&lt; loki::screens::Signal::Trigger &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

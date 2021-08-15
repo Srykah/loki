@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_af0ec7e3d047b9e21dc7b2d3abdbab24" kind="dir">
+    <compoundname>D:/prog/cpp/custom_libs/loki/src/loki/tpl</compoundname>
+    <innerdir refid="dir_aad29f1c842751732687a45f12dbd111">D:/prog/cpp/custom_libs/loki/src/loki/tpl/impl</innerdir>
+    <innerfile refid="tpl_2_all_8hpp">All.hpp</innerfile>
+    <innerfile refid="_template_engine_8cpp">TemplateEngine.cpp</innerfile>
+    <innerfile refid="_template_engine_8hpp">TemplateEngine.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tpl/"/>
+  </compounddef>
+</doxygen>

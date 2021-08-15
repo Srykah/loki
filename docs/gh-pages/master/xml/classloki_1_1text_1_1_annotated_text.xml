@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1text_1_1_annotated_text" kind="class" language="C++" prot="public">
+    <compoundname>loki::text::AnnotatedText</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">sf::Drawable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sf::Transformable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1text_1_1_annotated_text_1a3045ca527d6f79d89ead47bdadd41110" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classloki_1_1text_1_1_animated_text" kindref="compound">AnimatedText</ref> &gt;</type>
+        <definition>std::vector&lt;AnimatedText&gt; loki::text::AnnotatedText::blocks</definition>
+        <argsstring></argsstring>
+        <name>blocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="31" column="15" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1ac6adaa053b3e5d40609cf60ae0ba4b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::text::AnnotatedText::AnnotatedText</definition>
+        <argsstring>()=default</argsstring>
+        <name>AnnotatedText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="19" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1a1fff3711075f15929325a7d6f4bebefc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::text::AnnotatedText::AnnotatedText</definition>
+        <argsstring>(const sf::String &amp;string, const Stylesheet &amp;stylesheet)</argsstring>
+        <name>AnnotatedText</name>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>string</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classloki_1_1text_1_1_stylesheet" kindref="compound">Stylesheet</ref> &amp;</type>
+          <declname>stylesheet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="20" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1a3c30c0b29881353dfe40677045937654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::AnnotatedText::setString</definition>
+        <argsstring>(const sf::String &amp;string, const Stylesheet &amp;stylesheet)</argsstring>
+        <name>setString</name>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>string</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classloki_1_1text_1_1_stylesheet" kindref="compound">Stylesheet</ref> &amp;</type>
+          <declname>stylesheet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="22" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="22" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1af9d84a03552d09e87ad9051e4fc10447" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::AnnotatedText::update</definition>
+        <argsstring>(sf::Time delta)</argsstring>
+        <name>update</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="24" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1a74c11a9b559c05b7041e876e70706e2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::AnnotatedText::draw</definition>
+        <argsstring>(sf::RenderTarget &amp;target, sf::RenderStates states=sf::RenderStates()) const override</argsstring>
+        <name>draw</name>
+        <param>
+          <type>sf::RenderTarget &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>sf::RenderStates</type>
+          <declname>states</declname>
+          <defval>sf::RenderStates()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="25" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1af28b0e2a381e97d8852df0e838be14c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::AnnotatedText::skip</definition>
+        <argsstring>()</argsstring>
+        <name>skip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="28" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="88" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classloki_1_1text_1_1_annotated_text_1a81d649f2641b2526f4da16a92ff1a61e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::text::AnnotatedText::closeBlock</definition>
+        <argsstring>(sf::String::ConstIterator begin, sf::String::ConstIterator end, const AnimatedTextStyle &amp;style, sf::Vector2f &amp;position)</argsstring>
+        <name>closeBlock</name>
+        <param>
+          <type>sf::String::ConstIterator</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>sf::String::ConstIterator</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structloki_1_1text_1_1_animated_text_style" kindref="compound">AnimatedTextStyle</ref> &amp;</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="32" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.cpp" bodystart="90" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::text::AnnotatedText</label>
+        <link refid="classloki_1_1text_1_1_annotated_text"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::text::AnnotatedText</label>
+        <link refid="classloki_1_1text_1_1_annotated_text"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sf::Transformable</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" line="17" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/text/AnnotatedText.hpp" bodystart="17" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classloki_1_1text_1_1_annotated_text_1ac6adaa053b3e5d40609cf60ae0ba4b04" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>AnnotatedText</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1a1fff3711075f15929325a7d6f4bebefc" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>AnnotatedText</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1a3045ca527d6f79d89ead47bdadd41110" prot="private" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>blocks</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1a81d649f2641b2526f4da16a92ff1a61e" prot="private" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>closeBlock</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1a74c11a9b559c05b7041e876e70706e2c" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>draw</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1a3c30c0b29881353dfe40677045937654" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>setString</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1af28b0e2a381e97d8852df0e838be14c0" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>skip</name></member>
+      <member refid="classloki_1_1text_1_1_annotated_text_1af9d84a03552d09e87ad9051e4fc10447" prot="public" virt="non-virtual"><scope>loki::text::AnnotatedText</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1gui_1_1_abstract_text_box" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>loki::gui::AbstractTextBox</compoundname>
+    <basecompoundref refid="classloki_1_1gui_1_1_widget" prot="public" virt="non-virtual">loki::gui::Widget</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sf::Drawable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sf::Transformable</basecompoundref>
+    <derivedcompoundref refid="classloki_1_1gui_1_1_text_box" prot="public" virt="non-virtual">loki::gui::TextBox</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1adb14f11bdfd774940492e34e0fc26c2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::gui::AbstractTextBox::~AbstractTextBox</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~AbstractTextBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="17" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1ab0b91261535737bc245d00604dd7a131" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool loki::gui::AbstractTextBox::hasEnded</definition>
+        <argsstring>() const =0</argsstring>
+        <name>hasEnded</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_1a02ac9b4be59a53ba0a55130f07f0c07b">hasEnded</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="19" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1a26b55e2e8a7f3bf96709293266bf3e27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool loki::gui::AbstractTextBox::canFitInLine</definition>
+        <argsstring>(const sf::String &amp;string, unsigned int line) const =0</argsstring>
+        <name>canFitInLine</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_1abc61e57b8b6aa6c768ac97b8c6490ab4">canFitInLine</reimplementedby>
+        <param>
+          <type>const sf::String &amp;</type>
+          <declname>string</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="20" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1a24c4787b6c99983fb88dcd282ab9a2e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::size_t</type>
+        <definition>virtual std::size_t loki::gui::AbstractTextBox::getLineCount</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getLineCount</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_1ac401ca7b6b4ecd67d8b7682e0ba54b64">getLineCount</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="21" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1a170229c5408225a839684f98c79ca6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void loki::gui::AbstractTextBox::setLines</definition>
+        <argsstring>(std::vector&lt; sf::String &gt; lines)=0</argsstring>
+        <name>setLines</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_1a788e5f47d3e826b7d73ad2c7f5fef4c7">setLines</reimplementedby>
+        <param>
+          <type>std::vector&lt; sf::String &gt;</type>
+          <declname>lines</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="22" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1gui_1_1_abstract_text_box_1ad5a8bb85295b916175d8696e5be5c5c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void loki::gui::AbstractTextBox::clear</definition>
+        <argsstring>()=0</argsstring>
+        <name>clear</name>
+        <reimplementedby refid="classloki_1_1gui_1_1_text_box_1a5dc39fec0cec80728a1a325140615925">clear</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="23" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::gui::AbstractTextBox</label>
+        <link refid="classloki_1_1gui_1_1_abstract_text_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="5">
+        <label>loki::gui::TextBox</label>
+        <link refid="classloki_1_1gui_1_1_text_box"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>sf::Transformable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>sf::Drawable</label>
+      </node>
+      <node id="1">
+        <label>loki::gui::AbstractTextBox</label>
+        <link refid="classloki_1_1gui_1_1_abstract_text_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>loki::gui::Widget</label>
+        <link refid="classloki_1_1gui_1_1_widget"/>
+      </node>
+      <node id="4">
+        <label>sf::Transformable</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/AbstractTextBox.hpp" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classloki_1_1gui_1_1_widget_1ab23287b78714c61f0583ef826165c49f" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>activate</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1a26b55e2e8a7f3bf96709293266bf3e27" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractTextBox</scope><name>canFitInLine</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1ad5a8bb85295b916175d8696e5be5c5c2" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractTextBox</scope><name>clear</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1abfe60f649c84b19d2620ef66779c9368" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>deactivate</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a2aeaf04efa1f4e455a8a0d0df703a30e" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>disable</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1ab5c0ec32554ac9fe1bcac587187d5abf" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>enable</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a958fbf8e597c061612c1ccbf1e5e1c27" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>focus</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1a24c4787b6c99983fb88dcd282ab9a2e5" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractTextBox</scope><name>getLineCount</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1ab0b91261535737bc245d00604dd7a131" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractTextBox</scope><name>hasEnded</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a7cebdeaf8e4684d9a95d093f9cafc15c" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>hide</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50a2c20bebe6e608e7306ed6046bf37d" prot="public" virt="non-virtual"><scope>loki::gui::AbstractTextBox</scope><name>isActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a50c56de70ad2676428124c734dca0fc1" prot="public" virt="non-virtual"><scope>loki::gui::AbstractTextBox</scope><name>isEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a606c6f0399cbc831a9d35015f8252f92" prot="public" virt="non-virtual"><scope>loki::gui::AbstractTextBox</scope><name>isFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a6f1134d3232b5d935a9925b474f3ef90" prot="public" virt="non-virtual"><scope>loki::gui::AbstractTextBox</scope><name>isHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a8763552e71af09e7e9d1db036277d24c" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>setActive</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a01d0e02ef2fc0c7d59a6d4147aaa6c69" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>setEnabled</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1afee750a125d71227665fc158f77046da" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>setFocused</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a1a256f895e81243193e5f1b1ac68f191" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>setHidden</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1a170229c5408225a839684f98c79ca6c6" prot="public" virt="pure-virtual"><scope>loki::gui::AbstractTextBox</scope><name>setLines</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a53feb9a9fad030095c4e5aca6ae2e509" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>unfocus</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1aea2a1c5649b66c343e9b45be099e854b" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>unhide</name></member>
+      <member refid="classloki_1_1gui_1_1_abstract_text_box_1adb14f11bdfd774940492e34e0fc26c2e" prot="public" virt="non-virtual"><scope>loki::gui::AbstractTextBox</scope><name>~AbstractTextBox</name></member>
+      <member refid="classloki_1_1gui_1_1_widget_1a088fa1a7eb637b578bd20245c0ec952d" prot="public" virt="virtual"><scope>loki::gui::AbstractTextBox</scope><name>~Widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

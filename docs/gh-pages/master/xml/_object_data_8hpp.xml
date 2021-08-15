@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_object_data_8hpp" kind="file" language="C++">
+    <compoundname>ObjectData.hpp</compoundname>
+    <includes local="no">SFML/Graphics.hpp</includes>
+    <includes local="no">SFML/System.hpp</includes>
+    <includes local="no">variant</includes>
+    <includes refid="_property_8hpp" local="yes">Property.hpp</includes>
+    <includedby refid="_object_data_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.cpp</includedby>
+    <includedby refid="_object_layer_data_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectLayerData.hpp</includedby>
+    <includedby refid="tiles_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="7">
+        <label>filesystem</label>
+      </node>
+      <node id="4">
+        <label>variant</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp</label>
+        <link refid="_object_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>SFML/Graphics/Color.hpp</label>
+      </node>
+      <node id="5">
+        <label>Property.hpp</label>
+        <link refid="_property_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="3">
+        <label>SFML/System.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectLayerData.hpp</label>
+        <link refid="_object_layer_data_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/MapData.hpp</label>
+        <link refid="_map_data_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.hpp</label>
+        <link refid="_map_view_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.cpp</label>
+        <link refid="_object_layer_view_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/LayerView.hpp</label>
+        <link refid="_layer_view_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp</label>
+        <link refid="_object_data_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectLayerData.cpp</label>
+        <link refid="_object_layer_data_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/All.hpp</label>
+        <link refid="tiles_2_all_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/TileLayerView.hpp</label>
+        <link refid="_tile_layer_view_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/MapView.cpp</label>
+        <link refid="_map_view_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/view/ObjectLayerView.hpp</label>
+        <link refid="_object_layer_view_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.cpp</label>
+        <link refid="_object_data_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1tiles_1_1_tile_object_data" prot="public">loki::tiles::TileObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_ellipse_object_data" prot="public">loki::tiles::EllipseObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_rectangle_object_data" prot="public">loki::tiles::RectangleObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_point_object_data" prot="public">loki::tiles::PointObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_polygon_object_data" prot="public">loki::tiles::PolygonObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_polyline_object_data" prot="public">loki::tiles::PolylineObjectData</innerclass>
+    <innerclass refid="structloki_1_1tiles_1_1_text_object_data" prot="public">loki::tiles::TextObjectData</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1tiles">loki::tiles</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/System.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Property.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::tiles<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structloki_1_1tiles_1_1_tile_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_tile_object_data" kindref="compound">TileObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>globalTileId;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>std::string<sp/>name;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>std::string<sp/>type;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>sf::Vector2f<sp/>position;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>PropertyMap<sp/>properties;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22" refid="structloki_1_1tiles_1_1_ellipse_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_ellipse_object_data" kindref="compound">EllipseObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>sf::FloatRect<sp/>rect;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotation<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26" refid="structloki_1_1tiles_1_1_rectangle_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_rectangle_object_data" kindref="compound">RectangleObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>sf::FloatRect<sp/>rect;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotation<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30" refid="structloki_1_1tiles_1_1_point_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_point_object_data" kindref="compound">PointObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>std::string<sp/>name;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>sf::Vector2f<sp/>position;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34" refid="structloki_1_1tiles_1_1_polygon_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_polygon_object_data" kindref="compound">PolygonObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>std::vector&lt;sf::Vector2f&gt;<sp/>vertices;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37" refid="structloki_1_1tiles_1_1_polyline_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_polyline_object_data" kindref="compound">PolylineObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>std::vector&lt;sf::Vector2f&gt;<sp/>vertices;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40" refid="structloki_1_1tiles_1_1_text_object_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1tiles_1_1_text_object_data" kindref="compound">TextObjectData</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>sf::FloatRect<sp/>rect;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>sf::Text::Style<sp/>style<sp/>=<sp/>sf::Text::Style::Regular;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>sf::Color<sp/>color<sp/>=<sp/>sf::Color::Black;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>std::string<sp/>fontFamily<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;sans-serif&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>16;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>std::string<sp/>text<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wrap<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>HorizontalAlign<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>LEFT,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>CENTER,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>RIGHT,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>JUSTIFY</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}<sp/>horizontalAlign<sp/>=<sp/>HorizontalAlign::LEFT;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>VerticalAlign<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>TOP,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>CENTER,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>BOTTOM,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>}<sp/>verticalAlign<sp/>=<sp/>VerticalAlign::TOP;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ObjectData<sp/>=<sp/>std::variant&lt;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_tile_object_data" kindref="compound">TileObjectData</ref>,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_ellipse_object_data" kindref="compound">EllipseObjectData</ref>,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_rectangle_object_data" kindref="compound">RectangleObjectData</ref>,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_point_object_data" kindref="compound">PointObjectData</ref>,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_polygon_object_data" kindref="compound">PolygonObjectData</ref>,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_polyline_object_data" kindref="compound">PolylineObjectData</ref>,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structloki_1_1tiles_1_1_text_object_data" kindref="compound">TextObjectData</ref>&gt;;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">ObjectData<sp/>loadObjectData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>jsonDatum);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/tiles/model/ObjectData.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_input_type_8hpp" kind="file" language="C++">
+    <compoundname>InputType.hpp</compoundname>
+    <includes local="no">SFML/Window/Event.hpp</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes local="no">variant</includes>
+    <includedby refid="_input_settings_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp</includedby>
+    <includedby refid="input_2_all_8hpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/input/All.hpp</includedby>
+    <includedby refid="_input_type_8cpp" local="yes">D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>variant</label>
+      </node>
+      <node id="2">
+        <label>SFML/Window/Event.hpp</label>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp</label>
+        <link refid="_input_type_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nlohmann/json.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.hpp</label>
+        <link refid="_event_handler_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/All.hpp</label>
+        <link refid="gui_2_all_8hpp"/>
+      </node>
+      <node id="3">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/All.hpp</label>
+        <link refid="input_2_all_8hpp"/>
+      </node>
+      <node id="5">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.hpp</label>
+        <link refid="_event_text_box_controller_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp</label>
+        <link refid="_input_type_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.cpp</label>
+        <link refid="_input_type_8cpp"/>
+      </node>
+      <node id="9">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.cpp</label>
+        <link refid="_input_settings_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/service/EventHandler.cpp</label>
+        <link refid="_event_handler_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/gui/textBox/EventTextBoxController.cpp</label>
+        <link refid="_event_text_box_controller_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputSettings.hpp</label>
+        <link refid="_input_settings_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structloki_1_1input_1_1_joystick_axis_trigger" prot="public">loki::input::JoystickAxisTrigger</innerclass>
+    <innernamespace refid="namespaceloki">loki</innernamespace>
+    <innernamespace refid="namespaceloki_1_1input">loki::input</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Srykah </para>
+</simplesect>
+<simplesect kind="copyright"><para>GNU GPL v3.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Window/Event.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">loki::input<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>MouseButtonTrigger<sp/>=<sp/>sf::Mouse::Button;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>JoystickButtonTrigger<sp/>:<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>KeyTrigger<sp/>=<sp/>sf::Keyboard::Key;</highlight></codeline>
+<codeline lineno="17" refid="structloki_1_1input_1_1_joystick_axis_trigger" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structloki_1_1input_1_1_joystick_axis_trigger" kindref="compound">JoystickAxisTrigger</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>sf::Joystick::Axis<sp/>axis;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>Direction<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>POSITIVE,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>NEGATIVE,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>BOTH</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>}<sp/>direction;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deadZone<sp/>=<sp/>30.f;<sp/></highlight><highlight class="comment">//<sp/>[0;<sp/>100]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>InputTrigger<sp/>=<sp/>std::variant&lt;MouseButtonTrigger,<sp/>JoystickButtonTrigger,<sp/>KeyTrigger,<sp/>JoystickAxisTrigger&gt;;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">InputTrigger<sp/>loadTrigger(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>triggerDatum);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/input/model/InputType.hpp"/>
+  </compounddef>
+</doxygen>

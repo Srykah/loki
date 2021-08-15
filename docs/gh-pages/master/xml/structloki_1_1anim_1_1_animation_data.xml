@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structloki_1_1anim_1_1_animation_data" kind="struct" language="C++" prot="public">
+    <compoundname>loki::anim::AnimationData</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_animation_data_1a5d2c8505f2da82670b1809daa358679b" prot="public" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time loki::anim::AnimationData::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" line="16" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_animation_data_1af022fc4012ca47fd58d460c2dfe14e1a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::anim::AnimationData::repeat</definition>
+        <argsstring></argsstring>
+        <name>repeat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" line="17" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_animation_data_1abe71c159662b6f76ecba390e23ef9be9" prot="public" static="no" mutable="no">
+        <type>common::InterpolationType</type>
+        <definition>common::InterpolationType loki::anim::AnimationData::interpolation</definition>
+        <argsstring></argsstring>
+        <name>interpolation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" line="18" column="29" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structloki_1_1anim_1_1_animation_data_1ae28d20f21c4d95ca6d387e767775c716" prot="public" static="no" mutable="no">
+        <type>std::map&lt; float, <ref refid="structloki_1_1anim_1_1_keyframe" kindref="compound">Keyframe</ref> &gt;</type>
+        <definition>std::map&lt;float, Keyframe&gt; loki::anim::AnimationData::keyframes</definition>
+        <argsstring></argsstring>
+        <name>keyframes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" line="19" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::map&lt; float, loki::anim::Keyframe &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>loki::anim::Keyframe</label>
+        <link refid="structloki_1_1anim_1_1_keyframe"/>
+      </node>
+      <node id="1">
+        <label>loki::anim::AnimationData</label>
+        <link refid="structloki_1_1anim_1_1_animation_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keyframes</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" line="15" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/AnimationData.hpp" bodystart="15" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structloki_1_1anim_1_1_animation_data_1a5d2c8505f2da82670b1809daa358679b" prot="public" virt="non-virtual"><scope>loki::anim::AnimationData</scope><name>duration</name></member>
+      <member refid="structloki_1_1anim_1_1_animation_data_1abe71c159662b6f76ecba390e23ef9be9" prot="public" virt="non-virtual"><scope>loki::anim::AnimationData</scope><name>interpolation</name></member>
+      <member refid="structloki_1_1anim_1_1_animation_data_1ae28d20f21c4d95ca6d387e767775c716" prot="public" virt="non-virtual"><scope>loki::anim::AnimationData</scope><name>keyframes</name></member>
+      <member refid="structloki_1_1anim_1_1_animation_data_1af022fc4012ca47fd58d460c2dfe14e1a" prot="public" virt="non-virtual"><scope>loki::anim::AnimationData</scope><name>repeat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classloki_1_1anim_1_1_animator" kind="class" language="C++" prot="public">
+    <compoundname>loki::anim::Animator</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animator_1a18bbd8b45ab74790ebd70a96dd7712f2" prot="private" static="no" mutable="no">
+        <type>T &amp;</type>
+        <definition>T&amp; loki::anim::Animator&lt; T &gt;::animated</definition>
+        <argsstring></argsstring>
+        <name>animated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="24" column="5" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animator_1a6274619d482e23a82a1a57eba2ab2af8" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classloki_1_1anim_1_1_animation_view_data" kindref="compound">AnimationViewData</ref> &amp;</type>
+        <definition>const AnimationViewData&amp; loki::anim::Animator&lt; T &gt;::viewData</definition>
+        <argsstring></argsstring>
+        <name>viewData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="25" column="27" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animator_1a5d062388db809fa9c05ed8e09e6d97b2" prot="private" static="no" mutable="no">
+        <type><ref refid="structloki_1_1anim_1_1_keyframe" kindref="compound">Keyframe</ref></type>
+        <definition>Keyframe loki::anim::Animator&lt; T &gt;::baseKeyframe</definition>
+        <argsstring></argsstring>
+        <name>baseKeyframe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="26" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animator_1a5ad50a60fe8086e37f6686870ea86d3a" prot="private" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time loki::anim::Animator&lt; T &gt;::elapsedTime</definition>
+        <argsstring></argsstring>
+        <name>elapsedTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="27" column="12" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classloki_1_1anim_1_1_animator_1a914ed838a4e732d6a3433cc011a135a5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool loki::anim::Animator&lt; T &gt;::isPaused</definition>
+        <argsstring></argsstring>
+        <name>isPaused</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="28" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1aa5583f6b3732227f1e6b477cbbd8d834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>loki::anim::Animator&lt; T &gt;::Animator</definition>
+        <argsstring>(T &amp;animated, const AnimationViewData &amp;viewData)</argsstring>
+        <name>Animator</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>animated</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classloki_1_1anim_1_1_animation_view_data" kindref="compound">AnimationViewData</ref> &amp;</type>
+          <declname>viewData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="15" column="3" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1ae119a85daa053434d43aecf04eee550f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::Animator&lt; T &gt;::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="17" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1a97e51f1a4345129b1b30c2a8590b60c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::Animator&lt; T &gt;::update</definition>
+        <argsstring>(sf::Time delta)</argsstring>
+        <name>update</name>
+        <param>
+          <type>sf::Time</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="18" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="47" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1ad6e52812ba42714256fd9c7577d65dbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool loki::anim::Animator&lt; T &gt;::hasEnded</definition>
+        <argsstring>() const</argsstring>
+        <name>hasEnded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="19" column="9" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1a87cd4905fbd66c1937275ea4103204dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::Animator&lt; T &gt;::pause</definition>
+        <argsstring>()</argsstring>
+        <name>pause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="20" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classloki_1_1anim_1_1_animator_1ab62b0111d667a9b503a5ca614758c95f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loki::anim::Animator&lt; T &gt;::unpause</definition>
+        <argsstring>()</argsstring>
+        <name>unpause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="21" column="8" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/impl/Animator.hxx" bodystart="37" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" line="13" column="1" bodyfile="D:/prog/cpp/custom_libs/loki/src/loki/anim/Animator.hpp" bodystart="13" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classloki_1_1anim_1_1_animator_1a18bbd8b45ab74790ebd70a96dd7712f2" prot="private" virt="non-virtual"><scope>loki::anim::Animator</scope><name>animated</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1aa5583f6b3732227f1e6b477cbbd8d834" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>Animator</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a5d062388db809fa9c05ed8e09e6d97b2" prot="private" virt="non-virtual"><scope>loki::anim::Animator</scope><name>baseKeyframe</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a5ad50a60fe8086e37f6686870ea86d3a" prot="private" virt="non-virtual"><scope>loki::anim::Animator</scope><name>elapsedTime</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1ad6e52812ba42714256fd9c7577d65dbe" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>hasEnded</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a914ed838a4e732d6a3433cc011a135a5" prot="private" virt="non-virtual"><scope>loki::anim::Animator</scope><name>isPaused</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a87cd4905fbd66c1937275ea4103204dd" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>pause</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1ae119a85daa053434d43aecf04eee550f" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>start</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1ab62b0111d667a9b503a5ca614758c95f" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>unpause</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a97e51f1a4345129b1b30c2a8590b60c9" prot="public" virt="non-virtual"><scope>loki::anim::Animator</scope><name>update</name></member>
+      <member refid="classloki_1_1anim_1_1_animator_1a6274619d482e23a82a1a57eba2ab2af8" prot="private" virt="non-virtual"><scope>loki::anim::Animator</scope><name>viewData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
