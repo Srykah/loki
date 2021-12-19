@@ -36,3 +36,6 @@
 
 # Output
 *build*/
+
+# CMake Local Config
+cmake/LocalConfig.cmake

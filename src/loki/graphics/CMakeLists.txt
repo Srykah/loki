@@ -1,0 +1,6 @@
+add_subdirectory(anim)
+add_subdirectory(shapes)
+add_subdirectory(sprites)
+add_subdirectory(styles)
+add_subdirectory(text)
+add_subdirectory(tiles)

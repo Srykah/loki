@@ -1,0 +1,16 @@
+include(CheckIPOSupported)
+
+check_ipo_supported(RESULT loki_ipo_supported OUTPUT loki_ipo_error)
+if(loki_ipo_supported AND CMAKE_CXX_COMPILER_ID STREQUAL GNU)
+	set(CMAKE_AR gcc-ar)
+	set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> qcs <TARGET> <LINK_FLAGS> <OBJECTS>")
+	set(CMAKE_CXX_ARCHIVE_FINISH true)
+endif()
+
+function(loki_enable_lto_optional target)
+	if(loki_ipo_supported)
+		set_property(TARGET ${target} PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+	else()
+		message(WARNING "Trying to enable IPO on target ${target} but it is not supported: ${loki_ipo_error}")
+	endif()
+endfunction()

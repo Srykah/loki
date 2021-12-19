@@ -1,0 +1,5 @@
+#set(box2d_ROOT "path/to/installed/box2d")
+set(fmt_ROOT "path/to/installed/fmt")
+#set(ImGui-SFML_ROOT "path/to/installed/ImGui-SFML")
+set(nlohmann_json_ROOT "path/to/installed/nlohmann_json")
+set(SFML_ROOT "path/to/installed/SFML")
