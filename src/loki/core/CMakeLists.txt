@@ -1,0 +1,5 @@
+add_subdirectory(hash)
+add_subdirectory(json)
+add_subdirectory(math)
+add_subdirectory(states)
+add_subdirectory(utils)

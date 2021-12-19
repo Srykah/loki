@@ -1,123 +1,90 @@
-### Basic setup
+# BASIC SETUP
+
 cmake_minimum_required(VERSION 3.18)
-project(loki
-        VERSION 0.1.0
-        LANGUAGES CXX)
+project(
+  loki
+  VERSION 0.1.0
+  LANGUAGES CXX
+)
 
-set(CMAKE_CXX_STANDARD 17)
 
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, all dependencies will be linked to statically.")
+# CONFIG
 
-### Helper functions, modules and macros
+include(cmake/LocalConfig.cmake OPTIONAL)
 
-# Force out-of-source build (for good practise)
-include(cmake/MacroEnsureOutOfSourceBuild.cmake)
-MACRO_ENSURE_OUT_OF_SOURCE_BUILD("You must use an out-of-source build.")
+# todo make it work
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, all dependencies will be linked to statically." FORCE)
 
-# CMake config logging
-include(cmake/LoggingHelpers.cmake)
 
-# Installing
-include(cmake/InstallHelpers.cmake)
+# HELPERS
 
-### Dependencies
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-# Add the cmake folder so the FindSphinx module is found
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+include(MacroEnsureOutOfSourceBuild)
+include(LoggingHelpers)
+include(DependenciesHelpers)
+include(InstallHelpers)
 
-## Libs ROOTs
+# Enforce good practise
+macro_ensure_out_of_source_build("You must use an out-of-source build.")
 
-# JSON
-set(nlohmann_json_ROOT "" CACHE PATH "nlohmann/json root directory. Leave blank for system default.")
-loki_print_variables(nlohmann_json_ROOT)
 
-# FMT
-set(fmt_ROOT "" CACHE PATH "fmt root directory. Leave blank for system default.")
-loki_print_variables(fmt_ROOT)
+# DEPENDENCIES
 
-# SFML
-set(SFML_ROOT "" CACHE PATH "SFML root directory. Leave blank for system default.")
-loki_print_variables(SFML_ROOT)
-
-## Add libs
-
-# JSON
-find_package(nlohmann_json 3.9 REQUIRED CONFIG)
-if(NOT nlohmann_json_FOUND)
-    message(FATAL_ERROR "nlohmann/json not found; You should set nlohmann_json_ROOT to the nlohmann/json path")
-endif()
-loki_print_variables_with_pattern(nlohmann_json)
-
-# FMT
-find_package(fmt 7 REQUIRED CONFIG)
-if(NOT fmt_FOUND)
-    message(FATAL_ERROR "fmt not found; You should set fmt_ROOT to the fmt path")
-endif()
-loki_print_variables_with_pattern(fmt)
-
-# SFML
 set(SFML_STATIC_LIBRARIES $<NOT:${BUILD_SHARED_LIBS}>)
-find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system audio CONFIG)
-if(NOT SFML_FOUND)
-    message(FATAL_ERROR "SFML not found; You should set SFML_ROOT to the SFML path")
+list(APPEND LOKI_DEPS_LIST
+  "nlohmann_json, 3.9"
+  "fmt, 8"
+  "SFML, 2.5, graphics window system audio"
+  "ImGui-SFML, 2.3"
+  "box2d, 2.4")
+loki_find_all_deps(" ${LOKI_DEPS_LIST}")
+
+
+# TARGETS
+
+# All modules target
+loki_create_all_target()
+
+add_subdirectory(src/loki/core)
+add_subdirectory(src/loki/graphics)
+add_subdirectory(src/loki/gui)
+add_subdirectory(src/loki/strings)
+add_subdirectory(src/loki/system)
+
+
+# DOCS
+
+option(LOKI_DOCS "Generate docs with Doxygen and Sphinx." ON)
+if(LOKI_DOCS)
+  add_subdirectory(docs)
 endif()
-loki_print_variables_with_pattern(SFML)
 
-### Core CMake stuff
 
-set(LOKI_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-set(LOKI_MODULE_LIST
-  common
-  anim
-  gui
-  hash
-  input
-  json
-  math
-  screens
-  shapes
-  sprites
-  states
-  styles
-  text
-  tiles
-  tpl
-  window)
-foreach(LOKI_MODULE_NAME IN LISTS LOKI_MODULE_LIST)
-    add_subdirectory(src/loki/${LOKI_MODULE_NAME})
-endforeach()
-## All modules target
-loki_create_all_target("${LOKI_MODULE_LIST}")
-## docs
-add_subdirectory(docs)
-
-### Installation (for ease of use with other CMake projects)
+# INSTALL
 
 # Targets
 install(
   EXPORT loki_targets
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/loki
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki"
   NAMESPACE loki::
-  FILE lokiTargets.cmake)
+  FILE lokiTargets.cmake
+)
 
 # Config
 include(CMakePackageConfigHelpers)
-configure_package_config_file( 
-  lokiConfig.cmake.in
-  lokiConfig.cmake
-  INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/loki
-  PATH_VARS
-    nlohmann_json_DIR
-    fmt_DIR
-    SFML_DIR)
+configure_package_config_file(
+  cmake/lokiConfig.cmake.in lokiConfig.cmake
+  INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki"
+  PATH_VARS fmt_DIR nlohmann_json_DIR SFML_DIR
+)
 
 # Version
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/lokiConfigVersion.cmake
-  COMPATIBILITY SameMajorVersion)
-
-# Install Config and ConfigVersion files
+  "${CMAKE_CURRENT_BINARY_DIR}/lokiConfigVersion.cmake"
+  COMPATIBILITY SameMajorVersion
+)
 install(
-  FILES "${CMAKE_CURRENT_BINARY_DIR}/lokiConfig.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/lokiConfigVersion.cmake"
-  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki")
+  FILES "${CMAKE_CURRENT_BINARY_DIR}/lokiConfigVersion.cmake"
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki "
+)

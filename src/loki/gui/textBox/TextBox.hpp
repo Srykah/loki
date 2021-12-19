@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics/Text.hpp>
 #include <loki/gui/frame/AbstractFrame.hpp>
-#include <loki/styles/TextStyle.hpp>
+#include <loki/graphics/styles/TextStyle.hpp>
 #include <memory>
 #include "AbstractTextBox.hpp"
 
@@ -31,4 +31,3 @@ class TextBox : public AbstractTextBox {
 };
 
 }
-

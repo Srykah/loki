@@ -48,7 +48,7 @@ else()
 		OUTPUT ${DOXYGEN_INDEX_FILE}
 		COMMENT "Generating docs")
 
-	add_custom_target(doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
+	add_custom_target(doxygen DEPENDS ${DOXYGEN_INDEX_FILE})
 
 
 	# SPHINX
@@ -78,7 +78,7 @@ else()
 		DEPENDS ${SPHINX_SOURCE}/index.rst ${DOXYGEN_INDEX_FILE}
 		COMMENT "Generating documentation with Sphinx")
 
-	add_custom_target(docs ALL DEPENDS ${SPHINX_INDEX_FILE})
+	add_custom_target(docs DEPENDS ${SPHINX_INDEX_FILE})
 
 	# Add an install target to install the docs
 	install(DIRECTORY ${SPHINX_BUILD}

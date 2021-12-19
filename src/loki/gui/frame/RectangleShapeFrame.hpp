@@ -6,7 +6,7 @@
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <loki/styles/ShapeStyle.hpp>
+#include <loki/graphics/styles/ShapeStyle.hpp>
 #include "AbstractFrame.hpp"
 
 namespace loki::gui {
@@ -24,4 +24,3 @@ class RectangleShapeFrame : public AbstractFrame {
 };
 
 }
-

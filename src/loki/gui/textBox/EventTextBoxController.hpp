@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <loki/input/service/EventHandler.hpp>
+#include <loki/system/input/service/EventHandler.hpp>
 #include "TextBoxController.hpp"
 
 namespace loki::gui {
