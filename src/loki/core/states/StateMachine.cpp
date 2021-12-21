@@ -9,7 +9,7 @@ namespace loki::states {
 
 StateMachine::StateMachine(std::size_t size) {
   states.reserve(size);
-  transitions.reserve(size*size/2); // estimate
+  transitions.reserve(size * size / 2);  // estimate
 }
 
 void StateMachine::addState(StateIndex index, State state) {
@@ -37,16 +37,17 @@ void StateMachine::update(sf::Time delta) {
 
 void StateMachine::checkTransitions() {
   for (auto& transition : transitions) {
-    if ((transition.from == ANY || transition.from == curState)
-    && transition.isActive()) {
+    if ((transition.from == ANY || transition.from == curState) &&
+        transition.isActive()) {
       setCurrentStateWithTrigger(transition.to, transition.onTrigger);
       return;
     }
   }
 }
 
-void StateMachine::setCurrentStateWithTrigger(StateIndex to,
-                                              const std::function<void()>& onTrigger) {
+void StateMachine::setCurrentStateWithTrigger(
+    StateIndex to,
+    const std::function<void()>& onTrigger) {
   if (curState != NONE && states.at(curState).onLeave) {
     states.at(curState).onLeave();
   }
@@ -59,4 +60,4 @@ void StateMachine::setCurrentStateWithTrigger(StateIndex to,
   }
 }
 
-}
+}  // namespace loki::states

@@ -16,7 +16,7 @@ float fromPercent(const std::string& str) {
   return strtof(str.c_str(), nullptr) / 100.f;
 }
 
-}
+}  // namespace
 
 namespace loki::anim {
 
@@ -38,4 +38,4 @@ void from_json(const nlohmann::json& json, AnimationData& data) {
   }
 }
 
-}
+}  // namespace loki::anim

@@ -20,7 +20,8 @@ AnimatedTextStyle Stylesheet::getNewStyleFromBase(
   return copy;
 }
 
-const AnimatedTextStyle& Stylesheet::getStyle(const sf::String& styleName) const {
+const AnimatedTextStyle& Stylesheet::getStyle(
+    const sf::String& styleName) const {
   return styles.at(styleName);
 }
 
@@ -33,4 +34,4 @@ void Stylesheet::setDefaultStyle(const AnimatedTextStyle& defaultStyle) {
   setStyle(".default", defaultStyle);
 }
 
-}
+}  // namespace loki::text

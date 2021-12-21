@@ -8,7 +8,8 @@
 
 namespace loki::tiles {
 
-void loadPropertyMap(PropertyMap& propertyMap, const nlohmann::json& propArray) {
+void loadPropertyMap(PropertyMap& propertyMap,
+                     const nlohmann::json& propArray) {
   for (const auto& propertyDatum : propArray) {
     auto name = propertyDatum.at("name").get<std::string>();
     auto type = propertyDatum.at("type").get<std::string>();
@@ -22,7 +23,8 @@ void loadPropertyMap(PropertyMap& propertyMap, const nlohmann::json& propArray) 
     } else if (type == "bool") {
       value = propertyDatum.at("value").get<bool>();
     } else if (type == "color") {
-      value = common::parseHTMLColor(propertyDatum.at("value").get<std::string>());
+      value =
+          common::parseHTMLColor(propertyDatum.at("value").get<std::string>());
     }
     propertyMap.emplace(std::move(name), std::move(value));
   }

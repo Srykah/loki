@@ -7,7 +7,8 @@
 
 namespace loki::common {
 
-VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va, std::size_t _index)
+VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va,
+                                         std::size_t _index)
     : va(va), index(_index) {
   if (index > va.getVertexCount()) {
     index = va.getVertexCount();
@@ -136,15 +137,17 @@ const sf::Vertex& VertexArrayConstIterator::operator*() const {
   return va[index];
 }
 
-bool VertexArrayConstIterator::operator==(const VertexArrayConstIterator& other) {
+bool VertexArrayConstIterator::operator==(
+    const VertexArrayConstIterator& other) {
   return &va == &other.va && index == other.index;
 }
 
-bool VertexArrayConstIterator::operator!=(const VertexArrayConstIterator& other) {
+bool VertexArrayConstIterator::operator!=(
+    const VertexArrayConstIterator& other) {
   return !(*this == other);
 }
 
-}
+}  // namespace loki::common
 
 namespace sf {
 
@@ -180,4 +183,4 @@ loki::common::VertexArrayConstIterator cend(const VertexArray& va) {
   return loki::common::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
-}
+}  // namespace sf

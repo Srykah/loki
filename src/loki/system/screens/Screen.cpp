@@ -7,7 +7,7 @@
 
 namespace loki::screens {
 
-Screen::Screen(ScreenStack& stack): stack(stack), ready(false) {}
+Screen::Screen(ScreenStack& stack) : stack(stack), ready(false) {}
 
 void Screen::init() {
   ready = true;
@@ -36,7 +36,7 @@ void Screen::registerSignalHandler(const Signal::Trigger& trigger,
 }
 
 void Screen::removeSignalHandler(const Signal::Trigger& trigger) {
-  for(auto iter = signalHandlers.begin(); iter != signalHandlers.end(); ) {
+  for (auto iter = signalHandlers.begin(); iter != signalHandlers.end();) {
     if (iter->first == trigger) {
       iter = signalHandlers.erase(iter);
     } else {
@@ -48,4 +48,4 @@ void Screen::clearAllSignalHandlers() {
   signalHandlers.clear();
 }
 
-}
+}  // namespace loki::screens

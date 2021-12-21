@@ -26,4 +26,4 @@ void from_json(const nlohmann::json& json, SpriteData& data) {
   }
 }
 
-}
+}  // namespace loki::sprites

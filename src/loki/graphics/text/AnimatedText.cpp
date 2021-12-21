@@ -9,10 +9,9 @@
 
 namespace loki::text {
 
-AnimatedText::AnimatedText(const sf::String& string, const AnimatedTextStyle& style)
-: string(string)
-, style(style)
-, vertices(sf::Triangles) {
+AnimatedText::AnimatedText(const sf::String& string,
+                           const AnimatedTextStyle& style)
+    : string(string), style(style), vertices(sf::Triangles) {
   init();
 }
 
@@ -54,7 +53,8 @@ void AnimatedText::skip() {
 void AnimatedText::init() {
   auto& font = *style.font.value();
   auto charSize = style.characterSize.value_or(30);
-  bool isBold = style.characterStyle.value_or(sf::Text::Regular) | sf::Text::Bold;
+  bool isBold =
+      style.characterStyle.value_or(sf::Text::Regular) | sf::Text::Bold;
   float x = 0.f;
   sf::Uint32 lastChar;
   bool first = true;
@@ -77,4 +77,4 @@ sf::FloatRect AnimatedText::getLocalBounds() {
   return sf::FloatRect();
 }
 
-}
+}  // namespace loki::text

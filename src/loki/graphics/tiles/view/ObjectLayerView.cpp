@@ -7,14 +7,15 @@
 
 namespace loki::tiles {
 
-
 ObjectLayerView::ObjectLayerView(const MapView& parent, int layerId)
-: LayerView(parent)
-, layerData(std::get<ObjectLayerData>(parent.getData().layers.at(layerId))) {
+    : LayerView(parent),
+      layerData(
+          std::get<ObjectLayerData>(parent.getData().layers.at(layerId))) {
   initObjects();
 }
 
-void ObjectLayerView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void ObjectLayerView::draw(sf::RenderTarget& target,
+                           sf::RenderStates states) const {
   states.transform *= getParentTransform();
   for (const auto& object : objects) {
     target.draw(*object, states);
@@ -41,4 +42,4 @@ void ObjectLayerView::initObjects() {
   }*/
 }
 
-}
+}  // namespace loki::tiles

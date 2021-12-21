@@ -8,7 +8,7 @@
 
 namespace loki::tiles {
 
-TilesetData::TilesetData(const std::filesystem::path &path) {
+TilesetData::TilesetData(const std::filesystem::path& path) {
   load(path);
 }
 
@@ -24,7 +24,7 @@ bool TilesetData::load(const std::filesystem::path& path) {
   json.at("name").get_to(name);
   json.at("tilewidth").get_to(tileSize.x);
   json.at("tileheight").get_to(tileSize.y);
-  dimensions = sf::Vector2u {
+  dimensions = sf::Vector2u{
       json.at("imagewidth").get<int>() / tileSize.x,
       json.at("imageheight").get<int>() / tileSize.y,
   };
@@ -40,4 +40,4 @@ bool TilesetData::load(const std::filesystem::path& path) {
   return true;
 }
 
-}
+}  // namespace loki::tiles

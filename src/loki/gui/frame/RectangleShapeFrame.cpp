@@ -22,7 +22,7 @@ sf::FloatRect RectangleShapeFrame::getInternalBounds() const {
 }
 
 void RectangleShapeFrame::draw(sf::RenderTarget& target,
-                                          sf::RenderStates states) const {
+                               sf::RenderStates states) const {
   states.transform *= getTransform();
   target.draw(shape, states);
 }

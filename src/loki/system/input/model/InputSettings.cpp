@@ -13,14 +13,14 @@ InputSettings::InputSettings(const std::filesystem::path& filepath) {
   load(filepath);
 }
 
-bool InputSettings::load(const std::filesystem::path &filepath) {
+bool InputSettings::load(const std::filesystem::path& filepath) {
   std::ifstream fs(filepath);
   nlohmann::json json;
   fs >> json;
 
   for (auto&& [configName, configData] : json.items()) {
     Config config;
-    for (auto&& [inputName, triggerData]: configData.items()) {
+    for (auto&& [inputName, triggerData] : configData.items()) {
       std::vector<InputTrigger> triggers;
       for (const auto& triggerDatum : triggerData) {
         triggers.emplace_back(loadTrigger(triggerDatum));
@@ -33,4 +33,4 @@ bool InputSettings::load(const std::filesystem::path &filepath) {
   return true;
 }
 
-}
+}  // namespace loki::input

@@ -34,11 +34,11 @@ void EventHandler::resetStates(int playerId) {
   } else {
     throw std::out_of_range("playerId too big");
   }
-  for (auto&& [inputName, _]: settings.configs.at(playerConfigs.at(playerId).config)) {
-    inputStates->emplace(
-        std::piecewise_construct,
-        std::forward_as_tuple(inputName),
-        std::forward_as_tuple());
+  for (auto&& [inputName, _] :
+       settings.configs.at(playerConfigs.at(playerId).config)) {
+    inputStates->emplace(std::piecewise_construct,
+                         std::forward_as_tuple(inputName),
+                         std::forward_as_tuple());
   }
 }
 
@@ -46,9 +46,10 @@ void EventHandler::update(const sf::Time& delta) {
   // reset transitions
   resetTransitions();
 
-  for (auto&& [inputStates, currentConfig] : common::zip(playerInputStates, playerConfigs)) {
+  for (auto&& [inputStates, currentConfig] :
+       common::zip(playerInputStates, playerConfigs)) {
     const auto& configData = settings.configs.at(currentConfig.config);
-    for (auto&& [inputName, inputState]: inputStates) {
+    for (auto&& [inputName, inputState] : inputStates) {
       bool active = false;
       for (const auto& trigger : configData.at(inputName)) {
         active = active || isActive(trigger, currentConfig.joystickId);
@@ -60,7 +61,7 @@ void EventHandler::update(const sf::Time& delta) {
 
 void EventHandler::resetTransitions() {
   for (auto& inputStates : playerInputStates) {
-    for (auto&& [inputName, inputState]: inputStates) {
+    for (auto&& [inputName, inputState] : inputStates) {
       if (inputState.status == InputState::TRIGGERED) {
         inputState.status = InputState::ACTIVE;
       } else if (inputState.status == InputState::ENDED) {
@@ -83,9 +84,12 @@ bool EventHandler::isActive(const InputTrigger& trigger, int joystickId) {
   } else if (std::holds_alternative<JoystickAxisTrigger>(trigger)) {
     const auto& axisTrigger = std::get<JoystickAxisTrigger>(trigger);
     if (axisTrigger.direction == JoystickAxisTrigger::Direction::POSITIVE) {
-      return sf::Joystick::getAxisPosition(joystickId, axisTrigger.axis) > axisTrigger.deadZone;
-    } else if (axisTrigger.direction == JoystickAxisTrigger::Direction::NEGATIVE) {
-      return sf::Joystick::getAxisPosition(joystickId, axisTrigger.axis) < -axisTrigger.deadZone;
+      return sf::Joystick::getAxisPosition(joystickId, axisTrigger.axis) >
+             axisTrigger.deadZone;
+    } else if (axisTrigger.direction ==
+               JoystickAxisTrigger::Direction::NEGATIVE) {
+      return sf::Joystick::getAxisPosition(joystickId, axisTrigger.axis) <
+             -axisTrigger.deadZone;
     }
   }
 
@@ -105,4 +109,4 @@ InputState EventHandler::getInputState(const std::string& inputName,
   return playerInputStates.at(playerId).at(inputName);
 }
 
-}
+}  // namespace loki::input

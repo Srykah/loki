@@ -9,7 +9,7 @@ namespace loki::styles {
 
 void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setTexture(texture);
-  if (textureRect != sf::IntRect {}) {
+  if (textureRect != sf::IntRect{}) {
     shape.setTextureRect(textureRect);
   }
   shape.setFillColor(fillColor);
@@ -17,4 +17,4 @@ void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setOutlineThickness(outlineThickness);
 }
 
-}
+}  // namespace loki::styles

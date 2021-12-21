@@ -8,16 +8,14 @@
 namespace loki::styles {
 
 TextStyle TextStyle::fromDefaults() {
-  static const loki::styles::TextStyle Defaults {
-      30u,
-      sf::Text::Style::Regular,
-      sf::Color::White,
-      nullptr,
-      1.f,
-      1.f,
-      sf::Color::Black,
-      0.f
-  };
+  static const loki::styles::TextStyle Defaults{30u,
+                                                sf::Text::Style::Regular,
+                                                sf::Color::White,
+                                                nullptr,
+                                                1.f,
+                                                1.f,
+                                                sf::Color::Black,
+                                                0.f};
   return Defaults;
 }
 
@@ -92,12 +90,11 @@ float TextStyle::getSpaceWidth() const {
   if (!font || !*font) {
     return 0;
   }
-  return (*font)->getGlyph(
-                    ' ',
-                    characterSize.value_or(30u),
-                    characterStyle.value_or(sf::Text::Regular) & sf::Text::Bold,
-                    outlineThickness.value_or(0.f)
-                    ).advance;
+  return (*font)
+      ->getGlyph(' ', characterSize.value_or(30u),
+                 characterStyle.value_or(sf::Text::Regular) & sf::Text::Bold,
+                 outlineThickness.value_or(0.f))
+      .advance;
 }
 
 TextStyle& TextStyle::overrideWith(const TextStyle& other) {
@@ -132,4 +129,4 @@ TextStyle TextStyle::cloneAndOverrideWith(const TextStyle& other) const {
   return TextStyle(*this).overrideWith(other);
 }
 
-}
+}  // namespace loki::styles

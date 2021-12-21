@@ -22,4 +22,4 @@ std::string TemplateEngine::fill(const std::string& tpl) {
   return fmt::vformat(tpl, args);
 }
 
-}
+}  // namespace loki::tpl
