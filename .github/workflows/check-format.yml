@@ -3,10 +3,14 @@ name: check-format
 on:
   pull_request:
     types:
+      - opened
+      - reopened
+      - synchronize
       - ready_for_review
 
 jobs:
-  build:
+  check-format:
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
