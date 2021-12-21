@@ -29,13 +29,12 @@ class Screen {
                       sf::RenderStates states) const = 0;
 
   void registerSignalHandler(const Signal::Trigger& trigger,
-                                     std::function<bool()> fun);
+                             std::function<bool()> fun);
   template <typename... Args>
   void registerSignalHandler(const Signal::Trigger& trigger,
-                                     std::function<bool(Args...)> fun);
+                             std::function<bool(Args...)> fun);
   template <typename Fun>
-  void registerSignalHandler(const Signal::Trigger& trigger,
-                                     Fun fun);
+  void registerSignalHandler(const Signal::Trigger& trigger, Fun fun);
   void removeSignalHandler(const Signal::Trigger& trigger);
   void clearAllSignalHandlers();
   bool handleSignal(Signal& signal);

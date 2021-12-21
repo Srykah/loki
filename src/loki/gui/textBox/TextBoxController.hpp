@@ -39,4 +39,4 @@ class TextBoxController : public Widget {
   sf::String::ConstIterator it;
 };
 
-}
+}  // namespace loki::gui

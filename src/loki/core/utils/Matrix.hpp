@@ -13,19 +13,26 @@ class Matrix {
 
   Matrix(std::size_t width, std::size_t height, const T& defaultValue = T());
 
-  template<typename Iterator>
+  template <typename Iterator>
   Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  T& operator[](std::pair<std::size_t, std::size_t> coords) { return const_cast<T&>(static_cast<const Matrix<T>&>(*this)[coords]); }
-  const T& operator[](std::pair<std::size_t, std::size_t> coords) const { return data[coords.first + width * coords.second]; }
-
+  T& operator[](std::pair<std::size_t, std::size_t> coords) {
+    return const_cast<T&>(static_cast<const Matrix<T>&>(*this)[coords]);
+  }
+  const T& operator[](std::pair<std::size_t, std::size_t> coords) const {
+    return data[coords.first + width * coords.second];
+  }
 
   [[nodiscard]] std::size_t getWidth() const { return width; }
   [[nodiscard]] std::size_t getHeight() const { return height; }
 
   typename std::vector<T>::iterator begin() { return data.begin(); }
-  typename std::vector<T>::const_iterator begin() const { return data.cbegin(); }
-  typename std::vector<T>::const_iterator cbegin() const { return data.cbegin(); }
+  typename std::vector<T>::const_iterator begin() const {
+    return data.cbegin();
+  }
+  typename std::vector<T>::const_iterator cbegin() const {
+    return data.cbegin();
+  }
   typename std::vector<T>::iterator end() { return data.end(); }
   typename std::vector<T>::const_iterator end() const { return data.cend(); }
   typename std::vector<T>::const_iterator cend() const { return data.cend(); }
@@ -35,6 +42,6 @@ class Matrix {
   std::size_t height = 0, width = 0;
 };
 
-}
+}  // namespace loki::common
 
 #include "Matrix.inl"

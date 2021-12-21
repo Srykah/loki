@@ -20,7 +20,8 @@ class EventHandler {
   void setPlayerConfig(PlayerConfig&& playerConfig, int playerId = 0);
 
   void update(const sf::Time& delta);
-  [[nodiscard]] InputState getInputState(const std::string& inputName, int playerId = 0) const;
+  [[nodiscard]] InputState getInputState(const std::string& inputName,
+                                         int playerId = 0) const;
 
  private:
   using PlayerInputStates = std::map<std::string, InputState>;
@@ -37,4 +38,4 @@ class EventHandler {
   static void updateState(InputState& inputState, bool active);
 };
 
-}
+}  // namespace loki::input

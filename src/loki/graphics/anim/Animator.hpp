@@ -28,6 +28,6 @@ class Animator {
   bool isPaused = false;
 };
 
-}
+}  // namespace loki::anim
 
 #include "impl/Animator.hxx"

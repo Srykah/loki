@@ -18,7 +18,6 @@ struct TerrainData {
 
   std::string name;
   PropertyMap properties;
-
 };
 
-}
+}  // namespace loki::tiles

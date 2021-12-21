@@ -22,4 +22,4 @@ struct AnimationData {
 void to_json(nlohmann::json& json, const AnimationData& data);
 void from_json(const nlohmann::json& json, AnimationData& data);
 
-}
+}  // namespace loki::anim

@@ -34,4 +34,4 @@ class Sprite : public sf::Drawable, public sf::Transformable {
   std::unique_ptr<anim::Animator<sf::Sprite>> animator;
 };
 
-}
+}  // namespace loki::sprites

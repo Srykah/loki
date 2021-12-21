@@ -27,4 +27,4 @@ struct Style {
   [[nodiscard]] sf::Uint32 toSFMLWindowStyle() const;
 };
 
-}
+}  // namespace loki::window

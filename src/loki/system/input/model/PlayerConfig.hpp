@@ -11,7 +11,7 @@ namespace loki::input {
 
 struct PlayerConfig {
   std::string config;
-  int joystickId = -1; // -1 means keyboard
+  int joystickId = -1;  // -1 means keyboard
 };
 
-}
+}  // namespace loki::input

@@ -27,7 +27,8 @@ class TileLayerView : public LayerView {
   friend class MapView;
 
  public:
-  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target,
+            sf::RenderStates states = sf::RenderStates()) const override;
   void update(const sf::Time& delta);
 
  private:

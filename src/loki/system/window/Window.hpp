@@ -31,7 +31,8 @@ class Window {
   bool pollEvent(sf::Event& event);
 
   void clear(sf::Color color = sf::Color::Black);
-  void draw(const sf::Drawable& drawable, sf::RenderStates states = sf::RenderStates());
+  void draw(const sf::Drawable& drawable,
+            sf::RenderStates states = sf::RenderStates());
   void display();
 
   [[nodiscard]] bool isOpen() const { return window.isOpen(); }

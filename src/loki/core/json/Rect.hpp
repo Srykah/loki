@@ -13,11 +13,11 @@ namespace nlohmann {
 template <typename T>
 struct adl_serializer<sf::Rect<T>> {
   static void to_json(json& j, const sf::Rect<T>& rect) {
-    j = json {
-        { "left", rect.left },
-        { "top", rect.top },
-        { "width", rect.width },
-        { "height", rect.height },
+    j = json{
+        {"left", rect.left},
+        {"top", rect.top},
+        {"width", rect.width},
+        {"height", rect.height},
     };
   }
 

@@ -13,14 +13,14 @@
 namespace loki::tiles {
 
 class ObjectLayerView : public LayerView {
-
  private:
   ObjectLayerView(const MapView& parent, int layerId);
   friend class MapView;
 
  public:
-  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
-  void update(const sf::Time& delta) override {};
+  void draw(sf::RenderTarget& target,
+            sf::RenderStates states = sf::RenderStates()) const override;
+  void update(const sf::Time& delta) override{};
 
  private:
   const ObjectLayerData& layerData;
@@ -30,5 +30,4 @@ class ObjectLayerView : public LayerView {
   void initObjects();
 };
 
-}
-
+}  // namespace loki::tiles

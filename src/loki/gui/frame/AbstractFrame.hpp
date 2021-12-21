@@ -15,4 +15,4 @@ class AbstractFrame : public sf::Drawable, public sf::Transformable {
   virtual sf::FloatRect getInternalBounds() const = 0;
 };
 
-}
+}  // namespace loki::gui

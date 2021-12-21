@@ -26,4 +26,4 @@ struct TileData {
   PropertyMap properties;
   std::optional<std::array<int, 4>> terrain;
 };
-}
+}  // namespace loki::tiles

@@ -31,8 +31,10 @@ inline void to_json(nlohmann::json& nlohmann_json_j,
 
 inline void from_json(const nlohmann::json& nlohmann_json_j,
                       Keyframe& nlohmann_json_t) {
-#define LOKI_GET_OPTIONAL_FIELD(field) \
-  nlohmann_json_t.field = nlohmann_json_j.value<decltype(nlohmann_json_t.field)>(#field, std::nullopt)
+#define LOKI_GET_OPTIONAL_FIELD(field)                               \
+  nlohmann_json_t.field =                                            \
+      nlohmann_json_j.value<decltype(nlohmann_json_t.field)>(#field, \
+                                                             std::nullopt)
   LOKI_GET_OPTIONAL_FIELD(origin);
   LOKI_GET_OPTIONAL_FIELD(position);
   LOKI_GET_OPTIONAL_FIELD(rotation);
@@ -42,4 +44,4 @@ inline void from_json(const nlohmann::json& nlohmann_json_j,
 #undef LOKI_GET_OPTIONAL_FIELD
 }
 
-}
+}  // namespace loki::anim

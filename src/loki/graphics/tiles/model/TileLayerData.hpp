@@ -23,4 +23,4 @@ struct TileLayerData {
   bool visible;
 };
 
-}
+}  // namespace loki::tiles

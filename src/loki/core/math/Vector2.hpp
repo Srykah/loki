@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <cmath>
 #include <SFML/System/Vector2.hpp>
+#include <cmath>
 
 namespace loki::math {
 
@@ -69,12 +69,12 @@ auto compMax(const sf::Vector2<T>& a, const sf::Vector2<U>& b) {
 
 template <class T>
 sf::Vector2<T> cw90(const sf::Vector2<T>& a) {
-  return { a.y, -a.x };
+  return {a.y, -a.x};
 }
 
 template <class T>
 sf::Vector2<T> ccw90(const sf::Vector2<T>& a) {
-  return { -a.y, a.x };
+  return {-a.y, a.x};
 }
 
 // clamping
@@ -89,4 +89,4 @@ T maxCoord(const sf::Vector2<T>& a) {
   return std::max(a.x, a.y);
 }
 
-}
+}  // namespace loki::math

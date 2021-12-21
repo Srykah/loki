@@ -16,7 +16,7 @@ sf::Vector2f getOrigin(T& animated) {
   if constexpr (common::is_detected_as_true<impl::has_getOrigin, T>) {
     return animated.getOrigin();
   }
-  return sf::Vector2f {};
+  return sf::Vector2f{};
 }
 
 template <typename T>
@@ -33,7 +33,7 @@ sf::Vector2f getPosition(T& animated) {
   if constexpr (common::is_detected_as_true<impl::has_getPosition, T>) {
     return animated.getPosition();
   }
-  return sf::Vector2f {};
+  return sf::Vector2f{};
 }
 
 template <typename T>
@@ -67,7 +67,7 @@ sf::Vector2f getScale(T& animated) {
   if constexpr (common::is_detected_as_true<impl::has_getScale, T>) {
     return animated.getScale();
   }
-  return sf::Vector2f {};
+  return sf::Vector2f{};
 }
 
 template <typename T>
@@ -86,7 +86,7 @@ sf::Color getColor(T& animated) {
   } else if constexpr (common::is_detected_as_true<impl::has_getColor, T>) {
     return animated.getColor();
   }
-  return sf::Color {};
+  return sf::Color{};
 }
 
 template <typename T>
@@ -105,7 +105,7 @@ sf::IntRect getTextureRect(T& animated) {
   if constexpr (common::is_detected_as_true<impl::has_getTextureRect, T>) {
     return animated.getTextureRect();
   }
-  return sf::IntRect {};
+  return sf::IntRect{};
 }
 
 template <typename T>
@@ -115,4 +115,4 @@ void setTextureRect(T& animated, sf::IntRect textureRect) {
   }
 }
 
-} // end namespace loki::anim;
+}  // namespace loki::anim
