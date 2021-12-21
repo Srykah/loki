@@ -28,16 +28,15 @@ struct nonesuch {
 
 #include "impl/is_detected.hxx"
 
-template <template<class...> class Op, class... Args>
+template <template <class...> class Op, class... Args>
 constexpr bool is_detected = impl::detector<void, Op, Args...>::value;
 
-template <template<class...> class Op, class... Args>
+template <template <class...> class Op, class... Args>
 using detected_t = typename impl::detector<void, Op, Args...>::type;
 
-template <template<class...> class Op, class... Args>
-constexpr bool is_detected_as_true = std::conjunction_v<
-    impl::detector<void, Op, Args...>,
-    detected_t<Op, Args...>
->;
+template <template <class...> class Op, class... Args>
+constexpr bool is_detected_as_true =
+    std::conjunction_v<impl::detector<void, Op, Args...>,
+                       detected_t<Op, Args...> >;
 
-} // end namespace loki::common;
+}  // namespace loki::common

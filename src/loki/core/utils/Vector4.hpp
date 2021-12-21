@@ -49,6 +49,6 @@ sf::Color toColor(const Vector4<T>& v);
 using Vector4f = Vector4<float>;
 using Vector4i = Vector4<int>;
 
-}
+}  // namespace loki::common
 
 #include "impl/Vector4.hxx"

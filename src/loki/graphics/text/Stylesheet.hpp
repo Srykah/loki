@@ -5,18 +5,20 @@
  */
 #pragma once
 
+#include <SFML/System/String.hpp>
 #include <filesystem>
 #include <nlohmann/json.hpp>
-#include <SFML/System/String.hpp>
 #include "AnimatedTextStyle.hpp"
 
 namespace loki::text {
 
 class Stylesheet {
  public:
-  void setStyle(const sf::String& styleName, const AnimatedTextStyle& defaultStyle);
+  void setStyle(const sf::String& styleName,
+                const AnimatedTextStyle& defaultStyle);
   void setDefaultStyle(const AnimatedTextStyle& defaultStyle);
-  [[nodiscard]] const AnimatedTextStyle& getStyle(const sf::String& styleName) const;
+  [[nodiscard]] const AnimatedTextStyle& getStyle(
+      const sf::String& styleName) const;
   [[nodiscard]] const AnimatedTextStyle& getDefaultStyle() const;
 
   [[nodiscard]] AnimatedTextStyle getNewStyleFromBase(

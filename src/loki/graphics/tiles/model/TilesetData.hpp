@@ -39,4 +39,4 @@ struct TilesetData {
   std::map<int, TileData> tiles;
   std::map<int, TerrainData> terrains;
 };
-}
+}  // namespace loki::tiles

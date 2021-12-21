@@ -11,8 +11,7 @@ AnimatedGlyph::AnimatedGlyph(const sf::Glyph& glyph,
                              const AnimatedTextStyle& style,
                              common::VertexArrayIterator vaIt,
                              float x)
-: style(style)
-, vaIt(vaIt) {
+    : style(style), vaIt(vaIt) {
   initBasePos(glyph, x);
   initTexRect(glyph);
   if (style.appear.has_value()) {
@@ -23,10 +22,12 @@ AnimatedGlyph::AnimatedGlyph(const sf::Glyph& glyph,
   }
 }
 
-void AnimatedGlyph::initBasePos(const sf::Glyph& glyph,
-                                float x) {
+void AnimatedGlyph::initBasePos(const sf::Glyph& glyph, float x) {
   float padding = 1.0;
-  float shear = (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic) ? 0.209f : 0.f;
+  float shear =
+      (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic)
+          ? 0.209f
+          : 0.f;
 
   float left = glyph.bounds.left - padding;
   float top = glyph.bounds.top - padding;

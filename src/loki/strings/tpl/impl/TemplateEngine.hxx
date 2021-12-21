@@ -17,4 +17,4 @@ void TemplateEngine::addPtr(const std::string& name, const T* t) {
   refs.insert_or_assign(name, [t]() { return std::to_string(*t); });
 }
 
-}
+}  // namespace loki::tpl

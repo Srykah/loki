@@ -6,10 +6,10 @@
 #pragma once
 
 #include <SFML/Window.hpp>
+#include <filesystem>
 #include <map>
 #include <string>
 #include <variant>
-#include <filesystem>
 #include "InputType.hpp"
 
 namespace loki::input {
@@ -26,4 +26,4 @@ struct InputSettings {
   std::map<std::string, Config> configs;
 };
 
-}
+}  // namespace loki::input

@@ -14,4 +14,4 @@ ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
   }
 }
 
-}
+}  // namespace loki::tiles

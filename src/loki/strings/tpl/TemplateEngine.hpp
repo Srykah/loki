@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <string>
-#include <map>
 #include <functional>
+#include <map>
+#include <string>
 
 namespace loki::tpl {
 
@@ -17,7 +17,8 @@ class TemplateEngine {
   void addRef(const std::string& name, const T& t);
   template <class T>
   void addPtr(const std::string& name, const T* t);
-  void addLambdaRef(const std::string& name, const std::function<std::string()>& gen);
+  void addLambdaRef(const std::string& name,
+                    const std::function<std::string()>& gen);
 
   std::string fill(const std::string& tpl);
 
@@ -25,6 +26,6 @@ class TemplateEngine {
   std::map<std::string, std::function<std::string()>> refs;
 };
 
-}
+}  // namespace loki::tpl
 
 #include "impl/TemplateEngine.hxx"

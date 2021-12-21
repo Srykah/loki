@@ -18,7 +18,8 @@ class TextList : public sf::Drawable, public sf::Transformable {
   void setTextStyle(styles::TextStyle textStyle);
   void setSpacing(float spacing);
 
-  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target,
+            sf::RenderStates states = sf::RenderStates()) const override;
 
  private:
   styles::TextStyle textStyle;
@@ -27,4 +28,4 @@ class TextList : public sf::Drawable, public sf::Transformable {
   std::vector<sf::Text> items;
 };
 
-}
+}  // namespace loki::gui

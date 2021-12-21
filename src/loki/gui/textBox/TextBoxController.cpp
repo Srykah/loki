@@ -4,8 +4,8 @@
  * \copyright GNU GPL v3.0
  */
 #include "TextBoxController.hpp"
-#include "AbstractTextBox.hpp"
 #include <vector>
+#include "AbstractTextBox.hpp"
 
 namespace loki::gui {
 

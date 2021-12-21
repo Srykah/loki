@@ -23,7 +23,7 @@ struct Signal {
       return origin == other.origin && signalName == other.signalName;
     }
   } trigger;
-  std::any value = std::monostate {};
+  std::any value = std::monostate{};
 };
 
 }  // namespace loki::screens

@@ -34,4 +34,4 @@ class ScreenStack : public sf::Drawable {
   std::vector<std::unique_ptr<Screen>> stack;
 };
 
-}
+}  // namespace loki::screens

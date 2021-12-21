@@ -57,15 +57,14 @@ struct TextObjectData {
     BOTTOM,
   } verticalAlign = VerticalAlign::TOP;
 };
-using ObjectData = std::variant<
-    TileObjectData,
-    EllipseObjectData,
-    RectangleObjectData,
-    PointObjectData,
-    PolygonObjectData,
-    PolylineObjectData,
-    TextObjectData>;
+using ObjectData = std::variant<TileObjectData,
+                                EllipseObjectData,
+                                RectangleObjectData,
+                                PointObjectData,
+                                PolygonObjectData,
+                                PolylineObjectData,
+                                TextObjectData>;
 
 ObjectData loadObjectData(const nlohmann::json& jsonDatum);
 
-}
+}  // namespace loki::tiles

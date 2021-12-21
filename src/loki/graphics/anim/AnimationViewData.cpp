@@ -19,9 +19,9 @@ template <typename T>
 using LinIp = loki::common::LinearInterpolation<float, T>;
 
 template <typename T>
-using CubIp = loki::common::LinearInterpolation<float, T>; // todo
+using CubIp = loki::common::LinearInterpolation<float, T>;  // todo
 
-}
+}  // namespace
 
 namespace loki::anim {
 
@@ -48,18 +48,19 @@ AnimationViewData::AnimationViewData(const AnimationData& data)
     }                                                                          \
   }
 
-    TEST_ANIMATED_FEATURE(origin, ipOrigin, sf::Vector2f, sf::Vector2f {})
-    TEST_ANIMATED_FEATURE(position, ipPos, sf::Vector2f, sf::Vector2f {})
+    TEST_ANIMATED_FEATURE(origin, ipOrigin, sf::Vector2f, sf::Vector2f{})
+    TEST_ANIMATED_FEATURE(position, ipPos, sf::Vector2f, sf::Vector2f{})
     TEST_ANIMATED_FEATURE(rotation, ipRot, float, 0.f)
     TEST_ANIMATED_FEATURE(scale, ipScale, sf::Vector2f, sf::Vector2f(1.f, 1.f))
-    
+
 #undef TEST_ANIMATED_FEATURE
-    
+
     if (firstKeyframe.color.has_value() && lastKeyframe.color.has_value()) {
       IpPts<common::Vector4f> points;
       for (const auto& [time, keyframe] : data.keyframes) {
-        points.emplace_back(time, common::fromColor<float>(keyframe.color.value_or(
-                                      sf::Color::White)));
+        points.emplace_back(time,
+                            common::fromColor<float>(
+                                keyframe.color.value_or(sf::Color::White)));
       }
       if (data.interpolation == common::InterpolationType::NONE) {
         ipColor = std::make_shared<NoneIp<common::Vector4f>>(points);
@@ -69,11 +70,14 @@ AnimationViewData::AnimationViewData(const AnimationData& data)
         ipColor = std::make_shared<CubIp<common::Vector4f>>(points);
       }
     }
-    
-    if (firstKeyframe.textureRect.has_value() && lastKeyframe.textureRect.has_value()) {
+
+    if (firstKeyframe.textureRect.has_value() &&
+        lastKeyframe.textureRect.has_value()) {
       IpPts<common::Vector4f> points;
       for (const auto& [time, keyframe] : data.keyframes) {
-        points.emplace_back(time, common::fromRect<float>(keyframe.textureRect.value_or(sf::IntRect {})));
+        points.emplace_back(time,
+                            common::fromRect<float>(
+                                keyframe.textureRect.value_or(sf::IntRect{})));
       }
       if (data.interpolation == common::InterpolationType::NONE) {
         ipTexRect = std::make_shared<NoneIp<common::Vector4f>>(points);
@@ -144,4 +148,4 @@ sf::IntRect AnimationViewData::getTextureRect(sf::Time instant) const {
   return sf::IntRect{};
 }
 
-}
+}  // namespace loki::anim

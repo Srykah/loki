@@ -3,13 +3,13 @@ loki_create_lib(
   HEADERS
     IterAdapters.hpp
     Matrix.hpp
-    Matrix.inl
     Random.hpp
     TemplateHelpers.hpp
     Vector4.hpp
     VertexArrayIterator.hpp
   INTERNAL_HEADERS
     impl/is_detected.hxx
+    impl/Matrix.hxx
     impl/Vector4.hxx
   SOURCES
     Random.cpp

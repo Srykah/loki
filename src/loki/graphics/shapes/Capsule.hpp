@@ -21,4 +21,4 @@ class Capsule : public sf::Shape {
   std::size_t borderPointCount;
 };
 
-}
+}  // namespace loki::shapes

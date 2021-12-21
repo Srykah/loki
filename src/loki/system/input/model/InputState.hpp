@@ -15,11 +15,15 @@ struct InputState {
     ENDED = 0b10
   } status = Status::INACTIVE;
 
-  float value = 0.f; // [-1; 1]
+  float value = 0.f;  // [-1; 1]
 
-  [[nodiscard]] bool isActive() const { return status == Status::TRIGGERED || status == Status::ACTIVE; }
+  [[nodiscard]] bool isActive() const {
+    return status == Status::TRIGGERED || status == Status::ACTIVE;
+  }
   explicit operator bool() const { return isActive(); }
-  [[nodiscard]] bool hasChanged() const { return status == Status::TRIGGERED || status == Status::ENDED; }
+  [[nodiscard]] bool hasChanged() const {
+    return status == Status::TRIGGERED || status == Status::ENDED;
+  }
 };
 
-}
+}  // namespace loki::input

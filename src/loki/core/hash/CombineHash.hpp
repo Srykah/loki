@@ -10,15 +10,17 @@ constexpr std::size_t combineHashImpl(std::size_t seed) {
 }
 
 template <typename T, typename... Args>
-std::size_t combineHashImpl(std::size_t seed, const T& val, const Args&... args) {
-    return combineHashImpl(
-      seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 + (seed << 6u) + (seed >> 2u),
-      args...);
+std::size_t combineHashImpl(std::size_t seed,
+                            const T& val,
+                            const Args&... args) {
+  return combineHashImpl(seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 +
+                                    (seed << 6u) + (seed >> 2u),
+                         args...);
 }
 
 template <typename... Args>
 std::size_t combineHash(const Args&... args) {
-    return combineHashImpl(0ull, args...);
+  return combineHashImpl(0ull, args...);
 }
 /*
 /// \ingroup UTILS_COMBINEHASH
@@ -44,14 +46,16 @@ size_t combineHash(std::size_t seed) {
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Combines hash of `val` with `seed`
 ///
-/// Not _really_ necessary, but this way we don't hash again the seed at each iteration
+/// Not _really_ necessary, but this way we don't hash again the seed at each
+iteration
 /// \tparam T The type of `val`
 /// \param seed The seed of the hash
 /// \param val The value to hash
 /// \return A hash combination of `seed` and `val`
 template <typename T>
 size_t combineHash(size_t seed, const T& val) {
-    return seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 + (seed << 6u) + (seed >> 2u);
+    return seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 + (seed << 6u) +
+(seed >> 2u);
 }
 
 /// \ingroup UTILS_COMBINEHASH
@@ -71,7 +75,8 @@ size_t combineHash(const S& val1, const T& val2) {
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Combines hashes of all arguments
 ///
-/// Combines the first two values, then recursively combines the result with the rest.
+/// Combines the first two values, then recursively combines the result with the
+rest.
 /// **Order is important !**
 ///
 /// Internally, it will call the double-template form if no seed is provided,
@@ -91,24 +96,25 @@ size_t combineHash(const S& val1, const T& val2, const Args& ... args) {
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Hashes all arguments and combines them symmetrically
 ///
-/// In opposition to \ref combineHash, `combineHashSym` doesn't care about order between the arguments.
-/// \tparam Args The type of `args`
-/// \param args The values to hash
-/// \return A hash combination of the arguments where order doesn't matter
+/// In opposition to \ref combineHash, `combineHashSym` doesn't care about order
+/// between the arguments. \tparam Args The type of `args` \param args The
+/// values to hash \return A hash combination of the arguments where order
+/// doesn't matter
 template <typename... Args>
-size_t combineHashSym(const Args& ... args) {
-    return (std::hash<std::decay_t<decltype(args)>>()(args) + ...);
-    /*
-     * We use two advanced C++ techniques here :
-     * + The first is std::decay_t<decltype(args)> which is used to determine the "true" type
-     *   of the argument being treated (without const reference), so we can use the corresponding std::hash ;
-     * + The second is a fold operation (xxx + ...), which is a way to apply the addition operator + to
-     *   all hashes two-by-two.
-     * This way we ensure the operation is symmetrical in regards to the arguments given.
-     */
+size_t combineHashSym(const Args&... args) {
+  return (std::hash<std::decay_t<decltype(args)>>()(args) + ...);
+  /*
+   * We use two advanced C++ techniques here :
+   * + The first is std::decay_t<decltype(args)> which is used to determine the
+   * "true" type of the argument being treated (without const reference), so we
+   * can use the corresponding std::hash ;
+   * + The second is a fold operation (xxx + ...), which is a way to apply the
+   * addition operator + to all hashes two-by-two. This way we ensure the
+   * operation is symmetrical in regards to the arguments given.
+   */
 }
 
-} // end namespace loki::hash
+}  // end namespace loki::hash
 
 /**
  * \defgroup UTILS_COMBINEHASH Hash combination functions
@@ -128,8 +134,9 @@ size_t combineHashSym(const Args& ... args) {
  * size_t hashSym2 = combineHashSym(t, x, y, z);
  * \endcode
  *
- * \note For the normal version, **order is important :** `hash1` will most likely differ from `hash2`.
- * If you need to hash values so that order doesn't matter, use combineHashSym() (%zwj;l`hashSym1 == hashSym2` here).
+ * \note For the normal version, **order is important :** `hash1` will most
+ * likely differ from `hash2`. If you need to hash values so that order doesn't
+ * matter, use combineHashSym() (%zwj;l`hashSym1 == hashSym2` here).
  *
  * This header also defines functors for hashing `std::pair` and `std::tuple`,
  * so you can easiy use them as keys in `std::unordered_map` for example.

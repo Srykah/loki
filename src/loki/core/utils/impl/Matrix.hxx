@@ -16,8 +16,6 @@ Matrix<T>::Matrix(std::size_t width, std::size_t height, Iterator iterator)
 
 template <typename T>
 Matrix<T>::Matrix(std::size_t width, std::size_t height, const T& defaultValue)
-: width(width)
-, height(height)
-, data(width * height, defaultValue) {}
+    : width(width), height(height), data(width * height, defaultValue) {}
 
-}
+}  // namespace loki::common

@@ -4,8 +4,4 @@
  * \copyright GNU GPL v3.0
  */
 
-namespace loki::gui {
-
-
-
-}
+namespace loki::gui {}

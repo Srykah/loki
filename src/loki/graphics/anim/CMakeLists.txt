@@ -1,8 +1,8 @@
 loki_create_lib(
   NAME anim
   HEADERS
-    AnimationViewData.hpp
     AnimationData.hpp
+    AnimationViewData.hpp
     Animator.hpp
     Keyframe.hpp
   INTERNAL_HEADERS
@@ -10,8 +10,8 @@ loki_create_lib(
     impl/Animator.hxx
     impl/TemplateHelpers.hpp
   SOURCES
-    AnimationViewData.cpp
     AnimationData.cpp
+    AnimationViewData.cpp
   PUBLIC_DEPS
     loki::common
     loki::math

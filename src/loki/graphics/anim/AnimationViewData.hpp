@@ -37,4 +37,4 @@ class AnimationViewData {
   std::shared_ptr<common::InterpolationBase<float, common::Vector4f>> ipTexRect;
 };
 
-}
+}  // namespace loki::anim

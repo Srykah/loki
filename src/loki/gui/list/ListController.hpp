@@ -11,7 +11,6 @@ namespace loki::gui {
 
 class ListController : public Widget {
  public:
-
   void addElement();
 };
 

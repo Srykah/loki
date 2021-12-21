@@ -2,9 +2,10 @@ loki_create_lib(
   NAME screens
   HEADERS
     Screen.hpp
-    Screen.inl
     ScreenStack.hpp
     Signal.hpp
+	INTERNAL_HEADERS
+	  impl/Screen.hxx
   SOURCES
     Screen.cpp
     ScreenStack.cpp

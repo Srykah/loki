@@ -13,7 +13,6 @@ TextList::TextList(sf::Font& font) {}
 
 void TextList::setTextStyle(styles::TextStyle _textStyle) {
   this->textStyle = _textStyle;
-
 }
 
 void TextList::setSpacing(float spacing) {}
@@ -25,4 +24,4 @@ void TextList::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   }
 }
 
-}
+}  // namespace loki::gui

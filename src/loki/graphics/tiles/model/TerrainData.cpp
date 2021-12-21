@@ -20,4 +20,4 @@ bool TerrainData::load(const nlohmann::json& jsonData) {
   return true;
 }
 
-}
+}  // namespace loki::tiles

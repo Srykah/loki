@@ -53,4 +53,4 @@ sf::Vector2f RoundedRectangle::getQuadrantOrigin(std::size_t quadrant) const {
   }
 }
 
-}
+}  // namespace loki::shapes

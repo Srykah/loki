@@ -5,22 +5,22 @@
  */
 #pragma once
 
-#include <nlohmann/json.hpp>
 #include <SFML/Graphics/Color.hpp>
-#include <string>
 #include <charconv>
+#include <nlohmann/json.hpp>
+#include <string>
 
 namespace loki::common {
 
 inline std::string getHTMLColor(const sf::Color& color) {
-  char str[10] { '#' };  // automatically null-terminated
+  char str[10]{'#'};  // automatically null-terminated
   std::to_chars(str + 1, str + 3, color.r, 16);
   std::to_chars(str + 3, str + 5, color.g, 16);
   std::to_chars(str + 5, str + 7, color.b, 16);
   if (color.a != 255) {  // do not write alpha if fully opaque
     std::to_chars(str + 7, str + 9, color.a, 16);
   }
-  return std::string {str};
+  return std::string{str};
 }
 
 inline sf::Color parseHTMLColor(const std::string& htmlCode) {

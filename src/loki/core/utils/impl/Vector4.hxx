@@ -9,21 +9,17 @@ namespace loki::common {
 template <typename T>
 template <typename A, typename B, typename C, typename D>
 Vector4<T>::Vector4(A&& a, B&& b, C&& c, D&& d)
-    : a(std::forward<A>(a))
-    , b(std::forward<B>(b))
-    , c(std::forward<C>(c))
-    , d(std::forward<D>(d)) {}
+    : a(std::forward<A>(a)),
+      b(std::forward<B>(b)),
+      c(std::forward<C>(c)),
+      d(std::forward<D>(d)) {}
 
 template <typename A, typename B, typename C, typename D>
 Vector4(A a, B b, C c, D d) -> Vector4<std::common_type<A, B, C, D>>;
 
 template <typename T>
 template <typename U>
-Vector4<T>::Vector4(const Vector4<U>& v)
-: a(v.a)
-, b(v.b)
-, c(v.c)
-, d(v.d) {}
+Vector4<T>::Vector4(const Vector4<U>& v) : a(v.a), b(v.b), c(v.c), d(v.d) {}
 
 template <typename T>
 Vector4<T> Vector4<T>::operator-() const {
@@ -115,10 +111,8 @@ Vector4<T> fromColor(const sf::Color& color) {
 template <typename T>
 sf::Color toColor(const Vector4<T>& v) {
   return sf::Color(
-      std::clamp<sf::Uint8>(v.a, 0, 255),
-      std::clamp<sf::Uint8>(v.b, 0, 255),
-      std::clamp<sf::Uint8>(v.c, 0, 255),
-      std::clamp<sf::Uint8>(v.d, 0, 255));
+      std::clamp<sf::Uint8>(v.a, 0, 255), std::clamp<sf::Uint8>(v.b, 0, 255),
+      std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
 }
 
-}
+}  // namespace loki::common

@@ -15,4 +15,4 @@ struct TextAnimationViewData : public anim::AnimationViewData {
   sf::Time dt;
 };
 
-}
+}  // namespace loki::text
