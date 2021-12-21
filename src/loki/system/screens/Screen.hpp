@@ -50,4 +50,4 @@ class Screen {
 
 }  // namespace loki::screens
 
-#include "Screen.inl"
+#include "impl/Screen.hxx"

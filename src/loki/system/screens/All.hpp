@@ -6,6 +6,5 @@
 #pragma once
 
 #include "Screen.hpp"
-#include "Screen.inl"
 #include "ScreenStack.hpp"
 #include "Signal.hpp"

@@ -16,12 +16,12 @@ using SecondPointedType =
     typename std::iterator_traits<Iter>::value_type::second_type;
 
 template <class Container>
-using FirstContainedType = FirstPointedType<decltype(
-    std::begin(std::declval<std::decay<Container>>()))>;
+using FirstContainedType = FirstPointedType<decltype(std::begin(
+    std::declval<std::decay<Container>>()))>;
 
 template <class Container>
-using SecondContainedType = SecondPointedType<decltype(
-    std::begin(std::declval<std::decay<Container>>()))>;
+using SecondContainedType = SecondPointedType<decltype(std::begin(
+    std::declval<std::decay<Container>>()))>;
 
 // NoneInterpolation
 

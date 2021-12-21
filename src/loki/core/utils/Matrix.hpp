@@ -44,4 +44,4 @@ class Matrix {
 
 }  // namespace loki::common
 
-#include "Matrix.inl"
+#include "impl/Matrix.hxx"
