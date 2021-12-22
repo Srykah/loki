@@ -10,6 +10,7 @@ loki_create_lib(
   INTERNAL_HEADERS
     impl/is_detected.hxx
     impl/Matrix.hxx
+    impl/Random.hxx
     impl/Vector4.hxx
   SOURCES
     Random.cpp
