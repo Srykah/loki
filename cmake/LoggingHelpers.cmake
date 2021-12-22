@@ -1,4 +1,6 @@
-set(LOKI_LOG_CMAKE_CONFIG ON CACHE BOOL "Log useful information")
+set(LOKI_LOG_CMAKE_CONFIG
+    ON
+    CACHE BOOL "Log useful information")
 
 include(CMakePrintHelpers)
 function(loki_print_variables_with_pattern pattern)

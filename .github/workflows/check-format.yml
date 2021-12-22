@@ -20,3 +20,6 @@ jobs:
           extensions: 'hpp,hxx,cpp'
           clangFormatVersion: 13
           style: file
+      - uses: PuneetMatharu/cmake-format-lint-action@v1.0.0
+        with:
+          args: --check

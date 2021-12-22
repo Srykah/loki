@@ -1,32 +1,26 @@
 loki_create_lib(
   NAME tiles
-  HEADERS
-    model/MapData.hpp
-    model/ObjectData.hpp
-    model/ObjectLayerData.hpp
-    model/Property.hpp
-    model/TerrainData.hpp
-    model/TileData.hpp
-    model/TileLayerData.hpp
-    model/TilesetData.hpp
-    view/LayerView.hpp
-    view/MapView.hpp
-    view/ObjectLayerView.hpp
-    view/TileLayerView.hpp
-  SOURCES
-    model/MapData.cpp
-    model/ObjectData.cpp
-    model/ObjectLayerData.cpp
-    model/Property.cpp
-    model/TerrainData.cpp
-    model/TileData.cpp
-    model/TileLayerData.cpp
-    model/TilesetData.cpp
-    view/MapView.cpp
-    view/ObjectLayerView.cpp
-    view/TileLayerView.cpp
-  PUBLIC_DEPS
-    loki::common
-    sfml-graphics
-    nlohmann_json::nlohmann_json
-)
+  HEADERS model/MapData.hpp
+          model/ObjectData.hpp
+          model/ObjectLayerData.hpp
+          model/Property.hpp
+          model/TerrainData.hpp
+          model/TileData.hpp
+          model/TileLayerData.hpp
+          model/TilesetData.hpp
+          view/LayerView.hpp
+          view/MapView.hpp
+          view/ObjectLayerView.hpp
+          view/TileLayerView.hpp
+  SOURCES model/MapData.cpp
+          model/ObjectData.cpp
+          model/ObjectLayerData.cpp
+          model/Property.cpp
+          model/TerrainData.cpp
+          model/TileData.cpp
+          model/TileLayerData.cpp
+          model/TilesetData.cpp
+          view/MapView.cpp
+          view/ObjectLayerView.cpp
+          view/TileLayerView.cpp
+  PUBLIC_DEPS loki::common sfml-graphics nlohmann_json::nlohmann_json)

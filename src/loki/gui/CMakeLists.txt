@@ -1,28 +1,20 @@
 loki_create_lib(
   NAME gui
-  HEADERS
-    base/Widget.hpp
-    frame/AbstractFrame.hpp
-    frame/RectangleShapeFrame.hpp
-    list/ListController.hpp
-    list/TextList.hpp
-    textBox/AbstractTextBox.hpp
-    textBox/EventTextBoxController.hpp
-    textBox/TextBox.hpp
-    textBox/TextBoxController.hpp
-  SOURCES
-    base/Widget.cpp
-    frame/AbstractFrame.cpp
-    frame/RectangleShapeFrame.cpp
-    list/ListController.cpp
-    list/TextList.cpp
-    textBox/EventTextBoxController.cpp
-    textBox/TextBox.cpp
-    textBox/TextBoxController.cpp
-  PUBLIC_DEPS
-    loki::styles
-    loki::common
-    sfml-graphics
-    sfml-window
-    sfml-system
-)
+  HEADERS base/Widget.hpp
+          frame/AbstractFrame.hpp
+          frame/RectangleShapeFrame.hpp
+          list/ListController.hpp
+          list/TextList.hpp
+          textBox/AbstractTextBox.hpp
+          textBox/EventTextBoxController.hpp
+          textBox/TextBox.hpp
+          textBox/TextBoxController.hpp
+  SOURCES base/Widget.cpp
+          frame/AbstractFrame.cpp
+          frame/RectangleShapeFrame.cpp
+          list/ListController.cpp
+          list/TextList.cpp
+          textBox/EventTextBoxController.cpp
+          textBox/TextBox.cpp
+          textBox/TextBoxController.cpp
+  PUBLIC_DEPS loki::styles loki::common sfml-graphics sfml-window sfml-system)
