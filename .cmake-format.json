@@ -1,0 +1,84 @@
+{
+  "parse": {
+    "additional_commands": {
+      "loki_add_lib_prefix": {
+        "pargs": 1
+      },
+      "loki_configure_all_hpp": {
+        "kwargs": {
+          "HEADERS": {
+            "pargs": {
+              "nargs": "+",
+              "tags": ["file-list"]
+            }
+          }
+        }
+      },
+      "loki_create_all_target": {
+        "pargs": 0
+      },
+      "loki_create_lib": {
+        "pargs": {
+          "nargs": 0,
+          "flags": [
+            "INTERFACE"
+          ]
+        },
+        "kwargs": {
+          "NAME": 1,
+          "HEADERS": {
+            "pargs": {
+              "nargs": "+",
+              "tags": ["file-list"]
+            }
+          },
+          "INTERNAL_HEADERS": {
+            "pargs": {
+              "nargs": "+",
+              "tags": ["file-list"]
+            }
+          },
+          "SOURCES": {
+            "pargs": {
+              "nargs": "+",
+              "tags": ["file-list"]
+            }
+          },
+          "PUBLIC_DEPS": "+",
+          "INTERFACE_DEPS": "+",
+          "PRIVATE_DEPS": "+"
+        }
+      },
+      "loki_find_all_deps": {
+        "pargs": 1
+      },
+      "loki_find_dep": {
+        "pargs": 3
+      },
+      "loki_print_variables": {
+        "pargs": 1
+      },
+      "loki_print_variables_with_pattern": {
+        "pargs": 1
+      },
+      "loki_target_install_files": {
+        "pargs": 1,
+        "kwargs": {
+          "FILES": {
+            "pargs": {
+              "nargs": "+",
+              "tags": ["file-list"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "format": {
+    "line_width": 120,
+    "line_ending": "auto",
+    "keyword_case": "upper",
+    "enable_sort": true,
+    "autosort": true
+  }
+}

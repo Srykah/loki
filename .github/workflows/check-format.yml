@@ -9,7 +9,16 @@ on:
       - ready_for_review
 
 jobs:
-  check-format:
+  check-cmake-format:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: Srykah/cmake-format-lint-action@v0.1
+        with:
+          args: --check
+
+  check-clang-format:
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
