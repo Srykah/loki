@@ -69,5 +69,7 @@ endfunction()
 function(loki_create_all_target)
   add_library(all_libs INTERFACE)
   add_library(loki::all_libs ALIAS all_libs)
-  install(TARGETS all_libs EXPORT loki_targets)
+  install(
+    TARGETS all_libs
+    EXPORT loki_targets)
 endfunction()
