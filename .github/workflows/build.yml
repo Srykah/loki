@@ -16,9 +16,10 @@ jobs:
       - run: sudo apt-get update
       - name: Install cmake
         run: sudo apt-get install -y cmake
+      - name: Install SFML deps
+        run: sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
       - name: Install SFML
         run: |
-          sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
           git clone https://github.com/SFML/SFML.git -b 2.5.1 --depth 1
           cd SFML && mkdir install && mkdir build && cd build
           cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/SFML/install"
