@@ -18,22 +18,22 @@ jobs:
       - name: Install SFML
         run: sudo apt-get install -y libsfml-audio2.5 libsfml-graphics2.5 libsfml-network2.5 libsfml-system2.5 libsfml-window2.5
       - name: Download imgui
-        run: git clone github.com/ocornut/imgui -b v1.86 --depth 1
+        run: git clone https://github.com/ocornut/imgui.git -b v1.86 --depth 1
       - name: Install imgui-sfml
         run: |
-          git clone github.com/eliasdaler/imgui-sfml -b v2.5 --depth 1
+          git clone https://github.com/eliasdaler/imgui-sfml.git -b v2.5 --depth 1
           cd imgui-sfml && mkdir build && cd build
           cmake .. -DIMGUI_DIR=~/imgui
           sudo cmake --build . --target install
       - name: Install nlohmann/json
         run: |
-          git clone github.com/nlohmann/json -b v3.10.5 --depth 1
+          git clone https://github.com/nlohmann/json.git -b v3.10.5 --depth 1
           cd json && mkdir build && cd build
           cmake ..
           sudo cmake --build . --target install
       - name: Install fmt
         run: |
-          git clone github.com/fmtlib/fmt -b 8.1.1 --depth 1
+          git clone https://github.com/fmtlib/fmt.git -b 8.1.1 --depth 1
           cd fmt && mkdir build && cd build
           cmake ..
           sudo cmake --build . --target install
