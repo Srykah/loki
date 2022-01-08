@@ -16,26 +16,31 @@ jobs:
       - name: Install cmake
         run: sudo apt-get install -y cmake
       - name: Install SFML
-        run: sudo apt-get install -y libsfml-audio2.5 libsfml-graphics2.5 libsfml-network2.5 libsfml-system2.5 libsfml-window2.5
+        run: |
+          sudo apt-get install -y libasyncns0 libflac8 libopenal-data libopenal1 libpulse0 libsndfile1 libsndio7.0 libvorbisenc2
+          git clone https://github.com/SFML/SFML.git -b v2.5 --depth 1
+          cd SFML && mkdir install && mkdir build && cd build
+          cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/SFML/install"
+          sudo cmake --build . --target install
       - name: Download imgui
         run: git clone https://github.com/ocornut/imgui.git -b v1.86 --depth 1
       - name: Install imgui-sfml
         run: |
           git clone https://github.com/eliasdaler/imgui-sfml.git -b v2.5 --depth 1
-          cd imgui-sfml && mkdir build && cd build
-          cmake .. -DIMGUI_DIR=~/imgui
+          cd imgui-sfml && mkdir install && mkdir build && cd build
+          cmake .. -DSFML_DIR="~/SFML/install" -DImGui_DIR="~/imgui" -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/imgui-sfml/install"
           sudo cmake --build . --target install
       - name: Install nlohmann/json
         run: |
           git clone https://github.com/nlohmann/json.git -b v3.10.5 --depth 1
-          cd json && mkdir build && cd build
-          cmake ..
+          cd json && mkdir install && mkdir build && cd build
+          cmake .. -DCMAKE_INSTALL_DIR="~/json/install"
           sudo cmake --build . --target install
       - name: Install fmt
         run: |
           git clone https://github.com/fmtlib/fmt.git -b 8.1.1 --depth 1
-          cd fmt && mkdir build && cd build
-          cmake ..
+          cd fmt && mkdir install && mkdir build && cd build
+          cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/fmt/install"
           sudo cmake --build . --target install
       - name: Checkout loki
         uses: actions/checkout@v2
@@ -43,6 +48,6 @@ jobs:
           fetch-depth: 1
       - name: Configure and build
         run: |
-          cd loki && mkdir build && cd build
-          cmake ..
+          cd loki && mkdir install && mkdir build && cd build
+          cmake .. -DSFML_DIR="~/SFML/install" -DImGui_DIR="~/imgui" -DImGui_SFML_DIR="~/imgui-sfml/install" -Dnlohmann_json_DIR="~/json/install" -Dfmt_DIR="~/fmt/install" -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/loki/install"
           cmake --build . --target install
