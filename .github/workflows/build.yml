@@ -1,0 +1,48 @@
+name: build
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+jobs:
+  build-linux:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cmake
+        run: sudo apt-get install -y cmake
+      - name: Install SFML
+        run: sudo apt-get install -y libsfml-audio2.5 libsfml-graphics2.5 libsfml-network2.5 libsfml-system2.5 libsfml-window2.5
+      - name: Download imgui
+        run: git clone github.com/ocornut/imgui -b v1.86 --depth 1
+      - name: Install imgui-sfml
+        run: |
+          git clone github.com/eliasdaler/imgui-sfml -b v2.5 --depth 1
+          cd imgui-sfml && mkdir build && cd build
+          cmake .. -DIMGUI_DIR=~/imgui
+          sudo cmake --build . --target install
+      - name: Install nlohmann/json
+        run: |
+          git clone github.com/nlohmann/json -b v3.10.5 --depth 1
+          cd json && mkdir build && cd build
+          cmake ..
+          sudo cmake --build . --target install
+      - name: Install fmt
+        run: |
+          git clone github.com/fmtlib/fmt -b 8.1.1 --depth 1
+          cd fmt && mkdir build && cd build
+          cmake ..
+          sudo cmake --build . --target install
+      - name: Checkout loki
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Configure and build
+        run: |
+          cd loki && mkdir build && cd build
+          cmake ..
+          cmake --build . --target install
