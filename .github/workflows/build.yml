@@ -18,7 +18,7 @@ jobs:
       - name: Install SFML
         run: |
           sudo apt-get install -y libasyncns0 libflac8 libopenal-data libopenal1 libpulse0 libsndfile1 libsndio7.0 libvorbisenc2
-          git clone https://github.com/SFML/SFML.git -b v2.5 --depth 1
+          git clone https://github.com/SFML/SFML.git -b 2.5.1 --depth 1
           cd SFML && mkdir install && mkdir build && cd build
           cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/SFML/install"
           sudo cmake --build . --target install
