@@ -18,15 +18,13 @@ loki_create_lib(
     model/ObjectData.cpp
     model/ObjectLayerData.cpp
     model/Property.cpp
-    model/TerrainData.cpp
     model/TileData.cpp
-    model/TileLayerData.cpp
     model/TilesetData.cpp
     view/MapView.cpp
     view/ObjectLayerView.cpp
     view/TileLayerView.cpp
   PUBLIC_DEPS
-    loki::common
+    loki::utils
     sfml-graphics
     nlohmann_json::nlohmann_json
 )

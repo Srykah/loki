@@ -20,7 +20,7 @@ class ScreenStack : public sf::Drawable {
  public:
   ~ScreenStack() override;
 
-  void push(std::unique_ptr<Screen> statePtr);
+  void push(std::unique_ptr<Screen>&& statePtr);
   void close(const Screen* screen);
   void closeAbove(const Screen* screen);
   void clear();

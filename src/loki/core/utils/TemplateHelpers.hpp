@@ -5,7 +5,7 @@
  */
 #pragma once
 
-namespace loki::common {
+namespace loki::inline utils {
 
 struct true_type {
   static constexpr bool value = true;

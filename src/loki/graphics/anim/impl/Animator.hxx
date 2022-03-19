@@ -4,8 +4,8 @@
  * \copyright GNU GPL v3.0
  */
 
-#include <loki/core/math/Vector2.hpp>
 #include <loki/graphics/anim/Animator.hpp>
+#include <loki/core/math/Vector2.hpp>
 
 #include "ADLHelpers.hpp"
 #include "TemplateHelpers.hpp"

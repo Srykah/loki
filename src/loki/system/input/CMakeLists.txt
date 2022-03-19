@@ -11,6 +11,6 @@ loki_create_lib(
     model/InputType.cpp
     service/EventHandler.cpp
   PUBLIC_DEPS
-    loki::common
+    loki::utils
     sfml-window
 )

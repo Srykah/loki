@@ -8,7 +8,7 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
 
-namespace loki::common {
+namespace loki::inline utils {
 
 template <typename T>
 struct Vector4 {

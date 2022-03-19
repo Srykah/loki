@@ -14,8 +14,8 @@ namespace loki::states {
 struct Transition {
   Transition(StateIndex from,
              StateIndex to,
-             std::function<bool()> isActive,
-             std::function<void()> onTrigger = nullptr)
+             std::function<bool()>  isActive,
+             std::function<void()>  onTrigger = nullptr)
       : from(from),
         to(to),
         isActive(std::move(isActive)),

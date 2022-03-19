@@ -38,9 +38,10 @@ struct TextStyle {
   void applyTo(sf::Text& text) const;
 
   [[nodiscard]] float getSpaceWidth() const;
+  [[nodiscard]] float getLineOffset() const;
 
   TextStyle& overrideWith(const TextStyle& other);
   TextStyle cloneAndOverrideWith(const TextStyle& other) const;
 };
 
-}  // namespace loki::styles
+}  // namespace loki::gui

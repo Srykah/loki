@@ -7,31 +7,31 @@
 
 namespace loki::text {
 
-const AnimatedTextStyle& Stylesheet::getDefaultStyle() const {
-  return styles.at(".default");
-}
-AnimatedTextStyle Stylesheet::getNewStyleFromBase(
-    const AnimatedTextStyle& base,
-    const std::vector<sf::String>& styleNames) const {
-  AnimatedTextStyle copy(base);
-  for (const auto& styleName : styleNames) {
-    copy.overrideWith(getStyle(styleName));
-  }
-  return copy;
-}
-
 const AnimatedTextStyle& Stylesheet::getStyle(
-    const sf::String& styleName) const {
+    const std::string& styleName) const {
   return styles.at(styleName);
 }
 
-void Stylesheet::setStyle(const sf::String& styleName,
-                          const AnimatedTextStyle& defaultStyle) {
-  styles.emplace(styleName, defaultStyle);
+const AnimatedTextStyle& Stylesheet::getDefaultStyle() const {
+  return getStyle(".default");
+}
+
+void Stylesheet::setStyle(const std::string& styleName,
+                          const AnimatedTextStyle& style) {
+  styles.emplace(styleName, style);
 }
 
 void Stylesheet::setDefaultStyle(const AnimatedTextStyle& defaultStyle) {
   setStyle(".default", defaultStyle);
+}
+
+AnimatedTextStyle Stylesheet::getNewStyleFromBase(
+    AnimatedTextStyle base,
+    const std::vector<std::string>& styleNames) const {
+  for (const auto& styleName : styleNames) {
+    base.overrideWith(getStyle(styleName));
+  }
+  return base;
 }
 
 }  // namespace loki::text

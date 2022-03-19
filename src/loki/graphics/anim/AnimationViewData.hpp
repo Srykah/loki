@@ -29,12 +29,12 @@ class AnimationViewData {
  private:
   const sf::Time duration;
   const bool repeat;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipOrigin;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipPos;
-  std::shared_ptr<common::InterpolationBase<float, float>> ipRot;
-  std::shared_ptr<common::InterpolationBase<float, sf::Vector2f>> ipScale;
-  std::shared_ptr<common::InterpolationBase<float, common::Vector4f>> ipColor;
-  std::shared_ptr<common::InterpolationBase<float, common::Vector4f>> ipTexRect;
+  std::shared_ptr<math::InterpolationBase<float, sf::Vector2f>> ipOrigin;
+  std::shared_ptr<math::InterpolationBase<float, sf::Vector2f>> ipPos;
+  std::shared_ptr<math::InterpolationBase<float, float>> ipRot;
+  std::shared_ptr<math::InterpolationBase<float, sf::Vector2f>> ipScale;
+  std::shared_ptr<math::InterpolationBase<float, Vector4f>> ipColor;
+  std::shared_ptr<math::InterpolationBase<float, Vector4f>> ipTexRect;
 };
 
 }  // namespace loki::anim

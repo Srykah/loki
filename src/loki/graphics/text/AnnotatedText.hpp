@@ -14,12 +14,16 @@
 
 namespace loki::text {
 
+using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
+
 class AnnotatedText : public sf::Drawable, public sf::Transformable {
  public:
-  AnnotatedText() = default;
-  AnnotatedText(const sf::String& string, const Stylesheet& stylesheet);
+  explicit AnnotatedText() = default;
+  explicit AnnotatedText(const AnnotatedString& annotatedString) {
+    setAnnotatedString(annotatedString);
+  }
 
-  void setString(const sf::String& string, const Stylesheet& stylesheet);
+  void setAnnotatedString(const AnnotatedString& annotatedString);
 
   void update(sf::Time delta);
   void draw(sf::RenderTarget& target,
@@ -29,10 +33,6 @@ class AnnotatedText : public sf::Drawable, public sf::Transformable {
 
  private:
   std::vector<AnimatedText> blocks;
-  void closeBlock(sf::String::ConstIterator begin,
-                  sf::String::ConstIterator end,
-                  const AnimatedTextStyle& style,
-                  sf::Vector2f& position);
 };
 
 }  // namespace loki::text

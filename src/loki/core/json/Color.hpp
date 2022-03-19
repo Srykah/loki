@@ -10,7 +10,7 @@
 #include <nlohmann/json.hpp>
 #include <string>
 
-namespace loki::common {
+namespace loki::inline utils {
 
 inline std::string getHTMLColor(const sf::Color& color) {
   char str[10]{'#'};  // automatically null-terminated
@@ -41,12 +41,12 @@ namespace nlohmann {
 template <>
 struct adl_serializer<sf::Color> {
   static void to_json(json& j, const sf::Color& color) {
-    j = loki::common::getHTMLColor(color);
+    j = loki::getHTMLColor(color);
   }
 
   static void from_json(const json& j, sf::Color& color) {
     if (j.type() == detail::value_t::string) {
-      color = loki::common::parseHTMLColor(j.get<std::string>());
+      color = loki::parseHTMLColor(j.get<std::string>());
     }
   }
 };

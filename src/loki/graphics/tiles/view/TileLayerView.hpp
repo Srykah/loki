@@ -7,42 +7,37 @@
 
 #include <SFML/Graphics.hpp>
 #include <loki/core/utils/Matrix.hpp>
-#include "../model/TileLayerData.hpp"
-#include "../model/TilesetData.hpp"
-
-#include "LayerView.hpp"
+#include "loki/graphics/tiles/model/LayerData.hpp"
+#include "loki/graphics/tiles/model/TilesetData.hpp"
 
 namespace loki::tiles {
-class MapView;
 
-class TileLayerView : public LayerView {
+class TileLayerView : public sf::Drawable, public sf::Transformable {
  private:
-  struct TileViewData {
-    int frameIndex;
+  struct AnimatedTile {
+    int curFrame;
     sf::Time timeSinceLastFrame;
   };
 
- private:
-  TileLayerView(const MapView& parent, int layerId);
-  friend class MapView;
-
  public:
+  explicit TileLayerView(const TileLayerData& layerData,
+                         const TilesetData& tilesetData);
+
   void draw(sf::RenderTarget& target,
             sf::RenderStates states = sf::RenderStates()) const override;
   void update(const sf::Time& delta);
 
  private:
+  void initGrid();
   void initVertices(unsigned int x, unsigned int y);
   void setTile(int x, int y, int tileId);
+  void setTileTransparent(unsigned int x, unsigned int y);
 
  private:
   const TileLayerData& layerData;
-  sf::Vector2u gridSize;
   const TilesetData& tilesetData;
   sf::VertexArray vertices;
-  std::map<int, TileViewData> tileViewData;
-
- private:
-  void setTileTransparent(unsigned int x, unsigned int y);
+  std::map<int, AnimatedTile> animatedTiles;
 };
+
 }  // namespace loki::tiles

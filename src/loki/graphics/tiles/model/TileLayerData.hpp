@@ -13,14 +13,15 @@
 namespace loki::tiles {
 
 struct TileLayerData {
-  explicit TileLayerData(const nlohmann::json& layerData);
-
   int id;
   std::string name;
-  common::Matrix<int> data;
+  Matrix<int> data;
   PropertyMap properties;
   float opacity;
   bool visible;
 };
+
+void to_json(nlohmann::json& j, const TileLayerData& tld);
+void from_json(const nlohmann::json& j, TileLayerData& tld);
 
 }  // namespace loki::tiles

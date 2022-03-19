@@ -7,16 +7,16 @@
 
 #include <SFML/Graphics/VertexArray.hpp>
 
-namespace loki::common {
+namespace loki::inline utils {
 
 class VertexArrayIterator {
  public:
   VertexArrayIterator(sf::VertexArray& va, std::size_t index);
 
   VertexArrayIterator& operator++();
-  VertexArrayIterator operator++(int);
+  const VertexArrayIterator operator++(int);
   VertexArrayIterator& operator--();
-  VertexArrayIterator operator--(int);
+  const VertexArrayIterator operator--(int);
   VertexArrayIterator& operator+=(long long int x);
   VertexArrayIterator& operator-=(long long int x);
   [[nodiscard]] VertexArrayIterator operator+(long long int x) const;
@@ -39,9 +39,9 @@ class VertexArrayConstIterator {
   VertexArrayConstIterator(const sf::VertexArray& va, std::size_t index);
 
   VertexArrayConstIterator& operator++();
-  VertexArrayConstIterator operator++(int);
+  const VertexArrayConstIterator operator++(int);
   VertexArrayConstIterator& operator--();
-  VertexArrayConstIterator operator--(int);
+  const VertexArrayConstIterator operator--(int);
   VertexArrayConstIterator& operator+=(long long int x);
   VertexArrayConstIterator& operator-=(long long int x);
 
@@ -59,13 +59,13 @@ class VertexArrayConstIterator {
 
 namespace sf {
 
-loki::common::VertexArrayIterator begin(sf::VertexArray& va);
-loki::common::VertexArrayConstIterator begin(const sf::VertexArray& va);
-loki::common::VertexArrayConstIterator cbegin(sf::VertexArray& va);
-loki::common::VertexArrayConstIterator cbegin(const sf::VertexArray& va);
-loki::common::VertexArrayIterator end(sf::VertexArray& va);
-loki::common::VertexArrayConstIterator end(const sf::VertexArray& va);
-loki::common::VertexArrayConstIterator cend(sf::VertexArray& va);
-loki::common::VertexArrayConstIterator cend(const sf::VertexArray& va);
+loki::VertexArrayIterator begin(sf::VertexArray& va);
+loki::VertexArrayConstIterator begin(const sf::VertexArray& va);
+loki::VertexArrayConstIterator cbegin(sf::VertexArray& va);
+loki::VertexArrayConstIterator cbegin(const sf::VertexArray& va);
+loki::VertexArrayIterator end(sf::VertexArray& va);
+loki::VertexArrayConstIterator end(const sf::VertexArray& va);
+loki::VertexArrayConstIterator cend(sf::VertexArray& va);
+loki::VertexArrayConstIterator cend(const sf::VertexArray& va);
 
 }  // namespace sf

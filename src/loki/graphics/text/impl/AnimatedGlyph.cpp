@@ -9,7 +9,7 @@ namespace loki::text::impl {
 
 AnimatedGlyph::AnimatedGlyph(const sf::Glyph& glyph,
                              const AnimatedTextStyle& style,
-                             common::VertexArrayIterator vaIt,
+                             VertexArrayIterator vaIt,
                              float x)
     : style(style), vaIt(vaIt) {
   initBasePos(glyph, x);

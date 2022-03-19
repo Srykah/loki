@@ -7,63 +7,76 @@
 
 namespace loki::tiles {
 
-ObjectData loadObjectData(const nlohmann::json& jsonDatum) {
-  if (jsonDatum.contains("gid")) {
-    PropertyMap properties;
-    if (jsonDatum.contains("properties")) {
-      loadPropertyMap(properties, jsonDatum.at("properties"));
-    }
-    return TileObjectData{
-        jsonDatum.at("gid").get<int>(),
-        jsonDatum.at("name").get<std::string>(),
-        jsonDatum.at("type").get<std::string>(),
-        sf::Vector2f{
-            jsonDatum.at("x").get<float>(),
-            jsonDatum.at("y").get<float>(),
-        },
-        std::move(properties),
-    };
-  } else if (jsonDatum.value<bool>("ellipse", false)) {
-    return EllipseObjectData{
-        sf::FloatRect{
-            jsonDatum.at("x").get<float>(),
-            jsonDatum.at("y").get<float>(),
-            jsonDatum.at("width").get<float>(),
-            jsonDatum.at("height").get<float>(),
-        },
-        jsonDatum.value("rotation", 0.f),
-    };
-  } else if (jsonDatum.value<bool>("point", false)) {
-    return PointObjectData{
-        jsonDatum.value("name", std::string{}),
-        sf::Vector2f{jsonDatum.at("x").get<float>(),
-                     jsonDatum.at("y").get<float>()},
-    };
-  } else if (jsonDatum.contains("polygon")) {
-    PolygonObjectData polygonObjectData;
-    for (const auto& vertexData : std::as_const(jsonDatum.at("polygon"))) {
-      polygonObjectData.vertices.emplace_back(vertexData.at("x").get<float>(),
-                                              vertexData.at("y").get<float>());
-    }
-    return polygonObjectData;
-  } else if (jsonDatum.contains("polyline")) {
-    PolylineObjectData polylineObjectData;
-    for (const auto& vertexData : std::as_const(jsonDatum.at("polyline"))) {
-      polylineObjectData.vertices.emplace_back(vertexData.at("x").get<float>(),
-                                               vertexData.at("y").get<float>());
-    }
-    return polylineObjectData;
-  } else {
-    return RectangleObjectData{
-        sf::FloatRect{
-            jsonDatum.at("x").get<float>(),
-            jsonDatum.at("y").get<float>(),
-            jsonDatum.at("width").get<float>(),
-            jsonDatum.at("height").get<float>(),
-        },
-        jsonDatum.value("rotation", 0.f),
-    };
+// TileObjectData
+
+void from_json(const nlohmann::json& j, TileObjectData& tod) {
+  if (j.contains("properties")) {
+    j.at("properties").get_to(tod.properties);
   }
+  j.at("gid").get_to(tod.gid);
+  j.at("name").get_to(tod.name);
+  j.at("type").get_to(tod.type);
+  j.get_to(tod.position);
+}
+
+void to_json(nlohmann::json& j, const TileObjectData& tod) {
+  j = tod.position;  // keep first
+  if (!tod.properties.empty()) {
+    j["properties"] = tod.properties;
+  }
+  j["gid"] = tod.gid;
+  j["name"] = tod.name;
+  j["type"] = tod.type;
+}
+
+// EllipseObjectData
+
+void from_json(const nlohmann::json& j, EllipseObjectData& eod) {
+  j.get_to(eod.rect);
+  j.at("rotation").get_to(eod.rotation);
+}
+
+void to_json(nlohmann::json& j, const EllipseObjectData& eod) {
+  j = eod.rect;  // keep first
+  j["ellipse"] = true;
+  j["rotation"] = eod.rotation;
+}
+
+// RectangleObjectData
+
+void from_json(const nlohmann::json& j, RectangleObjectData& rod) {
+  j.get_to(rod.rect);
+  j.at("rotation").get_to(rod.rotation);
+}
+
+void to_json(nlohmann::json& j, const RectangleObjectData& rod) {
+  j = rod.rect;  // keep first
+  j["rotation"] = rod.rotation;
+}
+
+// PointObjectData
+
+void from_json(const nlohmann::json& j, PointObjectData& pod) {
+  j.get_to(pod.position);
+  j.at("name").get_to(pod.name);
+}
+
+void to_json(nlohmann::json& j, const PointObjectData& pod) {
+  j = pod.position;  // keep first
+  j["point"] = true;
+  j["name"] = pod.name;
+}
+
+// TextObjectData
+
+void from_json(const nlohmann::json& j, TextObjectData& tod) {
+  j.get_to(tod.rect);
+  j.at("textbutton").get_to(tod.text);
+}
+
+void to_json(nlohmann::json& j, const TextObjectData& tod) {
+  j = tod.rect;  // keep first
+  j["textbutton"] = tod.text;
 }
 
 }  // namespace loki::tiles

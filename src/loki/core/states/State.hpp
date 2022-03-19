@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <SFMl/System/Time.hpp>
+#include <SFML/System/Time.hpp>
 #include <functional>
 
 namespace loki::states {
@@ -16,4 +16,4 @@ struct State {
   std::function<void()> onLeave = nullptr;
 };
 
-}  // namespace loki::states
+}

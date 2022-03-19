@@ -13,7 +13,7 @@ loki_create_lib(
     AnimationData.cpp
     AnimationViewData.cpp
   PUBLIC_DEPS
-    loki::common
+    loki::utils
     loki::math
     loki::json
     sfml-graphics

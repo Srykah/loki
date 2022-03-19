@@ -4,18 +4,22 @@
  * \copyright GNU GPL v3.0
  */
 #pragma once
-#include <SFML/System/Time.hpp>
+
 #include <charconv>
-#include <loki/core/math/Interpolate.hpp>
+#include <SFML/System/Time.hpp>
 #include <nlohmann/json.hpp>
+#include <loki/core/math/Interpolate.hpp>
+
 #include "Keyframe.hpp"
 
 namespace loki::anim {
 
 struct AnimationData {
+  AnimationData();
+
   sf::Time duration;
   bool repeat;
-  common::InterpolationType interpolation;
+  std::map<Keyframe::Component, math::InterpolationType> interpolationTypes;
   std::map<float, Keyframe> keyframes;
 };
 

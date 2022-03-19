@@ -5,13 +5,20 @@
  */
 #pragma once
 
+#include <loki/core/res/JsonResources.hpp>
+#include <loki/core/res/ResourceHandle.hpp>
+#include <loki/core/res/SFMLResources.hpp>
+#include <loki/core/json/Vector2.hpp>
+#include <loki/core/json/Macros.hpp>
 #include <SFML/Graphics.hpp>
+#include <filesystem>
 #include "Property.hpp"
 #include "TerrainData.hpp"
 #include "TileData.hpp"
 
 namespace loki::tiles {
-enum struct ObjectAlignement {
+
+enum struct ObjectAlignment {
   UNSPECIFIED,
   TOP_LEFT,
   TOP,
@@ -24,19 +31,35 @@ enum struct ObjectAlignement {
   BOTTOM_RIGHT
 };
 
-struct TilesetData {
-  TilesetData() = default;
-  explicit TilesetData(const std::filesystem::path& path);
+NLOHMANN_JSON_SERIALIZE_ENUM(ObjectAlignment,
+                             {
+                                 {ObjectAlignment::UNSPECIFIED, nullptr},
+                                 {ObjectAlignment::TOP_LEFT, "topleft"},
+                                 {ObjectAlignment::TOP, "top"},
+                                 {ObjectAlignment::TOP_RIGHT, "topright"},
+                                 {ObjectAlignment::LEFT, "left"},
+                                 {ObjectAlignment::CENTER, "center"},
+                                 {ObjectAlignment::RIGHT, "right"},
+                                 {ObjectAlignment::BOTTOM_LEFT, "bottomleft"},
+                                 {ObjectAlignment::BOTTOM, "bottom"},
+                                 {ObjectAlignment::BOTTOM_RIGHT, "bottomright"},
+                             })
 
-  bool load(const std::filesystem::path& path);
-
-  sf::Texture texture;
+struct TilesetData : public res::JsonResource<TilesetData> {
+  res::ResourceHandle<res::TextureResource> texture;
   std::string name;
-  ObjectAlignement objectAlignement;
+  ObjectAlignment objectAlignment;
   PropertyMap properties;
   sf::Vector2u tileSize;
   sf::Vector2u dimensions;
   std::map<int, TileData> tiles;
   std::map<int, TerrainData> terrains;
+
+  LOKI_RES_JSONRESOURCE_CTOR_DTOR(TilesetData)
+  LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)
 };
+
+void from_json(const nlohmann::json& j, TilesetData& td);
+
+
 }  // namespace loki::tiles

@@ -10,39 +10,21 @@
 
 namespace loki::tiles {
 
-MapData::MapData(const std::filesystem::path& filePath,
-                 const TilesetLoader& tilesetLoader) {
-  load(filePath, tilesetLoader);
+void from_json(const nlohmann::json& j, MapData& md) {
+  for (const auto& tilesetData : std::as_const(j.at("tilesets"))) {
+    md.tilesets.emplace_back(md.getPath() / tilesetData.at("source").get<std::string>());
+  }
+  md.gridSize = sf::Vector2u{j.at("width").get<unsigned int>(),
+                          j.at("height").get<unsigned int>()};
+  for (const auto& layerData : j.at("layers")) {
+    layerData.get_to(md.layers.emplace_back());
+  }
+  if (j.contains("properties")) {
+    j.at("properties").get_to(md.properties);
+  }
+  if (j.contains("backgroundcolor")) {
+    j.at("backgroundcolor").get_to(md.backgroundColor);
+  }
 }
 
-bool MapData::load(const std::filesystem::path& filePath,
-                   const MapData::TilesetLoader& tilesetLoader) {
-  std::ifstream file(filePath);
-  nlohmann::json jsonData;
-  file >> jsonData;
-  for (const auto& tilesetData : std::as_const(jsonData.at("tilesets"))) {
-    auto tilesetFilepath = std::filesystem::path{
-        filePath.parent_path() / tilesetData.at("source").get<std::string>()};
-    tilesets.emplace_back(tilesetLoader(tilesetFilepath));
-  }
-  gridSize = sf::Vector2u{jsonData.at("width").get<unsigned int>(),
-                          jsonData.at("height").get<unsigned int>()};
-  for (const auto& layerData : std::as_const(jsonData.at("layers"))) {
-    if (layerData.at("type").get<std::string>() == "tilelayer") {
-      layers.emplace_back(TileLayerData{layerData});
-    } else if (layerData.at("type").get<std::string>() == "objectgroup") {
-      layers.emplace_back(ObjectLayerData{layerData});
-    }
-  }
-  if (jsonData.contains("properties")) {
-    loadPropertyMap(properties, jsonData.at("properties"));
-  }
-  if (jsonData.contains("backgroundcolor")) {
-    backgroundColor = common::parseHTMLColor(
-        jsonData.at("backgroundcolor").get<std::string>());
-  }
-
-  return true;
-}
-
-}  // namespace loki::tiles
+}  // namespace nlohmann

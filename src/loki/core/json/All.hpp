@@ -6,6 +6,7 @@
 #pragma once
 
 #include "Color.hpp"
+#include "Macros.hpp"
 #include "Optional.hpp"
 #include "Rect.hpp"
 #include "String.hpp"

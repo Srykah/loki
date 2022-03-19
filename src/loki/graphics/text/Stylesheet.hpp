@@ -5,28 +5,27 @@
  */
 #pragma once
 
-#include <SFML/System/String.hpp>
 #include <filesystem>
 #include <nlohmann/json.hpp>
+#include <string>
 #include "AnimatedTextStyle.hpp"
 
 namespace loki::text {
 
 class Stylesheet {
  public:
-  void setStyle(const sf::String& styleName,
-                const AnimatedTextStyle& defaultStyle);
+  void setStyle(const std::string& styleName, const AnimatedTextStyle& style);
   void setDefaultStyle(const AnimatedTextStyle& defaultStyle);
   [[nodiscard]] const AnimatedTextStyle& getStyle(
-      const sf::String& styleName) const;
+      const std::string& styleName) const;
   [[nodiscard]] const AnimatedTextStyle& getDefaultStyle() const;
 
   [[nodiscard]] AnimatedTextStyle getNewStyleFromBase(
-      const AnimatedTextStyle& base,
-      const std::vector<sf::String>& styleNames) const;
+      AnimatedTextStyle base,
+      const std::vector<std::string>& styleNames) const;
 
  private:
-  std::map<sf::String, AnimatedTextStyle> styles;
+  std::map<std::string, AnimatedTextStyle> styles;
 };
 
 void from_json(const nlohmann::json& json, Stylesheet& ss);

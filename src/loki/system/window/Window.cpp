@@ -16,7 +16,7 @@ Window::Window(sf::Vector2f renderSize,
                const sf::ContextSettings& settings,
                sf::Vector2u minimumSize)
     : Window(renderSize,
-             style.contains(Style::FULLSCREEN)
+             contains(style, Style::FULLSCREEN)
                  ? sf::VideoMode::getFullscreenModes()[0]
                  : sf::VideoMode(renderSize.x, renderSize.y),
              title,
@@ -30,7 +30,7 @@ Window::Window(sf::Vector2f renderSize,
                Style style,
                const sf::ContextSettings& settings,
                sf::Vector2u minimumSize)
-    : window(mode, title, style.toSFMLWindowStyle(), settings),
+    : window(mode, title, toSFMLWindowStyle(style), settings),
       renderSize(renderSize),
       minimumSize(minimumSize),
       style(style) {
@@ -39,9 +39,9 @@ Window::Window(sf::Vector2f renderSize,
 
 void Window::setView(sf::View view) {
   sf::Vector2f viewportSize{1.f, 1.f};
-  if (style.contains(Style::INTEGER_ZOOM_RATIO)) {
+  if (contains(style, Style::INTEGER_ZOOM_RATIO)) {
     viewportSize = getIntegerZoomViewportSize();
-  } else if (style.contains(Style::LETTERBOXED_ZOOM)) {
+  } else if (contains(style, Style::LETTERBOXED_ZOOM)) {
     viewportSize = getLetterboxedViewportSize();
   }
   sf::FloatRect viewport{sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f,

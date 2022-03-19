@@ -1,23 +1,25 @@
 loki_create_lib(
   NAME text
   HEADERS
-    AnimatedText.hpp
-    AnimatedTextStyle.hpp
-    AnnotatedText.hpp
-    Stylesheet.hpp
-    TextAnimationViewData.hpp
+  AnimatedText.hpp
+  AnimatedTextStyle.hpp
+  AnnotatedStringEngine.hpp
+  AnnotatedText.hpp
+  Stylesheet.hpp
+  TextAnimationViewData.hpp
   INTERNAL_HEADERS
-    impl/AnimatedGlyph.hpp
+  impl/AnimatedGlyph.hpp
   SOURCES
-    AnimatedText.cpp
-    AnimatedTextStyle.cpp
-    AnnotatedText.cpp
-    Stylesheet.cpp
-    TextAnimationViewData.cpp
-    impl/AnimatedGlyph.cpp
+  AnimatedText.cpp
+  AnimatedTextStyle.cpp
+  AnnotatedStringEngine.cpp
+  AnnotatedText.cpp
+  Stylesheet.cpp
+  TextAnimationViewData.cpp
+  impl/AnimatedGlyph.cpp
   PUBLIC_DEPS
-    sfml-graphics
-    loki::common
-    loki::anim
-    loki::styles
+  sfml-graphics
+  loki::utils
+  loki::anim
+  loki::styles
 )

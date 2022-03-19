@@ -97,6 +97,10 @@ float TextStyle::getSpaceWidth() const {
       .advance;
 }
 
+float TextStyle::getLineOffset() const {
+  return characterSize.value_or(30u) * lineSpacing.value_or(1.f);
+}
+
 TextStyle& TextStyle::overrideWith(const TextStyle& other) {
   if (other.characterSize.has_value()) {
     characterSize = *other.characterSize;
@@ -107,7 +111,7 @@ TextStyle& TextStyle::overrideWith(const TextStyle& other) {
   if (other.fillColor.has_value()) {
     fillColor = *other.fillColor;
   }
-  if (other.font.has_value() && *font) {
+  if (other.font.has_value() && other.font.value() != nullptr) {
     font = *other.font;
   }
   if (other.letterSpacing.has_value()) {

@@ -7,17 +7,16 @@
 
 namespace loki::sprites {
 
-Sprite::Sprite(const SpriteViewData& viewData, const sf::String& anim)
-    : viewData(viewData),
-      animator(std::make_unique<anim::Animator<sf::Sprite>>(
-          sprite,
-          viewData.animations.at(anim))) {
-  sprite.setTexture(viewData.texture);
+Sprite::Sprite(const SpriteData& data, const std::string& anim) : data(data) {
+  setAnim(anim);
+  sprite.setTexture(data.texture.getData());
 }
 
-void Sprite::setAnim(const sf::String& anim) {
-  animator = std::make_unique<anim::Animator<sf::Sprite>>(
-      sprite, viewData.animations.at(anim));
+void Sprite::setAnim(const std::string& anim) {
+  curAnimViewData =
+      std::make_unique<anim::AnimationViewData>(data.animations.at(anim));
+  animator =
+      std::make_unique<anim::Animator<sf::Sprite>>(sprite, *curAnimViewData);
 }
 
 void Sprite::update(sf::Time delta) {

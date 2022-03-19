@@ -14,14 +14,15 @@ MapView::MapView(const MapData& data) {
   setData(data);
 }
 
-void MapView::setData(const MapData& data) {
+void MapView::setData(const MapData &data) {
   this->data = &data;
-  for (const auto&& [i, layerData] : common::enumerate(data.layers)) {
+  for (const auto&& [i, layerData]: enumerate(data.layers)) {
     if (std::holds_alternative<TileLayerData>(layerData)) {
-      layers.push_back(std::unique_ptr<LayerView>(new TileLayerView(*this, i)));
+      layers.emplace_back(TileLayerView{std::get<TileLayerData>(layerData),
+                                        *data.tilesets.at(0)});
     } else if (std::holds_alternative<ObjectLayerData>(layerData)) {
-      layers.push_back(
-          std::unique_ptr<LayerView>(new ObjectLayerView(*this, i)));
+      layers.emplace_back(
+          ObjectLayerView{std::get<ObjectLayerData>(layerData)});
     }
   }
   background.setSize({
@@ -31,10 +32,10 @@ void MapView::setData(const MapData& data) {
   background.setFillColor(data.backgroundColor);
 }
 
-void MapView::update(const sf::Time& delta) {
+void MapView::update(sf::Time delta) {
   for (auto& layer : layers) {
-    layer->update(delta);
+    std::visit([delta](auto&& l) { l.update(delta); }, layer);
   }
 }
 
-}  // namespace loki::tiles
+}

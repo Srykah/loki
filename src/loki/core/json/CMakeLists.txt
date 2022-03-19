@@ -2,6 +2,7 @@ loki_create_lib(
   NAME json INTERFACE
   HEADERS
     Color.hpp
+    Macros.hpp
     Optional.hpp
     Rect.hpp
     String.hpp

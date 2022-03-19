@@ -3,11 +3,11 @@
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
+#include "ScreenStack.hpp"
+
 #include "Screen.hpp"
 
 namespace loki::screens {
-
-Screen::Screen(ScreenStack& stack) : stack(stack), ready(false) {}
 
 void Screen::init() {
   ready = true;
@@ -15,6 +15,26 @@ void Screen::init() {
 
 bool Screen::isReady() const {
   return ready;
+}
+
+void Screen::clearScreens() {
+  getScreenStack().clear();
+}
+
+void Screen::sendSignal(const std::string& signalName) {
+  getScreenStack().sendSignal({this, signalName});
+}
+
+void Screen::closeScreen(const loki::screens::Screen* screen) {
+  getScreenStack().close(screen);
+}
+
+void Screen::closeScreensAbove() {
+  getScreenStack().closeAbove(this);
+}
+
+void Screen::closeThisScreen() {
+  getScreenStack().close(this);
 }
 
 bool Screen::handleSignal(Signal& signal) {
@@ -32,7 +52,7 @@ bool Screen::handleSignal(Signal& signal) {
 void Screen::registerSignalHandler(const Signal::Trigger& trigger,
                                    std::function<bool()> fun) {
   signalHandlers.emplace(
-      trigger, [fun = std::move(fun)](std::any args) { return fun(); });
+      trigger, [fun = std::move(fun)](std::any& args) { return fun(); });
 }
 
 void Screen::removeSignalHandler(const Signal::Trigger& trigger) {
@@ -44,6 +64,7 @@ void Screen::removeSignalHandler(const Signal::Trigger& trigger) {
     }
   }
 }
+
 void Screen::clearAllSignalHandlers() {
   signalHandlers.clear();
 }

@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 
-namespace loki::common {
+namespace loki::inline utils {
 
 template <typename T>
 template <typename A, typename B, typename C, typename D>

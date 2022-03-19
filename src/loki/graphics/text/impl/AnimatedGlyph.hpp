@@ -8,7 +8,7 @@
 #include <SFML/Graphics/Glyph.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <loki/core/utils/VertexArrayIterator.hpp>
-#include "../AnimatedTextStyle.hpp"
+#include "loki/graphics/text/AnimatedTextStyle.hpp"
 
 namespace loki::text::impl {
 
@@ -16,19 +16,21 @@ class AnimatedGlyph : public sf::Transformable {
  public:
   AnimatedGlyph(const sf::Glyph& glyph,
                 const AnimatedTextStyle& style,
-                common::VertexArrayIterator vaIt,
+                VertexArrayIterator vaIt,
                 float x);
 
-  void updateVertices(const sf::Transform& transform, const sf::Color& color);
+  void updateVertices(const sf::Transform& transform,
+                      const sf::Color& color);
 
  private:
-  void initBasePos(const sf::Glyph& glyph, float x);
+  void initBasePos(const sf::Glyph& glyph,
+                   float x);
   void initTexRect(const sf::Glyph& glyph);
 
  private:
-  common::VertexArrayIterator vaIt;
+  VertexArrayIterator vaIt;
   const AnimatedTextStyle& style;
   sf::Vector2f basePos[6];
 };
 
-}  // namespace loki::text::impl
+}

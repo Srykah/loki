@@ -7,4 +7,3 @@
 
 #include "Sprite.hpp"
 #include "SpriteData.hpp"
-#include "SpriteViewData.hpp"

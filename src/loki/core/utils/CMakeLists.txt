@@ -1,8 +1,10 @@
 loki_create_lib(
-  NAME common
+  NAME utils
   HEADERS
     IterAdapters.hpp
+    Macros.hpp
     Matrix.hpp
+    Memory.hpp
     Random.hpp
     TemplateHelpers.hpp
     Vector4.hpp
@@ -10,6 +12,7 @@ loki_create_lib(
   INTERNAL_HEADERS
     impl/is_detected.hxx
     impl/Matrix.hxx
+    impl/Memory.hxx
     impl/Vector4.hxx
   SOURCES
     Random.cpp

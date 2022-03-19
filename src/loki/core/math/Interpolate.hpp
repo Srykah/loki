@@ -7,7 +7,7 @@
 
 #include <nlohmann/json.hpp>
 
-namespace loki::common {
+namespace loki::math {
 
 enum class InterpolationType { NONE = 0, LINEAR = 1, CUBIC = 3 };
 
@@ -54,6 +54,6 @@ class LinearInterpolation : public InterpolationBase<In, Out> {
   std::vector<std::pair<In, Out>> points;
 };
 
-}  // namespace loki::common
+}  // namespace loki::math
 
 #include "impl/Interpolate.hxx"

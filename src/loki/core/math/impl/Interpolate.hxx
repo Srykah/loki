@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 
-namespace loki::common {
+namespace loki::math {
 
 // helper types
 template <class Iter>

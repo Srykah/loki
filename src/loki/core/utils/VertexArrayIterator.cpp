@@ -5,7 +5,7 @@
  */
 #include "VertexArrayIterator.hpp"
 
-namespace loki::common {
+namespace loki::inline utils {
 
 VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va,
                                          std::size_t _index)
@@ -22,7 +22,7 @@ VertexArrayIterator& VertexArrayIterator::operator++() {
   return *this;
 }
 
-VertexArrayIterator VertexArrayIterator::operator++(int) {
+const VertexArrayIterator VertexArrayIterator::operator++(int) {
   auto copy = *this;
   ++*this;
   return copy;
@@ -35,7 +35,7 @@ VertexArrayIterator& VertexArrayIterator::operator--() {
   return *this;
 }
 
-VertexArrayIterator VertexArrayIterator::operator--(int) {
+const VertexArrayIterator VertexArrayIterator::operator--(int) {
   auto copy = *this;
   --*this;
   return copy;
@@ -98,7 +98,7 @@ VertexArrayConstIterator& VertexArrayConstIterator::operator++() {
   return *this;
 }
 
-VertexArrayConstIterator VertexArrayConstIterator::operator++(int) {
+const VertexArrayConstIterator VertexArrayConstIterator::operator++(int) {
   auto copy = *this;
   ++*this;
   return copy;
@@ -111,7 +111,7 @@ VertexArrayConstIterator& VertexArrayConstIterator::operator--() {
   return *this;
 }
 
-VertexArrayConstIterator VertexArrayConstIterator::operator--(int) {
+const VertexArrayConstIterator VertexArrayConstIterator::operator--(int) {
   auto copy = *this;
   --*this;
   return copy;
@@ -151,36 +151,36 @@ bool VertexArrayConstIterator::operator!=(
 
 namespace sf {
 
-loki::common::VertexArrayIterator begin(sf::VertexArray& va) {
-  return loki::common::VertexArrayIterator(va, 0);
+loki::VertexArrayIterator begin(sf::VertexArray& va) {
+  return loki::VertexArrayIterator(va, 0);
 }
 
-loki::common::VertexArrayConstIterator begin(const VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, 0);
+loki::VertexArrayConstIterator begin(const VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, 0);
 }
 
-loki::common::VertexArrayConstIterator cbegin(sf::VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, 0);
+loki::VertexArrayConstIterator cbegin(sf::VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, 0);
 }
 
-loki::common::VertexArrayConstIterator cbegin(const VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, 0);
+loki::VertexArrayConstIterator cbegin(const VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, 0);
 }
 
-loki::common::VertexArrayIterator end(sf::VertexArray& va) {
-  return loki::common::VertexArrayIterator(va, va.getVertexCount());
+loki::VertexArrayIterator end(sf::VertexArray& va) {
+  return loki::VertexArrayIterator(va, va.getVertexCount());
 }
 
-loki::common::VertexArrayConstIterator end(const VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, va.getVertexCount());
+loki::VertexArrayConstIterator end(const VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
-loki::common::VertexArrayConstIterator cend(sf::VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, va.getVertexCount());
+loki::VertexArrayConstIterator cend(sf::VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
-loki::common::VertexArrayConstIterator cend(const VertexArray& va) {
-  return loki::common::VertexArrayConstIterator(va, va.getVertexCount());
+loki::VertexArrayConstIterator cend(const VertexArray& va) {
+  return loki::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
 }  // namespace sf

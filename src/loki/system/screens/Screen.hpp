@@ -1,5 +1,5 @@
 /*!
- * \file State.hpp
+ * \file Screen.hpp
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
@@ -17,16 +17,30 @@ class ScreenStack;
 
 class Screen {
  public:
-  explicit Screen(ScreenStack& stack);
   virtual ~Screen() = default;
 
   virtual void init();
   [[nodiscard]] bool isReady() const;
 
   virtual bool update(sf::Time delta) = 0;
-  virtual bool updateView(sf::Time delta) = 0;
   virtual bool render(sf::RenderTarget& target,
                       sf::RenderStates states) const = 0;
+
+ protected:
+  // ScreenStack shortcuts
+  virtual ScreenStack& getScreenStack() = 0;
+
+  template <typename ScreenType, typename... Args>
+  const ScreenType* pushScreen(Args&&... args);
+  void closeScreen(const Screen* screen);
+  void closeScreensAbove();
+  void closeThisScreen();
+  void clearScreens();
+
+  // Signals stuff
+  void sendSignal(const std::string& signalName);
+  template <typename... Args>
+  void sendSignal(const std::string& signalName, Args&&... args);
 
   void registerSignalHandler(const Signal::Trigger& trigger,
                              std::function<bool()> fun);
@@ -37,15 +51,14 @@ class Screen {
   void registerSignalHandler(const Signal::Trigger& trigger, Fun fun);
   void removeSignalHandler(const Signal::Trigger& trigger);
   void clearAllSignalHandlers();
-  bool handleSignal(Signal& signal);
 
  private:
-  bool ready;
-  std::unordered_map<Signal::Trigger, std::function<bool(std::any)>>
+  bool ready = false;
+  std::unordered_map<Signal::Trigger, std::function<bool(std::any&)>>
       signalHandlers;
 
- protected:
-  ScreenStack& stack;
+  friend ScreenStack;
+  bool handleSignal(Signal& signal);
 };
 
 }  // namespace loki::screens
