@@ -72,4 +72,4 @@ Out LinearInterpolation<In, Out>::interpolate(const In& x) const {
   return (y2 - y1) * (x - x1) / (x2 - x1) + y1;
 }
 
-}  // namespace loki::common
+}  // namespace loki::math

@@ -14,9 +14,9 @@ MapView::MapView(const MapData& data) {
   setData(data);
 }
 
-void MapView::setData(const MapData &data) {
+void MapView::setData(const MapData& data) {
   this->data = &data;
-  for (const auto&& [i, layerData]: enumerate(data.layers)) {
+  for (const auto&& [i, layerData] : enumerate(data.layers)) {
     if (std::holds_alternative<TileLayerData>(layerData)) {
       layers.emplace_back(TileLayerView{std::get<TileLayerData>(layerData),
                                         *data.tilesets.at(0)});
@@ -38,4 +38,4 @@ void MapView::update(sf::Time delta) {
   }
 }
 
-}
+}  // namespace loki::tiles

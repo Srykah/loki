@@ -147,7 +147,7 @@ bool VertexArrayConstIterator::operator!=(
   return !(*this == other);
 }
 
-}  // namespace loki::common
+}  // namespace loki::inline utils
 
 namespace sf {
 

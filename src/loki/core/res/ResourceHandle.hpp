@@ -1,8 +1,8 @@
 /*!
-* \file ResourceHandle.hpp
-* \author Srykah
-* \copyright GNU GPL v3.0
-*/
+ * \file ResourceHandle.hpp
+ * \author Srykah
+ * \copyright GNU GPL v3.0
+ */
 #pragma once
 
 #include <loki/core/json/Macros.hpp>
@@ -17,9 +17,7 @@ class ResourceHandle {
 
   explicit ResourceHandle(std::filesystem::path path) : path(std::move(path)) {}
 
-  const typename Res::DataType& operator*() const {
-    return getData();
-  }
+  const typename Res::DataType& operator*() const { return getData(); }
 
   const typename Res::DataType* operator->() const { return &getData(); }
 

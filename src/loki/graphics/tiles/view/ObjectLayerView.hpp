@@ -29,4 +29,4 @@ class ObjectLayerView : public sf::Drawable, public sf::Transformable {
   std::vector<std::unique_ptr<sf::Drawable>> objects;
 };
 
-}
+}  // namespace loki::tiles

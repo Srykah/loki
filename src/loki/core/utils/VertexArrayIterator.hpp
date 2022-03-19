@@ -55,7 +55,7 @@ class VertexArrayConstIterator {
   long long int index;
 };
 
-}  // namespace loki::common
+}  // namespace loki::inline utils
 
 namespace sf {
 

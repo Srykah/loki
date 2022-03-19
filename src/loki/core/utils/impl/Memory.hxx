@@ -10,20 +10,25 @@ namespace loki::inline utils {
 /// OwnerPtr
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 OwnerPtr<T>::OwnerPtr(U* t) : t(t), refCount(new impl::RefCount()) {}
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 OwnerPtr<T>::OwnerPtr(OwnerPtr<U>&& other) noexcept
-    : t(other.t)
-    , refCount(other.refCount) {
+    : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 OwnerPtr<T>& OwnerPtr<T>::operator=(OwnerPtr<U>&& other) noexcept {
   reset();
   t = other.t;
@@ -52,7 +57,9 @@ void OwnerPtr<T>::reset() {
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 void OwnerPtr<T>::reset(U* u) {
   *this = OwnerPtr(u);
 }
@@ -85,23 +92,27 @@ OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
 /// BorrowerPtr
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 BorrowerPtr<T>::BorrowerPtr(const OwnerPtr<U>& owner)
-    : t(owner.t)
-    , refCount(owner.refCount) {
+    : t(owner.t), refCount(owner.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 BorrowerPtr<T>::BorrowerPtr(const BorrowerPtr<U>& other)
-    : t(other.t)
-    , refCount(other.refCount) {
+    : t(other.t), refCount(other.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
   deleteRefCount();
   t = owner.t;
@@ -110,7 +121,9 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
   if (&other == this) {
     return *this;
@@ -123,17 +136,20 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
 BorrowerPtr<T>::BorrowerPtr(BorrowerPtr<U>&& other) noexcept
-    : t(other.t)
-    , refCount(other.refCount) {
+    : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <class U, std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-BorrowerPtr<T>& BorrowerPtr<T>::operator=(BorrowerPtr<U>&& other) noexcept  {
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+BorrowerPtr<T>& BorrowerPtr<T>::operator=(BorrowerPtr<U>&& other) noexcept {
   deleteRefCount();
   t = other.t;
   refCount = other.refCount;
@@ -171,7 +187,7 @@ T* BorrowerPtr<T>::operator->() const {
 }
 
 template <class T>
-  void BorrowerPtr<T>::incrRefCount() {
+void BorrowerPtr<T>::incrRefCount() {
   if (refCount) {
     ++refCount->count;
   }
@@ -208,4 +224,4 @@ BorrowerPtr<U> static_pointer_cast(BorrowerPtr<T>&& ptrToBase) {
   return result;
 }
 
-}
+}  // namespace loki::inline utils

@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <unordered_set>
 #include <loki/core/utils/Memory.hpp>
+#include <unordered_set>
 #include "Resource.hpp"
 #include "ResourceHandle.hpp"
 

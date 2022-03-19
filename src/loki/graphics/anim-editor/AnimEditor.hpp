@@ -5,6 +5,4 @@
  */
 #pragma once
 
-namespace loki::anim::editor {
-
-}
+namespace loki::anim::editor {}

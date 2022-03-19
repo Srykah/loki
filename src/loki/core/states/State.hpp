@@ -16,4 +16,4 @@ struct State {
   std::function<void()> onLeave = nullptr;
 };
 
-}
+}  // namespace loki::states

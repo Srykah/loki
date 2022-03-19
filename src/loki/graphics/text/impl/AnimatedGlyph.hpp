@@ -19,12 +19,10 @@ class AnimatedGlyph : public sf::Transformable {
                 VertexArrayIterator vaIt,
                 float x);
 
-  void updateVertices(const sf::Transform& transform,
-                      const sf::Color& color);
+  void updateVertices(const sf::Transform& transform, const sf::Color& color);
 
  private:
-  void initBasePos(const sf::Glyph& glyph,
-                   float x);
+  void initBasePos(const sf::Glyph& glyph, float x);
   void initTexRect(const sf::Glyph& glyph);
 
  private:
@@ -33,4 +31,4 @@ class AnimatedGlyph : public sf::Transformable {
   sf::Vector2f basePos[6];
 };
 
-}
+}  // namespace loki::text::impl

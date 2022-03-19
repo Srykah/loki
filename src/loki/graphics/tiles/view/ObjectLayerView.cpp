@@ -12,7 +12,8 @@ ObjectLayerView::ObjectLayerView(const ObjectLayerData& data)
   initObjects();
 }
 
-void ObjectLayerView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void ObjectLayerView::draw(sf::RenderTarget& target,
+                           sf::RenderStates states) const {
   states.transform *= getTransform();
   for (const auto& object : objects) {
     target.draw(*object, states);
@@ -39,4 +40,4 @@ void ObjectLayerView::initObjects() {
   }*/
 }
 
-}
+}  // namespace loki::tiles

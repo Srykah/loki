@@ -10,7 +10,6 @@ namespace loki::text {
 TextAnimationViewData::TextAnimationViewData(
     const anim::AnimationData& animationData,
     sf::Time dt)
-: AnimationViewData(animationData)
-, dt(dt) {}
+    : AnimationViewData(animationData), dt(dt) {}
 
-}
+}  // namespace loki::text

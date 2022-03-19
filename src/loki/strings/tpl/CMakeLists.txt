@@ -1,11 +1,11 @@
 loki_create_lib(
   NAME tpl
   HEADERS
-    TemplateEngine.hpp
+  TemplateEngine.hpp
   INTERNAL_HEADERS
-    impl/TemplateEngine.hxx
+  impl/TemplateEngine.hxx
   SOURCES
-    TemplateEngine.cpp
+  TemplateEngine.cpp
   PUBLIC_DEPS
-    fmt::fmt
+  fmt::fmt
 )

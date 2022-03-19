@@ -30,9 +30,7 @@ class MapView : public sf::Transformable {
     return layers.at(index);
   }
 
-  const sf::RectangleShape& getBackground() const {
-    return background;
-  }
+  const sf::RectangleShape& getBackground() const { return background; }
 
  private:
   const MapData* data = nullptr;

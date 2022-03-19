@@ -34,7 +34,7 @@ inline sf::Color parseHTMLColor(const std::string& htmlCode) {
   return color;
 }
 
-}  // namespace loki::common
+}  // namespace loki::inline utils
 
 namespace nlohmann {
 

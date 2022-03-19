@@ -199,4 +199,4 @@ auto cdrop(T& t, std::size_t count) {
   return DropWrapper<const T>(t, count);
 }
 
-}  // namespace loki::common
+}  // namespace loki::inline utils

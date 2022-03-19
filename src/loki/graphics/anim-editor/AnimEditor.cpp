@@ -5,8 +5,4 @@
  */
 #include "AnimEditor.hpp"
 
-namespace loki::anim::editor {
-
-
-
-}
+namespace loki::anim::editor {}

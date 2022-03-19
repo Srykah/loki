@@ -1,15 +1,15 @@
 loki_create_lib(
   NAME shapes
   HEADERS
-    Capsule.hpp
-    RoundedRectangle.hpp
+  Capsule.hpp
+  RoundedRectangle.hpp
   SOURCES
-    Capsule.cpp
-    RoundedRectangle.cpp
+  Capsule.cpp
+  RoundedRectangle.cpp
   PUBLIC_DEPS
-    sfml-graphics
+  sfml-graphics
 )
 
-if(MSVC)
+if (MSVC)
   target_compile_definitions(shapes PRIVATE _USE_MATH_DEFINES)
-endif()
+endif ()

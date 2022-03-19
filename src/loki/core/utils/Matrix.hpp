@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <vector>
 #include <array>
 #include <functional>
+#include <vector>
 
 namespace loki::inline utils {
 
@@ -22,13 +22,23 @@ class Matrix {
   explicit Matrix(std::size_t width, std::size_t height);
   explicit Matrix(std::size_t width, std::size_t height, const T& defaultValue);
 
-  template <typename Iterator, std::enable_if_t<std::is_lvalue_reference_v<typename std::iterator_traits<Iterator>::reference>, void> = void()>
+  template <
+      typename Iterator,
+      std::enable_if_t<std::is_lvalue_reference_v<
+                           typename std::iterator_traits<Iterator>::reference>,
+                       void> = void()>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  template <typename Iterator, std::enable_if_t<std::is_rvalue_reference_v<typename std::iterator_traits<Iterator>::reference>, void> = void()>
+  template <
+      typename Iterator,
+      std::enable_if_t<std::is_rvalue_reference_v<
+                           typename std::iterator_traits<Iterator>::reference>,
+                       void> = void()>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  explicit Matrix(std::size_t width, std::size_t height, const std::function<T()>& gen);
+  explicit Matrix(std::size_t width,
+                  std::size_t height,
+                  const std::function<T()>& gen);
 
   T& operator[](std::pair<std::size_t, std::size_t> coords);
   const T& operator[](std::pair<std::size_t, std::size_t> coords) const;
@@ -51,8 +61,8 @@ class Matrix {
 template <typename T, std::size_t W, std::size_t H>
 class StaticMatrix {
  public:
-  using iterator = typename std::array<T,W*H>::iterator;
-  using const_iterator = typename std::array<T,W*H>::const_iterator;
+  using iterator = typename std::array<T, W * H>::iterator;
+  using const_iterator = typename std::array<T, W * H>::const_iterator;
 
  public:
   StaticMatrix() = default;
@@ -75,9 +85,9 @@ class StaticMatrix {
   const_iterator cend() const;
 
  private:
-  std::array<T, W*H> data;
+  std::array<T, W * H> data;
 };
 
-}  // namespace loki::common
+}  // namespace loki::inline utils
 
 #include "impl/Matrix.hxx"

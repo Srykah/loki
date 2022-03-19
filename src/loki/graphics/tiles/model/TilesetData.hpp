@@ -5,13 +5,13 @@
  */
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <filesystem>
+#include <loki/core/json/Macros.hpp>
+#include <loki/core/json/Vector2.hpp>
 #include <loki/core/res/JsonResources.hpp>
 #include <loki/core/res/ResourceHandle.hpp>
 #include <loki/core/res/SFMLResources.hpp>
-#include <loki/core/json/Vector2.hpp>
-#include <loki/core/json/Macros.hpp>
-#include <SFML/Graphics.hpp>
-#include <filesystem>
 #include "Property.hpp"
 #include "TerrainData.hpp"
 #include "TileData.hpp"
@@ -60,6 +60,5 @@ struct TilesetData : public res::JsonResource<TilesetData> {
 };
 
 void from_json(const nlohmann::json& j, TilesetData& td);
-
 
 }  // namespace loki::tiles

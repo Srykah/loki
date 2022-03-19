@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include <charconv>
 #include <SFML/System/Time.hpp>
-#include <nlohmann/json.hpp>
+#include <charconv>
 #include <loki/core/math/Interpolate.hpp>
+#include <nlohmann/json.hpp>
 
 #include "Keyframe.hpp"
 

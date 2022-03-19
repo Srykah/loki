@@ -6,6 +6,4 @@
 
 #include "Style.hpp"
 
-namespace loki::window {
-
-}  // namespace loki::window
+namespace loki::window {}  // namespace loki::window

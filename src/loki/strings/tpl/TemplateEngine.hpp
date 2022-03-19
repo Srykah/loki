@@ -11,28 +11,28 @@
 
 namespace loki::tpl {
 
-    class TemplateEngine {
-    public:
-        using RefGenerator = std::function<const std::string &()>;
-    public:
-        template<class T>
-        void addRef(const std::string &name, const T &t);
+class TemplateEngine {
+ public:
+  using RefGenerator = std::function<const std::string&()>;
 
-        void addRef(const std::string &name, const std::string &t);
+ public:
+  template <class T>
+  void addRef(const std::string& name, const T& t);
 
-        template<class T>
-        void addPtr(const std::string &name, const T *t);
+  void addRef(const std::string& name, const std::string& t);
 
-        void addPtr(const std::string &name, const std::string *t);
+  template <class T>
+  void addPtr(const std::string& name, const T* t);
 
-        void addLambdaRef(const std::string &name,
-                          const RefGenerator &gen);
+  void addPtr(const std::string& name, const std::string* t);
 
-        std::string fill(const std::string &tpl);
+  void addLambdaRef(const std::string& name, const RefGenerator& gen);
 
-    private:
-        std::map<std::string, RefGenerator> refs;
-    };
+  std::string fill(const std::string& tpl);
+
+ private:
+  std::map<std::string, RefGenerator> refs;
+};
 
 }  // namespace loki::tpl
 

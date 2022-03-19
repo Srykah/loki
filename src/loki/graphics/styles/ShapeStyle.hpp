@@ -7,8 +7,8 @@
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
-#include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Shape.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
 namespace loki::styles {
 
@@ -22,4 +22,4 @@ struct ShapeStyle {
   void applyTo(sf::Shape& shape) const;
 };
 
-}
+}  // namespace loki::styles

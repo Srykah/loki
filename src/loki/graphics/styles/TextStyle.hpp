@@ -44,4 +44,4 @@ struct TextStyle {
   TextStyle cloneAndOverrideWith(const TextStyle& other) const;
 };
 
-}  // namespace loki::gui
+}  // namespace loki::styles

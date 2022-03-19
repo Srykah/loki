@@ -115,4 +115,4 @@ sf::Color toColor(const Vector4<T>& v) {
       std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
 }
 
-}  // namespace loki::common
+}  // namespace loki::inline utils

@@ -59,7 +59,8 @@ void TileLayerView::update(const sf::Time& delta) {
   }
 }
 
-void TileLayerView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void TileLayerView::draw(sf::RenderTarget& target,
+                         sf::RenderStates states) const {
   states.transform *= getTransform();
   states.texture = &tilesetData.texture.getData();
   target.draw(vertices, states);
@@ -82,23 +83,25 @@ void TileLayerView::setTile(int x, int y, int tileId) {
   auto i{(x + layerData.data.getWidth() * y) * 4};
   auto tileWidth = tilesetData.tileSize.x;
   auto tileHeight = tilesetData.tileSize.y;
-  auto tileTexCoordsOrigin = sf::Vector2f (
-      (tileId % tilesetData.dimensions.x) * tileWidth,
-      (tileId / tilesetData.dimensions.x) * tileHeight
-  );
+  auto tileTexCoordsOrigin =
+      sf::Vector2f((tileId % tilesetData.dimensions.x) * tileWidth,
+                   (tileId / tilesetData.dimensions.x) * tileHeight);
 
-  vertices[ i ].texCoords = tileTexCoordsOrigin;
-  vertices[i+1].texCoords = tileTexCoordsOrigin + sf::Vector2f ( tileWidth, 0.f );
-  vertices[i+2].texCoords = tileTexCoordsOrigin + sf::Vector2f ( tileWidth, tileHeight );
-  vertices[i+3].texCoords = tileTexCoordsOrigin + sf::Vector2f ( 0.f, tileHeight );
+  vertices[i].texCoords = tileTexCoordsOrigin;
+  vertices[i + 1].texCoords =
+      tileTexCoordsOrigin + sf::Vector2f(tileWidth, 0.f);
+  vertices[i + 2].texCoords =
+      tileTexCoordsOrigin + sf::Vector2f(tileWidth, tileHeight);
+  vertices[i + 3].texCoords =
+      tileTexCoordsOrigin + sf::Vector2f(0.f, tileHeight);
 }
 
 void TileLayerView::setTileTransparent(unsigned int x, unsigned int y) {
   auto i{(x + layerData.data.getWidth() * y) * 4};
-  vertices[ i ].color = sf::Color::Transparent;
-  vertices[i+1].color = sf::Color::Transparent;
-  vertices[i+2].color = sf::Color::Transparent;
-  vertices[i+3].color = sf::Color::Transparent;
+  vertices[i].color = sf::Color::Transparent;
+  vertices[i + 1].color = sf::Color::Transparent;
+  vertices[i + 2].color = sf::Color::Transparent;
+  vertices[i + 3].color = sf::Color::Transparent;
 }
 
-}
+}  // namespace loki::tiles
