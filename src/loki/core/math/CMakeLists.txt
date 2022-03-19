@@ -2,8 +2,8 @@ loki_create_lib(
   NAME math INTERFACE
   HEADERS
   Interpolate.hpp
-  Vector2.hpp
   Rect.hpp
+  Vector2.hpp
   INTERNAL_HEADERS
   impl/Interpolate.hxx
   PUBLIC_DEPS
