@@ -8,9 +8,16 @@
 #include <fmt/format.h>
 
 namespace loki::tpl {
+void TemplateEngine::addRef(const std::string& name, const std::string& t) {
+  refs.insert_or_assign(name, [&t]() { return t; });
+}
+
+void TemplateEngine::addPtr(const std::string& name, const std::string* t) {
+  refs.insert_or_assign(name, [t]() { return *t; });
+}
 
 void TemplateEngine::addLambdaRef(const std::string& name,
-                                  const std::function<std::string()>& gen) {
+                                  const RefGenerator& gen) {
   refs.insert_or_assign(name, gen);
 }
 

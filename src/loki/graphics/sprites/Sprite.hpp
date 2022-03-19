@@ -7,15 +7,15 @@
 
 #include <SFML/Graphics.hpp>
 #include <loki/graphics/anim/Animator.hpp>
-#include "SpriteViewData.hpp"
+#include "SpriteData.hpp"
 
 namespace loki::sprites {
 
 class Sprite : public sf::Drawable, public sf::Transformable {
  public:
-  explicit Sprite(const SpriteViewData& viewData, const sf::String& anim);
+  explicit Sprite(const SpriteData& data, const std::string& anim);
 
-  void setAnim(const sf::String& anim);
+  void setAnim(const std::string& anim);
 
   void update(sf::Time delta);
 
@@ -29,8 +29,9 @@ class Sprite : public sf::Drawable, public sf::Transformable {
   void resetSprite();
 
  private:
-  const SpriteViewData& viewData;
+  const SpriteData& data;
   sf::Sprite sprite;
+  std::unique_ptr<anim::AnimationViewData> curAnimViewData;
   std::unique_ptr<anim::Animator<sf::Sprite>> animator;
 };
 

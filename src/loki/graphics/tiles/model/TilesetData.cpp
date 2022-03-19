@@ -8,36 +8,25 @@
 
 namespace loki::tiles {
 
-TilesetData::TilesetData(const std::filesystem::path& path) {
-  load(path);
-}
+void from_json(const nlohmann::json& j, TilesetData& td) {
+  td.texture = res::ResourceHandle<res::TextureResource>{
+      j.at("image").get<std::string>()};
 
-bool TilesetData::load(const std::filesystem::path& path) {
-  nlohmann::json json;
-  std::ifstream fs(path);
-  fs >> json;
-
-  const auto imageFilename = json.at("image").get<std::string>();
-  if (!texture.loadFromFile((path.parent_path() / imageFilename).string())) {
-    return false;
-  }
-  json.at("name").get_to(name);
-  json.at("tilewidth").get_to(tileSize.x);
-  json.at("tileheight").get_to(tileSize.y);
-  dimensions = sf::Vector2u{
-      json.at("imagewidth").get<int>() / tileSize.x,
-      json.at("imageheight").get<int>() / tileSize.y,
+  j.at("name").get_to(td.name);
+  j.at("tilewidth").get_to(td.tileSize.x);
+  j.at("tileheight").get_to(td.tileSize.y);
+  td.dimensions = sf::Vector2u{
+      j.at("imagewidth").get<int>() / td.tileSize.x,
+      j.at("imageheight").get<int>() / td.tileSize.y,
   };
-  if (json.contains("tiles")) {
-    for (const auto& tileData : std::as_const(json.at("tiles"))) {
-      tiles.emplace(tileData.at("id").get<int>(), tileData);
+  if (j.contains("tiles")) {
+    for (const auto& tileData : j.at("tiles")) {
+      td.tiles.emplace(tileData.at("id").get<int>(), tileData);
     }
   }
-  if (json.contains("properties")) {
-    loadPropertyMap(properties, json.at("properties"));
+  if (j.contains("properties")) {
+    j.at("properties").get_to(td.properties);
   }
-
-  return true;
 }
 
 }  // namespace loki::tiles

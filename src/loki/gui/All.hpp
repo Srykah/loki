@@ -5,12 +5,14 @@
  */
 #pragma once
 
-#include "base/Widget.hpp"
-#include "frame/AbstractFrame.hpp"
-#include "frame/RectangleShapeFrame.hpp"
-#include "list/ListController.hpp"
-#include "list/TextList.hpp"
-#include "textBox/AbstractTextBox.hpp"
-#include "textBox/EventTextBoxController.hpp"
-#include "textBox/TextBox.hpp"
-#include "textBox/TextBoxController.hpp"
+#include "Widget.hpp"
+#include "containers/grid/Grid.hpp"
+#include "containers/group/Group.hpp"
+#include "containers/list/List.hpp"
+#include "elements/frame/Frame.hpp"
+#include "elements/frame/RectangleShapeFrame.hpp"
+#include "elements/frame/SpriteFrame.hpp"
+#include "elements/frame/TiledFrame.hpp"
+#include "elements/label/SpriteLabel.hpp"
+#include "elements/label/TextLabel.hpp"
+#include "elements/textBox/TextBox.hpp"

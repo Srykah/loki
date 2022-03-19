@@ -47,7 +47,7 @@ void EventHandler::update(const sf::Time& delta) {
   resetTransitions();
 
   for (auto&& [inputStates, currentConfig] :
-       common::zip(playerInputStates, playerConfigs)) {
+       zip(playerInputStates, playerConfigs)) {
     const auto& configData = settings.configs.at(currentConfig.config);
     for (auto&& [inputName, inputState] : inputStates) {
       bool active = false;

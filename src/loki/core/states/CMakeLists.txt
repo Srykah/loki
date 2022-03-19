@@ -1,12 +1,12 @@
 loki_create_lib(
   NAME states
   HEADERS
-    State.hpp
-    StateIndex.hpp
-    StateMachine.hpp
-    Transition.hpp
+  State.hpp
+  StateIndex.hpp
+  StateMachine.hpp
+  Transition.hpp
   SOURCES
-    StateMachine.cpp
+  StateMachine.cpp
   PUBLIC_DEPS
-    sfml-system
+  sfml-system
 )

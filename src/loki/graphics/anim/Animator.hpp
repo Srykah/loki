@@ -30,4 +30,4 @@ class Animator {
 
 }  // namespace loki::anim
 
-#include "impl/Animator.hxx"
+#include "loki/graphics/anim/impl/Animator.hxx"

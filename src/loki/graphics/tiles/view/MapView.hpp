@@ -6,10 +6,15 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../model/MapData.hpp"
+#include <variant>
+#include "ObjectLayerView.hpp"
+#include "TileLayerView.hpp"
+#include "loki/graphics/tiles/model/MapData.hpp"
 
 namespace loki::tiles {
-class LayerView;
+
+using LayerView = std::variant<ObjectLayerView, TileLayerView>;
+
 class MapView : public sf::Transformable {
  public:
   MapView() = default;
@@ -18,20 +23,18 @@ class MapView : public sf::Transformable {
   void setData(const MapData& data);
   const MapData& getData() const { return *data; }
 
-  void update(const sf::Time& delta);
+  void update(sf::Time delta);
 
-  const std::vector<std::unique_ptr<LayerView>>& getLayers() const {
-    return layers;
-  }
+  const std::vector<LayerView>& getLayers() const { return layers; }
   const LayerView& getLayer(std::size_t index) const {
-    return *layers.at(index);
+    return layers.at(index);
   }
 
   const sf::RectangleShape& getBackground() const { return background; }
 
  private:
   const MapData* data = nullptr;
-  std::vector<std::unique_ptr<LayerView>> layers;
+  std::vector<LayerView> layers;
   sf::RectangleShape background;
 };
 

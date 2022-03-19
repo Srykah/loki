@@ -9,15 +9,14 @@
 
 namespace loki::text {
 
-AnimatedText::AnimatedText(const sf::String& string,
-                           const AnimatedTextStyle& style)
-    : string(string), style(style), vertices(sf::Triangles) {
-  init();
+AnimatedText::AnimatedText(const std::string& string, AnimatedTextStyle style)
+    : style(std::move(style)), vertices(sf::Triangles) {
+  init(string);
 }
 
 void AnimatedText::update(sf::Time delta) {
   elapsedTime += delta;
-  for (auto&& [i, glyph] : common::enumerate(glyphs)) {
+  for (auto&& [i, glyph] : enumerate(glyphs)) {
     if (style.appear.has_value()) {
       sf::Time startingPoint = float(i) * style.appear->dt;
       if (skippingMoment != sf::Time::Zero) {
@@ -50,7 +49,8 @@ void AnimatedText::skip() {
   skippingMoment = elapsedTime;
 }
 
-void AnimatedText::init() {
+void AnimatedText::init(const std::string& str) {
+  auto string = sf::String::fromUtf8(str.begin(), str.end());
   auto& font = *style.font.value();
   auto charSize = style.characterSize.value_or(30);
   bool isBold =
@@ -73,8 +73,15 @@ void AnimatedText::init() {
   }
 }
 
-sf::FloatRect AnimatedText::getLocalBounds() {
-  return sf::FloatRect();
+bool AnimatedText::hasEnded() const {
+  if (style.appear.has_value()) {
+    return elapsedTime >= style.appear->dt * float(glyphs.size());
+  }
+  return true;
+}
+
+sf::FloatRect AnimatedText::getLocalBounds() const {
+  return sf::FloatRect();  // todo todo todo
 }
 
 }  // namespace loki::text

@@ -5,7 +5,7 @@
  */
 #pragma once
 
-namespace loki::common {
+namespace loki::inline utils {
 
 struct true_type {
   static constexpr bool value = true;
@@ -39,4 +39,4 @@ constexpr bool is_detected_as_true =
     std::conjunction_v<impl::detector<void, Op, Args...>,
                        detected_t<Op, Args...> >;
 
-}  // namespace loki::common
+}  // namespace loki::inline utils

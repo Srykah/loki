@@ -8,7 +8,7 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
 
-namespace loki::common {
+namespace loki::inline utils {
 
 template <typename T>
 struct Vector4 {
@@ -49,6 +49,6 @@ sf::Color toColor(const Vector4<T>& v);
 using Vector4f = Vector4<float>;
 using Vector4i = Vector4<int>;
 
-}  // namespace loki::common
+}  // namespace loki::inline utils
 
 #include "impl/Vector4.hxx"

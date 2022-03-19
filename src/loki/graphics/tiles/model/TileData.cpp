@@ -7,33 +7,23 @@
 
 namespace loki::tiles {
 
-TileData::TileData(const nlohmann::json& jsonData) {
-  load(jsonData);
-}
-
-bool TileData::load(const nlohmann::json& jsonData) {
-  if (jsonData.contains("animation")) {
-    for (const auto& frameData : std::as_const(jsonData.at("animation"))) {
-      animation.emplace_back(Frame{
-          frameData.at("tileid").get<int>(),
-          sf::milliseconds(frameData.at("duration").get<int>()),
-      });
-    }
+void from_json(const nlohmann::json& j, TileData& td) {
+  if (j.contains("animation")) {
+    j.at("animation").get_to(td.animation);
   }
-  if (jsonData.contains("properties")) {
-    loadPropertyMap(properties, jsonData.at("properties"));
+  if (j.contains("properties")) {
+    j.at("properties").get_to(td.properties);
   }
-  if (jsonData.contains("terrain")) {
-    const auto& terrainData = jsonData.at("terrain");
-    terrain = std::array{
+  if (j.contains("terrain")) {
+    j.at("terrain").get_to(td.terrain.emplace());
+    /*const auto& terrainData = j.at("terrain");
+    td.terrain = std::array{
         terrainData.at(0).get<int>(),
         terrainData.at(1).get<int>(),
         terrainData.at(2).get<int>(),
         terrainData.at(3).get<int>(),
-    };
+    };*/
   }
-
-  return true;
 }
 
 }  // namespace loki::tiles

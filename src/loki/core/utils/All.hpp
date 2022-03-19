@@ -6,7 +6,9 @@
 #pragma once
 
 #include "IterAdapters.hpp"
+#include "Macros.hpp"
 #include "Matrix.hpp"
+#include "Memory.hpp"
 #include "Random.hpp"
 #include "TemplateHelpers.hpp"
 #include "Vector4.hpp"

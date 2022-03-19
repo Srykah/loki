@@ -11,13 +11,10 @@
 namespace loki::tiles {
 
 struct TerrainData {
-  TerrainData() = default;
-  explicit TerrainData(const nlohmann::json& jsonData);
-
-  bool load(const nlohmann::json& jsonData);
-
   std::string name;
   PropertyMap properties;
 };
+
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TerrainData, name, properties)
 
 }  // namespace loki::tiles

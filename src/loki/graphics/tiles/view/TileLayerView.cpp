@@ -8,15 +8,16 @@
 
 namespace loki::tiles {
 
-TileLayerView::TileLayerView(const MapView& parent, int layerId)
-    : LayerView(parent),
-      vertices(sf::Quads),
-      layerData(std::get<TileLayerData>(parent.getData().layers.at(layerId))),
-      gridSize(parent.getData().gridSize),
-      tilesetData(*parent.getData().tilesets.at(0)) {
-  vertices.resize(gridSize.x * gridSize.y * 4);
-  for (auto y{0u}; y < gridSize.y; ++y) {
-    for (auto x{0u}; x < gridSize.x; ++x) {
+TileLayerView::TileLayerView(const TileLayerData& layerData,
+                             const TilesetData& tilesetData)
+    : vertices(sf::Quads), layerData(layerData), tilesetData(tilesetData) {
+  initGrid();
+}
+
+void TileLayerView::initGrid() {
+  vertices.resize(layerData.data.getWidth() * layerData.data.getHeight() * 4);
+  for (auto y{0u}; y < layerData.data.getHeight(); ++y) {
+    for (auto x{0u}; x < layerData.data.getWidth(); ++x) {
       initVertices(x, y);
 
       auto tileId = layerData.data[{x, y}] - 1;
@@ -24,11 +25,11 @@ TileLayerView::TileLayerView(const MapView& parent, int layerId)
         setTileTransparent(x, y);
       } else if (tilesetData.tiles.count(tileId) &&
                  !tilesetData.tiles.at(tileId).animation.empty()) {
-        tileViewData.emplace(tileId, TileViewData{
-                                         0,
-                                         sf::Time::Zero,
-                                     });
-        setTile(x, y, tilesetData.tiles.at(tileId).animation.at(0).tileId);
+        animatedTiles.emplace(tileId, AnimatedTile{
+                                          0,
+                                          sf::Time::Zero,
+                                      });
+        setTile(x, y, tilesetData.tiles.at(tileId).animation.at(0).tileid);
       } else {
         setTile(x, y, tileId);
       }
@@ -37,24 +38,20 @@ TileLayerView::TileLayerView(const MapView& parent, int layerId)
 }
 
 void TileLayerView::update(const sf::Time& delta) {
-  for (auto&& [tileId, tileViewDatum] : tileViewData) {
-    const auto& tileData = tilesetData.tiles.at(tileId);
+  for (auto&& [gid, tile] : animatedTiles) {
+    const auto& animData = tilesetData.tiles.at(gid).animation;
     bool needUpdate = false;
-    tileViewDatum.timeSinceLastFrame += delta;
-    while (tileViewDatum.timeSinceLastFrame >=
-           tileData.animation.at(tileViewDatum.frameIndex).duration) {
-      tileViewDatum.timeSinceLastFrame -=
-          tileData.animation.at(tileViewDatum.frameIndex).duration;
-      tileViewDatum.frameIndex =
-          (tileViewDatum.frameIndex + 1) % tileData.animation.size();
+    tile.timeSinceLastFrame += delta;
+    while (tile.timeSinceLastFrame >= animData.at(tile.curFrame).duration) {
+      tile.timeSinceLastFrame -= animData.at(tile.curFrame).duration;
+      tile.curFrame = (tile.curFrame + 1) % animData.size();
       needUpdate = true;
     }
     if (needUpdate) {
-      for (int x{0}; x < gridSize.x; ++x) {
-        for (int y{0}; y < gridSize.y; ++y) {
-          if (layerData.data[{x, y}] - 1 == tileId) {
-            setTile(x, y,
-                    tileData.animation.at(tileViewDatum.frameIndex).tileId);
+      for (int x{0}; x < layerData.data.getWidth(); ++x) {
+        for (int y{0}; y < layerData.data.getHeight(); ++y) {
+          if (layerData.data[{x, y}] - 1 == gid) {
+            setTile(x, y, animData.at(tile.curFrame).tileid);
           }
         }
       }
@@ -64,15 +61,15 @@ void TileLayerView::update(const sf::Time& delta) {
 
 void TileLayerView::draw(sf::RenderTarget& target,
                          sf::RenderStates states) const {
-  states.transform *= getParentTransform();
-  states.texture = &tilesetData.texture;
+  states.transform *= getTransform();
+  states.texture = &tilesetData.texture.getData();
   target.draw(vertices, states);
 }
 
 void TileLayerView::initVertices(unsigned int x, unsigned int y) {
   auto tileWidth = tilesetData.tileSize.x;
   auto tileHeight = tilesetData.tileSize.y;
-  auto i{(x + gridSize.x * y) * 4};
+  auto i{(x + layerData.data.getWidth() * y) * 4};
   auto tilePositionOrigin = sf::Vector2f(tileWidth * x, tileHeight * y);
 
   vertices[i].position = tilePositionOrigin;
@@ -83,7 +80,7 @@ void TileLayerView::initVertices(unsigned int x, unsigned int y) {
 }
 
 void TileLayerView::setTile(int x, int y, int tileId) {
-  auto i{(x + gridSize.x * y) * 4};
+  auto i{(x + layerData.data.getWidth() * y) * 4};
   auto tileWidth = tilesetData.tileSize.x;
   auto tileHeight = tilesetData.tileSize.y;
   auto tileTexCoordsOrigin =
@@ -100,7 +97,7 @@ void TileLayerView::setTile(int x, int y, int tileId) {
 }
 
 void TileLayerView::setTileTransparent(unsigned int x, unsigned int y) {
-  auto i{(x + gridSize.x * y) * 4};
+  auto i{(x + layerData.data.getWidth() * y) * 4};
   vertices[i].color = sf::Color::Transparent;
   vertices[i + 1].color = sf::Color::Transparent;
   vertices[i + 2].color = sf::Color::Transparent;

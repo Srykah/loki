@@ -17,6 +17,8 @@ struct AnimatedTextStyle : public loki::styles::TextStyle {
 
   AnimatedTextStyle& overrideWith(const AnimatedTextStyle& other);
   AnimatedTextStyle cloneAndOverrideWith(const AnimatedTextStyle& other) const;
+
+  static AnimatedTextStyle fromDefaults();
 };
 
 }  // namespace loki::text

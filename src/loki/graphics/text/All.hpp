@@ -7,6 +7,7 @@
 
 #include "AnimatedText.hpp"
 #include "AnimatedTextStyle.hpp"
+#include "AnnotatedStringEngine.hpp"
 #include "AnnotatedText.hpp"
 #include "Stylesheet.hpp"
 #include "TextAnimationViewData.hpp"

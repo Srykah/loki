@@ -10,7 +10,7 @@ namespace loki::tiles {
 ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
   data.at("name").get_to(name);
   for (const auto& objData : data.at("objects")) {
-    objects.emplace_back(loadObjectData(objData));
+    objects.emplace_back(objData.get<ObjectData>());
   }
 }
 

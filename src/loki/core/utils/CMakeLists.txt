@@ -1,20 +1,23 @@
 loki_create_lib(
-  NAME common
+  NAME utils
   HEADERS
-    IterAdapters.hpp
-    Matrix.hpp
-    Random.hpp
-    TemplateHelpers.hpp
-    Vector4.hpp
-    VertexArrayIterator.hpp
+  IterAdapters.hpp
+  Macros.hpp
+  Matrix.hpp
+  Memory.hpp
+  Random.hpp
+  TemplateHelpers.hpp
+  Vector4.hpp
+  VertexArrayIterator.hpp
   INTERNAL_HEADERS
-    impl/is_detected.hxx
-    impl/Matrix.hxx
-    impl/Vector4.hxx
+  impl/is_detected.hxx
+  impl/Matrix.hxx
+  impl/Memory.hxx
+  impl/Vector4.hxx
   SOURCES
-    Random.cpp
-    VertexArrayIterator.cpp
+  Random.cpp
+  VertexArrayIterator.cpp
   PUBLIC_DEPS
-    sfml-graphics
-    nlohmann_json::nlohmann_json
+  sfml-graphics
+  nlohmann_json::nlohmann_json
 )

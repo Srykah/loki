@@ -6,31 +6,35 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "ObjectLayerData.hpp"
+#include <loki/core/res/JsonResources.hpp>
+#include "LayerData.hpp"
 #include "Property.hpp"
-#include "TileLayerData.hpp"
 #include "TilesetData.hpp"
 
 namespace loki::tiles {
-enum struct RenderOrder { RIGHT_DOWN, RIGHT_UP, LEFT_DOWN, LEFT_UP };
-using LayerData = std::variant<TileLayerData, ObjectLayerData>;
-struct MapData {
-  using TilesetLoader =
-      std::function<const TilesetData*(const std::filesystem::path&)>;
 
-  MapData() = default;
+enum struct RenderOrder { RIGHT_UP, RIGHT_DOWN, LEFT_UP, LEFT_DOWN };
 
-  MapData(const std::filesystem::path& filePath,
-          const TilesetLoader& tilesetLoader);
+NLOHMANN_JSON_SERIALIZE_ENUM(RenderOrder,
+                             {
+                                 {RenderOrder::RIGHT_UP, "rightUp"},
+                                 {RenderOrder::RIGHT_DOWN, "rightDown"},
+                                 {RenderOrder::LEFT_UP, "leftUp"},
+                                 {RenderOrder::LEFT_DOWN, "leftDown"},
+                             })
 
-  bool load(const std::filesystem::path& filePath,
-            const TilesetLoader& tilesetLoader);
-
+struct MapData : public res::JsonResource<MapData> {
   sf::Vector2u gridSize;
   std::vector<LayerData> layers;
   PropertyMap properties;
-  std::vector<const TilesetData*> tilesets;
+  std::vector<res::ResourceHandle<TilesetData>> tilesets;
   RenderOrder renderOrder;
   sf::Color backgroundColor;
+
+  LOKI_RES_JSONRESOURCE_CTOR_DTOR(MapData)
+  LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(tilesets);
 };
+
+void from_json(const nlohmann::json& j, MapData& md);
+
 }  // namespace loki::tiles

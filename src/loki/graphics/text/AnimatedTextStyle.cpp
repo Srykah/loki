@@ -27,4 +27,8 @@ AnimatedTextStyle AnimatedTextStyle::cloneAndOverrideWith(
   return AnimatedTextStyle(*this).overrideWith(other);
 }
 
+AnimatedTextStyle AnimatedTextStyle::fromDefaults() {
+  return AnimatedTextStyle{TextStyle::fromDefaults()};
+}
+
 }  // namespace loki::text

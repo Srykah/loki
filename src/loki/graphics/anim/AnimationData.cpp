@@ -20,10 +20,18 @@ float fromPercent(const std::string& str) {
 
 namespace loki::anim {
 
+AnimationData::AnimationData() {
+  for (auto& erpType : interpolationTypes) {
+    erpType.second = math::InterpolationType::CUBIC;
+  }
+  interpolationTypes[Keyframe::Component::TEXTURE_RECT] =
+      math::InterpolationType::NONE;
+}
+
 void to_json(nlohmann::json& json, const AnimationData& data) {
   json["duration"] = data.duration;
   json["repeat"] = data.repeat;
-  json["interpolation"] = data.interpolation;
+  json["interpolationTypes"] = data.interpolationTypes;
   for (const auto& [time, keyframe] : data.keyframes) {
     json["keyframes"].emplace(toPercent(time), keyframe);
   }
@@ -32,7 +40,7 @@ void to_json(nlohmann::json& json, const AnimationData& data) {
 void from_json(const nlohmann::json& json, AnimationData& data) {
   json.at("duration").get_to(data.duration);
   json.at("repeat").get_to(data.repeat);
-  json.at("interpolation").get_to(data.interpolation);
+  json.at("interpolationTypes").get_to(data.interpolationTypes);
   for (const auto& [percent, keyframe] : json.at("keyframes").items()) {
     keyframe.get_to(data.keyframes[fromPercent(percent)]);
   }

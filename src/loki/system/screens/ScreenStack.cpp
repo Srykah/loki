@@ -29,19 +29,14 @@ void ScreenStack::update(sf::Time delta) {
       break;
     }
   }
-  for (const auto& screen : common::reversed(stack)) {
-    if (!screen->updateView(delta)) {
-      break;
-    }
-  }
 }
 
-void ScreenStack::push(std::unique_ptr<Screen> statePtr) {
+void ScreenStack::push(std::unique_ptr<Screen>&& statePtr) {
   stack.push_back(std::move(statePtr));
 }
 
 void ScreenStack::clear() {
-  for (const auto& screen : common::reversed(stack)) {
+  for (const auto& screen : reversed(stack)) {
     sendSignal({screen.get(), "close"});
   }
   stack.clear();
@@ -53,7 +48,7 @@ bool ScreenStack::empty() const {
 
 void ScreenStack::draw(sf::RenderTarget& target,
                        sf::RenderStates states) const {
-  for (const auto& screen : common::reversed(stack)) {
+  for (const auto& screen : reversed(stack)) {
     if (!screen->render(target, states)) {
       break;
     }

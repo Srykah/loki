@@ -1,0 +1,8 @@
+//
+// Created by Thomas on 19/03/2022.
+//
+
+#ifndef LOKIMON_SPRITEFRAME_HPP
+#define LOKIMON_SPRITEFRAME_HPP
+
+#endif  // LOKIMON_SPRITEFRAME_HPP

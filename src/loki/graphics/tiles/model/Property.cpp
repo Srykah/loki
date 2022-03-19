@@ -23,8 +23,7 @@ void loadPropertyMap(PropertyMap& propertyMap,
     } else if (type == "bool") {
       value = propertyDatum.at("value").get<bool>();
     } else if (type == "color") {
-      value =
-          common::parseHTMLColor(propertyDatum.at("value").get<std::string>());
+      value = parseHTMLColor(propertyDatum.at("value").get<std::string>());
     }
     propertyMap.emplace(std::move(name), std::move(value));
   }

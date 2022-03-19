@@ -13,13 +13,28 @@ template <typename T>
 using IpPts = std::vector<std::pair<float, T>>;
 
 template <typename T>
-using NoneIp = loki::common::NoneInterpolation<float, T>;
+using NoneIp = loki::math::NoneInterpolation<float, T>;
 
 template <typename T>
-using LinIp = loki::common::LinearInterpolation<float, T>;
+using LinIp = loki::math::LinearInterpolation<float, T>;
 
 template <typename T>
-using CubIp = loki::common::LinearInterpolation<float, T>;  // todo
+using CubIp = loki::math::LinearInterpolation<float, T>;  // todo
+
+template <class T>
+std::shared_ptr<loki::math::InterpolationBase<float, T>> buildInterpolation(
+    const IpPts<T>& points,
+    loki::math::InterpolationType interpolationType) {
+  switch (interpolationType) {
+    case loki::math::InterpolationType::NONE:
+      return std::make_shared<NoneIp<T>>(points);
+    case loki::math::InterpolationType::LINEAR:
+      return std::make_shared<LinIp<T>>(points);
+    case loki::math::InterpolationType::CUBIC:
+    default:
+      return std::make_shared<CubIp<T>>(points);
+  }
+}
 
 }  // namespace
 
@@ -33,60 +48,37 @@ AnimationViewData::AnimationViewData(const AnimationData& data)
     const auto& [firstTime, firstKeyframe] = *data.keyframes.begin();
     const auto& [lastTime, lastKeyframe] = *end;
 
-#define TEST_ANIMATED_FEATURE(feature, ip, Type, def)                          \
-  if (firstKeyframe.feature.has_value() && lastKeyframe.feature.has_value()) { \
-    IpPts<Type> points;                                                        \
-    for (const auto& [time, keyframe] : data.keyframes) {                      \
-      points.emplace_back(time, keyframe.feature.value_or(def));               \
-    }                                                                          \
-    if (data.interpolation == common::InterpolationType::NONE) {               \
-      ip = std::make_shared<NoneIp<Type>>(points);                             \
-    } else if (data.interpolation == common::InterpolationType::LINEAR) {      \
-      ip = std::make_shared<LinIp<Type>>(points);                              \
-    } else if (data.interpolation == common::InterpolationType::CUBIC) {       \
-      ip = std::make_shared<CubIp<Type>>(points);                              \
-    }                                                                          \
+#define LOKI_ANIM_TEST_COMPONENT_TRF(comp, ipComp, COMP, trf, _firstValue) \
+  {                                                                        \
+    auto firstValue = _firstValue;                                         \
+    IpPts<decltype(firstValue)> points;                                    \
+    auto* last = &firstValue;                                              \
+    for (const auto& [time, keyframe] : data.keyframes) {                  \
+      if (keyframe.comp.has_value()) {                                     \
+        points.emplace_back(time, trf(keyframe.comp.value()));             \
+      } else {                                                             \
+        points.emplace_back(time, *last);                                  \
+      }                                                                    \
+      last = &points.back().second;                                        \
+    }                                                                      \
+    ipComp = buildInterpolation(                                           \
+        points, data.interpolationTypes.at(Keyframe::Component::COMP));    \
   }
 
-    TEST_ANIMATED_FEATURE(origin, ipOrigin, sf::Vector2f, sf::Vector2f{})
-    TEST_ANIMATED_FEATURE(position, ipPos, sf::Vector2f, sf::Vector2f{})
-    TEST_ANIMATED_FEATURE(rotation, ipRot, float, 0.f)
-    TEST_ANIMATED_FEATURE(scale, ipScale, sf::Vector2f, sf::Vector2f(1.f, 1.f))
+#define LOKI_ANIM_TEST_COMPONENT(comp, ipComp, COMP, _firstValue) \
+  LOKI_ANIM_TEST_COMPONENT_TRF(comp, ipComp, COMP, , _firstValue)
 
-#undef TEST_ANIMATED_FEATURE
+    LOKI_ANIM_TEST_COMPONENT(origin, ipOrigin, ORIGIN, sf::Vector2f{})
+    LOKI_ANIM_TEST_COMPONENT(position, ipPos, POSITION, sf::Vector2f{})
+    LOKI_ANIM_TEST_COMPONENT(rotation, ipRot, ROTATION, 0.f)
+    LOKI_ANIM_TEST_COMPONENT(scale, ipScale, SCALE, sf::Vector2f(1.f, 1.f))
+    LOKI_ANIM_TEST_COMPONENT_TRF(color, ipColor, COLOR, fromColor<float>,
+                                 Vector4<float>(1.f, 1.f, 1.f, 1.f))
+    LOKI_ANIM_TEST_COMPONENT_TRF(textureRect, ipTexRect, TEXTURE_RECT,
+                                 fromRect<float>, Vector4<float>{})
 
-    if (firstKeyframe.color.has_value() && lastKeyframe.color.has_value()) {
-      IpPts<common::Vector4f> points;
-      for (const auto& [time, keyframe] : data.keyframes) {
-        points.emplace_back(time,
-                            common::fromColor<float>(
-                                keyframe.color.value_or(sf::Color::White)));
-      }
-      if (data.interpolation == common::InterpolationType::NONE) {
-        ipColor = std::make_shared<NoneIp<common::Vector4f>>(points);
-      } else if (data.interpolation == common::InterpolationType::LINEAR) {
-        ipColor = std::make_shared<LinIp<common::Vector4f>>(points);
-      } else if (data.interpolation == common::InterpolationType::CUBIC) {
-        ipColor = std::make_shared<CubIp<common::Vector4f>>(points);
-      }
-    }
-
-    if (firstKeyframe.textureRect.has_value() &&
-        lastKeyframe.textureRect.has_value()) {
-      IpPts<common::Vector4f> points;
-      for (const auto& [time, keyframe] : data.keyframes) {
-        points.emplace_back(time,
-                            common::fromRect<float>(
-                                keyframe.textureRect.value_or(sf::IntRect{})));
-      }
-      if (data.interpolation == common::InterpolationType::NONE) {
-        ipTexRect = std::make_shared<NoneIp<common::Vector4f>>(points);
-      } else if (data.interpolation == common::InterpolationType::LINEAR) {
-        ipTexRect = std::make_shared<LinIp<common::Vector4f>>(points);
-      } else if (data.interpolation == common::InterpolationType::CUBIC) {
-        ipTexRect = std::make_shared<CubIp<common::Vector4f>>(points);
-      }
-    }
+#undef LOKI_ANIM_TEST_COMPONENT_TRF
+#undef LOKI_ANIM_TEST_COMPONENT
   }
 }
 
@@ -137,13 +129,13 @@ sf::Transform AnimationViewData::getTransform(sf::Time instant) const {
 
 sf::Color AnimationViewData::getColor(sf::Time instant) const {
   if (ipColor) {
-    return common::toColor(ipColor->interpolate(instant / duration));
+    return toColor(ipColor->interpolate(instant / duration));
   }
   return sf::Color::White;
 }
 sf::IntRect AnimationViewData::getTextureRect(sf::Time instant) const {
   if (ipTexRect) {
-    return common::toRect<int>(ipTexRect->interpolate(instant / duration));
+    return toRect<int>(ipTexRect->interpolate(instant / duration));
   }
   return sf::IntRect{};
 }
