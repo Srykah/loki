@@ -4,23 +4,20 @@ include(CMakeFindDependencyMacro)
 
 # Add nlohmann/json
 set_and_check(nlohmann_json_DIR "@PACKAGE_nlohmann_json_DIR@")
-find_dependency(nlohmann_json 3.7
-  PATHS "${nlohmann_json_DIR}")
+find_dependency(nlohmann_json 3.7 CONFIG REQUIRED
+  PATHS "${nlohmann_json_DIR}" NO_DEFAULT_PATH)
 
 # Add SFML
 set_and_check(SFML_DIR "@PACKAGE_SFML_DIR@")
 set(SFML_STATIC_LIBRARIES "@SFML_STATIC_LIBRARIES@")
-find_dependency(SFML 2.5
-  COMPONENTS
-    graphics
-    window
-    system
-    audio
-  PATHS "${SFML_DIR}")
+find_dependency(SFML 2.5 CONFIG REQUIRED
+  COMPONENTS graphics window system audio
+  PATHS "${SFML_DIR}" NO_DEFAULT_PATH)
 
 # Add fmt
 set_and_check(fmt_DIR "@PACKAGE_fmt_DIR@")
-find_dependency(fmt 7 PATHS "${fmt_DIR}")
+find_dependency(fmt 7 CONFIG REQUIRED
+  PATHS "${fmt_DIR}" NO_DEFAULT_PATH)
 
 include(${CMAKE_CURRENT_LIST_DIR}/lokiTargets.cmake)
 

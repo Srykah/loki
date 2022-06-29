@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME tpl
+  NAME tpl MODULE strings
   HEADERS
   TemplateEngine.hpp
   INTERNAL_HEADERS

@@ -6,7 +6,8 @@
 
 #pragma once
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Enumerate
@@ -199,4 +200,5 @@ auto cdrop(T& t, std::size_t count) {
   return DropWrapper<const T>(t, count);
 }
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki

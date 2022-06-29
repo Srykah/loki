@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <loki/gui/Widget.hpp>
-#include <loki/system/input/service/EventHandler.hpp>
+#include "loki/gui/widgets/Widget.hpp"
+#include "loki/system/input/service/EventHandler.hpp"
 
 namespace loki::gui {
 

@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME hash INTERFACE
+  NAME hash MODULE core INTERFACE
   HEADERS
   CombineHash.hpp
   IterHash.hpp

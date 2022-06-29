@@ -6,8 +6,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <loki/graphics/tiles/model/TilesetData.hpp>
 #include "Frame.hpp"
+#include "loki/graphics/tiles/model/TilesetData.hpp"
 
 namespace loki::gui {
 

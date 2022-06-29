@@ -5,7 +5,8 @@
  */
 #include "VertexArrayIterator.hpp"
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va,
                                          std::size_t _index)
@@ -147,7 +148,8 @@ bool VertexArrayConstIterator::operator!=(
   return !(*this == other);
 }
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 namespace sf {
 

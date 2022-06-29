@@ -1,6 +1,6 @@
 # BASIC SETUP
 
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.22)
 project(
   loki
   VERSION 0.1.0
@@ -43,14 +43,22 @@ loki_find_all_deps(" ${LOKI_DEPS_LIST}")
 
 # TARGETS
 
-# All modules target
-loki_create_all_target()
+# All modules (+all) target
+loki_create_modules(
+  core
+  graphics
+  gui
+  strings
+  system
+)
 
+#[[
 add_subdirectory(src/loki/core)
 add_subdirectory(src/loki/graphics)
 add_subdirectory(src/loki/gui)
 add_subdirectory(src/loki/strings)
 add_subdirectory(src/loki/system)
+#]]
 
 
 # DOCS
@@ -86,5 +94,5 @@ write_basic_package_version_file(
 )
 install(
   FILES "${CMAKE_CURRENT_BINARY_DIR}/lokiConfigVersion.cmake"
-  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki "
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki"
 )

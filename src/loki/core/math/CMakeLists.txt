@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME math INTERFACE
+  NAME math MODULE core INTERFACE
   HEADERS
   Interpolate.hpp
   Rect.hpp

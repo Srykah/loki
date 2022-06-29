@@ -5,8 +5,8 @@
  */
 #include "TextBoxView.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
-#include <loki/core/utils/IterAdapters.hpp>
-#include <loki/graphics/text/AnnotatedStringEngine.hpp>
+#include "loki/core/utils/IterAdapters.hpp"
+#include "loki/graphics/text/AnnotatedStringEngine.hpp"
 
 namespace loki::gui {
 

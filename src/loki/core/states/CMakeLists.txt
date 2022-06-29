@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME states
+  NAME states MODULE core
   HEADERS
   State.hpp
   StateIndex.hpp

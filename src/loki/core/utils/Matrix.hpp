@@ -9,7 +9,8 @@
 #include <functional>
 #include <vector>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 template <typename T>
 class Matrix {
@@ -88,6 +89,7 @@ class StaticMatrix {
   std::array<T, W * H> data;
 };
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 #include "impl/Matrix.hxx"

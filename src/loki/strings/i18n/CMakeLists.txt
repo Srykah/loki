@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME i18n
+  NAME i18n MODULE strings
   HEADERS
   I18nData.hpp
   INTERNAL_HEADERS

@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME tiles
+  NAME tiles MODULE graphics
   HEADERS
   model/MapData.hpp
   model/ObjectData.hpp

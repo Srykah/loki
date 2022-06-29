@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME res
+  NAME res MODULE core INTERFACE
   HEADERS
   JsonResources.hpp
   Resource.hpp

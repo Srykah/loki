@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME screens
+  NAME screens MODULE system
   HEADERS
   Screen.hpp
   ScreenStack.hpp

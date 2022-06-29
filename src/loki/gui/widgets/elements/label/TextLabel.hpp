@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <loki/graphics/text/AnnotatedText.hpp>
-#include <loki/gui/Widget.hpp>
+#include "loki/graphics/text/AnnotatedText.hpp"
+#include "loki/gui/widgets/Widget.hpp"
 
 namespace loki::gui {
 

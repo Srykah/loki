@@ -18,11 +18,14 @@ void MapView::setData(const MapData& data) {
   this->data = &data;
   for (const auto&& [i, layerData] : enumerate(data.layers)) {
     if (std::holds_alternative<TileLayerData>(layerData)) {
-      layers.emplace_back(TileLayerView{std::get<TileLayerData>(layerData),
-                                        *data.tilesets.at(0)});
+      layers.emplace_back(
+          std::in_place_type_t<TileLayerView>{},
+          std::get<TileLayerData>(layerData),
+          *data.tilesets.at(0));
     } else if (std::holds_alternative<ObjectLayerData>(layerData)) {
       layers.emplace_back(
-          ObjectLayerView{std::get<ObjectLayerData>(layerData)});
+          std::in_place_type_t<ObjectLayerView>{},
+          std::get<ObjectLayerData>(layerData));
     }
   }
   background.setSize({

@@ -26,7 +26,7 @@ class ResourceHolder {
 
   struct ResPtrHash {
     std::size_t operator()(const ResPtr& sptr) const {
-      return std::hash<std::string>{}(sptr->getPath().generic_u8string());
+      return std::hash<std::string>{}(sptr->getPath().generic_string());
     }
   };
 

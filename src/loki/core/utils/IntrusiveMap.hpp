@@ -7,7 +7,8 @@
 
 #include <unordered_set>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 template <class T, class Elem>
 struct ElemHash {
@@ -50,4 +51,5 @@ struct ElemComp {
 template <class T>
 using UnorderedIntrusiveMap = std::unordered_set<T, ElemHash<T>, ElemComp<T>>;
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki

@@ -8,6 +8,7 @@
 #include "Color.hpp"
 #include "Macros.hpp"
 #include "Optional.hpp"
+#include "Path.hpp"
 #include "Rect.hpp"
 #include "String.hpp"
 #include "Time.hpp"

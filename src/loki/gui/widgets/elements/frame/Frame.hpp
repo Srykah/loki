@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include "loki/gui/Widget.hpp"
+#include "loki/gui/widgets/Widget.hpp"
 
 namespace loki::gui {
 

@@ -33,9 +33,11 @@
 
 # IDEs
 .idea
+.vs
 
 # Output
 *build*/
 
 # CMake Local Config
 cmake/LocalConfig.cmake
+CMakeSettings.json

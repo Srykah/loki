@@ -5,7 +5,8 @@
  */
 #pragma once
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 /// OwnerPtr
 
@@ -203,10 +204,10 @@ void BorrowerPtr<T>::deleteRefCount() {
   }
 }
 
-template <class T, class U>
-BorrowerPtr<U> static_pointer_cast(const BorrowerPtr<T>& ptrToBase) {
-  BorrowerPtr<U> result;
-  result.t = static_cast<U*>(ptrToBase.t);
+template <class Out, class In>
+BorrowerPtr<Out> static_pointer_cast(const BorrowerPtr<In>& ptrToBase) {
+  BorrowerPtr<Out> result;
+  result.t = static_cast<Out*>(ptrToBase.t);
   result.refCount = ptrToBase.refCount;
   if (result.refCount) {
     ++result.refCount->count;
@@ -214,14 +215,15 @@ BorrowerPtr<U> static_pointer_cast(const BorrowerPtr<T>& ptrToBase) {
   return result;
 }
 
-template <class T, class U>
-BorrowerPtr<U> static_pointer_cast(BorrowerPtr<T>&& ptrToBase) {
-  BorrowerPtr<U> result;
-  result.t = static_cast<U*>(ptrToBase.t);
+template <class Out, class In>
+BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase) {
+  BorrowerPtr<Out> result;
+  result.t = static_cast<Out*>(ptrToBase.t);
   result.refCount = ptrToBase.refCount;
   ptrToBase.t = nullptr;
   ptrToBase.refCount = nullptr;
   return result;
 }
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki

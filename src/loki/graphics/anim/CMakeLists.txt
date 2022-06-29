@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME anim
+  NAME anim MODULE graphics
   HEADERS
   AnimationData.hpp
   AnimationViewData.hpp

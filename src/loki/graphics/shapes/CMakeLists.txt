@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME shapes
+  NAME shapes MODULE graphics
   HEADERS
   Capsule.hpp
   RoundedRectangle.hpp
