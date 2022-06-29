@@ -7,11 +7,11 @@
 
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
-#include <loki/core/utils/Matrix.hpp>
-#include <loki/gui/Widget.hpp>
 #include <memory>
 #include <string>
 #include <vector>
+#include "loki/core/utils/Matrix.hpp"
+#include "loki/gui/widgets/Widget.hpp"
 
 namespace loki::gui {
 

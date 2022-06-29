@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME utils
+  NAME utils MODULE core
   HEADERS
   IterAdapters.hpp
   Macros.hpp

@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME input
+  NAME input MODULE system
   HEADERS
   model/InputSettings.hpp
   model/InputState.hpp

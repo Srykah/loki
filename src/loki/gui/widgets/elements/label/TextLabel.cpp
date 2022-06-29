@@ -5,7 +5,7 @@
  */
 #include "TextLabel.hpp"
 
-#include <loki/graphics/text/AnnotatedStringEngine.hpp>
+#include "loki/graphics/text/AnnotatedStringEngine.hpp"
 
 namespace loki::gui {
 

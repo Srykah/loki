@@ -7,7 +7,8 @@
 
 #include <SFML/Graphics/VertexArray.hpp>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 class VertexArrayIterator {
  public:
@@ -55,7 +56,8 @@ class VertexArrayConstIterator {
   long long int index;
 };
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 namespace sf {
 

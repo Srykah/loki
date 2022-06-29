@@ -5,6 +5,7 @@
  */
 #include "TextBox.hpp"
 #include "TextBoxView.hpp"
+#include <sstream>
 
 namespace loki::gui {
 

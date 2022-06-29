@@ -9,7 +9,8 @@
 
 #include <utility>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 template <class T>
 class ReassignableConst {
@@ -34,6 +35,7 @@ class ReassignableConst {
   T value;
 };
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 #endif

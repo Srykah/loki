@@ -9,11 +9,11 @@
 
 namespace loki::tpl {
 void TemplateEngine::addRef(const std::string& name, const std::string& t) {
-  refs.insert_or_assign(name, [&t]() { return t; });
+  refs.insert_or_assign(name, [&t]() -> const std::string& { return t; });
 }
 
 void TemplateEngine::addPtr(const std::string& name, const std::string* t) {
-  refs.insert_or_assign(name, [t]() { return *t; });
+  refs.insert_or_assign(name, [t]() -> const std::string& { return *t; });
 }
 
 void TemplateEngine::addLambdaRef(const std::string& name,

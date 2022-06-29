@@ -1,9 +1,10 @@
 loki_create_lib(
-  NAME json INTERFACE
+  NAME json MODULE core INTERFACE
   HEADERS
   Color.hpp
   Macros.hpp
   Optional.hpp
+  Path.hpp
   Rect.hpp
   String.hpp
   Time.hpp

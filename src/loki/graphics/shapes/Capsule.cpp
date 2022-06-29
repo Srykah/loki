@@ -5,6 +5,7 @@
  */
 #include "Capsule.hpp"
 #include <cmath>
+#include <numbers>
 
 namespace loki::shapes {
 
@@ -26,9 +27,9 @@ sf::Vector2f loki::shapes::Capsule::getPoint(std::size_t index) const {
     origin = sf::Vector2f{radius, radius};
     --index;
   }
-  float angle = index * M_PI / (borderPointCount - 1);
+  float angle = index * std::numbers::pi / (borderPointCount - 1);
   if (size.x >= size.y) {
-    angle -= M_PI / 2.f;
+    angle -= std::numbers::pi / 2.f;
   }
   return origin + radius * sf::Vector2f{std::cos(angle), std::sin(angle)};
 }

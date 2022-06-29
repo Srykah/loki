@@ -5,6 +5,7 @@
  */
 #include "RoundedRectangle.hpp"
 #include <cmath>
+#include <numbers>
 
 namespace loki::shapes {
 
@@ -33,7 +34,7 @@ sf::Vector2f RoundedRectangle::getPoint(std::size_t index) const {
   auto quadrant = index / borderPointCount;
   auto origin = getQuadrantOrigin(quadrant);
   index -= quadrant;
-  float angle = 0.5f * index * M_PI / (borderPointCount - 1);
+  float angle = 0.5f * index * std::numbers::pi / (borderPointCount - 1);
   return origin + borderRadius * sf::Vector2f{std::cos(angle), std::sin(angle)};
 }
 

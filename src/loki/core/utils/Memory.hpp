@@ -7,7 +7,8 @@
 
 #include <stdexcept>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 namespace impl {
 
@@ -121,13 +122,14 @@ class BorrowerPtr {
   T* t = nullptr;
   impl::RefCount* refCount = nullptr;
 
-  template <class U>
-  friend const BorrowerPtr<U> static_pointer_cast(const BorrowerPtr& ptrToBase);
+  template <class Out, class In>
+  friend BorrowerPtr<Out> static_pointer_cast(const BorrowerPtr<In>& ptrToBase);
 
-  template <class U>
-  friend BorrowerPtr<U> static_pointer_cast(BorrowerPtr&& ptrToBase);
+  template <class Out, class In>
+  friend BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase);
 };
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 #include "impl/Memory.hxx"

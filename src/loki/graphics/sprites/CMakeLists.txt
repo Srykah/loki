@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME sprites
+  NAME sprites MODULE graphics
   HEADERS
   Sprite.hpp
   SpriteData.hpp

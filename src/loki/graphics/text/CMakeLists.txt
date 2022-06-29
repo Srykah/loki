@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME text
+  NAME text MODULE graphics
   HEADERS
   AnimatedText.hpp
   AnimatedTextStyle.hpp

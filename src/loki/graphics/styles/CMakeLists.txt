@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME styles
+  NAME styles MODULE graphics
   HEADERS
   ShapeStyle.hpp
   TextStyle.hpp

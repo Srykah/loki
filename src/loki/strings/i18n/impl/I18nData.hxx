@@ -10,7 +10,7 @@ namespace loki::i18n {
 template <class... Args>
 [[nodiscard]] std::string I18nData::get(const std::string& uri,
                                         Args&&... args) const {
-  return get(fmt::format(uri, std::forward<Args>(args)...));
+  return get(Ptr{fmt::format(fmt::runtime(uri), std::forward<Args>(args)...)});
 }
 
 }  // namespace loki::i18n

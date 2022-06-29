@@ -7,9 +7,9 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Time.hpp>
-#include <loki/graphics/styles/ShapeStyle.hpp>
-#include <loki/graphics/styles/TextStyle.hpp>
 #include <loki/gui/interfaces/Widget.hpp>
+#include "loki/graphics/styles/ShapeStyle.hpp"
+#include "loki/graphics/styles/TextStyle.hpp"
 
 namespace loki::gui {
 

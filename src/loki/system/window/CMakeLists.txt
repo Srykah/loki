@@ -1,5 +1,5 @@
 loki_create_lib(
-  NAME window
+  NAME window MODULE system
   HEADERS
   Style.hpp
   Window.hpp

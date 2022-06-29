@@ -10,7 +10,8 @@
 #include <nlohmann/json.hpp>
 #include <string>
 
-namespace loki::inline utils {
+namespace loki {
+inline namespace utils {
 
 inline std::string getHTMLColor(const sf::Color& color) {
   char str[10]{'#'};  // automatically null-terminated
@@ -34,7 +35,8 @@ inline sf::Color parseHTMLColor(const std::string& htmlCode) {
   return color;
 }
 
-}  // namespace loki::inline utils
+}  // namespace utils
+}  // namespace loki
 
 namespace nlohmann {
 
