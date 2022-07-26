@@ -29,6 +29,9 @@ class MapView : public sf::Transformable {
   const LayerView& getLayer(std::size_t index) const {
     return layers.at(index);
   }
+  void drawLayer(std::size_t index,
+                 sf::RenderTarget& target,
+                 sf::RenderStates states = {}) const;
 
   const sf::RectangleShape& getBackground() const { return background; }
 

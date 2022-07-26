@@ -6,5 +6,7 @@
 #pragma once
 
 #include "Interpolate.hpp"
+#include "Misc.hpp"
 #include "Rect.hpp"
-#include "Vector2.hpp"
+#include "Vector2Ops.hpp"
+#include "Vector4.hpp"

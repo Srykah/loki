@@ -15,7 +15,7 @@ namespace loki::tiles {
 class TileLayerView : public sf::Drawable, public sf::Transformable {
  private:
   struct AnimatedTile {
-    int curFrame;
+    int curFrame = 0;
     sf::Time timeSinceLastFrame;
   };
 
@@ -23,8 +23,7 @@ class TileLayerView : public sf::Drawable, public sf::Transformable {
   explicit TileLayerView(const TileLayerData& layerData,
                          const TilesetData& tilesetData);
 
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
   void update(const sf::Time& delta);
 
  private:

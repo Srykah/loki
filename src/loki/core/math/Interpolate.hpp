@@ -5,11 +5,19 @@
  */
 #pragma once
 
+#include <loki/core/json/Variant.hpp>
 #include <nlohmann/json.hpp>
+#include <variant>
 
 namespace loki::math {
 
-enum class InterpolationType { NONE = 0, LINEAR = 1, CUBIC = 3 };
+//
+#if 0
+enum class InterpolationType {
+  NONE = 0,
+  LINEAR = 1,
+  CUBIC = 3  ///< not implemented yet
+};
 
 NLOHMANN_JSON_SERIALIZE_ENUM(InterpolationType,
                              {
@@ -17,42 +25,64 @@ NLOHMANN_JSON_SERIALIZE_ENUM(InterpolationType,
                                  {InterpolationType::LINEAR, "linear"},
                                  {InterpolationType::CUBIC, "cubic"},
                              })
+#endif
+
+/// Order 0 interpolation
+template <typename In, typename Out>
+class NoneInterpolation;
+template <typename In, typename Out>
+void from_json(const nlohmann::json& j, NoneInterpolation<In, Out>& ip);
+template <typename In, typename Out>
+void to_json(nlohmann::json& j, const NoneInterpolation<In, Out>& ip);
 
 template <typename In, typename Out>
-class InterpolationBase {
+class NoneInterpolation {
  public:
-  virtual ~InterpolationBase() = default;
-  virtual Out interpolate(const In& x) const = 0;
-  virtual Out operator()(const In& x) const final { return interpolate(x); }
-};
+  NoneInterpolation() = default;
+  explicit NoneInterpolation(std::vector<std::pair<In, Out>>&& points)
+      : points(std::move(points)) {}
 
-template <typename In, typename Out>
-class NoneInterpolation : public InterpolationBase<In, Out> {
- public:
-  template <typename... Args>
-  explicit NoneInterpolation(Args&&... args)
-      : points(std::forward<Args>(args)...) {}
-  ~NoneInterpolation() override = default;
-
-  Out interpolate(const In& x) const override;
+  Out interpolate(const In& x) const;
 
  private:
   std::vector<std::pair<In, Out>> points;
+
+  friend void from_json<>(const nlohmann::json& j, NoneInterpolation& ip);
+  friend void to_json<>(nlohmann::json& j, const NoneInterpolation& ip);
 };
 
+/// Order 1 interpolation
 template <typename In, typename Out>
-class LinearInterpolation : public InterpolationBase<In, Out> {
+class LinearInterpolation;
+template <typename In, typename Out>
+void from_json(const nlohmann::json& j, LinearInterpolation<In, Out>& ip);
+template <typename In, typename Out>
+void to_json(nlohmann::json& j, const LinearInterpolation<In, Out>& ip);
+
+template <typename In, typename Out>
+class LinearInterpolation {
  public:
-  template <typename... Args>
-  explicit LinearInterpolation(Args&&... args)
-      : points(std::forward<Args>(args)...) {}
+  LinearInterpolation() = default;
+  explicit LinearInterpolation(std::vector<std::pair<In, Out>>&& points)
+      : points(std::move(points)) {}
   ~LinearInterpolation() = default;
 
-  Out interpolate(const In& x) const override;
+  Out interpolate(const In& x) const;
 
  private:
   std::vector<std::pair<In, Out>> points;
+
+  friend void from_json<>(const nlohmann::json& j, LinearInterpolation& ip);
+  friend void to_json<>(nlohmann::json& j, const LinearInterpolation& ip);
 };
+
+/// Common type for all interpolations
+template <typename In, typename Out>
+using Interpolation =
+    std::variant<NoneInterpolation<In, Out>, LinearInterpolation<In, Out>>;
+
+template <typename In, typename Out>
+Out interpolate(const Interpolation<In, Out>& ip, const In& x);
 
 }  // namespace loki::math
 

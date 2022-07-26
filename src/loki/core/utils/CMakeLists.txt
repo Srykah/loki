@@ -7,13 +7,11 @@ loki_create_lib(
   Memory.hpp
   Random.hpp
   TemplateHelpers.hpp
-  Vector4.hpp
   VertexArrayIterator.hpp
   INTERNAL_HEADERS
   impl/is_detected.hxx
   impl/Matrix.hxx
   impl/Memory.hxx
-  impl/Vector4.hxx
   SOURCES
   Random.cpp
   VertexArrayIterator.cpp

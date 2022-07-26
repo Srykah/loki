@@ -18,14 +18,12 @@ void MapView::setData(const MapData& data) {
   this->data = &data;
   for (const auto&& [i, layerData] : enumerate(data.layers)) {
     if (std::holds_alternative<TileLayerData>(layerData)) {
-      layers.emplace_back(
-          std::in_place_type_t<TileLayerView>{},
-          std::get<TileLayerData>(layerData),
-          *data.tilesets.at(0));
+      layers.emplace_back(std::in_place_type_t<TileLayerView>{},
+                          std::get<TileLayerData>(layerData),
+                          *data.tilesets.at(0));
     } else if (std::holds_alternative<ObjectLayerData>(layerData)) {
-      layers.emplace_back(
-          std::in_place_type_t<ObjectLayerView>{},
-          std::get<ObjectLayerData>(layerData));
+      layers.emplace_back(std::in_place_type_t<ObjectLayerView>{},
+                          std::get<ObjectLayerData>(layerData));
     }
   }
   background.setSize({
@@ -39,6 +37,13 @@ void MapView::update(sf::Time delta) {
   for (auto& layer : layers) {
     std::visit([delta](auto&& l) { l.update(delta); }, layer);
   }
+}
+
+void MapView::drawLayer(std::size_t index,
+                        sf::RenderTarget& target,
+                        sf::RenderStates states) const {
+  std::visit([&](auto&& layer) { target.draw(layer, states); },
+             layers.at(index));
 }
 
 }  // namespace loki::tiles

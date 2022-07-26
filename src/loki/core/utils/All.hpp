@@ -11,5 +11,4 @@
 #include "Memory.hpp"
 #include "Random.hpp"
 #include "TemplateHelpers.hpp"
-#include "Vector4.hpp"
 #include "VertexArrayIterator.hpp"

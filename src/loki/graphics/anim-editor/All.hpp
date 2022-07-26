@@ -5,5 +5,4 @@
  */
 #pragma once
 
-#include "ShapeAnimationData.hpp"
-#include "ShapeAnimator.hpp"
+#include "AnimEditor.hpp"

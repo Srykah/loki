@@ -6,7 +6,7 @@
 #include "Window.hpp"
 #include <SFML/Window/Event.hpp>
 #include <loki/core/math/Rect.hpp>
-#include <loki/core/math/Vector2.hpp>
+#include <loki/core/math/Vector2Ops.hpp>
 
 namespace loki::window {
 

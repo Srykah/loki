@@ -4,8 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 
-namespace loki {
-inline namespace utils {
+namespace loki::math {
 
 template <typename T>
 template <typename A, typename B, typename C, typename D>
@@ -116,5 +115,20 @@ sf::Color toColor(const Vector4<T>& v) {
       std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
 }
 
-}  // namespace utils
-}  // namespace loki
+template <typename T>
+void to_json(nlohmann::json& j, const Vector4<T>& vec4) {
+  j["a"] = vec4.a;
+  j["b"] = vec4.b;
+  j["c"] = vec4.c;
+  j["d"] = vec4.d;
+}
+
+template <typename T>
+void from_json(const nlohmann::json& j, Vector4<T>& vec4) {
+  j.at("a").get_to(vec4.a);
+  j.at("b").get_to(vec4.b);
+  j.at("c").get_to(vec4.c);
+  j.at("d").get_to(vec4.d);
+}
+
+}  // namespace loki::math

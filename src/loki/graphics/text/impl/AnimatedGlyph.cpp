@@ -7,22 +7,37 @@
 
 namespace loki::text::impl {
 
-AnimatedGlyph::AnimatedGlyph(const sf::Glyph& glyph,
+AnimatedGlyph::AnimatedGlyph(sf::VertexArray& va,
+                             std::size_t index,
+                             const sf::Glyph& glyph,
                              const AnimatedTextStyle& style,
-                             VertexArrayIterator vaIt,
                              float x)
-    : style(style), vaIt(vaIt) {
-  initBasePos(glyph, x);
-  initTexRect(glyph);
-  if (style.appear.has_value()) {
-    updateVertices(style.appear->getTransform(sf::Time::Zero),
-                   style.appear->getColor(sf::Time::Zero));
+    : va(va), index(index), glyph(glyph), style(style), x(x) {
+  initTexRect();
+  initAnim();
+  if (style.appear) {
+    anim.emplace(*this, *style.appear);
+    anim->setTime(sf::Time::Zero);
+    state = APPEAR;
   } else {
-    updateVertices(sf::Transform::Identity, sf::Color::White);
+    if (style.idle) {
+      anim.emplace(*this, *style.idle);
+    }
+    state = IDLE;
   }
 }
 
-void AnimatedGlyph::initBasePos(const sf::Glyph& glyph, float x) {
+void AnimatedGlyph::initAnim() {
+  auto xCenter = glyph.bounds.left + 0.5f * glyph.bounds.width;
+  auto yCenter = glyph.bounds.top + 0.5f * glyph.bounds.height;
+  setOrigin(xCenter, yCenter);
+  setPosition(x + xCenter, yCenter);
+  setRotation(0.f);
+  setScale(1.f, 1.f);
+  setColor(style.fillColor.value_or(sf::Color::White));
+}
+
+void AnimatedGlyph::updateVertices() {
   float padding = 1.0;
   float shear =
       (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic)
@@ -34,15 +49,23 @@ void AnimatedGlyph::initBasePos(const sf::Glyph& glyph, float x) {
   float right = glyph.bounds.left + glyph.bounds.width + padding;
   float bottom = glyph.bounds.top + glyph.bounds.height + padding;
 
-  basePos[0] = sf::Vector2f(x + left - shear * top, top);
-  basePos[1] = sf::Vector2f(x + right - shear * top, top);
-  basePos[2] = sf::Vector2f(x + left - shear * bottom, bottom);
-  basePos[3] = sf::Vector2f(x + left - shear * bottom, bottom);
-  basePos[4] = sf::Vector2f(x + right - shear * top, top);
-  basePos[5] = sf::Vector2f(x + right - shear * bottom, bottom);
+  /*    0 - 1,4
+   *    | / |
+   *  2,3 - 5
+   */
+  va[index * 6 + 0].position =
+      getTransform().transformPoint(sf::Vector2f(left - shear * top, top));
+  va[index * 6 + 1].position =
+      getTransform().transformPoint(sf::Vector2f(right - shear * top, top));
+  va[index * 6 + 2].position = getTransform().transformPoint(
+      sf::Vector2f(left - shear * bottom, bottom));
+  va[index * 6 + 3].position = va[index * 6 + 2].position;
+  va[index * 6 + 4].position = va[index * 6 + 1].position;
+  va[index * 6 + 5].position = getTransform().transformPoint(
+      sf::Vector2f(right - shear * bottom, bottom));
 }
 
-void AnimatedGlyph::initTexRect(const sf::Glyph& glyph) {
+void AnimatedGlyph::initTexRect() {
   float padding = 1.0;
 
   float u1 = static_cast<float>(glyph.textureRect.left) - padding;
@@ -54,71 +77,61 @@ void AnimatedGlyph::initTexRect(const sf::Glyph& glyph) {
       static_cast<float>(glyph.textureRect.top + glyph.textureRect.height) +
       padding;
 
-  (vaIt + 0)->texCoords = sf::Vector2f(u1, v1);
-  (vaIt + 1)->texCoords = sf::Vector2f(u2, v1);
-  (vaIt + 2)->texCoords = sf::Vector2f(u1, v2);
-  (vaIt + 3)->texCoords = sf::Vector2f(u1, v2);
-  (vaIt + 4)->texCoords = sf::Vector2f(u2, v1);
-  (vaIt + 5)->texCoords = sf::Vector2f(u2, v2);
+  /*    0 - 1,4
+   *    | / |
+   *  2,3 - 5
+   */
+  va[index * 6 + 0].texCoords = sf::Vector2f(u1, v1);
+  va[index * 6 + 1].texCoords = sf::Vector2f(u2, v1);
+  va[index * 6 + 2].texCoords = sf::Vector2f(u1, v2);
+  va[index * 6 + 3].texCoords = sf::Vector2f(u1, v2);
+  va[index * 6 + 4].texCoords = sf::Vector2f(u2, v1);
+  va[index * 6 + 5].texCoords = sf::Vector2f(u2, v2);
 }
 
-void AnimatedGlyph::updateVertices(const sf::Transform& transform,
-                                   const sf::Color& _color) {
+void AnimatedGlyph::setTime(sf::Time time) {
+  time -= static_cast<float>(index) * style.dt;
+  if (state == APPEAR) {
+    if (time < sf::Time::Zero) {
+      return;
+    }
+    if (time >= style.appear->duration) {
+      state = IDLE;
+      if (style.idle) {
+        initAnim();
+        anim.emplace(*this, *style.idle);
+      }
+      // fallthrough to IDLE case
+    }
+  }
+  if (state == IDLE && style.appear) {
+    time -= style.appear->duration;
+  }
+  if (state == DISAPPEAR && time < sf::Time::Zero) {
+    return;
+  }
+  if (anim && !anim->hasEnded()) {
+    anim->setTime(time);
+    updateVertices();
+  }
+}
+
+void AnimatedGlyph::end() {
+  state = DISAPPEAR;
+  if (style.disappear) {
+    initAnim();
+    anim.emplace(*this, *style.disappear);
+  }
+}
+
+void AnimatedGlyph::setColor(sf::Color color) {
   for (int i{0}; i < 6; ++i) {
-    (vaIt + i)->color = style.fillColor.value_or(sf::Color::White) * _color;
-    (vaIt + i)->position = transform.transformPoint(basePos[i]);
+    va[index * 6 + i].color = color;
   }
 }
 
-/*void AnimatedGlyph::update(sf::Time delta) {
-  if (playing) {
-    elapsedTime += delta;
-    if (appearing && !disappearing && style.appear.has_value()) {
-      const sf::Time& appearDuration = style.appear->getDuration();
-      if (elapsedTime >= appearDuration) {
-        updateVertices(
-            style.appear->getTransform(appearDuration),
-            style.appear->getColor(appearDuration));
-        elapsedTime -= appearDuration;
-        appearing = false;
-      } else {
-        updateVertices(
-            style.appear->getTransform(elapsedTime),
-            style.appear->getColor(elapsedTime));
-      }
-    }
-    if (!appearing && !disappearing && style.animation.has_value()) {
-      const sf::Time& animationDuration = style.animation->getDuration();
-      for (elapsedTime += delta;
-           elapsedTime >= animationDuration;
-           elapsedTime -= animationDuration);
-      updateVertices(
-          style.animation->getTransform(elapsedTime),
-          style.animation->getColor(elapsedTime));
-    }
-    if (disappearing && style.disappear.has_value()) {
-      const sf::Time& disappearDuration = style.appear->getDuration();
-      if (elapsedTime >= disappearDuration) {
-        updateVertices(
-            style.disappear->getTransform(disappearDuration),
-            style.appear->getColor(disappearDuration));
-        elapsedTime = sf::Time::Zero;
-        playing = false;
-      } else {
-        updateVertices(
-            style.disappear->getTransform(elapsedTime),
-            style.disappear->getColor(elapsedTime));
-      }
-    }
-  }
+sf::Color AnimatedGlyph::getColor() const {
+  return style.fillColor.value_or(sf::Color::White);
 }
-
-void AnimatedGlyph::appear() {
-  appearing = true;
-}
-
-bool AnimatedGlyph::isAppearing() const {
-  return appearing;
-}*/
 
 }  // namespace loki::text::impl

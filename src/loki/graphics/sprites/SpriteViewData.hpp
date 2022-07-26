@@ -6,7 +6,7 @@
 #pragma once
 
 #include <SFML/Graphics/Texture.hpp>
-#include <loki/graphics/anim/AnimationViewData.hpp>
+#include <loki/graphics/anim/ShapeAnimationData.hpp>
 #include "SpriteData.hpp"
 
 namespace loki::sprites {

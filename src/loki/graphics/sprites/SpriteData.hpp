@@ -9,7 +9,7 @@
 #include <loki/core/res/JsonResources.hpp>
 #include <loki/core/res/ResourceHolder.hpp>
 #include <loki/core/res/SFMLResources.hpp>
-#include <loki/graphics/anim/AnimationData.hpp>
+#include <loki/graphics/anim/ShapeAnimationData.hpp>
 #include <map>
 #include <nlohmann/json.hpp>
 
@@ -18,7 +18,7 @@ namespace loki::sprites {
 struct SpriteData : public res::JsonResource<SpriteData> {
   LOKI_RES_JSONRESOURCE_CTOR_DTOR(SpriteData)
 
-  std::map<std::string, anim::AnimationData> animations;
+  std::map<std::string, anim::ShapeAnimationData> animations;
   res::ResourceHandle<res::TextureResource> texture;
 
   LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)

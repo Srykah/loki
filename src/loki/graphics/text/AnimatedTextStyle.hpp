@@ -5,18 +5,20 @@
  */
 #pragma once
 
+#include <loki/graphics/anim/ShapeAnimationData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>
-#include "TextAnimationViewData.hpp"
 
 namespace loki::text {
 
-struct AnimatedTextStyle : public loki::styles::TextStyle {
-  std::optional<TextAnimationViewData> appear;
-  std::optional<TextAnimationViewData> animation;
-  std::optional<TextAnimationViewData> disappear;
+struct AnimatedTextStyle : public styles::TextStyle {
+  std::optional<anim::ShapeAnimationData> appear;
+  std::optional<anim::ShapeAnimationData> idle;
+  std::optional<anim::ShapeAnimationData> disappear;
+  sf::Time dt;
 
   AnimatedTextStyle& overrideWith(const AnimatedTextStyle& other);
-  AnimatedTextStyle cloneAndOverrideWith(const AnimatedTextStyle& other) const;
+  [[nodiscard]] AnimatedTextStyle cloneAndOverrideWith(
+      const AnimatedTextStyle& other) const;
 
   static AnimatedTextStyle fromDefaults();
 };
