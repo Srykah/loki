@@ -30,7 +30,7 @@ struct nonesuch {
   void operator=(nonesuch const&) = delete;
 };
 
-#include "impl/is_detected.hxx"
+#include "is_detected.hxx"
 
 template <template <class...> class Op, class... Args>
 constexpr bool is_detected = impl::detector<void, Op, Args...>::value;

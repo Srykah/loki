@@ -63,4 +63,4 @@ class Screen {
 
 }  // namespace loki::screens
 
-#include "impl/Screen.hxx"
+#include "Screen.hxx"

@@ -16,7 +16,7 @@ struct SpriteViewData {
       const SpriteData& data,
       const std::filesystem::path& cd = std::filesystem::current_path());
 
-  std::map<sf::String, anim::AnimationViewData> animations;
+  std::map<sf::String, anim::ShapeAnimationData> animations;
   sf::Texture texture;
 };
 

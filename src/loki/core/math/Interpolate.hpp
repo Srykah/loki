@@ -86,4 +86,4 @@ Out interpolate(const Interpolation<In, Out>& ip, const In& x);
 
 }  // namespace loki::math
 
-#include "impl/Interpolate.hxx"
+#include "Interpolate.hxx"

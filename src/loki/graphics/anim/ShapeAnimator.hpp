@@ -42,4 +42,4 @@ class ShapeAnimator {
 
 }  // namespace loki::anim
 
-#include "loki/graphics/anim/impl/ShapeAnimator.hxx"
+#include "ShapeAnimator.hxx"

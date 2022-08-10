@@ -132,4 +132,4 @@ class BorrowerPtr {
 }  // namespace utils
 }  // namespace loki
 
-#include "impl/Memory.hxx"
+#include "Memory.hxx"

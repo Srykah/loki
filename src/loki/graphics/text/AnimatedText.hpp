@@ -10,8 +10,8 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
 #include <string>
+#include "AnimatedGlyph.hpp"
 #include "Stylesheet.hpp"
-#include "loki/graphics/text/impl/AnimatedGlyph.hpp"
 
 namespace loki::text {
 

@@ -27,14 +27,14 @@ class Matrix {
       typename Iterator,
       std::enable_if_t<std::is_lvalue_reference_v<
                            typename std::iterator_traits<Iterator>::reference>,
-                       void> = void()>
+                       int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
   template <
       typename Iterator,
       std::enable_if_t<std::is_rvalue_reference_v<
                            typename std::iterator_traits<Iterator>::reference>,
-                       void> = void()>
+                       int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
   explicit Matrix(std::size_t width,
@@ -92,4 +92,4 @@ class StaticMatrix {
 }  // namespace utils
 }  // namespace loki
 
-#include "impl/Matrix.hxx"
+#include "Matrix.hxx"

@@ -6,10 +6,10 @@
 #pragma once
 
 #include <filesystem>
-#include <loki/core/res/JsonResources.hpp>
-#include <loki/core/res/ResourceHolder.hpp>
-#include <loki/core/res/SFMLResources.hpp>
 #include <loki/graphics/anim/ShapeAnimationData.hpp>
+#include <loki/system/res/JsonResources.hpp>
+#include <loki/system/res/ResourceHolder.hpp>
+#include <loki/system/res/SFMLResources.hpp>
 #include <map>
 #include <nlohmann/json.hpp>
 

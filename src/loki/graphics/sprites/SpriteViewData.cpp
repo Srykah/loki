@@ -10,8 +10,9 @@ namespace loki::sprites {
 
 SpriteViewData::SpriteViewData(const SpriteData& data,
                                const std::filesystem::path& cd) {
-  if (!texture.loadFromFile((cd / data.texture).string())) {
-    throw std::runtime_error("Could not load " + data.texturePath.string());
+  if (!texture.loadFromFile((cd / data.texture.getPath()).string())) {
+    throw std::runtime_error("Could not load " +
+                             data.texture.getPath().string());
   }
   for (const auto& [animName, animData] : data.animations) {
     animations.emplace(animName, animData);

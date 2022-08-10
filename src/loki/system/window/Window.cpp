@@ -10,31 +10,21 @@
 
 namespace loki::window {
 
-Window::Window(sf::Vector2f renderSize,
-               const sf::String& title,
-               Style style,
-               const sf::ContextSettings& settings,
-               sf::Vector2u minimumSize)
-    : Window(renderSize,
-             contains(style, Style::FULLSCREEN)
-                 ? sf::VideoMode::getFullscreenModes()[0]
-                 : sf::VideoMode(renderSize.x, renderSize.y),
-             title,
-             style,
-             settings,
-             minimumSize) {}
+void Window::create(sf::Vector2u size, const std::string& name, Style _style) {
+  window.create(sf::VideoMode(size.x, size.y),
+                sf::String::fromUtf8(name.begin(), name.end()),
+                toSFMLWindowStyle(_style));
+  setView(getDefaultView());
+}
 
-Window::Window(sf::Vector2f renderSize,
-               sf::VideoMode mode,
-               const sf::String& title,
-               Style style,
-               const sf::ContextSettings& settings,
-               sf::Vector2u minimumSize)
-    : window(mode, title, toSFMLWindowStyle(style), settings),
-      renderSize(renderSize),
-      minimumSize(minimumSize),
-      style(style) {
-  setView(sf::View{renderSize / 2.f, renderSize});
+void Window::setInternalResolution(sf::Vector2u _internalResolution) {
+  internalResolution = _internalResolution;
+  setView(getDefaultView());
+}
+
+void Window::setMinimumSize(sf::Vector2u _minimumSize) {
+  minimumSize = _minimumSize;
+  guardMinimumSize();
 }
 
 void Window::setView(sf::View view) {
@@ -89,7 +79,7 @@ sf::Vector2f Window::getLetterboxedViewportSize() {
   auto windowWidth = window.getSize().x;
   auto windowHeight = window.getSize().y;
   float windowRatio = float(windowWidth) / float(windowHeight);
-  float renderRatio = renderSize.x / renderSize.y;
+  float renderRatio = float(internalResolution.x) / float(internalResolution.y);
 
   if (windowRatio >= renderRatio) {  // window too wide
     return {(windowHeight * renderRatio) / windowWidth, 1.f};
@@ -102,17 +92,18 @@ sf::Vector2f Window::getIntegerZoomViewportSize() {
   auto windowWidth = window.getSize().x;
   auto windowHeight = window.getSize().y;
   float windowRatio = float(windowWidth) / float(windowHeight);
-  float renderRatio = renderSize.x / renderSize.y;
+  float renderRatio = float(internalResolution.x) / float(internalResolution.y);
   float integerRatio;  // actually an int
 
   if (windowRatio >= renderRatio) {  // window too wide
-    integerRatio = std::floor(windowHeight / renderSize.y);
+    integerRatio = float(windowHeight / internalResolution.y);
   } else {  // window too tall
-    integerRatio = std::floor(windowWidth / renderSize.x);
+    integerRatio = float(windowWidth / internalResolution.x);
   }
 
   return integerRatio *
-         math::compDiv(renderSize, sf::Vector2{windowWidth, windowHeight});
+         sf::Vector2f{math::compDiv(internalResolution,
+                                    sf::Vector2{windowWidth, windowHeight})};
 }
 void Window::guardMinimumSize() {
   window.setSize(math::compMax(window.getSize(), minimumSize));

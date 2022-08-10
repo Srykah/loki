@@ -57,4 +57,4 @@ void from_json(const nlohmann::json& j, Vector4<T>& vec4);
 
 }  // namespace loki::math
 
-#include "loki/core/math/impl/Vector4.hxx"
+#include "Vector4.hxx"
