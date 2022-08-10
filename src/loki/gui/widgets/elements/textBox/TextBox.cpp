@@ -4,8 +4,8 @@
  * \copyright GNU GPL v3.0
  */
 #include "TextBox.hpp"
-#include "TextBoxView.hpp"
 #include <sstream>
+#include "TextBoxView.hpp"
 
 namespace loki::gui {
 

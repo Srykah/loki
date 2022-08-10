@@ -25,11 +25,7 @@ class AnimatedGlyph : public sf::Transformable {
   void end();
 
  private:
-  enum State {
-    APPEAR,
-    IDLE,
-    DISAPPEAR
-  };
+  enum State { APPEAR, IDLE, DISAPPEAR };
 
   void initAnim();
   void initTexRect();
