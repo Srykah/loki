@@ -26,22 +26,6 @@ function(loki_target_install_files target module)
   endforeach ()
 endfunction()
 
-# Configuring All includes header
-function(loki_configure_all_hpp)
-  cmake_parse_arguments(LIB "" "" "HEADERS" ${ARGN})
-  list(
-    TRANSFORM LIB_HEADERS
-    REPLACE ".+" "#include \"\\0\""
-    OUTPUT_VARIABLE LIB_INCLUDES
-  )
-  list(JOIN LIB_INCLUDES "\n" LIB_ALL_INCLUDES)
-  configure_file(
-    ${PROJECT_SOURCE_DIR}/cmake/All.hpp.in
-    ${CMAKE_CURRENT_SOURCE_DIR}/All.hpp
-    @ONLY
-  )
-endfunction()
-
 # Complete lib creation helper
 function(loki_create_lib)
   cmake_parse_arguments(
@@ -51,7 +35,6 @@ function(loki_create_lib)
     "HEADERS;INTERNAL_HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS;INTERFACE_DEPS"
     ${ARGN}
   )
-  loki_configure_all_hpp(HEADERS ${LIB_HEADERS})
   if (LIB_INTERFACE)
     if (DEFINED LIB_SOURCES AND NOT LIB_SOURCES STREQUAL "")
       message(FATAL_ERROR "Interface library can't have .cpp files")
