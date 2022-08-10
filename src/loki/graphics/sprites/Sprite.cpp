@@ -13,10 +13,8 @@ Sprite::Sprite(const SpriteData& data, const std::string& anim) : data(data) {
 }
 
 void Sprite::setAnim(const std::string& anim) {
-  curAnimViewData =
-      std::make_unique<anim::AnimationViewData>(data.animations.at(anim));
-  animator =
-      std::make_unique<anim::Animator<sf::Sprite>>(sprite, *curAnimViewData);
+  animator = std::make_unique<anim::ShapeAnimator<sf::Sprite>>(
+      sprite, data.animations.at(anim));
 }
 
 void Sprite::update(sf::Time delta) {

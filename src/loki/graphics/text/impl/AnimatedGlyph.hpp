@@ -8,27 +8,41 @@
 #include <SFML/Graphics/Glyph.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <loki/core/utils/VertexArrayIterator.hpp>
+#include <loki/graphics/anim/ShapeAnimator.hpp>
 #include "loki/graphics/text/AnimatedTextStyle.hpp"
 
 namespace loki::text::impl {
 
 class AnimatedGlyph : public sf::Transformable {
  public:
-  AnimatedGlyph(const sf::Glyph& glyph,
+  AnimatedGlyph(sf::VertexArray& va,
+                std::size_t index,
+                const sf::Glyph& glyph,
                 const AnimatedTextStyle& style,
-                VertexArrayIterator vaIt,
                 float x);
 
-  void updateVertices(const sf::Transform& transform, const sf::Color& color);
+  void setTime(sf::Time time);
+  void end();
 
  private:
-  void initBasePos(const sf::Glyph& glyph, float x);
-  void initTexRect(const sf::Glyph& glyph);
+  enum State { APPEAR, IDLE, DISAPPEAR };
+
+  void initAnim();
+  void initTexRect();
+  void updateVertices();
+
+  friend anim::ShapeAnimator<AnimatedGlyph>;
+  void setColor(sf::Color color);
+  sf::Color getColor() const;
 
  private:
-  VertexArrayIterator vaIt;
+  sf::VertexArray& va;
+  std::size_t index = 0;
+  const sf::Glyph& glyph;
   const AnimatedTextStyle& style;
-  sf::Vector2f basePos[6];
+  float x = 0.f;
+  std::optional<anim::ShapeAnimator<AnimatedGlyph>> anim;
+  State state;
 };
 
 }  // namespace loki::text::impl

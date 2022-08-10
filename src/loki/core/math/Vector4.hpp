@@ -7,9 +7,9 @@
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
+#include <nlohmann/json.hpp>
 
-namespace loki {
-inline namespace utils {
+namespace loki::math {
 
 template <typename T>
 struct Vector4 {
@@ -50,7 +50,11 @@ sf::Color toColor(const Vector4<T>& v);
 using Vector4f = Vector4<float>;
 using Vector4i = Vector4<int>;
 
-}  // namespace utils
-}  // namespace loki
+template <typename T>
+void to_json(nlohmann::json& j, const Vector4<T>& vec4);
+template <typename T>
+void from_json(const nlohmann::json& j, Vector4<T>& vec4);
 
-#include "impl/Vector4.hxx"
+}  // namespace loki::math
+
+#include "loki/core/math/impl/Vector4.hxx"

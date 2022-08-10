@@ -5,6 +5,7 @@
  */
 #pragma once
 
+#include <nlohmann/json.hpp>
 #include <optional>
 
 namespace nlohmann {
@@ -19,11 +20,11 @@ struct adl_serializer<std::optional<T>> {
     }
   }
 
-  static void from_json(const json& j, std::optional<T>& opt) {
+  static std::optional<T> from_json(const json& j) {
     if (j.is_null()) {
-      opt.reset();
+      return std::nullopt;
     } else {
-      opt = j.get<T>();
+      return j.get<T>();
     }
   }
 };

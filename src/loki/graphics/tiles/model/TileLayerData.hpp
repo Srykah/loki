@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #pragma once
-
+#if 0
 #include <SFML/Graphics.hpp>
 #include <loki/core/utils/Matrix.hpp>
 #include <nlohmann/json.hpp>
@@ -25,3 +25,4 @@ void to_json(nlohmann::json& j, const TileLayerData& tld);
 void from_json(const nlohmann::json& j, TileLayerData& tld);
 
 }  // namespace loki::tiles
+#endif

@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "ObjectLayerData.hpp"
-
+#if 0
 namespace loki::tiles {
 
 ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
@@ -15,3 +15,4 @@ ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
 }
 
 }  // namespace loki::tiles
+#endif

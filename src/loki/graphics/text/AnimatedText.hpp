@@ -18,14 +18,14 @@ namespace loki::text {
 class AnimatedText : public sf::Drawable, public sf::Transformable {
  public:
   AnimatedText(const std::string& str, AnimatedTextStyle style);
-  ~AnimatedText() = default;
+  ~AnimatedText() override = default;
 
   void update(sf::Time delta);
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
   void skip();
-  [[nodiscard]] bool hasEnded() const;
+  [[nodiscard]] bool hasFinishedAppearing() const;
+  void end();
 
   [[nodiscard]] sf::FloatRect getLocalBounds() const;
 
@@ -33,7 +33,7 @@ class AnimatedText : public sf::Drawable, public sf::Transformable {
   void init(const std::string& str);
 
  private:
-  sf::Time skippingMoment;
+  bool isEnding = false;
   sf::Time elapsedTime;
   AnimatedTextStyle style;
   sf::VertexArray vertices;

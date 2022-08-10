@@ -1,4 +1,5 @@
 add_subdirectory(anim)
+add_subdirectory(anim-editor)
 add_subdirectory(shapes)
 add_subdirectory(sprites)
 add_subdirectory(styles)

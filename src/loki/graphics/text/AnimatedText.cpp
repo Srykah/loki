@@ -16,6 +16,10 @@ AnimatedText::AnimatedText(const std::string& string, AnimatedTextStyle style)
 
 void AnimatedText::update(sf::Time delta) {
   elapsedTime += delta;
+  for (auto& glyph : glyphs) {
+    glyph.setTime(elapsedTime);
+  }
+#if 0
   for (auto&& [i, glyph] : enumerate(glyphs)) {
     if (style.appear.has_value()) {
       sf::Time startingPoint = float(i) * style.appear->dt;
@@ -36,6 +40,7 @@ void AnimatedText::update(sf::Time delta) {
           style.animation->getColor(elapsedTime - startingPoint));
     }
   }
+#endif
 }
 
 void AnimatedText::draw(sf::RenderTarget& target,
@@ -46,7 +51,15 @@ void AnimatedText::draw(sf::RenderTarget& target,
 }
 
 void AnimatedText::skip() {
-  skippingMoment = elapsedTime;
+  if (!style.appear) {
+    return;
+  }
+  auto skippingMoment =
+      style.appear->duration + static_cast<float>(glyphs.size() - 1) * style.dt;
+  if (elapsedTime > skippingMoment) {
+    return;
+  }
+  elapsedTime = skippingMoment;
 }
 
 void AnimatedText::init(const std::string& str) {
@@ -68,20 +81,28 @@ void AnimatedText::init(const std::string& str) {
     lastChar = c;
     const auto glyph = font.getGlyph(c, charSize, isBold);
     vertices.resize(vertices.getVertexCount() + 6);
-    glyphs.emplace_back(glyph, style, begin(vertices) + 6 * i, x);
+    glyphs.emplace_back(vertices, i, glyph, style, x);
     x += glyph.advance;
   }
 }
 
-bool AnimatedText::hasEnded() const {
-  if (style.appear.has_value()) {
-    return elapsedTime >= style.appear->dt * float(glyphs.size());
+bool AnimatedText::hasFinishedAppearing() const {
+  if (isEnding)
+    return true;
+  if (style.appear) {
+    return elapsedTime >= style.appear->duration +
+                              static_cast<float>(glyphs.size() - 1) * style.dt;
   }
   return true;
 }
 
 sf::FloatRect AnimatedText::getLocalBounds() const {
-  return sf::FloatRect();  // todo todo todo
+  return {};  // todo todo todo
+}
+
+void AnimatedText::end() {
+  isEnding = true;
+  elapsedTime = sf::Time::Zero;
 }
 
 }  // namespace loki::text

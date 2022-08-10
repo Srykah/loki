@@ -6,7 +6,6 @@ loki_create_lib(
   AnnotatedStringEngine.hpp
   AnnotatedText.hpp
   Stylesheet.hpp
-  TextAnimationViewData.hpp
   INTERNAL_HEADERS
   impl/AnimatedGlyph.hpp
   SOURCES
@@ -15,7 +14,6 @@ loki_create_lib(
   AnnotatedStringEngine.cpp
   AnnotatedText.cpp
   Stylesheet.cpp
-  TextAnimationViewData.cpp
   impl/AnimatedGlyph.cpp
   PUBLIC_DEPS
   sfml-graphics

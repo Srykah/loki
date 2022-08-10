@@ -6,7 +6,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <loki/graphics/anim/Animator.hpp>
+#include <loki/graphics/anim/ShapeAnimator.hpp>
 #include "SpriteData.hpp"
 
 namespace loki::sprites {
@@ -31,8 +31,7 @@ class Sprite : public sf::Drawable, public sf::Transformable {
  private:
   const SpriteData& data;
   sf::Sprite sprite;
-  std::unique_ptr<anim::AnimationViewData> curAnimViewData;
-  std::unique_ptr<anim::Animator<sf::Sprite>> animator;
+  std::unique_ptr<anim::ShapeAnimator<sf::Sprite>> animator;
 };
 
 }  // namespace loki::sprites

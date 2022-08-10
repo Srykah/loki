@@ -5,20 +5,8 @@
  */
 #pragma once
 
-#include "MapView.hpp"
-namespace loki::tiles {
+#include <loki/core/utils/TemplateHelpers.hpp>
+#include "ObjectLayerView.hpp"
+#include "TileLayerView.hpp"
 
-class LayerView : public sf::Drawable {
- public:
-  LayerView(const MapView& parent) : parent(parent) {}
-
-  virtual void update(const sf::Time& delta) = 0;
-
- protected:
-  sf::Transform getParentTransform() const { return parent.getTransform(); }
-
- private:
-  const MapView& parent;
-};
-
-}  // namespace loki::tiles
+namespace loki::tiles {}  // namespace loki::tiles

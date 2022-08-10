@@ -16,6 +16,9 @@ struct false_type {
   static constexpr bool value = false;
 };
 
+template <class... T>
+constexpr bool always_false = false;
+
 template <typename T>
 struct identity_type {
   using type = T;

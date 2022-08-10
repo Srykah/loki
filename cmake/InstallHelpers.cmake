@@ -26,22 +26,6 @@ function(loki_target_install_files target module)
   endforeach ()
 endfunction()
 
-# Configuring All includes header
-function(loki_configure_all_hpp)
-  cmake_parse_arguments(LIB "" "" "HEADERS" ${ARGN})
-  list(
-    TRANSFORM LIB_HEADERS
-    REPLACE ".+" "#include \"\\0\""
-    OUTPUT_VARIABLE LIB_INCLUDES
-  )
-  list(JOIN LIB_INCLUDES "\n" LIB_ALL_INCLUDES)
-  configure_file(
-    ${PROJECT_SOURCE_DIR}/cmake/All.hpp.in
-    ${CMAKE_CURRENT_SOURCE_DIR}/All.hpp
-    @ONLY
-  )
-endfunction()
-
 # Complete lib creation helper
 function(loki_create_lib)
   cmake_parse_arguments(
@@ -51,7 +35,6 @@ function(loki_create_lib)
     "HEADERS;INTERNAL_HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS;INTERFACE_DEPS"
     ${ARGN}
   )
-  loki_configure_all_hpp(HEADERS ${LIB_HEADERS})
   if (LIB_INTERFACE)
     if (DEFINED LIB_SOURCES AND NOT LIB_SOURCES STREQUAL "")
       message(FATAL_ERROR "Interface library can't have .cpp files")
@@ -60,7 +43,7 @@ function(loki_create_lib)
       message(FATAL_ERROR "Interface library can't have private dependencies")
     endif ()
     add_library(
-      ${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp
+      ${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS}
     )
     target_compile_features(${LIB_NAME} INTERFACE cxx_std_20)
     target_link_libraries(
@@ -68,7 +51,7 @@ function(loki_create_lib)
     )
   else ()
     add_library(
-      ${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp ${LIB_SOURCES}
+      ${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} ${LIB_SOURCES}
     )
     target_compile_features(${LIB_NAME} PUBLIC cxx_std_20)
     target_link_libraries(
@@ -92,7 +75,7 @@ function(loki_create_lib)
   )
   loki_add_lib_prefix(${LIB_NAME})
   loki_target_install_files(
-    ${LIB_NAME} ${LIB_MODULE} FILES ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp
+    ${LIB_NAME} ${LIB_MODULE} FILES ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS}
   )
   install(TARGETS ${LIB_NAME} EXPORT loki_targets)
   target_link_libraries(${LIB_MODULE} INTERFACE loki::${LIB_NAME})

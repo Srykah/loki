@@ -1,22 +1,16 @@
 loki_create_lib(
-  NAME anim MODULE graphics
+  NAME anim MODULE graphics INTERFACE
   HEADERS
-  AnimationData.hpp
-  AnimationViewData.hpp
-  Animator.hpp
-  Keyframe.hpp
+  ShapeAnimationData.hpp
+  ShapeAnimator.hpp
   INTERNAL_HEADERS
   impl/ADLHelpers.hpp
-  impl/Animator.hxx
+  impl/ShapeAnimator.hxx
   impl/TemplateHelpers.hpp
-  SOURCES
-  AnimationData.cpp
-  AnimationViewData.cpp
   PUBLIC_DEPS
   loki::utils
   loki::math
   loki::json
   sfml-graphics
   nlohmann_json::nlohmann_json
-  fmt::fmt
 )

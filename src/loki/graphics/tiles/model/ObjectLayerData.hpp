@@ -4,7 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #pragma once
-
+#if 0
 #include <string>
 #include <vector>
 #include "ObjectData.hpp"
@@ -19,3 +19,4 @@ struct ObjectLayerData {
 };
 
 }  // namespace loki::tiles
+#endif
