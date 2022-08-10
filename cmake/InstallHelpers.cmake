@@ -43,7 +43,7 @@ function(loki_create_lib)
       message(FATAL_ERROR "Interface library can't have private dependencies")
     endif ()
     add_library(
-      ${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp
+      ${LIB_NAME} INTERFACE ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS}
     )
     target_compile_features(${LIB_NAME} INTERFACE cxx_std_20)
     target_link_libraries(
@@ -51,7 +51,7 @@ function(loki_create_lib)
     )
   else ()
     add_library(
-      ${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp ${LIB_SOURCES}
+      ${LIB_NAME} ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} ${LIB_SOURCES}
     )
     target_compile_features(${LIB_NAME} PUBLIC cxx_std_20)
     target_link_libraries(
@@ -75,7 +75,7 @@ function(loki_create_lib)
   )
   loki_add_lib_prefix(${LIB_NAME})
   loki_target_install_files(
-    ${LIB_NAME} ${LIB_MODULE} FILES ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS} All.hpp
+    ${LIB_NAME} ${LIB_MODULE} FILES ${LIB_HEADERS} ${LIB_INTERNAL_HEADERS}
   )
   install(TARGETS ${LIB_NAME} EXPORT loki_targets)
   target_link_libraries(${LIB_MODULE} INTERFACE loki::${LIB_NAME})
