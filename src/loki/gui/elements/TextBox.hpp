@@ -1,8 +1,3 @@
-/*!
- * \file EventTextBoxController.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include "loki/gui/Widget.hpp"
@@ -12,7 +7,7 @@ namespace loki::gui {
 
 class TextBox : public Widget {
  public:
-  TextBox(const loki::input::EventHandler& eventHandler,
+  TextBox(const loki::system::EventHandler& eventHandler,
           std::string nextInputName);
 
   void setNextInputName(std::string nextInputName);
@@ -25,7 +20,7 @@ class TextBox : public Widget {
             sf::RenderStates states = {}) const override {}
 
  private:
-  const loki::input::EventHandler& eventHandler;
+  const loki::system::EventHandler& eventHandler;
   std::string nextInputName;
   std::vector<std::string> splitString;
   std::size_t curString = 0;

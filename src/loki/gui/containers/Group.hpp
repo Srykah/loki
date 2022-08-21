@@ -1,8 +1,3 @@
-//
-// Created by Thomas on 19/03/2022.
-//
+#pragma once
 
-#ifndef LOKIMON_GROUP_H
-#define LOKIMON_GROUP_H
-
-#endif  // LOKIMON_GROUP_H
+namespace loki::gui {}

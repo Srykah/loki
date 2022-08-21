@@ -3,7 +3,7 @@
 #include <functional>
 #include <type_traits>
 
-namespace loki::hash {
+namespace loki::core {
 
 constexpr std::size_t combineHashImpl(std::size_t seed) {
   return seed;
@@ -114,7 +114,7 @@ size_t combineHashSym(const Args&... args) {
    */
 }
 
-}  // end namespace loki::hash
+}  // end namespace loki::core
 
 /**
  * \defgroup UTILS_COMBINEHASH Hash combination functions

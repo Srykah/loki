@@ -1,8 +1,3 @@
-/*!
- * \file Screen.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
@@ -11,7 +6,7 @@
 #include <unordered_map>
 #include "Signal.hpp"
 
-namespace loki::screens {
+namespace loki::system {
 
 class ScreenStack;
 
@@ -61,6 +56,6 @@ class Screen {
   bool handleSignal(Signal& signal);
 };
 
-}  // namespace loki::screens
+}  // namespace loki::system
 
 #include "Screen.hxx"

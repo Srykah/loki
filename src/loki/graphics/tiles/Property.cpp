@@ -1,12 +1,7 @@
-/*!
- * \file Property.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Property.hpp"
 #include <loki/core/json/Color.hpp>
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 void loadPropertyMap(PropertyMap& propertyMap,
                      const nlohmann::json& propArray) {
@@ -23,7 +18,8 @@ void loadPropertyMap(PropertyMap& propertyMap,
     } else if (type == "bool") {
       value = propertyDatum.at("value").get<bool>();
     } else if (type == "color") {
-      value = parseHTMLColor(propertyDatum.at("value").get<std::string>());
+      value =
+          core::parseHTMLColor(propertyDatum.at("value").get<std::string>());
     }
     propertyMap.emplace(std::move(name), std::move(value));
   }
@@ -35,4 +31,4 @@ PropertyMap getPropertyMap(const nlohmann::json& propArray) {
   return result;
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

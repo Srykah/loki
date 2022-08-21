@@ -1,8 +1,3 @@
-/*!
- * \file ObjectData.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -15,7 +10,7 @@
 #include "Property.hpp"
 #include "TextData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 // TileObjectData
 
@@ -96,53 +91,53 @@ using ObjectData = std::variant<TileObjectData,
                                 PolylineObjectData,
                                 TextObjectData>;
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx
 
 namespace nlohmann {
 
 template <>
-struct adl_serializer<loki::tiles::ObjectData> {
-  static void from_json(const nlohmann::json& j, loki::tiles::ObjectData& od) {
-    using loki::tiles::from_json;
+struct adl_serializer<loki::gfx::ObjectData> {
+  static void from_json(const nlohmann::json& j, loki::gfx::ObjectData& od) {
+    using loki::gfx::from_json;
     if (j.contains("gid")) {
-      loki::tiles::TileObjectData tod;
+      loki::gfx::TileObjectData tod;
       from_json(j, tod);
       od = std::move(tod);
     } else if (j.value<bool>("ellipse", false)) {
-      loki::tiles::EllipseObjectData eod;
+      loki::gfx::EllipseObjectData eod;
       from_json(j, eod);
       od = std::move(eod);
     } else if (j.value<bool>("point", false)) {
-      loki::tiles::PointObjectData pod;
+      loki::gfx::PointObjectData pod;
       from_json(j, pod);
       od = std::move(pod);
     } else if (j.contains("polygon")) {
-      loki::tiles::PolygonObjectData pod;
+      loki::gfx::PolygonObjectData pod;
       from_json(j, pod);
       od = std::move(pod);
     } else if (j.contains("polyline")) {
-      loki::tiles::PolylineObjectData pod;
+      loki::gfx::PolylineObjectData pod;
       from_json(j, pod);
       od = std::move(pod);
     } else if (j.contains("textbutton")) {
-      loki::tiles::TextObjectData tod;
+      loki::gfx::TextObjectData tod;
       from_json(j, tod);
       od = std::move(tod);
     } else {
-      loki::tiles::RectangleObjectData rod;
+      loki::gfx::RectangleObjectData rod;
       from_json(j, rod);
       od = std::move(rod);
     }
   }
 
-  static void to_json(nlohmann::json& j, const loki::tiles::ObjectData& od) {
+  static void to_json(nlohmann::json& j, const loki::gfx::ObjectData& od) {
     std::visit([&](const auto& data) { to_json(j, data); }, od);
     /*
     // PS : I tried using visit and failed miserably, maybe try again sometime
-    using loki::tiles::to_json;
+    using loki::gfx::to_json;
 #define LOKI_TILES_OBJECTDATA_TEST(type)                           \
-  if (std::holds_alternative<loki::tiles::type##ObjectData>(od)) { \
-    to_json(j, std::get<loki::tiles::type##ObjectData>(od));       \
+  if (std::holds_alternative<loki::gfx::type##ObjectData>(od)) { \
+    to_json(j, std::get<loki::gfx::type##ObjectData>(od));       \
   } else
     LOKI_TILES_OBJECTDATA_TEST(Tile)
     LOKI_TILES_OBJECTDATA_TEST(Ellipse)

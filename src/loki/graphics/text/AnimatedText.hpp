@@ -1,8 +1,3 @@
-/*!
- * \file AnimatedText.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
@@ -13,7 +8,7 @@
 #include "AnimatedGlyph.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 class AnimatedText : public sf::Drawable, public sf::Transformable {
  public:
@@ -37,7 +32,7 @@ class AnimatedText : public sf::Drawable, public sf::Transformable {
   sf::Time elapsedTime;
   AnimatedTextStyle style;
   sf::VertexArray vertices;
-  std::vector<impl::AnimatedGlyph> glyphs;
+  std::vector<AnimatedGlyph> glyphs;
 };
 
 }  // namespace loki::text

@@ -1,11 +1,6 @@
-/*!
- * \file ObjectData.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ObjectData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 // TileObjectData
 
@@ -79,4 +74,4 @@ void to_json(nlohmann::json& j, const TextObjectData& tod) {
   j["textbutton"] = tod.text;
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

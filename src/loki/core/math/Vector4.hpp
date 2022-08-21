@@ -1,15 +1,10 @@
-/*!
- * \file Vector4.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <nlohmann/json.hpp>
 
-namespace loki::math {
+namespace loki::core {
 
 template <typename T>
 struct Vector4 {
@@ -55,6 +50,6 @@ void to_json(nlohmann::json& j, const Vector4<T>& vec4);
 template <typename T>
 void from_json(const nlohmann::json& j, Vector4<T>& vec4);
 
-}  // namespace loki::math
+}  // namespace loki::core
 
 #include "Vector4.hxx"

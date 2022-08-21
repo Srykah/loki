@@ -1,12 +1,7 @@
-/*!
- * \file Layer.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TileLayerData.hpp"
 
 #if 0
-namespace loki::tiles {
+namespace loki::gfx {
 
 TileLayerData::TileLayerData(const nlohmann::json& layerData)
     : id(layerData.at("id").get<int>()),
@@ -20,5 +15,5 @@ TileLayerData::TileLayerData(const nlohmann::json& layerData)
     loadPropertyMap(properties, layerData.at("properties"));
   }
 }
-}  // namespace loki::tiles
+}  // namespace loki::gfx
 #endif

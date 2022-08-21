@@ -1,15 +1,10 @@
-/*!
- * \file TextData.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
 #include <loki/core/json/Color.hpp>
 #include <nlohmann/json.hpp>
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 struct TextData {
   sf::Text::Style style = sf::Text::Style::Regular;
@@ -50,4 +45,4 @@ NLOHMANN_JSON_SERIALIZE_ENUM(TextData::VerticalAlign,
 void from_json(const nlohmann::json& j, TextData& td);
 void to_json(nlohmann::json& j, const TextData& td);
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

@@ -1,15 +1,10 @@
-/*!
- * \file TemplateEngine.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <functional>
 #include <map>
 #include <string>
 
-namespace loki::tpl {
+namespace loki::core {
 
 class TemplateEngine {
  public:
@@ -34,6 +29,6 @@ class TemplateEngine {
   std::map<std::string, RefGenerator> refs;
 };
 
-}  // namespace loki::tpl
+}  // namespace loki::core
 
 #include "TemplateEngine.hxx"

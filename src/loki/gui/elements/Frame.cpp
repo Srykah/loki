@@ -1,6 +1,3 @@
-/*!
- * \file AbstractFrame.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Frame.hpp"
+
+namespace loki::gui {}

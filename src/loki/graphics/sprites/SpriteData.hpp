@@ -1,8 +1,3 @@
-/*!
- * \file SpriteData.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <filesystem>
@@ -13,17 +8,17 @@
 #include <map>
 #include <nlohmann/json.hpp>
 
-namespace loki::sprites {
+namespace loki::gfx {
 
-struct SpriteData : public res::JsonResource<SpriteData> {
+struct SpriteData : public system::JsonResource<SpriteData> {
   LOKI_RES_JSONRESOURCE_CTOR_DTOR(SpriteData)
 
-  std::map<std::string, anim::ShapeAnimationData> animations;
-  res::ResourceHandle<res::TextureResource> texture;
+  std::map<std::string, gfx::ShapeAnimationData> animations;
+  system::ResourceHandle<system::TextureResource> texture;
 
   LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)
 };
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(SpriteData, animations, texture)
 
-}  // namespace loki::sprites
+}  // namespace loki::gfx

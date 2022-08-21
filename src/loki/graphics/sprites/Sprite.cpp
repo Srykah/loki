@@ -1,11 +1,6 @@
-/*!
- * \file SpriteView.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Sprite.hpp"
 
-namespace loki::sprites {
+namespace loki::gfx {
 
 Sprite::Sprite(const SpriteData& data, const std::string& anim) : data(data) {
   setAnim(anim);
@@ -13,7 +8,7 @@ Sprite::Sprite(const SpriteData& data, const std::string& anim) : data(data) {
 }
 
 void Sprite::setAnim(const std::string& anim) {
-  animator = std::make_unique<anim::ShapeAnimator<sf::Sprite>>(
+  animator = std::make_unique<gfx::ShapeAnimator<sf::Sprite>>(
       sprite, data.animations.at(anim));
 }
 
@@ -42,4 +37,4 @@ sf::FloatRect Sprite::getGlobalBounds() const {
   return getTransform().transformRect(sprite.getGlobalBounds());
 }
 
-}  // namespace loki::sprites
+}  // namespace loki::gfx

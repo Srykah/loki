@@ -1,11 +1,6 @@
-/*!
- * \file Layer.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "LayerData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 // TileLayerData
 
@@ -14,7 +9,7 @@ void from_json(const nlohmann::json& j, TileLayerData& tld) {
   auto width = j.at("width").get<std::size_t>();
   auto height = j.at("height").get<std::size_t>();
   auto data = j.at("data").get<std::vector<int>>();
-  tld.data = Matrix<int>(width, height, data.begin());
+  tld.data = core::Matrix<int>(width, height, data.begin());
   if (j.contains("properties")) {
     j.at("properties").get_to(tld.properties);
   }
@@ -48,4 +43,4 @@ void to_json(nlohmann::json& j, const ObjectLayerData& old) {
   j["objects"] = old.objects;
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

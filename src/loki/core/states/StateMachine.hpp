@@ -1,9 +1,5 @@
-/*!
- * \file StateMachine.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
+
 #include <SFML/System/Time.hpp>
 #include <unordered_map>
 #include <vector>
@@ -11,7 +7,7 @@
 #include "StateIndex.hpp"
 #include "Transition.hpp"
 
-namespace loki::states {
+namespace loki::core {
 
 class StateMachine {
  private:
@@ -55,4 +51,4 @@ class StateMachine {
   std::vector<Transition> transitions;
 };
 
-}  // namespace loki::states
+}  // namespace loki::core

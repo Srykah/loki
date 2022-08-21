@@ -1,8 +1,3 @@
-/*!
- * \file GridMenuCtrl.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Time.hpp>
@@ -37,7 +32,7 @@ class Grid : public Widget {
   void deactivateImpl() override {}
 
  private:
-  loki::Matrix<Widget::UPtr> items;
+  loki::core::Matrix<Widget::UPtr> items;
   unsigned int hovered = 0;
   unsigned int selected = -1;
 };

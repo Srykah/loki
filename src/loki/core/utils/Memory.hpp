@@ -1,14 +1,8 @@
-/*!
- * \file Memory.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <stdexcept>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 namespace impl {
 
@@ -114,6 +108,16 @@ class BorrowerPtr {
   T* operator*() const;
   T* operator->() const;
 
+  template <class U,
+            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
+                             int> = 0>
+  bool operator<=>(const BorrowerPtr<U>& other) const;
+
+  template <class U,
+            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
+                             int> = 0>
+  bool operator<=>(const U* other) const;
+
  private:
   void incrRefCount();
   void deleteRefCount();
@@ -129,7 +133,6 @@ class BorrowerPtr {
   friend BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase);
 };
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
 #include "Memory.hxx"

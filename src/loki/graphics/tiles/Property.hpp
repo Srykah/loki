@@ -1,8 +1,3 @@
-/*!
- * \file Properties.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Color.hpp>
@@ -12,22 +7,22 @@
 #include <string>
 #include <variant>
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 using PropertyData = std::variant<std::string, int, float, bool, sf::Color>;
 using PropertyMap = std::map<std::string, PropertyData>;
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx
 
 namespace nlohmann {
 
 template <>
-struct adl_serializer<loki::tiles::PropertyMap> {
-  static void from_json(const json& j, loki::tiles::PropertyMap& pm) {
+struct adl_serializer<loki::gfx::PropertyMap> {
+  static void from_json(const json& j, loki::gfx::PropertyMap& pm) {
     for (const auto& datum : j) {
       auto name = datum.at("name").get<std::string>();
       auto type = datum.at("type").get<std::string>();
-      loki::tiles::PropertyData value;
+      loki::gfx::PropertyData value;
       if (type == "string") {
         value = datum.at("value").get<std::string>();
       } else if (type == "int") {
@@ -43,7 +38,7 @@ struct adl_serializer<loki::tiles::PropertyMap> {
     }
   }
 
-  static void to_json(json& j, const loki::tiles::PropertyMap& pm) {
+  static void to_json(json& j, const loki::gfx::PropertyMap& pm) {
     for (const auto& [name, datum] : pm) {
       json v;
       v["name"] = name;

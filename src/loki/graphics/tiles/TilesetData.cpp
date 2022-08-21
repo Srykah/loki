@@ -1,15 +1,10 @@
-/*!
- * \file Tileset.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TilesetData.hpp"
 #include <fstream>
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 void from_json(const nlohmann::json& j, TilesetData& td) {
-  td.texture = res::ResourceHandle<res::TextureResource>{
+  td.texture = system::ResourceHandle<system::TextureResource>{
       j.at("image").get<std::string>()};
 
   j.at("name").get_to(td.name);
@@ -19,8 +14,8 @@ void from_json(const nlohmann::json& j, TilesetData& td) {
       j.at("imagewidth").get<int>() / td.tileSize.x,
       j.at("imageheight").get<int>() / td.tileSize.y,
   };
-  if (j.contains("tiles")) {
-    for (const auto& tileData : j.at("tiles")) {
+  if (j.contains("gfx")) {
+    for (const auto& tileData : j.at("gfx")) {
       td.tiles.emplace(tileData.at("id").get<int>(), tileData);
     }
   }
@@ -29,4 +24,4 @@ void from_json(const nlohmann::json& j, TilesetData& td) {
   }
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

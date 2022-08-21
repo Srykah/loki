@@ -1,14 +1,9 @@
-/*!
- * \file ResourceHandle.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/core/json/Macros.hpp>
 #include <loki/core/json/Path.hpp>
 
-namespace loki::res {
+namespace loki::system {
 
 template <class Res>
 class ResourceHandle {
@@ -32,11 +27,11 @@ class ResourceHandle {
 
  private:
   std::filesystem::path path;
-  BorrowerPtr<Res> ptr;
+  core::BorrowerPtr<Res> ptr;
 
   friend class ResourceHolder;
 
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(ResourceHandle, path)
 };
 
-}  // namespace loki::res
+}  // namespace loki::system

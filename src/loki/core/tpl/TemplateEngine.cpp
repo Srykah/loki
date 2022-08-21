@@ -1,13 +1,8 @@
-/*!
- * \file TemplateEngine.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TemplateEngine.hpp"
 #include <fmt/args.h>
 #include <fmt/format.h>
 
-namespace loki::tpl {
+namespace loki::core {
 void TemplateEngine::addRef(const std::string& name, const std::string& t) {
   refs.insert_or_assign(name, [&t]() -> const std::string& { return t; });
 }
@@ -29,4 +24,4 @@ std::string TemplateEngine::fill(const std::string& tpl) {
   return fmt::vformat(tpl, args);
 }
 
-}  // namespace loki::tpl
+}  // namespace loki::core

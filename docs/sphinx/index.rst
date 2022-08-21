@@ -23,4 +23,4 @@ Indices and tables
 Docs
 ====
 
-.. doxygenfunction:: loki::hash::combineHashSym
+.. doxygenfunction:: loki::core::combineHashSym

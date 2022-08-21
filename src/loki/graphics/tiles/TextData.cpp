@@ -1,11 +1,6 @@
-/*!
- * \file TextData.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TextData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 namespace {
 
@@ -51,4 +46,4 @@ void to_json(nlohmann::json& j, const TextData& td) {
   j["valign"] = td.vAlign;
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

@@ -1,8 +1,3 @@
-/*!
- * \file InputType.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "InputType.hpp"
 
 namespace {
@@ -39,16 +34,16 @@ std::map<std::string, sf::Joystick::Axis> axisTable = {
     {"povx", sf::Joystick::PovX}, {"povy", sf::Joystick::PovY},
 };
 
-std::map<std::string, loki::input::JoystickAxisTrigger::Direction>
+std::map<std::string, loki::system::JoystickAxisTrigger::Direction>
     directionTable = {
-        {"positive", loki::input::JoystickAxisTrigger::Direction::POSITIVE},
-        {"negative", loki::input::JoystickAxisTrigger::Direction::NEGATIVE},
-        {"both", loki::input::JoystickAxisTrigger::Direction::BOTH},
+        {"positive", loki::system::JoystickAxisTrigger::Direction::POSITIVE},
+        {"negative", loki::system::JoystickAxisTrigger::Direction::NEGATIVE},
+        {"both", loki::system::JoystickAxisTrigger::Direction::BOTH},
 };
 
 }  // namespace
 
-namespace loki::input {
+namespace loki::system {
 
 InputTrigger loadTrigger(const nlohmann::json& triggerDatum) {
   const auto& triggerType = triggerDatum.at("type").get<std::string>();
@@ -70,4 +65,4 @@ InputTrigger loadTrigger(const nlohmann::json& triggerDatum) {
   }
 }
 
-}  // namespace loki::input
+}  // namespace loki::system

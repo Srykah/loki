@@ -1,8 +1,3 @@
-/*!
- * \file Resource.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <filesystem>
@@ -14,7 +9,7 @@
 #include <loki/core/json/Path.hpp>
 #include <loki/core/utils/Memory.hpp>
 
-namespace loki::res {
+namespace loki::system {
 
 class ResourceHolder;
 
@@ -49,4 +44,4 @@ class Resource {
   bool loaded = false;
 };
 
-}  // namespace loki::res
+}  // namespace loki::system

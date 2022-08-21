@@ -1,16 +1,10 @@
-/*!
- * \file Matrix.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <array>
 #include <functional>
 #include <vector>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 template <typename T>
 class Matrix {
@@ -89,7 +83,6 @@ class StaticMatrix {
   std::array<T, W * H> data;
 };
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
 #include "Matrix.hxx"

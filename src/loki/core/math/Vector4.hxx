@@ -1,10 +1,4 @@
-/*!
- * \file Vector4.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
-namespace loki::math {
+namespace loki::core {
 
 template <typename T>
 template <typename A, typename B, typename C, typename D>
@@ -131,4 +125,4 @@ void from_json(const nlohmann::json& j, Vector4<T>& vec4) {
   j.at("d").get_to(vec4.d);
 }
 
-}  // namespace loki::math
+}  // namespace loki::core

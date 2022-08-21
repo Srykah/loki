@@ -1,11 +1,6 @@
-/*!
- * \file TileData.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TileData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 void from_json(const nlohmann::json& j, TileData& td) {
   if (j.contains("animation")) {
@@ -26,4 +21,4 @@ void from_json(const nlohmann::json& j, TileData& td) {
   }
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

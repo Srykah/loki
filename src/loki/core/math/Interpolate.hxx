@@ -1,12 +1,7 @@
-/*!
- * \file Interpolate.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include <loki/core/utils/IterAdapters.hpp>
 #include <loki/core/utils/TemplateHelpers.hpp>
 
-namespace loki::math {
+namespace loki::core {
 
 // helper types
 template <class Iter>
@@ -127,4 +122,4 @@ Out interpolate(const Interpolation<In, Out>& ip, const In& x) {
       [&x](auto&& interpolation) { return interpolation.interpolate(x); }, ip);
 }
 
-}  // namespace loki::math
+}  // namespace loki::core

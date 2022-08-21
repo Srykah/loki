@@ -1,11 +1,6 @@
-/*!
- * \file InputState.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
-namespace loki::input {
+namespace loki::system {
 
 struct InputState {
   enum Status {
@@ -26,4 +21,4 @@ struct InputState {
   }
 };
 
-}  // namespace loki::input
+}  // namespace loki::system

@@ -1,8 +1,3 @@
-//
-// Created by Thomas on 19/03/2022.
-//
+#pragma once
 
-#ifndef LOKIMON_SPRITEFRAME_HPP
-#define LOKIMON_SPRITEFRAME_HPP
-
-#endif  // LOKIMON_SPRITEFRAME_HPP
+namespace loki::gui {}

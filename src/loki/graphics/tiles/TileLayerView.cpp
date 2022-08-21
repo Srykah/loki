@@ -1,12 +1,7 @@
-/*!
- * \file LayerView.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TileLayerView.hpp"
 #include "MapView.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 TileLayerView::TileLayerView(const TileLayerData& layerData,
                              const TilesetData& tilesetData)
@@ -104,4 +99,4 @@ void TileLayerView::setTileTransparent(unsigned int x, unsigned int y) {
   vertices[i + 3].color = sf::Color::Transparent;
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

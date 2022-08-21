@@ -1,8 +1,3 @@
-/*!
- * \file Layer.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -14,13 +9,13 @@
 #include "ObjectData.hpp"
 #include "Property.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 // TileLayerData
 
 struct TileLayerData {
   std::string name;
-  Matrix<int> data;
+  core::Matrix<int> data;
   PropertyMap properties;
   float opacity;
   bool visible;
@@ -43,4 +38,4 @@ void to_json(nlohmann::json& j, const ObjectLayerData& old);
 
 using LayerData = std::variant<TileLayerData, ObjectLayerData>;
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

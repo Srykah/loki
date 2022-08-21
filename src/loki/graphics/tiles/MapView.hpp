@@ -1,8 +1,3 @@
-/*!
- * \file MapView.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -11,7 +6,7 @@
 #include "TileLayerView.hpp"
 #include "loki/graphics/tiles/MapData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 using LayerView = std::variant<ObjectLayerView, TileLayerView>;
 
@@ -41,4 +36,4 @@ class MapView : public sf::Transformable {
   sf::RectangleShape background;
 };
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

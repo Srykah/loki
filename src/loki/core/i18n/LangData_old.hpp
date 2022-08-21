@@ -1,8 +1,3 @@
-/*!
- * \file LangData.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <filesystem>
@@ -13,9 +8,9 @@
 #include <unordered_map>
 #include <variant>
 
-namespace loki::i18n {
+namespace loki::core {
 
-class LangData : public res::JsonResource<LangData> {
+class LangData : public system::JsonResource<LangData> {
  private:
   struct Node {
     using Branch = std::unordered_map<std::string, Node>;
@@ -45,4 +40,4 @@ class LangData : public res::JsonResource<LangData> {
   friend void to_json(nlohmann::json& j, const Node& n);
 };
 
-}  // namespace loki::i18n
+}  // namespace loki::core

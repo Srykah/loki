@@ -1,8 +1,3 @@
-/*!
- * \file ObjectLayerView.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
@@ -11,7 +6,7 @@
 #include <vector>
 #include "loki/graphics/tiles/LayerData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 class ObjectLayerView : public sf::Drawable, public sf::Transformable {
  public:
@@ -32,4 +27,4 @@ class ObjectLayerView : public sf::Drawable, public sf::Transformable {
   std::vector<std::unique_ptr<sf::Drawable>> objects;
 };
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

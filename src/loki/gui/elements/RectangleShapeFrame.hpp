@@ -1,8 +1,3 @@
-/*!
- * \file RectangleShapeFrame.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -15,7 +10,7 @@ class RectangleShapeFrame : public Frame {
  public:
   RectangleShapeFrame(sf::Vector2f size,
                       float padding,
-                      const styles::ShapeStyle& style);
+                      const gfx::ShapeStyle& style);
   sf::FloatRect getInternalBounds() const override;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

@@ -1,15 +1,10 @@
-/*!
- * \file EventTextBoxController.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TextBox.hpp"
 #include <sstream>
 #include "TextBoxView.hpp"
 
 namespace loki::gui {
 
-TextBox::TextBox(const input::EventHandler& eventHandler,
+TextBox::TextBox(const system::EventHandler& eventHandler,
                  std::string nextInputName)
     : eventHandler(eventHandler), nextInputName(std::move(nextInputName)) {}
 
@@ -33,7 +28,7 @@ void TextBox::setAnnotatedString(const std::string& annotatedString) {
 
 void TextBox::update(sf::Time delta) {
   if (eventHandler.getInputState(nextInputName).status ==
-      loki::input::InputState::TRIGGERED) {
+      loki::system::InputState::TRIGGERED) {
 #if 0
     if (!view.hasAnimationStopped()) {
       view.skipAnimation();

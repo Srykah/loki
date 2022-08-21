@@ -1,9 +1,3 @@
-/*!
- * \file TextList.inl
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #include "TextList.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 
@@ -11,7 +5,7 @@ namespace loki::gui {
 
 TextList::TextList(sf::Font& font) {}
 
-void TextList::setTextStyle(styles::TextStyle _textStyle) {
+void TextList::setTextStyle(gfx::TextStyle _textStyle) {
   this->textStyle = _textStyle;
 }
 

@@ -1,6 +1,6 @@
 loki_create_module(system
   HEADERS
-  # app
+  # system
   app/Application.hpp
   # input
   input/EventHandler.hpp
@@ -8,7 +8,7 @@ loki_create_module(system
   input/InputState.hpp
   input/InputType.hpp
   input/PlayerConfig.hpp
-  # res
+  # system
   res/JsonResources.hpp
   res/Resource.hpp
   res/ResourceHandle.hpp
@@ -17,37 +17,38 @@ loki_create_module(system
   res/SFMLResources.hpp
   # scene
   scene/Scene.hpp
-  # screens
+  # system
   screens/Screen.hpp
   screens/Screen.hxx
   screens/ScreenStack.hpp
   screens/Signal.hpp
   # window
   window/Camera.hpp
-  window/Style.hpp
+  window/WindowStyle.hpp
   window/Window.hpp
 
   SOURCES
-  # app
+  # system
   app/Application.cpp
   # input
   input/EventHandler.cpp
   input/InputSettings.cpp
   input/InputType.cpp
-  # res
+  # system
   res/ResourceHolder.cpp
   # scene
-  scene/Scene.hpp
-  # screens
+  scene/Scene.cpp
+  # system
   screens/Screen.cpp
   screens/ScreenStack.cpp
   # window
   window/Camera.cpp
-  window/Style.cpp
+  window/WindowStyle.cpp
   window/Window.cpp
 
   PUBLIC_DEPS
   loki::core
   sfml-graphics
   nlohmann_json::nlohmann_json
+  EnTT::EnTT
   )

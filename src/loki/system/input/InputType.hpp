@@ -1,15 +1,10 @@
-/*!
- * \file InputType.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Window/Event.hpp>
 #include <nlohmann/json.hpp>
 #include <variant>
 
-namespace loki::input {
+namespace loki::system {
 
 using MouseButtonTrigger = sf::Mouse::Button;
 enum JoystickButtonTrigger : unsigned int;
@@ -26,4 +21,4 @@ using InputTrigger = std::variant<MouseButtonTrigger,
 
 InputTrigger loadTrigger(const nlohmann::json& triggerDatum);
 
-}  // namespace loki::input
+}  // namespace loki::system

@@ -1,8 +1,3 @@
-/*!
- * \file RectangleShapeFrame.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "RectangleShapeFrame.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 
@@ -10,7 +5,7 @@ namespace loki::gui {
 
 RectangleShapeFrame::RectangleShapeFrame(sf::Vector2f size,
                                          float padding,
-                                         const styles::ShapeStyle& style)
+                                         const gfx::ShapeStyle& style)
     : padding(padding) {
   shape.setSize(size);
   style.applyTo(shape);

@@ -1,15 +1,8 @@
-/*!
- * \file Matrix.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #include <algorithm>
 #include <iterator>
 #include <loki/core/utils/Matrix.hpp>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 // Matrix
 
@@ -166,5 +159,4 @@ auto StaticMatrix<T, W, H>::cend() const -> const_iterator {
   return data.cend();
 }
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core

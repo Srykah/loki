@@ -1,21 +1,21 @@
 loki_create_module(graphics
   HEADERS
-  # anim
+  # gfx
   anim/ShapeAnimationData.hpp
   anim/ShapeAnimator.hpp
   anim/ADLHelpers.hpp
   anim/ShapeAnimator.hxx
   anim/TemplateHelpers.hpp
-  # anim-editor
+  # gfx-editor
   anim-editor/AnimEditor.hpp
-  # shapes
+  # gfx
   shapes/Capsule.hpp
   shapes/RoundedRectangle.hpp
-  # sprites
+  # gfx
   sprites/Sprite.hpp
   sprites/SpriteData.hpp
   sprites/SpriteViewData.hpp
-  # styles
+  # gfx
   styles/ShapeStyle.hpp
   styles/TextStyle.hpp
   # text
@@ -25,7 +25,7 @@ loki_create_module(graphics
   text/AnnotatedText.hpp
   text/Stylesheet.hpp
   text/AnimatedGlyph.hpp
-  # tiles
+  # gfx
   tiles/LayerData.hpp
   tiles/LayerView.hpp
   tiles/MapData.hpp
@@ -42,15 +42,15 @@ loki_create_module(graphics
   tiles/TilesetData.hpp
 
   SOURCES
-  # anim-editor
+  # gfx-editor
   anim-editor/AnimEditor.cpp
-  # shapes
+  # gfx
   shapes/Capsule.cpp
   shapes/RoundedRectangle.cpp
-  # sprites
+  # gfx
   sprites/Sprite.cpp
   sprites/SpriteViewData.cpp
-  # styles
+  # gfx
   styles/ShapeStyle.cpp
   styles/TextStyle.cpp
   # text
@@ -60,7 +60,7 @@ loki_create_module(graphics
   text/AnnotatedText.cpp
   text/Stylesheet.cpp
   text/AnimatedGlyph.cpp
-  # tiles
+  # gfx
   tiles/LayerData.cpp
   tiles/MapData.cpp
   tiles/MapView.cpp

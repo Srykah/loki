@@ -1,15 +1,10 @@
-/*!
- * \file TemplateHelpers.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Vector2.hpp>
 
-namespace loki::anim::impl {
+namespace loki::gfx::impl {
 
 #define LOKI_ANIM_FEATURE_TEST(Feature, Type)                            \
   template <typename T>                                                  \
@@ -30,4 +25,4 @@ LOKI_ANIM_FEATURE_TEST(TextureRect, sf::IntRect)
 
 #undef LOKI_ANIM_FEATURE_TEST
 
-}  // namespace loki::anim::impl
+}  // namespace loki::gfx::impl

@@ -1,11 +1,6 @@
-/*!
- * \file Camera.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Camera.hpp"
 
-namespace loki::window {
+namespace loki::system {
 
 void Camera::setCenter(sf::Vector2f _center) {
   center = _center;
@@ -21,4 +16,4 @@ float Camera::getZoom() const {
   return zoom;
 }
 
-}  // namespace loki::window
+}  // namespace loki::system

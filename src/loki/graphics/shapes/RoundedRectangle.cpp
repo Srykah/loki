@@ -1,13 +1,8 @@
-/*!
- * \file RoundedRectangle.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "RoundedRectangle.hpp"
 #include <cmath>
 #include <numbers>
 
-namespace loki::shapes {
+namespace loki::gfx {
 
 RoundedRectangle::RoundedRectangle(sf::Vector2f size,
                                    float borderRadius,
@@ -54,4 +49,4 @@ sf::Vector2f RoundedRectangle::getQuadrantOrigin(std::size_t quadrant) const {
   }
 }
 
-}  // namespace loki::shapes
+}  // namespace loki::gfx

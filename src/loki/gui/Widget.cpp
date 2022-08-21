@@ -1,8 +1,3 @@
-/*!
- * \file Widget.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Widget.hpp"
 
 namespace loki::gui {

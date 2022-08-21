@@ -1,8 +1,3 @@
-/*!
- * \file Stylesheet.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <filesystem>
@@ -10,7 +5,7 @@
 #include <string>
 #include "AnimatedTextStyle.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 class Stylesheet {
  public:

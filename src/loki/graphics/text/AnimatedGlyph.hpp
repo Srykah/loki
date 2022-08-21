@@ -1,8 +1,3 @@
-/*!
- * \file AnimatedGlyph.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Glyph.hpp>
@@ -11,7 +6,7 @@
 #include <loki/graphics/anim/ShapeAnimator.hpp>
 #include "loki/graphics/text/AnimatedTextStyle.hpp"
 
-namespace loki::text::impl {
+namespace loki::gfx {
 
 class AnimatedGlyph : public sf::Transformable {
  public:
@@ -31,7 +26,7 @@ class AnimatedGlyph : public sf::Transformable {
   void initTexRect();
   void updateVertices();
 
-  friend anim::ShapeAnimator<AnimatedGlyph>;
+  friend gfx::ShapeAnimator<AnimatedGlyph>;
   void setColor(sf::Color color);
   sf::Color getColor() const;
 
@@ -41,7 +36,7 @@ class AnimatedGlyph : public sf::Transformable {
   const sf::Glyph& glyph;
   const AnimatedTextStyle& style;
   float x = 0.f;
-  std::optional<anim::ShapeAnimator<AnimatedGlyph>> anim;
+  std::optional<gfx::ShapeAnimator<AnimatedGlyph>> anim;
   State state;
 };
 

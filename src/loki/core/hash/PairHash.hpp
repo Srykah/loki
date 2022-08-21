@@ -1,7 +1,7 @@
 #pragma once
 #include "CombineHash.hpp"
 
-namespace loki::hash {
+namespace loki::core {
 
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Helper functor for hashing pairs
@@ -57,4 +57,4 @@ struct PairAreEqualSym {
 template <typename S, typename T = S, typename U = S, typename V = T>
 using MakePairAreEqualSym = PairAreEqualSym<std::pair<S, T>, std::pair<U, V>>;
 
-}  // end namespace loki::hash
+}  // end namespace loki::core

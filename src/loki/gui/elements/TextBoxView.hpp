@@ -1,15 +1,9 @@
-/*!
- * \file TextBox.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #if 0
-
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <loki/graphics/styles/ShapeStyle.hpp>
+#include <loki/graphics/gfx/ShapeStyle.hpp>
 #include <loki/graphics/text/AnimatedText.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
 #include <memory>
@@ -22,11 +16,11 @@ class TextBoxView : public AWidgetView {
   TextBoxView(sf::Vector2f size,
               float padding,
               unsigned int lineCount,
-              const styles::ShapeStyle& frameStyle,
+              const gfx::ShapeStyle& frameStyle,
               const text::Stylesheet& textStylesheet);
 
   void setAnnotatedString(const std::string& annotatedString);
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates core) const override;
   void update(sf::Time delta) override {}
   void advance();
   void skipAnimation();
@@ -50,10 +44,9 @@ class TextBoxView : public AWidgetView {
   const float padding;
   const unsigned int lineCount;
   const text::Stylesheet& textStylesheet;
-  const styles::ShapeStyle& frameStyle;
+  const gfx::ShapeStyle& frameStyle;
   std::vector<std::vector<text::AnimatedText>> lines;
 };
 
 }  // namespace loki::gui
-
 #endif

@@ -1,8 +1,3 @@
-/**
- * \file EventHandler.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Window.hpp>
@@ -10,7 +5,7 @@
 #include <loki/system/input/PlayerConfig.hpp>
 #include "loki/system/input/InputSettings.hpp"
 
-namespace loki::input {
+namespace loki::system {
 
 class EventHandler {
  public:
@@ -38,4 +33,4 @@ class EventHandler {
   static void updateState(InputState& inputState, bool active);
 };
 
-}  // namespace loki::input
+}  // namespace loki::system

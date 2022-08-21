@@ -1,13 +1,8 @@
-/*!
- * \file LangList.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "I18nData.hpp"
 
 #include <fstream>
 
-namespace loki::i18n {
+namespace loki::core {
 
 const I18nData::RegisteredLangs& I18nData::getRegisteredLangs() const {
   return registeredLangs;
@@ -46,4 +41,4 @@ std::string I18nData::get(const I18nData::Ptr& ptr) const {
   return currentLangData.at(ptr);
 }
 
-}  // namespace loki::i18n
+}  // namespace loki::core

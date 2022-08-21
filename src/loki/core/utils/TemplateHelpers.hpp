@@ -1,12 +1,6 @@
-/*!
- * \file TemplateHelpers.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 struct true_type {
   static constexpr bool value = true;
@@ -30,7 +24,16 @@ struct nonesuch {
   void operator=(nonesuch const&) = delete;
 };
 
-#include "is_detected.hxx"
+namespace impl {
+
+template <class, template <class...> class, class...>
+struct detector : public false_type, public identity_type<nonesuch> {};
+
+template <template <class...> class Op, class... Args>
+struct detector<std::void_t<Op<Args...>>, Op, Args...>
+    : public true_type, public identity_type<Op<Args...>> {};
+
+}  // namespace impl
 
 template <template <class...> class Op, class... Args>
 constexpr bool is_detected = impl::detector<void, Op, Args...>::value;
@@ -41,7 +44,6 @@ using detected_t = typename impl::detector<void, Op, Args...>::type;
 template <template <class...> class Op, class... Args>
 constexpr bool is_detected_as_true =
     std::conjunction_v<impl::detector<void, Op, Args...>,
-                       detected_t<Op, Args...> >;
+                       detected_t<Op, Args...>>;
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core

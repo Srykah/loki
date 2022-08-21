@@ -1,13 +1,6 @@
-/*!
- * \file IterAdapters.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #pragma once
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Enumerate
@@ -200,5 +193,4 @@ auto cdrop(T& t, std::size_t count) {
   return DropWrapper<const T>(t, count);
 }
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core

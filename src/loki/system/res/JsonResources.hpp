@@ -1,14 +1,9 @@
-/*!
- * \file JsonResources.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include "Resource.hpp"
 #include "ResourceHolder.hpp"
 
-namespace loki::res {
+namespace loki::system {
 
 template <class T>
 class JsonResource : public Resource {
@@ -38,11 +33,11 @@ class JsonResource : public Resource {
   const T& getData() const { return static_cast<const T&>(*this); }
 };
 
-}  // namespace loki::res
+}  // namespace loki::system
 
 #define LOKI_RES_JSONRESOURCE_CTOR(Res) \
   explicit Res(std::filesystem::path p) \
-      : loki::res::JsonResource<Res>(std::move(p)) {}
+      : loki::system::JsonResource<Res>(std::move(p)) {}
 
 #define LOKI_RES_JSONRESOURCE_CTOR_DTOR(Res) \
   LOKI_RES_JSONRESOURCE_CTOR(Res)            \
@@ -51,9 +46,9 @@ class JsonResource : public Resource {
 #define LOKI_RES_JSONRESOURCE_ADD_CHILD_TO_HOLDER(child) \
   resourceHolder.add(child);
 
-#define LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(...)                    \
- private:                                                                    \
-  void addChildResourcesToHolder(loki::res::ResourceHolder& resourceHolder)  \
-      override {                                                             \
-    LOKI_CORE_REPEAT(LOKI_RES_JSONRESOURCE_ADD_CHILD_TO_HOLDER, __VA_ARGS__) \
+#define LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(...)                      \
+ private:                                                                      \
+  void addChildResourcesToHolder(loki::system::ResourceHolder& resourceHolder) \
+      override {                                                               \
+    LOKI_CORE_REPEAT(LOKI_RES_JSONRESOURCE_ADD_CHILD_TO_HOLDER, __VA_ARGS__)   \
   }

@@ -1,11 +1,7 @@
-/*!
- * \file ObjectLayerData.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ObjectLayerData.hpp"
+
 #if 0
-namespace loki::tiles {
+namespace loki::gfx {
 
 ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
   data.at("name").get_to(name);
@@ -14,5 +10,5 @@ ObjectLayerData::ObjectLayerData(const nlohmann::json& data) {
   }
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx
 #endif

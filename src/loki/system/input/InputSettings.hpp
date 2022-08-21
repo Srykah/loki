@@ -1,8 +1,3 @@
-/*!
- * \file InputSettings.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Window.hpp>
@@ -12,7 +7,7 @@
 #include <variant>
 #include "InputType.hpp"
 
-namespace loki::input {
+namespace loki::system {
 
 struct InputSettings {
   InputSettings() = default;
@@ -26,4 +21,4 @@ struct InputSettings {
   std::map<std::string, Config> configs;
 };
 
-}  // namespace loki::input
+}  // namespace loki::system

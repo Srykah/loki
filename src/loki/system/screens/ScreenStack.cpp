@@ -1,22 +1,16 @@
-/*!
- * \file ScreenStack.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #include "ScreenStack.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <loki/core/utils/IterAdapters.hpp>
 #include <variant>
 #include "Screen.hpp"
 
-namespace loki::screens {
+namespace loki::system {
 
 ScreenStack::~ScreenStack() = default;
 
 void ScreenStack::update(sf::Time delta) {
-  // init new screens in order
-  // new screens may be added while doing this
+  // init new system in order
+  // new system may be added while doing this
   for (std::size_t i{0u}; i < stack.size(); ++i) {
     if (!stack[i]->isReady()) {
       stack[i]->init();
@@ -36,7 +30,7 @@ void ScreenStack::push(std::unique_ptr<Screen>&& statePtr) {
 }
 
 void ScreenStack::clear() {
-  for (const auto& screen : reversed(stack)) {
+  for (const auto& screen : core::reversed(stack)) {
     sendSignal({screen.get(), "close"});
   }
   stack.clear();
@@ -48,7 +42,7 @@ bool ScreenStack::empty() const {
 
 void ScreenStack::draw(sf::RenderTarget& target,
                        sf::RenderStates states) const {
-  for (const auto& screen : reversed(stack)) {
+  for (const auto& screen : core::reversed(stack)) {
     if (!screen->render(target, states)) {
       break;
     }
@@ -87,4 +81,4 @@ void ScreenStack::closeAbove(const Screen* screen) {
   }
 }
 
-}  // namespace loki::screens
+}  // namespace loki::system

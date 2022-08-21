@@ -1,13 +1,8 @@
-/*!
- * \file InputSettings.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "InputSettings.hpp"
 #include <fstream>
 #include <nlohmann/json.hpp>
 
-namespace loki::input {
+namespace loki::system {
 
 InputSettings::InputSettings(const std::filesystem::path& filepath) {
   load(filepath);
@@ -33,4 +28,4 @@ bool InputSettings::load(const std::filesystem::path& filepath) {
   return true;
 }
 
-}  // namespace loki::input
+}  // namespace loki::system

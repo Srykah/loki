@@ -1,11 +1,6 @@
-/*!
- * \file List.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
-#include <loki/gui/base/Widget.hpp>
+#include <loki/gui/Widget.hpp>
 
 namespace loki::gui {
 

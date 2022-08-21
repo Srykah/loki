@@ -1,8 +1,3 @@
-/*!
- * \file LangList.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <fmt/format.h>
@@ -13,7 +8,7 @@
 #include <unordered_map>
 #include <vector>
 
-namespace loki::i18n {
+namespace loki::core {
 
 class I18nData {
  private:
@@ -53,6 +48,6 @@ class I18nData {
   std::string currentLangId;
 };
 
-}  // namespace loki::i18n
+}  // namespace loki::core
 
 #include "I18nData.hxx"

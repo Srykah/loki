@@ -1,11 +1,6 @@
-/*!
- * \file ObjectLayerView.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ObjectLayerView.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 ObjectLayerView::ObjectLayerView(const ObjectLayerData& data)
     : layerData(data) {
@@ -28,7 +23,7 @@ void ObjectLayerView::initObjects() {
       const auto& tilesetData = *parent.getData().tilesets.at(0);
       auto tile = std::make_unique<sf::Sprite>();
       tile->setTexture(tilesetData.texture);
-      if (tilesetData.tiles.count(tileObjectData.globalTileId-1)) {
+      if (tilesetData.gfx.count(tileObjectData.globalTileId-1)) {
         tile->setTextureRect(sf::IntRect {
 
         })
@@ -40,4 +35,4 @@ void ObjectLayerView::initObjects() {
   }*/
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

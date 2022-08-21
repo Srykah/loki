@@ -1,24 +1,21 @@
-/**
- * \file Application.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
+#include <loki/system/ecs/ActorManager.hpp>
 #include <loki/system/input/EventHandler.hpp>
 #include <loki/system/res/ResourceHolder.hpp>
 #include <loki/system/screens/ScreenStack.hpp>
 #include <loki/system/window/Window.hpp>
 
-namespace loki::app {
+namespace loki::system {
 class Application {
  public:
   void run(int argc, char** argv);
 
  protected:
-  window::Window window;
-  input::EventHandler eventHandler;
-  res::ResourceHolder resourceHolder;
-  screens::ScreenStack screenStack;
+  system::Window window;
+  system::ResourceHolder resourceHolder;
+  system::EventHandler eventHandler;
+  system::ActorManager actorManager;
+
 };
-}  // namespace loki::app
+}  // namespace loki::system

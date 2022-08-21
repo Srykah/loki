@@ -1,12 +1,7 @@
-/**
- * \file EventHandler.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "EventHandler.hpp"
 #include <loki/core/utils/IterAdapters.hpp>
 
-namespace loki::input {
+namespace loki::system {
 
 bool EventHandler::setSettings(InputSettings _settings) {
   settings = std::move(_settings);
@@ -47,7 +42,7 @@ void EventHandler::update(const sf::Time& delta) {
   resetTransitions();
 
   for (auto&& [inputStates, currentConfig] :
-       zip(playerInputStates, playerConfigs)) {
+       core::zip(playerInputStates, playerConfigs)) {
     const auto& configData = settings.configs.at(currentConfig.config);
     for (auto&& [inputName, inputState] : inputStates) {
       bool active = false;
@@ -109,4 +104,4 @@ InputState EventHandler::getInputState(const std::string& inputName,
   return playerInputStates.at(playerId).at(inputName);
 }
 
-}  // namespace loki::input
+}  // namespace loki::system

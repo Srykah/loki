@@ -1,11 +1,6 @@
-/*!
- * \file AnimatedGlyph.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AnimatedGlyph.hpp"
 
-namespace loki::text::impl {
+namespace loki::gfx {
 
 AnimatedGlyph::AnimatedGlyph(sf::VertexArray& va,
                              std::size_t index,

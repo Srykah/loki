@@ -1,8 +1,3 @@
-/*!
- * \file Map.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -11,7 +6,7 @@
 #include "Property.hpp"
 #include "TilesetData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 enum struct RenderOrder { RIGHT_UP, RIGHT_DOWN, LEFT_UP, LEFT_DOWN };
 
@@ -23,11 +18,11 @@ NLOHMANN_JSON_SERIALIZE_ENUM(RenderOrder,
                                  {RenderOrder::LEFT_DOWN, "leftDown"},
                              })
 
-struct MapData : public res::JsonResource<MapData> {
+struct MapData : public system::JsonResource<MapData> {
   sf::Vector2u gridSize;
   std::vector<LayerData> layers;
   PropertyMap properties;
-  std::vector<res::ResourceHandle<TilesetData>> tilesets;
+  std::vector<system::ResourceHandle<TilesetData>> tilesets;
   RenderOrder renderOrder;
   sf::Color backgroundColor;
 
@@ -37,4 +32,4 @@ struct MapData : public res::JsonResource<MapData> {
 
 void from_json(const nlohmann::json& j, MapData& md);
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

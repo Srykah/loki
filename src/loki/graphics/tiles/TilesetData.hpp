@@ -1,8 +1,3 @@
-/*!
- * \file Tileset.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -16,7 +11,7 @@
 #include "TerrainData.hpp"
 #include "TileData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 enum struct ObjectAlignment {
   UNSPECIFIED,
@@ -45,8 +40,8 @@ NLOHMANN_JSON_SERIALIZE_ENUM(ObjectAlignment,
                                  {ObjectAlignment::BOTTOM_RIGHT, "bottomright"},
                              })
 
-struct TilesetData : public res::JsonResource<TilesetData> {
-  res::ResourceHandle<res::TextureResource> texture;
+struct TilesetData : public system::JsonResource<TilesetData> {
+  system::ResourceHandle<system::TextureResource> texture;
   std::string name;
   ObjectAlignment objectAlignment;
   PropertyMap properties;
@@ -61,4 +56,4 @@ struct TilesetData : public res::JsonResource<TilesetData> {
 
 void from_json(const nlohmann::json& j, TilesetData& td);
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

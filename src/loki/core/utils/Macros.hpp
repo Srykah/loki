@@ -1,8 +1,3 @@
-/*!
- * \file Macros.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #define LOKI_CORE_EXPAND(x) x

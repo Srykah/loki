@@ -1,13 +1,8 @@
-/*!
-* \file Camera.hpp
-* \author Srykah
-* \copyright GNU GPL v3.0
-*/
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
 
-namespace loki::window {
+namespace loki::system {
 
 class Camera {
  public:
@@ -22,4 +17,4 @@ class Camera {
   float zoom = 1.f;
 };
 
-}
+}  // namespace loki::system

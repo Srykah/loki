@@ -6,13 +6,13 @@
 #pragma once
 
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "Style.hpp"
+#include "WindowStyle.hpp"
 
-namespace loki::window {
+namespace loki::system {
 
 class Window {
  public:
-  void create(sf::Vector2u size, const std::string& name, Style style);
+  void create(sf::Vector2u size, const std::string& name, WindowStyle style);
   void setInternalResolution(sf::Vector2u internalResolution);
   void setMinimumSize(sf::Vector2u minimumSize);
 
@@ -39,7 +39,7 @@ class Window {
   sf::RenderWindow window;
   sf::Vector2u internalResolution;
   sf::Vector2u minimumSize;
-  Style style = Style::DEFAULT;
+  WindowStyle style = WindowStyle::DEFAULT;
 };
 
-}  // namespace loki::window
+}  // namespace loki::system

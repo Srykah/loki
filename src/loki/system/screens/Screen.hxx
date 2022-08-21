@@ -1,10 +1,4 @@
-/*!
- * \file Screen.inl
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
-namespace loki::screens {
+namespace loki::system {
 
 template <typename... Args>
 void Screen::sendSignal(const std::string& signalName, Args&&... args) {
@@ -33,4 +27,4 @@ void Screen::registerSignalHandler(const Signal::Trigger& trigger, Fun fun) {
   registerSignalHandler(trigger, std::function{fun});
 }
 
-}  // namespace loki::screens
+}  // namespace loki::system

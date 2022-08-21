@@ -1,12 +1,7 @@
-/*!
- * \file AnimatedText.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AnnotatedText.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 
-namespace loki::text {
+namespace loki::gfx {
 
 void AnnotatedText::setAnnotatedString(const AnnotatedString& annotatedString) {
   sf::Vector2f position;

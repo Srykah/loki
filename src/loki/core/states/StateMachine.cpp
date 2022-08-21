@@ -1,11 +1,6 @@
-/*!
- * \file StateMachine.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "StateMachine.hpp"
 
-namespace loki::states {
+namespace loki::core {
 
 StateMachine::StateMachine(std::size_t size) {
   states.reserve(size);
@@ -60,4 +55,4 @@ void StateMachine::setCurrentStateWithTrigger(
   }
 }
 
-}  // namespace loki::states
+}  // namespace loki::core

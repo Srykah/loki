@@ -1,8 +1,3 @@
-/*!
- * \file Widget.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>

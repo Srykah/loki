@@ -1,8 +1,3 @@
-/*!
- * \file RectangleShapeStyle.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Color.hpp>
@@ -10,7 +5,7 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-namespace loki::styles {
+namespace loki::gfx {
 
 struct ShapeStyle {
   const sf::Texture* texture = nullptr;
@@ -22,4 +17,4 @@ struct ShapeStyle {
   void applyTo(sf::Shape& shape) const;
 };
 
-}  // namespace loki::styles
+}  // namespace loki::gfx

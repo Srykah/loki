@@ -1,8 +1,3 @@
-/*!
- * \file GridMenuView.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -18,13 +13,13 @@ class GridMenuView : public AWidgetView {
  public:
   GridMenuView(sf::Vector2f size,
                float padding,
-               const styles::ShapeStyle& frameStyle,
-               const styles::TextStyle& textStyle);
+               const gfx::ShapeStyle& frameStyle,
+               const gfx::TextStyle& textStyle);
 
   void setItem(sf::Vector2u coords, const std::string& text);
 
   void draw(sf::RenderTarget& target,
-            sf::RenderStates states = {}) const override;
+            sf::RenderStates core = {}) const override;
 
   void update(sf::Time delta);
 
@@ -41,8 +36,8 @@ class GridMenuView : public AWidgetView {
  private:
   sf::RectangleShape frame;
   float padding;
-  const styles::ShapeStyle& frameStyle;
-  const styles::TextStyle& textStyle;
+  const gfx::ShapeStyle& frameStyle;
+  const gfx::TextStyle& textStyle;
 };
 
 }  // namespace loki::gui

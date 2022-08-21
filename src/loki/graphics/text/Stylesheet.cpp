@@ -1,11 +1,6 @@
-/*!
- * \file Stylesheet.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Stylesheet.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 const AnimatedTextStyle& Stylesheet::getStyle(
     const std::string& styleName) const {

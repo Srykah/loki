@@ -1,11 +1,6 @@
-/*!
- * \file Misc.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
-namespace loki::math {
+namespace loki::core {
 
 template <class T>
 T mod(const T& x, const T& q, const T& zero = T{0}) {
@@ -15,4 +10,4 @@ T mod(const T& x, const T& q, const T& zero = T{0}) {
   return rem;
 }
 
-}  // namespace loki::math
+}  // namespace loki::core

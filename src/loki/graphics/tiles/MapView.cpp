@@ -1,14 +1,9 @@
-/*!
- * \file MapView.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "MapView.hpp"
 #include <loki/core/utils/IterAdapters.hpp>
 #include "ObjectLayerView.hpp"
 #include "TileLayerView.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 MapView::MapView(const MapData& data) {
   setData(data);
@@ -16,7 +11,7 @@ MapView::MapView(const MapData& data) {
 
 void MapView::setData(const MapData& data) {
   this->data = &data;
-  for (const auto&& [i, layerData] : enumerate(data.layers)) {
+  for (const auto&& [i, layerData] : core::enumerate(data.layers)) {
     if (std::holds_alternative<TileLayerData>(layerData)) {
       layers.emplace_back(std::in_place_type_t<TileLayerView>{},
                           std::get<TileLayerData>(layerData),
@@ -46,4 +41,4 @@ void MapView::drawLayer(std::size_t index,
              layers.at(index));
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

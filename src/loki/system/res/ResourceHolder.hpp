@@ -1,8 +1,3 @@
-/*!
- * \file ResourceHolder.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/core/utils/Memory.hpp>
@@ -10,7 +5,7 @@
 #include "Resource.hpp"
 #include "ResourceHandle.hpp"
 
-namespace loki::res {
+namespace loki::system {
 
 class ResourceHolder {
  public:
@@ -22,7 +17,7 @@ class ResourceHolder {
   void load();
 
  private:
-  using ResPtr = OwnerPtr<Resource>;
+  using ResPtr = core::OwnerPtr<Resource>;
 
   struct ResPtrHash {
     std::size_t operator()(const ResPtr& sptr) const {
@@ -39,6 +34,6 @@ class ResourceHolder {
   std::unordered_set<ResPtr, ResPtrHash, ResPtrComp> resources;
 };
 
-}  // namespace loki::res
+}  // namespace loki::system
 
 #include "ResourceHolder.hxx"

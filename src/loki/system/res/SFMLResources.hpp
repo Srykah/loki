@@ -1,15 +1,10 @@
-/*!
- * \file SFMLResources.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "Resource.hpp"
 
-namespace loki::res {
+namespace loki::system {
 
 template <class T>
 class SFMLResource : public Resource {
@@ -54,4 +49,4 @@ class SoundBufferResource : public SFMLResource<sf::SoundBuffer> {
       : SFMLResource(std::move(path)) {}
 };
 
-}  // namespace loki::res
+}  // namespace loki::system

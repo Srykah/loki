@@ -1,14 +1,9 @@
-/*!
- * \file Map.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "MapData.hpp"
 #include <fstream>
 #include <loki/core/json/Color.hpp>
 #include <nlohmann/json.hpp>
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 void from_json(const nlohmann::json& j, MapData& md) {
   for (const auto& tilesetData : std::as_const(j.at("tilesets"))) {
@@ -28,4 +23,4 @@ void from_json(const nlohmann::json& j, MapData& md) {
   }
 }
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

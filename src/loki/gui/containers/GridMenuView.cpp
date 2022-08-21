@@ -1,8 +1,3 @@
-/*!
- * \file GridMenuView.cpp.cc
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "GridMenuView.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 
@@ -11,8 +6,8 @@ namespace loki::gui {
 
 GridMenuView::GridMenuView(sf::Vector2f frameSize,
                            float padding,
-                           const styles::ShapeStyle& frameStyle,
-                           const styles::TextStyle& textStyle)
+                           const gfx::ShapeStyle& frameStyle,
+                           const gfx::TextStyle& textStyle)
     : frame(frameSize),
       padding(padding),
       frameStyle(frameStyle),
@@ -21,9 +16,9 @@ GridMenuView::GridMenuView(sf::Vector2f frameSize,
 }
 
 void GridMenuView::draw(sf::RenderTarget& target,
-                        sf::RenderStates states) const {
-  states.transform *= getTransform();
-  target.draw(frame, states);
+                        sf::RenderStates core) const {
+  core.transform *= getTransform();
+  target.draw(frame, core);
 }
 
 void GridMenuView::update(sf::Time delta) {}

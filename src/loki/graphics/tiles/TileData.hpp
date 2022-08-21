@@ -1,8 +1,3 @@
-/*!
- * \file Tile.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Time.hpp>
@@ -12,7 +7,7 @@
 #include <vector>
 #include "Property.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 struct Frame {
   int tileid = -1;
@@ -30,4 +25,4 @@ struct TileData {
 void from_json(const nlohmann::json& j, TileData& td);
 void to_json(nlohmann::json& j, const TileData& td);
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

@@ -1,8 +1,3 @@
-/*!
- * \file LayerView.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -10,7 +5,7 @@
 #include "loki/graphics/tiles/LayerData.hpp"
 #include "loki/graphics/tiles/TilesetData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 class TileLayerView : public sf::Drawable, public sf::Transformable {
  private:
@@ -39,4 +34,4 @@ class TileLayerView : public sf::Drawable, public sf::Transformable {
   std::map<int, AnimatedTile> animatedTiles;
 };
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx

@@ -1,8 +1,3 @@
-/*!
- * \file TextLabel.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include "loki/graphics/text/AnnotatedText.hpp"
@@ -19,7 +14,7 @@ class TextLabel : public Widget {
             sf::RenderStates states = {}) const override {}
 
  private:
-  text::AnnotatedText text;
+  gfx::AnnotatedText text;
 };
 
 }  // namespace loki::gui

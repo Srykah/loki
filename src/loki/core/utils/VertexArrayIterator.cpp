@@ -5,8 +5,7 @@
  */
 #include "VertexArrayIterator.hpp"
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va,
                                          std::size_t _index)
@@ -148,41 +147,40 @@ bool VertexArrayConstIterator::operator!=(
   return !(*this == other);
 }
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
 namespace sf {
 
-loki::VertexArrayIterator begin(sf::VertexArray& va) {
-  return loki::VertexArrayIterator(va, 0);
+loki::core::VertexArrayIterator begin(sf::VertexArray& va) {
+  return loki::core::VertexArrayIterator(va, 0);
 }
 
-loki::VertexArrayConstIterator begin(const VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, 0);
+loki::core::VertexArrayConstIterator begin(const VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, 0);
 }
 
-loki::VertexArrayConstIterator cbegin(sf::VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, 0);
+loki::core::VertexArrayConstIterator cbegin(sf::VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, 0);
 }
 
-loki::VertexArrayConstIterator cbegin(const VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, 0);
+loki::core::VertexArrayConstIterator cbegin(const VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, 0);
 }
 
-loki::VertexArrayIterator end(sf::VertexArray& va) {
-  return loki::VertexArrayIterator(va, va.getVertexCount());
+loki::core::VertexArrayIterator end(sf::VertexArray& va) {
+  return loki::core::VertexArrayIterator(va, va.getVertexCount());
 }
 
-loki::VertexArrayConstIterator end(const VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, va.getVertexCount());
+loki::core::VertexArrayConstIterator end(const VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
-loki::VertexArrayConstIterator cend(sf::VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, va.getVertexCount());
+loki::core::VertexArrayConstIterator cend(sf::VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
-loki::VertexArrayConstIterator cend(const VertexArray& va) {
-  return loki::VertexArrayConstIterator(va, va.getVertexCount());
+loki::core::VertexArrayConstIterator cend(const VertexArray& va) {
+  return loki::core::VertexArrayConstIterator(va, va.getVertexCount());
 }
 
 }  // namespace sf

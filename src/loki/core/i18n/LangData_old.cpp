@@ -1,14 +1,9 @@
-/*!
- * \file LangData.cpp.cc
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-#include "LangData.hpp"
+#include "LangData_old.hpp"
 
-namespace loki::i18n {
+namespace loki::core {
 
 LangData::LangData(std::filesystem::path path)
-    : res::JsonResource<LangData>(std::move(path)) {}
+    : system::JsonResource<LangData>(std::move(path)) {}
 
 const std::string& LangData::get(const LangData::Path& path) const {
   const Node* node = &root;
@@ -52,4 +47,4 @@ void to_json(nlohmann::json& j, const LangData& ld) {
   // todo (or not)
 }
 
-}  // namespace loki::i18n
+}  // namespace loki::core

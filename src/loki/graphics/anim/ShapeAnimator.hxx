@@ -1,9 +1,3 @@
-/*!
- * \file ShapeAnimator.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #include <loki/core/math/Misc.hpp>
 #include <loki/core/math/Vector2Ops.hpp>
 #include <loki/graphics/anim/ShapeAnimator.hpp>
@@ -11,7 +5,7 @@
 #include "ADLHelpers.hpp"
 #include "TemplateHelpers.hpp"
 
-namespace loki::anim {
+namespace loki::gfx {
 
 template <typename T>
 ShapeAnimator<T>::ShapeAnimator(T& animated, const ShapeAnimationData& data)
@@ -65,14 +59,14 @@ template <typename T>
 void ShapeAnimator<T>::updateInternal() {
   if (elapsedTime < sf::Time::Zero) {
     if (data.repeat) {
-      elapsedTime = math::mod(elapsedTime, data.duration, sf::Time::Zero);
+      elapsedTime = core::mod(elapsedTime, data.duration, sf::Time::Zero);
     } else {
       elapsedTime = sf::Time::Zero;
     }
   }
   if (elapsedTime >= data.duration) {
     if (data.repeat) {
-      elapsedTime = math::mod(elapsedTime, data.duration, sf::Time::Zero);
+      elapsedTime = core::mod(elapsedTime, data.duration, sf::Time::Zero);
     } else {
       elapsedTime = data.duration;
     }
@@ -87,8 +81,8 @@ void ShapeAnimator<T>::updateInternal() {
   setColor(animated,
            initValues.color * toColor(interpolate(data.ipColor, elapsedTime)));
   setTextureRect(animated,
-                 toRect<int>(math::fromRect<float>(initValues.textureRect) +
+                 toRect<int>(core::fromRect<float>(initValues.textureRect) +
                              interpolate(data.ipTexRect, elapsedTime)));
 }
 
-}  // namespace loki::anim
+}  // namespace loki::gfx

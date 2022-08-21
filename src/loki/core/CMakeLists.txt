@@ -25,16 +25,15 @@ loki_create_module(core
   math/Vector2Ops.hpp
   math/Vector4.hpp
   math/Vector4.hxx
-  # states
+  # core
   states/State.hpp
   states/StateIndex.hpp
   states/StateMachine.hpp
   states/Transition.hpp
-  # tpl
+  # core
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
   # utils
-  utils/is_detected.hxx
   utils/IterAdapters.hpp
   utils/Macros.hpp
   utils/Matrix.hpp
@@ -49,9 +48,9 @@ loki_create_module(core
   SOURCES
   # i18n
   i18n/I18nData.cpp
-  # states
+  # core
   states/StateMachine.cpp
-  # tpl
+  # core
   tpl/TemplateEngine.cpp
   # utils
   utils/Random.cpp

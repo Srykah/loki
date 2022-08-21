@@ -1,11 +1,4 @@
-/*!
- * \file I18nData.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-#pragma once
-
-namespace loki::i18n {
+namespace loki::core {
 
 template <class... Args>
 [[nodiscard]] std::string I18nData::get(const std::string& uri,
@@ -13,4 +6,4 @@ template <class... Args>
   return get(Ptr{fmt::format(fmt::runtime(uri), std::forward<Args>(args)...)});
 }
 
-}  // namespace loki::i18n
+}  // namespace loki::core

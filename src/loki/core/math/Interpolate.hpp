@@ -1,15 +1,10 @@
-/*!
- * \file Interpolate.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/core/json/Variant.hpp>
 #include <nlohmann/json.hpp>
 #include <variant>
 
-namespace loki::math {
+namespace loki::core {
 
 //
 #if 0
@@ -84,6 +79,6 @@ using Interpolation =
 template <typename In, typename Out>
 Out interpolate(const Interpolation<In, Out>& ip, const In& x);
 
-}  // namespace loki::math
+}  // namespace loki::core
 
 #include "Interpolate.hxx"

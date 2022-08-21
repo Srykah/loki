@@ -1,15 +1,10 @@
-/*!
- * \file Transition.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <functional>
 #include <utility>
 #include "StateIndex.hpp"
 
-namespace loki::states {
+namespace loki::core {
 
 struct Transition {
   Transition(StateIndex from,
@@ -36,4 +31,4 @@ struct Transition {
   std::function<void()> onTrigger;
 };
 
-}  // namespace loki::states
+}  // namespace loki::core

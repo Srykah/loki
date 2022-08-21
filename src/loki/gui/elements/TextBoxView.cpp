@@ -1,8 +1,3 @@
-/*!
- * \file TextBox.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TextBoxView.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "loki/core/utils/IterAdapters.hpp"
@@ -14,7 +9,7 @@ namespace loki::gui {
 TextBoxView::TextBoxView(sf::Vector2f size,
                          float padding,
                          unsigned int lineCount,
-                         const styles::ShapeStyle& frameStyle,
+                         const gfx::ShapeStyle& frameStyle,
                          const text::Stylesheet& textStylesheet)
     : frame(size),
       padding(padding),
@@ -25,12 +20,12 @@ TextBoxView::TextBoxView(sf::Vector2f size,
 }
 
 void TextBoxView::draw(sf::RenderTarget& target,
-                       sf::RenderStates states) const {
-  states.transform *= getTransform();
-  target.draw(frame, states);
+                       sf::RenderStates core) const {
+  core.transform *= getTransform();
+  target.draw(frame, core);
   for (const auto& line : lines) {
     for (const auto& word : line) {
-      target.draw(word, states);
+      target.draw(word, core);
     }
   }
 }

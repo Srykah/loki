@@ -1,15 +1,11 @@
-/*!
- * \file ObjectLayerData.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
+
 #if 0
 #include <string>
 #include <vector>
 #include "ObjectData.hpp"
 
-namespace loki::tiles {
+namespace loki::gfx {
 
 struct ObjectLayerData {
   std::string name;
@@ -18,5 +14,5 @@ struct ObjectLayerData {
   ObjectLayerData(const nlohmann::json& data);
 };
 
-}  // namespace loki::tiles
+}  // namespace loki::gfx
 #endif

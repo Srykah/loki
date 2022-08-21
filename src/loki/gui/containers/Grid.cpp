@@ -1,8 +1,3 @@
-/*!
- * \file GridMenuCtrl.cpp.cc
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Grid.hpp"
 
 namespace loki::gui {

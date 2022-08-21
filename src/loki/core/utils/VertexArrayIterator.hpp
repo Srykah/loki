@@ -1,14 +1,8 @@
-/*!
- * \file VertexArrayIterator.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/VertexArray.hpp>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 class VertexArrayIterator {
  public:
@@ -56,18 +50,17 @@ class VertexArrayConstIterator {
   long long int index;
 };
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
 namespace sf {
 
-loki::VertexArrayIterator begin(sf::VertexArray& va);
-loki::VertexArrayConstIterator begin(const sf::VertexArray& va);
-loki::VertexArrayConstIterator cbegin(sf::VertexArray& va);
-loki::VertexArrayConstIterator cbegin(const sf::VertexArray& va);
-loki::VertexArrayIterator end(sf::VertexArray& va);
-loki::VertexArrayConstIterator end(const sf::VertexArray& va);
-loki::VertexArrayConstIterator cend(sf::VertexArray& va);
-loki::VertexArrayConstIterator cend(const sf::VertexArray& va);
+loki::core::VertexArrayIterator begin(sf::VertexArray& va);
+loki::core::VertexArrayConstIterator begin(const sf::VertexArray& va);
+loki::core::VertexArrayConstIterator cbegin(sf::VertexArray& va);
+loki::core::VertexArrayConstIterator cbegin(const sf::VertexArray& va);
+loki::core::VertexArrayIterator end(sf::VertexArray& va);
+loki::core::VertexArrayConstIterator end(const sf::VertexArray& va);
+loki::core::VertexArrayConstIterator cend(sf::VertexArray& va);
+loki::core::VertexArrayConstIterator cend(const sf::VertexArray& va);
 
 }  // namespace sf

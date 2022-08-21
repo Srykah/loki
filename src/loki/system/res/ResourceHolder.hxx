@@ -1,10 +1,4 @@
-/*!
- * \file ResourceHolder.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
-namespace loki::res {
+namespace loki::system {
 
 template <class Res>
 void ResourceHolder::add(ResourceHandle<Res>& handle) {
@@ -25,4 +19,4 @@ void ResourceHolder::add(Container& handles) {
   }
 }
 
-}  // namespace loki::res
+}  // namespace loki::system

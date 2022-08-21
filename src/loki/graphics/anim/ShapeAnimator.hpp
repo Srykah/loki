@@ -1,13 +1,8 @@
-/*!
- * \file Animator.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include "ShapeAnimationData.hpp"
 
-namespace loki::anim {
+namespace loki::gfx {
 
 template <typename T>
 class ShapeAnimator {
@@ -40,6 +35,6 @@ class ShapeAnimator {
   bool isPaused = false;
 };
 
-}  // namespace loki::anim
+}  // namespace loki::gfx
 
 #include "ShapeAnimator.hxx"

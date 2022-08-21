@@ -1,15 +1,10 @@
-/*!
- * \file SpriteView.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics.hpp>
 #include <loki/graphics/anim/ShapeAnimator.hpp>
 #include "SpriteData.hpp"
 
-namespace loki::sprites {
+namespace loki::gfx {
 
 class Sprite : public sf::Drawable, public sf::Transformable {
  public:
@@ -31,7 +26,7 @@ class Sprite : public sf::Drawable, public sf::Transformable {
  private:
   const SpriteData& data;
   sf::Sprite sprite;
-  std::unique_ptr<anim::ShapeAnimator<sf::Sprite>> animator;
+  std::unique_ptr<gfx::ShapeAnimator<sf::Sprite>> animator;
 };
 
-}  // namespace loki::sprites
+}  // namespace loki::gfx

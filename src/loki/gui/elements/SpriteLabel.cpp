@@ -1,3 +1,3 @@
-//
-// Created by Thomas on 19/03/2022.
-//
+#include "SpriteLabel.hpp"
+
+namespace loki::gui {}

@@ -1,11 +1,6 @@
-/*!
- * \file AnimatedTextStyle.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AnimatedTextStyle.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 AnimatedTextStyle& AnimatedTextStyle::overrideWith(
     const AnimatedTextStyle& other) {

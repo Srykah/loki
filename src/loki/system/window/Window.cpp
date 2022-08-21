@@ -8,9 +8,11 @@
 #include <loki/core/math/Rect.hpp>
 #include <loki/core/math/Vector2Ops.hpp>
 
-namespace loki::window {
+namespace loki::system {
 
-void Window::create(sf::Vector2u size, const std::string& name, Style _style) {
+void Window::create(sf::Vector2u size,
+                    const std::string& name,
+                    WindowStyle _style) {
   window.create(sf::VideoMode(size.x, size.y),
                 sf::String::fromUtf8(name.begin(), name.end()),
                 toSFMLWindowStyle(_style));
@@ -29,14 +31,14 @@ void Window::setMinimumSize(sf::Vector2u _minimumSize) {
 
 void Window::setView(sf::View view) {
   sf::Vector2f viewportSize{1.f, 1.f};
-  if (contains(style, Style::INTEGER_ZOOM_RATIO)) {
+  if (contains(style, WindowStyle::INTEGER_ZOOM_RATIO)) {
     viewportSize = getIntegerZoomViewportSize();
-  } else if (contains(style, Style::LETTERBOXED_ZOOM)) {
+  } else if (contains(style, WindowStyle::LETTERBOXED_ZOOM)) {
     viewportSize = getLetterboxedViewportSize();
   }
   sf::FloatRect viewport{sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f,
                          viewportSize};
-  view.setViewport(math::compMult(viewport, view.getViewport()));
+  view.setViewport(core::compMult(viewport, view.getViewport()));
   window.setView(view);
 }
 
@@ -102,11 +104,11 @@ sf::Vector2f Window::getIntegerZoomViewportSize() {
   }
 
   return integerRatio *
-         sf::Vector2f{math::compDiv(internalResolution,
+         sf::Vector2f{core::compDiv(internalResolution,
                                     sf::Vector2{windowWidth, windowHeight})};
 }
 void Window::guardMinimumSize() {
-  window.setSize(math::compMax(window.getSize(), minimumSize));
+  window.setSize(core::compMax(window.getSize(), minimumSize));
 }
 
-}  // namespace loki::window
+}  // namespace loki::system

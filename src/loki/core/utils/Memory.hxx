@@ -1,12 +1,7 @@
-/*!
- * \file Memory.hxx
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-#pragma once
 
-namespace loki {
-inline namespace utils {
+#include "Memory.hpp"
+
+namespace loki::core {
 
 /// OwnerPtr
 
@@ -225,5 +220,20 @@ BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase) {
   return result;
 }
 
-}  // namespace utils
-}  // namespace loki
+template <class T>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+bool BorrowerPtr<T>::operator<=>(const BorrowerPtr<U>& other) const {
+  return t <=> other.t;
+}
+
+template <class T>
+template <
+    class U,
+    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+bool BorrowerPtr<T>::operator<=>(const U* other) const {
+  return t <=> other;
+}
+
+}  // namespace loki::core
