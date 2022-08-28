@@ -33,7 +33,7 @@ class ActorManager {
   };
 
   entt::registry registry;
-  std::vector<std::pair<int, std::unique_ptr<GroupBase>>> groups;
+  std::map<int, std::vector<std::unique_ptr<GroupBase>>> groups;
 };
 
 template <class Comp>
@@ -57,7 +57,7 @@ void ActorManager::Group<Comp>::update(sf::Time delta) {
 
 template <class Comp>
 void ActorManager::registerComponent(int priority) {
-  groups.emplace_back(priority, registry);
+  groups[priority].emplace_back(registry);
 }
 
 }  // namespace loki::system

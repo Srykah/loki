@@ -1,14 +1,19 @@
 loki_create_module(system
   HEADERS
-  # system
+  main.hpp
+  # app
   app/Application.hpp
+  # ecs
+  ecs/Actor.hpp
+  ecs/ActorManager.hpp
+  ecs/Component.hpp
   # input
   input/EventHandler.hpp
   input/InputSettings.hpp
   input/InputState.hpp
   input/InputType.hpp
   input/PlayerConfig.hpp
-  # system
+  # res
   res/JsonResources.hpp
   res/Resource.hpp
   res/ResourceHandle.hpp
@@ -17,30 +22,24 @@ loki_create_module(system
   res/SFMLResources.hpp
   # scene
   scene/Scene.hpp
-  # system
-  screens/Screen.hpp
-  screens/Screen.hxx
-  screens/ScreenStack.hpp
-  screens/Signal.hpp
   # window
   window/Camera.hpp
   window/WindowStyle.hpp
   window/Window.hpp
 
   SOURCES
-  # system
+  # app
   app/Application.cpp
+  # ecs
+  ecs/ActorManager.cpp
   # input
   input/EventHandler.cpp
   input/InputSettings.cpp
   input/InputType.cpp
-  # system
+  # res
   res/ResourceHolder.cpp
   # scene
   scene/Scene.cpp
-  # system
-  screens/Screen.cpp
-  screens/ScreenStack.cpp
   # window
   window/Camera.cpp
   window/WindowStyle.cpp

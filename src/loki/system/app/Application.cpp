@@ -6,7 +6,16 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 namespace loki::system {
 
-void Application::run(int argc, char** argv) {
+int Application::run(int argc, char** argv) {
+  if (int errcode = parseArgs(argc, argv); errcode != 0) {
+    return errcode;
+  }
+  init();
+  loop();
+  return 0;
+}
+
+void Application::loop() {
   sf::Clock clock;
   sf::Time timeSinceLastFrame;
   bool play = true;
@@ -23,7 +32,7 @@ void Application::run(int argc, char** argv) {
       eventHandler.update(TIME_PER_FRAME);
       actorManager.update(TIME_PER_FRAME);
       window.clear(sf::Color::Black);
-      
+
       window.display();
     }
     sf::sleep((TIME_PER_FRAME - timeSinceLastFrame) / 2.f);

@@ -4,9 +4,9 @@
 namespace loki::system {
 
 void ActorManager::update(sf::Time delta) {
-  for (auto&& [priority, updaterList] : updaters) {
-    for (const auto& updater : updaterList) {
-      updater();
+  for (auto&& [prio, groupsInPrio] : groups) {
+    for (auto& group : groupsInPrio) {
+      group->update(delta);
     }
   }
 }
