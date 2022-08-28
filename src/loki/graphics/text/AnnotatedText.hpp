@@ -30,4 +30,4 @@ class AnnotatedText : public sf::Drawable, public sf::Transformable {
   std::vector<AnimatedText> blocks;
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

@@ -25,4 +25,4 @@ class Stylesheet {
 
 void from_json(const nlohmann::json& json, Stylesheet& ss);
 
-}  // namespace loki::text
+}  // namespace loki::gfx

@@ -100,4 +100,4 @@ void AnimatedText::end() {
   elapsedTime = sf::Time::Zero;
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx

@@ -4,13 +4,13 @@ namespace loki::gfx {
 
 TextStyle TextStyle::fromDefaults() {
   static const loki::gfx::TextStyle Defaults{30u,
-                                                sf::Text::Style::Regular,
-                                                sf::Color::White,
-                                                nullptr,
-                                                1.f,
-                                                1.f,
-                                                sf::Color::Black,
-                                                0.f};
+                                             sf::Text::Style::Regular,
+                                             sf::Color::White,
+                                             nullptr,
+                                             1.f,
+                                             1.f,
+                                             sf::Color::Black,
+                                             0.f};
   return Defaults;
 }
 

@@ -35,4 +35,4 @@ class AnimatedText : public sf::Drawable, public sf::Transformable {
   std::vector<AnimatedGlyph> glyphs;
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

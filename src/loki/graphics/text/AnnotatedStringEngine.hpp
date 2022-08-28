@@ -30,4 +30,4 @@ class AnnotatedStringEngine {
   std::vector<AnimatedTextStyle> styleStack;
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

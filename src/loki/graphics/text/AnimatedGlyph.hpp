@@ -40,4 +40,4 @@ class AnimatedGlyph : public sf::Transformable {
   State state;
 };
 
-}  // namespace loki::text::impl
+}  // namespace loki::gfx

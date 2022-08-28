@@ -29,4 +29,4 @@ AnimatedTextStyle Stylesheet::getNewStyleFromBase(
   return base;
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx

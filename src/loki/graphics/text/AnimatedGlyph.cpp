@@ -129,4 +129,4 @@ sf::Color AnimatedGlyph::getColor() const {
   return style.fillColor.value_or(sf::Color::White);
 }
 
-}  // namespace loki::text::impl
+}  // namespace loki::gfx

@@ -26,4 +26,4 @@ AnimatedTextStyle AnimatedTextStyle::fromDefaults() {
   return AnimatedTextStyle{TextStyle::fromDefaults()};
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx

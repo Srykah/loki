@@ -21,4 +21,4 @@ void AnnotatedText::draw(sf::RenderTarget& target,
 
 void AnnotatedText::skip() {}
 
-}  // namespace loki::text
+}  // namespace loki::gfx

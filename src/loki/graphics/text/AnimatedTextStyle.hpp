@@ -18,4 +18,4 @@ struct AnimatedTextStyle : public gfx::TextStyle {
   static AnimatedTextStyle fromDefaults();
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

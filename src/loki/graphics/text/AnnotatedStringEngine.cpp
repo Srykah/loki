@@ -102,4 +102,4 @@ void AnnotatedStringEngine::readStyle() {
   }
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx
