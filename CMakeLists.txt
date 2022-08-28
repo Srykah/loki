@@ -23,7 +23,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(MacroEnsureOutOfSourceBuild)
 include(LoggingHelpers)
 include(DependenciesHelpers)
-include(InstallHelpers)
+include(ModulesHelpers)
 
 # Enforce good practise
 macro_ensure_out_of_source_build("You must use an out-of-source build.")
@@ -37,36 +37,28 @@ list(APPEND LOKI_DEPS_LIST
   "fmt, 8"
   "SFML, 2.5, graphics window system audio"
   "ImGui-SFML, 2.3"
-  "box2d, 2.4")
+  "box2d, 2.4"
+  "EnTT, 3.10")
 loki_find_all_deps(" ${LOKI_DEPS_LIST}")
 
 
 # TARGETS
 
-# All modules (+all) target
+# All modules (+global) target
 loki_create_modules(
   core
   graphics
   gui
-  strings
   system
 )
-
-#[[
-add_subdirectory(src/loki/core)
-add_subdirectory(src/loki/graphics)
-add_subdirectory(src/loki/gui)
-add_subdirectory(src/loki/strings)
-add_subdirectory(src/loki/system)
-#]]
 
 
 # DOCS
 
 option(LOKI_DOCS "Generate docs with Doxygen and Sphinx." ON)
-if(LOKI_DOCS)
+if (LOKI_DOCS)
   add_subdirectory(docs)
-endif()
+endif ()
 
 
 # INSTALL

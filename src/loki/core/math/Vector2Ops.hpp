@@ -1,14 +1,9 @@
-/*!
- * \file Vector2.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
 #include <cmath>
 
-namespace loki::math {
+namespace loki::core {
 
 // linalg
 
@@ -89,4 +84,4 @@ T maxCoord(const sf::Vector2<T>& a) {
   return std::max(a.x, a.y);
 }
 
-}  // namespace loki::math
+}  // namespace loki::core

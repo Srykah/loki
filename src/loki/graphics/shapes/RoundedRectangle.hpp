@@ -1,13 +1,8 @@
-/*!
- * \file RoundedRectangle.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Shape.hpp>
 
-namespace loki::shapes {
+namespace loki::gfx {
 
 class RoundedRectangle : public sf::Shape {
  public:
@@ -27,4 +22,4 @@ class RoundedRectangle : public sf::Shape {
   std::size_t borderPointCount;
 };
 
-}  // namespace loki::shapes
+}  // namespace loki::gfx

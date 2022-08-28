@@ -1,8 +1,3 @@
-/*!
- * \file Time.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Time.hpp>

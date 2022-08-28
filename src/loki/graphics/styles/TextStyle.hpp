@@ -1,15 +1,10 @@
-/*!
- * \file TextStyle.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Text.hpp>
 #include <nlohmann/json.hpp>
 #include <optional>
 
-namespace loki::styles {
+namespace loki::gfx {
 
 using FontGetter = std::function<sf::Font&(std::string)>;
 
@@ -44,4 +39,4 @@ struct TextStyle {
   TextStyle cloneAndOverrideWith(const TextStyle& other) const;
 };
 
-}  // namespace loki::styles
+}  // namespace loki::gfx

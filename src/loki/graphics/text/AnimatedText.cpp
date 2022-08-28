@@ -1,13 +1,8 @@
-/*!
- * \file AnimatedText.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AnimatedText.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <loki/core/utils/IterAdapters.hpp>
 
-namespace loki::text {
+namespace loki::gfx {
 
 AnimatedText::AnimatedText(const std::string& string, AnimatedTextStyle style)
     : style(std::move(style)), vertices(sf::Triangles) {
@@ -105,4 +100,4 @@ void AnimatedText::end() {
   elapsedTime = sf::Time::Zero;
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx

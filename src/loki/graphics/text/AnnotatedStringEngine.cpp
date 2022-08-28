@@ -1,11 +1,6 @@
-/*!
- * \file AnnotatedTextEngine.cpp.cc
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AnnotatedStringEngine.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 AnnotatedStringEngine::AnnotatedStringEngine(const Stylesheet& _stylesheet)
     : stylesheet(_stylesheet) {}
@@ -107,4 +102,4 @@ void AnnotatedStringEngine::readStyle() {
   }
 }
 
-}  // namespace loki::text
+}  // namespace loki::gfx

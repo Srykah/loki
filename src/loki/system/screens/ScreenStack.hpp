@@ -1,8 +1,3 @@
-/*!
- * \file StateStack.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
@@ -12,7 +7,7 @@
 #include <stack>
 #include "Signal.hpp"
 
-namespace loki::screens {
+namespace loki::system {
 
 class Screen;
 
@@ -34,4 +29,4 @@ class ScreenStack : public sf::Drawable {
   std::vector<std::unique_ptr<Screen>> stack;
 };
 
-}  // namespace loki::screens
+}  // namespace loki::system

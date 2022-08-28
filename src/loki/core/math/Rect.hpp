@@ -1,14 +1,9 @@
-/*!
- * \file Rect.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Rect.hpp>
 #include <cmath>
 
-namespace loki::math {
+namespace loki::core {
 
 // component-wise
 
@@ -42,4 +37,4 @@ auto compMax(const sf::Rect<T>& a, const sf::Rect<U>& b) {
                   std::max(a.width, b.width), std::max(a.height, b.height)};
 }
 
-}  // namespace loki::math
+}  // namespace loki::core

@@ -1,16 +1,10 @@
-/*!
- * \file Matrix.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <array>
 #include <functional>
 #include <vector>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 template <typename T>
 class Matrix {
@@ -27,14 +21,14 @@ class Matrix {
       typename Iterator,
       std::enable_if_t<std::is_lvalue_reference_v<
                            typename std::iterator_traits<Iterator>::reference>,
-                       void> = void()>
+                       int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
   template <
       typename Iterator,
       std::enable_if_t<std::is_rvalue_reference_v<
                            typename std::iterator_traits<Iterator>::reference>,
-                       void> = void()>
+                       int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
   explicit Matrix(std::size_t width,
@@ -89,7 +83,6 @@ class StaticMatrix {
   std::array<T, W * H> data;
 };
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
-#include "impl/Matrix.hxx"
+#include "Matrix.hxx"

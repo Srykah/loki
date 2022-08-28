@@ -1,21 +1,16 @@
-/*!
- * \file TextStyle.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "TextStyle.hpp"
 
-namespace loki::styles {
+namespace loki::gfx {
 
 TextStyle TextStyle::fromDefaults() {
-  static const loki::styles::TextStyle Defaults{30u,
-                                                sf::Text::Style::Regular,
-                                                sf::Color::White,
-                                                nullptr,
-                                                1.f,
-                                                1.f,
-                                                sf::Color::Black,
-                                                0.f};
+  static const loki::gfx::TextStyle Defaults{30u,
+                                             sf::Text::Style::Regular,
+                                             sf::Color::White,
+                                             nullptr,
+                                             1.f,
+                                             1.f,
+                                             sf::Color::Black,
+                                             0.f};
   return Defaults;
 }
 
@@ -133,4 +128,4 @@ TextStyle TextStyle::cloneAndOverrideWith(const TextStyle& other) const {
   return TextStyle(*this).overrideWith(other);
 }
 
-}  // namespace loki::styles
+}  // namespace loki::gfx

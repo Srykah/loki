@@ -1,14 +1,9 @@
-/*!
- * \file State.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Time.hpp>
 #include <functional>
 
-namespace loki::states {
+namespace loki::core {
 
 struct State {
   std::function<void()> onEnter;
@@ -16,4 +11,4 @@ struct State {
   std::function<void()> onLeave = nullptr;
 };
 
-}  // namespace loki::states
+}  // namespace loki::core

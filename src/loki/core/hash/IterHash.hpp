@@ -1,7 +1,7 @@
 #pragma once
 #include "CombineHash.hpp"
 
-namespace loki::hash {
+namespace loki::core {
 
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Hash specialization for Iterable types (like std::vector)
@@ -14,7 +14,7 @@ struct IterHash {
   size_t operator()(const Iterable& iterable) const {
     size_t seed = iterable.size();
     for (const auto& elem : iterable) {
-      seed = loki::common::combineHash(seed, elem);
+      seed = loki::core::combineHash(seed, elem);
     }
     return seed;
   }
@@ -23,4 +23,4 @@ struct IterHash {
 template <typename T>
 using VectorHash = IterHash<std::vector<T>>;
 
-}  // namespace loki::hash
+}  // namespace loki::core

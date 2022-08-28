@@ -1,8 +1,3 @@
-/*!
- * \file AnnotatedTextEngine.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <queue>
@@ -10,7 +5,7 @@
 #include "AnimatedTextStyle.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
 
@@ -35,4 +30,4 @@ class AnnotatedStringEngine {
   std::vector<AnimatedTextStyle> styleStack;
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

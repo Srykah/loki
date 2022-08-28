@@ -1,13 +1,8 @@
-/*!
- * \file Screen.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ScreenStack.hpp"
 
 #include "Screen.hpp"
 
-namespace loki::screens {
+namespace loki::system {
 
 void Screen::init() {
   ready = true;
@@ -25,7 +20,7 @@ void Screen::sendSignal(const std::string& signalName) {
   getScreenStack().sendSignal({this, signalName});
 }
 
-void Screen::closeScreen(const loki::screens::Screen* screen) {
+void Screen::closeScreen(const loki::system::Screen* screen) {
   getScreenStack().close(screen);
 }
 
@@ -69,4 +64,4 @@ void Screen::clearAllSignalHandlers() {
   signalHandlers.clear();
 }
 
-}  // namespace loki::screens
+}  // namespace loki::system

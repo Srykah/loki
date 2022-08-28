@@ -1,13 +1,8 @@
-/*!
- * \file Capsule.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Shape.hpp>
 
-namespace loki::shapes {
+namespace loki::gfx {
 
 class Capsule : public sf::Shape {
  public:
@@ -21,4 +16,4 @@ class Capsule : public sf::Shape {
   std::size_t borderPointCount;
 };
 
-}  // namespace loki::shapes
+}  // namespace loki::gfx

@@ -1,8 +1,3 @@
-/*!
- * \file Color.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Color.hpp>
@@ -10,8 +5,7 @@
 #include <nlohmann/json.hpp>
 #include <string>
 
-namespace loki {
-inline namespace utils {
+namespace loki::core {
 
 inline std::string getHTMLColor(const sf::Color& color) {
   char str[10]{'#'};  // automatically null-terminated
@@ -35,20 +29,19 @@ inline sf::Color parseHTMLColor(const std::string& htmlCode) {
   return color;
 }
 
-}  // namespace utils
-}  // namespace loki
+}  // namespace loki::core
 
 namespace nlohmann {
 
 template <>
 struct adl_serializer<sf::Color> {
   static void to_json(json& j, const sf::Color& color) {
-    j = loki::getHTMLColor(color);
+    j = loki::core::getHTMLColor(color);
   }
 
   static void from_json(const json& j, sf::Color& color) {
     if (j.type() == detail::value_t::string) {
-      color = loki::parseHTMLColor(j.get<std::string>());
+      color = loki::core::parseHTMLColor(j.get<std::string>());
     }
   }
 };

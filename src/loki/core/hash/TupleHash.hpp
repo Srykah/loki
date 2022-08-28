@@ -1,7 +1,7 @@
 #pragma once
 #include "CombineHash.hpp"
 
-namespace loki::hash {
+namespace loki::core {
 
 /// \ingroup UTILS_COMBINEHASH
 /// \brief Helper functor for hashing tuples
@@ -59,4 +59,4 @@ using MakeTupleHashSym = TupleHashSym<std::tuple<Args...>>;
 /// || (x0 == yN && {x1, ..., xN} == {y0, ..., yN-1})
 /// \endcode
 
-}  // namespace loki::hash
+}  // namespace loki::core

@@ -1,11 +1,6 @@
-/*!
- * \file RectangleShapeStyle.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ShapeStyle.hpp"
 
-namespace loki::styles {
+namespace loki::gfx {
 
 void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setTexture(texture);
@@ -17,4 +12,4 @@ void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setOutlineThickness(outlineThickness);
 }
 
-}  // namespace loki::styles
+}  // namespace loki::gfx

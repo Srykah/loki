@@ -1,8 +1,3 @@
-/*!
- * \file Macros.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/core/utils/Macros.hpp>

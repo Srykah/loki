@@ -1,8 +1,3 @@
-/*!
- * \file AnimatedText.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
@@ -12,7 +7,7 @@
 #include "AnimatedText.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::text {
+namespace loki::gfx {
 
 using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
 
@@ -35,4 +30,4 @@ class AnnotatedText : public sf::Drawable, public sf::Transformable {
   std::vector<AnimatedText> blocks;
 };
 
-}  // namespace loki::text
+}  // namespace loki::gfx

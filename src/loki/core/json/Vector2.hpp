@@ -1,8 +1,3 @@
-/*!
- * \file Vector2.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/System/Vector2.hpp>

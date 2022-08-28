@@ -1,8 +1,3 @@
-/*!
- * \file Signal.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <any>
@@ -10,7 +5,7 @@
 #include <string>
 #include <variant>
 
-namespace loki::screens {
+namespace loki::system {
 
 class Screen;
 
@@ -26,14 +21,14 @@ struct Signal {
   std::any value = std::monostate{};
 };
 
-}  // namespace loki::screens
+}  // namespace loki::system
 
 namespace std {
 
 template <>
-struct hash<loki::screens::Signal::Trigger> {
-  bool operator()(const loki::screens::Signal::Trigger& trigger) const {
-    return loki::hash::combineHash(trigger.origin, trigger.signalName);
+struct hash<loki::system::Signal::Trigger> {
+  bool operator()(const loki::system::Signal::Trigger& trigger) const {
+    return loki::core::combineHash(trigger.origin, trigger.signalName);
   }
 };
 
