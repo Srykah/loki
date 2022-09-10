@@ -1,8 +1,10 @@
 #pragma once
 
-#include <loki/core/json/Variant.hpp>
-#include <nlohmann/json.hpp>
 #include <variant>
+
+#include <nlohmann/json.hpp>
+
+#include <loki/core/json/Variant.hpp>
 
 namespace loki::core {
 

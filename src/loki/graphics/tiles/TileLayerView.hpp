@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include <loki/core/utils/Matrix.hpp>
+
 #include "loki/graphics/tiles/LayerData.hpp"
 #include "loki/graphics/tiles/TilesetData.hpp"
 

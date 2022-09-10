@@ -3,22 +3,28 @@
 namespace loki::system {
 
 struct InputState {
+ public:
   enum Status {
     INACTIVE = 0b00,
-    TRIGGERED = 0b11,
     ACTIVE = 0b01,
-    ENDED = 0b10
-  } status = Status::INACTIVE;
+    CHANGED = 0b10,
+    TRIGGERED = CHANGED | ACTIVE,
+    ENDED = CHANGED | INACTIVE
+  };
 
+ public:
+  void update(bool active, float newValue) {
+    status = static_cast<Status>(((isActive() != active) << 1) | active);
+    value = newValue;
+  }
+
+  [[nodiscard]] bool isActive() const { return status & Status::ACTIVE; }
+  [[nodiscard]] bool hasChanged() const { return status & Status::CHANGED; }
+  [[nodiscard]] explicit operator bool() const { return isActive(); }
+
+ public:
+  Status status = Status::INACTIVE;
   float value = 0.f;  // [-1; 1]
-
-  [[nodiscard]] bool isActive() const {
-    return status == Status::TRIGGERED || status == Status::ACTIVE;
-  }
-  explicit operator bool() const { return isActive(); }
-  [[nodiscard]] bool hasChanged() const {
-    return status == Status::TRIGGERED || status == Status::ENDED;
-  }
 };
 
 }  // namespace loki::system

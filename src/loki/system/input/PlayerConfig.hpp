@@ -1,12 +1,16 @@
 #pragma once
 
-#include <string>
+#include "InputConfig.hpp"
+#include "InputMethod.hpp"
 
 namespace loki::system {
 
+using PlayerId = unsigned int;
+using InputConfigId = std::string;
+
 struct PlayerConfig {
-  std::string config;
-  int joystickId = -1;  // -1 means keyboard
+  InputConfigId configId;
+  InputMethod inputMethod = InputMethod::KeyboardAndMouse;
 };
 
 }  // namespace loki::system

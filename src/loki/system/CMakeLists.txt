@@ -8,10 +8,10 @@ loki_create_module(system
   ecs/ActorManager.hpp
   ecs/Component.hpp
   # input
-  input/EventHandler.hpp
-  input/InputSettings.hpp
+  input/InputConfig.hpp
+  input/InputManager.hpp
+  input/InputMethod.hpp
   input/InputState.hpp
-  input/InputType.hpp
   input/PlayerConfig.hpp
   # res
   res/JsonResources.hpp
@@ -33,9 +33,8 @@ loki_create_module(system
   # ecs
   ecs/ActorManager.cpp
   # input
-  input/EventHandler.cpp
-  input/InputSettings.cpp
-  input/InputType.cpp
+  input/InputManager.cpp
+  input/InputMethod.cpp
   # res
   res/ResourceHolder.cpp
   # scene

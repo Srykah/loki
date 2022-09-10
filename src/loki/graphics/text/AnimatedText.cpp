@@ -1,5 +1,7 @@
 #include "AnimatedText.hpp"
+
 #include <SFML/Graphics/RenderTarget.hpp>
+
 #include <loki/core/utils/IterAdapters.hpp>
 
 namespace loki::gfx {

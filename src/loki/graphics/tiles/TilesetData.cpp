@@ -1,4 +1,5 @@
 #include "TilesetData.hpp"
+
 #include <fstream>
 
 namespace loki::gfx {

@@ -1,7 +1,8 @@
 #pragma once
 
-#include <SFML/Graphics/Rect.hpp>
 #include <cmath>
+
+#include <SFML/Graphics/Rect.hpp>
 
 namespace loki::core {
 

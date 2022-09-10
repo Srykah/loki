@@ -4,6 +4,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
+
 #include "AnimatedText.hpp"
 #include "Stylesheet.hpp"
 

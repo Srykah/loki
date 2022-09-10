@@ -1,12 +1,15 @@
 #pragma once
 
 #if 0
+#include <memory>
+
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
+
 #include <loki/graphics/gfx/ShapeStyle.hpp>
 #include <loki/graphics/text/AnimatedText.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
-#include <memory>
+
 #include "loki/gui/interfaces/Widget.hpp"
 
 namespace loki::gui {

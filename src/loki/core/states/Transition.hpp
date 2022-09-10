@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <utility>
+
 #include "StateIndex.hpp"
 
 namespace loki::core {

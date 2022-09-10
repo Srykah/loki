@@ -1,7 +1,8 @@
 #pragma once
 
-#include <SFML/System/Time.hpp>
 #include <functional>
+
+#include <SFML/System/Time.hpp>
 
 namespace loki::core {
 

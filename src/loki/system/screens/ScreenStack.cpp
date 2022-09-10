@@ -1,7 +1,11 @@
 #include "ScreenStack.hpp"
-#include <SFML/Graphics/RenderTarget.hpp>
-#include <loki/core/utils/IterAdapters.hpp>
+
 #include <variant>
+
+#include <SFML/Graphics/RenderTarget.hpp>
+
+#include <loki/core/utils/IterAdapters.hpp>
+
 #include "Screen.hpp"
 
 namespace loki::system {

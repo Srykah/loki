@@ -1,4 +1,5 @@
 #include "Capsule.hpp"
+
 #include <cmath>
 #include <numbers>
 

@@ -1,12 +1,14 @@
 #pragma once
 
 #include <filesystem>
-#include <loki/system/res/JsonResources.hpp>
 #include <memory>
-#include <nlohmann/json.hpp>
 #include <string>
 #include <unordered_map>
 #include <variant>
+
+#include <nlohmann/json.hpp>
+
+#include <loki/system/res/JsonResources.hpp>
 
 namespace loki::core {
 

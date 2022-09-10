@@ -1,10 +1,11 @@
 #pragma once
 
+#include <functional>
+#include <memory>
+
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
-#include <functional>
-#include <memory>
 
 namespace loki::gui {
 

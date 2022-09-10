@@ -1,9 +1,10 @@
 #pragma once
 
-#include <SFML/System/Time.hpp>
-#include <entt/entity/registry.hpp>
 #include <functional>
 #include <map>
+
+#include <SFML/System/Time.hpp>
+#include <entt/entity/registry.hpp>
 
 namespace loki::system {
 

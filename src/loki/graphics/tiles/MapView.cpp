@@ -1,5 +1,7 @@
 #include "MapView.hpp"
+
 #include <loki/core/utils/IterAdapters.hpp>
+
 #include "ObjectLayerView.hpp"
 #include "TileLayerView.hpp"
 

@@ -1,9 +1,10 @@
 #pragma once
 
-#include <SFML/Graphics/Color.hpp>
 #include <charconv>
-#include <nlohmann/json.hpp>
 #include <string>
+
+#include <SFML/Graphics/Color.hpp>
+#include <nlohmann/json.hpp>
 
 namespace loki::core {
 

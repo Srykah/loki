@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iterator>
+
 #include <loki/core/utils/Matrix.hpp>
 
 namespace loki::core {

@@ -2,6 +2,7 @@
 
 #include <queue>
 #include <string>
+
 #include "AnimatedTextStyle.hpp"
 #include "Stylesheet.hpp"
 

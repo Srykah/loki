@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
+
 #include "Frame.hpp"
 #include "loki/graphics/styles/ShapeStyle.hpp"
 

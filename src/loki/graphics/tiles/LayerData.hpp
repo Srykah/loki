@@ -1,11 +1,14 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <loki/core/json/Variant.hpp>
-#include <loki/core/utils/Matrix.hpp>
-#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+#include <nlohmann/json.hpp>
+
+#include <loki/core/json/Variant.hpp>
+#include <loki/core/utils/Matrix.hpp>
+
 #include "ObjectData.hpp"
 #include "Property.hpp"
 

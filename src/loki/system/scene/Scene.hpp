@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <entt/entity/registry.hpp>
+
 #include <loki/core/utils/Memory.hpp>
 #include <loki/system/ecs/Actor.hpp>
 #include <loki/system/ecs/ActorManager.hpp>
@@ -17,6 +18,7 @@ struct SceneNode {
 
 class Scene {
  public:
+  void load(const nlohmann::json& json);
   void draw(sf::RenderTarget& target, sf::RenderStates states);
 
   std::size_t addLayer();

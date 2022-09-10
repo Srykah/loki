@@ -1,8 +1,10 @@
 #pragma once
 
 #include <filesystem>
-#include <nlohmann/json.hpp>
 #include <string>
+
+#include <nlohmann/json.hpp>
+
 #include "AnimatedTextStyle.hpp"
 
 namespace loki::gfx {

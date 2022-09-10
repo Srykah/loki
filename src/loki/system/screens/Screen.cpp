@@ -1,6 +1,6 @@
-#include "ScreenStack.hpp"
-
 #include "Screen.hpp"
+
+#include "ScreenStack.hpp"
 
 namespace loki::system {
 

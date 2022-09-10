@@ -1,4 +1,5 @@
 #include "AnnotatedText.hpp"
+
 #include <SFML/Graphics/RenderTarget.hpp>
 
 namespace loki::gfx {

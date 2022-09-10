@@ -1,8 +1,10 @@
 #pragma once
 
-#include <SFML/System/Time.hpp>
 #include <unordered_map>
 #include <vector>
+
+#include <SFML/System/Time.hpp>
+
 #include "State.hpp"
 #include "StateIndex.hpp"
 #include "Transition.hpp"

@@ -1,12 +1,14 @@
 #pragma once
 
 #include <filesystem>
-#include <loki/graphics/anim/ShapeAnimationData.hpp>
+#include <map>
+
+#include <nlohmann/json.hpp>
+
 #include <loki/system/res/JsonResources.hpp>
 #include <loki/system/res/ResourceHolder.hpp>
 #include <loki/system/res/SFMLResources.hpp>
-#include <map>
-#include <nlohmann/json.hpp>
+#include <loki/graphics/anim/ShapeAnimationData.hpp>
 
 namespace loki::gfx {
 

@@ -2,8 +2,10 @@
 
 #include <SFML/Graphics/Glyph.hpp>
 #include <SFML/Graphics/Transformable.hpp>
+
 #include <loki/core/utils/VertexArrayIterator.hpp>
 #include <loki/graphics/anim/ShapeAnimator.hpp>
+
 #include "loki/graphics/text/AnimatedTextStyle.hpp"
 
 namespace loki::gfx {

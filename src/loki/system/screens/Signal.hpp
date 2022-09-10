@@ -1,9 +1,10 @@
 #pragma once
 
 #include <any>
-#include <loki/core/hash/CombineHash.hpp>
 #include <string>
 #include <variant>
+
+#include <loki/core/hash/CombineHash.hpp>
 
 namespace loki::system {
 
@@ -14,9 +15,7 @@ struct Signal {
     const Screen* origin;
     std::string signalName;
 
-    bool operator==(const Trigger& other) const {
-      return origin == other.origin && signalName == other.signalName;
-    }
+    [[nodiscard]] bool operator<=>(const Trigger&) const = default;
   } trigger;
   std::any value = std::monostate{};
 };

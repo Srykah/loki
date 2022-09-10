@@ -6,6 +6,7 @@
 #pragma once
 
 #include <SFML/Graphics/RenderWindow.hpp>
+
 #include "WindowStyle.hpp"
 
 namespace loki::system {

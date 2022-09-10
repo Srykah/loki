@@ -1,10 +1,12 @@
 #include "TextBox.hpp"
+
 #include <sstream>
+
 #include "TextBoxView.hpp"
 
 namespace loki::gui {
 
-TextBox::TextBox(const system::EventHandler& eventHandler,
+TextBox::TextBox(const system::InputManager& eventHandler,
                  std::string nextInputName)
     : eventHandler(eventHandler), nextInputName(std::move(nextInputName)) {}
 

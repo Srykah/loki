@@ -1,4 +1,5 @@
 #include "GridMenuView.hpp"
+
 #include <SFML/Graphics/RenderTarget.hpp>
 
 #if 0

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <loki/system/ecs/ActorManager.hpp>
-#include <loki/system/input/EventHandler.hpp>
+#include <loki/system/input/InputManager.hpp>
 #include <loki/system/res/ResourceHolder.hpp>
 #include <loki/system/scene/Scene.hpp>
 #include <loki/system/screens/ScreenStack.hpp>
@@ -22,11 +22,9 @@ class Application {
  protected:
   system::Window window;
   system::ResourceHolder resourceHolder;
-  system::EventHandler eventHandler;
+  system::InputManager inputManager;
   system::ActorManager actorManager;
   system::Scene scene;
 };
-
-std::unique_ptr<loki::system::Application> getApplication();
 
 }  // namespace loki::system

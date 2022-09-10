@@ -1,8 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <loki/core/json/Color.hpp>
 #include <nlohmann/json.hpp>
+
+#include <loki/core/json/Color.hpp>
 
 namespace loki::gfx {
 

@@ -1,4 +1,5 @@
 #include "ActorManager.hpp"
+
 #include <ranges>
 
 namespace loki::system {

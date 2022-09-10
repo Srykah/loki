@@ -1,12 +1,15 @@
 #pragma once
 
+#include <variant>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include <nlohmann/json.hpp>
+
 #include <loki/core/json/Rect.hpp>
 #include <loki/core/json/Variant.hpp>
 #include <loki/core/json/Vector2.hpp>
-#include <nlohmann/json.hpp>
-#include <variant>
+
 #include "Property.hpp"
 #include "TextData.hpp"
 

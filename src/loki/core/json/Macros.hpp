@@ -1,7 +1,8 @@
 #pragma once
 
-#include <loki/core/utils/Macros.hpp>
 #include <nlohmann/json.hpp>
+
+#include <loki/core/utils/Macros.hpp>
 
 #define LOKI_JSON_TO(fieldName) loki_json_j[#fieldName] = loki_json_s.fieldName;
 #define LOKI_JSON_FROM(fieldName) \

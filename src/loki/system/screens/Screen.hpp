@@ -1,9 +1,11 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/System/Time.hpp>
 #include <any>
 #include <unordered_map>
+
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/System/Time.hpp>
+
 #include "Signal.hpp"
 
 namespace loki::system {

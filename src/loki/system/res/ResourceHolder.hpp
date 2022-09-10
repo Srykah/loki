@@ -1,7 +1,9 @@
 #pragma once
 
-#include <loki/core/utils/Memory.hpp>
 #include <unordered_set>
+
+#include <loki/core/utils/Memory.hpp>
+
 #include "Resource.hpp"
 #include "ResourceHandle.hpp"
 

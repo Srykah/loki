@@ -2,6 +2,7 @@
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+
 #include "Resource.hpp"
 
 namespace loki::system {

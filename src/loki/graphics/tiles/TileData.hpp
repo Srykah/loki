@@ -1,10 +1,13 @@
 #pragma once
 
-#include <SFML/System/Time.hpp>
-#include <loki/core/json/Macros.hpp>
-#include <loki/core/json/Time.hpp>
 #include <optional>
 #include <vector>
+
+#include <SFML/System/Time.hpp>
+
+#include <loki/core/json/Macros.hpp>
+#include <loki/core/json/Time.hpp>
+
 #include "Property.hpp"
 
 namespace loki::gfx {

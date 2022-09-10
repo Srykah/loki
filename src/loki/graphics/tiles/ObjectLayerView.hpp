@@ -1,9 +1,11 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/Graphics/Transformable.hpp>
 #include <memory>
 #include <vector>
+
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Transformable.hpp>
+
 #include "loki/graphics/tiles/LayerData.hpp"
 
 namespace loki::gfx {

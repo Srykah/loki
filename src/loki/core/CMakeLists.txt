@@ -10,7 +10,10 @@ loki_create_module(core
   i18n/I18nData.hxx
   # json
   json/Color.hpp
+  json/Joystick.hpp
+  json/Keyboard.hpp
   json/Macros.hpp
+  json/Mouse.hpp
   json/Optional.hpp
   json/Path.hpp
   json/Rect.hpp

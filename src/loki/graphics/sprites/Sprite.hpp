@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include <loki/graphics/anim/ShapeAnimator.hpp>
+
 #include "SpriteData.hpp"
 
 namespace loki::gfx {

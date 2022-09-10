@@ -1,12 +1,15 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include <filesystem>
+
+#include <SFML/Graphics.hpp>
+
 #include <loki/core/json/Macros.hpp>
 #include <loki/core/json/Vector2.hpp>
 #include <loki/system/res/JsonResources.hpp>
 #include <loki/system/res/ResourceHandle.hpp>
 #include <loki/system/res/SFMLResources.hpp>
+
 #include "Property.hpp"
 #include "TerrainData.hpp"
 #include "TileData.hpp"

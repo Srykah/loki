@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/core/utils/TemplateHelpers.hpp>
+
 #include "TemplateHelpers.hpp"
 
 namespace loki::gfx {

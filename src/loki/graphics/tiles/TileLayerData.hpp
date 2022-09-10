@@ -2,8 +2,10 @@
 
 #if 0
 #include <SFML/Graphics.hpp>
-#include <loki/core/utils/Matrix.hpp>
 #include <nlohmann/json.hpp>
+
+#include <loki/core/utils/Matrix.hpp>
+
 #include "Property.hpp"
 
 namespace loki::gfx {

@@ -3,6 +3,7 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Transformable.hpp>
+
 #include "loki/graphics/styles/TextStyle.hpp"
 
 namespace loki::gui {

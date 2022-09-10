@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/System/Time.hpp>
+
 #include "Actor.hpp"
 
 namespace loki::system {

@@ -1,7 +1,9 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include <variant>
+
+#include <SFML/Graphics.hpp>
+
 #include "ObjectLayerView.hpp"
 #include "TileLayerView.hpp"
 #include "loki/graphics/tiles/MapData.hpp"

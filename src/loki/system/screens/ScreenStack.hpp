@@ -1,10 +1,12 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/System/Time.hpp>
 #include <any>
 #include <memory>
 #include <stack>
+
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/System/Time.hpp>
+
 #include "Signal.hpp"
 
 namespace loki::system {

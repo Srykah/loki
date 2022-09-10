@@ -1,4 +1,5 @@
 #include "Property.hpp"
+
 #include <loki/core/json/Color.hpp>
 
 namespace loki::gfx {

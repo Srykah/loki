@@ -1,10 +1,12 @@
 #pragma once
 
+#include <string>
+
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
-#include <string>
+
 #include "AnimatedGlyph.hpp"
 #include "Stylesheet.hpp"
 

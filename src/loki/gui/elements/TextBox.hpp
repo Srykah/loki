@@ -1,13 +1,13 @@
 #pragma once
 
 #include "loki/gui/Widget.hpp"
-#include "loki/system/input/EventHandler.hpp"
+#include "loki/system/input/InputManager.hpp"
 
 namespace loki::gui {
 
 class TextBox : public Widget {
  public:
-  TextBox(const loki::system::EventHandler& eventHandler,
+  TextBox(const loki::system::InputManager& eventHandler,
           std::string nextInputName);
 
   void setNextInputName(std::string nextInputName);
@@ -20,7 +20,7 @@ class TextBox : public Widget {
             sf::RenderStates states = {}) const override {}
 
  private:
-  const loki::system::EventHandler& eventHandler;
+  const loki::system::InputManager& eventHandler;
   std::string nextInputName;
   std::vector<std::string> splitString;
   std::size_t curString = 0;

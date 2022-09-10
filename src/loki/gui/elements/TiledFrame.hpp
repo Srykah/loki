@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include "Frame.hpp"
 #include "loki/graphics/tiles/TilesetData.hpp"
 

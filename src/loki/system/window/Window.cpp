@@ -4,7 +4,9 @@
  * \copyright GNU GPL v3.0
  */
 #include "Window.hpp"
+
 #include <SFML/Window/Event.hpp>
+
 #include <loki/core/math/Rect.hpp>
 #include <loki/core/math/Vector2Ops.hpp>
 
@@ -21,12 +23,16 @@ void Window::create(sf::Vector2u size,
 
 void Window::setInternalResolution(sf::Vector2u _internalResolution) {
   internalResolution = _internalResolution;
-  setView(getDefaultView());
+  if (isOpen()) {
+    setView(getDefaultView());
+  }
 }
 
 void Window::setMinimumSize(sf::Vector2u _minimumSize) {
   minimumSize = _minimumSize;
-  guardMinimumSize();
+  if (isOpen()) {
+    guardMinimumSize();
+  }
 }
 
 void Window::setView(sf::View view) {

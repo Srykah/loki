@@ -1,1 +1,31 @@
 BasedOnStyle: Chromium
+IncludeBlocks: Regroup
+IncludeCategories:
+  # stdlib headers
+  - Regex: '<[[:alnum:]_]+>'
+    Priority: 100
+  # loki headers, needs to be captured first but will be ordered below
+  - Regex: '<loki/core/.*>'
+    Priority: 300
+    SortPriority: 300
+  - Regex: '<loki/system/.*>'
+    Priority: 300
+    SortPriority: 301
+  - Regex: '<loki/graphics/.*>'
+    Priority: 300
+    SortPriority: 302
+  - Regex: '<loki/gui/.*>'
+    Priority: 300
+    SortPriority: 303
+  - Regex: '<loki/physics/.*>'
+    Priority: 300
+    SortPriority: 304
+  - Regex: '<loki/.*>'
+    Priority: 300
+    SortPriority: 399
+  # other dependency headers (ordered before loki's)
+  - Regex: '<.*>'
+    Priority: 200
+  # relative headers (should be rare)
+  - Regex: '".*"'
+    Priority: 400

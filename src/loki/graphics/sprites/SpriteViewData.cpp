@@ -1,4 +1,5 @@
 #include "SpriteViewData.hpp"
+
 #include <stdexcept>
 
 namespace loki::gfx {

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include <loki/system/res/JsonResources.hpp>
+
 #include "LayerData.hpp"
 #include "Property.hpp"
 #include "TilesetData.hpp"

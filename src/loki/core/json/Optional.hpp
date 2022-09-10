@@ -1,7 +1,8 @@
 #pragma once
 
-#include <nlohmann/json.hpp>
 #include <optional>
+
+#include <nlohmann/json.hpp>
 
 namespace nlohmann {
 

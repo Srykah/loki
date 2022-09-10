@@ -1,12 +1,14 @@
 #pragma once
 
-#include <fmt/format.h>
 #include <filesystem>
-#include <loki/core/json/Path.hpp>
-#include <nlohmann/json.hpp>
 #include <string>
 #include <unordered_map>
 #include <vector>
+
+#include <fmt/format.h>
+#include <nlohmann/json.hpp>
+
+#include <loki/core/json/Path.hpp>
 
 namespace loki::core {
 

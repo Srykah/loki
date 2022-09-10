@@ -1,6 +1,7 @@
 #pragma once
 
 #include <nlohmann/json.hpp>
+
 #include "Property.hpp"
 
 namespace loki::gfx {

@@ -29,7 +29,7 @@ void Application::loop() {
           play = false;
         }
       }
-      eventHandler.update(TIME_PER_FRAME);
+      inputManager.update(TIME_PER_FRAME);
       actorManager.update(TIME_PER_FRAME);
       window.clear(sf::Color::Black);
 
