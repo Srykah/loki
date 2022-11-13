@@ -1,4 +1,5 @@
 BasedOnStyle: Chromium
+ColumnLimit: 120
 IncludeBlocks: Regroup
 IncludeCategories:
   # stdlib headers
@@ -26,6 +27,6 @@ IncludeCategories:
   # other dependency headers (ordered before loki's)
   - Regex: '<.*>'
     Priority: 200
-  # relative headers (should be rare)
+  # same module headers
   - Regex: '".*"'
     Priority: 400

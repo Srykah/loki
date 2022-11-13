@@ -7,16 +7,28 @@
 #include <nlohmann/json.hpp>
 
 #include <loki/core/json/Path.hpp>
+#include <loki/system/ecs/ActorManager.hpp>
+
+#include "Scene.hpp"
 
 namespace loki::system {
 
 using SceneId = std::string;
 
 class SceneManager {
- private:
-  std::map<SceneId, std::filesystem::path> paths;
+ public:
+  explicit SceneManager(ActorManager& actorManager);
+  void loadSceneDb(const std::filesystem::path& databaseFile);
 
-  NLOHMANN_DEFINE_TYPE_INTRUSIVE(SceneManager, paths)
+  void startScene(const SceneId& sceneId);
+
+ private:
+  void instanciateScene(const nlohmann::json& sceneData);
+
+ private:
+  ActorManager& actorManager;
+  std::map<SceneId, std::filesystem::path> sceneDb;
+  std::unique_ptr<Scene> scene;
 };
 
 }  // namespace loki::system

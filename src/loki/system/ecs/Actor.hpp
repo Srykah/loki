@@ -1,24 +1,26 @@
 #pragma once
 
 #include <SFML/Graphics/Transformable.hpp>
-#include <entt/entity/entity.hpp>
+#include <entt/entity/registry.hpp>
+
+#include <loki/system/scene/SceneNode.hpp>
 
 namespace loki::system {
 
-class Actor : public sf::Transformable {
+class Actor : public SceneNode {
  public:
-  sf::Transform getGlobalTransform() const;
-  sf::Vector2f getGlobalPosition() const;
-  float getGlobalRotation() const;
-  sf::Vector2f getGlobalScale() const;
+  Actor* getParentActor() const;
 
   template <class Comp>
   Comp& getComponent() const;
 
  private:
+  friend class ActorManager;
+  explicit Actor(entt::registry& registry, Actor* parent = nullptr);
+
   entt::entity id;
   entt::registry& registry;
-  Actor* parent = nullptr;
+  bool isRoot = true;
 };
 
 }  // namespace loki::system

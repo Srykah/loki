@@ -2,35 +2,31 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <entt/entity/registry.hpp>
+#include <nlohmann/json.hpp>
 
 #include <loki/core/utils/Memory.hpp>
 #include <loki/system/ecs/Actor.hpp>
 #include <loki/system/ecs/ActorManager.hpp>
 
+#include "SceneElement.hpp"
+
 namespace loki::system {
-
-struct SceneNode {
-  int zIndex = 0;
-  sf::Drawable& drawable;
-
-  using Ptr = core::BorrowerPtr<SceneNode>;
-};
 
 class Scene {
  public:
-  void load(const nlohmann::json& json);
   void draw(sf::RenderTarget& target, sf::RenderStates states);
 
   std::size_t addLayer();
   std::size_t removeLayer();
-  void addNode(SceneNode::Ptr nodePtr, int layerId = 0);
-  void removeNode(SceneNode* nodePtr, int layerId = -1);
+  void addElement(core::BorrowerPtr<SceneElement>&& elemPtr, int layerId = 0);
+  void removeElement(SceneElement* elemPtr, int layerId = -1);
   void markForSort();
 
  private:
-  using Layer = std::vector<SceneNode::Ptr>;
+  using Layer = std::vector<core::BorrowerPtr<SceneElement>>;
   std::vector<Layer> layers;
   bool sortOnNextDraw = false;
+  SceneNode root;
 };
 
 }  // namespace loki::system

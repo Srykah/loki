@@ -4,6 +4,9 @@
 
 namespace loki::core {
 
+template <class T, class U>
+concept IsSameOrBase = std::is_same_v<T, U> || std::is_base_of_v<T, U>;
+
 namespace impl {
 
 struct RefCount {
@@ -22,36 +25,33 @@ class OwnerPtr {
  public:
   OwnerPtr() = default;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   explicit OwnerPtr(U* t);
 
   OwnerPtr(OwnerPtr&) = delete;
   void operator=(OwnerPtr&) = delete;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   explicit OwnerPtr(OwnerPtr<U>&& other) noexcept;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   OwnerPtr& operator=(OwnerPtr<U>&& other) noexcept;
 
   ~OwnerPtr();
 
+  template <class U>
+    requires IsSameOrBase<T, U>
+  void reset(U* u);
   void reset();
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
-  void reset(U* u);
+  T* get() const;
 
   [[nodiscard]] BorrowerPtr<T> borrow() const;
 
-  T* operator*() const;
+  T& operator*() const;
   T* operator->() const;
 
  private:
@@ -61,43 +61,39 @@ class OwnerPtr {
   friend BorrowerPtr<T>;
 
   template <class U>
+    requires IsSameOrBase<T, U>
   friend OwnerPtr<U> static_pointer_cast(OwnerPtr&& other);
 };
 
 /// BorrowerPtr
 template <class T>
 class BorrowerPtr {
+ private:
  public:
   BorrowerPtr() = default;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   explicit BorrowerPtr(const OwnerPtr<U>& owner);
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   explicit BorrowerPtr(const BorrowerPtr<U>& other);
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   BorrowerPtr& operator=(const OwnerPtr<U>& owner);
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   BorrowerPtr& operator=(const BorrowerPtr<U>& other);
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   explicit BorrowerPtr(BorrowerPtr<U>&& other) noexcept;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
+  template <class U>
+    requires IsSameOrBase<T, U>
   BorrowerPtr& operator=(BorrowerPtr<U>&& other) noexcept;
 
   ~BorrowerPtr();
@@ -105,18 +101,18 @@ class BorrowerPtr {
   [[nodiscard]] bool isValid() const;
   [[nodiscard]] explicit operator bool() const;
 
-  T* operator*() const;
+  T* get() const;
+
+  T& operator*() const;
   T* operator->() const;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
-  bool operator<=>(const BorrowerPtr<U>& other) const;
+  template <class U>
+    requires IsSameOrBase<T, U> bool
+  operator<=>(const BorrowerPtr<U>& other) const;
 
-  template <class U,
-            std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>,
-                             int> = 0>
-  bool operator<=>(const U* other) const;
+  template <class U>
+    requires IsSameOrBase<T, U> bool
+  operator<=>(const U* other) const;
 
  private:
   void incrRefCount();

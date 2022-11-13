@@ -28,21 +28,29 @@ loki_create_module(core
   math/Vector2Ops.hpp
   math/Vector4.hpp
   math/Vector4.hxx
-  # core
+  # reflection
+  reflection/BaseObject.hpp
+  reflection/EnumInfo.hpp
+  reflection/FieldInfo.hpp
+  reflection/ReflectionFactory.hpp
+  reflection/TypeInfo.hpp
+  # states
   states/State.hpp
   states/StateIndex.hpp
   states/StateMachine.hpp
   states/Transition.hpp
-  # core
+  # tpl
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
   # utils
   utils/IterAdapters.hpp
+  utils/Literals.hpp
   utils/Macros.hpp
   utils/Matrix.hpp
   utils/Matrix.hxx
   utils/Memory.hpp
   utils/Memory.hxx
+  utils/Mixins.hpp
   utils/Random.hpp
   utils/TemplateHelpers.hpp
   utils/VertexArrayIterator.hpp

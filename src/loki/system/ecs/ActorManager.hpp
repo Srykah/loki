@@ -5,56 +5,32 @@
 
 #include <SFML/System/Time.hpp>
 #include <entt/entity/registry.hpp>
+#include <nlohmann/json.hpp>
+
+#include <loki/core/utils/Memory.hpp>
+
+#include "ComponentGroup.hpp"
 
 namespace loki::system {
 
+class Actor;
+
 class ActorManager {
  public:
-  void update(sf::Time delta);
-
   template <class Comp>
   void registerComponent(int priority = 0);
 
+  core::BorrowerPtr<Actor> instanciateActor(const nlohmann::json& actorData, Actor* parent = nullptr);
+
+  void update(sf::Time delta);
+
  private:
-  class GroupBase {
-   public:
-    virtual ~GroupBase() = default;
-    virtual void update(sf::Time delta) = 0;
-  };
-  template <class Comp>
-  class Group : public GroupBase {
-   public:
-    explicit Group(entt::registry& registry);
-    ~Group() override = default;
-    void update(sf::Time delta) override;
+  static nlohmann::json loadOverrides(const nlohmann::json& partialData);
 
-   private:
-    entt::registry& registry;
-    // decltype(entt::registry{}.group<Comp>()) group;
-  };
-
+  std::vector<core::OwnerPtr<Actor>> actors;
   entt::registry registry;
-  std::map<int, std::vector<std::unique_ptr<GroupBase>>> groups;
+  std::map<int, std::vector<std::unique_ptr<ComponentGroupBase>>> groups;
 };
-
-template <class Comp>
-ActorManager::Group<Comp>::Group(entt::registry& registry)
-    : registry(registry)
-//: group(registry.group<Comp>())
-{}
-
-template <class Comp>
-void ActorManager::Group<Comp>::update(sf::Time delta) {
-  for (auto& comp : registry.view<Comp>()) {
-    comp.update(delta);
-  }
-
-  /*
-  for (auto& comp : group) {
-    comp.update(delta);
-  }
-  */
-}
 
 template <class Comp>
 void ActorManager::registerComponent(int priority) {

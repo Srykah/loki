@@ -1,30 +1,23 @@
-
-#include "Memory.hpp"
-
 namespace loki::core {
 
 /// OwnerPtr
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <class U>
+  requires IsSameOrBase<T, U>
 OwnerPtr<T>::OwnerPtr(U* t) : t(t), refCount(new impl::RefCount()) {}
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-OwnerPtr<T>::OwnerPtr(OwnerPtr<U>&& other) noexcept
-    : t(other.t), refCount(other.refCount) {
+template <class U>
+  requires IsSameOrBase<T, U>
+OwnerPtr<T>::OwnerPtr(OwnerPtr<U>&& other) noexcept : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <class U>
+  requires IsSameOrBase<T, U>
 OwnerPtr<T>& OwnerPtr<T>::operator=(OwnerPtr<U>&& other) noexcept {
   reset();
   t = other.t;
@@ -37,6 +30,13 @@ OwnerPtr<T>& OwnerPtr<T>::operator=(OwnerPtr<U>&& other) noexcept {
 template <class T>
 OwnerPtr<T>::~OwnerPtr() {
   reset();
+}
+
+template <class T>
+template <class U>
+  requires IsSameOrBase<T, U>
+void OwnerPtr<T>::reset(U* u) {
+  *this = OwnerPtr(u);
 }
 
 template <class T>
@@ -53,11 +53,8 @@ void OwnerPtr<T>::reset() {
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-void OwnerPtr<T>::reset(U* u) {
-  *this = OwnerPtr(u);
+T* OwnerPtr<T>::get() const {
+  return t;
 }
 
 template <class T>
@@ -66,16 +63,17 @@ BorrowerPtr<T> OwnerPtr<T>::borrow() const {
 }
 
 template <class T>
-T* OwnerPtr<T>::operator*() const {
-  return t;
+T& OwnerPtr<T>::operator*() const {
+  return *t;
 }
 
 template <class T>
 T* OwnerPtr<T>::operator->() const {
-  return t;
+  return get();
 }
 
 template <class T, class U>
+  requires IsSameOrBase<T, U>
 OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
   OwnerPtr<U> result;
   result.t = static_cast<U*>(ptrToBase.t);
@@ -88,27 +86,22 @@ OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
 /// BorrowerPtr
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-BorrowerPtr<T>::BorrowerPtr(const OwnerPtr<U>& owner)
-    : t(owner.t), refCount(owner.refCount) {
+template <class U>
+  requires IsSameOrBase<T, U>
+BorrowerPtr<T>::BorrowerPtr(const OwnerPtr<U>& owner) : t(owner.t), refCount(owner.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-BorrowerPtr<T>::BorrowerPtr(const BorrowerPtr<U>& other)
-    : t(other.t), refCount(other.refCount) {
+template <class U>
+  requires IsSameOrBase<T, U>
+BorrowerPtr<T>::BorrowerPtr(const BorrowerPtr<U>& other) : t(other.t), refCount(other.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <class U>
+  requires IsSameOrBase<T, U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
   deleteRefCount();
   t = owner.t;
@@ -117,9 +110,8 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <class U>
+  requires IsSameOrBase<T, U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
   if (&other == this) {
     return *this;
@@ -132,19 +124,16 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-BorrowerPtr<T>::BorrowerPtr(BorrowerPtr<U>&& other) noexcept
-    : t(other.t), refCount(other.refCount) {
+template <class U>
+  requires IsSameOrBase<T, U>
+BorrowerPtr<T>::BorrowerPtr(BorrowerPtr<U>&& other) noexcept : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
+template <class U>
+  requires IsSameOrBase<T, U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(BorrowerPtr<U>&& other) noexcept {
   deleteRefCount();
   t = other.t;
@@ -170,15 +159,21 @@ BorrowerPtr<T>::operator bool() const {
 }
 
 template <class T>
-T* BorrowerPtr<T>::operator*() const {
-  return isValid() ? t : nullptr;
+T* BorrowerPtr<T>::get() const {
+  return t;
+}
+
+template <class T>
+T& BorrowerPtr<T>::operator*() const {
+  if (!isValid())
+    throw std::runtime_error("Dereferencing invalid BorrowerPtr!");
+  return *t;
 }
 
 template <class T>
 T* BorrowerPtr<T>::operator->() const {
-  if (!isValid()) {
-    throw std::logic_error("Dereferencing null pointer");
-  }
+  if (!isValid())
+    throw std::runtime_error("Dereferencing invalid BorrowerPtr!");
   return t;
 }
 
@@ -221,18 +216,16 @@ BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase) {
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-bool BorrowerPtr<T>::operator<=>(const BorrowerPtr<U>& other) const {
+template <class U>
+  requires IsSameOrBase<T, U> bool
+BorrowerPtr<T>::operator<=>(const BorrowerPtr<U>& other) const {
   return t <=> other.t;
 }
 
 template <class T>
-template <
-    class U,
-    std::enable_if_t<std::is_same_v<T, U> || std::is_base_of_v<T, U>, int>>
-bool BorrowerPtr<T>::operator<=>(const U* other) const {
+template <class U>
+  requires IsSameOrBase<T, U> bool
+BorrowerPtr<T>::operator<=>(const U* other) const {
   return t <=> other;
 }
 

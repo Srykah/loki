@@ -6,6 +6,8 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 namespace loki::system {
 
+Application::Application() : sceneManager(actorManager) {}
+
 int Application::run(int argc, char** argv) {
   if (int errcode = parseArgs(argc, argv); errcode != 0) {
     return errcode;
