@@ -30,7 +30,7 @@ struct TextStyle {
   TextStyle& withOutlineColor(sf::Color outlineColor);
   TextStyle& withOutlineThickness(float outlineThickness);
 
-  void load(const nlohmann::json& data, const FontGetter& fontGetter);
+  void load(const core::json& data, const FontGetter& fontGetter);
   void applyTo(sf::Text& text) const;
 
   [[nodiscard]] float getSpaceWidth() const;

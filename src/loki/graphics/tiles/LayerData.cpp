@@ -4,7 +4,7 @@ namespace loki::gfx {
 
 // TileLayerData
 
-void from_json(const nlohmann::json& j, TileLayerData& tld) {
+void from_json(const core::json& j, TileLayerData& tld) {
   j.at("name").get_to(tld.name);
   auto width = j.at("width").get<std::size_t>();
   auto height = j.at("height").get<std::size_t>();
@@ -17,7 +17,7 @@ void from_json(const nlohmann::json& j, TileLayerData& tld) {
   j.at("visible").get_to(tld.visible);
 }
 
-void to_json(nlohmann::json& j, const TileLayerData& tld) {
+void to_json(core::json& j, const TileLayerData& tld) {
   j["type"] = "tilelayer";
   j["name"] = tld.name;
   j["width"] = tld.data.getWidth();
@@ -32,12 +32,12 @@ void to_json(nlohmann::json& j, const TileLayerData& tld) {
 
 // ObjectLayerData
 
-void from_json(const nlohmann::json& j, ObjectLayerData& old) {
+void from_json(const core::json& j, ObjectLayerData& old) {
   j.at("name").get_to(old.name);
   j.at("objects").get_to(old.objects);
 }
 
-void to_json(nlohmann::json& j, const ObjectLayerData& old) {
+void to_json(core::json& j, const ObjectLayerData& old) {
   j["type"] = "objectgroup";
   j["name"] = old.name;
   j["objects"] = old.objects;

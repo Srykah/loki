@@ -57,6 +57,6 @@ struct TilesetData : public system::JsonResource<TilesetData> {
   LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)
 };
 
-void from_json(const nlohmann::json& j, TilesetData& td);
+void from_json(const core::json& j, TilesetData& td);
 
 }  // namespace loki::gfx

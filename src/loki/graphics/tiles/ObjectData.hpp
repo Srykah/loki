@@ -25,8 +25,8 @@ struct TileObjectData {
   PropertyMap properties;
 };
 
-void from_json(const nlohmann::json& j, TileObjectData& tod);
-void to_json(nlohmann::json& j, const TileObjectData& tod);
+void from_json(const core::json& j, TileObjectData& tod);
+void to_json(core::json& j, const TileObjectData& tod);
 
 // EllipseObjectData
 
@@ -35,8 +35,8 @@ struct EllipseObjectData {
   float rotation = 0.f;
 };
 
-void from_json(const nlohmann::json& j, EllipseObjectData& eod);
-void to_json(nlohmann::json& j, const EllipseObjectData& eod);
+void from_json(const core::json& j, EllipseObjectData& eod);
+void to_json(core::json& j, const EllipseObjectData& eod);
 
 // RectangleObjectData
 
@@ -45,8 +45,8 @@ struct RectangleObjectData {
   float rotation = 0.f;
 };
 
-void from_json(const nlohmann::json& j, RectangleObjectData& rod);
-void to_json(nlohmann::json& j, const RectangleObjectData& rod);
+void from_json(const core::json& j, RectangleObjectData& rod);
+void to_json(core::json& j, const RectangleObjectData& rod);
 
 // PointObjectData
 
@@ -55,8 +55,8 @@ struct PointObjectData {
   sf::Vector2f position;
 };
 
-void from_json(const nlohmann::json& j, PointObjectData& pod);
-void to_json(nlohmann::json& j, const PointObjectData& pod);
+void from_json(const core::json& j, PointObjectData& pod);
+void to_json(core::json& j, const PointObjectData& pod);
 
 // PolygonObjectData
 
@@ -81,8 +81,8 @@ struct TextObjectData {
   TextData text;
 };
 
-void from_json(const nlohmann::json& j, TextObjectData& tod);
-void to_json(nlohmann::json& j, const TextObjectData& tod);
+void from_json(const core::json& j, TextObjectData& tod);
+void to_json(core::json& j, const TextObjectData& tod);
 
 // ObjectData
 
@@ -100,7 +100,7 @@ namespace nlohmann {
 
 template <>
 struct adl_serializer<loki::gfx::ObjectData> {
-  static void from_json(const nlohmann::json& j, loki::gfx::ObjectData& od) {
+  static void from_json(const core::json& j, loki::gfx::ObjectData& od) {
     using loki::gfx::from_json;
     if (j.contains("gid")) {
       loki::gfx::TileObjectData tod;
@@ -133,7 +133,7 @@ struct adl_serializer<loki::gfx::ObjectData> {
     }
   }
 
-  static void to_json(nlohmann::json& j, const loki::gfx::ObjectData& od) {
+  static void to_json(core::json& j, const loki::gfx::ObjectData& od) {
     std::visit([&](const auto& data) { to_json(j, data); }, od);
     /*
     // PS : I tried using visit and failed miserably, maybe try again sometime

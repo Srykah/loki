@@ -25,7 +25,7 @@ struct TileData {
   std::optional<std::array<int, 4>> terrain;
 };
 
-void from_json(const nlohmann::json& j, TileData& td);
-void to_json(nlohmann::json& j, const TileData& td);
+void from_json(const core::json& j, TileData& td);
+void to_json(core::json& j, const TileData& td);
 
 }  // namespace loki::gfx

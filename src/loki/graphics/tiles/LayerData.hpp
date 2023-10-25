@@ -24,8 +24,8 @@ struct TileLayerData {
   bool visible;
 };
 
-void from_json(const nlohmann::json& j, TileLayerData& tld);
-void to_json(nlohmann::json& j, const TileLayerData& tld);
+void from_json(const core::json& j, TileLayerData& tld);
+void to_json(core::json& j, const TileLayerData& tld);
 
 // ObjectLayerData
 
@@ -34,8 +34,8 @@ struct ObjectLayerData {
   std::vector<ObjectData> objects;
 };
 
-void from_json(const nlohmann::json& j, ObjectLayerData& old);
-void to_json(nlohmann::json& j, const ObjectLayerData& old);
+void from_json(const core::json& j, ObjectLayerData& old);
+void to_json(core::json& j, const ObjectLayerData& old);
 
 // LayerData
 

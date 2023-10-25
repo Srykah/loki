@@ -2,6 +2,8 @@
 
 #include <fstream>
 
+#include <loki/core/serialization/ReflectToJson.hpp>
+
 namespace loki::core {
 
 const I18nData::RegisteredLangs& I18nData::getRegisteredLangs() const {
@@ -10,7 +12,7 @@ const I18nData::RegisteredLangs& I18nData::getRegisteredLangs() const {
 
 bool I18nData::setCurLang(std::string&& langId) {
   std::ifstream file(parentPath / registeredLangs.at(langId).filepath);
-  nlohmann::json fileContents;
+  core::json fileContents;
   file >> fileContents;
   currentLangData = std::move(fileContents.at("strings"));
   currentLangId = std::move(langId);
@@ -21,7 +23,7 @@ bool I18nData::setCurLang(const std::string& langId) {
   return setCurLang(std::string{langId});
 }
 
-const nlohmann::json& I18nData::getCurLang() const {
+const core::json& I18nData::getCurLang() const {
   return currentLangData;
 }
 
@@ -31,7 +33,7 @@ const std::string& I18nData::getCurLangId() const {
 
 void I18nData::loadFromFile(const std::filesystem::path& path) {
   std::ifstream file(path);
-  nlohmann::json data;
+  core::json data;
   file >> data;
   data.at("langs").get_to(registeredLangs);
   parentPath = path.parent_path();

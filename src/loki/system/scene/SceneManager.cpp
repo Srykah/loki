@@ -2,28 +2,28 @@
 
 #include <fstream>
 
-namespace loki::system {
+#include <loki/core/reflection/ReflectionFactory.hpp>
+#include <loki/system/app/ServiceRegistry.hpp>
 
-SceneManager::SceneManager(ActorManager& actorManager) : actorManager(actorManager) {}
+namespace loki::system {
 
 void SceneManager::loadSceneDb(const std::filesystem::path& databaseFile) {
   std::ifstream file(databaseFile);
-  nlohmann::json json;
+  core::json json;
   file >> json;
   json.at("scenes").get_to(sceneDb);
+  auto databaseParentPath = databaseFile.parent_path();
+  for (auto& scenePath : sceneDb) {
+    scenePath.second = databaseParentPath / scenePath.second;
+  }
 }
 
 void SceneManager::startScene(const SceneId& sceneId) {
   std::ifstream file(sceneDb.at(sceneId));
-  nlohmann::json json;
+  core::json json;
   file >> json;
-  instanciateScene(json);
-}
-
-void SceneManager::instanciateScene(const nlohmann::json& sceneData) {
-  auto newScene = std::make_unique<Scene>();
-  // newScene->root = actorManager.instanciateActor(sceneData.at("root"));
-  scene = std::move(newScene);
+  scene = std::make_unique<Scene>();
+  json.get_to(*scene);
 }
 
 }  // namespace loki::system

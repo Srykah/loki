@@ -8,17 +8,24 @@
 
 namespace loki::core {
 
+template <class T>
+concept RTTIObject = std::is_base_of_v<BaseObject, T>;
+
 class ReflectionFactory {
  public:
-  template <class T>
+  using Builder = std::function<BaseObject*()>;
+
+  template <RTTIObject T>
   void registerClass();
 
-  template <class T>
-  std::unique_ptr<T> build(const TypeInfo& _typeInfo = getTypeInfo<T>());
+  template <RTTIObject T>
+  void registerClass(Builder&& builder);
+
+  template <RTTIObject T>
+  std::unique_ptr<T> build(std::string_view realClassName);
 
  private:
-  using Builder = std::function<std::unique_ptr<BaseObject>()>;
-  std::unordered_map<std::string_view, Builder> m_builders;
+  std::unordered_map<std::string_view, Builder> builders;
 };
 
 }  // namespace loki::core

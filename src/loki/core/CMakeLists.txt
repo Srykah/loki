@@ -30,9 +30,9 @@ loki_create_module(core
   math/Vector4.hxx
   # reflection
   reflection/BaseObject.hpp
-  reflection/EnumInfo.hpp
-  reflection/FieldInfo.hpp
   reflection/ReflectionFactory.hpp
+  reflection/ReflectionFactory.hxx
+  reflection/SFMLTypesInfo.hpp
   reflection/TypeInfo.hpp
   # states
   states/State.hpp

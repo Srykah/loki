@@ -23,8 +23,7 @@ struct adl_serializer<std::variant<Types...>> {
 
  private:
   template <std::size_t Index, typename, typename... Rest>
-  static std::variant<Types...> make_variant(std::size_t index,
-                                             const nlohmann::json& j) {
+  static std::variant<Types...> make_variant(std::size_t index, const core::json& j) {
     if (Index == index) {
       std::variant<Types...> v{std::in_place_index_t<Index>{}};
       j.get_to(std::get<Index>(v));

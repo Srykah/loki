@@ -8,7 +8,9 @@
 #include <fmt/format.h>
 #include <nlohmann/json.hpp>
 
+#include <loki/core/json/Json.hpp>
 #include <loki/core/json/Path.hpp>
+#include <loki/core/reflection/TypeInfo.hpp>
 
 namespace loki::core {
 
@@ -17,13 +19,11 @@ class I18nData {
   struct LangMetaData {
     std::string name;
     std::filesystem::path filepath;
-
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(LangMetaData, name, filepath)
   };
 
  public:
   using RegisteredLangs = std::map<std::string, LangMetaData>;
-  using Ptr = nlohmann::json_pointer<nlohmann::json>;
+  using Ptr = nlohmann::json_pointer<core::json>;
 
  public:
   void loadFromFile(const std::filesystem::path& path);
@@ -34,7 +34,7 @@ class I18nData {
 
   bool setCurLang(const std::string& langId);
 
-  [[nodiscard]] const nlohmann::json& getCurLang() const;
+  [[nodiscard]] const core::json& getCurLang() const;
 
   [[nodiscard]] const std::string& getCurLangId() const;
 
@@ -46,8 +46,10 @@ class I18nData {
  private:
   std::filesystem::path parentPath;
   RegisteredLangs registeredLangs;
-  nlohmann::json currentLangData;
+  core::json currentLangData;
   std::string currentLangId;
+
+  friend const ::loki::core::TypeInfo* ::loki::core::getTypeInfo<LangMetaData>();
 };
 
 }  // namespace loki::core

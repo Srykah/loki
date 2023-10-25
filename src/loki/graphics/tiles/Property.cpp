@@ -4,8 +4,7 @@
 
 namespace loki::gfx {
 
-void loadPropertyMap(PropertyMap& propertyMap,
-                     const nlohmann::json& propArray) {
+void loadPropertyMap(PropertyMap& propertyMap, const core::json& propArray) {
   for (const auto& propertyDatum : propArray) {
     auto name = propertyDatum.at("name").get<std::string>();
     auto type = propertyDatum.at("type").get<std::string>();
@@ -19,14 +18,13 @@ void loadPropertyMap(PropertyMap& propertyMap,
     } else if (type == "bool") {
       value = propertyDatum.at("value").get<bool>();
     } else if (type == "color") {
-      value =
-          core::parseHTMLColor(propertyDatum.at("value").get<std::string>());
+      value = core::parseHTMLColor(propertyDatum.at("value").get<std::string>());
     }
     propertyMap.emplace(std::move(name), std::move(value));
   }
 }
 
-PropertyMap getPropertyMap(const nlohmann::json& propArray) {
+PropertyMap getPropertyMap(const core::json& propArray) {
   PropertyMap result;
   loadPropertyMap(result, propArray);
   return result;

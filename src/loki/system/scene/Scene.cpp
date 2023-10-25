@@ -2,10 +2,13 @@
 
 #include <SFML/Graphics/RenderTarget.hpp>
 
+#include <loki/core/reflection/ReflectionFactory.hpp>
+#include <loki/system/app/ServiceRegistry.hpp>
+
 namespace loki::system {
 
 #if 0
-void Scene::load(const nlohmann::json& json) {
+void Scene::load(const core::json& json) {
   layers.reserve(json.at("layers").size());
   for (const auto& layerData : json.at("layers")) {
     layers.emplace_back();
@@ -58,6 +61,10 @@ void Scene::removeElement(SceneElement* elemPtr, int layerId) {
       layer.erase(removed.begin(), removed.end());
     }
   }
+}
+
+void from_json(const core::json& j, Scene& s) {
+  ServiceRegistry::get<core::ReflectionFactory>().build<SceneNode>(j.at("__type").get<std::string>());
 }
 
 }  // namespace loki::system

@@ -3,7 +3,7 @@
 #if 0
 namespace loki::gfx {
 
-TileLayerData::TileLayerData(const nlohmann::json& layerData)
+TileLayerData::TileLayerData(const core::json& layerData)
     : id(layerData.at("id").get<int>()),
       name(layerData.at("name").get<std::string>()),
       data(layerData.at("width").get<int>(),

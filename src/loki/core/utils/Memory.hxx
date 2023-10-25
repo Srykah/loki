@@ -3,21 +3,17 @@ namespace loki::core {
 /// OwnerPtr
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
-OwnerPtr<T>::OwnerPtr(U* t) : t(t), refCount(new impl::RefCount()) {}
+OwnerPtr<T>::OwnerPtr(std::derived_from<T> auto* u) : t(u), refCount(new impl::RefCount()) {}
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 OwnerPtr<T>::OwnerPtr(OwnerPtr<U>&& other) noexcept : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 OwnerPtr<T>& OwnerPtr<T>::operator=(OwnerPtr<U>&& other) noexcept {
   reset();
   t = other.t;
@@ -33,9 +29,7 @@ OwnerPtr<T>::~OwnerPtr() {
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
-void OwnerPtr<T>::reset(U* u) {
+void OwnerPtr<T>::reset(std::derived_from<T> auto* u) {
   *this = OwnerPtr(u);
 }
 
@@ -72,8 +66,7 @@ T* OwnerPtr<T>::operator->() const {
   return get();
 }
 
-template <class T, class U>
-  requires IsSameOrBase<T, U>
+template <class T, std::derived_from<T> U>
 OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
   OwnerPtr<U> result;
   result.t = static_cast<U*>(ptrToBase.t);
@@ -86,22 +79,19 @@ OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
 /// BorrowerPtr
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>::BorrowerPtr(const OwnerPtr<U>& owner) : t(owner.t), refCount(owner.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>::BorrowerPtr(const BorrowerPtr<U>& other) : t(other.t), refCount(other.refCount) {
   incrRefCount();
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
   deleteRefCount();
   t = owner.t;
@@ -110,8 +100,7 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const OwnerPtr<U>& owner) {
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
   if (&other == this) {
     return *this;
@@ -124,16 +113,14 @@ BorrowerPtr<T>& BorrowerPtr<T>::operator=(const BorrowerPtr<U>& other) {
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>::BorrowerPtr(BorrowerPtr<U>&& other) noexcept : t(other.t), refCount(other.refCount) {
   other.t = nullptr;
   other.refCount = nullptr;
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U>
+template <std::derived_from<T> U>
 BorrowerPtr<T>& BorrowerPtr<T>::operator=(BorrowerPtr<U>&& other) noexcept {
   deleteRefCount();
   t = other.t;
@@ -216,16 +203,13 @@ BorrowerPtr<Out> static_pointer_cast(BorrowerPtr<In>&& ptrToBase) {
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U> bool
-BorrowerPtr<T>::operator<=>(const BorrowerPtr<U>& other) const {
+template <std::derived_from<T> U>
+auto BorrowerPtr<T>::operator<=>(const BorrowerPtr<U>& other) const {
   return t <=> other.t;
 }
 
 template <class T>
-template <class U>
-  requires IsSameOrBase<T, U> bool
-BorrowerPtr<T>::operator<=>(const U* other) const {
+auto BorrowerPtr<T>::operator<=>(const std::derived_from<T> auto* other) const {
   return t <=> other;
 }
 

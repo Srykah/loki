@@ -3,10 +3,7 @@ namespace loki::core {
 template <typename T>
 template <typename A, typename B, typename C, typename D>
 Vector4<T>::Vector4(A&& a, B&& b, C&& c, D&& d)
-    : a(std::forward<A>(a)),
-      b(std::forward<B>(b)),
-      c(std::forward<C>(c)),
-      d(std::forward<D>(d)) {}
+    : a(std::forward<A>(a)), b(std::forward<B>(b)), c(std::forward<C>(c)), d(std::forward<D>(d)) {}
 
 template <typename A, typename B, typename C, typename D>
 Vector4(A a, B b, C c, D d) -> Vector4<std::common_type<A, B, C, D>>;
@@ -104,13 +101,12 @@ Vector4<T> fromColor(const sf::Color& color) {
 
 template <typename T>
 sf::Color toColor(const Vector4<T>& v) {
-  return sf::Color(
-      std::clamp<sf::Uint8>(v.a, 0, 255), std::clamp<sf::Uint8>(v.b, 0, 255),
-      std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
+  return sf::Color(std::clamp<sf::Uint8>(v.a, 0, 255), std::clamp<sf::Uint8>(v.b, 0, 255),
+                   std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
 }
 
 template <typename T>
-void to_json(nlohmann::json& j, const Vector4<T>& vec4) {
+void to_json(core::json& j, const Vector4<T>& vec4) {
   j["a"] = vec4.a;
   j["b"] = vec4.b;
   j["c"] = vec4.c;
@@ -118,7 +114,7 @@ void to_json(nlohmann::json& j, const Vector4<T>& vec4) {
 }
 
 template <typename T>
-void from_json(const nlohmann::json& j, Vector4<T>& vec4) {
+void from_json(const core::json& j, Vector4<T>& vec4) {
   j.at("a").get_to(vec4.a);
   j.at("b").get_to(vec4.b);
   j.at("c").get_to(vec4.c);

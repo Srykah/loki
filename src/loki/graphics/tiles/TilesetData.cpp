@@ -4,9 +4,8 @@
 
 namespace loki::gfx {
 
-void from_json(const nlohmann::json& j, TilesetData& td) {
-  td.texture = system::ResourceHandle<system::TextureResource>{
-      j.at("image").get<std::string>()};
+void from_json(const core::json& j, TilesetData& td) {
+  td.texture = system::ResourceHandle<system::TextureResource>{j.at("image").get<std::string>()};
 
   j.at("name").get_to(td.name);
   j.at("tilewidth").get_to(td.tileSize.x);

@@ -25,7 +25,7 @@ class ServiceRegistry {
  private:
   inline static ServiceRegistry* instance = nullptr;
 
-  std::map<core::TypeInfo, core::OwnerPtr<core::BaseObject>> services;
+  std::map<const core::TypeInfo*, core::OwnerPtr<core::BaseObject>> services;
 };
 
 }  // namespace loki::system

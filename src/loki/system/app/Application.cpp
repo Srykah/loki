@@ -6,8 +6,6 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 namespace loki::system {
 
-Application::Application() : sceneManager(actorManager) {}
-
 int Application::run(int argc, char** argv) {
   if (int errcode = parseArgs(argc, argv); errcode != 0) {
     return errcode;
@@ -23,8 +21,7 @@ void Application::loop() {
   bool play = true;
   while (play) {
     timeSinceLastFrame += clock.restart();
-    for (; timeSinceLastFrame >= TIME_PER_FRAME;
-         timeSinceLastFrame -= TIME_PER_FRAME) {
+    for (; timeSinceLastFrame >= TIME_PER_FRAME; timeSinceLastFrame -= TIME_PER_FRAME) {
       sf::Event event;
       while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {

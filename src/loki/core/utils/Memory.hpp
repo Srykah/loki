@@ -1,11 +1,10 @@
 #pragma once
 
+#include <concepts>
+#include <iostream>
 #include <stdexcept>
 
 namespace loki::core {
-
-template <class T, class U>
-concept IsSameOrBase = std::is_same_v<T, U> || std::is_base_of_v<T, U>;
 
 namespace impl {
 
@@ -25,26 +24,20 @@ class OwnerPtr {
  public:
   OwnerPtr() = default;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
-  explicit OwnerPtr(U* t);
+  explicit OwnerPtr(std::derived_from<T> auto* u);
 
   OwnerPtr(OwnerPtr&) = delete;
   void operator=(OwnerPtr&) = delete;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   explicit OwnerPtr(OwnerPtr<U>&& other) noexcept;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   OwnerPtr& operator=(OwnerPtr<U>&& other) noexcept;
 
   ~OwnerPtr();
 
-  template <class U>
-    requires IsSameOrBase<T, U>
-  void reset(U* u);
+  void reset(std::derived_from<T> auto* u);
   void reset();
 
   T* get() const;
@@ -60,8 +53,7 @@ class OwnerPtr {
 
   friend BorrowerPtr<T>;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   friend OwnerPtr<U> static_pointer_cast(OwnerPtr&& other);
 };
 
@@ -72,28 +64,22 @@ class BorrowerPtr {
  public:
   BorrowerPtr() = default;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   explicit BorrowerPtr(const OwnerPtr<U>& owner);
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   explicit BorrowerPtr(const BorrowerPtr<U>& other);
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   BorrowerPtr& operator=(const OwnerPtr<U>& owner);
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   BorrowerPtr& operator=(const BorrowerPtr<U>& other);
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   explicit BorrowerPtr(BorrowerPtr<U>&& other) noexcept;
 
-  template <class U>
-    requires IsSameOrBase<T, U>
+  template <std::derived_from<T> U>
   BorrowerPtr& operator=(BorrowerPtr<U>&& other) noexcept;
 
   ~BorrowerPtr();
@@ -106,13 +92,10 @@ class BorrowerPtr {
   T& operator*() const;
   T* operator->() const;
 
-  template <class U>
-    requires IsSameOrBase<T, U> bool
-  operator<=>(const BorrowerPtr<U>& other) const;
+  template <std::derived_from<T> U>
+  auto operator<=>(const BorrowerPtr<U>& other) const;
 
-  template <class U>
-    requires IsSameOrBase<T, U> bool
-  operator<=>(const U* other) const;
+  auto operator<=>(const std::derived_from<T> auto* other) const;
 
  private:
   void incrRefCount();

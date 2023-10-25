@@ -14,12 +14,7 @@ struct TextData {
   unsigned int size = 16;
   std::string text = "";
   bool wrap = false;
-  enum class HorizontalAlign {
-    LEFT,
-    CENTER,
-    RIGHT,
-    JUSTIFY
-  } hAlign = HorizontalAlign::LEFT;
+  enum class HorizontalAlign { LEFT, CENTER, RIGHT, JUSTIFY } hAlign = HorizontalAlign::LEFT;
   enum class VerticalAlign {
     TOP,
     CENTER,
@@ -32,8 +27,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM(TextData::HorizontalAlign,
                                  {TextData::HorizontalAlign::LEFT, "left"},
                                  {TextData::HorizontalAlign::CENTER, "center"},
                                  {TextData::HorizontalAlign::RIGHT, "right"},
-                                 {TextData::HorizontalAlign::JUSTIFY,
-                                  "justify"},
+                                 {TextData::HorizontalAlign::JUSTIFY, "justify"},
                              })
 
 NLOHMANN_JSON_SERIALIZE_ENUM(TextData::VerticalAlign,
@@ -43,7 +37,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM(TextData::VerticalAlign,
                                  {TextData::VerticalAlign::BOTTOM, "bottom"},
                              })
 
-void from_json(const nlohmann::json& j, TextData& td);
-void to_json(nlohmann::json& j, const TextData& td);
+void from_json(const core::json& j, TextData& td);
+void to_json(core::json& j, const TextData& td);
 
 }  // namespace loki::gfx

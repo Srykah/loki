@@ -32,6 +32,6 @@ struct MapData : public system::JsonResource<MapData> {
   LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(tilesets);
 };
 
-void from_json(const nlohmann::json& j, MapData& md);
+void from_json(const core::json& j, MapData& md);
 
 }  // namespace loki::gfx

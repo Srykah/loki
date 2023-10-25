@@ -10,7 +10,7 @@ sf::Text::Style& operator|=(sf::Text::Style& s, sf::Text::Style other) {
 
 }  // namespace
 
-void from_json(const nlohmann::json& j, TextData& td) {
+void from_json(const core::json& j, TextData& td) {
   if (j.at("bold").get<bool>()) {
     td.style |= sf::Text::Style::Bold;
   }
@@ -32,7 +32,7 @@ void from_json(const nlohmann::json& j, TextData& td) {
   j.at("valign").get_to(td.vAlign);
 }
 
-void to_json(nlohmann::json& j, const TextData& td) {
+void to_json(core::json& j, const TextData& td) {
   j["bold"] = bool(td.style & sf::Text::Style::Bold);
   j["italic"] = bool(td.style & sf::Text::Style::Italic);
   j["underline"] = bool(td.style & sf::Text::Style::Underlined);

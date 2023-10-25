@@ -20,12 +20,12 @@ class ActorManager {
   template <class Comp>
   void registerComponent(int priority = 0);
 
-  core::BorrowerPtr<Actor> instanciateActor(const nlohmann::json& actorData, Actor* parent = nullptr);
+  core::BorrowerPtr<Actor> instanciateActor(const core::json& actorData, Actor* parent = nullptr);
 
   void update(sf::Time delta);
 
  private:
-  static nlohmann::json loadOverrides(const nlohmann::json& partialData);
+  static core::json loadOverrides(const core::json& partialData);
 
   std::vector<core::OwnerPtr<Actor>> actors;
   entt::registry registry;

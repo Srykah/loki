@@ -5,40 +5,32 @@ namespace loki::core {
 
 // helper types
 template <class Iter>
-using FirstPointedType =
-    typename std::iterator_traits<Iter>::value_type::first_type;
+using FirstPointedType = typename std::iterator_traits<Iter>::value_type::first_type;
 
 template <class Iter>
-using SecondPointedType =
-    typename std::iterator_traits<Iter>::value_type::second_type;
+using SecondPointedType = typename std::iterator_traits<Iter>::value_type::second_type;
 
 template <class Container>
-using FirstContainedType = FirstPointedType<decltype(std::begin(
-    std::declval<std::decay<Container>>()))>;
+using FirstContainedType = FirstPointedType<decltype(std::begin(std::declval<std::decay<Container>>()))>;
 
 template <class Container>
-using SecondContainedType = SecondPointedType<decltype(std::begin(
-    std::declval<std::decay<Container>>()))>;
+using SecondContainedType = SecondPointedType<decltype(std::begin(std::declval<std::decay<Container>>()))>;
 
 // NoneInterpolation
 
 // additional deduction guides
 template <class Iter>
-NoneInterpolation(Iter, Iter)
-    -> NoneInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
+NoneInterpolation(Iter, Iter) -> NoneInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
 
 template <class Container>
-NoneInterpolation(Container)
-    -> NoneInterpolation<FirstContainedType<Container>,
-                         SecondContainedType<Container>>;
+NoneInterpolation(Container) -> NoneInterpolation<FirstContainedType<Container>, SecondContainedType<Container>>;
 
 template <typename In, typename Out>
 Out NoneInterpolation<In, Out>::interpolate(const In& x) const {
   if (points.empty()) {
     return Out{};
   }
-  auto it = std::find_if(points.rbegin(), points.rend(),
-                         [&x](const auto& p) { return p.first <= x; });
+  auto it = std::find_if(points.rbegin(), points.rend(), [&x](const auto& p) { return p.first <= x; });
   if (it == points.rend()) {
     return points[0].second;
   }
@@ -46,7 +38,7 @@ Out NoneInterpolation<In, Out>::interpolate(const In& x) const {
 }
 
 template <typename In, typename Out>
-void from_json(const nlohmann::json& j, NoneInterpolation<In, Out>& ip) {
+void from_json(const core::json& j, NoneInterpolation<In, Out>& ip) {
   ip.points.resize(j.size());
   for (auto&& [datum, point] : zip(j, ip.points)) {
     datum.at("t").get_to(point.first);
@@ -55,8 +47,8 @@ void from_json(const nlohmann::json& j, NoneInterpolation<In, Out>& ip) {
 }
 
 template <typename In, typename Out>
-void to_json(nlohmann::json& j, const NoneInterpolation<In, Out>& ip) {
-  j = nlohmann::json{ip.size()};
+void to_json(core::json& j, const NoneInterpolation<In, Out>& ip) {
+  j = core::json{ip.size()};
   for (auto&& [point, datum] : zip(ip.points, j)) {
     datum["t"] = point.first;
     datum["p"] = point.second;
@@ -67,21 +59,17 @@ void to_json(nlohmann::json& j, const NoneInterpolation<In, Out>& ip) {
 
 // additional deduction guides
 template <class Iter>
-LinearInterpolation(Iter, Iter)
-    -> LinearInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
+LinearInterpolation(Iter, Iter) -> LinearInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
 
 template <class Container>
-LinearInterpolation(Container)
-    -> LinearInterpolation<FirstContainedType<Container>,
-                           SecondContainedType<Container>>;
+LinearInterpolation(Container) -> LinearInterpolation<FirstContainedType<Container>, SecondContainedType<Container>>;
 
 template <typename In, typename Out>
 Out LinearInterpolation<In, Out>::interpolate(const In& x) const {
   if (points.empty()) {
     return Out{};
   }
-  auto it = std::find_if(points.begin(), points.end(),
-                         [&x](const auto& p) { return p.first > x; });
+  auto it = std::find_if(points.begin(), points.end(), [&x](const auto& p) { return p.first > x; });
   if (it == points.begin()) {
     return points.front().second;
   }
@@ -97,7 +85,7 @@ Out LinearInterpolation<In, Out>::interpolate(const In& x) const {
 }
 
 template <typename In, typename Out>
-void from_json(const nlohmann::json& j, LinearInterpolation<In, Out>& ip) {
+void from_json(const core::json& j, LinearInterpolation<In, Out>& ip) {
   ip.points.resize(j.size());
   for (auto&& [datum, point] : zip(j, ip.points)) {
     datum.at("t").get_to(point.first);
@@ -106,8 +94,8 @@ void from_json(const nlohmann::json& j, LinearInterpolation<In, Out>& ip) {
 }
 
 template <typename In, typename Out>
-void to_json(nlohmann::json& j, const LinearInterpolation<In, Out>& ip) {
-  j = nlohmann::json{ip.size()};
+void to_json(core::json& j, const LinearInterpolation<In, Out>& ip) {
+  j = core::json{ip.size()};
   for (auto&& [point, datum] : zip(ip.points, j)) {
     datum["t"] = point.first;
     datum["p"] = point.second;
@@ -118,8 +106,7 @@ void to_json(nlohmann::json& j, const LinearInterpolation<In, Out>& ip) {
 
 template <typename In, typename Out>
 Out interpolate(const Interpolation<In, Out>& ip, const In& x) {
-  return std::visit(
-      [&x](auto&& interpolation) { return interpolation.interpolate(x); }, ip);
+  return std::visit([&x](auto&& interpolation) { return interpolation.interpolate(x); }, ip);
 }
 
 }  // namespace loki::core

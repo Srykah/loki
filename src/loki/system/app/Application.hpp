@@ -1,10 +1,13 @@
 #pragma once
 
+#include <loki/core/reflection/ReflectionFactory.hpp>
 #include <loki/system/ecs/ActorManager.hpp>
 #include <loki/system/input/InputManager.hpp>
 #include <loki/system/res/ResourceHolder.hpp>
 #include <loki/system/scene/SceneManager.hpp>
 #include <loki/system/window/Window.hpp>
+
+#include "ServiceRegistry.hpp"
 
 namespace loki::system {
 class Application {
@@ -23,8 +26,9 @@ class Application {
   system::Window window;
   system::ResourceHolder resourceHolder;
   system::InputManager inputManager;
-  system::ActorManager actorManager;
   system::SceneManager sceneManager;
+  core::ReflectionFactory reflectionFactory;
+  system::ServiceRegistry serviceRegistry;
 };
 
 }  // namespace loki::system

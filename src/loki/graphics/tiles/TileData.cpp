@@ -2,7 +2,7 @@
 
 namespace loki::gfx {
 
-void from_json(const nlohmann::json& j, TileData& td) {
+void from_json(const core::json& j, TileData& td) {
   if (j.contains("animation")) {
     j.at("animation").get_to(td.animation);
   }

@@ -46,9 +46,9 @@ using Vector4f = Vector4<float>;
 using Vector4i = Vector4<int>;
 
 template <typename T>
-void to_json(nlohmann::json& j, const Vector4<T>& vec4);
+void to_json(core::json& j, const Vector4<T>& vec4);
 template <typename T>
-void from_json(const nlohmann::json& j, Vector4<T>& vec4);
+void from_json(const core::json& j, Vector4<T>& vec4);
 
 }  // namespace loki::core
 

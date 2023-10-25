@@ -19,8 +19,8 @@ struct TileLayerData {
   bool visible;
 };
 
-void to_json(nlohmann::json& j, const TileLayerData& tld);
-void from_json(const nlohmann::json& j, TileLayerData& tld);
+void to_json(core::json& j, const TileLayerData& tld);
+void from_json(const core::json& j, TileLayerData& tld);
 
 }  // namespace loki::gfx
 #endif

@@ -9,9 +9,9 @@
 
 namespace loki::system {
 
-core::BorrowerPtr<Actor> ActorManager::instanciateActor(const nlohmann::json& actorData, Actor* parent) {
+core::BorrowerPtr<Actor> ActorManager::instanciateActor(const core::json& actorData, Actor* parent) {
   actors.emplace_back(new Actor(registry, parent));
-  nlohmann::json fullActorData = loadOverrides(actorData);
+  core::json fullActorData = loadOverrides(actorData);
 
   return actors.back().borrow();
 }
@@ -24,15 +24,15 @@ void ActorManager::update(sf::Time delta) {
   }
 }
 
-nlohmann::json ActorManager::loadOverrides(const nlohmann::json& partialData) {
-  nlohmann::json fullData;
+core::json ActorManager::loadOverrides(const core::json& partialData) {
+  core::json fullData;
   for (const auto& prefab : partialData["prefabs"]) {
     std::filesystem::path prefabPath;
     prefab.at("path").get_to(prefabPath);
     std::ifstream prefabFile(prefabPath);
-    nlohmann::json prefabData;
+    core::json prefabData;
     prefabFile >> prefabData;
-    const nlohmann::json& prefabPatch = prefab.at("patch");
+    const core::json& prefabPatch = prefab.at("patch");
     prefabData.patch(prefabData);
     fullData.merge_patch(prefabData);
   }

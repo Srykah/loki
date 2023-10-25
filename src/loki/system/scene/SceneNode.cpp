@@ -55,12 +55,5 @@ const sf::FloatRect& SceneNode::getLocalBounds() const {
 sf::FloatRect SceneNode::getGlobalBounds() const {
   return getGlobalTransform().transformRect(bounds);
 }
-const core::TypeInfo& SceneNode::getTypeInfo() const {
-  return {.typeInfo = typeid(SceneNode),
-          .name = "loki::core::SceneNode",
-          .description = "A node in the scene's transform graph",
-          .parents = {},
-          .fields = {}};
-}
 
 }  // namespace loki::system

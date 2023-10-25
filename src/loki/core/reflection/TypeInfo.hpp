@@ -2,26 +2,35 @@
 
 #include <span>
 #include <string_view>
+#include <typeindex>
+
+#include <nlohmann/json.hpp>
 
 namespace loki::core {
 
 struct FieldInfo;
 
 struct TypeInfo {
-  const std::type_info& typeInfo;
+  std::type_index index;
   std::string_view name;
   std::string_view description;
-  std::span<TypeInfo> parents;
-  std::span<FieldInfo> fields;
+  std::vector<const TypeInfo*> parents;
+  std::vector<FieldInfo> fields;
+  unsigned int version = 1;
+
+  auto operator<=>(const TypeInfo& other) const { return index <=> other.index; }
+};
+
+struct FieldInfo {
+  const TypeInfo* type;
+  std::string_view name;
+  std::string_view description;
 };
 
 template <class T>
-constexpr TypeInfo getTypeInfo();
+const TypeInfo* getTypeInfo();
 
-template <>
-constexpr TypeInfo getTypeInfo<bool>() {
-  return {
-      .typeInfo = typeid(bool), .name = "bool", .description = "A true or false value", .parents = {}, .fields = {}};
-}
+template <class T>
+concept Reflected = requires { getTypeInfo<T>(); };
 
 }  // namespace loki::core

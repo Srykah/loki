@@ -24,9 +24,13 @@ class Scene {
 
  private:
   using Layer = std::vector<core::BorrowerPtr<SceneElement>>;
+  friend class SceneManager;
+
+  std::unique_ptr<SceneNode> root;
+  system::ActorManager actorManager;
+  std::vector<core::OwnerPtr<SceneNode>> nodes;
   std::vector<Layer> layers;
   bool sortOnNextDraw = false;
-  SceneNode root;
 };
 
 }  // namespace loki::system

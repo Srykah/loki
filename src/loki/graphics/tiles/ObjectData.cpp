@@ -4,7 +4,7 @@ namespace loki::gfx {
 
 // TileObjectData
 
-void from_json(const nlohmann::json& j, TileObjectData& tod) {
+void from_json(const core::json& j, TileObjectData& tod) {
   if (j.contains("properties")) {
     j.at("properties").get_to(tod.properties);
   }
@@ -14,7 +14,7 @@ void from_json(const nlohmann::json& j, TileObjectData& tod) {
   j.get_to(tod.position);
 }
 
-void to_json(nlohmann::json& j, const TileObjectData& tod) {
+void to_json(core::json& j, const TileObjectData& tod) {
   j = tod.position;  // keep first
   if (!tod.properties.empty()) {
     j["properties"] = tod.properties;
@@ -26,12 +26,12 @@ void to_json(nlohmann::json& j, const TileObjectData& tod) {
 
 // EllipseObjectData
 
-void from_json(const nlohmann::json& j, EllipseObjectData& eod) {
+void from_json(const core::json& j, EllipseObjectData& eod) {
   j.get_to(eod.rect);
   j.at("rotation").get_to(eod.rotation);
 }
 
-void to_json(nlohmann::json& j, const EllipseObjectData& eod) {
+void to_json(core::json& j, const EllipseObjectData& eod) {
   j = eod.rect;  // keep first
   j["ellipse"] = true;
   j["rotation"] = eod.rotation;
@@ -39,24 +39,24 @@ void to_json(nlohmann::json& j, const EllipseObjectData& eod) {
 
 // RectangleObjectData
 
-void from_json(const nlohmann::json& j, RectangleObjectData& rod) {
+void from_json(const core::json& j, RectangleObjectData& rod) {
   j.get_to(rod.rect);
   j.at("rotation").get_to(rod.rotation);
 }
 
-void to_json(nlohmann::json& j, const RectangleObjectData& rod) {
+void to_json(core::json& j, const RectangleObjectData& rod) {
   j = rod.rect;  // keep first
   j["rotation"] = rod.rotation;
 }
 
 // PointObjectData
 
-void from_json(const nlohmann::json& j, PointObjectData& pod) {
+void from_json(const core::json& j, PointObjectData& pod) {
   j.get_to(pod.position);
   j.at("name").get_to(pod.name);
 }
 
-void to_json(nlohmann::json& j, const PointObjectData& pod) {
+void to_json(core::json& j, const PointObjectData& pod) {
   j = pod.position;  // keep first
   j["point"] = true;
   j["name"] = pod.name;
@@ -64,12 +64,12 @@ void to_json(nlohmann::json& j, const PointObjectData& pod) {
 
 // TextObjectData
 
-void from_json(const nlohmann::json& j, TextObjectData& tod) {
+void from_json(const core::json& j, TextObjectData& tod) {
   j.get_to(tod.rect);
   j.at("textbutton").get_to(tod.text);
 }
 
-void to_json(nlohmann::json& j, const TextObjectData& tod) {
+void to_json(core::json& j, const TextObjectData& tod) {
   j = tod.rect;  // keep first
   j["textbutton"] = tod.text;
 }
