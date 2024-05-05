@@ -2,7 +2,8 @@
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
-#include <nlohmann/json.hpp>
+
+#include <loki/core/reflection/classMacros.hpp>
 
 namespace loki::core {
 
@@ -27,6 +28,8 @@ struct Vector4 {
   [[nodiscard]] Vector4<T> operator/(const T& t) const;
   [[nodiscard]] bool operator==(const Vector4<T>& v) const;
   [[nodiscard]] bool operator!=(const Vector4<T>& v) const;
+
+  LOKI_REFLECTION_CLASS_DECLARE(Vector4)
 };
 
 template <typename T>
@@ -45,11 +48,13 @@ sf::Color toColor(const Vector4<T>& v);
 using Vector4f = Vector4<float>;
 using Vector4i = Vector4<int>;
 
-template <typename T>
-void to_json(core::json& j, const Vector4<T>& vec4);
-template <typename T>
-void from_json(const core::json& j, Vector4<T>& vec4);
-
 }  // namespace loki::core
+
+LOKI_REFLECTION_TEMPLATE_CLASS_BEGIN(loki::core::Vector4)
+LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::core::Vector4, a)
+LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::core::Vector4, b)
+LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::core::Vector4, c)
+LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::core::Vector4, d)
+LOKI_REFLECTION_TEMPLATE_CLASS_END()
 
 #include "Vector4.hxx"

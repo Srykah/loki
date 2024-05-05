@@ -1,6 +1,6 @@
 #include "ShapeStyle.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setTexture(texture);
@@ -12,4 +12,4 @@ void ShapeStyle::applyTo(sf::Shape& shape) const {
   shape.setOutlineThickness(outlineThickness);
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

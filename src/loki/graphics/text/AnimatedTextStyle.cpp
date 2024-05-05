@@ -1,6 +1,6 @@
 #include "AnimatedTextStyle.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 AnimatedTextStyle& AnimatedTextStyle::overrideWith(
     const AnimatedTextStyle& other) {
@@ -26,4 +26,4 @@ AnimatedTextStyle AnimatedTextStyle::fromDefaults() {
   return AnimatedTextStyle{TextStyle::fromDefaults()};
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

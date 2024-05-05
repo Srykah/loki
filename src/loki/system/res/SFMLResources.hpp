@@ -3,51 +3,31 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-#include "Resource.hpp"
+#include <loki/system/res/Resource.hpp>
 
 namespace loki::system {
 
 template <class T>
-class SFMLResource : public Resource {
+class SFMLResource : public Resource<T> {
  public:
-  using DataType = T;
-
- public:
-  explicit SFMLResource(std::filesystem::path path)
-      : Resource(std::move(path)) {}
-  ~SFMLResource() override = default;
-
-  void loadImpl(const std::filesystem::path& path,
-                ResourceHolder& resourceHolder) override {
-    data.loadFromFile(path.string());
-  };
-
-  void unloadImpl() override {
-    // todo
-  }
-
-  [[nodiscard]] const T& getData() const { return data; }
+  [[nodiscard]] const T& getData() const override { return data; }
 
  protected:
+  void loadImpl(const std::filesystem::path& path) override { data.loadFromFile(path.string()); }
+
+ private:
   T data;
 };
 
-class FontResource : public SFMLResource<sf::Font> {
- public:
-  explicit FontResource(std::filesystem::path path)
-      : SFMLResource(std::move(path)) {}
-};
-
-class TextureResource : public SFMLResource<sf::Texture> {
- public:
-  explicit TextureResource(std::filesystem::path path)
-      : SFMLResource(std::move(path)) {}
-};
-
-class SoundBufferResource : public SFMLResource<sf::SoundBuffer> {
- public:
-  explicit SoundBufferResource(std::filesystem::path path)
-      : SFMLResource(std::move(path)) {}
-};
+class FontResource final : public SFMLResource<sf::Font> {};
+class TextureResource final : public SFMLResource<sf::Texture> {};
+class SoundBufferResource final : public SFMLResource<sf::SoundBuffer> {};
 
 }  // namespace loki::system
+
+LOKI_REFLECTION_CLASS_BEGIN(loki::system::FontResource)
+LOKI_REFLECTION_CLASS_END()
+LOKI_REFLECTION_CLASS_BEGIN(loki::system::TextureResource)
+LOKI_REFLECTION_CLASS_END()
+LOKI_REFLECTION_CLASS_BEGIN(loki::system::SoundBufferResource)
+LOKI_REFLECTION_CLASS_END()

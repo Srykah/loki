@@ -20,7 +20,7 @@ struct adl_serializer<std::filesystem::path> {
     if (j.is_null()) {
       path.clear();
     } else {
-      path = std::filesystem::u8path(j.get<std::string>());
+      path = std::filesystem::path(j.get<std::string>());
     }
   }
 };

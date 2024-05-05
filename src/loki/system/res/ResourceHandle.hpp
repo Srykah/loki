@@ -1,7 +1,7 @@
 #pragma once
 
-#include <loki/core/json/Macros.hpp>
-#include <loki/core/json/Path.hpp>
+#include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/utils/Memory.hpp>
 
 namespace loki::system {
 
@@ -10,10 +10,7 @@ class ResourceHandle {
  public:
   ResourceHandle() = default;
 
-  explicit ResourceHandle(std::filesystem::path path) : path(std::move(path)) {}
-
   const typename Res::DataType& operator*() const { return getData(); }
-
   const typename Res::DataType* operator->() const { return &getData(); }
 
   [[nodiscard]] const std::filesystem::path& getPath() const { return path; }
@@ -31,7 +28,11 @@ class ResourceHandle {
 
   friend class ResourceHolder;
 
-  NLOHMANN_DEFINE_TYPE_INTRUSIVE(ResourceHandle, path)
+  LOKI_REFLECTION_CLASS_DECLARE(ResourceHandle<Res>)
 };
 
 }  // namespace loki::system
+
+LOKI_REFLECTION_TEMPLATE_CLASS_BEGIN(loki::system::ResourceHandle)
+LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::system::ResourceHandle, path)
+LOKI_REFLECTION_TEMPLATE_CLASS_END()

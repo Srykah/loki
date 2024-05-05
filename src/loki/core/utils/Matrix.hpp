@@ -40,6 +40,7 @@ class Matrix {
 
   [[nodiscard]] constexpr std::size_t getWidth() const;
   [[nodiscard]] constexpr std::size_t getHeight() const;
+  [[nodiscard]] constexpr std::size_t size() const;
 
   iterator begin();
   const_iterator begin() const;

@@ -7,8 +7,8 @@ namespace loki::gui {
 
 GridMenuView::GridMenuView(sf::Vector2f frameSize,
                            float padding,
-                           const gfx::ShapeStyle& frameStyle,
-                           const gfx::TextStyle& textStyle)
+                           const graphics::ShapeStyle& frameStyle,
+                           const graphics::TextStyle& textStyle)
     : frame(frameSize),
       padding(padding),
       frameStyle(frameStyle),

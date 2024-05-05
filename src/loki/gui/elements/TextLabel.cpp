@@ -1,11 +1,11 @@
 #include "TextLabel.hpp"
 
-#include "loki/graphics/text/AnnotatedStringEngine.hpp"
+#include <loki/graphics/text/AnnotatedStringEngine.hpp>
 
 namespace loki::gui {
 
 TextLabel::TextLabel(const std::string& str) {
-  gfx::AnnotatedStringEngine engine{{}};
+  graphics::AnnotatedStringEngine engine{{}};
   text.setAnnotatedString(engine.parseAnnotatedString(str));
 }
 

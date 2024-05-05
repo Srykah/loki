@@ -1,7 +1,8 @@
 namespace loki::core {
 
+#if 0
 template <>
-const TypeInfo* getTypeInfo<I18nData::LangMetaData>() {
+const TypeInfo* getTypeInfo<LangMetaData>() {
   static TypeInfo typeInfo{.index = typeid(I18nData::LangMetaData),
                            .name = "loki::core::I18nData::LangMetaData",
                            .description = "Metadata for a language in the database",
@@ -16,10 +17,11 @@ const TypeInfo* getTypeInfo<I18nData::LangMetaData>() {
                            }};
   return &typeInfo;
 }
+#endif
 
 template <class... Args>
-[[nodiscard]] std::string I18nData::get(const std::string& uri, Args&&... args) const {
-  return get(Ptr{fmt::format(fmt::runtime(uri), std::forward<Args>(args)...)});
+[[nodiscard]] std::string I18nData::get(std::string_view fmt, Args&&... fmtArgs) const {
+  return get(fmt::format(fmt::runtime(fmt), std::forward<Args>(fmtArgs)...));
 }
 
 }  // namespace loki::core

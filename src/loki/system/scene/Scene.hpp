@@ -1,36 +1,46 @@
 #pragma once
 
 #include <SFML/Graphics/Drawable.hpp>
+#include <SFML/System/Time.hpp>
 #include <entt/entity/registry.hpp>
-#include <nlohmann/json.hpp>
+#include <yaml-cpp/node/node.h>
 
-#include <loki/core/utils/Memory.hpp>
 #include <loki/system/ecs/Actor.hpp>
-#include <loki/system/ecs/ActorManager.hpp>
 
-#include "SceneElement.hpp"
+#if 0
+#include <loki/core/reflection/classMacros.hpp>
+#endif
 
 namespace loki::system {
 
-class Scene {
+class Scene : public sf::Drawable {
  public:
-  void draw(sf::RenderTarget& target, sf::RenderStates states);
+  Scene();
 
-  std::size_t addLayer();
-  std::size_t removeLayer();
-  void addElement(core::BorrowerPtr<SceneElement>&& elemPtr, int layerId = 0);
-  void removeElement(SceneElement* elemPtr, int layerId = -1);
-  void markForSort();
+  [[nodiscard]] const Actor& getRoot() const { return root; }
+
+  [[nodiscard]] Actor instanciateActor(entt::entity parent = entt::null);
 
  private:
-  using Layer = std::vector<core::BorrowerPtr<SceneElement>>;
   friend class SceneManager;
+  void loadFromYaml(const YAML::Node& sceneNode);
+  void update(sf::Time dt);
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-  std::unique_ptr<SceneNode> root;
-  system::ActorManager actorManager;
-  std::vector<core::OwnerPtr<SceneNode>> nodes;
-  std::vector<Layer> layers;
-  bool sortOnNextDraw = false;
+ private:
+  std::string name;
+  entt::registry registry;
+  Actor root;
+
+#if 0
+  REFLECTION_CLASS_DECLARE(Scene)
+#endif
 };
 
 }  // namespace loki::system
+
+#if 0
+REFLECTION_CLASS_BEGIN(loki::system::Scene)
+REFLECTION_CLASS_FIELD(loki::system::Scene, root)
+REFLECTION_CLASS_END()
+#endif

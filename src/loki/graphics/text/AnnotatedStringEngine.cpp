@@ -1,6 +1,6 @@
 #include "AnnotatedStringEngine.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 AnnotatedStringEngine::AnnotatedStringEngine(const Stylesheet& _stylesheet)
     : stylesheet(_stylesheet) {}
@@ -102,4 +102,4 @@ void AnnotatedStringEngine::readStyle() {
   }
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

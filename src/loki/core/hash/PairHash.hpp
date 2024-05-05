@@ -11,7 +11,7 @@ struct PairHash {
   /// \brief Hash operator
   /// \param val The pair to hash
   /// \return A hash of the pair (order matters)
-  size_t operator()(const Pair& val) const {
+  std::size_t operator()(const Pair& val) const {
     return combineHash(val.first, val.second);
   }
 };
@@ -28,7 +28,7 @@ struct PairHashSym {
   /// \brief Symmetric hash operator
   /// \param val The pair to hash symmetrically
   /// \return A symmetric hash of the pair (order doesn't matter)
-  size_t operator()(const Pair& val) const {
+  std::size_t operator()(const Pair& val) const {
     return combineHashSym(val.first, val.second);
   }
 };

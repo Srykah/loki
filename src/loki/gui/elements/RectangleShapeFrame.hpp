@@ -3,7 +3,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 
 #include "Frame.hpp"
-#include "loki/graphics/styles/ShapeStyle.hpp"
+#include <loki/graphics/styles/ShapeStyle.hpp>
 
 namespace loki::gui {
 
@@ -11,7 +11,7 @@ class RectangleShapeFrame : public Frame {
  public:
   RectangleShapeFrame(sf::Vector2f size,
                       float padding,
-                      const gfx::ShapeStyle& style);
+                      const graphics::ShapeStyle& style);
   sf::FloatRect getInternalBounds() const override;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

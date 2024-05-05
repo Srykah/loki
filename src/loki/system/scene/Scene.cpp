@@ -1,70 +1,61 @@
 #include "Scene.hpp"
 
+#include <map>
+#include <ranges>
+
 #include <SFML/Graphics/RenderTarget.hpp>
 
-#include <loki/core/reflection/ReflectionFactory.hpp>
-#include <loki/system/app/ServiceRegistry.hpp>
+#include <loki/core/services/ServiceRegistry.hpp>
+#include <loki/system/ecs/ComponentRegistry.hpp>
+#include <loki/system/ecs/DrawableComponent.hpp>
 
 namespace loki::system {
 
+Scene::Scene() : root({registry, registry.create()}) {}
+
+Actor Scene::instanciateActor(entt::entity parent) {
 #if 0
-void Scene::load(const core::json& json) {
-  layers.reserve(json.at("layers").size());
-  for (const auto& layerData : json.at("layers")) {
-    layers.emplace_back();
-    auto& layer = layers.back();
-    for (const auto& actorData : layerData) {
-      layer.emplace_back(std::make_unique<Actor>());
-    }
+  const auto& storageForComp = scene->registry.storage(entt::id_type {0})->second;
+  for (const auto& entity : storageForComp.) {
+    storageForComp.get(entity);
   }
-}
 #endif
-
-void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) {
-  for (auto& layer : layers) {
-    if (sortOnNextDraw) {
-      std::ranges::sort(layer, [](const auto& leftPtr, const auto& rightPtr) {
-        return leftPtr->getZIndex() < rightPtr->getZIndex();
-      });
-    }
-    for (const auto& elem : layer) {
-      target.draw(*elem, states);
-    }
-  }
-  sortOnNextDraw = false;
+  entt::handle handle{registry, registry.create()};
+  handle.emplace<std::string>("<unnamed>");
+  handle.emplace<sf::Transformable>();
+  return Actor{handle};
 }
 
-void Scene::addElement(core::BorrowerPtr<SceneElement>&& elemPtr, int layerId) {
-  layers.at(layerId).push_back(std::move(elemPtr));
-  sortOnNextDraw = true;
-}
-
-void Scene::markForSort() {
-  sortOnNextDraw = true;
-}
-
-std::size_t Scene::addLayer() {
-  layers.emplace_back();
-  return layers.size();
-}
-
-std::size_t Scene::removeLayer() {
-  layers.pop_back();
-  return layers.size();
-}
-
-void Scene::removeElement(SceneElement* elemPtr, int layerId) {
-  if (layerId == -1) {
-    for (auto& layer : layers) {
-      auto removed =
-          std::ranges::remove_if(layer, [elemPtr](const auto& _elemPtr) { return _elemPtr.get() == elemPtr; });
-      layer.erase(removed.begin(), removed.end());
-    }
+void Scene::loadFromYaml(const YAML::Node& sceneNode) {
+  if (const YAML::Node& nameNode = sceneNode["name"]; nameNode && nameNode.Type() == YAML::NodeType::Scalar)
+    name = nameNode.as<std::string>();
+  if (const YAML::Node& rootNode = sceneNode["root"]; rootNode && rootNode.Type() == YAML::NodeType::Map) {
+    root = instanciateActor();
+    root.loadFromYaml(rootNode);
   }
 }
 
-void from_json(const core::json& j, Scene& s) {
-  ServiceRegistry::get<core::ReflectionFactory>().build<SceneNode>(j.at("__type").get<std::string>());
+void Scene::update(sf::Time dt) {
+  auto& compReg = getService<ComponentRegistry>();
+  compReg.visitInitableComponents([](const InitMethod& initMethod, void* obj) -> void {
+    initMethod(obj);  // execute immediately
+  });
+  compReg.visitUpdatableComponents(
+      [](const UpdateMethod& updateMethod, void* obj, sf::Time dt) -> void {
+        updateMethod(obj, dt);  // execute immediately
+      },
+      dt);
+}
+
+void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+  // prepare draw list
+  // todo change to flat_map when available
+  std::multimap<DrawOrder, const sf::Drawable*> drawables;
+  getService<ComponentRegistry>().visitDrawableComponents(
+      [&drawables](const DrawableComponent& comp) { drawables.emplace(comp.getDrawOrder(), &comp); });
+  for (const Drawable* drawable : drawables | std::views::values) {
+    target.draw(*drawable, states);
+  }
 }
 
 }  // namespace loki::system

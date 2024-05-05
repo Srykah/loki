@@ -4,7 +4,7 @@
 
 #include <loki/core/utils/IterAdapters.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 AnimatedText::AnimatedText(const std::string& string, AnimatedTextStyle style)
     : style(std::move(style)), vertices(sf::Triangles) {
@@ -102,4 +102,4 @@ void AnimatedText::end() {
   elapsedTime = sf::Time::Zero;
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

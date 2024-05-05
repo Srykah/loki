@@ -3,15 +3,15 @@
 #include <SFML/Graphics.hpp>
 
 #include <loki/graphics/anim/ShapeAnimator.hpp>
+#include <loki/graphics/sprites/SpriteData.hpp>
 
-#include "SpriteData.hpp"
-
-namespace loki::gfx {
+namespace loki::graphics {
 
 class Sprite : public sf::Drawable, public sf::Transformable {
  public:
-  explicit Sprite(const SpriteData& data, const std::string& anim);
+  Sprite();
 
+  void setData(const SpriteData& data);
   void setAnim(const std::string& anim);
 
   void update(sf::Time delta);
@@ -20,15 +20,14 @@ class Sprite : public sf::Drawable, public sf::Transformable {
   sf::FloatRect getGlobalBounds() const;
 
  private:
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override;
 
   void resetSprite();
 
  private:
-  const SpriteData& data;
+  const SpriteData* data = nullptr;
   sf::Sprite sprite;
-  std::unique_ptr<gfx::ShapeAnimator<sf::Sprite>> animator;
+  ShapeAnimator<sf::Sprite> animator;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

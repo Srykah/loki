@@ -1,6 +1,6 @@
 #pragma once
 
-#include "loki/gui/Widget.hpp"
+#include <loki/gui/Widget.hpp>
 
 namespace loki::gui {
 

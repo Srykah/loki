@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 SpriteViewData::SpriteViewData(const SpriteData& data,
                                const std::filesystem::path& cd) {
@@ -15,4 +15,4 @@ SpriteViewData::SpriteViewData(const SpriteData& data,
   }
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

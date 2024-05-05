@@ -1,9 +1,9 @@
 #include "TextStyle.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 TextStyle TextStyle::fromDefaults() {
-  static const loki::gfx::TextStyle Defaults{30u,
+  static const loki::graphics::TextStyle Defaults{30u,
                                              sf::Text::Style::Regular,
                                              sf::Color::White,
                                              nullptr,
@@ -128,4 +128,4 @@ TextStyle TextStyle::cloneAndOverrideWith(const TextStyle& other) const {
   return TextStyle(*this).overrideWith(other);
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

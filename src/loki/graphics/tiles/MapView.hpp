@@ -1,41 +1,24 @@
 #pragma once
 
-#include <variant>
-
 #include <SFML/Graphics.hpp>
+#include "MapData.hpp"
 
-#include "ObjectLayerView.hpp"
-#include "TileLayerView.hpp"
-#include "loki/graphics/tiles/MapData.hpp"
+namespace loki::graphics {
 
-namespace loki::gfx {
-
-using LayerView = std::variant<ObjectLayerView, TileLayerView>;
-
-class MapView : public sf::Transformable {
+class MapView : public sf::Drawable, public sf::Transformable {
  public:
-  MapView() = default;
-  explicit MapView(const MapData& data);
+  explicit MapView(const MapData& mapData);
 
-  void setData(const MapData& data);
-  const MapData& getData() const { return *data; }
-
-  void update(sf::Time delta);
-
-  const std::vector<LayerView>& getLayers() const { return layers; }
-  const LayerView& getLayer(std::size_t index) const {
-    return layers.at(index);
-  }
-  void drawLayer(std::size_t index,
-                 sf::RenderTarget& target,
-                 sf::RenderStates states = {}) const;
-
-  const sf::RectangleShape& getBackground() const { return background; }
+  void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override;
 
  private:
-  const MapData* data = nullptr;
-  std::vector<LayerView> layers;
-  sf::RectangleShape background;
+  void init(const MapData& data);
+  void fillVerticesForTile(size_t startIndex, size_t x, size_t y, const TileSetData& tileset, int tileIndex);
+
+ private:
+  sf::Texture texture;
+  sf::Vector2u tilesetGridSize;
+  sf::VertexArray vertexArray;
 };
 
-}  // namespace loki::gfx
+}

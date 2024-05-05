@@ -1,0 +1,9 @@
+-G Ninja
+-DCMAKE_RC_COMPILER:FILEPATH="C:/prog/cpp/compilers/MSVC/MSVC-v143/VC/Tools/Llvm/x64/bin/llvm-rc.exe"
+-Dbox2d_DIR:PATH="C:/prog/cpp/libs/box2d/box2d-2.4.1/install/clang-16.0.5/lib/cmake/box2d"
+-DEnTT_DIR:PATH="C:/prog/cpp/libs/entt/entt-3.10.3/install/clang-16.0.5/lib/EnTT/cmake"
+-Dfmt_DIR:PATH="C:/prog/cpp/libs/fmt/fmt-8.0.1/install/clang-16.0.5/lib/cmake/fmt"
+-DImGui-SFML_DIR:PATH="C:/prog/cpp/libs/imgui-sfml/imgui-sfml-2.6/install/clang-16.0.5/lib/cmake/ImGui-SFML"
+-Dnlohman_json_DIR:PATH="C:/prog/cpp/libs/json/json-3.9.1/install/lib/cmake/nlohmann_json"
+-DSFML_DIR:PATH="C:/prog/cpp/libs/SFML/SFML-2.6.0/install/clang-16.0.5/lib/cmake/SFML"
+-Dyaml-cpp_DIR:PATH="C:/prog/cpp/libs/yaml-cpp/yaml-cpp-0.8.0/install/clang-16.0.5/lib/cmake/yaml-cpp"

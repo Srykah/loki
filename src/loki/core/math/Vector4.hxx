@@ -105,8 +105,9 @@ sf::Color toColor(const Vector4<T>& v) {
                    std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
 }
 
+#if 0
 template <typename T>
-void to_json(core::json& j, const Vector4<T>& vec4) {
+void to_json(nlohmann::json& j, const Vector4<T>& vec4) {
   j["a"] = vec4.a;
   j["b"] = vec4.b;
   j["c"] = vec4.c;
@@ -114,11 +115,12 @@ void to_json(core::json& j, const Vector4<T>& vec4) {
 }
 
 template <typename T>
-void from_json(const core::json& j, Vector4<T>& vec4) {
+void from_json(const nlohmann::json& j, Vector4<T>& vec4) {
   j.at("a").get_to(vec4.a);
   j.at("b").get_to(vec4.b);
   j.at("c").get_to(vec4.c);
   j.at("d").get_to(vec4.d);
 }
+#endif
 
 }  // namespace loki::core

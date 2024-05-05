@@ -6,7 +6,7 @@
 #include "AnimatedTextStyle.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
 
@@ -31,4 +31,4 @@ class AnnotatedStringEngine {
   std::vector<AnimatedTextStyle> styleStack;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

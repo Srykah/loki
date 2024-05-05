@@ -3,24 +3,30 @@
 #include <filesystem>
 #include <map>
 
-#include <nlohmann/json.hpp>
-
-#include <loki/system/res/JsonResources.hpp>
-#include <loki/system/res/ResourceHolder.hpp>
+#include <loki/system/res/LogicResource.hpp>
+#include <loki/system/res/ResourceHandle.hpp>
 #include <loki/system/res/SFMLResources.hpp>
 #include <loki/graphics/anim/ShapeAnimationData.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
-struct SpriteData : public system::JsonResource<SpriteData> {
-  LOKI_RES_JSONRESOURCE_CTOR_DTOR(SpriteData)
-
-  std::map<std::string, gfx::ShapeAnimationData> animations;
+struct SpriteData {
+  std::map<std::string, ShapeAnimationData> animations;
   system::ResourceHandle<system::TextureResource> texture;
 
-  LOKI_RES_JSONRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)
+  LOKI_REFLECTION_CLASS_DECLARE(SpriteData)
 };
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(SpriteData, animations, texture)
+struct SpriteDataResource : public system::LogicResource<SpriteData> {
+  LOKI_LOGICRESOURCE_ADD_CHILDREN_TO_HOLDER(texture)
+};
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics
+
+LOKI_REFLECTION_CLASS_BEGIN(loki::graphics::SpriteData)
+LOKI_REFLECTION_CLASS_FIELD(loki::graphics::SpriteData, animations)
+LOKI_REFLECTION_CLASS_FIELD(loki::graphics::SpriteData, texture)
+LOKI_REFLECTION_CLASS_END()
+
+LOKI_REFLECTION_CLASS_BEGIN(loki::graphics::SpriteDataResource)
+LOKI_REFLECTION_CLASS_END()

@@ -11,8 +11,8 @@ struct IterHash {
   /// \brief Hash operator
   /// \param iterable The Iterable to hash
   /// \return A hash of the Iterable (order matters)
-  size_t operator()(const Iterable& iterable) const {
-    size_t seed = iterable.size();
+  std::size_t operator()(const Iterable& iterable) const {
+    std::size_t seed = iterable.size();
     for (const auto& elem : iterable) {
       seed = loki::core::combineHash(seed, elem);
     }

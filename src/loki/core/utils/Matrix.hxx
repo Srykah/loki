@@ -66,6 +66,11 @@ constexpr std::size_t Matrix<T>::getHeight() const {
 }
 
 template <typename T>
+constexpr std::size_t Matrix<T>::size() const {
+  return W*H;
+}
+
+template <typename T>
 auto Matrix<T>::begin() -> iterator {
   return data.begin();
 }

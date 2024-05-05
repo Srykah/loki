@@ -6,7 +6,7 @@ namespace loki::gui {
 
 RectangleShapeFrame::RectangleShapeFrame(sf::Vector2f size,
                                          float padding,
-                                         const gfx::ShapeStyle& style)
+                                         const graphics::ShapeStyle& style)
     : padding(padding) {
   shape.setSize(size);
   style.applyTo(shape);

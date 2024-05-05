@@ -1,7 +1,7 @@
 #pragma once
 
-#include "loki/gui/Widget.hpp"
-#include "loki/system/input/InputManager.hpp"
+#include <loki/gui/Widget.hpp>
+#include <loki/system/input/InputManager.hpp>
 
 namespace loki::gui {
 

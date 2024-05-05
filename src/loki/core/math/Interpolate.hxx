@@ -1,75 +1,23 @@
-#include <loki/core/utils/IterAdapters.hpp>
-#include <loki/core/utils/TemplateHelpers.hpp>
+#include <ranges>
+#include <span>
 
 namespace loki::core {
 
-// helper types
-template <class Iter>
-using FirstPointedType = typename std::iterator_traits<Iter>::value_type::first_type;
-
-template <class Iter>
-using SecondPointedType = typename std::iterator_traits<Iter>::value_type::second_type;
-
-template <class Container>
-using FirstContainedType = FirstPointedType<decltype(std::begin(std::declval<std::decay<Container>>()))>;
-
-template <class Container>
-using SecondContainedType = SecondPointedType<decltype(std::begin(std::declval<std::decay<Container>>()))>;
-
-// NoneInterpolation
-
-// additional deduction guides
-template <class Iter>
-NoneInterpolation(Iter, Iter) -> NoneInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
-
-template <class Container>
-NoneInterpolation(Container) -> NoneInterpolation<FirstContainedType<Container>, SecondContainedType<Container>>;
-
 template <typename In, typename Out>
-Out NoneInterpolation<In, Out>::interpolate(const In& x) const {
-  if (points.empty()) {
-    return Out{};
-  }
-  auto it = std::find_if(points.rbegin(), points.rend(), [&x](const auto& p) { return p.first <= x; });
-  if (it == points.rend()) {
+Out interpolateNone(const std::vector<std::pair<In, Out>>& points, const In& x) {
+  assert(!points.empty());
+  auto reverseView = points | std::views::reverse;
+  auto it = std::ranges::find_if(reverseView, [&x](const auto& p) { return p.first <= x; });
+  if (it == reverseView.end()) {
     return points[0].second;
   }
   return it->second;
 }
 
 template <typename In, typename Out>
-void from_json(const core::json& j, NoneInterpolation<In, Out>& ip) {
-  ip.points.resize(j.size());
-  for (auto&& [datum, point] : zip(j, ip.points)) {
-    datum.at("t").get_to(point.first);
-    datum.at("p").get_to(point.second);
-  }
-}
-
-template <typename In, typename Out>
-void to_json(core::json& j, const NoneInterpolation<In, Out>& ip) {
-  j = core::json{ip.size()};
-  for (auto&& [point, datum] : zip(ip.points, j)) {
-    datum["t"] = point.first;
-    datum["p"] = point.second;
-  }
-}
-
-// LinearInterpolation
-
-// additional deduction guides
-template <class Iter>
-LinearInterpolation(Iter, Iter) -> LinearInterpolation<FirstPointedType<Iter>, SecondPointedType<Iter>>;
-
-template <class Container>
-LinearInterpolation(Container) -> LinearInterpolation<FirstContainedType<Container>, SecondContainedType<Container>>;
-
-template <typename In, typename Out>
-Out LinearInterpolation<In, Out>::interpolate(const In& x) const {
-  if (points.empty()) {
-    return Out{};
-  }
-  auto it = std::find_if(points.begin(), points.end(), [&x](const auto& p) { return p.first > x; });
+Out interpolateLinear(const std::vector<std::pair<In, Out>>& points, const In& x) {
+  assert(!points.empty());
+  auto it = std::ranges::find_if(points, [&x](const auto& p) { return p.first > x; });
   if (it == points.begin()) {
     return points.front().second;
   }
@@ -85,28 +33,16 @@ Out LinearInterpolation<In, Out>::interpolate(const In& x) const {
 }
 
 template <typename In, typename Out>
-void from_json(const core::json& j, LinearInterpolation<In, Out>& ip) {
-  ip.points.resize(j.size());
-  for (auto&& [datum, point] : zip(j, ip.points)) {
-    datum.at("t").get_to(point.first);
-    datum.at("p").get_to(point.second);
+Out interpolate(const InterpolationData<In, Out>& data, const In& x) {
+  assert(!data.points.empty());
+  switch (data.type) {
+    case InterpolationType::NONE:
+      return interpolateNone(data.points, x);
+    case InterpolationType::LINEAR:
+      return interpolateLinear(data.points, x);
+    default:
+      throw std::runtime_error("invalid interpolation type!");
   }
-}
-
-template <typename In, typename Out>
-void to_json(core::json& j, const LinearInterpolation<In, Out>& ip) {
-  j = core::json{ip.size()};
-  for (auto&& [point, datum] : zip(ip.points, j)) {
-    datum["t"] = point.first;
-    datum["p"] = point.second;
-  }
-}
-
-// Interpolation
-
-template <typename In, typename Out>
-Out interpolate(const Interpolation<In, Out>& ip, const In& x) {
-  return std::visit([&x](auto&& interpolation) { return interpolation.interpolate(x); }, ip);
 }
 
 }  // namespace loki::core

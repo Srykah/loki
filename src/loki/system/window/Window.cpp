@@ -6,19 +6,24 @@
 #include "Window.hpp"
 
 #include <SFML/Window/Event.hpp>
+#include <imgui-SFML.h>
+#include <imgui.h>
 
 #include <loki/core/math/Rect.hpp>
 #include <loki/core/math/Vector2Ops.hpp>
 
 namespace loki::system {
 
-void Window::create(sf::Vector2u size,
-                    const std::string& name,
-                    WindowStyle _style) {
-  window.create(sf::VideoMode(size.x, size.y),
-                sf::String::fromUtf8(name.begin(), name.end()),
+void Window::create(sf::Vector2u size, std::string_view name, WindowStyle _style, bool setMinSizeAndRes) {
+  if (setMinSizeAndRes) {
+    setMinimumSize(size);
+    setInternalResolution(size);
+  }
+  window.create(sf::VideoMode(size.x, size.y), sf::String::fromUtf8(name.begin(), name.end()),
                 toSFMLWindowStyle(_style));
   setView(getDefaultView());
+  if (!ImGui::SFML::Init(window))
+    isImGuiEnabled = false;
 }
 
 void Window::setInternalResolution(sf::Vector2u _internalResolution) {
@@ -42,8 +47,7 @@ void Window::setView(sf::View view) {
   } else if (contains(style, WindowStyle::LETTERBOXED_ZOOM)) {
     viewportSize = getLetterboxedViewportSize();
   }
-  sf::FloatRect viewport{sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f,
-                         viewportSize};
+  sf::FloatRect viewport{sf::Vector2f{0.5f, 0.5f} - viewportSize / 2.f, viewportSize};
   view.setViewport(core::compMult(viewport, view.getViewport()));
   window.setView(view);
 }
@@ -61,6 +65,9 @@ const sf::View& Window::getDefaultView() const {
 bool Window::pollEvent(sf::Event& event) {
   auto res = window.pollEvent(event);
 
+  if (isImGuiEnabled)
+    ImGui::SFML::ProcessEvent(window, event);
+
   if (event.type == sf::Event::Resized) {
     guardMinimumSize();
     setView(window.getView());
@@ -69,6 +76,14 @@ bool Window::pollEvent(sf::Event& event) {
   }
 
   return res;
+}
+
+void Window::update(sf::Time delta) {
+  if (!isImGuiEnabled)
+    return;
+
+  ImGui::SFML::Update(window, delta);
+  ImGui::ShowDemoWindow();  // todo remove this
 }
 
 void Window::clear(sf::Color color) {
@@ -80,6 +95,8 @@ void Window::draw(const sf::Drawable& drawable, sf::RenderStates states) {
 }
 
 void Window::display() {
+  if (isImGuiEnabled)
+    ImGui::SFML::Render(window);
   window.display();
 }
 
@@ -109,12 +126,17 @@ sf::Vector2f Window::getIntegerZoomViewportSize() {
     integerRatio = float(windowWidth / internalResolution.x);
   }
 
-  return integerRatio *
-         sf::Vector2f{core::compDiv(internalResolution,
-                                    sf::Vector2{windowWidth, windowHeight})};
+  return integerRatio * sf::Vector2f{core::compDiv(internalResolution, sf::Vector2{windowWidth, windowHeight})};
 }
+
 void Window::guardMinimumSize() {
   window.setSize(core::compMax(window.getSize(), minimumSize));
+}
+
+void Window::close() {
+  window.close();
+  if (isImGuiEnabled)
+    ImGui::SFML::Shutdown(window);
 }
 
 }  // namespace loki::system

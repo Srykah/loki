@@ -1,6 +1,6 @@
 #include "Stylesheet.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 const AnimatedTextStyle& Stylesheet::getStyle(
     const std::string& styleName) const {
@@ -29,4 +29,4 @@ AnimatedTextStyle Stylesheet::getNewStyleFromBase(
   return base;
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

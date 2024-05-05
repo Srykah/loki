@@ -15,7 +15,7 @@ loki_create_module(gui
   elements/TextBox.hpp
   elements/TextBoxView.hpp
   elements/TextLabel.hpp
-  elements/TiledFrame.hpp
+  #elements/TiledFrame.hpp
   # widgets/style
   style/FrameStyle.hpp
   style/Stylesheet.hpp
@@ -37,7 +37,7 @@ loki_create_module(gui
   elements/TextBox.cpp
   elements/TextBoxView.cpp
   elements/TextLabel.cpp
-  elements/TiledFrame.cpp
+  #elements/TiledFrame.cpp
   # style
   style/Stylesheet.cpp
 
@@ -45,5 +45,5 @@ loki_create_module(gui
   loki::core
   loki::graphics
   sfml-graphics
-  nlohmann_json::nlohmann_json
+  #nlohmann_json::nlohmann_json
   )

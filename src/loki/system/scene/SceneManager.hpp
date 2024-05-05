@@ -1,32 +1,34 @@
 #pragma once
 
 #include <filesystem>
-#include <map>
-#include <string>
 
-#include <nlohmann/json.hpp>
+#include <SFML/System/Time.hpp>
 
-#include <loki/core/json/Path.hpp>
-#include <loki/system/ecs/ActorManager.hpp>
+#include <loki/system/scene/Scene.hpp>
 
-#include "Scene.hpp"
+namespace YAML {
+class Node;
+}
 
 namespace loki::system {
+class Window;
 
-using SceneId = std::string;
-
-class SceneManager {
+class SceneManager : public core::BaseObject {
  public:
-  void loadSceneDb(const std::filesystem::path& databaseFile);
+  Scene* getCurrentScene() const;
 
-  void startScene(const SceneId& sceneId);
+  void loadSceneFromYaml(const YAML::Node& sceneNode);
+  void loadSceneFromYamlString(const std::string& sceneData);
+  void loadSceneFromYamlFile(const std::filesystem::path& scenePath);
+  void update(sf::Time dt);
+  void draw(Window& window) const;
 
  private:
-  void instanciateScene(const core::json& sceneData);
-
- private:
-  std::map<SceneId, std::filesystem::path> sceneDb;
   std::unique_ptr<Scene> scene;
-};
 
+  LOKI_REFLECTION_CLASS_DECLARE_RTTI(SceneManager)
+};
 }  // namespace loki::system
+
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::SceneManager)
+LOKI_REFLECTION_CLASS_END_RTTI(loki::system::SceneManager)

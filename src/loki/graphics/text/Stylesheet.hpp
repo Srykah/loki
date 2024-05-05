@@ -2,12 +2,13 @@
 
 #include <filesystem>
 #include <string>
-
-#include <nlohmann/json.hpp>
-
 #include "AnimatedTextStyle.hpp"
 
-namespace loki::gfx {
+#if 0
+#include <nlohmann/json.hpp>
+#endif
+
+namespace loki::graphics {
 
 class Stylesheet {
  public:
@@ -23,6 +24,8 @@ class Stylesheet {
   std::map<std::string, AnimatedTextStyle> styles;
 };
 
-void from_json(const core::json& json, Stylesheet& ss);
+#if 0
+void from_json(const nlohmann::json& json, Stylesheet& ss);
+#endif
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

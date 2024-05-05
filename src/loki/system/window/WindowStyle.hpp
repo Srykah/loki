@@ -15,8 +15,8 @@ enum class WindowStyle : sf::Uint32 {
               sf::Style::Fullscreen,
   LETTERBOXED_ZOOM = 1u << 6u,
   INTEGER_ZOOM_RATIO = 1u << 7u,
-  DEFAULT = sf::Style::Default | INTEGER_ZOOM_RATIO,
-  DEFAULT_MODERN = sf::Style::Default | LETTERBOXED_ZOOM,
+  DEFAULT = sf::Style::Default | LETTERBOXED_ZOOM,
+  DEFAULT_RETRO = sf::Style::Default | INTEGER_ZOOM_RATIO,
 };
 
 [[nodiscard]] constexpr sf::Uint32 to_underlying(WindowStyle style) noexcept {

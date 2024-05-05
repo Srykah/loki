@@ -1,6 +1,6 @@
 #include "AnimatedGlyph.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 AnimatedGlyph::AnimatedGlyph(sf::VertexArray& va,
                              std::size_t index,
@@ -10,13 +10,15 @@ AnimatedGlyph::AnimatedGlyph(sf::VertexArray& va,
     : va(va), index(index), glyph(glyph), style(style), x(x) {
   initTexRect();
   initAnim();
+  animator.setAnimated(*this);
   if (style.appear) {
-    anim.emplace(*this, *style.appear);
-    anim->setTime(sf::Time::Zero);
+    animator.setData(*style.appear);
+    animator.start();
     state = APPEAR;
   } else {
     if (style.idle) {
-      anim.emplace(*this, *style.idle);
+      animator.setData(*style.idle);
+      animator.start();
     }
     state = IDLE;
   }
@@ -34,10 +36,7 @@ void AnimatedGlyph::initAnim() {
 
 void AnimatedGlyph::updateVertices() {
   float padding = 1.0;
-  float shear =
-      (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic)
-          ? 0.209f
-          : 0.f;
+  float shear = (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic) ? 0.209f : 0.f;
 
   float left = glyph.bounds.left - padding;
   float top = glyph.bounds.top - padding;
@@ -48,16 +47,12 @@ void AnimatedGlyph::updateVertices() {
    *    | / |
    *  2,3 - 5
    */
-  va[index * 6 + 0].position =
-      getTransform().transformPoint(sf::Vector2f(left - shear * top, top));
-  va[index * 6 + 1].position =
-      getTransform().transformPoint(sf::Vector2f(right - shear * top, top));
-  va[index * 6 + 2].position = getTransform().transformPoint(
-      sf::Vector2f(left - shear * bottom, bottom));
+  va[index * 6 + 0].position = getTransform().transformPoint(sf::Vector2f(left - shear * top, top));
+  va[index * 6 + 1].position = getTransform().transformPoint(sf::Vector2f(right - shear * top, top));
+  va[index * 6 + 2].position = getTransform().transformPoint(sf::Vector2f(left - shear * bottom, bottom));
   va[index * 6 + 3].position = va[index * 6 + 2].position;
   va[index * 6 + 4].position = va[index * 6 + 1].position;
-  va[index * 6 + 5].position = getTransform().transformPoint(
-      sf::Vector2f(right - shear * bottom, bottom));
+  va[index * 6 + 5].position = getTransform().transformPoint(sf::Vector2f(right - shear * bottom, bottom));
 }
 
 void AnimatedGlyph::initTexRect() {
@@ -65,12 +60,8 @@ void AnimatedGlyph::initTexRect() {
 
   float u1 = static_cast<float>(glyph.textureRect.left) - padding;
   float v1 = static_cast<float>(glyph.textureRect.top) - padding;
-  float u2 =
-      static_cast<float>(glyph.textureRect.left + glyph.textureRect.width) +
-      padding;
-  float v2 =
-      static_cast<float>(glyph.textureRect.top + glyph.textureRect.height) +
-      padding;
+  float u2 = static_cast<float>(glyph.textureRect.left + glyph.textureRect.width) + padding;
+  float v2 = static_cast<float>(glyph.textureRect.top + glyph.textureRect.height) + padding;
 
   /*    0 - 1,4
    *    | / |
@@ -94,7 +85,9 @@ void AnimatedGlyph::setTime(sf::Time time) {
       state = IDLE;
       if (style.idle) {
         initAnim();
-        anim.emplace(*this, *style.idle);
+
+        animator.setData(*style.idle);
+        animator.start();
       }
       // fallthrough to IDLE case
     }
@@ -105,8 +98,8 @@ void AnimatedGlyph::setTime(sf::Time time) {
   if (state == DISAPPEAR && time < sf::Time::Zero) {
     return;
   }
-  if (anim && !anim->hasEnded()) {
-    anim->setTime(time);
+  if (!animator.isPaused() && !animator.hasEnded()) {
+    animator.setTime(time);
     updateVertices();
   }
 }
@@ -115,7 +108,8 @@ void AnimatedGlyph::end() {
   state = DISAPPEAR;
   if (style.disappear) {
     initAnim();
-    anim.emplace(*this, *style.disappear);
+    animator.setData(*style.disappear);
+    animator.start();
   }
 }
 
@@ -129,4 +123,4 @@ sf::Color AnimatedGlyph::getColor() const {
   return style.fillColor.value_or(sf::Color::White);
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

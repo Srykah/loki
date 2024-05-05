@@ -3,12 +3,12 @@
 #include <loki/graphics/anim/ShapeAnimationData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
-struct AnimatedTextStyle : public gfx::TextStyle {
-  std::optional<gfx::ShapeAnimationData> appear;
-  std::optional<gfx::ShapeAnimationData> idle;
-  std::optional<gfx::ShapeAnimationData> disappear;
+struct AnimatedTextStyle : public graphics::TextStyle {
+  std::optional<graphics::ShapeAnimationData> appear;
+  std::optional<graphics::ShapeAnimationData> idle;
+  std::optional<graphics::ShapeAnimationData> disappear;
   sf::Time dt;
 
   AnimatedTextStyle& overrideWith(const AnimatedTextStyle& other);
@@ -18,4 +18,4 @@ struct AnimatedTextStyle : public gfx::TextStyle {
   static AnimatedTextStyle fromDefaults();
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

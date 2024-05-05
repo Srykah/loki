@@ -10,7 +10,7 @@
 #include "AnimatedGlyph.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 class AnimatedText : public sf::Drawable, public sf::Transformable {
  public:
@@ -37,4 +37,4 @@ class AnimatedText : public sf::Drawable, public sf::Transformable {
   std::vector<AnimatedGlyph> glyphs;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

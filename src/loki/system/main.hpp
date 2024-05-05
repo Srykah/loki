@@ -1,3 +1,8 @@
+/* main.hpp
+ * Include this file in a main.cpp on your project, and leave the rest empty.
+ * Also, create the implementation of getApplication() somewhere in your project.
+ */
+
 #if defined(LOKI_MAIN_HPP)
 #error only include this file in a single source file in your project!
 #else
@@ -7,7 +12,8 @@
 
 #include <loki/system/app/Application.hpp>
 
-extern std::unique_ptr<loki::system::Application> getApplication();
+// implementation left to clients
+std::unique_ptr<loki::system::Application> getApplication();
 
 int main(int argc, char** argv) {
   try {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "loki/graphics/text/AnnotatedText.hpp"
-#include "loki/gui/Widget.hpp"
+#include <loki/graphics/text/AnnotatedText.hpp>
+#include <loki/gui/Widget.hpp>
 
 namespace loki::gui {
 
@@ -14,7 +14,7 @@ class TextLabel : public Widget {
             sf::RenderStates states = {}) const override {}
 
  private:
-  gfx::AnnotatedText text;
+  graphics::AnnotatedText text;
 };
 
 }  // namespace loki::gui

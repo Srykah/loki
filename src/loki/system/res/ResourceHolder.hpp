@@ -1,41 +1,41 @@
 #pragma once
 
-#include <unordered_set>
+#include <filesystem>
+#include <unordered_map>
 
+#include <loki/core/runtimeObject/BaseObject.hpp>
 #include <loki/core/utils/Memory.hpp>
-
-#include "Resource.hpp"
-#include "ResourceHandle.hpp"
+#include <loki/system/res/Resource.hpp>
 
 namespace loki::system {
 
-class ResourceHolder {
+template <class T>
+class ResourceHandle;
+
+class ResourceHolder : public core::BaseObject {
  public:
   template <class Res>
-  void add(ResourceHandle<Res>& handle);
-  template <class Container>
-  void add(Container& handles);
+  void add(ResourceHandle<Res>& handle, ResourceListener* listener = nullptr);
 
   void load();
+  void clearOrphans();
 
  private:
-  using ResPtr = core::OwnerPtr<Resource>;
-
-  struct ResPtrHash {
-    std::size_t operator()(const ResPtr& sptr) const {
-      return std::hash<std::string>{}(sptr->getPath().generic_string());
-    }
+  using ResPtr = core::OwnerPtr<BaseResource>;
+  struct ListenerData {
+    std::vector<const BaseResource*> listenedResources;
+    bool hasAlreadyNotified = false;
   };
 
-  struct ResPtrComp {
-    bool operator()(const ResPtr& lhs, const ResPtr& rhs) const {
-      return lhs->getPath() == rhs->getPath();
-    }
-  };
+  std::unordered_map<std::filesystem::path, ResPtr> resources;
+  std::unordered_map<ResourceListener*, ListenerData> listeners;
 
-  std::unordered_set<ResPtr, ResPtrHash, ResPtrComp> resources;
+  LOKI_REFLECTION_CLASS_DECLARE_RTTI(ResourceHolder)
 };
 
 }  // namespace loki::system
+
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::ResourceHolder)
+LOKI_REFLECTION_CLASS_END_RTTI(loki::system::ResourceHolder)
 
 #include "ResourceHolder.hxx"

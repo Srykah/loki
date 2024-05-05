@@ -3,18 +3,18 @@
 #include <cmath>
 #include <numbers>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 Capsule::Capsule(sf::Vector2f size, std::size_t borderPointCount)
     : size(size), borderPointCount(borderPointCount) {
   update();
 }
 
-std::size_t loki::gfx::Capsule::getPointCount() const {
+std::size_t loki::graphics::Capsule::getPointCount() const {
   return borderPointCount * 2;
 }
 
-sf::Vector2f loki::gfx::Capsule::getPoint(std::size_t index) const {
+sf::Vector2f loki::graphics::Capsule::getPoint(std::size_t index) const {
   float radius = std::min(size.x, size.y) / 2.f;
   sf::Vector2f origin;
   if (index < borderPointCount) {
@@ -30,4 +30,4 @@ sf::Vector2f loki::gfx::Capsule::getPoint(std::size_t index) const {
   return origin + radius * sf::Vector2f{std::cos(angle), std::sin(angle)};
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

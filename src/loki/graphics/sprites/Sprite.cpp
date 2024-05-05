@@ -1,19 +1,27 @@
 #include "Sprite.hpp"
 
-namespace loki::gfx {
+#include <cassert>
 
-Sprite::Sprite(const SpriteData& data, const std::string& anim) : data(data) {
-  setAnim(anim);
-  sprite.setTexture(data.texture.getData());
+namespace loki::graphics {
+
+Sprite::Sprite() {
+  animator.setAnimated(sprite);
+}
+
+void Sprite::setData(const SpriteData& _data) {
+  animator.resetData();
+  data = &_data;
+  sprite.setTexture(data->texture.getData());
 }
 
 void Sprite::setAnim(const std::string& anim) {
-  animator = std::make_unique<gfx::ShapeAnimator<sf::Sprite>>(
-      sprite, data.animations.at(anim));
+  assert(data);
+  animator.setData(data->animations.at(anim));
+  animator.start();
 }
 
 void Sprite::update(sf::Time delta) {
-  animator->update(delta);
+  animator.update(delta);
 }
 
 void Sprite::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -37,4 +45,4 @@ sf::FloatRect Sprite::getGlobalBounds() const {
   return getTransform().transformRect(sprite.getGlobalBounds());
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

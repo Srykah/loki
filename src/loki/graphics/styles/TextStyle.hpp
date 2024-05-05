@@ -1,11 +1,15 @@
 #pragma once
 
+#include <functional>
 #include <optional>
 
 #include <SFML/Graphics/Text.hpp>
-#include <nlohmann/json.hpp>
 
-namespace loki::gfx {
+#if 0
+#include <nlohmann/json.hpp>
+#endif
+
+namespace loki::graphics {
 
 using FontGetter = std::function<sf::Font&(std::string)>;
 
@@ -30,7 +34,10 @@ struct TextStyle {
   TextStyle& withOutlineColor(sf::Color outlineColor);
   TextStyle& withOutlineThickness(float outlineThickness);
 
-  void load(const core::json& data, const FontGetter& fontGetter);
+#if 0
+  void load(const nlohmann::json& data, const FontGetter& fontGetter);
+#endif
+
   void applyTo(sf::Text& text) const;
 
   [[nodiscard]] float getSpaceWidth() const;
@@ -40,4 +47,4 @@ struct TextStyle {
   TextStyle cloneAndOverrideWith(const TextStyle& other) const;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

@@ -6,9 +6,9 @@
 #include <loki/core/utils/VertexArrayIterator.hpp>
 #include <loki/graphics/anim/ShapeAnimator.hpp>
 
-#include "loki/graphics/text/AnimatedTextStyle.hpp"
+#include <loki/graphics/text/AnimatedTextStyle.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 class AnimatedGlyph : public sf::Transformable {
  public:
@@ -28,7 +28,7 @@ class AnimatedGlyph : public sf::Transformable {
   void initTexRect();
   void updateVertices();
 
-  friend gfx::ShapeAnimator<AnimatedGlyph>;
+  friend graphics::ShapeAnimator<AnimatedGlyph>;
   void setColor(sf::Color color);
   sf::Color getColor() const;
 
@@ -38,8 +38,8 @@ class AnimatedGlyph : public sf::Transformable {
   const sf::Glyph& glyph;
   const AnimatedTextStyle& style;
   float x = 0.f;
-  std::optional<gfx::ShapeAnimator<AnimatedGlyph>> anim;
+  graphics::ShapeAnimator<AnimatedGlyph> animator;
   State state;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

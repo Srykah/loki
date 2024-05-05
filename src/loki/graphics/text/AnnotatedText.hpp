@@ -8,7 +8,7 @@
 #include "AnimatedText.hpp"
 #include "Stylesheet.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
 
@@ -31,4 +31,4 @@ class AnnotatedText : public sf::Drawable, public sf::Transformable {
   std::vector<AnimatedText> blocks;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

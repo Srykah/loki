@@ -2,8 +2,8 @@
 
 #include <SFML/Graphics/RenderTarget.hpp>
 
-#include "loki/core/utils/IterAdapters.hpp"
-#include "loki/graphics/text/AnnotatedStringEngine.hpp"
+#include <loki/core/utils/IterAdapters.hpp>
+#include <loki/graphics/text/AnnotatedStringEngine.hpp>
 
 #if 0
 namespace loki::gui {
@@ -11,7 +11,7 @@ namespace loki::gui {
 TextBoxView::TextBoxView(sf::Vector2f size,
                          float padding,
                          unsigned int lineCount,
-                         const gfx::ShapeStyle& frameStyle,
+                         const graphics::ShapeStyle& frameStyle,
                          const text::Stylesheet& textStylesheet)
     : frame(size),
       padding(padding),

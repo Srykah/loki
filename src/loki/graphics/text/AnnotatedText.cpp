@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics/RenderTarget.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 void AnnotatedText::setAnnotatedString(const AnnotatedString& annotatedString) {
   sf::Vector2f position;
@@ -22,4 +22,4 @@ void AnnotatedText::draw(sf::RenderTarget& target,
 
 void AnnotatedText::skip() {}
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

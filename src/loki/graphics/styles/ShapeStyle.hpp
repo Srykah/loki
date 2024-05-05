@@ -5,7 +5,7 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 struct ShapeStyle {
   const sf::Texture* texture = nullptr;
@@ -17,4 +17,4 @@ struct ShapeStyle {
   void applyTo(sf::Shape& shape) const;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

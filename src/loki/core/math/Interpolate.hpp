@@ -1,83 +1,39 @@
 #pragma once
 
-#include <variant>
+#include <vector>
 
-#include <nlohmann/json.hpp>
-
-#include <loki/core/json/Variant.hpp>
+#include <loki/core/reflection/basicTypesInfo.hpp>
+#include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/reflection/enumMacros.hpp>
+#include <loki/core/reflection/sfmlTypesInfo.hpp>
 
 namespace loki::core {
-
-//
-#if 0
-enum class InterpolationType {
+enum class InterpolationType : short {
   NONE = 0,
   LINEAR = 1,
-  CUBIC = 3  ///< not implemented yet
 };
 
-NLOHMANN_JSON_SERIALIZE_ENUM(InterpolationType,
-                             {
-                                 {InterpolationType::NONE, "none"},
-                                 {InterpolationType::LINEAR, "linear"},
-                                 {InterpolationType::CUBIC, "cubic"},
-                             })
-#endif
-
-/// Order 0 interpolation
 template <typename In, typename Out>
-class NoneInterpolation;
-template <typename In, typename Out>
-void from_json(const core::json& j, NoneInterpolation<In, Out>& ip);
-template <typename In, typename Out>
-void to_json(core::json& j, const NoneInterpolation<In, Out>& ip);
-
-template <typename In, typename Out>
-class NoneInterpolation {
- public:
-  NoneInterpolation() = default;
-  explicit NoneInterpolation(std::vector<std::pair<In, Out>>&& points) : points(std::move(points)) {}
-
-  Out interpolate(const In& x) const;
-
- private:
+struct InterpolationData {
+  InterpolationType type;
   std::vector<std::pair<In, Out>> points;
 
-  friend void from_json<>(const core::json& j, NoneInterpolation& ip);
-  friend void to_json<>(core::json& j, const NoneInterpolation& ip);
+  LOKI_REFLECTION_CLASS_DECLARE(InterpolationData<In, Out>)
 };
 
-/// Order 1 interpolation
 template <typename In, typename Out>
-class LinearInterpolation;
-template <typename In, typename Out>
-void from_json(const core::json& j, LinearInterpolation<In, Out>& ip);
-template <typename In, typename Out>
-void to_json(core::json& j, const LinearInterpolation<In, Out>& ip);
-
-template <typename In, typename Out>
-class LinearInterpolation {
- public:
-  LinearInterpolation() = default;
-  explicit LinearInterpolation(std::vector<std::pair<In, Out>>&& points) : points(std::move(points)) {}
-  ~LinearInterpolation() = default;
-
-  Out interpolate(const In& x) const;
-
- private:
-  std::vector<std::pair<In, Out>> points;
-
-  friend void from_json<>(const core::json& j, LinearInterpolation& ip);
-  friend void to_json<>(core::json& j, const LinearInterpolation& ip);
-};
-
-/// Common type for all interpolations
-template <typename In, typename Out>
-using Interpolation = std::variant<NoneInterpolation<In, Out>, LinearInterpolation<In, Out>>;
-
-template <typename In, typename Out>
-Out interpolate(const Interpolation<In, Out>& ip, const In& x);
+Out interpolate(const InterpolationData<In, Out>& data, const In& x);
 
 }  // namespace loki::core
+
+LOKI_REFLECTION_ENUM_BEGIN(loki::core::InterpolationType, short)
+LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, NONE)
+LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, LINEAR)
+LOKI_REFLECTION_ENUM_END()
+
+LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN(loki::core::InterpolationData)
+LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(loki::core::InterpolationData, type)
+LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(loki::core::InterpolationData, points)
+LOKI_REFLECTION_TEMPLATE_2_CLASS_END()
 
 #include "Interpolate.hxx"

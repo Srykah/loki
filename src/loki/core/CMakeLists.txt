@@ -5,21 +5,11 @@ loki_create_module(core
   hash/IterHash.hpp
   hash/PairHash.hpp
   hash/TupleHash.hpp
+  #[[
   # i18n
   i18n/I18nData.hpp
   i18n/I18nData.hxx
-  # json
-  json/Color.hpp
-  json/Joystick.hpp
-  json/Keyboard.hpp
-  json/Macros.hpp
-  json/Mouse.hpp
-  json/Optional.hpp
-  json/Path.hpp
-  json/Rect.hpp
-  json/Time.hpp
-  json/Variant.hpp
-  json/Vector2.hpp
+  #]]
   # math
   math/Interpolate.hpp
   math/Interpolate.hxx
@@ -29,11 +19,19 @@ loki_create_module(core
   math/Vector4.hpp
   math/Vector4.hxx
   # reflection
-  reflection/BaseObject.hpp
-  reflection/ReflectionFactory.hpp
-  reflection/ReflectionFactory.hxx
-  reflection/SFMLTypesInfo.hpp
+  reflection/basicTypesInfo.hpp
+  reflection/classMacros.hpp
+  reflection/enumMacros.hpp
+  reflection/reflectionUtils.hpp
+  reflection/sfmlTypesInfo.hpp
   reflection/TypeInfo.hpp
+  # serialization
+  serialization/string/toString.hpp
+  serialization/yaml/fromYaml.hpp
+  serialization/yaml/toYaml.hpp
+  # services
+  services/ServiceRegistry.hpp
+  services/ServiceRegistry.hxx
   # states
   states/State.hpp
   states/StateIndex.hpp
@@ -42,6 +40,9 @@ loki_create_module(core
   # tpl
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
+  # runtimeObject
+  runtimeObject/BaseObject.hpp
+  runtimeObject/RuntimeObjectRegistry.hpp
   # utils
   utils/IterAdapters.hpp
   utils/Literals.hpp
@@ -52,23 +53,33 @@ loki_create_module(core
   utils/Memory.hxx
   utils/Mixins.hpp
   utils/Random.hpp
-  utils/TemplateHelpers.hpp
   utils/VertexArrayIterator.hpp
   utils/Wrappers.hpp
 
   SOURCES
+  #[[
   # i18n
   i18n/I18nData.cpp
-  # core
+  #]]
+  # serialization
+  serialization/string/toString.cpp
+  serialization/yaml/fromYaml.cpp
+  serialization/yaml/toYaml.cpp
+  # services
+  services/ServiceRegistry.cpp
+  # states
   states/StateMachine.cpp
-  # core
+  # tpl
   tpl/TemplateEngine.cpp
+  # runtimeObject
+  runtimeObject/RuntimeObjectRegistry.cpp
   # utils
   utils/Random.cpp
   utils/VertexArrayIterator.cpp
 
   PUBLIC_DEPS
   sfml-graphics
-  nlohmann_json::nlohmann_json
+  yaml-cpp::yaml-cpp
+  #nlohmann_json::nlohmann_json
   fmt::fmt
-  )
+)

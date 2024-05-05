@@ -11,7 +11,7 @@ struct TupleHash {
   /// \brief Hash operator
   /// \param val The tuple to hash
   /// \return A hash of the tuple (order matters)
-  size_t operator()(const Tuple& val) const {
+  std::size_t operator()(const Tuple& val) const {
     return std::apply(
         [](auto&&... args) {
           return combineHash(std::forward<decltype(args)>(args)...);
@@ -34,7 +34,7 @@ struct TupleHashSym {
   /// \brief Symmetric hash operator
   /// \param val The tuple to hash symmetrically
   /// \return A symmetric tuple of the pair (order doesn't matter)
-  size_t operator()(const Tuple& val) const {
+  std::size_t operator()(const Tuple& val) const {
     // return std::apply(combineHashSym, val);
     return std::apply(
         [](auto&&... args) {

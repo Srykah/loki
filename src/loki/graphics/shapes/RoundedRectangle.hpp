@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics/Shape.hpp>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 class RoundedRectangle : public sf::Shape {
  public:
@@ -22,4 +22,4 @@ class RoundedRectangle : public sf::Shape {
   std::size_t borderPointCount;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

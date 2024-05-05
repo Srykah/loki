@@ -1,47 +1,65 @@
 #pragma once
 
-#include <filesystem>
-#include <fstream>
-#include <memory>
-
-#include <nlohmann/json.hpp>
-
-#include <loki/core/json/Path.hpp>
-#include <loki/core/utils/Memory.hpp>
+#include <loki/system/res/ResourceListener.hpp>
 
 namespace loki::system {
 
 class ResourceHolder;
 
-class Resource {
+template <class T>
+class ResourceHandle;
+
+class BaseResource : public ResourceListener {
  public:
-  explicit Resource(std::filesystem::path path) : path(std::move(path)) {}
+  enum class LoadingStatus {
+    Unloaded,
+    Loading,
+    Loaded,
+  };
 
-  virtual ~Resource() = default;
+ public:
+  ~BaseResource() override = default;
 
-  void load(ResourceHolder& resourceHolder) {
-    this->loadImpl(path, resourceHolder);
-    loaded = true;
-  }
-
-  void unload() {
-    this->unloadImpl();
-    loaded = false;
-  }
-
-  [[nodiscard]] const std::filesystem::path& getPath() const { return path; }
-
-  [[nodiscard]] bool isLoaded() const { return loaded; }
-
- protected:
-  virtual void loadImpl(const std::filesystem::path& path,
-                        ResourceHolder& resourceHolder) = 0;
-
-  virtual void unloadImpl() {}
+  [[nodiscard]] LoadingStatus getLoadingStatus() const { return loadingStatus; }
 
  private:
-  std::filesystem::path path;
-  bool loaded = false;
+  friend class ResourceHolder;
+
+  void load(const std::filesystem::path& path) {
+    loadImpl(path);
+    loadingStatus = LoadingStatus::Loading;
+  }
+  void onResourcesLoaded() override {
+    onChildResourcesLoadedImpl();
+    loadingStatus = LoadingStatus::Loaded;
+  }
+  void unload() {
+    unloadImpl();
+    loadingStatus = LoadingStatus::Unloaded;
+  }
+
+ protected:
+  virtual void loadImpl(const std::filesystem::path& path) = 0;
+  virtual bool addChildResourcesToHolder(ResourceHolder& holder) { return false; }
+  virtual void onChildResourcesLoadedImpl(){};
+  virtual void unloadImpl() {}
+
+  /// small helper to keep ResourceHolder::addChild private
+  template <class T>
+  void addChildResourceToHolder(ResourceHolder& holder, ResourceHandle<T>& handle) {
+    holder.add(handle, this);
+  }
+
+ private:
+  LoadingStatus loadingStatus = LoadingStatus::Unloaded;
+};
+
+template <class T>
+class Resource : public BaseResource {
+ public:
+  using DataType = T;
+
+  [[nodiscard]] virtual const T& getData() const = 0;
 };
 
 }  // namespace loki::system

@@ -17,11 +17,13 @@ InputManager::InputManager()
       }) {}
 
 void InputManager::loadConfigs(const std::filesystem::path& path) {
+#if 0
   std::ifstream fs(path);
-  core::json json;
+  nlohmann::json json;
   fs >> json;
   json.at("configs").get_to(inputConfigs);
   json.at("deadZones").get_to(deadZones);
+#endif
 }
 
 void InputManager::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId) {

@@ -6,11 +6,11 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 
-#include <loki/graphics/gfx/ShapeStyle.hpp>
+#include <loki/graphics/shapes/ShapeStyle.hpp>
 #include <loki/graphics/text/AnimatedText.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
 
-#include "loki/gui/interfaces/Widget.hpp"
+#include <loki/gui/interfaces/Widget.hpp>
 
 namespace loki::gui {
 
@@ -19,7 +19,7 @@ class TextBoxView : public AWidgetView {
   TextBoxView(sf::Vector2f size,
               float padding,
               unsigned int lineCount,
-              const gfx::ShapeStyle& frameStyle,
+              const graphics::ShapeStyle& frameStyle,
               const text::Stylesheet& textStylesheet);
 
   void setAnnotatedString(const std::string& annotatedString);
@@ -47,7 +47,7 @@ class TextBoxView : public AWidgetView {
   const float padding;
   const unsigned int lineCount;
   const text::Stylesheet& textStylesheet;
-  const gfx::ShapeStyle& frameStyle;
+  const graphics::ShapeStyle& frameStyle;
   std::vector<std::vector<text::AnimatedText>> lines;
 };
 

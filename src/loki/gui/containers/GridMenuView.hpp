@@ -3,9 +3,9 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Time.hpp>
 
-#include "loki/graphics/styles/ShapeStyle.hpp"
-#include "loki/graphics/styles/TextStyle.hpp"
-#include "loki/gui/Widget.hpp"
+#include <loki/graphics/styles/ShapeStyle.hpp>
+#include <loki/graphics/styles/TextStyle.hpp>
+#include <loki/gui/Widget.hpp>
 
 #if 0
 namespace loki::gui {
@@ -14,8 +14,8 @@ class GridMenuView : public AWidgetView {
  public:
   GridMenuView(sf::Vector2f size,
                float padding,
-               const gfx::ShapeStyle& frameStyle,
-               const gfx::TextStyle& textStyle);
+               const graphics::ShapeStyle& frameStyle,
+               const graphics::TextStyle& textStyle);
 
   void setItem(sf::Vector2u coords, const std::string& text);
 
@@ -37,8 +37,8 @@ class GridMenuView : public AWidgetView {
  private:
   sf::RectangleShape frame;
   float padding;
-  const gfx::ShapeStyle& frameStyle;
-  const gfx::TextStyle& textStyle;
+  const graphics::ShapeStyle& frameStyle;
+  const graphics::TextStyle& textStyle;
 };
 
 }  // namespace loki::gui

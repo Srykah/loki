@@ -1,46 +1,66 @@
 #include "MapView.hpp"
 
-#include <loki/core/utils/IterAdapters.hpp>
+#include <array>
 
-#include "ObjectLayerView.hpp"
-#include "TileLayerView.hpp"
+namespace loki::graphics {
 
-namespace loki::gfx {
-
-MapView::MapView(const MapData& data) {
-  setData(data);
+namespace {
+constexpr size_t VERTICES_PER_TILE = 6; // two triangles per tile
 }
 
-void MapView::setData(const MapData& data) {
-  this->data = &data;
-  for (const auto&& [i, layerData] : core::enumerate(data.layers)) {
-    if (std::holds_alternative<TileLayerData>(layerData)) {
-      layers.emplace_back(std::in_place_type_t<TileLayerView>{},
-                          std::get<TileLayerData>(layerData),
-                          *data.tilesets.at(0));
-    } else if (std::holds_alternative<ObjectLayerData>(layerData)) {
-      layers.emplace_back(std::in_place_type_t<ObjectLayerView>{},
-                          std::get<ObjectLayerData>(layerData));
+MapView::MapView(const MapData& mapData) {
+  texture.loadFromFile(mapData.tileset.texturePath.string());
+  tilesetGridSize.x = texture.getSize().x / mapData.tileset.tileSize.x;
+  tilesetGridSize.y = texture.getSize().y / mapData.tileset.tileSize.y;
+  init(mapData);
+}
+
+void MapView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+  states.transform *= getTransform();
+  states.texture = &texture;
+  target.draw(vertexArray, states);
+}
+
+void MapView::init(const MapData& data) {
+  vertexArray.setPrimitiveType(sf::PrimitiveType::Triangles);
+  vertexArray.resize(VERTICES_PER_TILE * data.tiles.size());
+  size_t i = 0;
+  for (size_t y = 0; y < data.mapSize.y; ++y) {
+    for (size_t x = 0; x < data.mapSize.x; ++x) {
+      int tileIndex = data.tiles[i];
+      fillVerticesForTile(i * VERTICES_PER_TILE, x, y, data.tileset, tileIndex);
+      ++i;
     }
   }
-  background.setSize({
-      float(data.tilesets.at(0)->tileSize.x * data.gridSize.x),
-      float(data.tilesets.at(0)->tileSize.y * data.gridSize.y),
-  });
-  background.setFillColor(data.backgroundColor);
 }
 
-void MapView::update(sf::Time delta) {
-  for (auto& layer : layers) {
-    std::visit([delta](auto&& l) { l.update(delta); }, layer);
+void MapView::fillVerticesForTile(size_t startIndex, size_t x, size_t y, const TileSetData& tileset, int tileIndex) {
+  //  0 ------ 1/4
+  //  |      /  |
+  //  |    /    |
+  //  |  /      |
+  // 2/3 ------ 5
+
+  const sf::Vector2f tileSize{tileset.tileSize};
+
+  const std::array<sf::Vector2f, VERTICES_PER_TILE> offsets {{
+    { 0.f, 0.f },
+    { tileSize.x, 0.f },
+    { 0.f, tileSize.y },
+    { 0.f, tileSize.y },
+    { tileSize.x, 0.f },
+    tileSize,
+  }};
+
+  const sf::Vector2f startPos{x * tileSize.x, y * tileSize.y};
+  const sf::Vector2f startTexCoords{
+      static_cast<float>(tileIndex % tilesetGridSize.x) * tileSize.x,
+      static_cast<float>(tileIndex / tilesetGridSize.x) * tileSize.y};
+
+  for (size_t i = 0; i < VERTICES_PER_TILE; ++i) {
+    vertexArray[startIndex + i].position = startPos + offsets[i];
+    vertexArray[startIndex + i].texCoords = startTexCoords + offsets[i];
   }
 }
 
-void MapView::drawLayer(std::size_t index,
-                        sf::RenderTarget& target,
-                        sf::RenderStates states) const {
-  std::visit([&](auto&& layer) { target.draw(layer, states); },
-             layers.at(index));
 }
-
-}  // namespace loki::gfx

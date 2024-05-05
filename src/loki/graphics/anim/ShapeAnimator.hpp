@@ -2,12 +2,16 @@
 
 #include "ShapeAnimationData.hpp"
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 template <typename T>
 class ShapeAnimator {
  public:
-  ShapeAnimator(T& animated, const ShapeAnimationData& data);
+  void setAnimated(T& animated);
+  void resetAnimated();
+
+  void setData(const ShapeAnimationData& data);
+  void resetData();
 
   void start();
   void setTime(sf::Time time);
@@ -15,6 +19,8 @@ class ShapeAnimator {
   [[nodiscard]] bool hasEnded() const;
   void pause();
   void unpause();
+  [[nodiscard]] bool isPaused() const;
+  void stop();
 
  private:
   void updateInternal();
@@ -25,16 +31,15 @@ class ShapeAnimator {
     float rotation = 0.f;
     sf::Vector2f scale;
     sf::Color color;
-    sf::IntRect textureRect;
   };
 
-  T& animated;
-  const ShapeAnimationData& data;
+  T* animated = nullptr;
   ShapeInitValues initValues;
+  const ShapeAnimationData* data = nullptr;
   sf::Time elapsedTime;
-  bool isPaused = false;
+  bool paused = false;
 };
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics
 
 #include "ShapeAnimator.hxx"

@@ -1,20 +1,31 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/Transform.hpp>
 
-#include "Actor.hpp"
+#include <loki/core/runtimeObject/BaseObject.hpp>
 
 namespace loki::system {
 
-class Component {
+class Actor;
+
+class Component : public core::BaseObject {
  public:
-  virtual ~Component() = default;
+  ~Component() override = default;
 
-  virtual void update(sf::Time delta){};
+  [[nodiscard]] Actor& getActor() const;
+  [[nodiscard]] const sf::Transform& getTransform() const;
 
- protected:
+ private:
+  friend class ComponentRegistry;
+  void setActor(Actor& actor);
+
+ private:
   Actor* actor = nullptr;
+
+  LOKI_REFLECTION_CLASS_DECLARE_RTTI(Component)
 };
 
 }  // namespace loki::system
+
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::Component)
+LOKI_REFLECTION_CLASS_END_RTTI(loki::system::Component)

@@ -2,28 +2,28 @@
 
 #include <fstream>
 
-#include <loki/core/serialization/ReflectToJson.hpp>
-
 namespace loki::core {
 
-const I18nData::RegisteredLangs& I18nData::getRegisteredLangs() const {
+const RegisteredLangs& I18nData::getRegisteredLangs() const {
   return registeredLangs;
 }
 
 bool I18nData::setCurLang(std::string&& langId) {
+#if 0
   std::ifstream file(parentPath / registeredLangs.at(langId).filepath);
-  core::json fileContents;
+  nlohmann::json fileContents;
   file >> fileContents;
   currentLangData = std::move(fileContents.at("strings"));
   currentLangId = std::move(langId);
+#endif
   return true;
 }
 
-bool I18nData::setCurLang(const std::string& langId) {
+bool I18nData::setCurLang(std::string_view langId) {
   return setCurLang(std::string{langId});
 }
 
-const core::json& I18nData::getCurLang() const {
+const I18nData::LangData& I18nData::getCurLang() const {
   return currentLangData;
 }
 
@@ -32,15 +32,19 @@ const std::string& I18nData::getCurLangId() const {
 }
 
 void I18nData::loadFromFile(const std::filesystem::path& path) {
+#if 0
   std::ifstream file(path);
-  core::json data;
+  nlohmann::json data;
   file >> data;
   data.at("langs").get_to(registeredLangs);
   parentPath = path.parent_path();
+#endif
 }
 
-std::string I18nData::get(const I18nData::Ptr& ptr) const {
-  return currentLangData.at(ptr);
+const std::string* I18nData::get(std::string_view uri) const {
+  if (!currentLangData.contains(uri))
+    return nullptr;
+  return &currentLangData.at(uri);
 }
 
 }  // namespace loki::core

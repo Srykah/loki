@@ -1,16 +1,28 @@
 #pragma once
 
-#include <loki/core/utils/TemplateHelpers.hpp>
-
-#include "TemplateHelpers.hpp"
-
-namespace loki::gfx {
+namespace loki::graphics {
 
 // Origin
 
+namespace details {
+#define LOKI_ANIMATION_CONCEPT(Stuff, Type)                                   \
+  template <class T>                                                          \
+  concept hasGet##Stuff = requires { Type{std::declval<T>().get##Stuff()}; }; \
+  template <class T>                                                          \
+  concept hasSet##Stuff = requires { std::declval<T>().set##Stuff(std::declval<Type>()); };
+LOKI_ANIMATION_CONCEPT(Origin, sf::Vector2f)
+LOKI_ANIMATION_CONCEPT(Position, sf::Vector2f)
+LOKI_ANIMATION_CONCEPT(Rotation, float)
+LOKI_ANIMATION_CONCEPT(Scale, float)
+LOKI_ANIMATION_CONCEPT(Color, sf::Color)
+LOKI_ANIMATION_CONCEPT(FillColor, sf::Color)
+LOKI_ANIMATION_CONCEPT(TextureRect, sf::IntRect)
+#undef LOKI_ANIMATION_CONCEPT
+}  // namespace details
+
 template <typename T>
 sf::Vector2f getOrigin(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getOrigin, T>) {
+  if constexpr (details::hasGetOrigin<T>) {
     return animated.getOrigin();
   }
   return sf::Vector2f{};
@@ -18,7 +30,7 @@ sf::Vector2f getOrigin(T& animated) {
 
 template <typename T>
 void setOrigin(T& animated, sf::Vector2f origin) {
-  if constexpr (core::is_detected_as_true<impl::has_setOrigin, T>) {
+  if constexpr (details::hasSetOrigin<T>) {
     animated.setOrigin(origin);
   }
 }
@@ -27,7 +39,7 @@ void setOrigin(T& animated, sf::Vector2f origin) {
 
 template <typename T>
 sf::Vector2f getPosition(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getPosition, T>) {
+  if constexpr (details::hasGetPosition<T>) {
     return animated.getPosition();
   }
   return sf::Vector2f{};
@@ -35,7 +47,7 @@ sf::Vector2f getPosition(T& animated) {
 
 template <typename T>
 void setPosition(T& animated, sf::Vector2f position) {
-  if constexpr (core::is_detected_as_true<impl::has_setPosition, T>) {
+  if constexpr (details::hasSetPosition<T>) {
     animated.setPosition(position);
   }
 }
@@ -44,7 +56,7 @@ void setPosition(T& animated, sf::Vector2f position) {
 
 template <typename T>
 float getRotation(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getRotation, T>) {
+  if constexpr (details::hasGetRotation<T>) {
     return animated.getRotation();
   }
   return 0.f;
@@ -52,7 +64,7 @@ float getRotation(T& animated) {
 
 template <typename T>
 void setRotation(T& animated, float rotation) {
-  if constexpr (core::is_detected_as_true<impl::has_setRotation, T>) {
+  if constexpr (details::hasSetRotation<T>) {
     animated.setRotation(rotation);
   }
 }
@@ -61,7 +73,7 @@ void setRotation(T& animated, float rotation) {
 
 template <typename T>
 sf::Vector2f getScale(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getScale, T>) {
+  if constexpr (details::hasGetScale<T>) {
     return animated.getScale();
   }
   return sf::Vector2f{};
@@ -69,7 +81,7 @@ sf::Vector2f getScale(T& animated) {
 
 template <typename T>
 void setScale(T& animated, sf::Vector2f scale) {
-  if constexpr (core::is_detected_as_true<impl::has_setScale, T>) {
+  if constexpr (details::hasSetScale<T>) {
     animated.setScale(scale);
   }
 }
@@ -78,9 +90,9 @@ void setScale(T& animated, sf::Vector2f scale) {
 
 template <typename T>
 sf::Color getColor(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getFillColor, T>) {
+  if constexpr (details::hasGetFillColor<T>) {
     return animated.getFillColor();
-  } else if constexpr (core::is_detected_as_true<impl::has_getColor, T>) {
+  } else if constexpr (details::hasGetColor<T>) {
     return animated.getColor();
   }
   return sf::Color{};
@@ -88,9 +100,9 @@ sf::Color getColor(T& animated) {
 
 template <typename T>
 void setColor(T& animated, sf::Color color) {
-  if constexpr (core::is_detected_as_true<impl::has_setFillColor, T>) {
+  if constexpr (details::hasSetFillColor<T>) {
     animated.setFillColor(color);
-  } else if constexpr (core::is_detected_as_true<impl::has_setColor, T>) {
+  } else if constexpr (details::hasSetColor<T>) {
     animated.setColor(color);
   }
 }
@@ -99,7 +111,7 @@ void setColor(T& animated, sf::Color color) {
 
 template <typename T>
 sf::IntRect getTextureRect(T& animated) {
-  if constexpr (core::is_detected_as_true<impl::has_getTextureRect, T>) {
+  if constexpr (details::hasGetTextureRect<T>) {
     return animated.getTextureRect();
   }
   return sf::IntRect{};
@@ -107,9 +119,9 @@ sf::IntRect getTextureRect(T& animated) {
 
 template <typename T>
 void setTextureRect(T& animated, sf::IntRect textureRect) {
-  if constexpr (core::is_detected_as_true<impl::has_setTextureRect, T>) {
+  if constexpr (details::hasSetTextureRect<T>) {
     animated.setTextureRect(textureRect);
   }
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

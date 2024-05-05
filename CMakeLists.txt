@@ -1,6 +1,6 @@
 # BASIC SETUP
 
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.24)
 project(
   loki
   VERSION 0.1.0
@@ -14,6 +14,8 @@ include(cmake/LocalConfig.cmake OPTIONAL)
 
 # todo make it work
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, all dependencies will be linked to statically." FORCE)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 # HELPERS
@@ -33,19 +35,21 @@ macro_ensure_out_of_source_build("You must use an out-of-source build.")
 
 set(SFML_STATIC_LIBRARIES $<NOT:${BUILD_SHARED_LIBS}>)
 list(APPEND LOKI_DEPS_LIST
-  "nlohmann_json, 3.9"
+  #"nlohmann_json, 3.9"
   "fmt, 8"
-  "SFML, 2.5, graphics window system audio"
-  "ImGui-SFML, 2.3"
+  "SFML, 2.6, graphics window system audio"
+  "ImGui-SFML, 2.6"
+  "yaml-cpp, 0.8"
   "box2d, 2.4"
   "EnTT, 3.10")
-loki_find_all_deps(" ${LOKI_DEPS_LIST}")
+loki_find_all_deps("${LOKI_DEPS_LIST}")
 
 
 # TARGETS
 
 # All modules (+global) target
 loki_create_modules(
+  components
   core
   graphics
   gui
@@ -76,7 +80,7 @@ include(CMakePackageConfigHelpers)
 configure_package_config_file(
   cmake/lokiConfig.cmake.in lokiConfig.cmake
   INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/loki"
-  PATH_VARS fmt_DIR nlohmann_json_DIR SFML_DIR
+  PATH_VARS SFML_DIR
 )
 
 # Version

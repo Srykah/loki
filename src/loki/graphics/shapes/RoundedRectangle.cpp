@@ -3,7 +3,7 @@
 #include <cmath>
 #include <numbers>
 
-namespace loki::gfx {
+namespace loki::graphics {
 
 RoundedRectangle::RoundedRectangle(sf::Vector2f size,
                                    float borderRadius,
@@ -50,4 +50,4 @@ sf::Vector2f RoundedRectangle::getQuadrantOrigin(std::size_t quadrant) const {
   }
 }
 
-}  // namespace loki::gfx
+}  // namespace loki::graphics

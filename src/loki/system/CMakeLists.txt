@@ -3,14 +3,14 @@ loki_create_module(system
   main.hpp
   # app
   app/Application.hpp
-  app/ServiceRegistry.hpp
   # ecs
   ecs/Actor.hpp
-  ecs/Actor.hxx
-  ecs/ActorManager.hpp
   ecs/Component.hpp
-  ecs/ComponentGroup.hpp
-  ecs/ComponentGroup.hxx
+  ecs/componentMacros.hpp
+  ecs/ComponentRegistry.hpp
+  ecs/ComponentRegistry.hxx
+  ecs/ComponentSlot.hpp
+  ecs/DrawableComponent.hpp
   # fs
   fs/FileCategory.hpp
   fs/FileManager.hpp
@@ -21,17 +21,16 @@ loki_create_module(system
   input/InputState.hpp
   input/PlayerConfig.hpp
   # res
-  res/JsonResources.hpp
+  res/LogicResource.hpp
   res/Resource.hpp
   res/ResourceHandle.hpp
   res/ResourceHolder.hpp
   res/ResourceHolder.hxx
+  res/ResourceListener.hpp
   res/SFMLResources.hpp
   # scene
   scene/Scene.hpp
-  scene/SceneElement.hpp
   scene/SceneManager.hpp
-  scene/SceneNode.hpp
   # window
   window/Camera.hpp
   window/Window.hpp
@@ -42,7 +41,9 @@ loki_create_module(system
   app/Application.cpp
   # ecs
   ecs/Actor.cpp
-  ecs/ActorManager.cpp
+  ecs/Component.cpp
+  ecs/ComponentSlot.cpp
+  ecs/ComponentRegistry.cpp
   # fs
   fs/FileManager.cpp
   # input
@@ -53,7 +54,6 @@ loki_create_module(system
   # scene
   scene/Scene.cpp
   scene/SceneManager.cpp
-  scene/SceneNode.cpp
   # window
   window/Camera.cpp
   window/Window.cpp
@@ -62,6 +62,7 @@ loki_create_module(system
   PUBLIC_DEPS
   loki::core
   sfml-graphics
-  nlohmann_json::nlohmann_json
+  #nlohmann_json::nlohmann_json
   EnTT::EnTT
-  )
+  ImGui-SFML::ImGui-SFML
+)

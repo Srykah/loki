@@ -43,12 +43,13 @@ function(loki_create_module module)
     PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
   )
-  target_compile_features(${module} PUBLIC cxx_std_20)
+  target_compile_features(${module} PUBLIC cxx_std_23)
   set_target_properties(${module} PROPERTIES
-    CXX_STANDARD 20
+    CXX_STANDARD 23
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS NO
-    )
+    COMPILE_WARNING_AS_ERROR YES
+  )
   #loki_enable_lto_optional(${module})
   loki_add_module_prefix(${module})
   loki_install_module_headers(${module} FILES ${MODULE_HEADERS})

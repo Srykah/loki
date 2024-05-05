@@ -17,7 +17,7 @@ class EnumerateWrapper {
         typename std::iterator_traits<inner_iterator>::reference;
 
    public:
-    using reference = std::pair<size_t, inner_reference>;
+    using reference = std::pair<std::size_t, inner_reference>;
 
     explicit iterator(inner_iterator it) : _pos(0), _it(it) {}
 
@@ -38,7 +38,7 @@ class EnumerateWrapper {
     bool operator!=(iterator const& it) const { return !(*this == it); }
 
    private:
-    size_t _pos;
+    std::size_t _pos;
     inner_iterator _it;
   };
 

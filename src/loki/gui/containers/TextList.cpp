@@ -6,7 +6,7 @@ namespace loki::gui {
 
 TextList::TextList(sf::Font& font) {}
 
-void TextList::setTextStyle(gfx::TextStyle _textStyle) {
+void TextList::setTextStyle(graphics::TextStyle _textStyle) {
   this->textStyle = _textStyle;
 }
 
