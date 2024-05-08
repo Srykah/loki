@@ -12,8 +12,6 @@ class CircleShapeComponent final : public system::DrawableComponent {
  public:
   CircleShapeComponent();
 
-  void update(sf::Time dt);
-
   [[nodiscard]] system::DrawOrder getDrawOrder() const override;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

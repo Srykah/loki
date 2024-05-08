@@ -11,14 +11,12 @@ CircleShapeComponent::CircleShapeComponent() {
   shape.setFillColor(sf::Color::Green);
 }
 
-void CircleShapeComponent::update(sf::Time dt) {}
-
 system::DrawOrder CircleShapeComponent::getDrawOrder() const {
   return {};
 }
 
 void CircleShapeComponent::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  states.transform *= getActor().getTransform();
+  states.transform *= getActor().getLocalTransform();
   target.draw(shape, states);
 }
 

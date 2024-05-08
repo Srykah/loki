@@ -16,7 +16,6 @@ Scene* SceneManager::getCurrentScene() const {
 
 void SceneManager::loadSceneFromYaml(const YAML::Node& sceneNode) {
   auto newScene = std::make_unique<Scene>();
-  getService<ComponentRegistry>().setRegistry(newScene->registry);
   newScene->loadFromYaml(sceneNode);
   scene = std::move(newScene);
 }

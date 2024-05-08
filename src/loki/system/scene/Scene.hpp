@@ -7,19 +7,15 @@
 
 #include <loki/system/ecs/Actor.hpp>
 
-#if 0
-#include <loki/core/reflection/classMacros.hpp>
-#endif
-
 namespace loki::system {
 
-class Scene : public sf::Drawable {
+class Scene final : public sf::Drawable {
  public:
   Scene();
 
   [[nodiscard]] const Actor& getRoot() const { return root; }
 
-  [[nodiscard]] Actor instanciateActor(entt::entity parent = entt::null);
+  [[nodiscard]] Actor instanciateActor(Actor parent = {});
 
  private:
   friend class SceneManager;
@@ -31,16 +27,6 @@ class Scene : public sf::Drawable {
   std::string name;
   entt::registry registry;
   Actor root;
-
-#if 0
-  REFLECTION_CLASS_DECLARE(Scene)
-#endif
 };
 
 }  // namespace loki::system
-
-#if 0
-REFLECTION_CLASS_BEGIN(loki::system::Scene)
-REFLECTION_CLASS_FIELD(loki::system::Scene, root)
-REFLECTION_CLASS_END()
-#endif

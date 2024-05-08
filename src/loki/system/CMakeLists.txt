@@ -6,11 +6,13 @@ loki_create_module(system
   # ecs
   ecs/Actor.hpp
   ecs/Component.hpp
+  ecs/Component.hxx
   ecs/componentMacros.hpp
   ecs/ComponentRegistry.hpp
   ecs/ComponentRegistry.hxx
-  ecs/ComponentSlot.hpp
+  ecs/ComponentTraits.hpp
   ecs/DrawableComponent.hpp
+  ecs/ActorHierarchy.hpp
   # fs
   fs/FileCategory.hpp
   fs/FileManager.hpp
@@ -42,7 +44,6 @@ loki_create_module(system
   # ecs
   ecs/Actor.cpp
   ecs/Component.cpp
-  ecs/ComponentSlot.cpp
   ecs/ComponentRegistry.cpp
   # fs
   fs/FileManager.cpp

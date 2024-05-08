@@ -5,16 +5,10 @@
 
 namespace loki::system {
 
-void ComponentRegistry::setRegistry(entt::registry& _registry) {
-  registry = &_registry;
-  reconnectObservers();
-}
-
-void ComponentRegistry::reconnectObservers() {
-  assert(registry);
-  for (auto&& [_, initData] : initSteps) {
-    initData.observerConnector(initData.observer, *registry);
-  }
+const BaseComponentTraits* ComponentRegistry::getTraits(const entt::type_info& type) const {
+  if (auto it = componentTraits.find(type); it != componentTraits.end())
+    return it->second.get();
+  return nullptr;
 }
 
 void* ComponentRegistry::addComponentToActor(Actor& actor, const std::string& compName) const {

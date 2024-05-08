@@ -1,5 +1,7 @@
 #pragma once
 
+#include <filesystem>
+
 #include <loki/core/reflection/classMacros.hpp>
 #include <loki/core/utils/Memory.hpp>
 

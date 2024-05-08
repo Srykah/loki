@@ -4,19 +4,17 @@
 #include <loki/graphics/sprites/Sprite.hpp>
 
 namespace loki::components {
-class SpriteComponent : public system::DrawableComponent, public system::ResourceListener {
+class SpriteComponent : public system::DrawableComponent {
  public:
-  void init();
-  void onResourcesLoaded() override;
-  void update(sf::Time dt);
+  void onStartInit() override;
+  void onFinalizeInit() override;
+  void update(sf::Time dt) override;
   [[nodiscard]] system::DrawOrder getDrawOrder() const override;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
   system::ResourceHandle<graphics::SpriteDataResource> spriteData;
   graphics::Sprite sprite;
-
-  bool isInit = false;
 
   LOKI_REFLECTION_CLASS_DECLARE_RTTI(SpriteComponent)
 };

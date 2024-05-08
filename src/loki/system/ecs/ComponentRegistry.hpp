@@ -5,6 +5,7 @@
 #include <entt/entity/observer.hpp>
 
 #include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/system/ecs/ComponentTraits.hpp>
 
 template <>
 struct std::hash<entt::type_info> {
@@ -32,35 +33,18 @@ concept DrawDelegate = std::is_invocable_v<T, const DrawableComponent&>;
 
 class ComponentRegistry : public core::BaseObject {
  public:
-  void setRegistry(entt::registry& registry);
-
   template <details::IsAComponent Comp>
   void registerComponent();
 
-  void visitInitableComponents(details::InitDelegate auto&& initDelegate);
-
-  void visitUpdatableComponents(details::UpdateDelegate auto&& updateDelegate, sf::Time dt);
-
-  void visitDrawableComponents(details::DrawDelegate auto&&) const;
+  const BaseComponentTraits* getTraits(const entt::type_info& type) const;
 
  private:
-  void reconnectObservers();
-
   friend class Actor;
   void* addComponentToActor(Actor& actor, const std::string& compName) const;
 
  private:
-  using CastToDrawableComp = std::function<const DrawableComponent&(const void*)>;
-  struct InitData {
-    InitMethod method;
-    std::function<void(entt::observer&, entt::registry&)> observerConnector;
-    entt::observer observer;
-  };
-  entt::registry* registry = nullptr;
   std::unordered_map<std::string, std::function<Component&(entt::handle)>> componentFactories;
-  std::unordered_map<entt::type_info, InitData> initSteps;
-  std::unordered_map<entt::type_info, UpdateMethod> updateSteps;
-  std::unordered_map<entt::type_info, CastToDrawableComp> drawableCasts;
+  std::unordered_map<entt::type_info, std::unique_ptr<BaseComponentTraits>> componentTraits;
 
   LOKI_REFLECTION_CLASS_DECLARE_RTTI(ComponentRegistry)
 };
