@@ -23,8 +23,9 @@ loki_create_module(graphics
   text/Stylesheet.hpp
   text/AnimatedGlyph.hpp
   # tiles
-  tiles/MapData.hpp
-  tiles/MapView.hpp
+  tiles/TileMapData.hpp
+  tiles/TileSetData.hpp
+  tiles/TileMap.hpp
 
   SOURCES
   # shapes
@@ -44,7 +45,7 @@ loki_create_module(graphics
   text/Stylesheet.cpp
   text/AnimatedGlyph.cpp
   # tiles
-  tiles/MapView.cpp
+  tiles/TileMap.cpp
 
   PUBLIC_DEPS
   loki::system

@@ -5,6 +5,7 @@
 #include <loki/system/ecs/ComponentRegistry.hpp>
 #include <loki/components/graphics/CircleShapeComponent.hpp>
 #include <loki/components/graphics/SpriteComponent.hpp>
+#include <loki/components/graphics/TileMapComponent.hpp>
 
 namespace loki::components {
 
@@ -18,6 +19,7 @@ void registerLokiComponents() {
 
   LOKI_REGISTER_COMP(CircleShapeComponent);
   LOKI_REGISTER_COMP(SpriteComponent);
+  LOKI_REGISTER_COMP(TileMapComponent);
 
 #undef LOKI_REGISTER_COMP
 }
