@@ -1,6 +1,6 @@
 #include "SpriteComponent.hpp"
 
-namespace loki::components {
+namespace loki::graphics {
 void SpriteComponent::onStartInit() {
   addResources(spriteData);
 }
@@ -24,4 +24,4 @@ void SpriteComponent::draw(sf::RenderTarget& target, sf::RenderStates states) co
   states.transform *= getGlobalTransform();
   target.draw(sprite, states);
 }
-}  // namespace loki::components
+}  // namespace loki::graphics

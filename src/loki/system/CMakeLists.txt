@@ -1,8 +1,5 @@
 loki_create_module(system
   HEADERS
-  main.hpp
-  # app
-  app/Application.hpp
   # ecs
   ecs/Actor.hpp
   ecs/Component.hpp
@@ -22,6 +19,8 @@ loki_create_module(system
   input/InputMethod.hpp
   input/InputState.hpp
   input/PlayerConfig.hpp
+  # modules
+  modules/GameModule.hpp
   # res
   res/LogicResource.hpp
   res/Resource.hpp
@@ -39,8 +38,6 @@ loki_create_module(system
   window/WindowStyle.hpp
 
   SOURCES
-  # app
-  app/Application.cpp
   # ecs
   ecs/Actor.cpp
   ecs/Component.cpp
@@ -63,7 +60,6 @@ loki_create_module(system
   PUBLIC_DEPS
   loki::core
   sfml-graphics
-  #nlohmann_json::nlohmann_json
   EnTT::EnTT
   ImGui-SFML::ImGui-SFML
 )

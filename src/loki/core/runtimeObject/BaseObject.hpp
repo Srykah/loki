@@ -22,7 +22,7 @@ concept RuntimeObject = std::is_base_of_v<BaseObject, T>;
 template <class T>
 concept ReflectedRuntimeObject = Reflected<T> && RuntimeObject<T>;
 
-inline void* asAncestor(void* ptr, const TypeInfo* ptrType, ClassId ancestorId) {
+inline void* asAncestor(void* ptr, const TypeInfo* ptrType, const ClassId& ancestorId) {
   void* result = ptr;
   while (true) {
     auto& currentClassInfo = std::get<ClassInfo>(ptrType->info);

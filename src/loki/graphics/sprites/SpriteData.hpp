@@ -1,6 +1,5 @@
 #pragma once
 
-#include <filesystem>
 #include <map>
 
 #include <loki/system/res/LogicResource.hpp>

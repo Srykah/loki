@@ -19,7 +19,6 @@ class LogicResource : public Resource<T>, public T {
 
  protected:
   void loadImpl(const std::filesystem::path& path) override {
-    std::println(stderr, "{}", path.string());
     std::fstream file{path};
     YAML::Node node = YAML::Load(file);
     core::fromYaml(node, static_cast<T*>(this), core::getTypeInfo<T>());

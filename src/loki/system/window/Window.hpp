@@ -45,7 +45,7 @@ class Window : public core::BaseObject {
   sf::Vector2u internalResolution;
   sf::Vector2u minimumSize;
   WindowStyle style = WindowStyle::DEFAULT;
-  bool isImGuiEnabled = true;
+  bool isImGuiEnabled = false;
 
   LOKI_REFLECTION_CLASS_DECLARE_RTTI(Window)
 };

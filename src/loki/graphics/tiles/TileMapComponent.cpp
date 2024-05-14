@@ -1,6 +1,6 @@
 #include "TileMapComponent.hpp"
 
-namespace loki::components {
+namespace loki::graphics {
 void TileMapComponent::onStartInit() {
   addResources(tileMapData);
 }
@@ -18,4 +18,4 @@ void TileMapComponent::draw(sf::RenderTarget& target, sf::RenderStates states) c
   states.transform *= getGlobalTransform();
   target.draw(tileMap, states);
 }
-}  // namespace loki::components
+}  // namespace loki::graphics

@@ -12,6 +12,7 @@ loki_create_module(graphics
   sprites/Sprite.hpp
   sprites/SpriteData.hpp
   sprites/SpriteViewData.hpp
+  sprites/SpriteComponent.hpp
   # styles
   styles/ShapeStyle.hpp
   styles/TextStyle.hpp
@@ -23,9 +24,10 @@ loki_create_module(graphics
   text/Stylesheet.hpp
   text/AnimatedGlyph.hpp
   # tiles
+  tiles/TileMap.hpp
+  tiles/TileMapComponent.hpp
   tiles/TileMapData.hpp
   tiles/TileSetData.hpp
-  tiles/TileMap.hpp
 
   SOURCES
   # shapes
@@ -34,6 +36,7 @@ loki_create_module(graphics
   # sprites
   sprites/Sprite.cpp
   sprites/SpriteViewData.cpp
+  sprites/SpriteComponent.cpp
   # styles
   styles/ShapeStyle.cpp
   styles/TextStyle.cpp
@@ -46,6 +49,7 @@ loki_create_module(graphics
   text/AnimatedGlyph.cpp
   # tiles
   tiles/TileMap.cpp
+  tiles/TileMapComponent.cpp
 
   PUBLIC_DEPS
   loki::system

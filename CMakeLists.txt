@@ -49,13 +49,16 @@ loki_find_all_deps("${LOKI_DEPS_LIST}")
 
 # All modules (+global) target
 loki_create_modules(
-  components
   core
   graphics
   gui
+  physics
   system
 )
 
+# APP
+
+add_subdirectory(src/loki-app)
 
 # DOCS
 

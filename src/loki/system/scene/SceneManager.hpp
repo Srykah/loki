@@ -1,6 +1,7 @@
 #pragma once
 
 #include <filesystem>
+#include <map>
 
 #include <SFML/System/Time.hpp>
 
@@ -17,13 +18,19 @@ class SceneManager : public core::BaseObject {
  public:
   Scene* getCurrentScene() const;
 
-  void loadSceneFromYaml(const YAML::Node& sceneNode);
-  void loadSceneFromYamlString(const std::string& sceneData);
-  void loadSceneFromYamlFile(const std::filesystem::path& scenePath);
+  void setScenePaths(std::map<std::string, std::filesystem::path>&& scenePaths);
+  void loadScene(const std::string& sceneName);
+
   void update(sf::Time dt);
   void draw(Window& window) const;
 
  private:
+  void loadSceneFromYaml(const YAML::Node& sceneNode);
+  void loadSceneFromYamlString(const std::string& sceneData);
+  void loadSceneFromYamlFile(const std::filesystem::path& scenePath);
+
+ private:
+  std::map<std::string, std::filesystem::path> scenePaths;
   std::unique_ptr<Scene> scene;
 
   LOKI_REFLECTION_CLASS_DECLARE_RTTI(SceneManager)

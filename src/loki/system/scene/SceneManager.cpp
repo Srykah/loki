@@ -14,6 +14,14 @@ Scene* SceneManager::getCurrentScene() const {
   return scene.get();
 }
 
+void SceneManager::setScenePaths(std::map<std::string, std::filesystem::path>&& _scenePaths) {
+  scenePaths = std::move(_scenePaths);
+}
+
+void SceneManager::loadScene(const std::string& sceneName) {
+  loadSceneFromYamlFile(scenePaths.at(sceneName));
+}
+
 void SceneManager::loadSceneFromYaml(const YAML::Node& sceneNode) {
   auto newScene = std::make_unique<Scene>();
   newScene->loadFromYaml(sceneNode);

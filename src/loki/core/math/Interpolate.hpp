@@ -26,7 +26,7 @@ Out interpolate(const InterpolationData<In, Out>& data, const In& x);
 
 }  // namespace loki::core
 
-LOKI_REFLECTION_ENUM_BEGIN(loki::core::InterpolationType, short)
+LOKI_REFLECTION_ENUM_BEGIN(loki::core::InterpolationType)
 LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, NONE)
 LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, LINEAR)
 LOKI_REFLECTION_ENUM_END()

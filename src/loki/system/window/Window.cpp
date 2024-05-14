@@ -19,11 +19,12 @@ void Window::create(sf::Vector2u size, std::string_view name, WindowStyle _style
     setMinimumSize(size);
     setInternalResolution(size);
   }
+  if (isImGuiEnabled)
+    ImGui::SFML::Shutdown(window);
   window.create(sf::VideoMode(size.x, size.y), sf::String::fromUtf8(name.begin(), name.end()),
                 toSFMLWindowStyle(_style));
   setView(getDefaultView());
-  if (!ImGui::SFML::Init(window))
-    isImGuiEnabled = false;
+  isImGuiEnabled = ImGui::SFML::Init(window);
 }
 
 void Window::setInternalResolution(sf::Vector2u _internalResolution) {
