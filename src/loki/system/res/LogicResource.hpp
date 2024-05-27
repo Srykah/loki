@@ -27,7 +27,7 @@ class LogicResource : public Resource<T>, public T {
 
 }  // namespace loki::system
 
-#define LOKI_LOGICRESOURCE_ADD_CHILD_TO_HOLDER(child) addChildResourceToHolder(resourceHolder, child);
+#define LOKI_LOGICRESOURCE_ADD_CHILD_TO_HOLDER(child) resourceHolder.add(child, this);
 
 #define LOKI_LOGICRESOURCE_ADD_CHILDREN_TO_HOLDER(...)                                    \
  private:                                                                                 \

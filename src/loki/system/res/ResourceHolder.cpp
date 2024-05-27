@@ -2,8 +2,6 @@
 
 #include <algorithm>
 
-#include <loki/system/res/Resource.hpp>
-
 namespace loki::system {
 
 void ResourceHolder::load() {

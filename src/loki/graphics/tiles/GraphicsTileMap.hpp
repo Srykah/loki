@@ -2,18 +2,18 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <loki/graphics/tiles/TileMapData.hpp>
+#include <loki/tiles/TileMapData.hpp>
 
 namespace loki::graphics {
 
-class TileMap : public sf::Drawable, public sf::Transformable {
+class GraphicsTileMap : public sf::Drawable, public sf::Transformable {
  public:
-  void setData(const TileMapData& mapData);
+  void setData(const tiles::TileMapData& mapData);
 
   void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override;
 
  private:
-  void fillVerticesForTile(size_t startIndex, size_t x, size_t y, const TileSetData& tileset, int tileIndex);
+  void fillVerticesForTile(size_t startIndex, size_t x, size_t y, sf::Vector2f tileSize, int tileIndex);
 
  private:
   const sf::Texture* texture = nullptr;

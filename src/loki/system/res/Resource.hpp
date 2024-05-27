@@ -4,11 +4,6 @@
 
 namespace loki::system {
 
-class ResourceHolder;
-
-template <class T>
-class ResourceHandle;
-
 class BaseResource : public ResourceListener {
  public:
   enum class LoadingStatus {
@@ -43,12 +38,6 @@ class BaseResource : public ResourceListener {
   virtual bool addChildResourcesToHolder(ResourceHolder& holder) { return false; }
   virtual void onChildResourcesLoadedImpl(){};
   virtual void unloadImpl() {}
-
-  /// small helper to keep ResourceHolder::addChild private
-  template <class T>
-  void addChildResourceToHolder(ResourceHolder& holder, ResourceHandle<T>& handle) {
-    holder.add(handle, this);
-  }
 
  private:
   LoadingStatus loadingStatus = LoadingStatus::Unloaded;

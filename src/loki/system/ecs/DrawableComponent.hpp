@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 
-#include "Component.hpp"
+#include <loki/system/ecs/Component.hpp>
 
 namespace loki::system {
 

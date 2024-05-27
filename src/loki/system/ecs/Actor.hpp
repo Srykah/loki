@@ -6,8 +6,6 @@
 #include <entt/entity/handle.hpp>
 #include <yaml-cpp/node/node.h>
 
-#include <loki/core/runtimeObject/BaseObject.hpp>
-
 namespace loki::system {
 
 class Component;

@@ -24,10 +24,9 @@ loki_create_module(graphics
   text/Stylesheet.hpp
   text/AnimatedGlyph.hpp
   # tiles
-  tiles/TileMap.hpp
-  tiles/TileMapComponent.hpp
-  tiles/TileMapData.hpp
-  tiles/TileSetData.hpp
+  tiles/GraphicsTileMap.hpp
+  tiles/GraphicsTileMapComponent.hpp
+  tiles/TextureTileSetAttributes.hpp
 
   SOURCES
   # shapes
@@ -48,11 +47,14 @@ loki_create_module(graphics
   text/Stylesheet.cpp
   text/AnimatedGlyph.cpp
   # tiles
-  tiles/TileMap.cpp
-  tiles/TileMapComponent.cpp
+  tiles/GraphicsTileMap.cpp
+  tiles/GraphicsTileMapComponent.cpp
 
   PUBLIC_DEPS
+  loki::core
   loki::system
+  loki::tiles
+  EnTT::EnTT
   sfml-graphics
-  #nlohmann_json::nlohmann_json
+  yaml-cpp::yaml-cpp
 )

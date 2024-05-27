@@ -6,11 +6,9 @@
 #include <loki/core/runtimeObject/BaseObject.hpp>
 #include <loki/core/utils/Memory.hpp>
 #include <loki/system/res/Resource.hpp>
+#include <loki/system/res/ResourceHandle.hpp>
 
 namespace loki::system {
-
-template <class T>
-class ResourceHandle;
 
 class ResourceHolder : public core::BaseObject {
  public:

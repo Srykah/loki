@@ -4,6 +4,7 @@
 
 #include <loki/core/reflection/classMacros.hpp>
 #include <loki/core/utils/Memory.hpp>
+#include <loki/system/res/Resource.hpp>
 
 namespace loki::system {
 
@@ -24,11 +25,12 @@ class ResourceHandle {
     return ptr->getData();
   }
 
+  void setPtr(core::BorrowerPtr<BaseResource>&& _ptr) { ptr = core::static_pointer_cast<Res>(_ptr); }
+  const BaseResource* getPtr() const { return ptr.get(); }
+
  private:
   std::filesystem::path path;
   core::BorrowerPtr<Res> ptr;
-
-  friend class ResourceHolder;
 
   LOKI_REFLECTION_CLASS_DECLARE(ResourceHandle<Res>)
 };

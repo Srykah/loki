@@ -5,6 +5,8 @@
 
 #include <SFML/System/Time.hpp>
 
+#include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/runtimeObject/BaseObject.hpp>
 #include <loki/system/scene/Scene.hpp>
 
 namespace YAML {

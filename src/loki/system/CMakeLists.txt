@@ -59,7 +59,8 @@ loki_create_module(system
 
   PUBLIC_DEPS
   loki::core
-  sfml-graphics
   EnTT::EnTT
   ImGui-SFML::ImGui-SFML
+  sfml-graphics
+  yaml-cpp::yaml-cpp
 )

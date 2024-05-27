@@ -3,9 +3,6 @@
 #include <fstream>
 
 #include <loki/core/serialization/yaml/fromYaml.hpp>
-#include <loki/core/services/ServiceRegistry.hpp>
-#include <loki/system/ecs/Actor.hpp>
-#include <loki/system/ecs/ComponentRegistry.hpp>
 #include <loki/system/window/Window.hpp>
 
 namespace loki::system {

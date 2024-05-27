@@ -80,6 +80,5 @@ loki_create_module(core
   PUBLIC_DEPS
   sfml-graphics
   yaml-cpp::yaml-cpp
-  #nlohmann_json::nlohmann_json
   fmt::fmt
 )

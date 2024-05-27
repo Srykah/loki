@@ -54,6 +54,7 @@ loki_create_modules(
   gui
   physics
   system
+  tiles
 )
 
 # APP
