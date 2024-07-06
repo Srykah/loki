@@ -4,19 +4,27 @@
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/system/ecs/Component.hpp>
+#include <loki/system/render/Drawable.hpp>
 #include <loki/physics/bodies/PhysicsBody.hpp>
 #include <loki/physics/bodies/PhysicsBodyParams.hpp>
 #include <loki/physics/shapes/PhysicsFixtureParams.hpp>
 
 namespace loki::physics {
 
-class PhysicsBodyComponent : public system::Component {
+class PhysicsBodyComponent : public system::Component, public system::DebugDrawable {
  public:
   void onStartInit() override;
+  void onFinalizeInit() override;
   void update(sf::Time dt) override;
+
+  system::DrawOrder getDebugDrawOrder() const override;
+  void debugDraw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+  PhysicsBody& getBody() { return body; }
 
  private:
   PhysicsBodyParams bodyParams;
+  std::vector<PhysicsFixtureParams> fixtureParams;
   PhysicsBody body;
 
   LOKI_REFLECTION_CLASS_DECLARE_RTTI(PhysicsBodyComponent)
@@ -26,4 +34,5 @@ class PhysicsBodyComponent : public system::Component {
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::PhysicsBodyComponent)
 LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyComponent, bodyParams)
+LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyComponent, fixtureParams)
 LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PhysicsBodyComponent)

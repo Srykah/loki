@@ -3,16 +3,27 @@
 #include <loki/core/runtimeObject/RuntimeObjectRegistry.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
+#include <loki/system/input/InputManager.hpp>
+#include <loki/system/input/InputTriggers.hpp>
 #include <loki/graphics/sprites/SpriteComponent.hpp>
 #include <loki/graphics/tiles/GraphicsTileMapComponent.hpp>
-#include <loki/graphics/tiles/TextureTileSetAttributes.hpp>
+#include <loki/graphics/tiles/TextureTileSetAttribute.hpp>
 #include <loki/physics/bodies/PhysicsBodyComponent.hpp>
 #include <loki/physics/module/PhysicsModule.hpp>
+#include <loki/physics/tiles/CollisionTileAttribute.hpp>
+#include <loki/physics/tiles/PhysicsTileMapComponent.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
+#include <loki/tiles/TileMapDataComponent.hpp>
 
 namespace loki::app {
 
 void registerLokiRuntimeTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
+  // system
+  runtimeObjectRegistry.registerClass<system::InputTrigger>();
+  runtimeObjectRegistry.registerClass<system::KeyTrigger>();
+  runtimeObjectRegistry.registerClass<system::MouseButtonTrigger>();
+  runtimeObjectRegistry.registerClass<system::JoystickAxisTrigger>();
+  runtimeObjectRegistry.registerClass<system::JoystickButtonTrigger>();
   // tiles
   runtimeObjectRegistry.registerClass<tiles::TileAttribute>();
   runtimeObjectRegistry.registerClass<tiles::TileSetAttribute>();
@@ -25,9 +36,13 @@ void registerLokiRuntimeTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry
   runtimeObjectRegistry.registerClass<physics::EdgeShapeParams>();
   runtimeObjectRegistry.registerClass<physics::PolygonShapeParams>();
   runtimeObjectRegistry.registerClass<physics::ChainShapeParams>();
+  runtimeObjectRegistry.registerClass<physics::CollisionTileAttribute>();
 }
 
 void registerLokiModules(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
+  // system
+  runtimeObjectRegistry.registerClass<system::InputManager>();
+
   // physics
   runtimeObjectRegistry.registerClass<physics::PhysicsModule>();
 }
@@ -38,6 +53,9 @@ void registerLokiComponents(core::RuntimeObjectRegistry& runtimeObjectRegistry,
   runtimeObjectRegistry.registerClass<Comp>(); \
   componentRegistry.registerComponent<Comp>()
 
+  // tiles
+  LOKI_REGISTER_COMP(tiles::TileMapDataComponent);
+
   // graphics
   LOKI_REGISTER_COMP(graphics::SpriteComponent);
   LOKI_REGISTER_COMP(graphics::GraphicsTileMapComponent);
@@ -45,6 +63,7 @@ void registerLokiComponents(core::RuntimeObjectRegistry& runtimeObjectRegistry,
   // physics
   LOKI_REGISTER_COMP(physics::PhysicsBodyComponent);
   LOKI_REGISTER_COMP(physics::PhysicsWorldComponent);
+  LOKI_REGISTER_COMP(physics::PhysicsTileMapComponent);
 
 #undef LOKI_REGISTER_COMP
 }

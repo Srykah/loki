@@ -39,6 +39,8 @@ struct TileSetData {
 
   template <class T>
   const T* getTileAttribute(std::size_t tileIndex) const {
+    if (tileIndex >= tilesAttributes.size())
+      return nullptr;
     const auto& classId = std::get<core::ClassInfo>(core::getTypeInfo<T>().info).id;
     for (const auto& tileSetAttr : tilesAttributes.at(tileIndex)) {
       if (std::get<core::ClassInfo>(tileSetAttr->getClassTypeInfo().info).id == classId)

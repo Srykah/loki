@@ -5,6 +5,7 @@
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Sleep.hpp>
 #include <SFML/Window/Event.hpp>
+#include <dylib/dylib.hpp>
 #include <yaml-cpp/node/parse.h>
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
@@ -42,6 +43,17 @@ void Application::registerServices() {
 void Application::loadGame(const std::filesystem::path& path) {
   std::ifstream file{path};
   YAML::Node node = YAML::Load(file);
+
+  auto gameScripts = node["gameScripts"].as<std::string>();
+  gameScriptsLibrary = std::make_unique<dylib>("./", gameScripts);
+  void* serviceRegistryAsVoidPtr = &serviceRegistry;
+  void* runtimeObjectRegistryAsVoidPtr = &runtimeObjectRegistry;
+  void* componentRegistryAsVoidPtr = &componentRegistry;
+  gameScriptsLibrary->get_function<void(const void*)>("registerServiceRegistry")(serviceRegistryAsVoidPtr);
+  gameScriptsLibrary->get_function<void(void*)>("registerCustomRuntimeTypes")(runtimeObjectRegistryAsVoidPtr);
+  gameScriptsLibrary->get_function<void(void*)>("registerCustomModules")(runtimeObjectRegistryAsVoidPtr);
+  gameScriptsLibrary->get_function<void(void*, void*)>("registerCustomComponents")(runtimeObjectRegistryAsVoidPtr,
+                                                                                   componentRegistryAsVoidPtr);
 
   sf::Vector2u windowSize;
   core::fromYaml(node["windowSize"], windowSize);

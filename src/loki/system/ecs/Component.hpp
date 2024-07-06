@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transform.hpp>
 #include <SFML/System/Time.hpp>
 
@@ -9,6 +10,9 @@
 #include <loki/system/res/ResourceListener.hpp>
 
 namespace loki::system {
+
+struct DrawOrder;
+using DebugDrawDelegate = std::function<void(DrawOrder, const sf::Drawable*)>;
 
 class Component : public core::BaseObject, public system::ResourceListener {
  public:
@@ -25,6 +29,8 @@ class Component : public core::BaseObject, public system::ResourceListener {
   void startInit();
   void finalizeInit();
   virtual void update(sf::Time dt) {}
+
+  virtual void drawDebug(const DebugDrawDelegate& debugDrawDelegate) const {}
 
  protected:
   virtual void onStartInit() {}

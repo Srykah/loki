@@ -44,6 +44,8 @@ list(APPEND LOKI_DEPS_LIST
   "EnTT, 3.10")
 loki_find_all_deps("${LOKI_DEPS_LIST}")
 
+# extern
+add_subdirectory(extern)
 
 # TARGETS
 
@@ -59,7 +61,7 @@ loki_create_modules(
 
 # APP
 
-add_subdirectory(src/loki-app)
+add_subdirectory(src/loki-runtime)
 
 # DOCS
 

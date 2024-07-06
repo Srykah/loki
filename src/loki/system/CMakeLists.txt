@@ -8,7 +8,6 @@ loki_create_module(system
   ecs/ComponentRegistry.hpp
   ecs/ComponentRegistry.hxx
   ecs/ComponentTraits.hpp
-  ecs/DrawableComponent.hpp
   ecs/ActorHierarchy.hpp
   # fs
   fs/FileCategory.hpp
@@ -18,9 +17,14 @@ loki_create_module(system
   input/InputManager.hpp
   input/InputMethod.hpp
   input/InputState.hpp
+  input/InputTriggers.hpp
   input/PlayerConfig.hpp
   # modules
   modules/GameModule.hpp
+  # render
+  render/Drawable.hpp
+  render/DrawOrder.hpp
+  render/RenderQueue.hpp
   # res
   res/LogicResource.hpp
   res/Resource.hpp
@@ -47,6 +51,9 @@ loki_create_module(system
   # input
   input/InputManager.cpp
   input/InputMethod.cpp
+  input/InputTriggers.cpp
+  # render
+  render/RenderQueue.cpp
   # res
   res/ResourceHolder.cpp
   # scene

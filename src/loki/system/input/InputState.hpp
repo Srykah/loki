@@ -13,9 +13,9 @@ struct InputState {
   };
 
  public:
-  void update(bool active, float newValue) {
-    status = static_cast<Status>(((isActive() != active) << 1) | active);
-    value = newValue;
+  void update(InputTriggerStatus inputTriggerStatus) {
+    status = static_cast<Status>(((isActive() != inputTriggerStatus.isActive) << 1) | inputTriggerStatus.isActive);
+    value = inputTriggerStatus.value;
   }
 
   [[nodiscard]] bool isActive() const { return status & Status::ACTIVE; }

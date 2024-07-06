@@ -12,9 +12,13 @@ void PhysicsBodyComponent::onStartInit() {
              .getComponent<PhysicsWorldComponent>()
              ->getWorld()
              ->createBody(auto{bodyParams});
-  for (const auto& fixtureParams : bodyParams.fixtureParams) {
-    body.createFixture(auto{fixtureParams});
+  for (const auto& fixtureParam : fixtureParams) {
+    body.createFixture(auto{fixtureParam});
   }
+}
+
+void PhysicsBodyComponent::onFinalizeInit() {
+  body.setTransformable(getActor().getTransformable());  // init position and rotation
 }
 
 void PhysicsBodyComponent::update(sf::Time dt) {
@@ -22,6 +26,14 @@ void PhysicsBodyComponent::update(sf::Time dt) {
   transformable.setPosition(body.getPosition());
   transformable.setRotation(body.getRotationInDegrees());
   getActor().setTransformable(std::move(transformable));
+}
+
+system::DrawOrder PhysicsBodyComponent::getDebugDrawOrder() const {
+  return {};
+}
+
+void PhysicsBodyComponent::debugDraw(sf::RenderTarget& target, sf::RenderStates states) const {
+  body.debugDraw(target, states);
 }
 
 }  // namespace loki::physics

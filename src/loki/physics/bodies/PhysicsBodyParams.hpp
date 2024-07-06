@@ -16,7 +16,6 @@ struct PhysicsBodyParams {
   float gravityScale = 1.0f;
   bool fixedRotation = false;
   bool bullet = false;
-  std::vector<PhysicsFixtureParams> fixtureParams;
 
   b2BodyDef toBodyDef() const;
 
@@ -32,5 +31,4 @@ LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, angularDamping)
 LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, gravityScale)
 LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, fixedRotation)
 LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, bullet)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, fixtureParams)
 LOKI_REFLECTION_CLASS_END()

@@ -22,8 +22,8 @@ Component::Status Component::getStatus() const {
 
 void Component::startInit() {
   onStartInit();
-  if (status == Status::CREATED)
-    status = Status::READY;
+  if (status != Status::LOADING_RESOURCES)
+    status = Status::RESOURCES_LOADED;
 }
 
 void Component::finalizeInit() {

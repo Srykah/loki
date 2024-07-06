@@ -3,7 +3,7 @@
 #include <array>
 
 #include <loki/core/math/Vector2Ops.hpp>
-#include <loki/graphics/tiles/TextureTileSetAttributes.hpp>
+#include <loki/graphics/tiles/TextureTileSetAttribute.hpp>
 
 namespace loki::graphics {
 

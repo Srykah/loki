@@ -1,10 +1,11 @@
 #pragma once
 
-#include <loki/system/ecs/DrawableComponent.hpp>
+#include <loki/system/ecs/Component.hpp>
+#include <loki/system/render/Drawable.hpp>
 #include <loki/graphics/sprites/Sprite.hpp>
 
 namespace loki::graphics {
-class SpriteComponent : public system::DrawableComponent {
+class SpriteComponent : public system::Component, public system::Drawable {
  public:
   void onStartInit() override;
   void onFinalizeInit() override;

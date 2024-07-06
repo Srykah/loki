@@ -85,4 +85,15 @@ T maxCoord(const sf::Vector2<T>& a) {
   return std::max(a.x, a.y);
 }
 
+// index <-> coords
+
+template <class T>
+sf::Vector2<T> getCoordsFromIndex(std::size_t index, std::size_t width) {
+  return {static_cast<T>(index % width), static_cast<T>(index / width)};
+}
+
+inline std::size_t getIndexFromCoords(const sf::Vector2u& coords, std::size_t width) {
+  return coords.y * width + coords.x;
+}
+
 }  // namespace loki::core

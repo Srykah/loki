@@ -26,7 +26,7 @@ loki_create_module(graphics
   # tiles
   tiles/GraphicsTileMap.hpp
   tiles/GraphicsTileMapComponent.hpp
-  tiles/TextureTileSetAttributes.hpp
+  tiles/TextureTileSetAttribute.hpp
 
   SOURCES
   # shapes

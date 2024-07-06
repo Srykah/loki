@@ -4,10 +4,13 @@ loki_create_module(physics
   bodies/PhysicsBodyComponent.hpp
   bodies/PhysicsBodyParams.hpp
   bodies/PhysicsBodyType.hpp
+  debug/DrawShapes.hpp
   shapes/PhysicsFixtureParams.hpp
   shapes/PhysicsShape.hpp
   shapes/PhysicsShapeParams.hpp
   shapes/PhysicsShapeType.hpp
+  tiles/CollisionTileAttribute.hpp
+  tiles/PhysicsTileMapComponent.hpp
   module/PhysicsModule.hpp
   utils/conversions.hpp
   world/PhysicsWorld.hpp
@@ -18,9 +21,11 @@ loki_create_module(physics
   bodies/PhysicsBody.cpp
   bodies/PhysicsBodyComponent.cpp
   bodies/PhysicsBodyParams.cpp
+  debug/DrawShapes.cpp
   module/PhysicsModule.cpp
   shapes/PhysicsShape.cpp
   shapes/PhysicsFixtureParams.cpp
+  tiles/PhysicsTileMapComponent.cpp
   world/PhysicsWorldComponent.cpp
   world/PhysicsWorld.cpp
 

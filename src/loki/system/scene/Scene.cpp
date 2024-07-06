@@ -1,14 +1,14 @@
 #include "Scene.hpp"
 
-#include <map>
 #include <ranges>
 
 #include <SFML/Graphics/RenderTarget.hpp>
 
 #include <loki/core/services/ServiceRegistry.hpp>
 #include <loki/system/ecs/ActorHierarchy.hpp>
+#include <loki/system/ecs/Component.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
-#include <loki/system/ecs/DrawableComponent.hpp>
+#include <loki/system/render/RenderQueue.hpp>
 
 namespace loki::system {
 
@@ -58,33 +58,34 @@ void Scene::update(sf::Time dt) {
 }
 
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  // prepare draw list
-  // todo change to flat_map when available
-  std::multimap<DrawOrder, const sf::Drawable*> drawables;
-
+  RenderQueue renderQueue;
   const auto& compReg = getService<ComponentRegistry>();
   // look among all component types in the registry
   for (const auto& storage : registry.storage() | std::views::values) {
     // get the componentTraits associated with this component type
     auto* compTraits = compReg.getTraits(storage.type());
-    if (!compTraits || !compTraits->isDrawable())
-      continue;  // if no traits were found or if the type isn't drawable, ignore
+    if (!compTraits || (!compTraits->isDrawable() && !compTraits->isDebugDrawable()))
+      continue;  // if no traits were found or if the type isn't (debug) drawable, ignore
     // iterate over the storage instances
     for (entt::entity entity : storage) {
-      // get the component as a DrawableComponent*
-      auto* comp = compTraits->getAsDrawableComponent(storage.get(entity));
+      // get as a Component
+      const auto& comp = compTraits->getAsComponent(storage.get(entity));
       // if it is not ready, ignore it
-      if (comp->getStatus() != Component::Status::READY)
+      if (comp.getStatus() != Component::Status::READY)
         continue;
-      // add it to the draw list
-      drawables.emplace(comp->getDrawOrder(), static_cast<const sf::Drawable*>(comp));
+      if (auto* drawable = compTraits->getAsDrawable(comp)) {
+        // if the component is a Drawable, add it to the render queue
+        renderQueue.registerDrawable(drawable->getDrawOrder(), drawable);
+      }
+      if (auto* debugDrawable = compTraits->getAsDebugDrawable(comp)) {
+        // if the component is a DebugDrawable, add it to the render queue
+        renderQueue.registerDebugDrawable(debugDrawable->getDebugDrawOrder(), debugDrawable);
+      }
     }
   }
 
-  // draw the list
-  for (const Drawable* drawable : drawables | std::views::values) {
-    target.draw(*drawable, states);
-  }
+  // render the queue
+  target.draw(renderQueue, states);
 }
 
 }  // namespace loki::system

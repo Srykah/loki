@@ -15,13 +15,15 @@ class ServiceRegistry {
   bool registerService(T& service);
 
   template <core::ReflectedRuntimeObject T>
-  static T& get();
+  T& get() const;
+
+  static void setInstance(const ServiceRegistry* instance);
+  static const ServiceRegistry& getInstance();
 
  private:
-  inline static const ServiceRegistry* s_instance = nullptr;
+  static const ServiceRegistry* s_instance;
 
- private:
-  std::unordered_map<const core::TypeInfo*, core::BaseObject*> services;
+  std::unordered_map<core::ClassId, core::BaseObject*> services;
 };
 
 }  // namespace loki::system

@@ -2,6 +2,8 @@
 
 #include <fstream>
 
+#include "loki/core/services/ServiceRegistry.hpp"
+
 namespace loki::system {
 
 InputManager::InputManager()
@@ -16,14 +18,8 @@ InputManager::InputManager()
           {sf::Joystick::Axis::PovY, 0.f},
       }) {}
 
-void InputManager::loadConfigs(const std::filesystem::path& path) {
-#if 0
-  std::ifstream fs(path);
-  nlohmann::json json;
-  fs >> json;
-  json.at("configs").get_to(inputConfigs);
-  json.at("deadZones").get_to(deadZones);
-#endif
+void InputManager::registerAsAService(ServiceRegistry& serviceRegistry) {
+  serviceRegistry.registerService(*this);
 }
 
 void InputManager::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId) {
@@ -31,19 +27,22 @@ void InputManager::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerI
   inputStates[playerId] = {};
 }
 
-void InputManager::update(const sf::Time& delta) {
+void InputManager::update(sf::Time delta) {
+  if (needsInit) {
+    setPlayerConfig(PlayerConfig{inputConfigs.begin()->first});
+    needsInit = false;
+  }
+
   for (const auto& [playerId, playerConfig] : playerConfigs) {
     const auto& inputConfig = inputConfigs.at(playerConfig.configId);
     for (const auto& [inputName, inputTriggers] : inputConfig) {
-      bool active = false;
-      float value = 0.f;
+      InputTriggerStatus triggerStatus;
       for (const auto& trigger : inputTriggers) {
-        std::tie(active, value) = getTriggerStatus(trigger, playerConfig.inputMethod);
-        if (active) {
+        triggerStatus = trigger->getStatus(playerConfig.inputMethod);
+        if (triggerStatus.isActive)
           break;
-        }
       }
-      inputStates.at(playerId)[inputName].update(active, value);
+      inputStates.at(playerId)[inputName].update(triggerStatus);
     }
   }
 }
@@ -52,27 +51,8 @@ InputState InputManager::getInputState(const InputId& inputId, PlayerId playerId
   return inputStates.at(playerId).at(inputId);
 }
 
-std::pair<bool, float> InputManager::getTriggerStatus(const InputTrigger& trigger, InputMethod inputMethod) const {
-  if (std::holds_alternative<MouseButtonTrigger>(trigger) && inputMethod & InputMethod::Mouse) {
-    const auto& mouseButton = std::get<MouseButtonTrigger>(trigger);
-    return {sf::Mouse::isButtonPressed(mouseButton), 1.f};
-  } else if (std::holds_alternative<KeyTrigger>(trigger) && inputMethod & InputMethod::Keyboard) {
-    const auto& key = std::get<KeyTrigger>(trigger);
-    return {sf::Keyboard::isKeyPressed(key), 1.f};
-  } else if (std::holds_alternative<JoystickButtonTrigger>(trigger) && inputMethod & InputMethod::Joystick) {
-    const auto& joystickButton = std::get<JoystickButtonTrigger>(trigger);
-    return {sf::Joystick::isButtonPressed(getJoystickId(inputMethod), joystickButton), 1.f};
-  } else if (std::holds_alternative<JoystickAxisTrigger>(trigger) && inputMethod & InputMethod::Joystick) {
-    const auto& axisTrigger = std::get<JoystickAxisTrigger>(trigger);
-    auto axisPos = sf::Joystick::getAxisPosition(getJoystickId(inputMethod), axisTrigger.axis);
-    bool activeUp =
-        axisTrigger.direction != JoystickAxisTrigger::Direction::NEGATIVE && axisPos > deadZones.at(axisTrigger.axis);
-    bool activeDown =
-        axisTrigger.direction != JoystickAxisTrigger::Direction::POSITIVE && axisPos < -deadZones.at(axisTrigger.axis);
-    return {activeUp || activeDown, axisPos};
-  }
-
-  return {false, 0.f};
+float InputManager::getDeadZone(sf::Joystick::Axis axis) const {
+  return deadZones.at(axis);
 }
 
 }  // namespace loki::system
