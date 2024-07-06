@@ -45,7 +45,8 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
   sf::Vector2f tileSize = tileSizeAttr->tileSize;
   const float pixelsToMeters = body.getWorld()->getPixelsToMetersRatio();
   auto halfTileSizeInMeters = tileSize * 0.5f / pixelsToMeters;
-  for (auto&& [i, tileIndex] : data.tiles | std::views::enumerate) {
+  for (std::size_t i{0}; i < data.tiles.size(); ++i) {
+    int tileIndex = data.tiles[i];
     const auto* collTileAttr = data.tileset->getTileAttribute<CollisionTileAttribute>(tileIndex);
     if (!collTileAttr || !collTileAttr->isSolid)
       continue;

@@ -53,8 +53,8 @@ class OwnerPtr {
 
   friend BorrowerPtr<T>;
 
-  template <std::derived_from<T> U>
-  friend OwnerPtr<U> static_pointer_cast(OwnerPtr&& other);
+  template <class U>
+  friend OwnerPtr<U> static_pointer_cast(OwnerPtr&& ptrToBase);
 };
 
 /// BorrowerPtr

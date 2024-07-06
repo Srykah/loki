@@ -4,6 +4,8 @@
 
 namespace loki::system {
 
+class ResourceHolder;
+
 class BaseResource : public ResourceListener {
  public:
   enum class LoadingStatus {
@@ -18,7 +20,7 @@ class BaseResource : public ResourceListener {
   [[nodiscard]] LoadingStatus getLoadingStatus() const { return loadingStatus; }
 
  private:
-  friend class ResourceHolder;
+  friend ResourceHolder;
 
   void load(const std::filesystem::path& path) {
     loadImpl(path);

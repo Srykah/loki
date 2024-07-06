@@ -66,7 +66,7 @@ T* OwnerPtr<T>::operator->() const {
   return get();
 }
 
-template <class T, std::derived_from<T> U>
+template <class T, class U>
 OwnerPtr<U> static_pointer_cast(OwnerPtr<T>&& ptrToBase) {
   OwnerPtr<U> result;
   result.t = static_cast<U*>(ptrToBase.t);

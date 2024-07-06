@@ -1,8 +1,7 @@
 #pragma once
 
 #include <SFML/System/Time.hpp>
-#include <entt/entity/handle.hpp>
-#include <entt/entity/observer.hpp>
+#include <entt/entt.hpp>
 
 #include <loki/core/runtimeObject/BaseObject.hpp>
 #include <loki/system/ecs/ComponentTraits.hpp>
@@ -14,6 +13,7 @@ struct std::hash<entt::type_info> {
 
 namespace loki::system {
 
+class Actor;
 class Component;
 class DrawableComponent;
 
@@ -39,7 +39,7 @@ class ComponentRegistry : public core::BaseObject {
   const BaseComponentTraits* getTraits(const entt::type_info& type) const;
 
  private:
-  friend class Actor;
+  friend Actor;
   void* addComponentToActor(Actor& actor, const std::string& compName) const;
 
  private:

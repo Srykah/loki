@@ -3,6 +3,7 @@
 #include <ranges>
 
 #include <SFML/Graphics/RenderTarget.hpp>
+#include <yaml-cpp/node/impl.h>
 
 #include <loki/core/services/ServiceRegistry.hpp>
 #include <loki/system/ecs/ActorHierarchy.hpp>
@@ -23,9 +24,9 @@ Actor Scene::instanciateActor(Actor parent) {
 }
 
 void Scene::loadFromYaml(const YAML::Node& sceneNode) {
-  if (const YAML::Node& nameNode = sceneNode["name"]; nameNode && nameNode.Type() == YAML::NodeType::Scalar)
+  if (YAML::Node nameNode = sceneNode["name"]; nameNode && nameNode.Type() == YAML::NodeType::Scalar)
     name = nameNode.as<std::string>();
-  if (const YAML::Node& rootNode = sceneNode["root"]; rootNode && rootNode.Type() == YAML::NodeType::Map) {
+  if (YAML::Node rootNode = sceneNode["root"]; rootNode && rootNode.Type() == YAML::NodeType::Map) {
     root = instanciateActor();
     root.loadFromYaml(*this, rootNode);
   }
@@ -34,7 +35,7 @@ void Scene::loadFromYaml(const YAML::Node& sceneNode) {
 void Scene::update(sf::Time dt) {
   const auto& compReg = getService<ComponentRegistry>();
   // look among all component types in the registry
-  for (auto&& [_, storage] : registry.storage()) {
+  for (auto& storage : registry.storage() | std::views::values) {
     // get the componentTraits associated with this component type
     auto* compTraits = compReg.getTraits(storage.type());
     if (!compTraits)
@@ -42,7 +43,7 @@ void Scene::update(sf::Time dt) {
     // iterate over the storage instances
     for (entt::entity entity : storage) {
       // get the component as a Component*
-      auto& comp = compTraits->getAsComponent(storage.get(entity));
+      auto& comp = compTraits->getAsComponent(storage.value(entity));
       // update it (could do all steps at once)
       if (comp.getStatus() == Component::Status::CREATED)
         comp.startInit();
@@ -69,7 +70,7 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     // iterate over the storage instances
     for (entt::entity entity : storage) {
       // get as a Component
-      const auto& comp = compTraits->getAsComponent(storage.get(entity));
+      const auto& comp = compTraits->getAsComponent(storage.value(entity));
       // if it is not ready, ignore it
       if (comp.getStatus() != Component::Status::READY)
         continue;

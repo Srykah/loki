@@ -89,8 +89,8 @@ void toString(std::string& str, const void* obj, const EnumInfo& enumInfo) {
     }
   }
   // then, find the name of the enumerator with that value
-  auto it = std::ranges::find_if(
-      enumInfo.enumerators, [value](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.value == value; });
+  auto it = std::find_if(
+      enumInfo.enumerators.begin(), enumInfo.enumerators.end(), [value](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.value == value; });
   if (it != enumInfo.enumerators.end())
     str += it->name;
   else

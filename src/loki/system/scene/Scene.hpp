@@ -2,7 +2,6 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/System/Time.hpp>
-#include <entt/entity/registry.hpp>
 #include <yaml-cpp/node/node.h>
 
 #include <loki/system/ecs/Actor.hpp>

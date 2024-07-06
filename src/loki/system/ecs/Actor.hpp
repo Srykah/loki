@@ -3,12 +3,13 @@
 #include <span>
 
 #include <SFML/Graphics/Transformable.hpp>
-#include <entt/entity/handle.hpp>
+#include <entt/entt.hpp>
 #include <yaml-cpp/node/node.h>
 
 namespace loki::system {
 
 class Component;
+class Scene;
 
 class Actor {
  public:
@@ -36,7 +37,7 @@ class Actor {
   }
 
  private:
-  friend class Scene;
+  friend Scene;
   explicit Actor(entt::handle handle) : handle(handle) {}
   void loadFromYaml(Scene& scene, const YAML::Node& node);
 
