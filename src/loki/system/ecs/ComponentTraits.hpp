@@ -10,7 +10,7 @@ class DebugDrawable;
 
 class BaseComponentTraits {
  public:
-  virtual ~BaseComponentTraits() = default;
+  virtual ~BaseComponentTraits() {}
 
   virtual Component& getAsComponent(void* obj) const = 0;
   const Component& getAsComponent(const void* obj) const { return getAsComponent(const_cast<void*>(obj)); }
@@ -29,9 +29,9 @@ concept IsDebugDrawable = std::is_base_of_v<DebugDrawable, Comp>;
 
 template <class T>
   requires std::is_base_of_v<Component, T>
-class ComponentTraits : public BaseComponentTraits {
+class ComponentTraits final : public BaseComponentTraits {
  public:
-  ~ComponentTraits() override = default;
+  ~ComponentTraits() override {}
 
   Component& getAsComponent(void* obj) const override { return static_cast<Component&>(*static_cast<T*>(obj)); }
   bool isDrawable() const override { return details::IsDrawable<T>; }

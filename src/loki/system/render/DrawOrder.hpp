@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace loki::system {
 
 struct DrawOrder {
@@ -9,4 +11,4 @@ struct DrawOrder {
   auto operator<=>(const DrawOrder&) const = default;
 };
 
-}
+}  // namespace loki::system

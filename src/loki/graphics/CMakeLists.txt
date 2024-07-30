@@ -51,10 +51,5 @@ loki_create_module(graphics
   tiles/GraphicsTileMapComponent.cpp
 
   PUBLIC_DEPS
-  loki::core
-  loki::system
   loki::tiles
-  EnTT::EnTT
-  sfml-graphics
-  yaml-cpp::yaml-cpp
 )

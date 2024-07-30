@@ -13,7 +13,7 @@
 
 #define LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(Class) \
   template <>                                         \
-  struct ::loki::core::TypeInfoHolder<Class> {        \
+  struct loki::core::TypeInfoHolder<Class> {          \
     static const TypeInfo& getTypeInfo_internal() {   \
       static const TypeInfo TYPEINFO = []() {          \
         TypeInfo TYPEINFO { .info = ClassInfo { .id = #Class } }; \
@@ -22,7 +22,7 @@
 
 #define LOKI_REFLECTION_TEMPLATE_CLASS_BEGIN_NO_FACTORY(TemplateClass) \
   template <class T>                                                   \
-  struct ::loki::core::TypeInfoHolder<TemplateClass<T>> {              \
+  struct loki::core::TypeInfoHolder<TemplateClass<T>> {                \
     static const TypeInfo& getTypeInfo_internal() {                    \
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO { .info = ClassInfo { /* .id = std::format(#TemplateClass "<{}>", std::get<ClassInfo>(getTypeInfo<T>().info).id) */ \
@@ -30,7 +30,7 @@ TypeInfo TYPEINFO { .info = ClassInfo { /* .id = std::format(#TemplateClass "<{}
 ClassInfo& CLASSINFO = std::get<ClassInfo>(TYPEINFO.info);
 #define LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN_NO_FACTORY(TemplateClass) \
   template <class X, class Y>                                            \
-  struct ::loki::core::TypeInfoHolder<TemplateClass<X, Y>> {             \
+  struct loki::core::TypeInfoHolder<TemplateClass<X, Y>> {               \
     static const TypeInfo& getTypeInfo_internal() {                      \
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO {\

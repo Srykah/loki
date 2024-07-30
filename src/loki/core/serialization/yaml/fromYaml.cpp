@@ -12,7 +12,7 @@ namespace loki::core {
 using details::to;
 
 void fromYaml(const YAML::Node&, void* obj, const NullInfo&) {
-  to<nullptr_t>(obj) = nullptr;
+  to<std::nullptr_t>(obj) = nullptr;
 }
 
 void fromYaml(const YAML::Node& node, void* obj, const BooleanInfo&) {

@@ -1,4 +1,4 @@
-#include <print>
+#include <cstdlib>
 
 #include "Application.hpp"
 
@@ -8,7 +8,7 @@ int main() {
     app.run();
     return 0;
   } catch (const std::exception& e) {
-    std::println(stderr, "{}", e.what());
+    std::fprintf(stderr, e.what());
     return -1;
   }
 }

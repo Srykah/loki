@@ -33,6 +33,10 @@ function(loki_create_module module)
   cmake_parse_arguments(MODULE "" "" "HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS" ${ARGN})
   add_library(${module} ${MODULE_HEADERS} ${MODULE_SOURCES})
   add_library(loki::${module} ALIAS ${module})
+  target_sources(${module}
+    PUBLIC ${MODULE_HEADERS}
+    PRIVATE ${MODULE_SOURCES}
+  )
   target_link_libraries(
     ${module}
     PUBLIC "${MODULE_PUBLIC_DEPS}"
@@ -42,13 +46,6 @@ function(loki_create_module module)
     ${module}
     PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-  )
-  target_compile_features(${module} PUBLIC cxx_std_23)
-  set_target_properties(${module} PROPERTIES
-    CXX_STANDARD 23
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
-    COMPILE_WARNING_AS_ERROR YES
   )
   #loki_enable_lto_optional(${module})
   loki_add_module_prefix(${module})

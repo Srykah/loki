@@ -30,9 +30,6 @@ loki_create_module(physics
   world/PhysicsWorld.cpp
 
   PUBLIC_DEPS
-  loki::core
-  loki::system
+  loki::tiles
   box2d::box2d
-  EnTT::EnTT
-  sfml-graphics
-  yaml-cpp::yaml-cpp)
+)

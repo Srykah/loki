@@ -1,6 +1,8 @@
 #pragma once
 
+#include <cstdint>
 #include <functional>
+#include <string>
 #include <string_view>
 #include <variant>
 #include <vector>
@@ -99,7 +101,17 @@ struct PtrInfo {
 
 struct TypeInfo {
   Factory factory;
-  std::variant<NullInfo, BooleanInfo, IntegerInfo, FloatingPointInfo, EnumInfo, CharacterInfo, StringInfo, ListInfo, DictInfo, ClassInfo, PtrInfo>
+  std::variant<NullInfo,
+               BooleanInfo,
+               IntegerInfo,
+               FloatingPointInfo,
+               EnumInfo,
+               CharacterInfo,
+               StringInfo,
+               ListInfo,
+               DictInfo,
+               ClassInfo,
+               PtrInfo>
       info;
 };
 
@@ -113,4 +125,4 @@ template <Reflected T>
 const TypeInfo& getTypeInfo() {
   return TypeInfoHolder<T>::getTypeInfo_internal();
 }
-}
+}  // namespace loki::core

@@ -7,5 +7,4 @@ loki_create_module(editor
 
   PUBLIC_DEPS
   loki::system
-  ImGui-SFML::ImGui-SFML
 )

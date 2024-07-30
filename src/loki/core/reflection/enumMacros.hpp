@@ -5,7 +5,7 @@
 
 #define LOKI_REFLECTION_ENUM_BEGIN(Enum)            \
   template <>                                       \
-  struct ::loki::core::TypeInfoHolder<Enum> {       \
+  struct loki::core::TypeInfoHolder<Enum> {         \
     static const TypeInfo& getTypeInfo_internal() { \
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO {\

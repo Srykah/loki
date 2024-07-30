@@ -8,9 +8,5 @@ loki_create_module(tiles
   TileMapDataComponent.cpp
 
   PUBLIC_DEPS
-  loki::core
   loki::system
-  EnTT::EnTT
-  sfml-graphics
-  yaml-cpp::yaml-cpp
 )

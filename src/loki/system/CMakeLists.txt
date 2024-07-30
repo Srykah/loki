@@ -68,6 +68,4 @@ loki_create_module(system
   loki::core
   EnTT::EnTT
   ImGui-SFML::ImGui-SFML
-  sfml-graphics
-  yaml-cpp::yaml-cpp
 )

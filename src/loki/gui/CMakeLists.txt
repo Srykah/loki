@@ -42,8 +42,5 @@ loki_create_module(gui
   style/Stylesheet.cpp
 
   PUBLIC_DEPS
-  loki::core
   loki::graphics
-  sfml-graphics
-  #nlohmann_json::nlohmann_json
-  )
+)

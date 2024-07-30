@@ -15,6 +15,7 @@ include(cmake/LocalConfig.cmake OPTIONAL)
 # todo make it work
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, all dependencies will be linked to statically." FORCE)
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 
@@ -33,15 +34,15 @@ macro_ensure_out_of_source_build("You must use an out-of-source build.")
 
 # DEPENDENCIES
 
-set(SFML_STATIC_LIBRARIES $<NOT:${BUILD_SHARED_LIBS}>)
+set(SFML_STATIC_LIBRARIES ON)
 list(APPEND LOKI_DEPS_LIST
   #"nlohmann_json, 3.9"
-  "fmt, 8"
+  "fmt, 10.2"
   "SFML, 2.6, graphics window system audio"
   "ImGui-SFML, 2.6"
   "yaml-cpp, 0.8"
   "box2d, 2.4"
-  "EnTT, 3.10")
+  "EnTT, 3.13")
 loki_find_all_deps("${LOKI_DEPS_LIST}")
 
 # extern
