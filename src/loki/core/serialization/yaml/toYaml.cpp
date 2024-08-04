@@ -3,7 +3,7 @@
 #include <cassert>
 
 #include <loki/core/reflection/reflectionUtils.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/core/serialization/string/toString.hpp>
 
 namespace loki::core {

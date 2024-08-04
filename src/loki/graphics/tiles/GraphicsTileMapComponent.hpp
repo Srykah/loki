@@ -15,10 +15,11 @@ class GraphicsTileMapComponent : public system::Component, public system::Drawab
  private:
   GraphicsTileMap tileMap;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(GraphicsTileMapComponent)
+  LOKI_RTTI_CLASS_DECLARE(GraphicsTileMapComponent)
 };
 
 }  // namespace loki::graphics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::graphics::GraphicsTileMapComponent)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::graphics::GraphicsTileMapComponent)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::graphics::GraphicsTileMapComponent)

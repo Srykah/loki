@@ -1,7 +1,7 @@
 #include "InputTriggers.hpp"
 
-#include "InputManager.hpp"
-#include "loki/core/services/ServiceRegistry.hpp"
+#include <loki/core/services/ServiceRegistry.hpp>
+#include <loki/system/input/InputModule.hpp>
 
 namespace loki::system {
 
@@ -24,7 +24,7 @@ InputTriggerStatus JoystickAxisTrigger::getStatus(InputMethod inputMethod) const
     return {};
 
   float axisPos = sf::Joystick::getAxisPosition(getJoystickId(inputMethod), axis);
-  float deadZone = getService<InputManager>().getDeadZone(axis);
+  float deadZone = getService<InputModule>().getDeadZone(axis);
   bool activeUp = direction != JoystickAxisDirection::NEGATIVE && axisPos > deadZone;
   bool activeDown = direction != JoystickAxisDirection::POSITIVE && axisPos < -deadZone;
   return {activeUp || activeDown, axisPos};

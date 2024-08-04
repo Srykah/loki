@@ -1,13 +1,6 @@
-/*!
- * \file Window.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Window.hpp"
 
 #include <SFML/Window/Event.hpp>
-#include <imgui-SFML.h>
-#include <imgui.h>
 
 #include <loki/core/math/Rect.hpp>
 #include <loki/core/math/Vector2Ops.hpp>
@@ -19,12 +12,9 @@ void Window::create(sf::Vector2u size, std::string_view name, WindowStyle _style
     setMinimumSize(size);
     setInternalResolution(size);
   }
-  if (isImGuiEnabled)
-    ImGui::SFML::Shutdown(window);
   window.create(sf::VideoMode(size.x, size.y), sf::String::fromUtf8(name.begin(), name.end()),
                 toSFMLWindowStyle(_style));
   setView(getDefaultView());
-  isImGuiEnabled = ImGui::SFML::Init(window);
 }
 
 void Window::setInternalResolution(sf::Vector2u _internalResolution) {
@@ -66,9 +56,6 @@ const sf::View& Window::getDefaultView() const {
 bool Window::pollEvent(sf::Event& event) {
   auto res = window.pollEvent(event);
 
-  if (isImGuiEnabled)
-    ImGui::SFML::ProcessEvent(window, event);
-
   if (event.type == sf::Event::Resized) {
     guardMinimumSize();
     setView(window.getView());
@@ -79,13 +66,7 @@ bool Window::pollEvent(sf::Event& event) {
   return res;
 }
 
-void Window::update(sf::Time delta) {
-  if (!isImGuiEnabled)
-    return;
-
-  ImGui::SFML::Update(window, delta);
-  ImGui::ShowDemoWindow();  // todo remove this
-}
+void Window::update(sf::Time delta) {}
 
 void Window::clear(sf::Color color) {
   window.clear(color);
@@ -96,8 +77,6 @@ void Window::draw(const sf::Drawable& drawable, sf::RenderStates states) {
 }
 
 void Window::display() {
-  if (isImGuiEnabled)
-    ImGui::SFML::Render(window);
   window.display();
 }
 
@@ -136,8 +115,6 @@ void Window::guardMinimumSize() {
 
 void Window::close() {
   window.close();
-  if (isImGuiEnabled)
-    ImGui::SFML::Shutdown(window);
 }
 
 }  // namespace loki::system

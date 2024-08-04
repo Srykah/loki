@@ -12,11 +12,12 @@ struct TextureTileSetAttribute : public tiles::TileSetAttribute {
     holder.add(texture, &listener);
   }
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(TextureTileSetAttribute)
+  LOKI_RTTI_CLASS_DECLARE(TextureTileSetAttribute)
 };
 
 }  // namespace loki::graphics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::TileSetAttribute, loki::graphics::TextureTileSetAttribute)
-LOKI_REFLECTION_CLASS_FIELD(loki::graphics::TextureTileSetAttribute, texture)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::graphics::TextureTileSetAttribute)
+LOKI_REFLECTION_CLASS_FIELD(texture)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::graphics::TextureTileSetAttribute)

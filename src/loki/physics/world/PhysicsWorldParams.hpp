@@ -18,8 +18,8 @@ struct PhysicsWorldParams {
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::physics::PhysicsWorldParams)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsWorldParams, gravity)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsWorldParams, pixelsToMetersRatio)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsWorldParams, velocityIterationCount)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsWorldParams, positionIterationCount)
+LOKI_REFLECTION_CLASS_FIELD(gravity)
+LOKI_REFLECTION_CLASS_FIELD(pixelsToMetersRatio)
+LOKI_REFLECTION_CLASS_FIELD(velocityIterationCount)
+LOKI_REFLECTION_CLASS_FIELD(positionIterationCount)
 LOKI_REFLECTION_CLASS_END()

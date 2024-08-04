@@ -6,7 +6,7 @@
 
 namespace loki::gui {
 
-TextBox::TextBox(const system::InputManager& eventHandler,
+TextBox::TextBox(const system::InputModule& eventHandler,
                  std::string nextInputName)
     : eventHandler(eventHandler), nextInputName(std::move(nextInputName)) {}
 

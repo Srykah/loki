@@ -49,7 +49,7 @@ function(loki_create_module module)
   )
   #loki_enable_lto_optional(${module})
   loki_add_module_prefix(${module})
-  loki_install_module_headers(${module} FILES ${MODULE_HEADERS})
+  loki_install_module_headers(${module} HEADERS ${MODULE_HEADERS})
   target_link_libraries(loki INTERFACE loki::${module})
 endfunction()
 

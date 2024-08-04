@@ -13,7 +13,7 @@ enum class PhysicsBodyType : std::underlying_type_t<b2BodyType> {
 }
 
 LOKI_REFLECTION_ENUM_BEGIN(loki::physics::PhysicsBodyType)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsBodyType, Static)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsBodyType, Kinematic)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsBodyType, Dynamic)
+LOKI_REFLECTION_ENUMERATOR(Static)
+LOKI_REFLECTION_ENUMERATOR(Kinematic)
+LOKI_REFLECTION_ENUMERATOR(Dynamic)
 LOKI_REFLECTION_ENUM_END()

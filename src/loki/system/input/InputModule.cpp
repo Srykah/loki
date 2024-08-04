@@ -1,4 +1,4 @@
-#include "InputManager.hpp"
+#include "InputModule.hpp"
 
 #include <fstream>
 
@@ -6,7 +6,7 @@
 
 namespace loki::system {
 
-InputManager::InputManager()
+InputModule::InputModule()
     : deadZones({
           {sf::Joystick::Axis::X, 0.f},
           {sf::Joystick::Axis::Y, 0.f},
@@ -18,16 +18,16 @@ InputManager::InputManager()
           {sf::Joystick::Axis::PovY, 0.f},
       }) {}
 
-void InputManager::registerAsAService(ServiceRegistry& serviceRegistry) {
+void InputModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
   serviceRegistry.registerService(*this);
 }
 
-void InputManager::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId) {
+void InputModule::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId) {
   playerConfigs[playerId] = std::move(playerConfig);
   inputStates[playerId] = {};
 }
 
-void InputManager::update(sf::Time delta) {
+void InputModule::update(sf::Time delta) {
   if (needsInit) {
     setPlayerConfig(PlayerConfig{inputConfigs.begin()->first});
     needsInit = false;
@@ -47,11 +47,11 @@ void InputManager::update(sf::Time delta) {
   }
 }
 
-InputState InputManager::getInputState(const InputId& inputId, PlayerId playerId) const {
+InputState InputModule::getInputState(const InputId& inputId, PlayerId playerId) const {
   return inputStates.at(playerId).at(inputId);
 }
 
-float InputManager::getDeadZone(sf::Joystick::Axis axis) const {
+float InputModule::getDeadZone(sf::Joystick::Axis axis) const {
   return deadZones.at(axis);
 }
 

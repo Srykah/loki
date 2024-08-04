@@ -16,11 +16,12 @@ class PhysicsWorldComponent : public system::Component {
   PhysicsWorldParams worldParams;
   core::BorrowerPtr<PhysicsWorld> world;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(PhysicsWorldComponent)
+  LOKI_RTTI_CLASS_DECLARE(PhysicsWorldComponent)
 };
 
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::PhysicsWorldComponent)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsWorldComponent, worldParams)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PhysicsWorldComponent)
+LOKI_REFLECTION_CLASS_FIELD(worldParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsWorldComponent)

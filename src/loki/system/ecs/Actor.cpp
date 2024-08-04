@@ -1,7 +1,7 @@
 #include "Actor.hpp"
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
-#include <loki/core/runtimeObject/RuntimeObjectRegistry.hpp>
+#include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/serialization/yaml/fromYaml.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 #include <loki/system/ecs/ActorHierarchy.hpp>
@@ -47,6 +47,10 @@ std::span<Actor> Actor::getChildren() const {
 
 Actor::operator bool() const {
   return static_cast<bool>(handle);
+}
+
+Scene& Actor::getScene() const {
+  return *handle.registry()->ctx().get<Scene*>();
 }
 
 void Actor::loadFromYaml(Scene& scene, const YAML::Node& node) {

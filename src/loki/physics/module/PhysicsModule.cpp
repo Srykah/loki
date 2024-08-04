@@ -3,7 +3,7 @@
 #include <loki/core/services/ServiceRegistry.hpp>
 
 namespace loki::physics {
-void PhysicsModule::registerAsAService(system::ServiceRegistry& serviceRegistry) {
+void PhysicsModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
   serviceRegistry.registerService(*this);
 }
 

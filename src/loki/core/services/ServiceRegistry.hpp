@@ -3,18 +3,19 @@
 #include <unordered_map>
 
 #include <loki/core/reflection/TypeInfo.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
+#include <loki/core/rtti/rttiConcepts.hpp>
 
-namespace loki::system {
+namespace loki::core {
 
 class ServiceRegistry {
  public:
   ServiceRegistry();
 
-  template <core::ReflectedRuntimeObject T>
+  template <ReflectedRuntimeObject T>
   bool registerService(T& service);
 
-  template <core::ReflectedRuntimeObject T>
+  template <ReflectedRuntimeObject T>
   T& get() const;
 
   static void setInstance(const ServiceRegistry* instance);
@@ -23,10 +24,10 @@ class ServiceRegistry {
  private:
   static const ServiceRegistry* s_instance;
 
-  std::unordered_map<core::ClassId, core::BaseObject*> services;
+  std::unordered_map<ClassId, BaseObject*> services;
 };
 
-}  // namespace loki::system
+}  // namespace loki::core
 
 // shortcut
 namespace loki {

@@ -3,7 +3,7 @@
 #include <SFML/System/Time.hpp>
 #include <entt/entt.hpp>
 
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/ecs/ComponentTraits.hpp>
 
 template <>
@@ -46,12 +46,13 @@ class ComponentRegistry : public core::BaseObject {
   std::unordered_map<std::string, std::function<Component&(entt::handle)>> componentFactories;
   std::unordered_map<entt::type_info, std::unique_ptr<BaseComponentTraits>> componentTraits;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(ComponentRegistry)
+  LOKI_RTTI_CLASS_DECLARE(ComponentRegistry)
 };
 
 }  // namespace loki::system
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::ComponentRegistry)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::ComponentRegistry)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::ComponentRegistry)
 
 #include "ComponentRegistry.hxx"

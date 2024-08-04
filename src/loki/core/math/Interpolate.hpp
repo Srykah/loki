@@ -27,13 +27,13 @@ Out interpolate(const InterpolationData<In, Out>& data, const In& x);
 }  // namespace loki::core
 
 LOKI_REFLECTION_ENUM_BEGIN(loki::core::InterpolationType)
-LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, NONE)
-LOKI_REFLECTION_ENUMERATOR(loki::core::InterpolationType, LINEAR)
+LOKI_REFLECTION_ENUMERATOR(NONE)
+LOKI_REFLECTION_ENUMERATOR(LINEAR)
 LOKI_REFLECTION_ENUM_END()
 
 LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN(loki::core::InterpolationData)
-LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(loki::core::InterpolationData, type)
-LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(loki::core::InterpolationData, points)
-LOKI_REFLECTION_TEMPLATE_2_CLASS_END()
+LOKI_REFLECTION_CLASS_FIELD(type)
+LOKI_REFLECTION_CLASS_FIELD(points)
+LOKI_REFLECTION_CLASS_END()
 
 #include "Interpolate.hxx"

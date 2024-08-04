@@ -23,10 +23,10 @@ struct PhysicsFixtureParams {
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::physics::PhysicsFixtureParams)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, friction)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, restitution)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, restitutionThreshold)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, density)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, isSensor)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsFixtureParams, shapeParams)
+LOKI_REFLECTION_CLASS_FIELD(friction)
+LOKI_REFLECTION_CLASS_FIELD(restitution)
+LOKI_REFLECTION_CLASS_FIELD(restitutionThreshold)
+LOKI_REFLECTION_CLASS_FIELD(density)
+LOKI_REFLECTION_CLASS_FIELD(isSensor)
+LOKI_REFLECTION_CLASS_FIELD(shapeParams)
 LOKI_REFLECTION_CLASS_END()

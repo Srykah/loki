@@ -9,18 +9,18 @@ namespace loki::tiles {
 struct TileSetAttribute : public core::BaseObject {
  public:
   virtual void addChildResourcesToHolder(system::ResourceHolder& holder, system::ResourceListener& listener) {}
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(TileSetAttribute)
+  LOKI_RTTI_CLASS_DECLARE(TileSetAttribute)
 };
 
 struct SizeTileSetAttribute : public TileSetAttribute {
   sf::Vector2f tileSize;
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(SizeTileSetAttribute)
+  LOKI_RTTI_CLASS_DECLARE(SizeTileSetAttribute)
 };
 
 struct TileAttribute : public core::BaseObject {
  public:
   virtual void addChildResourcesToHolder(system::ResourceHolder& holder, system::ResourceListener& listener) {}
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(TileAttribute)
+  LOKI_RTTI_CLASS_DECLARE(TileAttribute)
 };
 
 struct TileSetData {
@@ -68,18 +68,21 @@ struct TileSetDataResource : public system::LogicResource<TileSetData> {
 }  // namespace loki::tiles
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::tiles::TileSetAttribute)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::tiles::TileSetAttribute)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileSetAttribute)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::TileSetAttribute, loki::tiles::SizeTileSetAttribute)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::SizeTileSetAttribute, tileSize)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::tiles::SizeTileSetAttribute)
+LOKI_REFLECTION_CLASS_FIELD(tileSize)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::tiles::SizeTileSetAttribute)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::tiles::TileAttribute)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::tiles::TileAttribute)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileAttribute)
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileSetData)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileSetData, tileSetAttributes)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileSetData, tilesAttributes)
+LOKI_REFLECTION_CLASS_FIELD(tileSetAttributes)
+LOKI_REFLECTION_CLASS_FIELD(tilesAttributes)
 LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileSetDataResource)

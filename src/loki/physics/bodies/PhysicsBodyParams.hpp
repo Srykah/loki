@@ -25,10 +25,10 @@ struct PhysicsBodyParams {
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::physics::PhysicsBodyParams)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, type)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, linearDamping)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, angularDamping)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, gravityScale)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, fixedRotation)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyParams, bullet)
+LOKI_REFLECTION_CLASS_FIELD(type)
+LOKI_REFLECTION_CLASS_FIELD(linearDamping)
+LOKI_REFLECTION_CLASS_FIELD(angularDamping)
+LOKI_REFLECTION_CLASS_FIELD(gravityScale)
+LOKI_REFLECTION_CLASS_FIELD(fixedRotation)
+LOKI_REFLECTION_CLASS_FIELD(bullet)
 LOKI_REFLECTION_CLASS_END()

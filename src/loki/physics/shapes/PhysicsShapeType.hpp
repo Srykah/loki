@@ -18,8 +18,8 @@ enum class PhysicsShapeType : std::underlying_type_t<b2Shape::Type> {
 }
 
 LOKI_REFLECTION_ENUM_BEGIN(loki::physics::PhysicsShapeType)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsShapeType, Circle)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsShapeType, Edge)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsShapeType, Polygon)
-LOKI_REFLECTION_ENUMERATOR(loki::physics::PhysicsShapeType, Chain)
+LOKI_REFLECTION_ENUMERATOR(Circle)
+LOKI_REFLECTION_ENUMERATOR(Edge)
+LOKI_REFLECTION_ENUMERATOR(Polygon)
+LOKI_REFLECTION_ENUMERATOR(Chain)
 LOKI_REFLECTION_ENUM_END()

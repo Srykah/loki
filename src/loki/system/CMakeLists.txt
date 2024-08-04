@@ -1,5 +1,7 @@
 loki_create_module(system
   HEADERS
+  # app
+  app/ApplicationInterface.hpp
   # ecs
   ecs/Actor.hpp
   ecs/Component.hpp
@@ -14,7 +16,7 @@ loki_create_module(system
   fs/FileManager.hpp
   # input
   input/InputConfig.hpp
-  input/InputManager.hpp
+  input/InputModule.hpp
   input/InputMethod.hpp
   input/InputState.hpp
   input/InputTriggers.hpp
@@ -25,6 +27,7 @@ loki_create_module(system
   render/Drawable.hpp
   render/DrawOrder.hpp
   render/RenderQueue.hpp
+  render/RendererModule.hpp
   # res
   res/LogicResource.hpp
   res/Resource.hpp
@@ -36,9 +39,13 @@ loki_create_module(system
   # scene
   scene/Scene.hpp
   scene/SceneManager.hpp
+  # scheduler
+  scheduler/ScheduledItem.hpp
+  scheduler/Scheduler.hpp
   # window
   window/Camera.hpp
   window/Window.hpp
+  window/WindowModule.hpp
   window/WindowStyle.hpp
 
   SOURCES
@@ -49,19 +56,23 @@ loki_create_module(system
   # fs
   fs/FileManager.cpp
   # input
-  input/InputManager.cpp
+  input/InputModule.cpp
   input/InputMethod.cpp
   input/InputTriggers.cpp
   # render
   render/RenderQueue.cpp
+  render/RendererModule.cpp
   # res
   res/ResourceHolder.cpp
   # scene
   scene/Scene.cpp
   scene/SceneManager.cpp
+  # scheduler
+  scheduler/Scheduler.cpp
   # window
   window/Camera.cpp
   window/Window.cpp
+  window/WindowModule.cpp
   window/WindowStyle.cpp
 
   PUBLIC_DEPS

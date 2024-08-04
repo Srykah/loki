@@ -2,7 +2,7 @@
 
 #include <loki/core/reflection/enumMacros.hpp>
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/input/InputMethod.hpp>
 
 namespace loki::system {
@@ -22,7 +22,7 @@ class InputTrigger : public core::BaseObject {
  public:
   virtual InputTriggerStatus getStatus(InputMethod inputMethod) const = 0;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(InputTrigger)
+  LOKI_RTTI_CLASS_DECLARE(InputTrigger)
 };
 
 class KeyTrigger : public InputTrigger {
@@ -32,7 +32,7 @@ class KeyTrigger : public InputTrigger {
  private:
   sf::Keyboard::Scancode key = sf::Keyboard::Scancode::Unknown;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(KeyTrigger)
+  LOKI_RTTI_CLASS_DECLARE(KeyTrigger)
 };
 
 class MouseButtonTrigger : public InputTrigger {
@@ -42,7 +42,7 @@ class MouseButtonTrigger : public InputTrigger {
  private:
   sf::Mouse::Button button = sf::Mouse::ButtonCount;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(MouseButtonTrigger)
+  LOKI_RTTI_CLASS_DECLARE(MouseButtonTrigger)
 };
 
 class JoystickAxisTrigger : public InputTrigger {
@@ -53,7 +53,7 @@ class JoystickAxisTrigger : public InputTrigger {
   sf::Joystick::Axis axis = sf::Joystick::X;
   JoystickAxisDirection direction = JoystickAxisDirection::BOTH;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(JoystickAxisTrigger)
+  LOKI_RTTI_CLASS_DECLARE(JoystickAxisTrigger)
 };
 
 class JoystickButtonTrigger : public InputTrigger {
@@ -63,34 +63,39 @@ class JoystickButtonTrigger : public InputTrigger {
  private:
   unsigned int button = -1;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(JoystickButtonTrigger)
+  LOKI_RTTI_CLASS_DECLARE(JoystickButtonTrigger)
 };
 
 }  // namespace loki::system
 
 LOKI_REFLECTION_ENUM_BEGIN(loki::system::JoystickAxisDirection)
-LOKI_REFLECTION_ENUMERATOR(loki::system::JoystickAxisDirection, NEGATIVE)
-LOKI_REFLECTION_ENUMERATOR(loki::system::JoystickAxisDirection, BOTH)
-LOKI_REFLECTION_ENUMERATOR(loki::system::JoystickAxisDirection, POSITIVE)
+LOKI_REFLECTION_ENUMERATOR(NEGATIVE)
+LOKI_REFLECTION_ENUMERATOR(BOTH)
+LOKI_REFLECTION_ENUMERATOR(POSITIVE)
 LOKI_REFLECTION_ENUM_END()
 
 LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(loki::system::InputTrigger)
 LOKI_REFLECTION_CLASS_PARENT(loki::system::InputTrigger, loki::core::BaseObject)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::InputTrigger)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::InputTrigger)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::InputTrigger, loki::system::KeyTrigger)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::KeyTrigger, key)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::KeyTrigger)
+LOKI_REFLECTION_CLASS_FIELD(key)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::KeyTrigger)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::InputTrigger, loki::system::MouseButtonTrigger)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::MouseButtonTrigger, button)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::MouseButtonTrigger)
+LOKI_REFLECTION_CLASS_FIELD(button)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::MouseButtonTrigger)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::InputTrigger, loki::system::JoystickAxisTrigger)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::JoystickAxisTrigger, axis)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::JoystickAxisTrigger, direction)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::JoystickAxisTrigger)
+LOKI_REFLECTION_CLASS_FIELD(axis)
+LOKI_REFLECTION_CLASS_FIELD(direction)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::JoystickAxisTrigger)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::InputTrigger, loki::system::JoystickButtonTrigger)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::JoystickButtonTrigger, button)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::JoystickButtonTrigger)
+LOKI_REFLECTION_CLASS_FIELD(button)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::JoystickButtonTrigger)

@@ -1,6 +1,8 @@
 #include "ServiceRegistry.hpp"
 
-namespace loki::system {
+#include <cassert>
+
+namespace loki::core {
 
 const ServiceRegistry* ServiceRegistry::s_instance = nullptr;
 
@@ -17,4 +19,4 @@ const ServiceRegistry& ServiceRegistry::getInstance() {
   return *s_instance;
 }
 
-}  // namespace loki::system
+}  // namespace loki::core

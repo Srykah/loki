@@ -36,6 +36,8 @@ class Actor {
     return handle.try_get<Comp>();
   }
 
+  [[nodiscard]] Scene& getScene() const;
+
  private:
   friend Scene;
   explicit Actor(entt::handle handle) : handle(handle) {}

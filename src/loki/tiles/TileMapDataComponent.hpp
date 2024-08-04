@@ -12,11 +12,12 @@ class TileMapDataComponent : public system::Component {
  private:
   system::ResourceHandle<TileMapDataResource> tileMapData;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(TileMapDataComponent)
+  LOKI_RTTI_CLASS_DECLARE(TileMapDataComponent)
 };
 
 }  // namespace loki::tiles
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::tiles::TileMapDataComponent)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileMapDataComponent, tileMapData)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::tiles::TileMapDataComponent)
+LOKI_REFLECTION_CLASS_FIELD(tileMapData)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileMapDataComponent)

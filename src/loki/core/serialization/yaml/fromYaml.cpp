@@ -3,7 +3,7 @@
 #include <cassert>
 
 #include <loki/core/reflection/reflectionUtils.hpp>
-#include <loki/core/runtimeObject/RuntimeObjectRegistry.hpp>
+#include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/serialization/string/toString.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 
@@ -165,7 +165,7 @@ void fromYaml(const YAML::Node& node, void* obj, const PtrInfo& ptrInfo) {
     assert(actualTypeInfo);
     TmpObj data = actualTypeInfo->factory(obj, TmpObj::Ownership::NonOwned);
     fromYaml(node, data.obj, *actualTypeInfo);
-    ptrInfo.setter(obj, asAncestor(data.obj, actualTypeInfo, std::get<ClassInfo>(ptrInfo.innerType.info).id));
+    ptrInfo.setter(obj, details::asAncestor(data.obj, actualTypeInfo, std::get<ClassInfo>(ptrInfo.innerType.info).id));
   } else {
     TmpObj inner = ptrInfo.emplacer(obj);
     fromYaml(node, inner.obj, ptrInfo.innerType);

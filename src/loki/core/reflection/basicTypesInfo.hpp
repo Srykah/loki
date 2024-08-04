@@ -398,6 +398,6 @@ struct TypeInfoHolder<std::shared_ptr<T>> {
 }  // namespace loki::core
 
 LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN(std::pair)
-LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(std::pair, first)
-LOKI_REFLECTION_TEMPLATE_2_CLASS_FIELD(std::pair, second)
+LOKI_REFLECTION_CLASS_FIELD(first)
+LOKI_REFLECTION_CLASS_FIELD(second)
 LOKI_REFLECTION_CLASS_END()

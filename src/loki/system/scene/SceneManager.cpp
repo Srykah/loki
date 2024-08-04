@@ -36,12 +36,4 @@ void SceneManager::loadSceneFromYamlFile(const std::filesystem::path& scenePath)
   loadSceneFromYaml(sceneNode);
 }
 
-void SceneManager::update(sf::Time dt) {
-  scene->update(dt);
-}
-
-void SceneManager::draw(Window& window) const {
-  window.draw(*scene);
-}
-
 }  // namespace loki::system

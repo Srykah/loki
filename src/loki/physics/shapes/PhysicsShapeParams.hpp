@@ -6,7 +6,7 @@
 #include <box2d/b2_polygon_shape.h>
 
 #include <loki/core/reflection/classMacros.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 
 #include "PhysicsShapeType.hpp"
 
@@ -16,7 +16,7 @@ struct PhysicsShapeParams : public core::BaseObject {
   virtual PhysicsShapeType getType() const = 0;
   virtual const b2Shape* getB2Shape() const = 0;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(PhysicsShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(PhysicsShapeParams)
 };
 
 struct CircleShapeParams final : public PhysicsShapeParams {
@@ -25,7 +25,7 @@ struct CircleShapeParams final : public PhysicsShapeParams {
 
   b2CircleShape circleShape;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(CircleShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(CircleShapeParams)
 };
 
 struct EdgeShapeParams final : public PhysicsShapeParams {
@@ -34,7 +34,7 @@ struct EdgeShapeParams final : public PhysicsShapeParams {
 
   b2EdgeShape edgeShape;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(EdgeShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(EdgeShapeParams)
 };
 
 struct PolygonShapeParams final : public PhysicsShapeParams {
@@ -43,7 +43,7 @@ struct PolygonShapeParams final : public PhysicsShapeParams {
 
   b2PolygonShape polygonShape;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(PolygonShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(PolygonShapeParams)
 };
 
 struct ChainShapeParams final : public PhysicsShapeParams {
@@ -52,14 +52,15 @@ struct ChainShapeParams final : public PhysicsShapeParams {
 
   b2ChainShape chainShape;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(ChainShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(ChainShapeParams)
 };
 
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_PARENT(loki::physics::PhysicsShapeParams, loki::core::BaseObject)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PhysicsShapeParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::CircleShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
@@ -76,7 +77,8 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     [](void* obj, const void* data) -> void {
       static_cast<loki::physics::CircleShapeParams*>(obj)->circleShape.m_radius = *static_cast<const float*>(data);
     })
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::CircleShapeParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::CircleShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::EdgeShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
@@ -92,7 +94,8 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     [](void* obj, const void* data) -> void {
       static_cast<loki::physics::EdgeShapeParams*>(obj)->edgeShape.m_radius = *static_cast<const float*>(data);
     })
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::EdgeShapeParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::EdgeShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::PolygonShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
@@ -109,7 +112,8 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     [](void* obj, const void* data) -> void {
       static_cast<loki::physics::PolygonShapeParams*>(obj)->polygonShape.m_radius = *static_cast<const float*>(data);
     })
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PolygonShapeParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::PolygonShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::ChainShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
@@ -126,4 +130,5 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     [](void* obj, const void* data) -> void {
       static_cast<loki::physics::ChainShapeParams*>(obj)->chainShape.m_radius = *static_cast<const float*>(data);
     })
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::ChainShapeParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::ChainShapeParams)

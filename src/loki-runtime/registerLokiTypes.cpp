@@ -1,10 +1,12 @@
 #include "registerLokiTypes.hpp"
 
-#include <loki/core/runtimeObject/RuntimeObjectRegistry.hpp>
+#include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
-#include <loki/system/input/InputManager.hpp>
+#include <loki/system/input/InputModule.hpp>
 #include <loki/system/input/InputTriggers.hpp>
+#include <loki/system/render/RendererModule.hpp>
+#include <loki/system/window/WindowModule.hpp>
 #include <loki/graphics/sprites/SpriteComponent.hpp>
 #include <loki/graphics/tiles/GraphicsTileMapComponent.hpp>
 #include <loki/graphics/tiles/TextureTileSetAttribute.hpp>
@@ -41,7 +43,9 @@ void registerLokiRuntimeTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry
 
 void registerLokiModules(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
   // system
-  runtimeObjectRegistry.registerClass<system::InputManager>();
+  runtimeObjectRegistry.registerClass<system::WindowModule>();
+  runtimeObjectRegistry.registerClass<system::InputModule>();
+  runtimeObjectRegistry.registerClass<system::RendererModule>();
 
   // physics
   runtimeObjectRegistry.registerClass<physics::PhysicsModule>();

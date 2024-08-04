@@ -23,8 +23,8 @@ struct SpriteDataResource : public system::LogicResource<SpriteData> {
 }  // namespace loki::graphics
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::graphics::SpriteData)
-LOKI_REFLECTION_CLASS_FIELD(loki::graphics::SpriteData, animations)
-LOKI_REFLECTION_CLASS_FIELD(loki::graphics::SpriteData, texture)
+LOKI_REFLECTION_CLASS_FIELD(animations)
+LOKI_REFLECTION_CLASS_FIELD(texture)
 LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::graphics::SpriteDataResource)

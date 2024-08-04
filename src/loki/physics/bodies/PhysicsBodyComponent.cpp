@@ -6,12 +6,7 @@
 namespace loki::physics {
 
 void PhysicsBodyComponent::onStartInit() {
-  body = getService<system::SceneManager>()
-             .getCurrentScene()
-             ->getRoot()
-             .getComponent<PhysicsWorldComponent>()
-             ->getWorld()
-             ->createBody(auto{bodyParams});
+  body = getScene().getRoot().getComponent<PhysicsWorldComponent>()->getWorld()->createBody(auto{bodyParams});
   for (const auto& fixtureParam : fixtureParams) {
     body.createFixture(auto{fixtureParam});
   }

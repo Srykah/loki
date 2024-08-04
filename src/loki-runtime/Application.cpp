@@ -4,12 +4,10 @@
 
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Sleep.hpp>
-#include <SFML/Window/Event.hpp>
 #include <dylib/dylib.hpp>
 #include <yaml-cpp/node/parse.h>
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
-#include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/core/serialization/yaml/fromYaml.hpp>
 
 #include "registerLokiTypes.hpp"
@@ -25,6 +23,14 @@ void Application::run() {
   loop();
 }
 
+std::span<std::unique_ptr<system::GameModule>> Application::getGameModules() {
+  return gameModules;
+}
+
+void Application::exit() {
+  isRunning = false;
+}
+
 void Application::init() {
   registerLokiRuntimeTypes(runtimeObjectRegistry);
   registerLokiModules(runtimeObjectRegistry);
@@ -38,6 +44,7 @@ void Application::registerServices() {
   serviceRegistry.registerService(componentRegistry);
   serviceRegistry.registerService(resourceHolder);
   serviceRegistry.registerService(sceneManager);
+  serviceRegistry.registerService<ApplicationInterface>(*this);
 }
 
 void Application::loadGame(const std::filesystem::path& path) {
@@ -55,11 +62,6 @@ void Application::loadGame(const std::filesystem::path& path) {
   gameScriptsLibrary->get_function<void(void*, void*)>("registerCustomComponents")(runtimeObjectRegistryAsVoidPtr,
                                                                                    componentRegistryAsVoidPtr);
 
-  sf::Vector2u windowSize;
-  core::fromYaml(node["windowSize"], windowSize);
-  auto gameName = node["gameName"].as<std::string>();
-  window.create(windowSize, gameName);
-
   core::fromYaml(node["gameModules"], gameModules);
   for (const auto& gameModule : gameModules)
     gameModule->registerAsAService(serviceRegistry);
@@ -69,33 +71,20 @@ void Application::loadGame(const std::filesystem::path& path) {
   sceneManager.setScenePaths(std::move(scenePaths));
 
   sceneManager.loadScene(node["firstSceneName"].as<std::string>());
+  scheduler.init();
 }
 
 void Application::loop() {
   sf::Clock clock;
   sf::Time timeSinceLastFrame;
-  bool play = true;
-  while (play) {
+  while (isRunning) {
     timeSinceLastFrame += clock.restart();
     for (; timeSinceLastFrame >= TIME_PER_FRAME; timeSinceLastFrame -= TIME_PER_FRAME) {
-      sf::Event event;
-      while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-          play = false;
-        }
-      }
       resourceHolder.load();
-      window.update(TIME_PER_FRAME);
-      for (auto& gameModule : gameModules)
-        gameModule->update(TIME_PER_FRAME);
-      sceneManager.update(TIME_PER_FRAME);
-      window.clear(sf::Color::Black);
-      sceneManager.draw(window);
-      window.display();
+      scheduler.update(TIME_PER_FRAME);
     }
     sf::sleep((TIME_PER_FRAME - timeSinceLastFrame) / 2.f);
   }
-  window.close();
 }
 
 }  // namespace loki::app

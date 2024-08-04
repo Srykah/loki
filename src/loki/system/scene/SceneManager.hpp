@@ -3,10 +3,8 @@
 #include <filesystem>
 #include <map>
 
-#include <SFML/System/Time.hpp>
-
 #include <loki/core/reflection/classMacros.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/scene/Scene.hpp>
 
 namespace YAML {
@@ -23,9 +21,6 @@ class SceneManager : public core::BaseObject {
   void setScenePaths(std::map<std::string, std::filesystem::path>&& scenePaths);
   void loadScene(const std::string& sceneName);
 
-  void update(sf::Time dt);
-  void draw(Window& window) const;
-
  private:
   void loadSceneFromYaml(const YAML::Node& sceneNode);
   void loadSceneFromYamlString(const std::string& sceneData);
@@ -35,9 +30,10 @@ class SceneManager : public core::BaseObject {
   std::map<std::string, std::filesystem::path> scenePaths;
   std::unique_ptr<Scene> scene;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(SceneManager)
+  LOKI_RTTI_CLASS_DECLARE(SceneManager)
 };
 }  // namespace loki::system
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::SceneManager)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::SceneManager)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::SceneManager)

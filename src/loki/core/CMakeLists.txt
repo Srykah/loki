@@ -25,6 +25,11 @@ loki_create_module(core
   reflection/reflectionUtils.hpp
   reflection/sfmlTypesInfo.hpp
   reflection/TypeInfo.hpp
+  # rtti
+  rtti/BaseObject.hpp
+  rtti/rttiConcepts.hpp
+  rtti/rttiMacros.hpp
+  rtti/RuntimeObjectRegistry.hpp
   # serialization
   serialization/string/toString.hpp
   serialization/yaml/fromYaml.hpp
@@ -40,9 +45,6 @@ loki_create_module(core
   # tpl
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
-  # runtimeObject
-  runtimeObject/BaseObject.hpp
-  runtimeObject/RuntimeObjectRegistry.hpp
   # utils
   utils/IterAdapters.hpp
   utils/Literals.hpp
@@ -61,6 +63,8 @@ loki_create_module(core
   # i18n
   i18n/I18nData.cpp
   #]]
+  # rtti
+  rtti/RuntimeObjectRegistry.cpp
   # serialization
   serialization/string/toString.cpp
   serialization/yaml/fromYaml.cpp
@@ -71,8 +75,6 @@ loki_create_module(core
   states/StateMachine.cpp
   # tpl
   tpl/TemplateEngine.cpp
-  # runtimeObject
-  runtimeObject/RuntimeObjectRegistry.cpp
   # utils
   utils/Random.cpp
   utils/VertexArrayIterator.cpp

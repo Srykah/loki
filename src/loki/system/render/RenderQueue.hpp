@@ -16,6 +16,8 @@ class RenderQueue final : public sf::Drawable {
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  void clear();
+
  private:
   struct DrawList {
     std::vector<const system::Drawable*> drawables;

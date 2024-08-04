@@ -23,4 +23,8 @@ void RenderQueue::draw(sf::RenderTarget& target, sf::RenderStates states) const 
   }
 }
 
+void RenderQueue::clear() {
+  drawLists.clear();
+}
+
 }  // namespace loki::system

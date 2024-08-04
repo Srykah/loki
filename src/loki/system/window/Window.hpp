@@ -1,18 +1,12 @@
-/*!
- * \file Window.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
-#include <loki/core/runtimeObject/BaseObject.hpp>
 #include <loki/system/window/WindowStyle.hpp>
 
 namespace loki::system {
 
-class Window : public core::BaseObject {
+class Window {
  public:
   void create(sf::Vector2u size,
               std::string_view name,
@@ -45,12 +39,6 @@ class Window : public core::BaseObject {
   sf::Vector2u internalResolution;
   sf::Vector2u minimumSize;
   WindowStyle style = WindowStyle::DEFAULT;
-  bool isImGuiEnabled = false;
-
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(Window)
 };
 
 }  // namespace loki::system
-
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::Window)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::Window)

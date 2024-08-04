@@ -23,11 +23,12 @@ class PhysicsTileMapComponent : public system::Component, public system::DebugDr
   PhysicsBodyParams bodyParams;
   PhysicsBody body;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(PhysicsTileMapComponent)
+  LOKI_RTTI_CLASS_DECLARE(PhysicsTileMapComponent)
 };
 
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::PhysicsTileMapComponent)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsTileMapComponent, bodyParams)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PhysicsTileMapComponent)
+LOKI_REFLECTION_CLASS_FIELD(bodyParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsTileMapComponent)

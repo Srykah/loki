@@ -3,7 +3,7 @@
 #include <filesystem>
 #include <unordered_map>
 
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/core/utils/Memory.hpp>
 #include <loki/system/res/Resource.hpp>
 #include <loki/system/res/ResourceHandle.hpp>
@@ -28,12 +28,13 @@ class ResourceHolder : public core::BaseObject {
   std::unordered_map<std::filesystem::path, ResPtr> resources;
   std::unordered_map<ResourceListener*, ListenerData> listeners;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(ResourceHolder)
+  LOKI_RTTI_CLASS_DECLARE(ResourceHolder)
 };
 
 }  // namespace loki::system
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::ResourceHolder)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::ResourceHolder)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::ResourceHolder)
 
 #include "ResourceHolder.hxx"

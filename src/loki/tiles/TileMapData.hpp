@@ -23,9 +23,9 @@ struct TileMapDataResource : public system::LogicResource<TileMapData> {
 }  // namespace loki::tiles
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileMapData)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileMapData, tileset)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileMapData, mapSize)
-LOKI_REFLECTION_CLASS_FIELD(loki::tiles::TileMapData, tiles)
+LOKI_REFLECTION_CLASS_FIELD(tileset)
+LOKI_REFLECTION_CLASS_FIELD(mapSize)
+LOKI_REFLECTION_CLASS_FIELD(tiles)
 LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileMapDataResource)

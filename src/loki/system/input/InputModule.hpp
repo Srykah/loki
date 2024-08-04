@@ -5,7 +5,7 @@
 #include <SFML/Window.hpp>
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/input/InputConfig.hpp>
 #include <loki/system/input/InputState.hpp>
 #include <loki/system/input/PlayerConfig.hpp>
@@ -13,10 +13,10 @@
 
 namespace loki::system {
 
-class InputManager final : public GameModule {
+class InputModule final : public GameModule {
  public:
-  InputManager();
-  void registerAsAService(ServiceRegistry& serviceRegistry) override;
+  InputModule();
+  void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
 
   void setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId = 0);
 
@@ -36,12 +36,13 @@ class InputManager final : public GameModule {
   // fixme
   bool needsInit = true;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(InputManager)
+  LOKI_RTTI_CLASS_DECLARE(InputModule)
 };
 
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::system::InputManager)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::InputManager, inputConfigs)
-LOKI_REFLECTION_CLASS_FIELD(loki::system::InputManager, deadZones)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::system::InputManager)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::system::InputModule)
+LOKI_REFLECTION_CLASS_FIELD(inputConfigs)
+LOKI_REFLECTION_CLASS_FIELD(deadZones)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::system::InputModule)

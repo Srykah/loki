@@ -1,14 +1,16 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/System/Time.hpp>
 #include <yaml-cpp/node/node.h>
 
 #include <loki/system/ecs/Actor.hpp>
 
 namespace loki::system {
+class BaseComponentTraits;
 
-class Scene final : public sf::Drawable {
+using ComponentVisitor = std::function<void(const BaseComponentTraits&, void*)>;
+using ComponentTraitsFilter = std::function<bool(const BaseComponentTraits&)>;
+
+class Scene final {
  public:
   Scene();
 
@@ -16,11 +18,12 @@ class Scene final : public sf::Drawable {
 
   [[nodiscard]] Actor instanciateActor(Actor parent = {});
 
+  void visitComponents(ComponentVisitor&& compVisitor);
+  void visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& compVisitor);
+
  private:
   friend class SceneManager;
   void loadFromYaml(const YAML::Node& sceneNode);
-  void update(sf::Time dt);
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
   std::string name;

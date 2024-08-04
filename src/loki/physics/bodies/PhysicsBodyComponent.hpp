@@ -27,12 +27,13 @@ class PhysicsBodyComponent : public system::Component, public system::DebugDrawa
   std::vector<PhysicsFixtureParams> fixtureParams;
   PhysicsBody body;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(PhysicsBodyComponent)
+  LOKI_RTTI_CLASS_DECLARE(PhysicsBodyComponent)
 };
 
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::PhysicsBodyComponent)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyComponent, bodyParams)
-LOKI_REFLECTION_CLASS_FIELD(loki::physics::PhysicsBodyComponent, fixtureParams)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::physics::PhysicsBodyComponent)
+LOKI_REFLECTION_CLASS_FIELD(bodyParams)
+LOKI_REFLECTION_CLASS_FIELD(fixtureParams)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsBodyComponent)

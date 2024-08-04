@@ -11,9 +11,10 @@
 TypeInfo TYPEINFO {\
 .factory = details::getBasicFactory<Enum>(), \
 .info = EnumInfo { .backingType = std::get<IntegerInfo>(getTypeInfo<std::underlying_type_t<Enum>>().info) } }; \
-EnumInfo& ENUMINFO = std::get<EnumInfo>(TYPEINFO.info);
-#define LOKI_REFLECTION_ENUMERATOR(Enum, Enumerator) \
-  ENUMINFO.enumerators.emplace_back(#Enumerator, static_cast<std::int64_t>(Enum::Enumerator));
+EnumInfo& ENUMINFO = std::get<EnumInfo>(TYPEINFO.info); \
+using ENUMNAME = Enum;
+#define LOKI_REFLECTION_ENUMERATOR(Enumerator) \
+  ENUMINFO.enumerators.emplace_back(#Enumerator, static_cast<std::int64_t>(ENUMNAME::Enumerator));
 
 #define LOKI_REFLECTION_ENUM_END() \
   return TYPEINFO;                 \

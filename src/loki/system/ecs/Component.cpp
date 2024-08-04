@@ -1,11 +1,15 @@
 #include "Component.hpp"
 
-#include "Actor.hpp"
+#include <loki/system/ecs/Actor.hpp>
 
 namespace loki::system {
 
 Actor Component::getActor() const {
   return actor;
+}
+
+Scene& Component::getScene() const {
+  return actor.getScene();
 }
 
 const sf::Transform& Component::getLocalTransform() const {

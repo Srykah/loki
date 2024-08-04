@@ -38,5 +38,5 @@ class ResourceHandle {
 }  // namespace loki::system
 
 LOKI_REFLECTION_TEMPLATE_CLASS_BEGIN(loki::system::ResourceHandle)
-LOKI_REFLECTION_TEMPLATE_CLASS_FIELD(loki::system::ResourceHandle, path)
-LOKI_REFLECTION_TEMPLATE_CLASS_END()
+LOKI_REFLECTION_CLASS_FIELD(path)
+LOKI_REFLECTION_CLASS_END()

@@ -17,11 +17,12 @@ class SpriteComponent : public system::Component, public system::Drawable {
   system::ResourceHandle<SpriteDataResource> spriteData;
   Sprite sprite;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(SpriteComponent)
+  LOKI_RTTI_CLASS_DECLARE(SpriteComponent)
 };
 
 }  // namespace loki::graphics
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::graphics::SpriteComponent)
-LOKI_REFLECTION_CLASS_FIELD(loki::graphics::SpriteComponent, spriteData)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::graphics::SpriteComponent)
+LOKI_REFLECTION_CLASS_FIELD(spriteData)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::graphics::SpriteComponent)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <loki/core/runtimeObject/RuntimeObjectRegistry.hpp>
+#include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
 
 namespace loki::app {

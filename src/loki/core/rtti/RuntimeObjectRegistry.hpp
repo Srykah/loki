@@ -3,7 +3,8 @@
 #include <cassert>
 
 #include <loki/core/reflection/TypeInfo.hpp>
-#include <loki/core/runtimeObject/BaseObject.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
+#include <loki/core/rtti/rttiConcepts.hpp>
 
 namespace loki::core {
 
@@ -25,10 +26,11 @@ class RuntimeObjectRegistry : public BaseObject {
  private:
   std::unordered_map<ClassId, const TypeInfo*> typeIdToTypeInfo;
 
-  LOKI_REFLECTION_CLASS_DECLARE_RTTI(RuntimeObjectRegistry)
+  LOKI_RTTI_CLASS_DECLARE(RuntimeObjectRegistry)
 };
 
 }  // namespace loki::core
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::core::RuntimeObjectRegistry)
-LOKI_REFLECTION_CLASS_END_RTTI(loki::core::RuntimeObjectRegistry)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::core::RuntimeObjectRegistry)
