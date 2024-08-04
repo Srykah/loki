@@ -8,13 +8,13 @@ namespace loki::physics {
 class PhysicsWorldComponent : public system::Component {
  public:
   void onStartInit() override;
-  void update(sf::Time dt) override;
+  void update(system::UpdateStep updateStep, sf::Time dt) override;
 
   PhysicsWorld* getWorld() const;
 
  private:
   PhysicsWorldParams worldParams;
-  core::BorrowerPtr<PhysicsWorld> world;
+  std::unique_ptr<PhysicsWorld> world;
 
   LOKI_RTTI_CLASS_DECLARE(PhysicsWorldComponent)
 };

@@ -12,7 +12,7 @@ void SpriteComponent::onFinalizeInit() {
     sprite.setAnim(data.animations.begin()->first);
 }
 
-void SpriteComponent::update(sf::Time dt) {
+void SpriteComponent::update(system::UpdateStep updateStep, sf::Time dt) {
   sprite.update(dt);
 }
 

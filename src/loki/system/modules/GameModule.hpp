@@ -12,7 +12,8 @@ namespace loki::system {
 class GameModule : public ScheduledItem {
  public:
   virtual void registerAsAService(core::ServiceRegistry& serviceRegistry) = 0;
-  void update(sf::Time dt) override {}
+  virtual UpdateStep getUpdateStep() const { return UpdateStep::Default; }
+  void update(UpdateStep updateStep, sf::Time dt) override {}
 
   LOKI_RTTI_CLASS_DECLARE(GameModule)
 };

@@ -16,10 +16,11 @@ void RendererModule::registerAsAService(core::ServiceRegistry& serviceRegistry) 
 
 void RendererModule::init() {
   sceneManager = &getService<SceneManager>();
+  windowModule = &getService<WindowModule>();
   renderTarget.create(internalResolution.x, internalResolution.y);
 }
 
-void RendererModule::update(sf::Time dt) {
+void RendererModule::update(UpdateStep updateStep, sf::Time dt) {
   renderQueue.clear();
   assert(sceneManager);
 
@@ -63,7 +64,7 @@ void RendererModule::update(sf::Time dt) {
   sprite.setTexture(renderTarget.getTexture());
   sprite.setPosition(0.f, renderTarget.getSize().y);
   sprite.setScale(1.f, -1.f);
-  getService<WindowModule>().draw(sprite);
+  windowModule->getWindow().draw(sprite);
 }
 
 }  // namespace loki::system

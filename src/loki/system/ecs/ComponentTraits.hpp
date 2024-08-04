@@ -2,6 +2,8 @@
 
 #include <type_traits>
 
+#include <loki/system/scheduler/UpdateStep.hpp>
+
 namespace loki::system {
 
 class Component;
@@ -14,6 +16,7 @@ class BaseComponentTraits {
 
   virtual Component& getAsComponent(void* obj) const = 0;
   const Component& getAsComponent(const void* obj) const { return getAsComponent(const_cast<void*>(obj)); }
+  virtual UpdateStep getUpdateStep() const = 0;
   virtual bool isDrawable() const = 0;
   virtual bool isDebugDrawable() const = 0;
   virtual const Drawable* getAsDrawable(const Component& comp) const = 0;
@@ -21,6 +24,8 @@ class BaseComponentTraits {
 };
 
 namespace details {
+template <class Comp>
+concept HasUpdateStep = std::is_same_v<typename Comp::UPDATE_STEP, UpdateStep>;
 template <class Comp>
 concept IsDrawable = std::is_base_of_v<Drawable, Comp>;
 template <class Comp>
@@ -34,6 +39,12 @@ class ComponentTraits final : public BaseComponentTraits {
   ~ComponentTraits() override {}
 
   Component& getAsComponent(void* obj) const override { return static_cast<Component&>(*static_cast<T*>(obj)); }
+  UpdateStep getUpdateStep() const override {
+    if constexpr (details::HasUpdateStep<T>) {
+      return T::UPDATE_STEP;
+    }
+    return UpdateStep::Default;
+  }
   bool isDrawable() const override { return details::IsDrawable<T>; }
   bool isDebugDrawable() const override { return details::IsDebugDrawable<T>; }
   const Drawable* getAsDrawable(const Component& comp) const override {

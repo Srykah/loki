@@ -15,7 +15,7 @@ class PhysicsBodyComponent : public system::Component, public system::DebugDrawa
  public:
   void onStartInit() override;
   void onFinalizeInit() override;
-  void update(sf::Time dt) override;
+  void update(system::UpdateStep updateStep, sf::Time dt) override;
 
   system::DrawOrder getDebugDrawOrder() const override;
   void debugDraw(sf::RenderTarget& target, sf::RenderStates states) const override;

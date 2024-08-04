@@ -17,23 +17,33 @@ void Scheduler::init() {
 }
 
 void Scheduler::update(sf::Time dt) {
-  for (auto& gameModule : app.getGameModules())
-    gameModule->update(dt);
+  for (unsigned int step = 0; step < 64; ++step) {
+    UpdateStep updateStep = static_cast<UpdateStep>(1u << step);
+    for (auto& gameModule : app.getGameModules()) {
+      if (contains(gameModule->getUpdateStep(), updateStep))
+        gameModule->update(updateStep, dt);
+    }
 
-  sceneManager.getCurrentScene()->visitComponents([dt](const BaseComponentTraits& compTraits, void* compPtr) {
-    // get the component as a Component*
-    auto& comp = compTraits.getAsComponent(compPtr);
-    // update it (could do all steps at once)
-    if (comp.getStatus() == Component::Status::CREATED)
-      comp.startInit();
-    if (comp.getStatus() == Component::Status::LOADING_RESOURCES)
-      return;  // wait
-    if (comp.getStatus() == Component::Status::RESOURCES_LOADED)
-      comp.finalizeInit();
-    if (comp.getStatus() == Component::Status::READY)
-      comp.update(dt);
-    // if (comp.getStatus() == Component::Status::DEINIT) // todo
-  });
+    auto compTraitsFilter = [updateStep](const BaseComponentTraits& compTraits) {
+      return contains(compTraits.getUpdateStep(), updateStep);
+    };
+    auto compVisitor = [updateStep, dt](const BaseComponentTraits& compTraits, void* compPtr) {
+      // get the component as a Component*
+      auto& comp = compTraits.getAsComponent(compPtr);
+      // update it (could do all steps at once)
+      if (comp.getStatus() == Component::Status::CREATED)
+        comp.startInit();
+      if (comp.getStatus() == Component::Status::LOADING_RESOURCES)
+        return;  // wait
+      if (comp.getStatus() == Component::Status::RESOURCES_LOADED)
+        comp.finalizeInit();
+      if (comp.getStatus() == Component::Status::READY)
+        comp.update(updateStep, dt);
+      // if (comp.getStatus() == Component::Status::DEINIT) // todo
+    };
+
+    sceneManager.getCurrentScene()->visitComponents(compTraitsFilter, compVisitor);
+  }
 }
 
 }  // namespace loki::system

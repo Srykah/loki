@@ -3,7 +3,8 @@
 #include <SFML/Config.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 
-#include "loki/core/reflection/enumMacros.hpp"
+#include <loki/core/reflection/enumMacros.hpp>
+#include <loki/core/utils/EnumAsBitField.hpp>
 
 namespace loki::system {
 
@@ -20,40 +21,10 @@ enum class WindowStyle : sf::Uint32 {
   DEFAULT_RETRO = sf::Style::Default | INTEGER_ZOOM_RATIO,
 };
 
-[[nodiscard]] constexpr sf::Uint32 to_underlying(WindowStyle style) noexcept {
-  return static_cast<sf::Uint32>(style);
-}
-
-[[nodiscard]] constexpr WindowStyle operator|(WindowStyle first, WindowStyle second) noexcept {
-  return static_cast<WindowStyle>(to_underlying(first) | to_underlying(second));
-}
-
-[[nodiscard]] constexpr WindowStyle operator|(WindowStyle first, sf::Uint32 second) noexcept {
-  return static_cast<WindowStyle>(to_underlying(first) | second);
-}
-
-[[nodiscard]] constexpr WindowStyle operator|(sf::Uint32 first, WindowStyle second) noexcept {
-  return static_cast<WindowStyle>(first | to_underlying(second));
-}
-
-inline WindowStyle& operator|=(WindowStyle& first, WindowStyle second) noexcept {
-  return first = first | second;
-}
-
-inline WindowStyle& operator|=(WindowStyle& first, sf::Uint32 second) noexcept {
-  return first = first | second;
-}
-
-[[nodiscard]] constexpr WindowStyle operator&(WindowStyle first, WindowStyle second) noexcept {
-  return static_cast<WindowStyle>(to_underlying(first) & to_underlying(second));
-}
-
-[[nodiscard]] constexpr bool contains(WindowStyle value, WindowStyle flags) noexcept {
-  return (value & flags) == flags;
-}
+LOKI_ENUM_AS_BITFIELD(WindowStyle)
 
 [[nodiscard]] constexpr sf::Uint32 toSFMLWindowStyle(WindowStyle style) noexcept {
-  return to_underlying(style & WindowStyle::SFML_MASK);
+  return std::to_underlying(style & WindowStyle::SFML_MASK);
 }
 
 [[nodiscard]] constexpr WindowStyle fromSMFLWindowStyle(sf::Uint32 sfmlStyle) noexcept {

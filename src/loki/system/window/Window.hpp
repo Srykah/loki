@@ -29,6 +29,8 @@ class Window {
   [[nodiscard]] bool isOpen() const { return window.isOpen(); }
   void close();
 
+  sf::RenderWindow& getRenderWindow() { return window; }
+
  private:
   sf::Vector2f getLetterboxedViewportSize();
   sf::Vector2f getIntegerZoomViewportSize();

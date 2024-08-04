@@ -11,10 +11,10 @@
 #include <loki/graphics/tiles/GraphicsTileMapComponent.hpp>
 #include <loki/graphics/tiles/TextureTileSetAttribute.hpp>
 #include <loki/physics/bodies/PhysicsBodyComponent.hpp>
-#include <loki/physics/module/PhysicsModule.hpp>
 #include <loki/physics/tiles/CollisionTileAttribute.hpp>
 #include <loki/physics/tiles/PhysicsTileMapComponent.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
+#include <loki/editor/modules/ImGuiModule.hpp>
 #include <loki/tiles/TileMapDataComponent.hpp>
 
 namespace loki::app {
@@ -47,8 +47,8 @@ void registerLokiModules(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
   runtimeObjectRegistry.registerClass<system::InputModule>();
   runtimeObjectRegistry.registerClass<system::RendererModule>();
 
-  // physics
-  runtimeObjectRegistry.registerClass<physics::PhysicsModule>();
+  // editor
+  runtimeObjectRegistry.registerClass<editor::ImGuiModule>();
 }
 
 void registerLokiComponents(core::RuntimeObjectRegistry& runtimeObjectRegistry,

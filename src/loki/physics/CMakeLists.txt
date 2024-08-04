@@ -11,7 +11,6 @@ loki_create_module(physics
   shapes/PhysicsShapeType.hpp
   tiles/CollisionTileAttribute.hpp
   tiles/PhysicsTileMapComponent.hpp
-  module/PhysicsModule.hpp
   utils/conversions.hpp
   world/PhysicsWorld.hpp
   world/PhysicsWorldComponent.hpp
@@ -22,7 +21,6 @@ loki_create_module(physics
   bodies/PhysicsBodyComponent.cpp
   bodies/PhysicsBodyParams.cpp
   debug/DrawShapes.cpp
-  module/PhysicsModule.cpp
   shapes/PhysicsShape.cpp
   shapes/PhysicsFixtureParams.cpp
   tiles/PhysicsTileMapComponent.cpp

@@ -1,12 +1,14 @@
 #pragma once
 
-#include <imgui.h>
+#include <loki/core/reflection/TypeInfo.hpp>
 
-#include "reflect/TypeInfo.h"
+namespace loki::editor {
 
-void DynamicField(const char* label, void* obj, const TypeInfo& typeInfo);
+void DynamicField(const char* label, void* obj, const core::TypeInfo& typeInfo);
 
 template <class T>
 void DynamicField(const char* label, T& obj) {
-  DynamicField(label, static_cast<void*>(&obj), getTypeInfo<T>());
+  DynamicField(label, static_cast<void*>(&obj), core::getTypeInfo<T>());
 }
+
+}  // namespace loki::editor

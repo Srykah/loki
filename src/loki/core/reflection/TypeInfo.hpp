@@ -39,6 +39,8 @@ struct StringInfo {
   const CharacterInfo& charType;
   std::function<ConstTmpObj(const void* obj)> asUtf8StrGetter;
   std::function<void(void* obj, const char* data, std::size_t size)> setter;
+  std::function<const char*(void* obj)> dataGetter;
+  std::function<std::size_t(void* obj)> sizeGetter;
 };
 struct ListInfo {
   const TypeInfo& valueType;

@@ -46,6 +46,7 @@ loki_create_module(core
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
   # utils
+  utils/EnumAsBitField.hpp
   utils/IterAdapters.hpp
   utils/Literals.hpp
   utils/Macros.hpp

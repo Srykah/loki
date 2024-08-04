@@ -27,7 +27,7 @@ void InputModule::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId
   inputStates[playerId] = {};
 }
 
-void InputModule::update(sf::Time delta) {
+void InputModule::update(UpdateStep updateStep, sf::Time delta) {
   if (needsInit) {
     setPlayerConfig(PlayerConfig{inputConfigs.begin()->first});
     needsInit = false;

@@ -42,6 +42,7 @@ loki_create_module(system
   # scheduler
   scheduler/ScheduledItem.hpp
   scheduler/Scheduler.hpp
+  scheduler/UpdateStep.hpp
   # window
   window/Camera.hpp
   window/Window.hpp

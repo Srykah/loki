@@ -20,7 +20,7 @@ class InputModule final : public GameModule {
 
   void setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId = 0);
 
-  void update(sf::Time dt) override;
+  void update(UpdateStep updateStep, sf::Time dt) override;
 
   [[nodiscard]] InputState getInputState(const InputId& inputId, PlayerId playerId = 0) const;
 

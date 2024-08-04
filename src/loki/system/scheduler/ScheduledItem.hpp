@@ -1,13 +1,14 @@
 #pragma once
 
 #include <loki/core/rtti/BaseObject.hpp>
+#include <loki/system/scheduler/UpdateStep.hpp>
 
 namespace loki::system {
 
 class ScheduledItem : public core::BaseObject {
  public:
   virtual void init(){};
-  virtual void update(sf::Time delta){};
+  virtual void update(UpdateStep updateStep, sf::Time delta){};
 
   LOKI_RTTI_CLASS_DECLARE(ScheduledItem)
 };

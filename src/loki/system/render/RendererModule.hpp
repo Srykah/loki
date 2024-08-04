@@ -5,6 +5,7 @@
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/system/modules/GameModule.hpp>
 #include <loki/system/render/RenderQueue.hpp>
+#include <loki/system/window/WindowModule.hpp>
 
 namespace loki::system {
 class SceneManager;
@@ -14,11 +15,13 @@ class RendererModule final : public GameModule {
   ~RendererModule() override = default;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void update(sf::Time dt) override;
+  UpdateStep getUpdateStep() const override { return UpdateStep::Render; }
+  void update(UpdateStep updateStep, sf::Time dt) override;
 
  private:
   sf::Vector2u internalResolution;
   SceneManager* sceneManager = nullptr;
+  WindowModule* windowModule = nullptr;
   RenderQueue renderQueue;
   sf::RenderTexture renderTarget;
   bool drawDebug = false;

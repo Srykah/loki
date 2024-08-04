@@ -12,9 +12,13 @@ class WindowModule final : public GameModule {
  public:
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void update(sf::Time delta) override;
+  UpdateStep getUpdateStep() const override {
+    return UpdateStep::InputPolling | UpdateStep::PreRender | UpdateStep::PostRender;
+  }
+  void update(UpdateStep updateStep, sf::Time delta) override;
 
-  void draw(const sf::Drawable& drawable);
+  Window& getWindow() { return window; }
+  std::span<const sf::Event> getEvents() const { return events; }
 
  private:
   std::string windowTitle;

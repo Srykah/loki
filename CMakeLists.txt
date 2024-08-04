@@ -53,6 +53,7 @@ add_subdirectory(extern)
 # All modules (+global) target
 loki_create_modules(
   core
+  editor
   graphics
   gui
   physics

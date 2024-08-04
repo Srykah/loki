@@ -30,7 +30,7 @@ class Component : public ScheduledItem, public ResourceListener {
 
   void startInit();
   void finalizeInit();
-  void update(sf::Time dt) override {}
+  void update(UpdateStep updateStep, sf::Time dt) override {}
 
   virtual void drawDebug(const DebugDrawDelegate& debugDrawDelegate) const {}
 

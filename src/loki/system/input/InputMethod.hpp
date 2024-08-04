@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#include <loki/core/utils/EnumAsBitField.hpp>
+
 namespace loki::system {
 
 using JoystickId = unsigned int;
@@ -22,7 +24,8 @@ enum class InputMethod {
   Joystick7 = 1 << 10 | Joystick,
 };
 
-bool operator&(InputMethod lhs, InputMethod rhs);
+LOKI_ENUM_AS_BITFIELD(InputMethod)
+
 JoystickId getJoystickId(InputMethod inputMethod);
 
 }  // namespace loki::system

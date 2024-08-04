@@ -1,14 +1,12 @@
 #include "PhysicsWorldComponent.hpp"
 
-#include "loki/physics/module/PhysicsModule.hpp"
-
 namespace loki::physics {
 
 void PhysicsWorldComponent::onStartInit() {
-  world = getService<PhysicsModule>().createWorld(auto{worldParams});
+  world = std::make_unique<PhysicsWorld>(auto{worldParams});
 }
 
-void PhysicsWorldComponent::update(sf::Time dt) {
+void PhysicsWorldComponent::update(system::UpdateStep updateStep, sf::Time dt) {
   if (world)
     world->update(dt);
 }

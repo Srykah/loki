@@ -6,21 +6,21 @@
 namespace loki::system {
 
 InputTriggerStatus KeyTrigger::getStatus(InputMethod inputMethod) const {
-  if (!(inputMethod & InputMethod::Keyboard))
+  if (!contains(inputMethod, InputMethod::Keyboard))
     return {};
 
   return {sf::Keyboard::isKeyPressed(key)};
 }
 
 InputTriggerStatus MouseButtonTrigger::getStatus(InputMethod inputMethod) const {
-  if (!(inputMethod & InputMethod::Mouse))
+  if (!contains(inputMethod, InputMethod::Mouse))
     return {};
 
   return {sf::Mouse::isButtonPressed(button)};
 }
 
 InputTriggerStatus JoystickAxisTrigger::getStatus(InputMethod inputMethod) const {
-  if (!(inputMethod & InputMethod::Joystick))
+  if (!contains(inputMethod, InputMethod::Joystick))
     return {};
 
   float axisPos = sf::Joystick::getAxisPosition(getJoystickId(inputMethod), axis);
@@ -31,7 +31,7 @@ InputTriggerStatus JoystickAxisTrigger::getStatus(InputMethod inputMethod) const
 }
 
 InputTriggerStatus JoystickButtonTrigger::getStatus(InputMethod inputMethod) const {
-  if (!(inputMethod & InputMethod::Mouse))
+  if (!contains(inputMethod, InputMethod::Mouse))
     return {};
 
   return {sf::Joystick::isButtonPressed(getJoystickId(inputMethod), button)};

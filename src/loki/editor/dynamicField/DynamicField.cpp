@@ -1,20 +1,26 @@
 #include "DynamicField.h"
 
-#define __STDC_WANT_LIB_EXT1__ 1
 #include <cstring>
-#include "core/utils.h"
-#include "serial/toString.h"
-#include "typeRegistry/BaseObject.h"
 
-void DynamicField(void*, const NullInfo&) {
+#include <imgui.h>
+
+#include <loki/core/reflection/basicTypesInfo.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
+#include <loki/core/serialization/string/toString.hpp>
+
+namespace loki::editor {
+
+using core::details::to;
+
+void DynamicField(void*, const core::NullInfo&) {
   ImGui::TextUnformatted("null");
 }
 
-void DynamicField(void* obj, const BooleanInfo&) {
+void DynamicField(void* obj, const core::BooleanInfo&) {
   ImGui::Checkbox("", &to<bool>(obj));
 }
 
-void DynamicField(void* obj, const IntegerInfo& integerInfo) {
+void DynamicField(void* obj, const core::IntegerInfo& integerInfo) {
   if (integerInfo.isUnsigned) {
     if (integerInfo.size == sizeof(uint8_t)) {
       ImGui::InputScalar("", ImGuiDataType_U8, obj);
@@ -42,7 +48,7 @@ void DynamicField(void* obj, const IntegerInfo& integerInfo) {
   }
 }
 
-void DynamicField(void* obj, const FloatingPointInfo& floatingPointInfo) {
+void DynamicField(void* obj, const core::FloatingPointInfo& floatingPointInfo) {
   if (floatingPointInfo.size == sizeof(float)) {
     ImGui::InputScalar("", ImGuiDataType_Float, obj);
   } else if (floatingPointInfo.size == sizeof(double)) {
@@ -54,7 +60,11 @@ void DynamicField(void* obj, const FloatingPointInfo& floatingPointInfo) {
   }
 }
 
-void DynamicField(void* obj, const CharacterInfo& characterInfo) {
+void DynamicField(void* obj, const core::EnumInfo& enumInfo) {
+  // todo
+}
+
+void DynamicField(void* obj, const core::CharacterInfo& characterInfo) {
   constexpr std::size_t BUF_SIZE = 2;
   assert(characterInfo.size == sizeof(char) && !characterInfo.isUnicode && "Only char is supported!");  // todo others
   char buf[BUF_SIZE];
@@ -63,7 +73,7 @@ void DynamicField(void* obj, const CharacterInfo& characterInfo) {
     to<char>(obj) = buf[0];
 }
 
-void DynamicField(void* obj, const StringInfo& stringInfo) {
+void DynamicField(void* obj, const core::StringInfo& stringInfo) {
   // todo others
   constexpr std::size_t BUF_SIZE = 1024;
   assert(stringInfo.charType.size == sizeof(char) && !stringInfo.charType.isUnicode && "Only char is supported!");
@@ -76,24 +86,24 @@ void DynamicField(void* obj, const StringInfo& stringInfo) {
   }
 }
 
-void DynamicField(void* obj, const ListInfo& listInfo) {
+void DynamicField(void* obj, const core::ListInfo& listInfo) {
   ImGui::NewLine();
   ImGui::Indent();
   const std::size_t listSize = listInfo.sizeGetter(obj);
   for (int index = 0; index < listSize; ++index) {
     std::string itemLabel = '[' + std::to_string(index) + ']';
-    TmpObj elem = listInfo.elemGetter(obj, index);
+    core::TmpObj elem = listInfo.elemGetter(obj, index);
     DynamicField(itemLabel.c_str(), elem.obj, listInfo.valueType);
   }
   ImGui::Unindent();
 }
 
-void DynamicField(void* obj, const DictInfo& dictInfo) {
+void DynamicField(void* obj, const core::DictInfo& dictInfo) {
   ImGui::NewLine();
   ImGui::Indent();
   const std::size_t dictSize = dictInfo.sizeGetter(obj);
   for (int index = 0; index < dictSize; ++index) {
-    KeyValuePair kvp = dictInfo.kvpGetter(obj, index);
+    core::KeyValuePair kvp = dictInfo.kvpGetter(obj, index);
     std::string keyStr;
     toString(keyStr, kvp.key, dictInfo.keyType);
     DynamicField(keyStr.c_str(), kvp.value, dictInfo.valueType);
@@ -101,11 +111,11 @@ void DynamicField(void* obj, const DictInfo& dictInfo) {
   ImGui::Unindent();
 }
 
-void DynamicField(void* obj, const ClassInfo& classInfo) {
+void DynamicField(void* obj, const core::ClassInfo& classInfo) {
   ImGui::NewLine();
   ImGui::Indent();
   for (const auto& field : classInfo.fields) {
-    TmpObj fieldObj = field.getter(obj);
+    core::TmpObj fieldObj = field.getter(obj);
     DynamicField(field.name.data(), fieldObj.obj, field.type);
     if (!field.isInPlace)
       field.setter(obj, fieldObj.obj);
@@ -113,19 +123,21 @@ void DynamicField(void* obj, const ClassInfo& classInfo) {
   ImGui::Unindent();
 }
 
-void DynamicField(void* obj, const PtrInfo& ptrInfo) {
-  TmpObj inner = ptrInfo.getter(obj);
-  auto* baseObj = static_cast<BaseObject*>(inner.obj);
+void DynamicField(void* obj, const core::PtrInfo& ptrInfo) {
+  core::TmpObj inner = ptrInfo.getter(obj);
+  auto* baseObj = static_cast<core::BaseObject*>(inner.obj);
   if (baseObj != nullptr)
-    DynamicField("", baseObj, baseObj->getTypeInfo());
+    DynamicField("", baseObj, baseObj->getClassTypeInfo());
   else
-    DynamicField("", nullptr, ::getTypeInfo<nullptr_t>());
+    DynamicField("", nullptr, core::getTypeInfo<nullptr_t>());
 }
 
-void DynamicField(const char* label, void* obj, const TypeInfo& typeInfo) {
+void DynamicField(const char* label, void* obj, const core::TypeInfo& typeInfo) {
   ImGui::PushID(label);
   ImGui::TextUnformatted(label);
   ImGui::SameLine();
   std::visit([&](const auto& actualTypeInfo) { DynamicField(obj, actualTypeInfo); }, typeInfo.info);
   ImGui::PopID();
 }
+
+}  // namespace loki::editor
