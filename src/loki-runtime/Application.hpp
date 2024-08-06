@@ -1,6 +1,6 @@
 #pragma once
 
-#include <dylib/dylib.hpp>
+#include <dylib.hpp>
 
 #include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>

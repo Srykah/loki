@@ -1,0 +1,9 @@
+[submodule "extern/imgui"]
+	path = extern/imgui
+	url = https://github.com/ocornut/imgui
+[submodule "extern/imgui-sfml"]
+	path = extern/imgui-sfml
+	url = https://github.com/SFML/imgui-sfml
+[submodule "extern/dylib"]
+	path = extern/dylib
+	url = https://github.com/martin-olivier/dylib

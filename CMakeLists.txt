@@ -1,6 +1,6 @@
 # BASIC SETUP
 
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.30)
 project(
   loki
   VERSION 0.1.0
@@ -17,6 +17,7 @@ set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_LINKER_TYPE LLD)
 
 
 # HELPERS
@@ -39,7 +40,6 @@ list(APPEND LOKI_DEPS_LIST
   #"nlohmann_json, 3.9"
   "fmt, 10.2"
   "SFML, 2.6, graphics window system audio"
-  "ImGui-SFML, 2.6"
   "yaml-cpp, 0.8"
   "box2d, 2.4"
   "EnTT, 3.13")

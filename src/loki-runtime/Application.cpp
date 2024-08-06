@@ -4,7 +4,6 @@
 
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Sleep.hpp>
-#include <dylib/dylib.hpp>
 #include <yaml-cpp/node/parse.h>
 
 #include <loki/core/reflection/basicTypesInfo.hpp>

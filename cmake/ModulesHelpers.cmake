@@ -14,33 +14,18 @@ function(loki_add_module_prefix module)
   set_target_properties(${module} PROPERTIES PREFIX ${module_prefix})
 endfunction()
 
-# Installing with structure
-function(loki_install_module_headers module)
-  cmake_parse_arguments(MODULE "" "" "HEADERS" ${ARGN})
-  foreach (header ${MODULE_HEADERS})
-    get_filename_component(dir ${header} DIRECTORY)
-    get_filename_component(filename ${header} NAME)
-    install(
-      FILES ${filename}
-      DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/loki/${module}/${dir}
-    )
-  endforeach ()
-  install(TARGETS ${module} EXPORT loki_targets)
-endfunction()
-
 # Complete module creation helper
 function(loki_create_module module)
   cmake_parse_arguments(MODULE "" "" "HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS" ${ARGN})
-  add_library(${module} ${MODULE_HEADERS} ${MODULE_SOURCES})
+  add_library(${module})
   add_library(loki::${module} ALIAS ${module})
-  target_sources(${module}
-    PUBLIC ${MODULE_HEADERS}
-    PRIVATE ${MODULE_SOURCES}
-  )
-  target_link_libraries(
-    ${module}
-    PUBLIC "${MODULE_PUBLIC_DEPS}"
-    PRIVATE "${MODULE_PRIVATE_DEPS}"
+  target_sources(${module} PRIVATE ${MODULE_SOURCES})
+  target_sources(${module} PUBLIC
+    FILE_SET HEADERS
+    FILES ${MODULE_HEADERS})
+  target_link_libraries(${module}
+    PUBLIC ${MODULE_PUBLIC_DEPS}
+    PRIVATE ${MODULE_PRIVATE_DEPS}
   )
   target_include_directories(
     ${module}
@@ -49,7 +34,7 @@ function(loki_create_module module)
   )
   #loki_enable_lto_optional(${module})
   loki_add_module_prefix(${module})
-  loki_install_module_headers(${module} HEADERS ${MODULE_HEADERS})
+  install(TARGETS ${module} EXPORT loki_targets FILE_SET HEADERS DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${module})
   target_link_libraries(loki INTERFACE loki::${module})
 endfunction()
 
