@@ -2,7 +2,7 @@
 
 #include <fstream>
 
-#include "loki/core/services/ServiceRegistry.hpp"
+#include <loki/core/services/ServiceRegistry.hpp>
 
 namespace loki::system {
 
@@ -27,7 +27,7 @@ void InputModule::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId
   inputStates[playerId] = {};
 }
 
-void InputModule::update(UpdateStep updateStep, sf::Time delta) {
+void InputModule::update(sf::Time dt, UpdateStepTag<UpdateStep::InputReading>) {
   if (needsInit) {
     setPlayerConfig(PlayerConfig{inputConfigs.begin()->first});
     needsInit = false;

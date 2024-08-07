@@ -6,7 +6,7 @@ void PhysicsWorldComponent::onStartInit() {
   world = std::make_unique<PhysicsWorld>(auto{worldParams});
 }
 
-void PhysicsWorldComponent::update(system::UpdateStep updateStep, sf::Time dt) {
+void PhysicsWorldComponent::update(sf::Time dt, UpdateSteps::PhysicsSimulation) {
   if (world)
     world->update(dt);
 }

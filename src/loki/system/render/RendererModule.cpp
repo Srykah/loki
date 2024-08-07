@@ -20,7 +20,7 @@ void RendererModule::init() {
   renderTarget.create(internalResolution.x, internalResolution.y);
 }
 
-void RendererModule::update(UpdateStep updateStep, sf::Time dt) {
+void RendererModule::update(sf::Time dt, UpdateSteps::Render) {
   renderQueue.clear();
   assert(sceneManager);
 
@@ -57,14 +57,30 @@ void RendererModule::update(UpdateStep updateStep, sf::Time dt) {
   }
 
   // render the queue
+  renderTarget.clear();
   renderTarget.draw(renderQueue);
+  renderTarget.display();
 
-  // todo remove direct dependency
-  sf::Sprite sprite;
-  sprite.setTexture(renderTarget.getTexture());
-  sprite.setPosition(0.f, renderTarget.getSize().y);
-  sprite.setScale(1.f, -1.f);
-  windowModule->getWindow().draw(sprite);
+  // todo remove direct dependency ?
+  if (directRender) {
+    sf::Sprite sprite;
+    sprite.setTexture(renderTarget.getTexture());
+    // sprite.setPosition(0.f, renderTarget.getSize().y);
+    // sprite.setScale(1.f, -1.f);
+    windowModule->getWindow().draw(sprite);
+  }
+}
+
+const sf::Texture& RendererModule::getTexture() const {
+  return renderTarget.getTexture();
+}
+
+void RendererModule::setDirectRender(bool enable) {
+  directRender = enable;
+}
+
+void RendererModule::setDrawDebug(bool enable) {
+  drawDebug = enable;
 }
 
 }  // namespace loki::system

@@ -12,10 +12,12 @@ class WindowModule final : public GameModule {
  public:
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  UpdateStep getUpdateStep() const override {
-    return UpdateStep::InputPolling | UpdateStep::PreRender | UpdateStep::PostRender;
-  }
-  void update(UpdateStep updateStep, sf::Time delta) override;
+  void update(sf::Time delta, UpdateSteps::InputPolling);
+  void update(sf::Time delta, UpdateSteps::PreRender);
+  void update(sf::Time delta, UpdateSteps::PostRender);
+  static_assert(HasUpdateStep<WindowModule, UpdateStep::InputPolling>);
+  static_assert(HasUpdateStep<WindowModule, UpdateStep::PreRender>);
+  static_assert(HasUpdateStep<WindowModule, UpdateStep::PostRender>);
 
   Window& getWindow() { return window; }
   std::span<const sf::Event> getEvents() const { return events; }
@@ -31,6 +33,7 @@ class WindowModule final : public GameModule {
   std::vector<sf::Event> events;
 
   LOKI_RTTI_CLASS_DECLARE(WindowModule)
+  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(WindowModule)
 };
 
 }  // namespace loki::system

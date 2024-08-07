@@ -11,39 +11,52 @@ namespace loki::system {
 
 Scheduler::Scheduler(ApplicationInterface& app, SceneManager& sceneManager) : app(app), sceneManager(sceneManager) {}
 
-void Scheduler::init() {
+void Scheduler::initGameModules() {
   for (auto& gameModule : app.getGameModules())
     gameModule->init();
 }
 
 void Scheduler::update(sf::Time dt) {
-  for (unsigned int step = 0; step < 64; ++step) {
-    UpdateStep updateStep = static_cast<UpdateStep>(1u << step);
-    for (auto& gameModule : app.getGameModules()) {
-      if (contains(gameModule->getUpdateStep(), updateStep))
-        gameModule->update(updateStep, dt);
-    }
+  handleComponentsLifecycle();
+  runUpdateSteps(dt);
+  // todo deinit
+}
 
-    auto compTraitsFilter = [updateStep](const BaseComponentTraits& compTraits) {
-      return contains(compTraits.getUpdateStep(), updateStep);
-    };
-    auto compVisitor = [updateStep, dt](const BaseComponentTraits& compTraits, void* compPtr) {
-      // get the component as a Component*
-      auto& comp = compTraits.getAsComponent(compPtr);
-      // update it (could do all steps at once)
-      if (comp.getStatus() == Component::Status::CREATED)
-        comp.startInit();
-      if (comp.getStatus() == Component::Status::LOADING_RESOURCES)
-        return;  // wait
-      if (comp.getStatus() == Component::Status::RESOURCES_LOADED)
-        comp.finalizeInit();
-      if (comp.getStatus() == Component::Status::READY)
-        comp.update(updateStep, dt);
-      // if (comp.getStatus() == Component::Status::DEINIT) // todo
-    };
+void Scheduler::handleComponentsLifecycle() {
+  auto compVisitor = [](const BaseComponentTraits& compTraits, void* compPtr) {
+    auto& comp = compTraits.getAsComponent(compPtr);
+    if (comp.getStatus() == Component::Status::CREATED)
+      comp.startInit();
+    if (comp.getStatus() == Component::Status::RESOURCES_LOADED)
+      comp.finalizeInit();
+  };
+  sceneManager.getCurrentScene()->visitComponents(compVisitor);
+}
 
-    sceneManager.getCurrentScene()->visitComponents(compTraitsFilter, compVisitor);
+void Scheduler::runUpdateSteps(sf::Time dt) {
+  for (std::underlying_type_t<UpdateStep> step = 0; step < std::to_underlying(UpdateStep::Count); ++step) {
+    UpdateStep updateStep = static_cast<UpdateStep>(step);
+    runUpdateStepForGameModules(dt, updateStep);
+    runUpdateStepForComponents(dt, updateStep);
   }
+}
+
+void Scheduler::runUpdateStepForGameModules(sf::Time dt, UpdateStep updateStep) {
+  for (auto& gameModule : app.getGameModules()) {
+    if (gameModule->getUpdateTraits().hasUpdateStep(updateStep))
+      gameModule->getUpdateTraits().runUpdateStep(gameModule.get(), dt, updateStep);
+  }
+}
+void Scheduler::runUpdateStepForComponents(sf::Time dt, UpdateStep updateStep) {
+  auto compTraitsFilter = [updateStep](const BaseComponentTraits& compTraits) {
+    return compTraits.getUpdateTraits().hasUpdateStep(updateStep);
+  };
+  auto compVisitor = [updateStep, dt](const BaseComponentTraits& compTraits, void* compPtr) {
+    auto& comp = compTraits.getAsComponent(compPtr);
+    if (comp.getStatus() == Component::Status::READY)
+      compTraits.getUpdateTraits().runUpdateStep(compPtr, dt, updateStep);
+  };
+  sceneManager.getCurrentScene()->visitComponents(compTraitsFilter, compVisitor);
 }
 
 }  // namespace loki::system

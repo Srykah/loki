@@ -16,7 +16,7 @@ void PhysicsBodyComponent::onFinalizeInit() {
   body.setTransformable(getActor().getTransformable());  // init position and rotation
 }
 
-void PhysicsBodyComponent::update(system::UpdateStep updateStep, sf::Time dt) {
+void PhysicsBodyComponent::update(sf::Time dt, UpdateSteps::PhysicsResult) {
   auto transformable = getActor().getTransformable();
   transformable.setPosition(body.getPosition());
   transformable.setRotation(body.getRotationInDegrees());

@@ -40,9 +40,9 @@ loki_create_module(system
   scene/Scene.hpp
   scene/SceneManager.hpp
   # scheduler
-  scheduler/ScheduledItem.hpp
+  scheduler/UpdateTraits.hpp
   scheduler/Scheduler.hpp
-  scheduler/UpdateStep.hpp
+  scheduler/UpdateSteps.hpp
   # window
   window/Camera.hpp
   window/Window.hpp

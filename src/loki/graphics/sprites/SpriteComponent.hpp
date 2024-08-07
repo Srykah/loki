@@ -9,7 +9,7 @@ class SpriteComponent : public system::Component, public system::Drawable {
  public:
   void onStartInit() override;
   void onFinalizeInit() override;
-  void update(system::UpdateStep updateStep, sf::Time dt) override;
+  void update(sf::Time dt);
   [[nodiscard]] system::DrawOrder getDrawOrder() const override;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

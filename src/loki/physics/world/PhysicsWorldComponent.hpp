@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/system/ecs/Component.hpp>
+#include <loki/system/scheduler/UpdateSteps.hpp>
 #include <loki/physics/world/PhysicsWorld.hpp>
 
 namespace loki::physics {
@@ -8,7 +9,7 @@ namespace loki::physics {
 class PhysicsWorldComponent : public system::Component {
  public:
   void onStartInit() override;
-  void update(system::UpdateStep updateStep, sf::Time dt) override;
+  void update(sf::Time dt, UpdateSteps::PhysicsSimulation);
 
   PhysicsWorld* getWorld() const;
 

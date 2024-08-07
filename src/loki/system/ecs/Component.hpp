@@ -2,20 +2,18 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transform.hpp>
-#include <SFML/System/Time.hpp>
 
 #include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/ecs/Actor.hpp>
 #include <loki/system/res/ResourceHandle.hpp>
 #include <loki/system/res/ResourceListener.hpp>
-#include <loki/system/scheduler/ScheduledItem.hpp>
 
 namespace loki::system {
 
 struct DrawOrder;
 using DebugDrawDelegate = std::function<void(DrawOrder, const sf::Drawable*)>;
 
-class Component : public ScheduledItem, public ResourceListener {
+class Component : public core::BaseObject, public ResourceListener {
  public:
   enum class Status { CREATED, LOADING_RESOURCES, RESOURCES_LOADED, READY, DEINIT };
 
@@ -30,7 +28,6 @@ class Component : public ScheduledItem, public ResourceListener {
 
   void startInit();
   void finalizeInit();
-  void update(UpdateStep updateStep, sf::Time dt) override {}
 
   virtual void drawDebug(const DebugDrawDelegate& debugDrawDelegate) const {}
 

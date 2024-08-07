@@ -2,9 +2,12 @@
 
 #include <vector>
 
+#include <SFML/System/Time.hpp>
+
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/system/ecs/Component.hpp>
 #include <loki/system/render/Drawable.hpp>
+#include <loki/system/scheduler/UpdateSteps.hpp>
 #include <loki/physics/bodies/PhysicsBody.hpp>
 #include <loki/physics/bodies/PhysicsBodyParams.hpp>
 #include <loki/physics/shapes/PhysicsFixtureParams.hpp>
@@ -15,7 +18,7 @@ class PhysicsBodyComponent : public system::Component, public system::DebugDrawa
  public:
   void onStartInit() override;
   void onFinalizeInit() override;
-  void update(system::UpdateStep updateStep, sf::Time dt) override;
+  void update(sf::Time dt, UpdateSteps::PhysicsResult);
 
   system::DrawOrder getDebugDrawOrder() const override;
   void debugDraw(sf::RenderTarget& target, sf::RenderStates states) const override;

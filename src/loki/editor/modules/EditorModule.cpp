@@ -8,6 +8,4 @@ void EditorModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 
 void EditorModule::init() {}
 
-void EditorModule::update(system::UpdateStep updateStep, sf::Time dt) {}
-
 }  // namespace loki::editor

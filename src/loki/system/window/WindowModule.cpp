@@ -19,21 +19,23 @@ void WindowModule::init() {
     window.setMinimumSize(minimumSize);
 }
 
-void WindowModule::update(UpdateStep updateStep, sf::Time delta) {
-  if (updateStep == UpdateStep::InputPolling) {
-    events.clear();
-    sf::Event event;
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
-        getService<ApplicationInterface>().exit();
-      }
-      events.push_back(std::move(event));
+void WindowModule::update(sf::Time delta, UpdateSteps::InputPolling) {
+  events.clear();
+  sf::Event event;
+  while (window.pollEvent(event)) {
+    if (event.type == sf::Event::Closed) {
+      getService<ApplicationInterface>().exit();
     }
-  } else if (updateStep == UpdateStep::PreRender) {
-    window.clear();
-  } else if (updateStep == UpdateStep::PostRender) {
-    window.display();
+    events.push_back(std::move(event));
   }
+}
+
+void WindowModule::update(sf::Time delta, UpdateSteps::PreRender) {
+  window.clear();
+}
+
+void WindowModule::update(sf::Time delta, UpdateSteps::PostRender) {
+  window.display();
 }
 
 }  // namespace loki::system

@@ -9,9 +9,9 @@ class EditorModule final : public system::GameModule {
   ~EditorModule() override = default;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void update(system::UpdateStep updateStep, sf::Time dt) override;
 
   LOKI_RTTI_CLASS_DECLARE(EditorModule)
+  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(EditorModule)
 };
 
 }  // namespace loki::editor

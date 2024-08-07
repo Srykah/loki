@@ -70,7 +70,7 @@ void Application::loadGame(const std::filesystem::path& path) {
   sceneManager.setScenePaths(std::move(scenePaths));
 
   sceneManager.loadScene(node["firstSceneName"].as<std::string>());
-  scheduler.init();
+  scheduler.initGameModules();
 }
 
 void Application::loop() {

@@ -3,6 +3,8 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 
+#include "render/RendererModule.hpp"
+
 namespace loki::editor {
 
 ImGuiModule::~ImGuiModule() {
@@ -22,22 +24,27 @@ void ImGuiModule::init() {
     return;
   auto& io = ImGui::GetIO();
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+  // getService<system::RendererModule>().setDirectRender(false);
 }
 
-void ImGuiModule::update(system::UpdateStep updateStep, sf::Time dt) {
+void ImGuiModule::update(sf::Time dt, UpdateSteps::InputReading) {
   if (!isEnabled)
     return;
   sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();
-  if (updateStep == system::UpdateStep::InputReading) {
-    for (const sf::Event& event : windowModule->getEvents())
-      ImGui::SFML::ProcessEvent(window, event);
-    ImGui::SFML::Update(window, dt);
-    ImGui::DockSpaceOverViewport(0, nullptr,
-                                 ImGuiDockNodeFlags_NoDockingOverCentralNode | ImGuiDockNodeFlags_PassthruCentralNode);
-    ImGui::ShowDemoWindow();
-  } else if (updateStep == system::UpdateStep::EditorRender) {
-    ImGui::SFML::Render(window);
+  for (const sf::Event& event : windowModule->getEvents()) {
+    ImGui::SFML::ProcessEvent(window, event);
   }
+  ImGui::SFML::Update(window, dt);
+  ImGuiDockNodeFlags DOCKING_FLAGS =
+      ImGuiDockNodeFlags_NoDockingOverCentralNode | ImGuiDockNodeFlags_PassthruCentralNode;
+  ImGui::DockSpaceOverViewport(0, nullptr, DOCKING_FLAGS);
+  ImGui::ShowDemoWindow();
+}
+
+void ImGuiModule::update(sf::Time dt, UpdateSteps::EditorRender) {
+  if (!isEnabled)
+    return;
+  ImGui::SFML::Render(windowModule->getWindow().getRenderWindow());
 }
 
 }  // namespace loki::editor

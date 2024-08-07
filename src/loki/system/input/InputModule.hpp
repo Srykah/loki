@@ -16,11 +16,12 @@ namespace loki::system {
 class InputModule final : public GameModule {
  public:
   InputModule();
+
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
 
   void setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId = 0);
 
-  void update(UpdateStep updateStep, sf::Time dt) override;
+  void update(sf::Time dt, UpdateStepTag<UpdateStep::InputReading>);
 
   [[nodiscard]] InputState getInputState(const InputId& inputId, PlayerId playerId = 0) const;
 
@@ -37,6 +38,7 @@ class InputModule final : public GameModule {
   bool needsInit = true;
 
   LOKI_RTTI_CLASS_DECLARE(InputModule)
+  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(InputModule)
 };
 
 }  // namespace loki::system
