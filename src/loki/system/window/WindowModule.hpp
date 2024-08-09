@@ -24,10 +24,10 @@ class WindowModule final : public GameModule {
 
  private:
   std::string windowTitle;
-  sf::Vector2u windowSize;
+  sf::Vector2f windowSize;
   WindowStyle windowStyle = WindowStyle::DEFAULT;
-  sf::Vector2u minimumSize;
-  sf::Vector2u internalResolution;
+  sf::Vector2f minimumSize;
+  sf::Vector2f internalResolution;
 
   Window window;
   std::vector<sf::Event> events;

@@ -18,6 +18,7 @@ void RendererModule::init() {
   sceneManager = &getService<SceneManager>();
   windowModule = &getService<WindowModule>();
   renderTarget.create(internalResolution.x, internalResolution.y);
+  windowModule->getWindow().setInternalResolution(internalResolution);
 }
 
 void RendererModule::update(sf::Time dt, UpdateSteps::Render) {
@@ -62,21 +63,13 @@ void RendererModule::update(sf::Time dt, UpdateSteps::Render) {
   renderTarget.display();
 
   // todo remove direct dependency ?
-  if (directRender) {
-    sf::Sprite sprite;
-    sprite.setTexture(renderTarget.getTexture());
-    // sprite.setPosition(0.f, renderTarget.getSize().y);
-    // sprite.setScale(1.f, -1.f);
-    windowModule->getWindow().draw(sprite);
-  }
+  sf::Sprite sprite;
+  sprite.setTexture(renderTarget.getTexture());
+  windowModule->getWindow().draw(sprite);
 }
 
-const sf::Texture& RendererModule::getTexture() const {
-  return renderTarget.getTexture();
-}
-
-void RendererModule::setDirectRender(bool enable) {
-  directRender = enable;
+const sf::RenderTexture& RendererModule::getTexture() const {
+  return renderTarget;
 }
 
 void RendererModule::setDrawDebug(bool enable) {

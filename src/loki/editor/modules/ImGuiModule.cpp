@@ -2,8 +2,10 @@
 
 #include <imgui-SFML.h>
 #include <imgui.h>
+#include <imgui_internal.h>
 
-#include "render/RendererModule.hpp"
+#include <loki/system/render/RendererModule.hpp>
+#include <loki/system/window/WindowModule.hpp>
 
 namespace loki::editor {
 
@@ -18,13 +20,13 @@ void ImGuiModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 
 void ImGuiModule::init() {
   windowModule = &getService<system::WindowModule>();
+  rendererModule = &getService<system::RendererModule>();
   sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();
   isEnabled = ImGui::SFML::Init(window);
   if (!isEnabled)
     return;
   auto& io = ImGui::GetIO();
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-  // getService<system::RendererModule>().setDirectRender(false);
 }
 
 void ImGuiModule::update(sf::Time dt, UpdateSteps::InputReading) {
@@ -35,16 +37,20 @@ void ImGuiModule::update(sf::Time dt, UpdateSteps::InputReading) {
     ImGui::SFML::ProcessEvent(window, event);
   }
   ImGui::SFML::Update(window, dt);
-  ImGuiDockNodeFlags DOCKING_FLAGS =
-      ImGuiDockNodeFlags_NoDockingOverCentralNode | ImGuiDockNodeFlags_PassthruCentralNode;
-  ImGui::DockSpaceOverViewport(0, nullptr, DOCKING_FLAGS);
-  ImGui::ShowDemoWindow();
 }
 
 void ImGuiModule::update(sf::Time dt, UpdateSteps::EditorRender) {
   if (!isEnabled)
     return;
-  ImGui::SFML::Render(windowModule->getWindow().getRenderWindow());
+  ImGuiID dockspaceId = ImGui::GetID("Main Dockspace");
+  ImGuiDockNodeFlags DOCKING_FLAGS =
+      ImGuiDockNodeFlags_NoDockingOverCentralNode | ImGuiDockNodeFlags_PassthruCentralNode;
+  ImGui::DockSpaceOverViewport(dockspaceId, nullptr, DOCKING_FLAGS);
+  ImGuiDockNode* node = ImGui::DockBuilderGetCentralNode(dockspaceId);
+  windowModule->getWindow().setRenderingArea({node->Pos, node->Size});
+  ImGui::ShowDemoWindow();
+  sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();
+  ImGui::SFML::Render(window);
 }
 
 }  // namespace loki::editor

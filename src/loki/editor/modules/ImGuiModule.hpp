@@ -2,10 +2,13 @@
 
 #include <loki/system/modules/GameModule.hpp>
 #include <loki/system/scheduler/UpdateSteps.hpp>
-#include <loki/system/window/WindowModule.hpp>
+
+namespace loki::system {
+class WindowModule;
+class RendererModule;
+}  // namespace loki::system
 
 namespace loki::editor {
-
 class ImGuiModule final : public system::GameModule {
  public:
   ~ImGuiModule() override;
@@ -16,6 +19,7 @@ class ImGuiModule final : public system::GameModule {
 
  private:
   system::WindowModule* windowModule = nullptr;
+  system::RendererModule* rendererModule = nullptr;
   bool isEnabled = false;
 
   LOKI_RTTI_CLASS_DECLARE(ImGuiModule)

@@ -18,19 +18,17 @@ class RendererModule final : public GameModule {
   void init() override;
   void update(sf::Time dt, UpdateSteps::Render);
 
-  const sf::Texture& getTexture() const;
+  const sf::RenderTexture& getTexture() const;
 
-  void setDirectRender(bool enable = true);
   void setDrawDebug(bool enable = true);
 
  private:
-  sf::Vector2u internalResolution;
+  sf::Vector2f internalResolution;
   SceneManager* sceneManager = nullptr;
   WindowModule* windowModule = nullptr;
   RenderQueue renderQueue;
   sf::RenderTexture renderTarget;
 
-  bool directRender = true;
   bool drawDebug = false;
 
   LOKI_RTTI_CLASS_DECLARE(RendererModule)

@@ -13,9 +13,9 @@ void WindowModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 
 void WindowModule::init() {
   window.create(windowSize, windowTitle, windowStyle);
-  if (internalResolution != sf::Vector2u{})
+  if (internalResolution != sf::Vector2f{})
     window.setInternalResolution(internalResolution);
-  if (minimumSize != sf::Vector2u{})
+  if (minimumSize != sf::Vector2f{})
     window.setMinimumSize(minimumSize);
 }
 
