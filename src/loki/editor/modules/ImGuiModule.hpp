@@ -15,12 +15,14 @@ class ImGuiModule final : public system::GameModule {
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
   void update(sf::Time dt, UpdateSteps::InputReading);
-  void update(sf::Time dt, UpdateSteps::EditorRender);
+  void update(sf::Time dt, UpdateSteps::PreRender);
+  void update(sf::Time dt, UpdateSteps::DebugMenuRender);
 
  private:
   system::WindowModule* windowModule = nullptr;
   system::RendererModule* rendererModule = nullptr;
   bool isEnabled = false;
+  bool drawDemo = true;
 
   LOKI_RTTI_CLASS_DECLARE(ImGuiModule)
   LOKI_GAMEMODULE_GET_UPDATE_TRAITS(ImGuiModule)

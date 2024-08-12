@@ -14,6 +14,7 @@
 #include <loki/physics/tiles/CollisionTileAttribute.hpp>
 #include <loki/physics/tiles/PhysicsTileMapComponent.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
+#include <loki/editor/modules/EditorModule.hpp>
 #include <loki/editor/modules/ImGuiModule.hpp>
 #include <loki/tiles/TileMapDataComponent.hpp>
 
@@ -48,6 +49,7 @@ void registerLokiModules(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
   runtimeObjectRegistry.registerClass<system::RendererModule>();
 
   // editor
+  runtimeObjectRegistry.registerClass<editor::EditorModule>();
   runtimeObjectRegistry.registerClass<editor::ImGuiModule>();
 }
 

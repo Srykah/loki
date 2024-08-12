@@ -25,6 +25,7 @@ class Actor {
   [[nodiscard]] std::span<Actor> getChildren() const;
 
   [[nodiscard]] explicit operator bool() const;
+  [[nodiscard]] bool operator==(const Actor& other) const = default;
 
   template <class Comp>
   [[nodiscard]] Comp* getComponent() {

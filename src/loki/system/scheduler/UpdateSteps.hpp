@@ -11,7 +11,7 @@ namespace loki::system {
   DO(Default)           /* for pretty much everything */          \
   DO(PreRender)         /* for the clearing of the Window */      \
   DO(Render)            /* for the RendererModule */              \
-  DO(EditorRender)      /* for the ImGuiModule */                 \
+  DO(DebugMenuRender)   /* for the ImGuiModule */                 \
   DO(PostRender)        /* for the display of the Window */
 
 enum class UpdateStep {

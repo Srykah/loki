@@ -1,6 +1,6 @@
 loki_create_module(editor
   HEADERS
-  dynamicField/DynamicField.h
+  dynamicField/DynamicField.hpp
   modules/EditorModule.hpp
   modules/ImGuiModule.hpp
 

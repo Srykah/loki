@@ -39,16 +39,22 @@ void ImGuiModule::update(sf::Time dt, UpdateSteps::InputReading) {
   ImGui::SFML::Update(window, dt);
 }
 
-void ImGuiModule::update(sf::Time dt, UpdateSteps::EditorRender) {
+void ImGuiModule::update(sf::Time dt, UpdateSteps::PreRender) {
   if (!isEnabled)
     return;
-  ImGuiID dockspaceId = ImGui::GetID("Main Dockspace");
-  ImGuiDockNodeFlags DOCKING_FLAGS =
+  const ImGuiID dockspaceId = ImGui::GetID("Main Dockspace");
+  constexpr ImGuiDockNodeFlags DOCKING_FLAGS =
       ImGuiDockNodeFlags_NoDockingOverCentralNode | ImGuiDockNodeFlags_PassthruCentralNode;
   ImGui::DockSpaceOverViewport(dockspaceId, nullptr, DOCKING_FLAGS);
-  ImGuiDockNode* node = ImGui::DockBuilderGetCentralNode(dockspaceId);
+  const ImGuiDockNode* node = ImGui::DockBuilderGetCentralNode(dockspaceId);
   windowModule->getWindow().setRenderingArea({node->Pos, node->Size});
-  ImGui::ShowDemoWindow();
+  if (drawDemo)
+    ImGui::ShowDemoWindow();
+}
+
+void ImGuiModule::update(sf::Time dt, UpdateSteps::DebugMenuRender) {
+  if (!isEnabled)
+    return;
   sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();
   ImGui::SFML::Render(window);
 }
