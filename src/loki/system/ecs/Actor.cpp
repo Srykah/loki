@@ -49,6 +49,14 @@ Actor::operator bool() const {
   return static_cast<bool>(handle);
 }
 
+void Actor::visitComponents(const ComponentVisitor& visitor) {
+  getScene().visitActorComponents(*this, visitor);
+}
+
+void Actor::visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& visitor) {
+  getScene().visitActorComponents(*this, compTraitsFilter, visitor);
+}
+
 Scene& Actor::getScene() const {
   return *handle.registry()->ctx().get<Scene*>();
 }

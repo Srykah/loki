@@ -6,6 +6,8 @@
 #include <entt/entt.hpp>
 #include <yaml-cpp/node/node.h>
 
+#include <loki/system/ecs/ComponentVisitor.hpp>
+
 namespace loki::system {
 
 class Component;
@@ -36,6 +38,9 @@ class Actor {
   [[nodiscard]] const Comp* getComponent() const {
     return handle.try_get<Comp>();
   }
+
+  void visitComponents(const ComponentVisitor& visitor);
+  void visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& visitor);
 
   [[nodiscard]] Scene& getScene() const;
 

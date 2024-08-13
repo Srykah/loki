@@ -3,6 +3,8 @@
 #include <imgui.h>
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
+#include <loki/system/ecs/Component.hpp>
+#include <loki/system/ecs/ComponentTraits.hpp>
 #include <loki/system/scene/SceneManager.hpp>
 #include <loki/editor/dynamicField/DynamicField.hpp>
 
@@ -37,6 +39,14 @@ void EditorModule::showActorPanel() {
       if (DynamicField("Transform", transformable))
         selectedActor.setTransformable(std::move(transformable));
     }
+    selectedActor.visitComponents([](const system::BaseComponentTraits& compTraits, void* compPtr) {
+      system::Component& comp = compTraits.getAsComponent(compPtr);
+      const auto& typeInfo = comp.getClassTypeInfo();
+      const auto& classInfo = std::get<loki::core::ClassInfo>(typeInfo.info);
+      if (ImGui::CollapsingHeader(classInfo.id.c_str())) {
+        DynamicField(classInfo.id.c_str(), compPtr, typeInfo);
+      }
+    });
   }
   ImGui::End();
 }

@@ -26,22 +26,9 @@ Actor Scene::instanciateActor(Actor parent) {
   return actor;
 }
 
-void Scene::visitComponents(ComponentVisitor&& compVisitor) {
-  const auto& compReg = getService<ComponentRegistry>();
-  // look among all component types in the registry
-  for (auto& storage : registry.storage() | std::views::values) {
-    // get the componentTraits associated with this component type
-    auto* compTraits = compReg.getTraits(storage.type());
-    if (!compTraits)
-      continue;  // if no traits were found, or the component type is filtered out, ignore
-    // iterate over the storage instances
-    for (entt::entity entity : storage) {
-      compVisitor(*compTraits, storage.value(entity));
-    }
-  }
-}
-
-void Scene::visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& compVisitor) {
+void Scene::visitComponents(const ActorFilter& actorFilter,
+                            const ComponentTraitsFilter& compTraitsFilter,
+                            const ComponentVisitor& compVisitor) {
   const auto& compReg = getService<ComponentRegistry>();
   // look among all component types in the registry
   for (auto& storage : registry.storage() | std::views::values) {
@@ -51,9 +38,35 @@ void Scene::visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentV
       continue;  // if no traits were found, or the component type is filtered out, ignore
     // iterate over the storage instances
     for (entt::entity entity : storage) {
+      if (!actorFilter(Actor{entt::handle{registry, entity}}))
+        continue;
       compVisitor(*compTraits, storage.value(entity));
     }
   }
+}
+
+void Scene::visitComponents(const ActorFilter& actorFilter, const ComponentVisitor& compVisitor) {
+  visitComponents(actorFilter, [](const BaseComponentTraits&) { return true; }, compVisitor);
+}
+
+void Scene::visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& compVisitor) {
+  visitComponents([](Actor) { return true; }, compTraitsFilter, compVisitor);
+}
+
+void Scene::visitComponents(const ComponentVisitor& compVisitor) {
+  visitComponents([](Actor) { return true; }, [](const BaseComponentTraits&) { return true; }, compVisitor);
+}
+
+void Scene::visitActorComponents(Actor actor,
+                                 const ComponentTraitsFilter& compTraitsFilter,
+                                 const ComponentVisitor& compVisitor) {
+  visitComponents([actor](Actor _actor) { return _actor == actor; }, [](const BaseComponentTraits&) { return true; },
+                  compVisitor);
+}
+
+void Scene::visitActorComponents(Actor actor, const ComponentVisitor& compVisitor) {
+  visitComponents([actor](Actor _actor) { return _actor == actor; }, [](const BaseComponentTraits&) { return true; },
+                  compVisitor);
 }
 
 void Scene::loadFromYaml(const YAML::Node& sceneNode) {

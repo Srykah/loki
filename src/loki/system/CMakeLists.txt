@@ -4,13 +4,14 @@ loki_create_module(system
   app/ApplicationInterface.hpp
   # ecs
   ecs/Actor.hpp
+  ecs/ActorHierarchy.hpp
   ecs/Component.hpp
   ecs/Component.hxx
   ecs/componentMacros.hpp
   ecs/ComponentRegistry.hpp
   ecs/ComponentRegistry.hxx
   ecs/ComponentTraits.hpp
-  ecs/ActorHierarchy.hpp
+  ecs/ComponentVisitor.hpp
   # fs
   fs/FileCategory.hpp
   fs/FileManager.hpp
