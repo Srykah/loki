@@ -21,6 +21,7 @@ class PhysicsBody {
   [[nodiscard]] sf::Vector2f getPosition() const;
   [[nodiscard]] float getRotationInDegrees() const;
 
+  void applyForce(const sf::Vector2f& force);
   void applyLinearImpulse(const sf::Vector2f& linearImpulse);
 
   PhysicsWorld* getWorld() const { return parentWorld; }

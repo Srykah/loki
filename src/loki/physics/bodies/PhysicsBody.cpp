@@ -28,6 +28,10 @@ float PhysicsBody::getRotationInDegrees() const {
   return core::toDegrees(body->GetAngle());
 }
 
+void PhysicsBody::applyForce(const sf::Vector2f& force) {
+  body->ApplyForceToCenter(toB2Vec2(force), true);
+}
+
 void PhysicsBody::applyLinearImpulse(const sf::Vector2f& linearImpulse) {
   body->ApplyLinearImpulseToCenter(toB2Vec2(linearImpulse), true);
 }
