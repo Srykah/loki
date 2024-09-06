@@ -97,15 +97,10 @@ void toYaml(YAML::Node& node, const void* obj, const EnumInfo& enumInfo) {
 }
 
 void toYaml(YAML::Node& node, const void* obj, const CharacterInfo& characterInfo) {
-  // todo others
-  assert(!characterInfo.isUnicode && characterInfo.size == sizeof(char) && "Only char is supported for now!");
   node = to<char>(obj);
 }
 
 void toYaml(YAML::Node& node, const void* obj, const StringInfo& stringInfo) {
-  // todo others
-  assert(!stringInfo.charType.isUnicode && stringInfo.charType.size == sizeof(char) &&
-         "Only char is supported for now!");
   node = details::to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
 }
 

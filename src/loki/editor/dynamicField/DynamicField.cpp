@@ -74,7 +74,6 @@ bool DynamicField(void* obj, const core::EnumInfo& enumInfo) {
 
 bool DynamicField(void* obj, const core::CharacterInfo& characterInfo) {
   constexpr std::size_t BUF_SIZE = 2;
-  assert(characterInfo.size == sizeof(char) && !characterInfo.isUnicode && "Only char is supported!");  // todo others
   char buf[BUF_SIZE];
   buf[0] = to<char>(obj);
   if (ImGui::InputText("", buf, BUF_SIZE, ImGuiInputTextFlags_EnterReturnsTrue)) {
@@ -85,12 +84,13 @@ bool DynamicField(void* obj, const core::CharacterInfo& characterInfo) {
 }
 
 bool DynamicField(void* obj, const core::StringInfo& stringInfo) {
-  // todo others
   constexpr std::size_t BUF_SIZE = 1024;
-  assert(stringInfo.charType.size == sizeof(char) && !stringInfo.charType.isUnicode && "Only char is supported!");
-  assert(stringInfo.sizeGetter(obj) <= BUF_SIZE && "Size is too big for our buffer");
   char buf[BUF_SIZE];
-  strcpy_s(buf, stringInfo.sizeGetter(obj) + 1, stringInfo.dataGetter(obj));
+  // todo
+  auto tmpObj = stringInfo.asUtf8StrGetter(obj);
+  const auto& asU8Str = to<std::string>(tmpObj.obj);
+  assert(asU8Str.size() < BUF_SIZE);
+  strcpy_s(buf, asU8Str.size() + 1, asU8Str.data());
   if (ImGui::InputText("", buf, BUF_SIZE, ImGuiInputTextFlags_EnterReturnsTrue)) {
     std::size_t newSize = strnlen_s(buf, BUF_SIZE);
     stringInfo.setter(obj, buf, newSize);

@@ -133,84 +133,18 @@ struct TypeInfoHolder<char> {
   static const TypeInfo& getTypeInfo_internal() {
     static TypeInfo CHAR_INFO{
         .factory = details::getBasicFactory<char>(),
-        .info =
-            CharacterInfo{
-                .isUnicode = false,
-                .size = sizeof(char),
-            },
+        .info = CharacterInfo{},
     };
     return CHAR_INFO;
   }
 };
 
-template <>
-struct TypeInfoHolder<char8_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo CHAR_INFO{
-        .factory = details::getBasicFactory<char8_t>(),
-        .info =
-            CharacterInfo{
-                .isUnicode = true,
-                .size = sizeof(char8_t),
-            },
-    };
-    return CHAR_INFO;
-  }
-};
-
-template <>
-struct TypeInfoHolder<char16_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo CHAR_INFO{
-        .factory = details::getBasicFactory<char16_t>(),
-        .info =
-            CharacterInfo{
-                .isUnicode = true,
-                .size = sizeof(char16_t),
-            },
-    };
-    return CHAR_INFO;
-  }
-};
-
-template <>
-struct TypeInfoHolder<char32_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo CHAR_INFO{
-        .factory = details::getBasicFactory<char32_t>(),
-        .info =
-            CharacterInfo{
-                .isUnicode = true,
-                .size = sizeof(char32_t),
-            },
-    };
-    return CHAR_INFO;
-  }
-};
-
-template <>
-struct TypeInfoHolder<wchar_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo CHAR_INFO{
-        .factory = details::getBasicFactory<wchar_t>(),
-        .info =
-            CharacterInfo{
-                .isUnicode = false,
-                .size = sizeof(wchar_t),
-            },
-    };
-    return CHAR_INFO;
-  }
-};
-
-// only deal with std::string for now (consider it is utf-8)
 template <>
 struct TypeInfoHolder<std::string> {
   static const TypeInfo& getTypeInfo_internal() {
     static TypeInfo STRING_INFO{
         .factory = details::getBasicFactory<std::string>(),
         .info = StringInfo{
-            .charType = std::get<CharacterInfo>(getTypeInfo<char>().info),
             .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
               return ConstTmpObj::fromPtrNonOwned(&details::to<std::string>(obj));
             },
@@ -227,7 +161,6 @@ struct TypeInfoHolder<std::filesystem::path> {
     static TypeInfo STRING_INFO{
         .factory = details::getBasicFactory<std::filesystem::path>(),
         .info = StringInfo{
-            .charType = std::get<CharacterInfo>(getTypeInfo<char>().info),
             .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
               return ConstTmpObj::makeOwned<std::string>(details::to<std::filesystem::path>(obj).generic_string());
             },

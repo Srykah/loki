@@ -99,31 +99,11 @@ void toString(std::string& str, const void* obj, const EnumInfo& enumInfo) {
 
 void toString(std::string& str, const void* obj, const CharacterInfo& characterInfo) {
   str += '\'';
-  unsigned int size = characterInfo.size;
-  if (characterInfo.isUnicode) {
-    if (size == sizeof(char8_t)) {
-      str += std::to_string(to<char8_t>(obj));
-    } else if (size == sizeof(char16_t)) {
-      str += std::to_string(to<char16_t>(obj));
-    } else if (size == sizeof(char32_t)) {
-      str += std::to_string(to<char32_t>(obj));
-    } else {
-      assert(false && "Unknown unicode character size!");
-    }
-  } else {
-    if (size == sizeof(char)) {
-      str += to<char>(obj);
-    } else {
-      assert(false && "Unknown non-unicode character size!");
-    }
-  }
+  str += to<char>(obj);
   str += '\'';
 }
 
 void toString(std::string& str, const void* obj, const StringInfo& stringInfo) {
-  // todo others
-  assert(!stringInfo.charType.isUnicode && stringInfo.charType.size == sizeof(char) &&
-         "Only char is supported for now!");
   str += '"';
   str += details::to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
   str += '"';
