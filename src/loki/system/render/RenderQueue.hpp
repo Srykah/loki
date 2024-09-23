@@ -18,12 +18,15 @@ class RenderQueue final : public sf::Drawable {
 
   void clear();
 
+  void setOverdraw(bool flag);
+
  private:
   struct DrawList {
     std::vector<const system::Drawable*> drawables;
     std::vector<const DebugDrawable*> debugDrawables;
   };
   std::map<DrawOrder, DrawList> drawLists;
+  bool overdraw = false;
 };
 
 }  // namespace loki::system

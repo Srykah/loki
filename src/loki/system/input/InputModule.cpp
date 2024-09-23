@@ -6,6 +6,8 @@
 
 namespace loki::system {
 
+LOKI_GAMEMODULE_GET_UPDATE_TRAITS(InputModule)
+
 InputModule::InputModule()
     : deadZones({
           {sf::Joystick::Axis::X, 0.f},
@@ -27,7 +29,7 @@ void InputModule::setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId
   inputStates[playerId] = {};
 }
 
-void InputModule::update(sf::Time dt, UpdateStepTag<UpdateStep::InputReading>) {
+void InputModule::onInputReading(sf::Time delta) {
   if (needsInit) {
     setPlayerConfig(PlayerConfig{inputConfigs.begin()->first});
     needsInit = false;

@@ -7,6 +7,8 @@
 
 namespace loki::system {
 
+LOKI_GAMEMODULE_GET_UPDATE_TRAITS(WindowModule)
+
 void WindowModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
   serviceRegistry.registerService(*this);
 }
@@ -19,7 +21,7 @@ void WindowModule::init() {
     window.setMinimumSize(minimumSize);
 }
 
-void WindowModule::update(sf::Time delta, UpdateSteps::InputPolling) {
+void WindowModule::onInputPolling(sf::Time delta) {
   events.clear();
   sf::Event event;
   while (window.pollEvent(event)) {
@@ -30,11 +32,11 @@ void WindowModule::update(sf::Time delta, UpdateSteps::InputPolling) {
   }
 }
 
-void WindowModule::update(sf::Time delta, UpdateSteps::PreRender) {
+void WindowModule::onPreRender(sf::Time delta) {
   window.clear();
 }
 
-void WindowModule::update(sf::Time delta, UpdateSteps::PostRender) {
+void WindowModule::onPostRender(sf::Time delta) {
   window.display();
 }
 

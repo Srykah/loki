@@ -10,6 +10,8 @@
 
 namespace loki::editor {
 
+LOKI_GAMEMODULE_GET_UPDATE_TRAITS(EditorModule)
+
 void EditorModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
   serviceRegistry.registerService(*this);
 }
@@ -18,7 +20,7 @@ void EditorModule::init() {
   sceneManager = &getService<system::SceneManager>();
 }
 
-void EditorModule::update(sf::Time dt, UpdateSteps::Render) {
+void EditorModule::onDebugRender(sf::Time delta) {
   showScenePanel();
   showActorPanel();
 }

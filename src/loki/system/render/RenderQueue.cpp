@@ -1,5 +1,6 @@
 #include "RenderQueue.hpp"
 
+#include <cassert>
 #include <ranges>
 
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -15,16 +16,39 @@ void RenderQueue::registerDebugDrawable(DrawOrder drawOrder, const DebugDrawable
 }
 
 void RenderQueue::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  for (const auto& drawList : drawLists | std::views::values) {
-    for (const auto* drawable : drawList.drawables)
-      drawable->draw(target, states);
-    for (const auto* debugDrawable : drawList.debugDrawables)
-      debugDrawable->debugDraw(target, states);
+  if (overdraw) {
+    for (const auto& drawList : drawLists | std::views::values) {
+      for (const auto* drawable : drawList.drawables) {
+        assert(drawable);
+        target.draw(*drawable, states);
+      }
+    }
+    for (const auto& drawList : drawLists | std::views::values) {
+      for (const auto* debugDrawable : drawList.debugDrawables) {
+        assert(debugDrawable);
+        debugDrawable->debugDraw(target, states);
+      }
+    }
+  } else {
+    for (const auto& drawList : drawLists | std::views::values) {
+      for (const auto* drawable : drawList.drawables) {
+        assert(drawable);
+        target.draw(*drawable, states);
+      }
+      for (const auto* debugDrawable : drawList.debugDrawables) {
+        assert(debugDrawable);
+        debugDrawable->debugDraw(target, states);
+      }
+    }
   }
 }
 
 void RenderQueue::clear() {
   drawLists.clear();
+}
+
+void RenderQueue::setOverdraw(bool flag) {
+  overdraw = flag;
 }
 
 }  // namespace loki::system

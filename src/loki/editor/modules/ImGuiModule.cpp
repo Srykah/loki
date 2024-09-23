@@ -9,6 +9,8 @@
 
 namespace loki::editor {
 
+LOKI_GAMEMODULE_GET_UPDATE_TRAITS(ImGuiModule)
+
 ImGuiModule::~ImGuiModule() {
   if (isEnabled)
     ImGui::SFML::Shutdown();
@@ -29,17 +31,17 @@ void ImGuiModule::init() {
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
 
-void ImGuiModule::update(sf::Time dt, UpdateSteps::InputReading) {
+void ImGuiModule::onInputReading(sf::Time delta) {
   if (!isEnabled)
     return;
   sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();
   for (const sf::Event& event : windowModule->getEvents()) {
     ImGui::SFML::ProcessEvent(window, event);
   }
-  ImGui::SFML::Update(window, dt);
+  ImGui::SFML::Update(window, delta);
 }
 
-void ImGuiModule::update(sf::Time dt, UpdateSteps::PreRender) {
+void ImGuiModule::onPreDebugRender(sf::Time delta) {
   if (!isEnabled)
     return;
   const ImGuiID dockspaceId = ImGui::GetID("Main Dockspace");
@@ -52,7 +54,7 @@ void ImGuiModule::update(sf::Time dt, UpdateSteps::PreRender) {
     ImGui::ShowDemoWindow();
 }
 
-void ImGuiModule::update(sf::Time dt, UpdateSteps::DebugMenuRender) {
+void ImGuiModule::onPostDebugRender(sf::Time delta) {
   if (!isEnabled)
     return;
   sf::RenderWindow& window = windowModule->getWindow().getRenderWindow();

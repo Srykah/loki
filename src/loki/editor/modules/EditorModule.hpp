@@ -12,9 +12,10 @@ namespace loki::editor {
 class EditorModule final : public system::GameModule {
  public:
   ~EditorModule() override = default;
+  [[nodiscard]] const system::BaseUpdateTraits& getUpdateTraits() const override;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void update(sf::Time dt, UpdateSteps::Render);
+  void onDebugRender(sf::Time dt);
 
  private:
   void showScenePanel();
@@ -27,7 +28,6 @@ class EditorModule final : public system::GameModule {
   system::Actor selectedActor;
 
   LOKI_RTTI_CLASS_DECLARE(EditorModule)
-  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(EditorModule)
 };
 
 }  // namespace loki::editor
@@ -35,3 +35,7 @@ class EditorModule final : public system::GameModule {
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::editor::EditorModule)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::editor::EditorModule)
+
+LOKI_UPDATE_TRAITS_BEGIN(loki::editor::EditorModule)
+LOKI_UPDATE_TRAITS_METHOD(DebugRender, onDebugRender)
+LOKI_UPDATE_TRAITS_END()

@@ -18,10 +18,11 @@ class InputModule final : public GameModule {
   InputModule();
 
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
+  [[nodiscard]] const BaseUpdateTraits& getUpdateTraits() const override;
 
   void setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId = 0);
 
-  void update(sf::Time dt, UpdateStepTag<UpdateStep::InputReading>);
+  void onInputReading(sf::Time delta);
 
   [[nodiscard]] InputState getInputState(const InputId& inputId, PlayerId playerId = 0) const;
 
@@ -38,7 +39,6 @@ class InputModule final : public GameModule {
   bool needsInit = true;
 
   LOKI_RTTI_CLASS_DECLARE(InputModule)
-  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(InputModule)
 };
 
 }  // namespace loki::system
@@ -48,3 +48,7 @@ LOKI_REFLECTION_CLASS_FIELD(inputConfigs)
 LOKI_REFLECTION_CLASS_FIELD(deadZones)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::InputModule)
+
+LOKI_UPDATE_TRAITS_BEGIN(loki::system::InputModule)
+LOKI_UPDATE_TRAITS_METHOD(InputReading, onInputReading)
+LOKI_UPDATE_TRAITS_END()

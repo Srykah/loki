@@ -10,14 +10,13 @@ namespace loki::system {
 
 class WindowModule final : public GameModule {
  public:
+  ~WindowModule() override = default;
+  [[nodiscard]] const BaseUpdateTraits& getUpdateTraits() const override;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void update(sf::Time delta, UpdateSteps::InputPolling);
-  void update(sf::Time delta, UpdateSteps::PreRender);
-  void update(sf::Time delta, UpdateSteps::PostRender);
-  static_assert(HasUpdateStep<WindowModule, UpdateStep::InputPolling>);
-  static_assert(HasUpdateStep<WindowModule, UpdateStep::PreRender>);
-  static_assert(HasUpdateStep<WindowModule, UpdateStep::PostRender>);
+  void onInputPolling(sf::Time delta);
+  void onPreRender(sf::Time delta);
+  void onPostRender(sf::Time delta);
 
   Window& getWindow() { return window; }
   std::span<const sf::Event> getEvents() const { return events; }
@@ -33,7 +32,6 @@ class WindowModule final : public GameModule {
   std::vector<sf::Event> events;
 
   LOKI_RTTI_CLASS_DECLARE(WindowModule)
-  LOKI_GAMEMODULE_GET_UPDATE_TRAITS(WindowModule)
 };
 
 }  // namespace loki::system
@@ -46,3 +44,9 @@ LOKI_REFLECTION_CLASS_FIELD(minimumSize)
 LOKI_REFLECTION_CLASS_FIELD(internalResolution)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::WindowModule)
+
+LOKI_UPDATE_TRAITS_BEGIN(loki::system::WindowModule)
+LOKI_UPDATE_TRAITS_METHOD(InputPolling, onInputPolling)
+LOKI_UPDATE_TRAITS_METHOD(PreRender, onPreRender)
+LOKI_UPDATE_TRAITS_METHOD(PostRender, onPostRender)
+LOKI_UPDATE_TRAITS_END()

@@ -12,11 +12,11 @@ void SpriteComponent::onFinalizeInit() {
     sprite.setAnim(data.animations.begin()->first);
 }
 
-void SpriteComponent::update(sf::Time dt) {
-  sprite.update(dt);
+void SpriteComponent::onUpdate(sf::Time delta) {
+  sprite.update(delta);
 }
 
-[[nodiscard]] system::DrawOrder SpriteComponent::getDrawOrder() const {
+system::DrawOrder SpriteComponent::getDrawOrder() const {
   return {};
 }
 

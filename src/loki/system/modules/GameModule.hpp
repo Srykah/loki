@@ -9,7 +9,7 @@ namespace loki::system {
 
 class GameModule : public core::BaseObject {
  public:
-  virtual const BaseUpdateTraits& getUpdateTraits() const = 0;
+  [[nodiscard]] virtual const BaseUpdateTraits& getUpdateTraits() const = 0;
   virtual void registerAsAService(core::ServiceRegistry& serviceRegistry) = 0;
   virtual void init() {}
 
@@ -23,8 +23,8 @@ LOKI_REFLECTION_CLASS_PARENT(loki::system::GameModule, loki::core::BaseObject)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::GameModule)
 
-#define LOKI_GAMEMODULE_GET_UPDATE_TRAITS(Class)                             \
-  const ::loki::system::BaseUpdateTraits& getUpdateTraits() const override { \
-    static ::loki::system::UpdateTraits<Class> updateTraits;                 \
-    return updateTraits;                                                     \
+#define LOKI_GAMEMODULE_GET_UPDATE_TRAITS(Class)                           \
+  const ::loki::system::BaseUpdateTraits& Class::getUpdateTraits() const { \
+    static const ::loki::system::UpdateTraits<Class> updateTraits;         \
+    return updateTraits;                                                   \
   }

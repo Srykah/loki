@@ -6,9 +6,9 @@ void PhysicsWorldComponent::onStartInit() {
   world = std::make_unique<PhysicsWorld>(auto{worldParams});
 }
 
-void PhysicsWorldComponent::update(sf::Time dt, UpdateSteps::PhysicsSimulation) {
+void PhysicsWorldComponent::onPhysicsSimulation(sf::Time delta) {
   if (world)
-    world->update(dt);
+    world->update(delta);
 }
 
 PhysicsWorld* PhysicsWorldComponent::getWorld() const {

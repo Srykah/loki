@@ -10,8 +10,10 @@ namespace loki::system {
   DO(PhysicsResult)     /* for the PhysicsBodies */               \
   DO(Default)           /* for pretty much everything */          \
   DO(PreRender)         /* for the clearing of the Window */      \
+  DO(PreDebugRender)    /* for the clearing of the Window */      \
   DO(Render)            /* for the RendererModule */              \
-  DO(DebugMenuRender)   /* for the ImGuiModule */                 \
+  DO(DebugRender)       /* for the ImGuiModule */                 \
+  DO(PostDebugRender)   /* for the ImGuiModule */                 \
   DO(PostRender)        /* for the display of the Window */
 
 enum class UpdateStep {
@@ -21,17 +23,4 @@ enum class UpdateStep {
       Count
 };
 
-template <UpdateStep Step>
-struct UpdateStepTag {
-  static constexpr UpdateStep step = Step;
-};
-
 }  // namespace loki::system
-
-namespace loki::UpdateSteps {
-
-#define LOKI_INTRODUCE_TAG_ALIAS(StepName, ...) using StepName = system::UpdateStepTag<system::UpdateStep::StepName>;
-LOKI_SYSTEM_UPDATE_STEP_LIST(LOKI_INTRODUCE_TAG_ALIAS)
-#undef LOKI_INTRODUCE_TAG_ALIAS
-
-}  // namespace loki::UpdateSteps

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <loki/system/ecs/Component.hpp>
-#include <loki/system/scheduler/UpdateSteps.hpp>
+#include <loki/system/scheduler/UpdateTraits.hpp>
 #include <loki/physics/world/PhysicsWorld.hpp>
 
 namespace loki::physics {
@@ -9,7 +9,7 @@ namespace loki::physics {
 class PhysicsWorldComponent : public system::Component {
  public:
   void onStartInit() override;
-  void update(sf::Time dt, UpdateSteps::PhysicsSimulation);
+  void onPhysicsSimulation(sf::Time delta);
 
   PhysicsWorld* getWorld() const;
 
@@ -26,3 +26,7 @@ LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::Physic
 LOKI_REFLECTION_CLASS_FIELD(worldParams)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsWorldComponent)
+
+LOKI_UPDATE_TRAITS_BEGIN(loki::physics::PhysicsWorldComponent)
+LOKI_UPDATE_TRAITS_METHOD(PhysicsSimulation, onPhysicsSimulation)
+LOKI_UPDATE_TRAITS_END()
