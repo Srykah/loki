@@ -1,12 +1,13 @@
 Checks: >
   -*,
   bugprone-*,
-  cert-*,
-  concurrency-*,
   cppcoreguidelines-*,
+  -cppcoreguidelines-special-member-functions,
+  -cppcoreguidelines-pro-type-const-cast,
   misc-*,
   modernize-*,
   -modernize-use-trailing-return-type,
   performance-*,
   portability-*,
-  readability-*
+  readability-*,
+  -readability-braces-around-statements
