@@ -20,6 +20,7 @@ Actor Scene::instanciateActor(Actor parent) {
   Actor actor{handle};
   handle.emplace<std::string>("<unnamed>");
   handle.emplace<sf::Transformable>();
+  handle.emplace<sf::FloatRect>(-1.f, -1.f, 2.f, 2.f);
   handle.emplace<ActorHierarchy>(parent);
   if (parent)
     parent.getComponent<ActorHierarchy>()->children.push_back(actor);

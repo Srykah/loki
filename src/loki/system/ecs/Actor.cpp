@@ -37,6 +37,14 @@ sf::Transform Actor::getGlobalTransform() const {
   return getLocalTransform();
 }
 
+void Actor::setBV(sf::FloatRect&& bv) {
+  *getComponent<sf::FloatRect>() = std::move(bv);
+}
+
+const sf::FloatRect& Actor::getBV() const {
+  return *getComponent<sf::FloatRect>();
+}
+
 Actor Actor::getParent() const {
   return getComponent<ActorHierarchy>()->parent;
 }

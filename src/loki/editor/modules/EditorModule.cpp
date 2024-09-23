@@ -39,6 +39,11 @@ void EditorModule::showActorPanel() {
       if (DynamicField("Transform", transformable))
         selectedActor.setTransformable(std::move(transformable));
     }
+    if (ImGui::CollapsingHeader("Bounding Volume")) {
+      sf::FloatRect bv = selectedActor.getBV();
+      if (DynamicField("Bounding Volume", bv))
+        selectedActor.setBV(std::move(bv));
+    }
     selectedActor.visitComponents([](const system::BaseComponentTraits& compTraits, void* compPtr) {
       system::Component& comp = compTraits.getAsComponent(compPtr);
       const auto& typeInfo = comp.getClassTypeInfo();
