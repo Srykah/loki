@@ -1,6 +1,7 @@
 #include "GraphicsTileMapComponent.hpp"
 
-#include "loki/tiles/TileMapDataComponent.hpp"
+#include <loki/system/render/RendererModule.hpp>
+#include <loki/tiles/TileMapDataComponent.hpp>
 
 namespace loki::graphics {
 void GraphicsTileMapComponent::onStartInit() {
@@ -13,9 +14,10 @@ void GraphicsTileMapComponent::onFinalizeInit() {
   auto* dataComp = getActor().getComponent<tiles::TileMapDataComponent>();
   assert(dataComp);
   tileMap.setData(dataComp->getDataHandle().getData());
+  getService<system::RendererModule>().getRenderQueue().registerDrawable(this, getDrawOrder());
 }
 
-[[nodiscard]] system::DrawOrder GraphicsTileMapComponent::getDrawOrder() const {
+system::DrawOrder GraphicsTileMapComponent::getDrawOrder() const {
   return {};
 }
 

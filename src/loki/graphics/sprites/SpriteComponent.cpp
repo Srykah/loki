@@ -1,5 +1,7 @@
 #include "SpriteComponent.hpp"
 
+#include <loki/system/render/RendererModule.hpp>
+
 namespace loki::graphics {
 void SpriteComponent::onStartInit() {
   addResources(spriteData);
@@ -10,6 +12,7 @@ void SpriteComponent::onFinalizeInit() {
   sprite.setData(data);
   if (!data.animations.empty())
     sprite.setAnim(data.animations.begin()->first);
+  getService<system::RendererModule>().getRenderQueue().registerDrawable(this, getDrawOrder());
 }
 
 void SpriteComponent::onUpdate(sf::Time delta) {
@@ -17,7 +20,7 @@ void SpriteComponent::onUpdate(sf::Time delta) {
 }
 
 system::DrawOrder SpriteComponent::getDrawOrder() const {
-  return {};
+  return {1};
 }
 
 void SpriteComponent::draw(sf::RenderTarget& target, sf::RenderStates states) const {

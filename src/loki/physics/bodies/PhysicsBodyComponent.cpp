@@ -27,12 +27,4 @@ void PhysicsBodyComponent::onPhysicsResult(sf::Time dt) {
   getActor().setTransformable(std::move(transformable));
 }
 
-system::DrawOrder PhysicsBodyComponent::getDebugDrawOrder() const {
-  return {};
-}
-
-void PhysicsBodyComponent::debugDraw(sf::RenderTarget& target, sf::RenderStates states) const {
-  body.debugDraw(target, states);
-}
-
 }  // namespace loki::physics

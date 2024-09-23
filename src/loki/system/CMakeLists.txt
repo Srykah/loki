@@ -25,7 +25,6 @@ loki_create_module(system
   # modules
   modules/GameModule.hpp
   # render
-  render/Drawable.hpp
   render/DrawOrder.hpp
   render/RenderQueue.hpp
   render/RendererModule.hpp

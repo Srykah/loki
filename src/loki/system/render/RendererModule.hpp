@@ -19,7 +19,8 @@ class RendererModule final : public GameModule {
   void init() override;
   void onRender(sf::Time delta);
 
-  const sf::RenderTexture& getTexture() const;
+  [[nodiscard]] RenderQueue& getRenderQueue();
+  [[nodiscard]] const sf::RenderTexture& getTexture() const;
 
   void setDrawDebug(bool enable = true);
 

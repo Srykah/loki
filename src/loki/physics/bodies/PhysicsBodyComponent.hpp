@@ -6,7 +6,6 @@
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/system/ecs/Component.hpp>
-#include <loki/system/render/Drawable.hpp>
 #include <loki/system/scheduler/UpdateTraits.hpp>
 #include <loki/physics/bodies/PhysicsBody.hpp>
 #include <loki/physics/bodies/PhysicsBodyParams.hpp>
@@ -14,15 +13,12 @@
 
 namespace loki::physics {
 
-class PhysicsBodyComponent : public system::Component, public system::DebugDrawable {
+class PhysicsBodyComponent : public system::Component {
  public:
   void onStartInit() override;
   void onFinalizeInit() override;
   void onPrePhysics(sf::Time dt);
   void onPhysicsResult(sf::Time dt);
-
-  [[nodiscard]] system::DrawOrder getDebugDrawOrder() const override;
-  void debugDraw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
   PhysicsBody& getBody() { return body; }
 

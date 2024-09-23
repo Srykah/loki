@@ -5,14 +5,15 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 
-#include <loki/system/render/Drawable.hpp>
+#include <loki/system/render/DrawOrder.hpp>
 
 namespace loki::system {
 
 class RenderQueue final : public sf::Drawable {
  public:
-  void registerDrawable(DrawOrder drawOrder, const system::Drawable* drawable);
-  void registerDebugDrawable(DrawOrder drawOrder, const DebugDrawable* debugDrawable);
+  void registerDrawable(const sf::Drawable* drawable, DrawOrder drawOrder, bool isDebug = false);
+  void updateDrawOrder(const sf::Drawable* drawable, DrawOrder drawOrder);
+  void unregisterDrawable(const sf::Drawable* drawable);
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -21,11 +22,15 @@ class RenderQueue final : public sf::Drawable {
   void setOverdraw(bool flag);
 
  private:
-  struct DrawList {
-    std::vector<const system::Drawable*> drawables;
-    std::vector<const DebugDrawable*> debugDrawables;
+  struct DrawEntry {
+    const sf::Drawable* drawable = nullptr;
+    DrawOrder drawOrder;
+    bool isDebug = false;
+
+    static bool less(const DrawEntry& _lhs, const DrawEntry& _rhs);
+    static bool lessOverdraw(const DrawEntry& _lhs, const DrawEntry& _rhs);
   };
-  std::map<DrawOrder, DrawList> drawLists;
+  std::vector<DrawEntry> drawEntries;
   bool overdraw = false;
 };
 

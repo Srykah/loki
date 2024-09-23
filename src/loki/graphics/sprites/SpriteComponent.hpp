@@ -1,17 +1,16 @@
 #pragma once
 
 #include <loki/system/ecs/Component.hpp>
-#include <loki/system/render/Drawable.hpp>
 #include <loki/system/scheduler/UpdateTraits.hpp>
 #include <loki/graphics/sprites/Sprite.hpp>
 
 namespace loki::graphics {
-class SpriteComponent : public system::Component, public system::Drawable {
+class SpriteComponent : public system::Component, public sf::Drawable {
  public:
   void onStartInit() override;
   void onFinalizeInit() override;
   void onUpdate(sf::Time delta);
-  [[nodiscard]] system::DrawOrder getDrawOrder() const override;
+  [[nodiscard]] system::DrawOrder getDrawOrder() const;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:

@@ -25,14 +25,6 @@ void PhysicsTileMapComponent::onFinalizeInit() {
   body.setTransformable(getActor().getTransformable());  // init position and rotation
 }
 
-system::DrawOrder PhysicsTileMapComponent::getDebugDrawOrder() const {
-  return {};
-}
-
-void PhysicsTileMapComponent::debugDraw(sf::RenderTarget& target, sf::RenderStates states) const {
-  body.debugDraw(target, states);
-}
-
 void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
   body = getService<system::SceneManager>()
              .getCurrentScene()
