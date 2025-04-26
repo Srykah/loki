@@ -11,12 +11,18 @@ Scene* SceneManager::getCurrentScene() const {
   return scene.get();
 }
 
-void SceneManager::setScenePaths(std::map<std::string, std::filesystem::path>&& _scenePaths) {
+void SceneManager::setScenePaths(ScenePaths&& _scenePaths) {
   scenePaths = std::move(_scenePaths);
 }
 
+const SceneManager::ScenePaths& SceneManager::getScenePaths() const {
+  return scenePaths;
+}
+
 void SceneManager::loadScene(const std::string& sceneName) {
-  loadSceneFromYamlFile(scenePaths.at(sceneName));
+  const auto& scenePath = scenePaths.at(sceneName);
+  loadSceneFromYamlFile(scenePath);
+  scene->setPath(scenePath);
 }
 
 void SceneManager::loadSceneFromYaml(const YAML::Node& sceneNode) {

@@ -1,8 +1,10 @@
 #include "Scene.hpp"
 
+#include <fstream>
 #include <ranges>
 
 #include <box/BoundingBoxComponent.hpp>
+#include <yaml-cpp/emitter.h>
 #include <yaml-cpp/node/impl.h>
 
 #include <loki/core/services/ServiceRegistry.hpp>
@@ -71,6 +73,10 @@ void Scene::visitActorComponents(Actor actor, const ComponentVisitor& compVisito
                   compVisitor);
 }
 
+void Scene::setPath(const std::filesystem::path& _path) {
+  path = _path;
+}
+
 void Scene::loadFromYaml(const YAML::Node& sceneNode) {
   if (YAML::Node nameNode = sceneNode["name"]; nameNode && nameNode.Type() == YAML::NodeType::Scalar)
     name = nameNode.as<std::string>();
@@ -78,6 +84,18 @@ void Scene::loadFromYaml(const YAML::Node& sceneNode) {
     root = instanciateActor();
     root.loadFromYaml(*this, rootNode);
   }
+}
+
+void Scene::saveToYaml() {
+  YAML::Emitter emitter;
+  emitter << YAML::BeginMap;
+  emitter << YAML::Key << "name" << YAML::Value << name;
+  emitter << YAML::Key << "root" << YAML::Value << root;
+  emitter << YAML::EndMap;
+
+  std::ofstream file{path};
+  file << emitter.c_str();
+  file.flush();
 }
 
 }  // namespace loki::system

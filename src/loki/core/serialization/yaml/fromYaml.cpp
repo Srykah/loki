@@ -138,17 +138,32 @@ void fromYaml(const YAML::Node& node, void* obj, const DictInfo& dictInfo) {
 }
 
 void fromYaml(const YAML::Node& node, void* obj, const ClassInfo& classInfo) {
-  for (const auto& field : classInfo.fields) {
-    auto child = node[field.name];
-    if (!child)
-      continue;  // ignore absent values
+  bool asValue = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
+                   return attr->getType() == ClassAttribute::Type::SerializeAsValue;
+                 }) != classInfo.attributes.end();
+  if (asValue) {
+    const auto& field = classInfo.fields.at(0);
     if (field.isInPlace) {
       TmpObj fieldObj = field.getter(obj);
-      fromYaml(child, fieldObj.obj, field.type);
+      fromYaml(node, fieldObj.obj, field.type);
     } else {
       TmpObj fieldObj = field.type.factory(obj, TmpObj::Ownership::Owned);
-      fromYaml(child, fieldObj.obj, field.type);
+      fromYaml(node, fieldObj.obj, field.type);
       field.setter(obj, fieldObj.obj);
+    }
+  } else {
+    for (const auto& field : classInfo.fields) {
+      auto childNode = node[field.name];
+      if (!childNode)
+        continue;  // ignore absent values
+      if (field.isInPlace) {
+        TmpObj fieldObj = field.getter(obj);
+        fromYaml(childNode, fieldObj.obj, field.type);
+      } else {
+        TmpObj fieldObj = field.type.factory(obj, TmpObj::Ownership::Owned);
+        fromYaml(childNode, fieldObj.obj, field.type);
+        field.setter(obj, fieldObj.obj);
+      }
     }
   }
 }

@@ -2,11 +2,14 @@
 
 #include <cstdint>
 #include <functional>
+#include <memory>
 #include <string>
 #include <string_view>
 #include <variant>
 #include <vector>
 
+#include <loki/core/reflection/classAttributes.hpp>
+#include <loki/core/reflection/fieldAttributes.hpp>
 #include <loki/core/utils/TmpObj.hpp>
 
 namespace loki::core {
@@ -79,12 +82,14 @@ struct FieldInfo {
   std::function<TmpObj(void* parent)> getter;
   std::function<ConstTmpObj(const void* parent)> getterConst;
   std::function<void(void* parent, void* data)> setter;
+  std::vector<std::unique_ptr<FieldAttribute>> attributes;
 };
 struct ClassInfo {
   ClassId id;
   const TypeInfo* parentType = nullptr;
   std::function<void*(void* obj)> toParentType;
   std::vector<FieldInfo> fields;
+  std::vector<std::unique_ptr<ClassAttribute>> attributes;
 };
 struct PtrInfo {
   const TypeInfo& innerType;

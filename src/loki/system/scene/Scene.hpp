@@ -1,5 +1,7 @@
 #pragma once
 
+#include <filesystem>
+
 #include <yaml-cpp/node/node.h>
 
 #include <loki/system/ecs/Actor.hpp>
@@ -14,7 +16,13 @@ class Scene final {
  public:
   Scene();
 
+  [[nodiscard]] std::string_view getName() const { return name; }
   [[nodiscard]] const Actor& getRoot() const { return root; }
+
+  void setPath(const std::filesystem::path& pathName);
+  [[nodiscard]] const std::filesystem::path& getPath() const { return path; }
+  void loadFromYaml(const YAML::Node& sceneNode);
+  void saveToYaml();
 
   [[nodiscard]] Actor instanciateActor(Actor parent = {});
 
@@ -30,11 +38,8 @@ class Scene final {
   void visitActorComponents(Actor actor, const ComponentVisitor& compVisitor);
 
  private:
-  friend class SceneManager;
-  void loadFromYaml(const YAML::Node& sceneNode);
-
- private:
   std::string name;
+  std::filesystem::path path;
   entt::registry registry;
   const ComponentRegistry& componentRegistry;
   Actor root;

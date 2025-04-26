@@ -16,9 +16,13 @@ class Window;
 
 class SceneManager : public core::BaseObject {
  public:
+  using ScenePaths = std::map<std::string, std::filesystem::path>;
+
+ public:
   Scene* getCurrentScene() const;
 
-  void setScenePaths(std::map<std::string, std::filesystem::path>&& scenePaths);
+  void setScenePaths(ScenePaths&& scenePaths);
+  const ScenePaths& getScenePaths() const;
   void loadScene(const std::string& sceneName);
 
  private:
@@ -27,7 +31,7 @@ class SceneManager : public core::BaseObject {
   void loadSceneFromYamlFile(const std::filesystem::path& scenePath);
 
  private:
-  std::map<std::string, std::filesystem::path> scenePaths;
+  ScenePaths scenePaths;
   std::unique_ptr<Scene> scene;
 
   LOKI_RTTI_CLASS_DECLARE(SceneManager)

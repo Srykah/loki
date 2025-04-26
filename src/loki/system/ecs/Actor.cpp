@@ -1,6 +1,7 @@
 #include "Actor.hpp"
 
 #include <box/BoundingBoxComponent.hpp>
+#include <serialization/yaml/toYaml.hpp>
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/core/rtti/RuntimeObjectRegistry.hpp>
@@ -88,6 +89,32 @@ void Actor::loadFromYaml(Scene& scene, const YAML::Node& node) {
   for (const YAML::Node& childNode : node["children"]) {
     scene.instanciateActor(*this).loadFromYaml(scene, childNode);
   }
+}
+
+void Actor::saveToYaml(YAML::Emitter& emitter) {
+  emitter << YAML::BeginMap;
+  emitter << YAML::Key << "name" << YAML::Value << *getComponent<std::string>();
+  if (const auto& transform = getTransformable(); transform.getTransform() != sf::Transform{})
+    emitter << YAML::Key << "transform" << YAML::Value << transform;
+  emitter << YAML::Key << "components" << YAML::Value << YAML::BeginSeq;
+  visitComponents([&](const BaseComponentTraits& compTraits, const void* comp) {
+    if (&compTraits.getTypeInfo() == &core::getTypeInfo<BoundingBoxComponent>())
+      return;  // skip bounding box component, it is runtime only
+    core::toYaml(emitter, comp, compTraits.getTypeInfo());
+  });
+  emitter << YAML::EndSeq;
+  if (auto children = getChildren(); !children.empty()) {
+    emitter << YAML::Key << "children" << YAML::Value << YAML::BeginSeq;
+    for (const Actor child : children)
+      emitter << child;
+    emitter << YAML::EndSeq;
+  }
+  emitter << YAML::EndMap;
+}
+
+YAML::Emitter& operator<<(YAML::Emitter& emitter, Actor actor) {
+  actor.saveToYaml(emitter);
+  return emitter;
 }
 
 }  // namespace loki::system

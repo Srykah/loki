@@ -56,6 +56,9 @@ using CLASSNAME = TemplateClass<X, Y>;
   LOKI_REFLECTION_CLASS_BEGIN(Child)                     \
   LOKI_REFLECTION_CLASS_PARENT(Child, Parent)
 
+#define LOKI_REFLECTION_CLASS_ATTRIBUTE(AttributeType, ...) \
+  CLASSINFO.attributes.push_back(std::make_unique<AttributeType>(__VA_ARGS__));
+
 #define LOKI_REFLECTION_CLASS_FIELD_CUSTOM(fieldType, fieldName, isFieldInPlace, fieldGetter, fieldGetterConst, \
                                            fieldSetter)                                                         \
   CLASSINFO.fields.emplace_back(fieldType, fieldName, isFieldInPlace, fieldGetter, fieldGetterConst, fieldSetter);

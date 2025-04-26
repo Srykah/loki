@@ -20,6 +20,8 @@ class EditorModule final : public system::GameModule {
   void onDebugRender(sf::Time dt);
 
  private:
+  void showMenuBar();
+  void showSceneTabs();
   void showScenePanel();
   void showActorPanel();
   void showActorBoundingBoxes();

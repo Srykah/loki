@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics/Transformable.hpp>
 #include <entt/entt.hpp>
+#include <yaml-cpp/emitter.h>
 #include <yaml-cpp/node/node.h>
 
 #include <loki/system/ecs/ComponentVisitor.hpp>
@@ -17,6 +18,8 @@ class Actor {
  public:
   Actor() = default;
 
+  void loadFromYaml(Scene& scene, const YAML::Node& node);
+  void saveToYaml(YAML::Emitter& emitter);
   void setName(std::string&& name);
   [[nodiscard]] const std::string& getName() const;
   void setTransformable(sf::Transformable&& transform);
@@ -48,11 +51,12 @@ class Actor {
  private:
   friend Scene;
   explicit Actor(entt::handle handle) : handle(handle) {}
-  void loadFromYaml(Scene& scene, const YAML::Node& node);
 
  private:
   friend class ComponentRegistry;
   entt::handle handle;
 };
+
+YAML::Emitter& operator<<(YAML::Emitter& emitter, Actor actor);
 
 }  // namespace loki::system

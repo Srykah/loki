@@ -2,6 +2,8 @@
 
 #include <cassert>
 
+#include <fmt/format.h>
+
 #include <loki/core/reflection/reflectionUtils.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
 
@@ -89,12 +91,15 @@ void toString(std::string& str, const void* obj, const EnumInfo& enumInfo) {
     }
   }
   // then, find the name of the enumerator with that value
-  auto it = std::find_if(enumInfo.enumerators.begin(), enumInfo.enumerators.end(),
-                         [value](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.value == value; });
-  if (it != enumInfo.enumerators.end())
+  auto it = std::ranges::find_if(
+      enumInfo.enumerators, [value](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.value == value; });
+  if (it != enumInfo.enumerators.end()) {
+    str += '"';
     str += it->name;
-  else
-    str += "<unnamed>";
+    str += '"';
+  } else {
+    str += value;
+  }
 }
 
 void toString(std::string& str, const void* obj, const CharacterInfo& characterInfo) {
@@ -105,7 +110,7 @@ void toString(std::string& str, const void* obj, const CharacterInfo& characterI
 
 void toString(std::string& str, const void* obj, const StringInfo& stringInfo) {
   str += '"';
-  str += details::to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
+  str += to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
   str += '"';
 }
 
@@ -143,20 +148,32 @@ void toString(std::string& str, const void* obj, const DictInfo& dictInfo) {
 }
 
 void toString(std::string& str, const void* obj, const ClassInfo& classInfo) {
-  str += R"({ "__type__": ")";
-  str += classInfo.id;
-  str += R"(", )";
-  for (const auto& field : classInfo.fields) {
-    str += '"';
-    str += field.name;
-    str += R"(": )";
-    TmpObj fieldObj = field.getter(const_cast<void*>(obj));
-    toString(str, fieldObj.obj, field.type);
-    str += ", ";
+  bool asValue = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
+                   return attr->getType() == ClassAttribute::Type::SerializeAsValue;
+                 }) != classInfo.attributes.end();
+  if (asValue) {
+    const auto& field = classInfo.fields.at(0);
+    ConstTmpObj tmpObj = field.getterConst(obj);
+    toString(str, tmpObj.obj, field.type);
+  } else {
+    str += '{';
+    if (classInfo.parentType) {
+      auto rootTypeInfo = classInfo.parentType;
+      while (std::get<ClassInfo>(rootTypeInfo->info).parentType != nullptr)
+        rootTypeInfo = std::get<ClassInfo>(rootTypeInfo->info).parentType;
+      if (std::get<ClassInfo>(rootTypeInfo->info).id == std::get<ClassInfo>(getTypeInfo<BaseObject>().info).id)
+        str += fmt::format(R"("__type__": {}, )", classInfo.id);  // only write type for polymorphic types
+    }
+    for (const auto& field : classInfo.fields) {
+      str += fmt::format(R"("{}": )", field.name);
+      TmpObj fieldObj = field.getter(const_cast<void*>(obj));
+      toString(str, fieldObj.obj, field.type);
+      str += ", ";
+    }
+    if (!classInfo.fields.empty())
+      str.resize(str.size() - 2);  // remove trailing comma and space
+    str += " }";
   }
-  if (!classInfo.fields.empty())
-    str.resize(str.size() - 2);  // remove trailing comma and space
-  str += " }";
 }
 
 void toString(std::string& str, const void* obj, const PtrInfo& ptrInfo) {

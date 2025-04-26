@@ -1,6 +1,9 @@
 #include "EditorModule.hpp"
 
+#include <ranges>
+
 #include <imgui.h>
+#include <imgui_internal.h>
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/system/box/BoundingBoxComponent.hpp>
@@ -27,13 +30,58 @@ void EditorModule::onUpdate(sf::Time dt) {
 }
 
 void EditorModule::onDebugRender(sf::Time delta) {
+  showMenuBar();
+  showSceneTabs();
   showScenePanel();
   showActorPanel();
 }
 
+void EditorModule::showMenuBar() {
+  if (ImGui::BeginMainMenuBar()) {
+    if (ImGui::BeginMenu("Scene")) {
+      if (ImGui::MenuItem("New", "Ctrl+N")) {
+      }
+      if (ImGui::MenuItem("Open", "Ctrl+O")) {
+      }
+      if (ImGui::MenuItem("Save", "Ctrl+S")) {
+        if (system::Scene* curScene = sceneManager->getCurrentScene())
+          curScene->saveToYaml();
+      }
+      if (ImGui::MenuItem("Save as...", "Ctrl+Shift+S")) {
+      }
+      ImGui::EndMenu();
+    }
+    ImGui::EndMainMenuBar();
+  }
+}
+
+void EditorModule::showSceneTabs() {
+  const ImGuiWindowFlags windowFlags =
+      ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_MenuBar;
+  const float height = ImGui::GetFrameHeight();
+
+  if (ImGui::BeginViewportSideBar("##SceneTabs", nullptr, ImGuiDir_Up, height, windowFlags)) {
+    if (ImGui::BeginMenuBar()) {
+      std::filesystem::path currentScenePath;
+      if (system::Scene* currentScene = sceneManager->getCurrentScene())
+        currentScenePath = currentScene->getPath();
+      for (const auto& [sceneName, scenePath] : sceneManager->getScenePaths()) {
+        const bool isCurrentScene = scenePath == currentScenePath;
+        float textSize = ImGui::CalcTextSize(sceneName.c_str()).x;
+        if (ImGui::Selectable(sceneName.c_str(), isCurrentScene, ImGuiSelectableFlags_None, ImVec2{textSize, 0.f})) {
+          if (!isCurrentScene)
+            sceneManager->loadScene(sceneName);
+        }
+      }
+      ImGui::EndMenuBar();
+    }
+  }
+  ImGui::End();
+}
+
 void EditorModule::showScenePanel() {
   if (ImGui::Begin("Scene Panel")) {
-    system::Actor actor = sceneManager->getCurrentScene()->getRoot();
+    const system::Actor actor = sceneManager->getCurrentScene()->getRoot();
     showActorHierarchy(actor);
   }
   ImGui::End();
