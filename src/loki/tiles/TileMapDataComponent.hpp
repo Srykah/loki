@@ -9,6 +9,8 @@ class TileMapDataComponent : public system::Component {
  public:
   system::ResourceHandle<TileMapDataResource>& getDataHandle();
 
+  // sf::FloatRect getBoundingBox() const;
+
  private:
   system::ResourceHandle<TileMapDataResource> tileMapData;
 

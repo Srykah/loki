@@ -2,6 +2,8 @@
 
 #include <ranges>
 
+#include <render/RendererModule.hpp>
+
 #include <loki/system/scene/SceneManager.hpp>
 #include <loki/physics/tiles/CollisionTileAttribute.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
@@ -23,6 +25,7 @@ void PhysicsTileMapComponent::onFinalizeInit() {
   assert(dataComp);
   createShapes(dataComp->getDataHandle().getData());
   body.setTransformable(getActor().getTransformable());  // init position and rotation
+  getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }
 
 void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
@@ -52,6 +55,10 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
     fixtureParams.shapeParams = std::move(boxParams);
     body.createFixture(auto{fixtureParams});
   }
+}
+
+sf::FloatRect PhysicsTileMapComponent::getBoundingBox() const {
+  return body.getBoundingBox();
 }
 
 }  // namespace loki::physics

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -10,7 +11,7 @@
 namespace loki::physics {
 class PhysicsWorld;
 
-class PhysicsBody {
+class PhysicsBody : public sf::Drawable {
  public:
   PhysicsBody() = default;
   explicit PhysicsBody(b2Body* body, PhysicsWorld* parentWorld);
@@ -25,8 +26,9 @@ class PhysicsBody {
   void applyLinearImpulse(const sf::Vector2f& linearImpulse);
 
   PhysicsWorld* getWorld() const { return parentWorld; }
+  sf::FloatRect getBoundingBox() const;
 
-  void debugDraw(sf::RenderTarget& target, sf::RenderStates states) const;
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
   PhysicsWorld* parentWorld = nullptr;

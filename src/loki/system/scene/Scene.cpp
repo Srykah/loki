@@ -2,6 +2,7 @@
 
 #include <ranges>
 
+#include <box/BoundingBoxComponent.hpp>
 #include <yaml-cpp/node/impl.h>
 
 #include <loki/core/services/ServiceRegistry.hpp>
@@ -11,7 +12,7 @@
 
 namespace loki::system {
 
-Scene::Scene() : root({registry, registry.create()}) {
+Scene::Scene() : componentRegistry(getService<ComponentRegistry>()), root({registry, registry.create()}) {
   registry.ctx().insert_or_assign<Scene*>(this);
 }
 
@@ -20,7 +21,8 @@ Actor Scene::instanciateActor(Actor parent) {
   Actor actor{handle};
   handle.emplace<std::string>("<unnamed>");
   handle.emplace<sf::Transformable>();
-  handle.emplace<sf::FloatRect>(-1.f, -1.f, 2.f, 2.f);
+  auto& bbComp = handle.emplace<BoundingBoxComponent>();
+  bbComp.setActor(actor);
   handle.emplace<ActorHierarchy>(parent);
   if (parent)
     parent.getComponent<ActorHierarchy>()->children.push_back(actor);
@@ -30,11 +32,10 @@ Actor Scene::instanciateActor(Actor parent) {
 void Scene::visitComponents(const ActorFilter& actorFilter,
                             const ComponentTraitsFilter& compTraitsFilter,
                             const ComponentVisitor& compVisitor) {
-  const auto& compReg = getService<ComponentRegistry>();
   // look among all component types in the registry
   for (auto& storage : registry.storage() | std::views::values) {
     // get the componentTraits associated with this component type
-    auto* compTraits = compReg.getTraits(storage.type());
+    auto* compTraits = componentRegistry.getTraits(storage.type());
     if (!compTraits || !compTraitsFilter(*compTraits))
       continue;  // if no traits were found, or the component type is filtered out, ignore
     // iterate over the storage instances

@@ -1,5 +1,7 @@
 #include "PhysicsBodyComponent.hpp"
 
+#include <render/RendererModule.hpp>
+
 #include <loki/system/scene/SceneManager.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
 
@@ -10,6 +12,7 @@ void PhysicsBodyComponent::onStartInit() {
   for (const auto& fixtureParam : fixtureParams) {
     body.createFixture(auto{fixtureParam});
   }
+  getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }
 
 void PhysicsBodyComponent::onFinalizeInit() {
@@ -25,6 +28,10 @@ void PhysicsBodyComponent::onPhysicsResult(sf::Time dt) {
   transformable.setPosition(body.getPosition());
   transformable.setRotation(body.getRotationInDegrees());
   getActor().setTransformable(std::move(transformable));
+}
+
+sf::FloatRect PhysicsBodyComponent::getBoundingBox() const {
+  return body.getBoundingBox();
 }
 
 }  // namespace loki::physics

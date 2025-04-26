@@ -2,6 +2,7 @@
 
 #include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
+#include <loki/system/box/BoundingBoxComponent.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
 #include <loki/system/input/InputModule.hpp>
 #include <loki/system/input/InputTriggers.hpp>
@@ -14,6 +15,7 @@
 #include <loki/physics/tiles/CollisionTileAttribute.hpp>
 #include <loki/physics/tiles/PhysicsTileMapComponent.hpp>
 #include <loki/physics/world/PhysicsWorldComponent.hpp>
+#include <loki/editor/modules/DebugDrawModule.hpp>
 #include <loki/editor/modules/EditorModule.hpp>
 #include <loki/editor/modules/ImGuiModule.hpp>
 #include <loki/tiles/TileMapDataComponent.hpp>
@@ -49,6 +51,7 @@ void registerLokiModules(core::RuntimeObjectRegistry& runtimeObjectRegistry) {
   runtimeObjectRegistry.registerClass<system::RendererModule>();
 
   // editor
+  runtimeObjectRegistry.registerClass<editor::DebugDrawModule>();
   runtimeObjectRegistry.registerClass<editor::EditorModule>();
   runtimeObjectRegistry.registerClass<editor::ImGuiModule>();
 }
@@ -58,6 +61,9 @@ void registerLokiComponents(core::RuntimeObjectRegistry& runtimeObjectRegistry,
 #define LOKI_REGISTER_COMP(Comp)               \
   runtimeObjectRegistry.registerClass<Comp>(); \
   componentRegistry.registerComponent<Comp>()
+
+  // system
+  LOKI_REGISTER_COMP(system::BoundingBoxComponent);
 
   // tiles
   LOKI_REGISTER_COMP(tiles::TileMapDataComponent);

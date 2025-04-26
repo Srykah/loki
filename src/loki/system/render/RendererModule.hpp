@@ -31,7 +31,7 @@ class RendererModule final : public GameModule {
   RenderQueue renderQueue;
   sf::RenderTexture renderTarget;
 
-  bool drawDebug = false;
+  bool drawDebug = true;
 
   LOKI_RTTI_CLASS_DECLARE(RendererModule)
 };

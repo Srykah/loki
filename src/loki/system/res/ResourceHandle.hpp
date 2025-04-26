@@ -28,6 +28,8 @@ class ResourceHandle {
   void setPtr(core::BorrowerPtr<BaseResource>&& _ptr) { ptr = core::static_pointer_cast<Res>(_ptr); }
   const BaseResource* getPtr() const { return ptr.get(); }
 
+  explicit operator bool() const { return getPtr(); }
+
  private:
   std::filesystem::path path;
   core::BorrowerPtr<Res> ptr;

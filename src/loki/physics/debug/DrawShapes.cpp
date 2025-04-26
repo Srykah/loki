@@ -39,7 +39,8 @@ void drawCircle(sf::RenderTarget& target, const b2CircleShape& circleShape, cons
   drawableShape.setRadius(circleShape.m_radius);
   drawableShape.setOrigin(circleShape.m_radius, circleShape.m_radius);
   drawableShape.setPosition(toSfVec2(circleShape.m_p));
-  drawableShape.setOutlineThickness(-1.f);
+  drawableShape.setFillColor(sf::Color::Transparent);
+  drawableShape.setOutlineThickness(-0.1f);
   drawableShape.setOutlineColor(sf::Color::Green);
   target.draw(drawableShape, states);
 }
@@ -60,9 +61,10 @@ void drawEdge(sf::RenderTarget& target, const b2EdgeShape& edgeShape, const sf::
 void drawPolygon(sf::RenderTarget& target, const b2PolygonShape& polygonShape, const sf::RenderStates& states) {
   sf::ConvexShape drawableShape;
   drawableShape.setPointCount(polygonShape.m_count);
-  for (int i{0}; i < polygonShape.m_count; ++i)
+  for (int i{polygonShape.m_count - 1}; i >= 0; --i)
     drawableShape.setPoint(i, toSfVec2(polygonShape.m_vertices[i]));
-  drawableShape.setOutlineThickness(-1.f);
+  drawableShape.setFillColor(sf::Color::Transparent);
+  drawableShape.setOutlineThickness(-0.1f);
   drawableShape.setOutlineColor(sf::Color::Green);
   target.draw(drawableShape, states);
 }

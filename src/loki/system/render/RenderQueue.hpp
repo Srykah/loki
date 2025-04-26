@@ -31,7 +31,7 @@ class RenderQueue final : public sf::Drawable {
     static bool lessOverdraw(const DrawEntry& _lhs, const DrawEntry& _rhs);
   };
   std::vector<DrawEntry> drawEntries;
-  bool overdraw = false;
+  bool overdraw = true;
 };
 
 }  // namespace loki::system

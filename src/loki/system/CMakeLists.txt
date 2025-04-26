@@ -2,6 +2,8 @@ loki_create_module(system
   HEADERS
   # app
   app/ApplicationInterface.hpp
+  # box
+  box/BoundingBoxComponent.hpp
   # ecs
   ecs/Actor.hpp
   ecs/ActorHierarchy.hpp
@@ -50,6 +52,8 @@ loki_create_module(system
   window/WindowStyle.hpp
 
   SOURCES
+  # box
+  box/BoundingBoxComponent.cpp
   # ecs
   ecs/Actor.cpp
   ecs/Component.cpp

@@ -1,5 +1,7 @@
 #include "Actor.hpp"
 
+#include <box/BoundingBoxComponent.hpp>
+
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/core/rtti/RuntimeObjectRegistry.hpp>
 #include <loki/core/serialization/yaml/fromYaml.hpp>
@@ -37,12 +39,8 @@ sf::Transform Actor::getGlobalTransform() const {
   return getLocalTransform();
 }
 
-void Actor::setBV(sf::FloatRect&& bv) {
-  *getComponent<sf::FloatRect>() = std::move(bv);
-}
-
-const sf::FloatRect& Actor::getBV() const {
-  return *getComponent<sf::FloatRect>();
+const sf::FloatRect& Actor::getLocalBox() const {
+  return getComponent<BoundingBoxComponent>()->getLocalBox();
 }
 
 Actor Actor::getParent() const {

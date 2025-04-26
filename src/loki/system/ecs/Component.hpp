@@ -40,6 +40,7 @@ class Component : public core::BaseObject, public ResourceListener {
 
  private:
   friend class ComponentRegistry;
+  friend class Scene;
   void setActor(Actor actor);
 
   void onResourcesLoaded() override;

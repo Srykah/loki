@@ -22,6 +22,8 @@ class PhysicsBodyComponent : public system::Component {
 
   PhysicsBody& getBody() { return body; }
 
+  sf::FloatRect getBoundingBox() const;
+
  private:
   PhysicsBodyParams bodyParams;
   std::vector<PhysicsFixtureParams> fixtureParams;

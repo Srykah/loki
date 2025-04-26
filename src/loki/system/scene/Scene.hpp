@@ -8,6 +8,8 @@ namespace loki::system {
 
 using ActorFilter = std::function<bool(Actor)>;
 
+class ComponentRegistry;
+
 class Scene final {
  public:
   Scene();
@@ -34,6 +36,7 @@ class Scene final {
  private:
   std::string name;
   entt::registry registry;
+  const ComponentRegistry& componentRegistry;
   Actor root;
 };
 

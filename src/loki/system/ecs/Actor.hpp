@@ -23,8 +23,7 @@ class Actor {
   [[nodiscard]] const sf::Transformable& getTransformable() const;
   [[nodiscard]] const sf::Transform& getLocalTransform() const;
   [[nodiscard]] sf::Transform getGlobalTransform() const;
-  void setBV(sf::FloatRect&& bv);
-  [[nodiscard]] const sf::FloatRect& getBV() const;
+  [[nodiscard]] const sf::FloatRect& getLocalBox() const;
   [[nodiscard]] Actor getParent() const;
   [[nodiscard]] std::span<Actor> getChildren() const;
 

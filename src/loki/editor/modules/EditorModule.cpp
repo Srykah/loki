@@ -3,6 +3,7 @@
 #include <imgui.h>
 
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
+#include <loki/system/box/BoundingBoxComponent.hpp>
 #include <loki/system/ecs/Component.hpp>
 #include <loki/system/ecs/ComponentTraits.hpp>
 #include <loki/system/scene/SceneManager.hpp>
@@ -17,7 +18,12 @@ void EditorModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 }
 
 void EditorModule::init() {
+  debugDrawModule = &getService<DebugDrawModule>();
   sceneManager = &getService<system::SceneManager>();
+}
+
+void EditorModule::onUpdate(sf::Time dt) {
+  showActorBoundingBoxes();
 }
 
 void EditorModule::onDebugRender(sf::Time delta) {
@@ -41,11 +47,6 @@ void EditorModule::showActorPanel() {
       if (DynamicField("Transform", transformable))
         selectedActor.setTransformable(std::move(transformable));
     }
-    if (ImGui::CollapsingHeader("Bounding Volume")) {
-      sf::FloatRect bv = selectedActor.getBV();
-      if (DynamicField("Bounding Volume", bv))
-        selectedActor.setBV(std::move(bv));
-    }
     selectedActor.visitComponents([](const system::BaseComponentTraits& compTraits, void* compPtr) {
       system::Component& comp = compTraits.getAsComponent(compPtr);
       const auto& typeInfo = comp.getClassTypeInfo();
@@ -56,6 +57,17 @@ void EditorModule::showActorPanel() {
     });
   }
   ImGui::End();
+}
+
+void EditorModule::showActorBoundingBoxes() {
+  sceneManager->getCurrentScene()->visitComponents(
+      [](const system::BaseComponentTraits& compTraits) {
+        return std::get<core::ClassInfo>(compTraits.getTypeInfo().info).id ==
+               std::get<core::ClassInfo>(core::getTypeInfo<system::BoundingBoxComponent>().info).id;
+      },
+      [this](const system::BaseComponentTraits& compTraits, const void* obj) {
+        debugDrawModule->addRectangle(static_cast<const system::BoundingBoxComponent*>(obj)->getGlobalBox());
+      });
 }
 
 void EditorModule::showActorHierarchy(system::Actor actor) {
