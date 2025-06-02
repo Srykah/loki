@@ -33,7 +33,7 @@ class ResourceHolder : public core::BaseObject {
 
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::ResourceHolder)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::system::ResourceHolder)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::ResourceHolder)
 

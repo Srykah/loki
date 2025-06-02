@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/rtti/BaseObject.hpp>
 
 #define LOKI_RTTI_CLASS_DECLARE_NO_REFLECTION() \
  public:                                        \
@@ -14,3 +15,8 @@
   inline const ::loki::core::TypeInfo& Class::getClassTypeInfo() const { \
     return ::loki::core::getTypeInfo<Class>();                           \
   }
+
+#define LOKI_REFLECTION_CLASS_BEGIN_RTTI_NO_FACTORY(Class) \
+  LOKI_REFLECTION_CLASS_BEGIN_CHILD_NO_FACTORY(Class, ::loki::core::BaseObject)
+
+#define LOKI_REFLECTION_CLASS_BEGIN_RTTI(Class) LOKI_REFLECTION_CLASS_BEGIN_CHILD(Class, ::loki::core::BaseObject)

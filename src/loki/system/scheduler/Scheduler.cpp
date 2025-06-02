@@ -22,22 +22,58 @@ void Scheduler::update(sf::Time dt) {
   // todo deinit
 }
 
+void Scheduler::setPaused(bool isPaused) {
+  paused = isPaused;
+}
+
+bool Scheduler::isPaused() const {
+  return paused;
+}
+
 void Scheduler::handleComponentsLifecycle() {
   auto compVisitor = [](const BaseComponentTraits& compTraits, void* compPtr) {
     auto& comp = compTraits.getAsComponent(compPtr);
-    if (comp.getStatus() == Component::Status::CREATED)
-      comp.startInit();
-    if (comp.getStatus() == Component::Status::RESOURCES_LOADED)
-      comp.finalizeInit();
+    if (comp.getLifeCycleStep() == LifeCycleStep::Created) {
+      comp.onBeginInit();
+      comp.setLifeCycleStep(comp.getResourceLoadingStatus() == ResourceLoadingStatus::Loading
+                                ? LifeCycleStep::LoadingDependencies
+                                : LifeCycleStep::DependenciesLoaded);
+    }
+    if (comp.getLifeCycleStep() == LifeCycleStep::LoadingDependencies &&
+        comp.getResourceLoadingStatus() == ResourceLoadingStatus::Loaded) {
+      comp.onDependenciesLoaded();
+      comp.setLifeCycleStep(LifeCycleStep::DependenciesLoaded);
+    }
+    if (comp.getLifeCycleStep() == LifeCycleStep::DependenciesLoaded) {
+      comp.onEndInit();
+      comp.setLifeCycleStep(LifeCycleStep::Ready);
+    }
   };
   sceneManager.getCurrentScene()->visitComponents(compVisitor);
+  auto activationVisitor = [](Actor actor) {
+    bool areAllComponentsReady = true;
+    actor.visitComponents([&](const BaseComponentTraits& compTraits, void* compPtr) {
+      auto& comp = compTraits.getAsComponent(compPtr);
+      if (comp.getLifeCycleStep() != LifeCycleStep::Ready)
+        areAllComponentsReady = false;
+    });
+    if (areAllComponentsReady) {
+      actor.visitComponents([&](const BaseComponentTraits& compTraits, void* compPtr) {
+        auto& comp = compTraits.getAsComponent(compPtr);
+        comp.onActivate();
+        comp.setLifeCycleStep(LifeCycleStep::Active);
+      });
+    }
+  };
+  sceneManager.getCurrentScene()->visitActors(activationVisitor);
 }
 
 void Scheduler::runUpdateSteps(sf::Time dt) {
   for (std::underlying_type_t<UpdateStep> step = 0; step < std::to_underlying(UpdateStep::Count); ++step) {
     UpdateStep updateStep = static_cast<UpdateStep>(step);
     runUpdateStepForGameModules(dt, updateStep);
-    runUpdateStepForComponents(dt, updateStep);
+    if (!paused)
+      runUpdateStepForComponents(dt, updateStep);
   }
 }
 
@@ -53,7 +89,7 @@ void Scheduler::runUpdateStepForComponents(sf::Time dt, UpdateStep updateStep) {
   };
   auto compVisitor = [updateStep, dt](const BaseComponentTraits& compTraits, void* compPtr) {
     auto& comp = compTraits.getAsComponent(compPtr);
-    if (comp.getStatus() == Component::Status::READY)
+    if (comp.getLifeCycleStep() == LifeCycleStep::Active)
       compTraits.getUpdateTraits().runUpdateStep(compPtr, dt, updateStep);
   };
   sceneManager.getCurrentScene()->visitComponents(compTraitsFilter, compVisitor);

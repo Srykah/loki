@@ -13,7 +13,7 @@ class SFMLResource : public Resource<T> {
   [[nodiscard]] const T& getData() const override { return data; }
 
  protected:
-  void loadImpl(const std::filesystem::path& path) override { data.loadFromFile(path.string()); }
+  void load(const std::filesystem::path& path) override { data.loadFromFile(path.string()); }
 
  private:
   T data;

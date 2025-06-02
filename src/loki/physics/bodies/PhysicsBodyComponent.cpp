@@ -7,7 +7,7 @@
 
 namespace loki::physics {
 
-void PhysicsBodyComponent::onStartInit() {
+void PhysicsBodyComponent::onBeginInit() {
   body = getScene().getRoot().getComponent<PhysicsWorldComponent>()->getWorld()->createBody(auto{bodyParams});
   for (const auto& fixtureParam : fixtureParams) {
     body.createFixture(auto{fixtureParam});
@@ -15,7 +15,7 @@ void PhysicsBodyComponent::onStartInit() {
   getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }
 
-void PhysicsBodyComponent::onFinalizeInit() {
+void PhysicsBodyComponent::onEndInit() {
   body.setTransformable(getActor().getTransformable());  // init position and rotation
 }
 

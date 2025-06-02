@@ -7,7 +7,6 @@ template <class... Ts>
 void Component::addResources(ResourceHandle<Ts>&... handles) {
   auto& resHolder = getService<system::ResourceHolder>();
   (resHolder.add(handles, this), ...);
-  status = Status::LOADING_RESOURCES;
 }
 
 }  // namespace loki::system

@@ -3,15 +3,17 @@
 #include <loki/system/render/RendererModule.hpp>
 
 namespace loki::graphics {
-void SpriteComponent::onStartInit() {
+void SpriteComponent::onBeginInit() {
   addResources(spriteData);
 }
 
-void SpriteComponent::onFinalizeInit() {
+void SpriteComponent::onEndInit() {
   const auto& data = spriteData.getData();
   sprite.setData(data);
-  if (!data.animations.empty())
+  if (!data.animations.empty()) {
     sprite.setAnim(data.animations.begin()->first);
+    sprite.start();
+  }
   getService<system::RendererModule>().getRenderQueue().registerDrawable(this, getDrawOrder());
 }
 

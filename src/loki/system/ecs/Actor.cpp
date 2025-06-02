@@ -56,12 +56,28 @@ Actor::operator bool() const {
   return static_cast<bool>(handle);
 }
 
-void Actor::visitComponents(const ComponentVisitor& visitor) {
-  getScene().visitActorComponents(*this, visitor);
+void Actor::visitComponents(ComponentVisitor&& visitor) {
+  getScene().visitActorComponents(*this, std::move(visitor));
 }
 
-void Actor::visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& visitor) {
-  getScene().visitActorComponents(*this, compTraitsFilter, visitor);
+void Actor::visitComponents(ConstComponentVisitor&& visitor) const {
+  getScene().visitActorComponents(*this, std::move(visitor));
+}
+
+void Actor::visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& visitor) {
+  getScene().visitActorComponents(*this, std::move(compTraitsFilter), std::move(visitor));
+}
+
+void Actor::visitComponents(ComponentTraitsFilter&& compTraitsFilter, ConstComponentVisitor&& visitor) const {
+  getScene().visitActorComponents(*this, std::move(compTraitsFilter), std::move(visitor));
+}
+
+LifeCycleStep Actor::getStatus() const {
+  auto step = std::to_underlying(LifeCycleStep::Created);
+  visitComponents([&step](const BaseComponentTraits& compTraits, const void* obj) {
+    step = std::max(step, std::to_underlying(compTraits.getAsComponent(obj).getLifeCycleStep()));
+  });
+  return static_cast<LifeCycleStep>(step);
 }
 
 Scene& Actor::getScene() const {

@@ -57,12 +57,11 @@ struct ChainShapeParams final : public PhysicsShapeParams {
 
 }  // namespace loki::physics
 
-LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(loki::physics::PhysicsShapeParams)
-LOKI_REFLECTION_CLASS_PARENT(loki::physics::PhysicsShapeParams, loki::core::BaseObject)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI_NO_FACTORY(loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsShapeParams)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::CircleShapeParams)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::CircleShapeParams, loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     loki::core::getTypeInfo<float>(),
     "radius",
@@ -80,7 +79,7 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::CircleShapeParams)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::EdgeShapeParams)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::EdgeShapeParams, loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     loki::core::getTypeInfo<float>(),
     "radius",
@@ -97,7 +96,7 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::EdgeShapeParams)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::PolygonShapeParams)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PolygonShapeParams, loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     loki::core::getTypeInfo<float>(),
     "radius",
@@ -115,7 +114,7 @@ LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PolygonShapeParams)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PhysicsShapeParams, loki::physics::ChainShapeParams)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::ChainShapeParams, loki::physics::PhysicsShapeParams)
 LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
     loki::core::getTypeInfo<float>(),
     "radius",

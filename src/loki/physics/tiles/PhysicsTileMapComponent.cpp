@@ -14,13 +14,13 @@
 
 namespace loki::physics {
 
-void PhysicsTileMapComponent::onStartInit() {
+void PhysicsTileMapComponent::onBeginInit() {
   auto* dataComp = getActor().getComponent<tiles::TileMapDataComponent>();
   assert(dataComp);
   addResources(dataComp->getDataHandle());
 }
 
-void PhysicsTileMapComponent::onFinalizeInit() {
+void PhysicsTileMapComponent::onEndInit() {
   auto* dataComp = getActor().getComponent<tiles::TileMapDataComponent>();
   assert(dataComp);
   createShapes(dataComp->getDataHandle().getData());

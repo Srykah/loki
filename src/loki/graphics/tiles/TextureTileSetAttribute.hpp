@@ -17,7 +17,7 @@ struct TextureTileSetAttribute : public tiles::TileSetAttribute {
 
 }  // namespace loki::graphics
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::TileSetAttribute, loki::graphics::TextureTileSetAttribute)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::graphics::TextureTileSetAttribute, loki::tiles::TileSetAttribute)
 LOKI_REFLECTION_CLASS_FIELD(texture)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::graphics::TextureTileSetAttribute)

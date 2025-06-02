@@ -67,16 +67,16 @@ struct TileSetDataResource : public system::LogicResource<TileSetData> {
 
 }  // namespace loki::tiles
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::tiles::TileSetAttribute)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::tiles::TileSetAttribute)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileSetAttribute)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::TileSetAttribute, loki::tiles::SizeTileSetAttribute)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::SizeTileSetAttribute, loki::tiles::TileSetAttribute)
 LOKI_REFLECTION_CLASS_FIELD(tileSize)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::tiles::SizeTileSetAttribute)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::tiles::TileAttribute)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::tiles::TileAttribute)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileAttribute)
 

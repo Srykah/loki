@@ -1,14 +1,13 @@
 #pragma once
 
 namespace loki::system {
-
 #define LOKI_SYSTEM_UPDATE_STEP_LIST(DO)                          \
   DO(InputPolling)      /* for the event polling of the Window */ \
   DO(InputReading)      /* for the InputModule & ImGuiModule */   \
   DO(PrePhysics)        /* for character controllers */           \
   DO(PhysicsSimulation) /* for the PhysicsWorld */                \
   DO(PhysicsResult)     /* for the PhysicsBodies */               \
-  DO(Default)           /* for pretty much everything */          \
+  DO(Update)            /* for pretty much everything */          \
   DO(PreRender)         /* for the clearing of the Window */      \
   DO(PreDebugRender)    /* for the clearing of the Window */      \
   DO(Render)            /* for the RendererModule */              \

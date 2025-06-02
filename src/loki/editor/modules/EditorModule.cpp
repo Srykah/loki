@@ -10,6 +10,7 @@
 #include <loki/system/ecs/Component.hpp>
 #include <loki/system/ecs/ComponentTraits.hpp>
 #include <loki/system/scene/SceneManager.hpp>
+#include <loki/system/scheduler/Scheduler.hpp>
 #include <loki/editor/dynamicField/DynamicField.hpp>
 
 namespace loki::editor {
@@ -23,6 +24,8 @@ void EditorModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 void EditorModule::init() {
   debugDrawModule = &getService<DebugDrawModule>();
   sceneManager = &getService<system::SceneManager>();
+  scheduler = &getService<system::Scheduler>();
+  scheduler->setPaused(true);
 }
 
 void EditorModule::onUpdate(sf::Time dt) {

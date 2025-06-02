@@ -9,11 +9,10 @@ loki_create_module(system
   ecs/ActorHierarchy.hpp
   ecs/Component.hpp
   ecs/Component.hxx
-  ecs/componentMacros.hpp
   ecs/ComponentRegistry.hpp
   ecs/ComponentRegistry.hxx
   ecs/ComponentTraits.hpp
-  ecs/ComponentVisitor.hpp
+  ecs/VisitorConcepts.hpp
   # fs
   fs/FileCategory.hpp
   fs/FileManager.hpp

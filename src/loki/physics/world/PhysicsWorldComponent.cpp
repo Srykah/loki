@@ -2,7 +2,7 @@
 
 namespace loki::physics {
 
-void PhysicsWorldComponent::onStartInit() {
+void PhysicsWorldComponent::onBeginInit() {
   world = std::make_unique<PhysicsWorld>(auto{worldParams});
 }
 

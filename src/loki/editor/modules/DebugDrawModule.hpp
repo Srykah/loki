@@ -17,8 +17,8 @@ class DebugDrawModule final : public system::GameModule {
 
   void addRectangle(sf::FloatRect rect);
 
-  void onPreDebugRender(sf::Time dt);
-  void onPostDebugRender(sf::Time dt);
+  void onPreDebugRender(sf::Time dt) override;
+  void onPostDebugRender(sf::Time dt) override;
 
  private:
   system::RendererModule* rendererModule = nullptr;
@@ -29,11 +29,6 @@ class DebugDrawModule final : public system::GameModule {
 
 }  // namespace loki::editor
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::editor::DebugDrawModule)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::editor::DebugDrawModule, loki::system::GameModule)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::editor::DebugDrawModule)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::editor::DebugDrawModule)
-LOKI_UPDATE_TRAITS_METHOD(PreDebugRender, onPreDebugRender)
-LOKI_UPDATE_TRAITS_METHOD(PostDebugRender, onPostDebugRender)
-LOKI_UPDATE_TRAITS_END()

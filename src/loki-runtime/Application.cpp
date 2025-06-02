@@ -43,6 +43,7 @@ void Application::registerServices() {
   serviceRegistry.registerService(componentRegistry);
   serviceRegistry.registerService(resourceHolder);
   serviceRegistry.registerService(sceneManager);
+  serviceRegistry.registerService(scheduler);
   serviceRegistry.registerService<ApplicationInterface>(*this);
 }
 

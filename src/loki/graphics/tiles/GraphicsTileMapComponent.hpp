@@ -6,8 +6,8 @@
 namespace loki::graphics {
 class GraphicsTileMapComponent : public system::Component, public sf::Drawable {
  public:
-  void onStartInit() override;
-  void onFinalizeInit() override;
+  void onBeginInit() override;
+  void onEndInit() override;
   [[nodiscard]] system::DrawOrder getDrawOrder() const;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -19,6 +19,6 @@ class GraphicsTileMapComponent : public system::Component, public sf::Drawable {
 
 }  // namespace loki::graphics
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::graphics::GraphicsTileMapComponent)
+LOKI_REFLECTION_COMPONENT_BEGIN(loki::graphics::GraphicsTileMapComponent)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::graphics::GraphicsTileMapComponent)

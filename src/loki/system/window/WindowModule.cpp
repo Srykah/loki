@@ -7,7 +7,11 @@
 
 namespace loki::system {
 
-LOKI_GAMEMODULE_GET_UPDATE_TRAITS(WindowModule)
+const ::loki::system::BaseUpdateTraits& WindowModule::getUpdateTraits() const {
+  static const ::loki::system::UpdateTraits<WindowModule> updateTraits;
+  assert(updateTraits.hasUpdateStep(UpdateStep::InputPolling));
+  return updateTraits;
+}
 
 void WindowModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
   serviceRegistry.registerService(*this);

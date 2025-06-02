@@ -8,7 +8,7 @@
 namespace loki::system {
 
 Scene* SceneManager::getCurrentScene() const {
-  return scene.get();
+  return currentScene;
 }
 
 void SceneManager::setScenePaths(ScenePaths&& _scenePaths) {
@@ -19,27 +19,32 @@ const SceneManager::ScenePaths& SceneManager::getScenePaths() const {
   return scenePaths;
 }
 
-void SceneManager::loadScene(const std::string& sceneName) {
+Scene* SceneManager::loadScene(const std::string& sceneName, bool setActive) {
   const auto& scenePath = scenePaths.at(sceneName);
-  loadSceneFromYamlFile(scenePath);
-  scene->setPath(scenePath);
+  Scene* newScene = loadSceneFromYamlFile(scenePath);
+  newScene->setPath(scenePath);
+  if (setActive) {
+    // unload currentScene
+    currentScene = newScene;
+  }
+  return newScene;
 }
 
-void SceneManager::loadSceneFromYaml(const YAML::Node& sceneNode) {
+Scene* SceneManager::loadSceneFromYaml(const YAML::Node& sceneNode) {
   auto newScene = std::make_unique<Scene>();
   newScene->loadFromYaml(sceneNode);
-  scene = std::move(newScene);
+  return scenes.emplace_back(std::move(newScene)).get();
 }
 
-void SceneManager::loadSceneFromYamlString(const std::string& sceneData) {
+Scene* SceneManager::loadSceneFromYamlString(const std::string& sceneData) {
   YAML::Node sceneNode = YAML::Load(sceneData);
-  loadSceneFromYaml(sceneNode);
+  return loadSceneFromYaml(sceneNode);
 }
 
-void SceneManager::loadSceneFromYamlFile(const std::filesystem::path& scenePath) {
+Scene* SceneManager::loadSceneFromYamlFile(const std::filesystem::path& scenePath) {
   std::ifstream sceneData{scenePath};
   YAML::Node sceneNode = YAML::Load(sceneData);
-  loadSceneFromYaml(sceneNode);
+  return loadSceneFromYaml(sceneNode);
 }
 
 }  // namespace loki::system

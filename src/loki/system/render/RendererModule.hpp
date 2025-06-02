@@ -17,7 +17,7 @@ class RendererModule final : public GameModule {
   [[nodiscard]] const BaseUpdateTraits& getUpdateTraits() const override;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void onRender(sf::Time delta);
+  void onRender(sf::Time delta) override;
 
   [[nodiscard]] RenderQueue& getRenderQueue();
   [[nodiscard]] const sf::RenderTexture& getTexture() const;
@@ -38,11 +38,7 @@ class RendererModule final : public GameModule {
 
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::system::RendererModule)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::RendererModule, loki::system::GameModule)
 LOKI_REFLECTION_CLASS_FIELD(internalResolution)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::RendererModule)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::system::RendererModule)
-LOKI_UPDATE_TRAITS_METHOD(Render, onRender)
-LOKI_UPDATE_TRAITS_END()

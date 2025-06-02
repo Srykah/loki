@@ -3,11 +3,12 @@
 #include <span>
 
 #include <SFML/Graphics/Transformable.hpp>
+#include <ecs/LifeCycleStep.hpp>
 #include <entt/entt.hpp>
 #include <yaml-cpp/emitter.h>
 #include <yaml-cpp/node/node.h>
 
-#include <loki/system/ecs/ComponentVisitor.hpp>
+#include <loki/system/ecs/VisitorConcepts.hpp>
 
 namespace loki::system {
 
@@ -43,8 +44,12 @@ class Actor {
     return handle.try_get<Comp>();
   }
 
-  void visitComponents(const ComponentVisitor& visitor);
-  void visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& visitor);
+  void visitComponents(ComponentVisitor&& visitor);
+  void visitComponents(ConstComponentVisitor&& visitor) const;
+  void visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& visitor);
+  void visitComponents(ComponentTraitsFilter&& compTraitsFilter, ConstComponentVisitor&& visitor) const;
+
+  [[nodiscard]] LifeCycleStep getStatus() const;
 
   [[nodiscard]] Scene& getScene() const;
 

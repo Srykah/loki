@@ -31,6 +31,6 @@ class RuntimeObjectRegistry : public BaseObject {
 
 }  // namespace loki::core
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::core::RuntimeObjectRegistry)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::core::RuntimeObjectRegistry)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::core::RuntimeObjectRegistry)

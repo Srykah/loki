@@ -34,6 +34,4 @@ void BoundingBoxComponent::onUpdate(sf::Time delta) {
   isDirty = false;
 }
 
-void BoundingBoxComponent::onDebugDraw(sf::Time delta) {}
-
 }  // namespace loki::system

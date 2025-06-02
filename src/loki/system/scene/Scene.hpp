@@ -2,13 +2,13 @@
 
 #include <filesystem>
 
-#include <yaml-cpp/node/node.h>
-
 #include <loki/system/ecs/Actor.hpp>
 
-namespace loki::system {
+namespace YAML {
+class Node;
+}
 
-using ActorFilter = std::function<bool(Actor)>;
+namespace loki::system {
 
 class ComponentRegistry;
 
@@ -26,16 +26,15 @@ class Scene final {
 
   [[nodiscard]] Actor instanciateActor(Actor parent = {});
 
-  void visitComponents(const ActorFilter& actorFilter,
-                       const ComponentTraitsFilter& compTraitsFilter,
-                       const ComponentVisitor& compVisitor);
-  void visitComponents(const ActorFilter& actorFilter, const ComponentVisitor& compVisitor);
-  void visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& compVisitor);
-  void visitComponents(const ComponentVisitor& compVisitor);
-  void visitActorComponents(Actor actor,
-                            const ComponentTraitsFilter& compTraitsFilter,
-                            const ComponentVisitor& compVisitor);
-  void visitActorComponents(Actor actor, const ComponentVisitor& compVisitor);
+  void visitActors(ActorVisitor&& actorVisitor);
+  void visitComponents(ActorFilter&& actorFilter,
+                       ComponentTraitsFilter&& compTraitsFilter,
+                       ComponentVisitor&& compVisitor);
+  void visitComponents(ActorFilter&& actorFilter, ComponentVisitor&& compVisitor);
+  void visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& compVisitor);
+  void visitComponents(ComponentVisitor&& compVisitor);
+  void visitActorComponents(Actor actor, ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& compVisitor);
+  void visitActorComponents(Actor actor, ComponentVisitor&& compVisitor);
 
  private:
   std::string name;

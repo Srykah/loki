@@ -22,7 +22,7 @@ class InputModule final : public GameModule {
 
   void setPlayerConfig(PlayerConfig&& playerConfig, PlayerId playerId = 0);
 
-  void onInputReading(sf::Time delta);
+  void onInputReading(sf::Time delta) override;
 
   [[nodiscard]] InputState getInputState(const InputId& inputId, PlayerId playerId = 0) const;
 
@@ -43,12 +43,8 @@ class InputModule final : public GameModule {
 
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::system::InputModule)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::InputModule, loki::system::GameModule)
 LOKI_REFLECTION_CLASS_FIELD(inputConfigs)
 LOKI_REFLECTION_CLASS_FIELD(deadZones)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::InputModule)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::system::InputModule)
-LOKI_UPDATE_TRAITS_METHOD(InputReading, onInputReading)
-LOKI_UPDATE_TRAITS_END()

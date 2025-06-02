@@ -7,20 +7,25 @@ namespace loki::system {
 void ResourceHolder::load() {
   std::vector<BaseResource*> newlyLoadingResources;
   for (auto&& [path, res] : resources) {
-    if (auto status = res->getLoadingStatus(); status != BaseResource::LoadingStatus::Unloaded)
+    auto& status = res->resourceLoadingStatus;
+    if (status != ResourceLoadingStatus::Unloaded)
       continue;
     res->load(path);
+    status = ResourceLoadingStatus::Loading;
     newlyLoadingResources.emplace_back(res.get());
   }
   for (BaseResource* newlyLoadingResource : newlyLoadingResources) {
-    if (!newlyLoadingResource->addChildResourcesToHolder(*this))
+    if (!newlyLoadingResource->addChildResourcesToHolder(*this)) {
       newlyLoadingResource->onResourcesLoaded();  // if no child resource, consider they're loaded
+      newlyLoadingResource->resourceLoadingStatus = ResourceLoadingStatus::Loaded;
+    }
   }
   for (auto&& [listener, listenerData] : listeners) {
     if (!listenerData.hasAlreadyNotified &&
         std::ranges::all_of(listenerData.listenedResources, [](const BaseResource* child) {
-          return child->getLoadingStatus() == BaseResource::LoadingStatus::Loaded;
+          return child->getResourceLoadingStatus() == ResourceLoadingStatus::Loaded;
         })) {
+      listener->resourceLoadingStatus = ResourceLoadingStatus::Loaded;
       listener->onResourcesLoaded();
       listenerData.hasAlreadyNotified = true;
     }

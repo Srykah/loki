@@ -23,21 +23,23 @@ class SceneManager : public core::BaseObject {
 
   void setScenePaths(ScenePaths&& scenePaths);
   const ScenePaths& getScenePaths() const;
-  void loadScene(const std::string& sceneName);
+  Scene* loadScene(const std::string& sceneName, bool setActive = true);
 
  private:
-  void loadSceneFromYaml(const YAML::Node& sceneNode);
-  void loadSceneFromYamlString(const std::string& sceneData);
-  void loadSceneFromYamlFile(const std::filesystem::path& scenePath);
+  Scene* loadSceneFromYaml(const YAML::Node& sceneNode);
+  Scene* loadSceneFromYamlString(const std::string& sceneData);
+  Scene* loadSceneFromYamlFile(const std::filesystem::path& scenePath);
 
  private:
   ScenePaths scenePaths;
-  std::unique_ptr<Scene> scene;
+  Scene* currentScene = nullptr;
+  Scene* nextScene = nullptr;
+  std::vector<std::unique_ptr<Scene>> scenes;
 
   LOKI_RTTI_CLASS_DECLARE(SceneManager)
 };
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::core::BaseObject, loki::system::SceneManager)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::system::SceneManager)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::SceneManager)

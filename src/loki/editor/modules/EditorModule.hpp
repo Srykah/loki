@@ -5,8 +5,9 @@
 #include <loki/editor/modules/DebugDrawModule.hpp>
 
 namespace loki::system {
+class Scheduler;
 class SceneManager;
-}
+}  // namespace loki::system
 
 namespace loki::editor {
 
@@ -31,6 +32,7 @@ class EditorModule final : public system::GameModule {
  private:
   DebugDrawModule* debugDrawModule = nullptr;
   system::SceneManager* sceneManager = nullptr;
+  system::Scheduler* scheduler = nullptr;
   system::Actor selectedActor;
 
   LOKI_RTTI_CLASS_DECLARE(EditorModule)
@@ -38,11 +40,6 @@ class EditorModule final : public system::GameModule {
 
 }  // namespace loki::editor
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::GameModule, loki::editor::EditorModule)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::editor::EditorModule, loki::system::GameModule)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::editor::EditorModule)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::editor::EditorModule)
-LOKI_UPDATE_TRAITS_METHOD(Default, onUpdate)
-LOKI_UPDATE_TRAITS_METHOD(DebugRender, onDebugRender)
-LOKI_UPDATE_TRAITS_END()

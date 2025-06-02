@@ -17,7 +17,6 @@ class ApplicationInterface : public core::BaseObject {
 
 }  // namespace loki::system
 
-LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(loki::system::ApplicationInterface)
-LOKI_REFLECTION_CLASS_PARENT(loki::system::ApplicationInterface, loki::core::BaseObject)
+LOKI_REFLECTION_CLASS_BEGIN_RTTI_NO_FACTORY(loki::system::ApplicationInterface)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::system::ApplicationInterface)

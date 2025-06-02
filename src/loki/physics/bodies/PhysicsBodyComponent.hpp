@@ -15,14 +15,14 @@ namespace loki::physics {
 
 class PhysicsBodyComponent : public system::Component {
  public:
-  void onStartInit() override;
-  void onFinalizeInit() override;
-  void onPrePhysics(sf::Time dt);
-  void onPhysicsResult(sf::Time dt);
+  void onBeginInit() override;
+  void onEndInit() override;
+  void onPrePhysics(sf::Time dt) override;
+  void onPhysicsResult(sf::Time dt) override;
 
   PhysicsBody& getBody() { return body; }
 
-  sf::FloatRect getBoundingBox() const;
+  [[nodiscard]] sf::FloatRect getBoundingBox() const;
 
  private:
   PhysicsBodyParams bodyParams;
@@ -34,13 +34,8 @@ class PhysicsBodyComponent : public system::Component {
 
 }  // namespace loki::physics
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::physics::PhysicsBodyComponent)
+LOKI_REFLECTION_COMPONENT_BEGIN(loki::physics::PhysicsBodyComponent)
 LOKI_REFLECTION_CLASS_FIELD(bodyParams)
 LOKI_REFLECTION_CLASS_FIELD(fixtureParams)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsBodyComponent)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::physics::PhysicsBodyComponent)
-LOKI_UPDATE_TRAITS_METHOD(PrePhysics, onPrePhysics)
-LOKI_UPDATE_TRAITS_METHOD(PhysicsResult, onPhysicsResult)
-LOKI_UPDATE_TRAITS_END()

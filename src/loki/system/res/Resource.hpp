@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/system/res/ResourceListener.hpp>
+#include <loki/system/res/ResourceLoadingStatus.hpp>
 
 namespace loki::system {
 
@@ -8,41 +9,18 @@ class ResourceHolder;
 
 class BaseResource : public ResourceListener {
  public:
-  enum class LoadingStatus {
-    Unloaded,
-    Loading,
-    Loaded,
-  };
-
- public:
   ~BaseResource() override = default;
-
-  [[nodiscard]] LoadingStatus getLoadingStatus() const { return loadingStatus; }
 
  private:
   friend ResourceHolder;
 
-  void load(const std::filesystem::path& path) {
-    loadImpl(path);
-    loadingStatus = LoadingStatus::Loading;
-  }
-  void onResourcesLoaded() override {
-    onChildResourcesLoadedImpl();
-    loadingStatus = LoadingStatus::Loaded;
-  }
-  void unload() {
-    unloadImpl();
-    loadingStatus = LoadingStatus::Unloaded;
-  }
+  void onResourcesLoaded() override { onChildResourcesLoaded(); }
 
  protected:
-  virtual void loadImpl(const std::filesystem::path& path) = 0;
+  virtual void load(const std::filesystem::path& path) = 0;
   virtual bool addChildResourcesToHolder(ResourceHolder& holder) { return false; }
-  virtual void onChildResourcesLoadedImpl(){};
-  virtual void unloadImpl() {}
-
- private:
-  LoadingStatus loadingStatus = LoadingStatus::Unloaded;
+  virtual void onChildResourcesLoaded() {}
+  virtual void unload() {}
 };
 
 template <class T>

@@ -19,7 +19,7 @@ class TileMapDataComponent : public system::Component {
 
 }  // namespace loki::tiles
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::tiles::TileMapDataComponent)
+LOKI_REFLECTION_COMPONENT_BEGIN(loki::tiles::TileMapDataComponent)
 LOKI_REFLECTION_CLASS_FIELD(tileMapData)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileMapDataComponent)

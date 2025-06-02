@@ -14,6 +14,7 @@ class Sprite : public sf::Drawable, public sf::Transformable {
   void setData(const SpriteData& data);
   void setAnim(const std::string& anim);
 
+  void start();
   void update(sf::Time delta);
 
   sf::FloatRect getLocalBounds() const;

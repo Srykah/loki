@@ -9,6 +9,7 @@
 #define LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(Class) \
   template <>                                         \
   struct loki::core::TypeInfoHolder<Class> {          \
+    using CLASS = Class;                              \
     static const TypeInfo& getTypeInfo_internal() {   \
       static const TypeInfo TYPEINFO = []() {          \
         TypeInfo TYPEINFO { .info = ClassInfo { .id = #Class } }; \
@@ -17,6 +18,7 @@
 #define LOKI_REFLECTION_TEMPLATE_CLASS_BEGIN_NO_FACTORY(TemplateClass) \
   template <class T>                                                   \
   struct loki::core::TypeInfoHolder<TemplateClass<T>> {                \
+    using CLASS = TemplateClass<T>;                                    \
     static const TypeInfo& getTypeInfo_internal() {                    \
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO { .info = ClassInfo { /* .id = std::format(#TemplateClass "<{}>", std::get<ClassInfo>(getTypeInfo<T>().info).id) */ \
@@ -26,6 +28,7 @@ using CLASSNAME = TemplateClass<T>;
 #define LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN_NO_FACTORY(TemplateClass) \
   template <class X, class Y>                                            \
   struct loki::core::TypeInfoHolder<TemplateClass<X, Y>> {               \
+    using CLASS = TemplateClass<X, Y>;                                   \
     static const TypeInfo& getTypeInfo_internal() {                      \
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO {\
@@ -34,9 +37,9 @@ TypeInfo TYPEINFO {\
 .id = #TemplateClass } };\
 ClassInfo& CLASSINFO = std::get<ClassInfo>(TYPEINFO.info); \
 using CLASSNAME = TemplateClass<X, Y>;
-#define LOKI_REFLECTION_CLASS_PARENT(Class, Parent) \
-  CLASSINFO.parentType = &getTypeInfo<Parent>();    \
-  CLASSINFO.toParentType = [](void* obj) -> void* { return static_cast<Parent*>(&details::to<Class>(obj)); };
+#define LOKI_REFLECTION_CLASS_PARENT(Parent)     \
+  CLASSINFO.parentType = &getTypeInfo<Parent>(); \
+  CLASSINFO.toParentType = [](void* obj) -> void* { return static_cast<Parent*>(&details::to<CLASS>(obj)); };
 
 #define LOKI_REFLECTION_CLASS_FACTORY(...) TYPEINFO.factory = __VA_ARGS__;
 
@@ -52,9 +55,13 @@ using CLASSNAME = TemplateClass<X, Y>;
   LOKI_REFLECTION_TEMPLATE_2_CLASS_BEGIN_NO_FACTORY(TemplateClass) \
   LOKI_REFLECTION_CLASS_FACTORY(details::getBasicFactory<TemplateClass<X, Y>>())
 
-#define LOKI_REFLECTION_CLASS_BEGIN_CHILD(Parent, Child) \
-  LOKI_REFLECTION_CLASS_BEGIN(Child)                     \
-  LOKI_REFLECTION_CLASS_PARENT(Child, Parent)
+#define LOKI_REFLECTION_CLASS_BEGIN_CHILD_NO_FACTORY(Child, Parent) \
+  LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(Child)                     \
+  LOKI_REFLECTION_CLASS_PARENT(Parent)
+
+#define LOKI_REFLECTION_CLASS_BEGIN_CHILD(Child, Parent)      \
+  LOKI_REFLECTION_CLASS_BEGIN_CHILD_NO_FACTORY(Child, Parent) \
+  LOKI_REFLECTION_CLASS_FACTORY(details::getBasicFactory<Child>())
 
 #define LOKI_REFLECTION_CLASS_ATTRIBUTE(AttributeType, ...) \
   CLASSINFO.attributes.push_back(std::make_unique<AttributeType>(__VA_ARGS__));

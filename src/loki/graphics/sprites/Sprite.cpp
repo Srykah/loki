@@ -20,6 +20,11 @@ void Sprite::setAnim(const std::string& anim) {
   animator.start();
 }
 
+void Sprite::start() {
+  animator.start();
+  animator.setTime(sf::Time::Zero);
+}
+
 void Sprite::update(sf::Time delta) {
   animator.update(delta);
 }

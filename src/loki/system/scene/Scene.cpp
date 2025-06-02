@@ -31,9 +31,15 @@ Actor Scene::instanciateActor(Actor parent) {
   return actor;
 }
 
-void Scene::visitComponents(const ActorFilter& actorFilter,
-                            const ComponentTraitsFilter& compTraitsFilter,
-                            const ComponentVisitor& compVisitor) {
+void Scene::visitActors(ActorVisitor&& actorVisitor) {
+  for (entt::entity entity : registry.view<entt::entity>()) {
+    actorVisitor(Actor{entt::handle{registry, entity}});
+  }
+}
+
+void Scene::visitComponents(ActorFilter&& actorFilter,
+                            ComponentTraitsFilter&& compTraitsFilter,
+                            ComponentVisitor&& compVisitor) {
   // look among all component types in the registry
   for (auto& storage : registry.storage() | std::views::values) {
     // get the componentTraits associated with this component type
@@ -49,28 +55,28 @@ void Scene::visitComponents(const ActorFilter& actorFilter,
   }
 }
 
-void Scene::visitComponents(const ActorFilter& actorFilter, const ComponentVisitor& compVisitor) {
-  visitComponents(actorFilter, [](const BaseComponentTraits&) { return true; }, compVisitor);
+void Scene::visitComponents(ActorFilter&& actorFilter, ComponentVisitor&& compVisitor) {
+  visitComponents(std::move(actorFilter), [](const BaseComponentTraits&) { return true; }, std::move(compVisitor));
 }
 
-void Scene::visitComponents(const ComponentTraitsFilter& compTraitsFilter, const ComponentVisitor& compVisitor) {
-  visitComponents([](Actor) { return true; }, compTraitsFilter, compVisitor);
+void Scene::visitComponents(ComponentTraitsFilter&& compTraitsFilter, ComponentVisitor&& compVisitor) {
+  visitComponents([](Actor) { return true; }, std::move(compTraitsFilter), std::move(compVisitor));
 }
 
-void Scene::visitComponents(const ComponentVisitor& compVisitor) {
-  visitComponents([](Actor) { return true; }, [](const BaseComponentTraits&) { return true; }, compVisitor);
+void Scene::visitComponents(ComponentVisitor&& compVisitor) {
+  visitComponents([](Actor) { return true; }, [](const BaseComponentTraits&) { return true; }, std::move(compVisitor));
 }
 
 void Scene::visitActorComponents(Actor actor,
-                                 const ComponentTraitsFilter& compTraitsFilter,
-                                 const ComponentVisitor& compVisitor) {
-  visitComponents([actor](Actor _actor) { return _actor == actor; }, [](const BaseComponentTraits&) { return true; },
-                  compVisitor);
+                                 ComponentTraitsFilter&& compTraitsFilter,
+                                 ComponentVisitor&& compVisitor) {
+  visitComponents([actor](Actor _actor) { return _actor == actor; }, std::move(compTraitsFilter),
+                  std::move(compVisitor));
 }
 
-void Scene::visitActorComponents(Actor actor, const ComponentVisitor& compVisitor) {
+void Scene::visitActorComponents(Actor actor, ComponentVisitor&& compVisitor) {
   visitComponents([actor](Actor _actor) { return _actor == actor; }, [](const BaseComponentTraits&) { return true; },
-                  compVisitor);
+                  std::move(compVisitor));
 }
 
 void Scene::setPath(const std::filesystem::path& _path) {

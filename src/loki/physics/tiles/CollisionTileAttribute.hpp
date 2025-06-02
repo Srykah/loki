@@ -13,7 +13,7 @@ struct CollisionTileAttribute : public tiles::TileAttribute {
 
 }  // namespace loki::physics
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::tiles::TileAttribute, loki::physics::CollisionTileAttribute)
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::CollisionTileAttribute, loki::tiles::TileAttribute)
 LOKI_REFLECTION_CLASS_FIELD(isSolid)
 LOKI_REFLECTION_CLASS_FIELD(fixtureParams)
 LOKI_REFLECTION_CLASS_END()

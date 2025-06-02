@@ -7,9 +7,9 @@
 namespace loki::graphics {
 class SpriteComponent : public system::Component, public sf::Drawable {
  public:
-  void onStartInit() override;
-  void onFinalizeInit() override;
-  void onUpdate(sf::Time delta);
+  void onBeginInit() override;
+  void onEndInit() override;
+  void onUpdate(sf::Time delta) override;
   [[nodiscard]] system::DrawOrder getDrawOrder() const;
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -22,11 +22,7 @@ class SpriteComponent : public system::Component, public sf::Drawable {
 
 }  // namespace loki::graphics
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::system::Component, loki::graphics::SpriteComponent)
+LOKI_REFLECTION_COMPONENT_BEGIN(loki::graphics::SpriteComponent)
 LOKI_REFLECTION_CLASS_FIELD(spriteData)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::graphics::SpriteComponent)
-
-LOKI_UPDATE_TRAITS_BEGIN(loki::graphics::SpriteComponent)
-LOKI_UPDATE_TRAITS_METHOD(Default, onUpdate)
-LOKI_UPDATE_TRAITS_END()

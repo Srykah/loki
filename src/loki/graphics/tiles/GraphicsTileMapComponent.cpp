@@ -4,13 +4,13 @@
 #include <loki/tiles/TileMapDataComponent.hpp>
 
 namespace loki::graphics {
-void GraphicsTileMapComponent::onStartInit() {
+void GraphicsTileMapComponent::onBeginInit() {
   auto* dataComp = getActor().getComponent<tiles::TileMapDataComponent>();
   assert(dataComp);
   addResources(dataComp->getDataHandle());
 }
 
-void GraphicsTileMapComponent::onFinalizeInit() {
+void GraphicsTileMapComponent::onEndInit() {
   auto* dataComp = getActor().getComponent<tiles::TileMapDataComponent>();
   assert(dataComp);
   tileMap.setData(dataComp->getDataHandle().getData());

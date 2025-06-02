@@ -15,6 +15,7 @@ void ResourceHolder::add(ResourceHandle<Res>& handle, ResourceListener* listener
     it2 = listeners.insert(it2, {listener, {}});
   auto& listenerData = it2->second;
   listenerData.listenedResources.emplace_back(handle.getPtr());
+  listener->resourceLoadingStatus = ResourceLoadingStatus::Loading;
 }
 
 }  // namespace loki::system
