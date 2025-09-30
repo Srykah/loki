@@ -5,10 +5,13 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <ecs/LifeCycleStep.hpp>
 #include <entt/entt.hpp>
-#include <yaml-cpp/emitter.h>
-#include <yaml-cpp/node/node.h>
 
 #include <loki/system/ecs/VisitorConcepts.hpp>
+
+namespace YAML {
+class Node;
+class Emitter;
+}  // namespace YAML
 
 namespace loki::system {
 

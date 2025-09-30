@@ -54,6 +54,13 @@ void EditorModule::showMenuBar() {
       }
       ImGui::EndMenu();
     }
+    const bool isPaused = scheduler->isPaused();
+    if (ImGui::MenuItem("Play", nullptr, false, isPaused)) {
+      scheduler->setPaused(false);
+    }
+    if (ImGui::MenuItem("Pause", nullptr, false, !isPaused)) {
+      scheduler->setPaused(true);
+    }
     ImGui::EndMainMenuBar();
   }
 }
