@@ -1,0 +1,55 @@
+name: build
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+jobs:
+  build-linux:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update
+      - name: Install cmake
+        run: sudo apt-get install -y cmake
+      - name: Install SFML deps
+        run: sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
+      - name: Install SFML
+        run: |
+          git clone https://github.com/SFML/SFML.git -b 2.5.1 --depth 1
+          cd SFML && mkdir install && mkdir build && cd build
+          cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/SFML/install"
+          sudo cmake --build . --target install
+      - name: Download imgui
+        run: git clone https://github.com/ocornut/imgui.git -b v1.86 --depth 1
+      - name: Install imgui-sfml
+        run: |
+          git clone https://github.com/eliasdaler/imgui-sfml.git -b v2.5 --depth 1
+          cd imgui-sfml && mkdir install && mkdir build && cd build
+          cmake .. -DSFML_DIR="~/SFML/install" -DImGui_DIR="~/imgui" -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/imgui-sfml/install"
+          sudo cmake --build . --target install
+      - name: Install nlohmann/json
+        run: |
+          git clone https://github.com/nlohmann/json.git -b v3.10.5 --depth 1
+          cd json && mkdir install && mkdir build && cd build
+          cmake .. -DCMAKE_INSTALL_DIR="~/json/install"
+          sudo cmake --build . --target install
+      - name: Install fmt
+        run: |
+          git clone https://github.com/fmtlib/fmt.git -b 8.1.1 --depth 1
+          cd fmt && mkdir install && mkdir build && cd build
+          cmake .. -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/fmt/install"
+          sudo cmake --build . --target install
+      - name: Checkout loki
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Configure and build
+        run: |
+          cd loki && mkdir install && mkdir build && cd build
+          cmake .. -DSFML_DIR="~/SFML/install" -DImGui_DIR="~/imgui" -DImGui_SFML_DIR="~/imgui-sfml/install" -Dnlohmann_json_DIR="~/json/install" -Dfmt_DIR="~/fmt/install" -DBUILD_STATIC_LIBS=ON -DCMAKE_INSTALL_DIR="~/loki/install"
+          cmake --build . --target install
