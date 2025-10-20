@@ -132,7 +132,7 @@ set(SFML_DIR ${SFML_BINARY_DIR})
 CPMAddPackage(URI "gh:SFML/imgui-sfml#v2.6.1")
 
 # Install everything
-install(TARGETS box2d dylib EnTT yaml-cpp ImGui-SFML EXPORT loki_targets)
+install(TARGETS box2d yaml-cpp ImGui-SFML EXPORT loki_targets)
 
 # TARGETS
 
