@@ -13,11 +13,13 @@ project(
 include(cmake/LocalConfig.cmake OPTIONAL)
 
 # todo make it work
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "Compile loki as a shared library. If OFF, all dependencies will be linked to statically." FORCE)
+set(BUILD_SHARED_LIBS ON CACHE BOOL "Build shared libs" FORCE)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON CACHE BOOL "Export all symbols in dlls" FORCE)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_LINKER_TYPE LLD)
+add_compile_definitions(min=min max=max)
 
 
 # HELPERS
@@ -35,18 +37,102 @@ macro_ensure_out_of_source_build("You must use an out-of-source build.")
 
 # DEPENDENCIES
 
-set(SFML_STATIC_LIBRARIES ON)
-list(APPEND LOKI_DEPS_LIST
-  #"nlohmann_json, 3.9"
-  "fmt, 10.2"
-  "SFML, 2.6, graphics window system audio"
-  "yaml-cpp, 0.8"
-  "box2d, 2.4"
-  "EnTT, 3.13")
-loki_find_all_deps("${LOKI_DEPS_LIST}")
+# We use CPM for dependencies
+include(CPM)
 
-# extern
-add_subdirectory(extern)
+# Box2d
+set(BOX2D_BUILD_DOCS OFF)
+set(BOX2D_BUILD_TESTBED OFF)
+set(BOX2D_BUILD_UNIT_TESTS OFF)
+set(BOX2D_USER_SETTINGS OFF)
+CPMAddPackage(URI "gh:erincatto/box2d#v2.4.2")
+
+# Dylib
+set(DYLIB_BUILD_TESTS OFF)
+set(DYLIB_WARNING_AS_ERRORS OFF)
+CPMAddPackage(URI "gh:martin-olivier/dylib#v2.2.1")
+
+# EnTT
+set(ENTT_BUILD_DOCS OFF)
+set(ENTT_BUILD_TESTING OFF)
+set(ENTT_BUILD_TOOLS OFF)
+set(ENTT_INCLUDE_HEADERS ON)
+set(ENTT_INCLUDE_NATVIS ON)
+set(ENTT_USE_CLANG_TIDY OFF)
+# set(ENTT_USE_LIBCPP ???)
+set(ENTT_USE_SANITIZER OFF)
+CPMAddPackage(URI "gh:skypjack/entt#v3.13.2")
+
+# SFML
+set(SFML_BUILD_AUDIO ON)
+set(SFML_BUILD_GRAPHICS ON)
+set(SFML_BUILD_NETWORK ON)
+set(SFML_BUILD_WINDOW ON)
+set(SFML_BUILD_DOC OFF)
+set(SFML_BUILD_EXAMPLES OFF)
+set(SFML_BUILD_TEST_SUITE OFF)
+set(SFML_INSTALL_PKGCONFIG_FILES ON)
+set(SFML_OPENGL_ES OFF) # todo check for mobile version
+set(SFML_USE_STATIC_STD_LIBS OFF)
+set(SFML_USE_SYSTEM_DEPS OFF)
+CPMAddPackage(URI "gh:SFML/SFML#2.6.2")
+
+# yaml-cpp
+set(YAML_BUILD_SHARED_LIBS ON)
+set(YAML_CPP_BUILD_CONTRIB ON)
+set(YAML_CPP_BUILD_TOOLS OFF)
+set(YAML_CPP_DISABLE_UNINSTALL OFF)
+set(YAML_CPP_FORMAT_SOURCE OFF)
+set(YAML_CPP_INSTALL ON)
+set(YAML_ENABLE_PIC ON)
+set(YAML_MSVC_SHARED_RT ON)
+set(YAML_USE_SYSTEM_GTEST ON)
+CPMAddPackage(URI "gh:jbeder/yaml-cpp#a83cd31548b19d50f3f983b069dceb4f4d50756d") # fix for cmake > 3.4
+
+# ImGui (set after SFML because of FreeType) (as seen in https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets)
+CPMAddPackage(URI "gh:ocornut/imgui#v1.91.0-docking@1.91.0" DOWNLOAD_ONLY TRUE)
+file(DOWNLOAD
+  "https://gist.githubusercontent.com/rokups/f771217b2d530d170db5cb1e08e9a8f4/raw/4c2c14374ab878ca2f45daabfed4c156468e4e27/CMakeLists.txt"
+  "${imgui_SOURCE_DIR}/CMakeLists.txt"
+  EXPECTED_HASH SHA256=fd62f69364ce13a4f7633a9b50ae6672c466bcc44be60c69c45c0c6e225bb086
+)
+set(IMGUI_DEMO ON)
+set(IMGUI_DISABLE_FILE_FUNCTIONS OFF)
+set(IMGUI_DISABLE_OBSOLETE_FUNCTIONS ON)
+set(IMGUI_DISABLE_OBSOLETE_KEYIO ON)
+set(IMGUI_ENABLE_ASAN OFF)
+set(IMGUI_ENABLE_COVERAGE OFF)
+set(IMGUI_ENABLE_FREETYPE ON)
+set(IMGUI_ENABLE_STDLIB_SUPPORT ON)
+set(IMGUI_ENABLE_TRACY OFF)
+set(IMGUI_EXAMPLES OFF)
+set(IMGUI_IMPL_DX9 OFF)
+set(IMGUI_IMPL_DX10 OFF)
+set(IMGUI_IMPL_DX11 OFF)
+set(IMGUI_IMPL_DX12 OFF)
+set(IMGUI_IMPL_GLFW OFF)
+set(IMGUI_IMPL_GLUT OFF)
+set(IMGUI_IMPL_METAL OFF)
+set(IMGUI_IMPL_OPENGL2 OFF)
+set(IMGUI_IMPL_OPENGL3 OFF)
+set(IMGUI_IMPL_OSX OFF)
+set(IMGUI_IMPL_SDL OFF)
+set(IMGUI_IMPL_VULKAN OFF)
+set(IMGUI_IMPL_WIN32 OFF)
+add_subdirectory("${imgui_SOURCE_DIR}" "${CMAKE_BINARY_DIR}/_deps/imgui-build" EXCLUDE_FROM_ALL SYSTEM)
+
+# ImGui-SFML (set after ImGui & SFML)
+set(IMGUI_SFML_DISABLE_OBSOLETE_FUNCTIONS ON)
+set(IMGUI_SFML_ENABLE_WARNINGS OFF)
+set(IMGUI_SFML_FIND_SFML OFF)
+set(IMGUI_SFML_IMGUI_DEMO ON)
+set(IMGUI_SFML_USE_DEFAULT_CONFIG ON)
+set(IMGUI_DIR ${imgui_SOURCE_DIR})
+set(SFML_DIR ${SFML_BINARY_DIR})
+CPMAddPackage(URI "gh:SFML/imgui-sfml#v2.6.1")
+
+# Install everything
+install(TARGETS box2d dylib EnTT yaml-cpp ImGui-SFML EXPORT loki_targets)
 
 # TARGETS
 

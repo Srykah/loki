@@ -29,5 +29,5 @@ loki_create_module(physics
 
   PUBLIC_DEPS
   loki::tiles
-  box2d::box2d
+  box2d
 )

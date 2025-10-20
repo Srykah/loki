@@ -1,5 +1,7 @@
 #pragma once
 
+#include <span>
+
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/system/modules/GameModule.hpp>

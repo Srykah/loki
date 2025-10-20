@@ -17,8 +17,8 @@ class EditorModule final : public system::GameModule {
   [[nodiscard]] const system::BaseUpdateTraits& getUpdateTraits() const override;
   void registerAsAService(core::ServiceRegistry& serviceRegistry) override;
   void init() override;
-  void onUpdate(sf::Time dt);
-  void onDebugRender(sf::Time dt);
+  void onUpdate(sf::Time dt) override;
+  void onDebugRender(sf::Time dt) override;
 
  private:
   void showMenuBar();

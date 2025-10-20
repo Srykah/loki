@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <span>
 
 #include <loki/core/rtti/BaseObject.hpp>
 

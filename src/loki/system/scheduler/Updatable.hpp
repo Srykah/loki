@@ -27,7 +27,7 @@ class UpdateTraits<T> : public BaseUpdateTraits {
   [[nodiscard]] bool hasUpdateStep(UpdateStep step) const override {
 #define LOKI_UPDATE_TRAITS_UPDATABLE_HAS_STEP(Step) \
   if (step == UpdateStep::Step)                     \
-    return !std::is_same_v<decltype(T::on##Step), decltype(Updatable::on##Step)>;
+    return !std::is_same_v<decltype(&T::on##Step), decltype(&Updatable::on##Step)>;
     LOKI_SYSTEM_UPDATE_STEP_LIST(LOKI_UPDATE_TRAITS_UPDATABLE_HAS_STEP)
 #undef LOKI_UPDATE_TRAITS_UPDATABLE
     return false;

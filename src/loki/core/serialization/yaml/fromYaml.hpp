@@ -15,4 +15,4 @@ void fromYaml(const YAML::Node& node, T& obj) {
   fromYaml(node, static_cast<void*>(&obj), getTypeInfo<T>());
 }
 
-}
+}  // namespace loki::core

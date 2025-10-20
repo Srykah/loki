@@ -81,6 +81,6 @@ loki_create_module(system
 
   PUBLIC_DEPS
   loki::core
-  EnTT::EnTT
-  ImGui-SFML::ImGui-SFML
+  EnTT
+  ImGui-SFML
 )

@@ -12,7 +12,7 @@ bool ServiceRegistry::registerService(T& service) {
 template <ReflectedRuntimeObject T>
 T& ServiceRegistry::get() const {
   const auto& classInfo = std::get<ClassInfo>(core::getTypeInfo<T>().info);
-  return static_cast<T&>(*s_instance->services.at(classInfo.id));
+  return static_cast<T&>(*services.at(classInfo.id));
 }
 
 }  // namespace loki::core
