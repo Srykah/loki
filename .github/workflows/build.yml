@@ -109,7 +109,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Configure CMake
-        run: cmake ${{matrix.platform.cmake-flags}}
+        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} ${{matrix.platform.cmake-flags}}
 
       - name: Build
-        run: cmake --build build --config Debug --target install
+        run: cmake --build build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} --config Debug --target install
