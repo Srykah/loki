@@ -28,26 +28,20 @@ jobs:
       matrix:
         platform:
           - os: windows-2025
-            compiler: { name: MSVC, version: 17.14 }
-            cmake-flags: -GNinja
+            compiler: { name: MSVC, version: 14.44, c-exe: cl, cpp-exe: cl }
           - os: windows-2025
-            compiler: { name: ClangCL, version: 20.1 } # actual version is tied to MSVC toolset
-            cmake-flags: -T ClangCL
+            compiler: { name: ClangCL, version: 20.1, toolset: ClangCL } # actual version is tied to MSVC toolset
           - os: windows-2025
-            compiler: { name: Clang, version: 21.1 }
-            cmake-flags: -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++ }
           - os: windows-2025
-            compiler: { name: GCC, version: 15.2 }
-            cmake-flags: -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: GCC, version: 15 }
-            cmake-flags: -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+            compiler: { name: GCC, version: 15, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: Clang, version: 21 }
-            cmake-flags: -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+            compiler: { name: Clang, version: 21, c-exe: gcc, cpp-exe: g++ }
 
     steps:
-      # Checkout
+      # Code
       - name: Checkout
         uses: actions/checkout@v5
 
@@ -101,28 +95,20 @@ jobs:
           echo "Using cmake $(which cmake)"
           cmake --version
 
-      - name: Set up GCC On Linux
-        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'GCC'
-        uses: egor-tensin/setup-gcc@v1
-        with:
-          platform: x64
-          version: ${{ matrix.platform.compiler.version }}
-
-      - name: Set up Clang On Linux
-        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'Clang'
-        uses: egor-tensin/setup-clang@v1
-        with:
-          platform: x64
-          version: ${{ matrix.platform.compiler.version }}
+      - name: Set up compilers on Linux
+        if: matrix.platform.os == 'ubuntu-24.04'
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
 
       # Dependencies
-      - name: Install SFML Linux Dependencies
+      - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
         run: sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
 
       # Build
       - name: Configure CMake
-        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} ${{matrix.platform.cmake-flags}}
+        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} ${{ (matrix.platform.toolset && join('-T ', matrix.platform.toolset)) || join('-G Ninja ', join('-DCMAKE_C_COMPILER=', join(matrix.platform.compiler.c-exe, join(' -DCMAKE_CXX_COMPILER=', matrix.platform.compiler.cpp-exe)))) }}
 
       - name: Build
         run: cmake --build build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} --config Debug --target install

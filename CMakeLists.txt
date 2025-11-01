@@ -18,8 +18,9 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON CACHE BOOL "Export all symbols in dlls" 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_LINKER_TYPE LLD)
-add_compile_definitions(min=min max=max)
+if (WIN32)
+  add_compile_definitions(WIN32_LEAN_AND_MEAN)
+endif ()
 
 
 # HELPERS
