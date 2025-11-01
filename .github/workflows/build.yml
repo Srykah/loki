@@ -21,7 +21,9 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
 
     env:
-      CMAKE_CXX_COMPILER_LAUNCHER: ccache # Use ccache to cache C++ compiler output
+      # Use ccache to cache C/C++ compiler output
+      CMAKE_C_COMPILER_LAUNCHER: ccache
+      CMAKE_CXX_COMPILER_LAUNCHER: ccache
 
     strategy:
       fail-fast: false
@@ -43,11 +45,11 @@ jobs:
     steps:
       # Code
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v5.0.0
 
       # Common Tools
       - name: Get CMake and Ninja
-        uses: lukka/get-cmake@latest
+        uses: lukka/get-cmake@v4.1.2
         with:
           cmakeVersion: 4.1.2
           ninjaVersion: latest
@@ -55,7 +57,7 @@ jobs:
       - name: Setup CCache
         # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
         # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
-        uses: hendrikmuhs/ccache-action@v1
+        uses: hendrikmuhs/ccache-action@v1.2.19
         with:
           verbose: 2
           key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
@@ -63,7 +65,7 @@ jobs:
       # Compilers
       - name: Set up MSVC
         if: matrix.platform.compiler.name == 'MSVC'
-        uses: TheMrMilchmann/setup-msvc-dev@v4
+        uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
         with:
           arch: x64
           toolset: ${{ matrix.platform.compiler.version }}
@@ -71,14 +73,14 @@ jobs:
       - name: Cache MinGW
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
         id: mingw-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v4.3.0
         with:
           path: "C:\\Program Files\\mingw64"
           key: mingw-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
 
       - name: Install MinGW
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC' && steps.mingw-cache.outputs.cache-hit != 'true'
-        uses: egor-tensin/setup-mingw@v2
+        uses: egor-tensin/setup-mingw@v2.2.0
         with:
           platform: x64
           version: ${{ matrix.platform.compiler.version }}
@@ -98,8 +100,8 @@ jobs:
       - name: Set up compilers on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
-          sudo DEBIAN_FRONTEND=noninteractive apt-get update
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
+          sudo apt-get update
+          sudo apt-get install -y ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
 
       # Dependencies
       - name: Install SFML Linux dependencies
