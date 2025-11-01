@@ -43,6 +43,11 @@ jobs:
             compiler: { name: Clang, version: 21, c-exe: clang, cpp-exe: clang++ }
 
     steps:
+      # Upgrade Linux
+      - name: Upgrade Linux
+        if: matrix.platform.os == 'ubuntu-24.04'
+        run: sudo apt-get update && sudo apt-get upgrade -y
+
       # Code
       - name: Checkout
         uses: actions/checkout@v5.0.0
@@ -87,7 +92,7 @@ jobs:
           static: false
 
       - name: Add MinGW to PATH and remove MinGW-supplied CCache & CMake
-        if: matrix.platform.os == 'windows-2025'
+        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
         run: |
           echo "C:\Program Files\mingw64\bin" >> $GITHUB_PATH
           rm -f "C:\Program Files\mingw64\bin\ccache.exe"
@@ -99,9 +104,7 @@ jobs:
 
       - name: Set up compilers on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
+        run: sudo apt-get install -y ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
 
       # Dependencies
       - name: Install SFML Linux dependencies
