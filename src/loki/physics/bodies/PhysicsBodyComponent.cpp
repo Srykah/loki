@@ -8,9 +8,10 @@
 namespace loki::physics {
 
 void PhysicsBodyComponent::onBeginInit() {
-  body = getScene().getRoot().getComponent<PhysicsWorldComponent>()->getWorld()->createBody(auto{bodyParams});
+  body =
+      getScene().getRoot().getComponent<PhysicsWorldComponent>()->getWorld()->createBody(PhysicsBodyParams{bodyParams});
   for (const auto& fixtureParam : fixtureParams) {
-    body.createFixture(auto{fixtureParam});
+    body.createFixture(PhysicsFixtureParams{fixtureParam});
   }
   getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }

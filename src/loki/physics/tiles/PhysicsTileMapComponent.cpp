@@ -34,7 +34,7 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
              ->getRoot()
              .getComponent<PhysicsWorldComponent>()
              ->getWorld()
-             ->createBody(auto{bodyParams});
+             ->createBody(PhysicsBodyParams{bodyParams});
   const auto* tileSizeAttr = data.tileset->getTileSetAttribute<tiles::SizeTileSetAttribute>();
   assert(tileSizeAttr);
   sf::Vector2f tileSize = tileSizeAttr->tileSize;
@@ -53,7 +53,7 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
     auto boxParams = std::make_shared<PolygonShapeParams>();
     boxParams->polygonShape.SetAsBox(halfTileSizeInMeters.x, halfTileSizeInMeters.y, toB2Vec2(coordsInMeters), 0.f);
     fixtureParams.shapeParams = std::move(boxParams);
-    body.createFixture(auto{fixtureParams});
+    body.createFixture(std::move(fixtureParams));
   }
 }
 

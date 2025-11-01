@@ -90,12 +90,15 @@ jobs:
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
           conda install conda-forge::${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} conda-forge::${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
-          echo "$CONDA/bin" >> $GITHUB_PATH
+          echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
+          echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
 
       # Dependencies
       - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libxrandr-dev libx11-dev
 
       # Build
       - name: Configure CMake
