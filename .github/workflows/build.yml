@@ -38,9 +38,9 @@ jobs:
           - os: windows-2025
             compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: GCC, version: 15, c-exe: gcc, cpp-exe: g++ }
+            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: Clang, version: 21, c-exe: clang, cpp-exe: clang++ }
+            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++ }
 
     steps:
       # Upgrade Linux
@@ -102,9 +102,21 @@ jobs:
           echo "Using cmake $(which cmake)"
           cmake --version
 
-      - name: Set up compilers on Linux
-        if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo apt-get install -y ${{ matrix.platform.compiler.c-exe }}-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.cpp-exe }}-${{ matrix.platform.compiler.version }}
+      - name: Set up GCC on Linux
+        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'GCC'
+        run: |
+          conda install conda-forge::gcc=${{ matrix.platform.compiler.version }} conda-forge::gxx=${{ matrix.platform.compiler.version }}
+          which gcc g++
+          sudo update-alternatives --install ~/conda/bin/gcc gcc /usr/local/gcc-${{ matrix.platform.compiler.version }}/bin/gcc-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
+          sudo update-alternatives --install ~/conda/bin/g++ g++ /usr/local/gcc-${{ matrix.platform.compiler.version }}/bin/g++-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
+
+      - name: Set up Clang on Linux
+        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'Clang'
+        run: |
+          conda install conda-forge::clang=${{ matrix.platform.compiler.version }} conda-forge::clangxx=${{ matrix.platform.compiler.version }}
+          which clang clang++
+          sudo update-alternatives --install ~/conda/bin/clang clang /usr/local/clang-${{ matrix.platform.compiler.version }}/bin/clang-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
+          sudo update-alternatives --install ~/conda/bin/clang++ clang++ /usr/local/clang-${{ matrix.platform.compiler.version }}/bin/clang++-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
 
       # Dependencies
       - name: Install SFML Linux dependencies
