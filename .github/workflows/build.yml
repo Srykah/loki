@@ -30,24 +30,19 @@ jobs:
       matrix:
         platform:
           - os: windows-2025
-            compiler: { name: MSVC, version: 14.44, c-exe: cl, cpp-exe: cl }
+            compiler: { name: MSVC, version: 19.44, msvc-toolset: 14.44, c-exe: cl, cpp-exe: cl }
           - os: windows-2025
-            compiler: { name: ClangCL, version: 20.1, toolset: ClangCL } # actual version is tied to MSVC toolset
+            compiler: { name: ClangCL, version: 20.1, msvc-toolset: 14.44, cmake-toolset: ClangCL }
           - os: windows-2025
             compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++ }
           - os: windows-2025
             compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
+            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
           - os: ubuntu-24.04
-            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++ }
+            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
 
     steps:
-      # Upgrade Linux
-      - name: Upgrade Linux
-        if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo apt-get update && sudo apt-get upgrade -y
-
       # Code
       - name: Checkout
         uses: actions/checkout@v5.0.0
@@ -59,64 +54,43 @@ jobs:
           cmakeVersion: 4.1.2
           ninjaVersion: latest
 
-      - name: Setup CCache
-        # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
-        # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
-        uses: hendrikmuhs/ccache-action@v1.2.19
-        with:
-          verbose: 2
-          key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+      #- name: Setup CCache
+      #  # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
+      #  # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
+      #  uses: hendrikmuhs/ccache-action@v1.2.19
+      #  with:
+      #    verbose: 2
+      #    key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
 
       # Compilers
       - name: Set up MSVC
-        if: matrix.platform.compiler.name == 'MSVC'
+        if: matrix.platform.compiler.msvc-toolset
         uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
         with:
           arch: x64
-          toolset: ${{ matrix.platform.compiler.version }}
+          toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
-      - name: Cache MinGW
+      - name: Set up WinLibs
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
-        id: mingw-cache
-        uses: actions/cache@v4.3.0
+        uses: bwoodsend/setup-winlibs-action@v1.16
         with:
-          path: "C:\\Program Files\\mingw64"
-          key: mingw-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+          architecture: 64
+          runtime: ucrt
+          threads: posix
+          with_clang: false
+          add_to_path: true
 
-      - name: Install MinGW
-        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC' && steps.mingw-cache.outputs.cache-hit != 'true'
-        uses: egor-tensin/setup-mingw@v2.2.0
+      - name: Set up Clang on Windows
+        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'Clang'
+        uses: KyleMayes/install-llvm-action@v2
         with:
-          platform: x64
           version: ${{ matrix.platform.compiler.version }}
-          static: false
 
-      - name: Add MinGW to PATH and remove MinGW-supplied CCache & CMake
-        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
+      - name: Set up compiler on Linux
+        if: matrix.platform.os == 'ubuntu-24.04'
         run: |
-          echo "C:\Program Files\mingw64\bin" >> $GITHUB_PATH
-          rm -f "C:\Program Files\mingw64\bin\ccache.exe"
-          echo "Using ccache $(which ccache)"
-          ccache --version
-          rm -f "C:\Program Files\mingw64\bin\cmake.exe"
-          echo "Using cmake $(which cmake)"
-          cmake --version
-
-      - name: Set up GCC on Linux
-        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'GCC'
-        run: |
-          conda install conda-forge::gcc=${{ matrix.platform.compiler.version }} conda-forge::gxx=${{ matrix.platform.compiler.version }}
-          which gcc g++
-          sudo update-alternatives --install ~/conda/bin/gcc gcc /usr/local/gcc-${{ matrix.platform.compiler.version }}/bin/gcc-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
-          sudo update-alternatives --install ~/conda/bin/g++ g++ /usr/local/gcc-${{ matrix.platform.compiler.version }}/bin/g++-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
-
-      - name: Set up Clang on Linux
-        if: matrix.platform.os == 'ubuntu-24.04' && matrix.platform.compiler.name == 'Clang'
-        run: |
-          conda install conda-forge::clang=${{ matrix.platform.compiler.version }} conda-forge::clangxx=${{ matrix.platform.compiler.version }}
-          which clang clang++
-          sudo update-alternatives --install ~/conda/bin/clang clang /usr/local/clang-${{ matrix.platform.compiler.version }}/bin/clang-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
-          sudo update-alternatives --install ~/conda/bin/clang++ clang++ /usr/local/clang-${{ matrix.platform.compiler.version }}/bin/clang++-${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.version }}
+          conda install conda-forge::${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} conda-forge::${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
+          echo "CC=$CONDA/bin" >> $GITHUB_PATH
 
       # Dependencies
       - name: Install SFML Linux dependencies
@@ -125,7 +99,8 @@ jobs:
 
       # Build
       - name: Configure CMake
-        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} ${{ (matrix.platform.toolset && join('-T ', matrix.platform.toolset)) || join('-G Ninja ', join('-DCMAKE_C_COMPILER=', join(matrix.platform.compiler.c-exe, join(' -DCMAKE_CXX_COMPILER=', matrix.platform.compiler.cpp-exe)))) }}
+        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}
+          ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || format('-G Ninja -DCMAKE_C_COMPILER={0} -DCMAKE_CXX_COMPILER={1}', matrix.platform.compiler.c-exe, matrix.platform.compiler.cpp-exe) }}
 
       - name: Build
         run: cmake --build build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} --config Debug --target install
