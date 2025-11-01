@@ -40,7 +40,7 @@ jobs:
           - os: ubuntu-24.04
             compiler: { name: GCC, version: 15, c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: Clang, version: 21, c-exe: gcc, cpp-exe: g++ }
+            compiler: { name: Clang, version: 21, c-exe: clang, cpp-exe: clang++ }
 
     steps:
       # Code
