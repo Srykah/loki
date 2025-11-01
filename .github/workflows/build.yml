@@ -1,0 +1,115 @@
+name: build
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: ${{ !github.event.pull_request.draft }}
+    name: ${{ matrix.platform.os }} ${{ matrix.platform.compiler.name }} ${{ matrix.platform.compiler.version }}
+    runs-on: ${{ matrix.platform.os }}
+
+    env:
+      CMAKE_CXX_COMPILER_LAUNCHER: ccache # Use ccache to cache C++ compiler output
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - os: windows-2025
+            compiler: { name: MSVC, version: 19.43 }
+            cmake-flags: -GNinja
+          - os: windows-2025
+            compiler: { name: ClangCL, version: 20.1 } # actual version is tied to MSVC toolset
+            cmake-flags: -T ClangCL
+          - os: windows-2025
+            compiler: { name: Clang, version: 21.1 }
+            cmake-flags: -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+          - os: windows-2025
+            compiler: { name: GCC, version: 15.2 }
+            cmake-flags: -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+          - os: ubuntu-24.04
+            compiler: { name: GCC, version: 15.2 }
+            cmake-flags: -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+          - os: ubuntu-24.04
+            compiler: { name: Clang, version: 21.1 }
+            cmake-flags: -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+
+    steps:
+      # Common Tools
+      - name: Get CMake and Ninja
+        uses: lukka/get-cmake@latest
+        with:
+          cmakeVersion: 4.1.2
+          ninjaVersion: latest
+
+      - name: Setup CCache
+        # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
+        # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
+        uses: hendrikmuhs/ccache-action@v1
+        with:
+          verbose: 2
+          key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+
+      # Compilers
+      - name: Set up MSVC
+        if: matrix.platform.compiler.name == 'MSVC'
+        uses: TheMrMilchmann/setup-msvc-dev@v4
+        with:
+          arch: x64
+          toolset: ${{ matrix.platform.compiler.version }}
+
+      - name: Cache MinGW
+        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
+        id: mingw-cache
+        uses: actions/cache@v4
+        with:
+          path: "C:\\Program Files\\mingw64"
+          key: mingw-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+
+      - name: Install MinGW
+        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC' && steps.mingw-cache.outputs.cache-hit != 'true'
+        uses: egor-tensin/setup-mingw@v2
+        with:
+          platform: x64
+          version: ${{ matrix.platform.compiler.version }}
+
+      - name: Add MinGW to PATH and remove MinGW-supplied CCache & CMake
+        if: matrix.platform.os == 'windows-2025'
+        run: |
+          echo "C:\Program Files\mingw64\bin" >> $GITHUB_PATH
+          rm -f "C:\Program Files\mingw64\bin\ccache.exe"
+          echo "Using ccache $(which ccache)"
+          ccache --version
+          rm -f "C:\Program Files\mingw64\bin\cmake.exe"
+          echo "Using cmake $(which cmake)"
+          cmake --version
+
+      - name: Set up GCC On Linux
+        if: matrix.platform.os == 'ubuntu-24.04'
+        uses: egor-tensin/setup-gcc@v1
+        with:
+          platform: x64
+          version: ${{ matrix.platform.compiler.version }}
+
+      - name: Install SFML Linux Dependencies
+        if: matrix.platform.os == 'ubuntu-24.04'
+        run: sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libx11-dev libxrandr-dev
+
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure CMake
+        run: cmake --preset dev -DCMAKE_VERBOSE_MAKEFILE=ON ${{matrix.platform.cmake-flags}}
+
+      - name: Build
+        run: cmake --build build --config Debug --target install
