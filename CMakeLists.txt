@@ -21,6 +21,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 if (WIN32)
   add_compile_definitions(NOMINMAX)
 endif ()
+if (CMAKE_CXX_COMPILER_FRONTEND_VARIANT EQUAL MSVC)
+  add_compile_options("/bigobj")
+elseif (CMAKE_CXX_COMPILER_FRONTEND_VARIANT EQUAL GNU)
+  add_compile_options("-Wa,-mbig-obj")
+endif ()
 
 
 # HELPERS

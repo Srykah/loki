@@ -10,9 +10,9 @@ on:
       - synchronize
       - ready_for_review
 
-defaults:
-  run:
-    shell: bash
+#defaults:
+#  run:
+#    shell: bash
 
 jobs:
   build:
