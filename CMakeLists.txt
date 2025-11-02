@@ -92,11 +92,7 @@ CPMAddPackage(URI "gh:jbeder/yaml-cpp#a83cd31548b19d50f3f983b069dceb4f4d50756d")
 
 # ImGui (set after SFML because of FreeType) (as seen in https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets)
 CPMAddPackage(URI "gh:ocornut/imgui#v1.91.0-docking@1.91.0" DOWNLOAD_ONLY TRUE)
-file(DOWNLOAD
-  "https://gist.githubusercontent.com/rokups/f771217b2d530d170db5cb1e08e9a8f4/raw/4c2c14374ab878ca2f45daabfed4c156468e4e27/CMakeLists.txt"
-  "${imgui_SOURCE_DIR}/CMakeLists.txt"
-  EXPECTED_HASH SHA256=fd62f69364ce13a4f7633a9b50ae6672c466bcc44be60c69c45c0c6e225bb086
-)
+file(COPY_FILE "${CMAKE_CURRENT_SOURCE_DIR}/extern/imgui/CMakeLists.txt" "${imgui_SOURCE_DIR}/CMakeLists.txt")
 set(IMGUI_DEMO ON)
 set(IMGUI_DISABLE_FILE_FUNCTIONS OFF)
 set(IMGUI_DISABLE_OBSOLETE_FUNCTIONS ON)
