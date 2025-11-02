@@ -70,7 +70,8 @@ jobs:
           arch: x64
           toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
-      - name: Set up WinLibs
+      - name: Install WinLibs GCC
+        id: winlibs-gcc
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
@@ -80,13 +81,20 @@ jobs:
           with_clang: false
           add_to_path: true
 
-      - name: Set up Clang on Windows
+      - name: Use WinLibs GCC
+        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
+        run: |
+          echo "CC=${{ steps.winlibs-gcc.outputs.bin }}/gcc" >> $GITHUB_ENV
+          echo "CXX=${{ steps.winlibs-gcc.outputs.bin }}/g++" >> $GITHUB_ENV
+
+      - name: Install and use LLVM Clang on Windows
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'Clang'
         uses: KyleMayes/install-llvm-action@v2.0.8
         with:
           version: ${{ matrix.platform.compiler.version }}
+          env: true
 
-      - name: Set up compiler on Linux
+      - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
           conda install conda-forge::${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} conda-forge::${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
@@ -98,12 +106,12 @@ jobs:
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libflac-dev libfreetype-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libxrandr-dev libx11-dev
+          sudo apt-get install -y libdrm-dev libegl1-mesa-dev libflac-dev libfreetype-dev libgbm-dev libgl1-mesa-dev libharfbuzz-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libxcursor-dev libxi-dev libxrandr-dev libx11-dev xorg-dev
 
       # Build
       - name: Configure CMake
         run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}
-          ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || format('-G Ninja -DCMAKE_C_COMPILER={0} -DCMAKE_CXX_COMPILER={1}', matrix.platform.compiler.c-exe, matrix.platform.compiler.cpp-exe) }}
+          ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
         run: cmake --build build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} --config Debug --target install
