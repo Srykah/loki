@@ -20,7 +20,8 @@ jobs:
     name: ${{ matrix.platform.os }} ${{ matrix.platform.compiler.name }} ${{ matrix.platform.compiler.version }}
     runs-on: ${{ matrix.platform.os }}
 
-    #env:
+    env:
+      build-folder: build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}
     #  # Use ccache to cache C/C++ compiler output
     #  CMAKE_C_COMPILER_LAUNCHER: ccache
     #  CMAKE_CXX_COMPILER_LAUNCHER: ccache
@@ -109,9 +110,11 @@ jobs:
           sudo apt-get install -y libegl1-mesa-dev libflac-dev libfreetype-dev libgbm-dev libgl1-mesa-dev libharfbuzz-dev libopenal-dev libopengl-dev libpthread-stubs0-dev libudev-dev libvorbis-dev libxcursor-dev libxi-dev libxrandr-dev libx11-dev xorg-dev
 
       # Build
+      - name: Create build folder
+        run: md ${{ env.build-folder }}
+
       - name: Configure CMake
-        run: cmake -S $GITHUB_WORKSPACE -B build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}
-          ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+        run: cmake -S $GITHUB_WORKSPACE -B ${{ env.build-folder }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
-        run: cmake --build build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }} --config Debug --target install
+        run: cmake --build ${{ env.build-folder }} --config Debug --target install
