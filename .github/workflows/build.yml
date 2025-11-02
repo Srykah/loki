@@ -111,7 +111,7 @@ jobs:
 
       # Build
       - name: Create build folder
-        run: md ${{ env.build-folder }}
+        run: mkdir ${{ env.build-folder }}
 
       - name: Configure CMake
         run: cmake -S $GITHUB_WORKSPACE -B ${{ env.build-folder }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
