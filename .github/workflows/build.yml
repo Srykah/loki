@@ -114,7 +114,7 @@ jobs:
         run: mkdir ${{ env.build-folder }}
 
       - name: Configure CMake
-        run: cmake -S $GITHUB_WORKSPACE -B ${{ env.build-folder }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+        run: cmake -S ${{ github.workspace }} -B ${{ env.build-folder }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
         run: cmake --build ${{ env.build-folder }} --config Debug --target install
