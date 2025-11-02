@@ -31,17 +31,17 @@ jobs:
       matrix:
         platform:
           - os: windows-2025
-            compiler: { name: MSVC, version: 19.44, msvc-toolset: 14.44, c-exe: cl, cpp-exe: cl }
+            compiler: { name: MSVC, version: '19.44', msvc-toolset: '14.44', c-exe: cl, cpp-exe: cl }
           - os: windows-2025
-            compiler: { name: ClangCL, version: 19.1, msvc-toolset: 14.44, cmake-toolset: ClangCL }
+            compiler: { name: ClangCL, version: '19.1', msvc-toolset: '14.44', cmake-toolset: ClangCL }
           - os: windows-2025
-            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++ }
+            compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++ }
           - os: windows-2025
-            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++ }
+            compiler: { name: GCC, version: '15.2', c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: GCC, version: 15.2, c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
+            compiler: { name: GCC, version: '15.2', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
           - os: ubuntu-24.04
-            compiler: { name: Clang, version: 21.1, c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
+            compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
 
     steps:
       # Code
@@ -52,7 +52,7 @@ jobs:
       - name: Get CMake and Ninja
         uses: lukka/get-cmake@v4.1.2
         with:
-          cmakeVersion: 3.30
+          cmakeVersion: '3.30'
           ninjaVersion: latest
 
       #- name: Setup CCache
@@ -76,7 +76,7 @@ jobs:
         if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
-          architecture: 64
+          architecture: '64'
           runtime: ucrt
           threads: posix
           with_clang: false
