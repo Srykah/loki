@@ -98,6 +98,7 @@ jobs:
       - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
+          conda config --prepend channels conda-forge
           conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
           echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
           echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
