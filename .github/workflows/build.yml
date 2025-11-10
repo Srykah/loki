@@ -95,17 +95,25 @@ jobs:
           version: ${{ matrix.platform.compiler.version }}
           env: true
 
+      - name: Setup miniconda on Linux
+        if: matrix.platform.os == 'ubuntu-24.04'
+        run: |
+          conda config --remove channels defaults
+          conda config --remove channels https://repo.anaconda.com/pkgs/main
+          conda config --remove channels https://repo.anaconda.com/pkgs/r
+          conda config --prepend channels conda-forge
+
       - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
-          sudo conda install -c conda-forge -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
+          sudo conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
           echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
           echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
 
       # Dependencies
       - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo conda install -c conda-forge -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
+        run: sudo conda install -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
 
       # Build
       - name: Create build folder
