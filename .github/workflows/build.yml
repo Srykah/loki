@@ -98,14 +98,15 @@ jobs:
       - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
-          sudo conda install -c conda-forge -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
+          conda config --prepend channels conda-forge
+          sudo conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
           echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
           echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
 
       # Dependencies
       - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo conda install -c conda-forge -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
+        run: sudo conda install -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
 
       # Build
       - name: Create build folder
