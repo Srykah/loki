@@ -98,8 +98,9 @@ jobs:
       - name: Setup miniconda on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
+          conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+          conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
           conda config --prepend channels conda-forge
-          conda config --remove channels defaults
 
       - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
