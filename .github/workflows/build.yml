@@ -109,7 +109,6 @@ jobs:
           miniforge-variant: Miniforge3
           miniforge-version: '25.9.1'
           activate-environment: build
-          auto-activate: true
           channels: conda-forge
           conda-remove-defaults: true
           channel-priority: strict
