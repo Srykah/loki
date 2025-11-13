@@ -10,9 +10,9 @@ on:
       - synchronize
       - ready_for_review
 
-#defaults:
-#  run:
-#    shell: bash
+defaults:
+  run:
+    shell: bash -el {0}
 
 jobs:
   build:
@@ -61,7 +61,7 @@ jobs:
       #  uses: hendrikmuhs/ccache-action@v1.2.19
       #  with:
       #    verbose: 2
-      #    key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+      #    key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}-ccache
 
       # Compilers
       - name: Set up MSVC toolchain
@@ -95,24 +95,39 @@ jobs:
           version: ${{ matrix.platform.compiler.version }}
           env: true
 
+      # - name: Cache conda setup
+      #   if: matrix.platform.os == 'ubuntu-24.04'
+      #   uses: actions/cache@v4.3.0
+      #   with:
+      #     path: ~/conda_pkgs_dir
+      #     key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}-conda
+
       - name: Setup miniconda on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: |
-          sudo conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
-          sudo conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
-          sudo conda config --prepend channels conda-forge
+        uses: conda-incubator/setup-miniconda@v3.2.0
+        with:
+          miniforge-variant: Miniforge3
+          miniforge-version: '25.9.1'
+          activate-environment: build
+          auto-activate: true
+          channels: conda-forge
+          conda-remove-defaults: true
+          channel-priority: strict
+          auto-update-conda: true
+          use-only-tar-bz2: true # needed for cache
+          architecture: x64
 
       - name: Install and use compiler on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
-          sudo conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
+          conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
           echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
           echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
 
       # Dependencies
       - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: sudo conda install -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
+        run: conda install -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
 
       # Build
       - name: Create build folder
