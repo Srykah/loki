@@ -109,7 +109,7 @@ jobs:
           conda-remove-defaults: true
           channel-priority: strict
           auto-update-conda: true
-          use-only-tar-bz2: true # needed for cache
+          # use-only-tar-bz2: true # needed for cache
           architecture: x64
 
       - name: Install and use compiler on Linux
