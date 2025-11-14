@@ -10,10 +10,6 @@ on:
       - synchronize
       - ready_for_review
 
-defaults:
-  run:
-    shell: bash -el {0}
-
 jobs:
   build:
     if: ${{ !github.event.pull_request.draft }}
@@ -21,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
 
     env:
-      build-folder: build-${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}
+      matrix_key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
     #  # Use ccache to cache C/C++ compiler output
     #  CMAKE_C_COMPILER_LAUNCHER: ccache
     #  CMAKE_CXX_COMPILER_LAUNCHER: ccache
@@ -52,7 +48,7 @@ jobs:
       - name: Get CMake and Ninja
         uses: lukka/get-cmake@v4.1.2
         with:
-          cmakeVersion: '3.30'
+          cmakeVersion: '4.1.2'
           ninjaVersion: latest
 
       #- name: Setup CCache
@@ -61,7 +57,7 @@ jobs:
       #  uses: hendrikmuhs/ccache-action@v1.2.19
       #  with:
       #    verbose: 2
-      #    key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}-ccache
+      #    key: ${{ env.matrix-key }}-ccache
 
       # Compilers
       - name: Set up MSVC toolchain
@@ -100,14 +96,14 @@ jobs:
       #   uses: actions/cache@v4.3.0
       #   with:
       #     path: ~/conda_pkgs_dir
-      #     key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}-conda
+      #     key: ${{ env.matrix-key }}-conda
 
       - name: Setup miniconda on Linux
         if: matrix.platform.os == 'ubuntu-24.04'
         uses: conda-incubator/setup-miniconda@v3.2.0
         with:
           miniforge-variant: Miniforge3
-          miniforge-version: '25.9.1'
+          miniforge-version: '25.9.1-0'
           activate-environment: build
           channels: conda-forge
           conda-remove-defaults: true
@@ -130,10 +126,10 @@ jobs:
 
       # Build
       - name: Create build folder
-        run: mkdir ${{ env.build-folder }}
+        run: mkdir build-${{ env.matrix-key }}
 
       - name: Configure CMake
-        run: cmake -S ${{ github.workspace }} -B ${{ env.build-folder }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+        run: cmake -S ${{ github.workspace }} -B build-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
-        run: cmake --build ${{ env.build-folder }} --config Debug --target install
+        run: cmake --build build-${{ env.matrix-key }} --config Debug --target install
