@@ -120,8 +120,8 @@ jobs:
         if: matrix.platform.os == 'ubuntu-24.04'
         run: |
           conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
-          echo "CC=$CONDA/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
-          echo "CXX=$CONDA/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
+          echo "CC=$CONDA/envs/build/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
+          echo "CXX=$CONDA/envs/build/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
 
       # Dependencies
       - name: Install SFML Linux dependencies
