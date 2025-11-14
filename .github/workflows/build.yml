@@ -8,7 +8,11 @@ on:
       - opened
       - reopened
       - synchronize
-      - ready_for_review
+      - ready_for_review 
+
+defaults:
+  run:
+    shell: bash -el {0}
 
 jobs:
   build:
@@ -17,7 +21,7 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
 
     env:
-      matrix_key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+      matrix-key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
     #  # Use ccache to cache C/C++ compiler output
     #  CMAKE_C_COMPILER_LAUNCHER: ccache
     #  CMAKE_CXX_COMPILER_LAUNCHER: ccache
@@ -129,7 +133,7 @@ jobs:
         run: mkdir build-${{ env.matrix-key }}
 
       - name: Configure CMake
-        run: cmake -S ${{ github.workspace }} -B build-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+        run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
-        run: cmake --build build-${{ env.matrix-key }} --config Debug --target install
+        run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
