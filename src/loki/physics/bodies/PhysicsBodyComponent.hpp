@@ -9,7 +9,7 @@
 #include <loki/system/scheduler/UpdateTraits.hpp>
 #include <loki/physics/bodies/PhysicsBody.hpp>
 #include <loki/physics/bodies/PhysicsBodyParams.hpp>
-#include <loki/physics/shapes/PhysicsFixtureParams.hpp>
+#include <loki/physics/shapes/PhysicsShapeParams.hpp>
 
 namespace loki::physics {
 
@@ -26,7 +26,7 @@ class PhysicsBodyComponent : public system::Component {
 
  private:
   PhysicsBodyParams bodyParams;
-  std::vector<PhysicsFixtureParams> fixtureParams;
+  std::vector<std::unique_ptr<PhysicsShapeParams>> shapeParams;
   PhysicsBody body;
 
   LOKI_RTTI_CLASS_DECLARE(PhysicsBodyComponent)
@@ -36,6 +36,6 @@ class PhysicsBodyComponent : public system::Component {
 
 LOKI_REFLECTION_COMPONENT_BEGIN(loki::physics::PhysicsBodyComponent)
 LOKI_REFLECTION_CLASS_FIELD(bodyParams)
-LOKI_REFLECTION_CLASS_FIELD(fixtureParams)
+LOKI_REFLECTION_CLASS_FIELD(shapeParams)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsBodyComponent)

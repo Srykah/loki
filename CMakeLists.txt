@@ -51,7 +51,7 @@ set(BOX2D_BUILD_DOCS OFF)
 set(BOX2D_BUILD_TESTBED OFF)
 set(BOX2D_BUILD_UNIT_TESTS OFF)
 set(BOX2D_USER_SETTINGS OFF)
-CPMAddPackage(URI "gh:erincatto/box2d#v2.4.2")
+CPMAddPackage(URI "gh:erincatto/box2d#v3.1.1")
 
 # Dylib
 set(DYLIB_BUILD_TESTS OFF)

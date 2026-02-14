@@ -10,10 +10,9 @@ namespace loki::physics {
 void PhysicsBodyComponent::onBeginInit() {
   body =
       getScene().getRoot().getComponent<PhysicsWorldComponent>()->getWorld()->createBody(PhysicsBodyParams{bodyParams});
-  for (const auto& fixtureParam : fixtureParams) {
-    body.createFixture(PhysicsFixtureParams{fixtureParam});
+  for (const auto& shapeParam : shapeParams) {
+    body.createShape(*shapeParam);
   }
-  getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }
 
 void PhysicsBodyComponent::onEndInit() {
@@ -21,7 +20,9 @@ void PhysicsBodyComponent::onEndInit() {
 }
 
 void PhysicsBodyComponent::onPrePhysics(sf::Time dt) {
-  body.setTransformable(getActor().getTransformable());
+  if (bodyParams.type == PhysicsBodyType::Static) {
+    body.setTransformable(getActor().getTransformable());
+  }
 }
 
 void PhysicsBodyComponent::onPhysicsResult(sf::Time dt) {

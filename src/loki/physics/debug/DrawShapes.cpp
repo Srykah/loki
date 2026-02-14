@@ -1,5 +1,7 @@
 #include "DrawShapes.hpp"
 
+#if 0
+
 #include <span>
 
 #include <SFML/Graphics/CircleShape.hpp>
@@ -81,3 +83,5 @@ void drawChain(sf::RenderTarget& target, const b2ChainShape& chainShape, const s
 }
 
 }  // namespace loki::physics::debug
+
+#endif

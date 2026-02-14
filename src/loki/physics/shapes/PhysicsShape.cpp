@@ -1,10 +1,18 @@
 #include "PhysicsShape.hpp"
 
+#include <loki/physics/bodies/PhysicsBody.hpp>
+
 namespace loki::physics {
 
-PhysicsShape::PhysicsShape(b2Fixture* fixture, PhysicsBody* parentBody) : fixture(fixture), parentBody(parentBody) {}
+PhysicsShape::PhysicsShape(const PhysicsShapeParams& shapeParams, PhysicsBody* parentBody) : parentBody(parentBody) {
+  shapeId = shapeParams.createShape(parentBody->getBodyId());
+}
+
+PhysicsShape::~PhysicsShape() {
+
+}
 
 PhysicsShapeType PhysicsShape::getShapeType() const {
-  return static_cast<PhysicsShapeType>(fixture->GetType());
+  return static_cast<PhysicsShapeType>(b2Shape_GetType(shapeId));
 }
 }  // namespace loki::physics

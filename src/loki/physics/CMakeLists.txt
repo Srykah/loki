@@ -5,7 +5,6 @@ loki_create_module(physics
   bodies/PhysicsBodyParams.hpp
   bodies/PhysicsBodyType.hpp
   debug/DrawShapes.hpp
-  shapes/PhysicsFixtureParams.hpp
   shapes/PhysicsShape.hpp
   shapes/PhysicsShapeParams.hpp
   shapes/PhysicsShapeType.hpp
@@ -22,7 +21,6 @@ loki_create_module(physics
   bodies/PhysicsBodyParams.cpp
   debug/DrawShapes.cpp
   shapes/PhysicsShape.cpp
-  shapes/PhysicsFixtureParams.cpp
   tiles/PhysicsTileMapComponent.cpp
   world/PhysicsWorldComponent.cpp
   world/PhysicsWorld.cpp

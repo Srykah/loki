@@ -38,7 +38,7 @@ void registerLokiRuntimeTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry
   // physics
   runtimeObjectRegistry.registerClass<physics::PhysicsShapeParams>();
   runtimeObjectRegistry.registerClass<physics::CircleShapeParams>();
-  runtimeObjectRegistry.registerClass<physics::EdgeShapeParams>();
+  runtimeObjectRegistry.registerClass<physics::SegmentShapeParams>();
   runtimeObjectRegistry.registerClass<physics::PolygonShapeParams>();
   runtimeObjectRegistry.registerClass<physics::ChainShapeParams>();
   runtimeObjectRegistry.registerClass<physics::CollisionTileAttribute>();
