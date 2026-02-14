@@ -1,10 +1,13 @@
 loki_create_module(physics
   HEADERS
+  registerTypes.hpp
   bodies/PhysicsBody.hpp
   bodies/PhysicsBodyComponent.hpp
   bodies/PhysicsBodyParams.hpp
   bodies/PhysicsBodyType.hpp
   debug/DrawShapes.hpp
+  materials/PhysicsFilter.hpp
+  materials/PhysicsMaterial.hpp
   shapes/PhysicsShape.hpp
   shapes/PhysicsShapeParams.hpp
   shapes/PhysicsShapeType.hpp
@@ -16,11 +19,15 @@ loki_create_module(physics
   world/PhysicsWorldParams.hpp
 
   SOURCES
+  registerTypes.cpp
   bodies/PhysicsBody.cpp
   bodies/PhysicsBodyComponent.cpp
   bodies/PhysicsBodyParams.cpp
   debug/DrawShapes.cpp
+  materials/PhysicsFilter.cpp
+  materials/PhysicsMaterial.cpp
   shapes/PhysicsShape.cpp
+  shapes/PhysicsShapeParams.cpp
   tiles/PhysicsTileMapComponent.cpp
   world/PhysicsWorldComponent.cpp
   world/PhysicsWorld.cpp

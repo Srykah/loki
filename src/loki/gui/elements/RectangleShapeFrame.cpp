@@ -13,8 +13,8 @@ RectangleShapeFrame::RectangleShapeFrame(sf::Vector2f size,
 }
 
 sf::FloatRect RectangleShapeFrame::getInternalBounds() const {
-  return sf::FloatRect{padding, padding, shape.getSize().x - padding,
-                       shape.getSize().y - padding};
+  const sf::Vector2f padding2d {padding, padding};
+  return {padding2d, shape.getSize() - padding2d};
 }
 
 void RectangleShapeFrame::draw(sf::RenderTarget& target,

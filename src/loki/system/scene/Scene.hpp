@@ -2,11 +2,10 @@
 
 #include <filesystem>
 
-#include <loki/system/ecs/Actor.hpp>
+#include <ryml_std.hpp>
+#include <ryml.hpp>
 
-namespace YAML {
-class Node;
-}
+#include <loki/system/ecs/Actor.hpp>
 
 namespace loki::system {
 
@@ -21,7 +20,7 @@ class Scene final {
 
   void setPath(const std::filesystem::path& pathName);
   [[nodiscard]] const std::filesystem::path& getPath() const { return path; }
-  void loadFromYaml(const YAML::Node& sceneNode);
+  void loadFromYaml(const ryml::ConstNodeRef& sceneNode);
   void saveToYaml();
 
   [[nodiscard]] Actor instanciateActor(Actor parent = {});

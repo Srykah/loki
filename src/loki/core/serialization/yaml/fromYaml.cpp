@@ -4,69 +4,73 @@
 
 #include <loki/core/reflection/reflectionUtils.hpp>
 #include <loki/core/rtti/RuntimeObjectRegistry.hpp>
-#include <loki/core/serialization/string/toString.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 
 namespace loki::core {
 
 using details::to;
 
-void fromYaml(const YAML::Node&, void* obj, const NullInfo&) {
+void fromYaml(const ryml::ConstNodeRef&, void* obj, const NullInfo&) {
   to<std::nullptr_t>(obj) = nullptr;
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const BooleanInfo&) {
-  to<bool>(obj) = node.as<bool>();
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const BooleanInfo&) {
+  node >> to<bool>(obj);
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const IntegerInfo& integerInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const IntegerInfo& integerInfo) {
   unsigned int size = integerInfo.size;
   if (integerInfo.isUnsigned) {
     if (size == sizeof(uint8_t)) {
-      to<uint8_t>(obj) = node.as<uint8_t>();
+      node >> to<uint8_t>(obj);
     } else if (size == sizeof(uint16_t)) {
-      to<uint16_t>(obj) = node.as<uint16_t>();
+      node >> to<uint16_t>(obj);
     } else if (size == sizeof(uint32_t)) {
-      to<uint32_t>(obj) = node.as<uint32_t>();
+      node >> to<uint32_t>(obj);
     } else if (size == sizeof(uint64_t)) {
-      to<uint64_t>(obj) = node.as<uint64_t>();
+      node >> to<uint64_t>(obj);
     } else {
       assert(false && "Unknown unsigned integer size!");
     }
   } else {
     if (size == sizeof(int8_t)) {
-      to<int8_t>(obj) = node.as<int8_t>();
+      node >> to<int8_t>(obj);
     } else if (size == sizeof(int16_t)) {
-      to<int16_t>(obj) = node.as<int16_t>();
+      node >> to<int16_t>(obj);
     } else if (size == sizeof(int32_t)) {
-      to<int32_t>(obj) = node.as<int32_t>();
+      node >> to<int32_t>(obj);
     } else if (size == sizeof(int64_t)) {
-      to<int64_t>(obj) = node.as<int64_t>();
+      node >> to<int64_t>(obj);
     } else {
       assert(false && "Unknown signed integer size!");
     }
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const FloatingPointInfo& floatingPointInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const FloatingPointInfo& floatingPointInfo) {
   unsigned int size = floatingPointInfo.size;
   if (size == sizeof(float)) {
-    to<float>(obj) = node.as<float>();
+    node >> to<float>(obj);
   } else if (size == sizeof(double)) {
-    to<double>(obj) = node.as<double>();
+    node >> to<double>(obj);
   } else if (size == sizeof(long double)) {
-    to<long double>(obj) = node.as<long double>();
+    // todo?
+    double value;
+    node >> value;
+    to<long double>(obj) = value;
   } else {
     assert(false && "Unknown floating point size!");
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const EnumInfo& enumInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const EnumInfo& enumInfo) {
   // find the value corresponding to the enumerator
   std::int64_t value = 0;
-  auto str = node.as<std::string>();
-  auto it = std::ranges::find_if(enumInfo.enumerators,
-                                 [&str](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.name == str; });
+  std::string enumName;
+  node >> enumName;
+  auto it = std::ranges::find_if(enumInfo.enumerators, [&enumName](const EnumeratorInfo& enumeratorInfo) {
+    return enumeratorInfo.name == enumName;
+  });
   if (it != enumInfo.enumerators.end())
     value = it->value;
   // assign it to the obj
@@ -98,17 +102,18 @@ void fromYaml(const YAML::Node& node, void* obj, const EnumInfo& enumInfo) {
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const CharacterInfo& characterInfo) {
-  to<char>(obj) = node.as<char>();
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const CharacterInfo& characterInfo) {
+  node >> to<char>(obj);
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const StringInfo& stringInfo) {
-  auto str = node.as<std::string>();
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const StringInfo& stringInfo) {
+  std::string str;
+  node >> str;
   stringInfo.setter(obj, str.data(), str.size());
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const ListInfo& listInfo) {
-  std::size_t nodeListSize = node.size();
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const ListInfo& listInfo) {
+  std::size_t nodeListSize = node.num_children();
   std::size_t objListSize = listInfo.sizeGetter(obj);
   for (std::size_t index = 0; index < nodeListSize; ++index) {
     auto child = node[index];
@@ -123,21 +128,21 @@ void fromYaml(const YAML::Node& node, void* obj, const ListInfo& listInfo) {
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const DictInfo& dictInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const DictInfo& dictInfo) {
   for (const auto& child : node) {
-    const auto& key = child.first;
-    const auto& value = child.second;
+    auto key = child.key();
     TmpObj tmpObj;
     {
       TmpObj keyInstance = dictInfo.keyType.factory(obj, TmpObj::Ownership::Default);
-      fromYaml(key, keyInstance.obj, dictInfo.keyType);
+      ryml::Tree keyTree = ryml::parse_in_arena(key);
+      fromYaml(keyTree, keyInstance.obj, dictInfo.keyType);
       tmpObj = dictInfo.elemAdder(obj, keyInstance.obj);
     }
-    fromYaml(value, tmpObj.obj, dictInfo.valueType);
+    fromYaml(child, tmpObj.obj, dictInfo.valueType);
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const ClassInfo& classInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const ClassInfo& classInfo) {
   bool asValue = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
                    return attr->getType() == ClassAttribute::Type::SerializeAsValue;
                  }) != classInfo.attributes.end();
@@ -153,9 +158,10 @@ void fromYaml(const YAML::Node& node, void* obj, const ClassInfo& classInfo) {
     }
   } else {
     for (const auto& field : classInfo.fields) {
-      auto childNode = node[field.name];
-      if (!childNode)
+      auto childNode = node[field.name.data()];
+      if (childNode.invalid()) {
         continue;  // ignore absent values
+      }
       if (field.isInPlace) {
         TmpObj fieldObj = field.getter(obj);
         fromYaml(childNode, fieldObj.obj, field.type);
@@ -168,10 +174,11 @@ void fromYaml(const YAML::Node& node, void* obj, const ClassInfo& classInfo) {
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const PtrInfo& ptrInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const PtrInfo& ptrInfo) {
   if (std::holds_alternative<ClassInfo>(ptrInfo.innerType.info)) {
-    const TypeInfo* actualTypeInfo =
-        getService<RuntimeObjectRegistry>().getRuntimeTypeInfo(node["__type__"].as<ClassId>());
+    ClassId classId;
+    node["__type__"] >> classId;
+    const TypeInfo* actualTypeInfo = getService<RuntimeObjectRegistry>().getRuntimeTypeInfo(classId);
     assert(actualTypeInfo);
     TmpObj data = actualTypeInfo->factory(obj, TmpObj::Ownership::NonOwned);
     fromYaml(node, data.obj, *actualTypeInfo);
@@ -182,7 +189,7 @@ void fromYaml(const YAML::Node& node, void* obj, const PtrInfo& ptrInfo) {
   }
 }
 
-void fromYaml(const YAML::Node& node, void* obj, const TypeInfo& typeInfo) {
+void fromYaml(const ryml::ConstNodeRef& node, void* obj, const TypeInfo& typeInfo) {
   std::visit([&](const auto& actualTypeInfo) { fromYaml(node, obj, actualTypeInfo); }, typeInfo.info);
 }
 }  // namespace loki::core

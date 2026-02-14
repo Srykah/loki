@@ -13,8 +13,8 @@ void DebugDrawModule::init() {
 
 void DebugDrawModule::addRectangle(sf::FloatRect rect) {
   auto& newRect = rectangleShapes.emplace_back();
-  newRect.setSize(rect.getSize());
-  newRect.setPosition(rect.getPosition());
+  newRect.setSize(rect.size);
+  newRect.setPosition(rect.position);
   newRect.setFillColor(sf::Color::Transparent);
   newRect.setOutlineColor(sf::Color::Red);
   newRect.setOutlineThickness(-1.f);

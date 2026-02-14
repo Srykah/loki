@@ -8,11 +8,15 @@ void ResourceHolder::load() {
   std::vector<BaseResource*> newlyLoadingResources;
   for (auto&& [path, res] : resources) {
     auto& status = res->resourceLoadingStatus;
-    if (status != ResourceLoadingStatus::Unloaded)
+    if (status == ResourceLoadingStatus::Loading || status == ResourceLoadingStatus::Loaded) {
       continue;
-    res->load(path);
-    status = ResourceLoadingStatus::Loading;
-    newlyLoadingResources.emplace_back(res.get());
+    }
+    if (res->load(path)) {
+      status = ResourceLoadingStatus::Loading;
+      newlyLoadingResources.emplace_back(res.get());
+    } else {
+      status = ResourceLoadingStatus::Failed;
+    }
   }
   for (BaseResource* newlyLoadingResource : newlyLoadingResources) {
     if (!newlyLoadingResource->addChildResourcesToHolder(*this)) {

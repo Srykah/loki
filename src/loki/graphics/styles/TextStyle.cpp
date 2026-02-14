@@ -1,5 +1,7 @@
 #include "TextStyle.hpp"
 
+#include <SFML/Graphics/Font.hpp>
+
 namespace loki::graphics {
 
 TextStyle TextStyle::fromDefaults() {

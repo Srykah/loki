@@ -18,8 +18,8 @@ PhysicsBody::~PhysicsBody() {
   bodyId = b2_nullBodyId;
 }
 
-PhysicsShape& PhysicsBody::createShape(const PhysicsShapeParams& shapeParams) {
-  shapes.push_back(PhysicsShape{shapeParams, this});
+PhysicsShape& PhysicsBody::createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs) {
+  shapes.push_back(PhysicsShape{this, shapeParams, trs});
   return shapes.back();
 }
 
@@ -27,15 +27,15 @@ void PhysicsBody::setTransformable(const sf::Transformable& transformable) {
   b2Body_SetTransform(
     bodyId,
     toB2Vec2(transformable.getPosition() / parentWorld->getPixelsToMetersRatio()),
-    b2MakeRot(core::toRadians(transformable.getRotation())));
+    b2MakeRot(transformable.getRotation().asRadians()));
 }
 
 sf::Vector2f PhysicsBody::getPosition() const {
   return toSfVec2(b2Body_GetTransform(bodyId).p) * parentWorld->getPixelsToMetersRatio();
 }
 
-float PhysicsBody::getRotationInDegrees() const {
-  return core::toDegrees(b2Rot_GetAngle(b2Body_GetTransform(bodyId).q));
+sf::Angle PhysicsBody::getRotation() const {
+  return sf::radians(b2Rot_GetAngle(b2Body_GetTransform(bodyId).q));
 }
 
 void PhysicsBody::applyForce(const sf::Vector2f& force) {

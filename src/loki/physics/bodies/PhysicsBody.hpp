@@ -17,11 +17,11 @@ class PhysicsBody {
   PhysicsBody() = default;
   ~PhysicsBody();
 
-  PhysicsShape& createShape(const PhysicsShapeParams& shapeParams);
+  PhysicsShape& createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs = {});
 
   void setTransformable(const sf::Transformable& transformable);
   [[nodiscard]] sf::Vector2f getPosition() const;
-  [[nodiscard]] float getRotationInDegrees() const;
+  [[nodiscard]] sf::Angle getRotation() const;
 
   void applyForce(const sf::Vector2f& force);
   void applyLinearImpulse(const sf::Vector2f& linearImpulse);

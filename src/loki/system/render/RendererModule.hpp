@@ -25,7 +25,7 @@ class RendererModule final : public GameModule {
   void setDrawDebug(bool enable = true);
 
  private:
-  sf::Vector2f internalResolution;
+  sf::Vector2u internalResolution;
   SceneManager* sceneManager = nullptr;
   WindowModule* windowModule = nullptr;
   RenderQueue renderQueue;

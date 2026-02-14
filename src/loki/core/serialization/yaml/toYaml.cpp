@@ -9,47 +9,47 @@ namespace loki::core {
 
 using details::to;
 
-void toYaml(YAML::Emitter& emitter, const void*, const NullInfo&) {
-  emitter << YAML::Null;
+void toYaml(ryml::NodeRef destNode, const void*, const NullInfo&) {
+  destNode << nullptr;
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const BooleanInfo&) {
-  emitter << to<bool>(obj);
+void toYaml(ryml::NodeRef destNode, const void* obj, const BooleanInfo&) {
+  destNode << to<bool>(obj);
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const IntegerInfo& integerInfo) {
+void toYaml(ryml::NodeRef destNode, const void* obj, const IntegerInfo& integerInfo) {
   if (integerInfo.isUnsigned) {
     if (integerInfo.size == sizeof(uint8_t)) {
-      emitter << to<uint8_t>(obj);
+      destNode << to<uint8_t>(obj);
     } else if (integerInfo.size == sizeof(uint16_t)) {
-      emitter << to<uint16_t>(obj);
+      destNode << to<uint16_t>(obj);
     } else if (integerInfo.size == sizeof(uint32_t)) {
-      emitter << to<uint32_t>(obj);
+      destNode << to<uint32_t>(obj);
     } else if (integerInfo.size == sizeof(uint64_t)) {
-      emitter << to<uint64_t>(obj);
+      destNode << to<uint64_t>(obj);
     } else {
       assert(false && "Unknown unsigned integer size!");
     }
   } else {
     if (integerInfo.size == sizeof(int8_t)) {
-      emitter << to<int8_t>(obj);
+      destNode << to<int8_t>(obj);
     } else if (integerInfo.size == sizeof(int16_t)) {
-      emitter << to<int16_t>(obj);
+      destNode << to<int16_t>(obj);
     } else if (integerInfo.size == sizeof(int32_t)) {
-      emitter << to<int32_t>(obj);
+      destNode << to<int32_t>(obj);
     } else if (integerInfo.size == sizeof(int64_t)) {
-      emitter << to<int64_t>(obj);
+      destNode << to<int64_t>(obj);
     } else {
       assert(false && "Unknown signed integer size!");
     }
   }
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const FloatingPointInfo& floatingPointInfo) {
+void toYaml(ryml::NodeRef destNode, const void* obj, const FloatingPointInfo& floatingPointInfo) {
   if (floatingPointInfo.size == sizeof(float)) {
-    emitter << to<float>(obj);
+    destNode << to<float>(obj);
   } else if (floatingPointInfo.size == sizeof(double)) {
-    emitter << to<double>(obj);
+    destNode << to<double>(obj);
   } else if (floatingPointInfo.size == sizeof(long double)) {
     assert(false && "Can't emit a long double!");
   } else {
@@ -57,7 +57,7 @@ void toYaml(YAML::Emitter& emitter, const void* obj, const FloatingPointInfo& fl
   }
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const EnumInfo& enumInfo) {
+void toYaml(ryml::NodeRef destNode, const void* obj, const EnumInfo& enumInfo) {
   // first, get the value as a int64_t
   std::int64_t value = 0;
   unsigned int size = enumInfo.backingType.size;
@@ -90,83 +90,85 @@ void toYaml(YAML::Emitter& emitter, const void* obj, const EnumInfo& enumInfo) {
   auto it = std::ranges::find_if(
       enumInfo.enumerators, [value](const EnumeratorInfo& enumeratorInfo) { return enumeratorInfo.value == value; });
   if (it != enumInfo.enumerators.end())
-    emitter << it->name.data();
+    destNode << it->name.data();
   else
-    emitter << value;
+    destNode << value;
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const CharacterInfo& characterInfo) {
-  emitter << to<char>(obj);
+void toYaml(ryml::NodeRef destNode, const void* obj, const CharacterInfo& characterInfo) {
+  destNode << to<char>(obj);
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const StringInfo& stringInfo) {
-  emitter << to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
+void toYaml(ryml::NodeRef destNode, const void* obj, const StringInfo& stringInfo) {
+  destNode << to<std::string>(stringInfo.asUtf8StrGetter(obj).obj);
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const ListInfo& listInfo) {
-  emitter << YAML::BeginSeq;
+void toYaml(ryml::NodeRef destNode, const void* obj, const ListInfo& listInfo) {
+  destNode |= ryml::SEQ;
   const std::size_t listSize = listInfo.sizeGetter(obj);
   for (std::size_t index = 0; index < listSize; ++index) {
     ConstTmpObj tmpObj = listInfo.elemGetterConst(obj, index);
-    toYaml(emitter, tmpObj.obj, listInfo.valueType);
+    toYaml(destNode[index], tmpObj.obj, listInfo.valueType);
   }
-  emitter << YAML::EndSeq;
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const DictInfo& dictInfo) {
-  emitter << YAML::BeginMap;
+void toYaml(ryml::NodeRef destNode, const void* obj, const DictInfo& dictInfo) {
+  destNode |= ryml::MAP;
   const std::size_t dictSize = dictInfo.sizeGetter(obj);
   for (std::size_t index = 0; index < dictSize; ++index) {
     auto [key, value] = dictInfo.kvpGetterConst(obj, index);
-    emitter << YAML::Key;
-    toYaml(emitter, key, dictInfo.keyType);
-    emitter << YAML::Value;
-    toYaml(emitter, value, dictInfo.valueType);
+    auto child = destNode.append_child();
+    ryml::Tree keyTree;
+    toYaml(keyTree, key, dictInfo.keyType);
+    std::string keyStr;
+    keyTree.rootref() >> keyStr;
+    child << ryml::key(keyStr);
+    toYaml(child, value, dictInfo.valueType);
   }
-  emitter << YAML::EndMap;
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const ClassInfo& classInfo) {
+void toYaml(ryml::NodeRef destNode, const void* obj, const ClassInfo& classInfo) {
   bool asValue = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
                    return attr->getType() == ClassAttribute::Type::SerializeAsValue;
                  }) != classInfo.attributes.end();
   if (asValue) {
     const auto& field = classInfo.fields.at(0);
     ConstTmpObj tmpObj = field.getterConst(obj);
-    toYaml(emitter, tmpObj.obj, field.type);
+    toYaml(destNode, tmpObj.obj, field.type);
   } else {
-    bool asFlow = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
+    const bool asFlow = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
                     return attr->getType() == ClassAttribute::Type::SerializeAsFlow;
                   }) != classInfo.attributes.end();
-    if (asFlow)
-      emitter << YAML::Flow;
-    emitter << YAML::BeginMap;
+    if (asFlow) {
+      destNode |= ryml::FLOW_SL;
+    }
+    destNode |= ryml::MAP;
     if (classInfo.parentType) {
       auto rootTypeInfo = classInfo.parentType;
-      while (std::get<ClassInfo>(rootTypeInfo->info).parentType != nullptr)
+      while (std::get<ClassInfo>(rootTypeInfo->info).parentType != nullptr) {
         rootTypeInfo = std::get<ClassInfo>(rootTypeInfo->info).parentType;
-      if (std::get<ClassInfo>(rootTypeInfo->info).id == std::get<ClassInfo>(getTypeInfo<BaseObject>().info).id)
-        emitter << YAML::Key << "__type__" << YAML::Value << classInfo.id;  // only write type for polymorphic types
+      }
+      if (std::get<ClassInfo>(rootTypeInfo->info).id == std::get<ClassInfo>(getTypeInfo<BaseObject>().info).id) {
+        destNode.append_child() << ryml::key("__type__") << classInfo.id;  // only write type for polymorphic types
+      }
     }
     for (const auto& field : classInfo.fields) {
-      emitter << YAML::Key << field.name.data();
+      auto fieldNode = destNode.append_child();
+      ryml::csubstr fieldName{field.name.data(), field.name.size()};
+      fieldNode << ryml::key(fieldName);
       ConstTmpObj tmpObj = field.getterConst(obj);
-      emitter << YAML::Value;
-      toYaml(emitter, tmpObj.obj, field.type);
+      toYaml(fieldNode, tmpObj.obj, field.type);
     }
-    emitter << YAML::EndMap;
-    if (asFlow)
-      emitter << YAML::Block;
   }
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const PtrInfo& ptrInfo) {
+void toYaml(ryml::NodeRef destNode, const void* obj, const PtrInfo& ptrInfo) {
   ConstTmpObj tmpObj = ptrInfo.getterConst(obj);
   auto* baseObj = static_cast<const BaseObject*>(tmpObj.obj);
-  toYaml(emitter, baseObj, baseObj->getClassTypeInfo());
+  toYaml(destNode, baseObj, baseObj->getClassTypeInfo());
 }
 
-void toYaml(YAML::Emitter& emitter, const void* obj, const TypeInfo& typeInfo) {
-  std::visit([&](const auto& actualTypeInfo) { toYaml(emitter, obj, actualTypeInfo); }, typeInfo.info);
+void toYaml(ryml::NodeRef destNode, const void* obj, const TypeInfo& typeInfo) {
+  std::visit([&](const auto& actualTypeInfo) { toYaml(destNode, obj, actualTypeInfo); }, typeInfo.info);
 }
 }  // namespace loki::core

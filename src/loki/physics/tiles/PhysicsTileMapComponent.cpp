@@ -48,11 +48,9 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
     coordsInTiles += {0.5f, 0.5f};
     auto coordsInPixels = core::compMult(coordsInTiles, tileSize);
     auto coordsInMeters = coordsInPixels / pixelsToMeters;
-    PolygonShapeParams shapeParams = static_cast<const PolygonShapeParams&>(*collTileAttr->shapeParams);
-    b2MakeBox()
-    boxParams->polygonShape.SetAsBox(halfTileSizeInMeters.x, halfTileSizeInMeters.y, toB2Vec2(coordsInMeters), 0.f);
-    fixtureParams.shapeParams = std::move(boxParams);
-    body.createShape();
+    sf::Transformable shapeTrs;
+    shapeTrs.setPosition(coordsInMeters);
+    body.createShape(*collTileAttr->shapeParams, shapeTrs);
   }
 }
 

@@ -7,33 +7,33 @@
 
 namespace loki::system {
 
-void Window::create(sf::Vector2f size, std::string_view name, WindowStyle _style, bool setMinSizeAndRes) {
+void Window::create(sf::Vector2u size, std::string_view name, WindowStyle _style, bool setMinSizeAndRes) {
   style = _style;
   if (setMinSizeAndRes) {
     setMinimumSize(size);
     setInternalResolution(size);
   }
   setRenderingArea({{0, 0}, size});
-  window.create(sf::VideoMode(size.x, size.y), sf::String::fromUtf8(name.begin(), name.end()),
+  window.create(sf::VideoMode{sf::Vector2u{size}}, sf::String::fromUtf8(name.begin(), name.end()),
                 toSFMLWindowStyle(_style));
   updateViewport();
 }
 
-void Window::setInternalResolution(sf::Vector2f _internalResolution) {
+void Window::setInternalResolution(sf::Vector2u _internalResolution) {
   internalResolution = _internalResolution;
   if (isOpen()) {
     updateViewport();
   }
 }
 
-void Window::setMinimumSize(sf::Vector2f _minimumSize) {
+void Window::setMinimumSize(sf::Vector2u _minimumSize) {
   minimumSize = _minimumSize;
   if (isOpen()) {
     guardMinimumSize();
   }
 }
 
-void Window::setRenderingArea(sf::FloatRect&& _renderingArea) {
+void Window::setRenderingArea(sf::Rect<unsigned int>&& _renderingArea) {
   renderingArea = std::move(_renderingArea);
   if (isOpen()) {
     updateViewport();
@@ -41,34 +41,33 @@ void Window::setRenderingArea(sf::FloatRect&& _renderingArea) {
 }
 
 void Window::updateViewport() {
-  sf::FloatRect scaledRenderingArea = renderingArea;
+  sf::FloatRect scaledRenderingArea{renderingArea};
   const bool styleContainsIntegerScaling = contains(style, WindowStyle::INTEGER_SCALING);
   const bool styleContainsLetterboxed = contains(style, WindowStyle::LETTERBOXED);
   if (styleContainsIntegerScaling || styleContainsLetterboxed) {
     const float viewportRatio = styleContainsIntegerScaling ? getIntegerScalingRatio() : getLetterboxedRatio();
     const sf::Vector2f scaledInternalResolution = viewportRatio * sf::Vector2f{internalResolution};
     const sf::Vector2f scaledRenderingAreaPos =
-        renderingArea.getPosition() + 0.5f * (renderingArea.getSize() - scaledInternalResolution);
+        sf::Vector2f{renderingArea.position} + 0.5f * (sf::Vector2f{renderingArea.size} - scaledInternalResolution);
     scaledRenderingArea = sf::FloatRect{scaledRenderingAreaPos, scaledInternalResolution};
   }
   sf::FloatRect viewport{
-      scaledRenderingArea.left / window.getSize().x,
-      scaledRenderingArea.top / window.getSize().y,
-      scaledRenderingArea.width / window.getSize().x,
-      scaledRenderingArea.height / window.getSize().y,
+      core::compDiv(scaledRenderingArea.position, window.getSize()),
+      core::compDiv(scaledRenderingArea.size, window.getSize())
   };
   sf::View view = window.getDefaultView();
   view.setViewport(viewport);
   window.setView(view);
 }
 
-bool Window::pollEvent(sf::Event& event) {
-  auto res = window.pollEvent(event);
-
-  if (event.type == sf::Event::Resized) {
+std::optional<sf::Event> Window::pollEvent() {
+  auto res = window.pollEvent();
+  
+  if (auto* resized = res ? res->getIf<sf::Event::Resized>() : nullptr) {
     guardMinimumSize();
-    event.size.width = window.getSize().x;
-    event.size.height = window.getSize().y;
+    auto resizedCopy = *resized;
+    resizedCopy.size = window.getSize();
+    return resizedCopy;
   }
 
   return res;
@@ -87,12 +86,12 @@ void Window::display() {
 }
 
 float Window::getLetterboxedRatio() {
-  float renderingAreaRatio = renderingArea.width / renderingArea.height;
-  float internalResolutionRatio = internalResolution.x / internalResolution.y;
+  float renderingAreaRatio = static_cast<float>(renderingArea.size.x) / static_cast<float>(renderingArea.size.y);
+  float internalResolutionRatio = static_cast<float>(internalResolution.x) / static_cast<float>(internalResolution.y);
   if (renderingAreaRatio >= internalResolutionRatio) {  // rendering area too wide
-    return renderingArea.height / internalResolution.y;
+    return static_cast<float>(renderingArea.size.y) / static_cast<float>(internalResolution.y);
   } else {  // rendering area too tall
-    return renderingArea.width / internalResolution.x;
+    return static_cast<float>(renderingArea.size.x) / static_cast<float>(internalResolution.x);
   }
 }
 

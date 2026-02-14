@@ -4,7 +4,6 @@
 
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Sleep.hpp>
-#include <yaml-cpp/node/parse.h>
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/core/serialization/yaml/fromYaml.hpp>
@@ -31,9 +30,7 @@ void Application::exit() {
 }
 
 void Application::init() {
-  registerLokiRuntimeTypes(runtimeObjectRegistry);
-  registerLokiModules(runtimeObjectRegistry);
-  registerLokiComponents(runtimeObjectRegistry, componentRegistry);
+  registerLokiTypes(runtimeObjectRegistry, componentRegistry);
   registerServices();
   loadGame("data/game.yml");
 }
@@ -49,9 +46,11 @@ void Application::registerServices() {
 
 void Application::loadGame(const std::filesystem::path& path) {
   std::ifstream file{path};
-  YAML::Node node = YAML::Load(file);
+  std::string fileContents{std::istreambuf_iterator(file), std::istreambuf_iterator<char>()};
+  ryml::Tree node = ryml::parse_in_arena(fileContents.c_str());
 
-  auto gameScripts = node["gameScripts"].as<std::string>();
+  std::string gameScripts;
+  node["gameScripts"] >> gameScripts;
   gameScriptsLibrary = std::make_unique<dylib>("./", gameScripts);
   void* serviceRegistryAsVoidPtr = &serviceRegistry;
   void* runtimeObjectRegistryAsVoidPtr = &runtimeObjectRegistry;
@@ -70,7 +69,9 @@ void Application::loadGame(const std::filesystem::path& path) {
   core::fromYaml(node["scenePaths"], scenePaths);
   sceneManager.setScenePaths(std::move(scenePaths));
 
-  sceneManager.loadScene(node["firstSceneName"].as<std::string>());
+  std::string firstSceneName;
+  node["firstSceneName"] >> firstSceneName;
+  sceneManager.loadScene(firstSceneName);
   scheduler.initGameModules();
 }
 

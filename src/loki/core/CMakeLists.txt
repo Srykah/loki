@@ -85,6 +85,6 @@ loki_create_module(core
   utils/VertexArrayIterator.cpp
 
   PUBLIC_DEPS
-  sfml-graphics
-  yaml-cpp
+  SFML::Graphics
+  ryml
 )

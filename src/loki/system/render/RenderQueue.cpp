@@ -1,5 +1,6 @@
 #include "RenderQueue.hpp"
 
+#include <algorithm>
 #include <cassert>
 #include <ranges>
 

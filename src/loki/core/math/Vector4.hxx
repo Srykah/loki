@@ -86,23 +86,23 @@ bool Vector4<T>::operator!=(const Vector4<T>& v) const {
 
 template <typename T, typename U>
 Vector4<T> fromRect(const sf::Rect<U>& rect) {
-  return Vector4<T>(rect.left, rect.top, rect.width, rect.height);
+  return {rect.position.x, rect.position.y, rect.size.x, rect.size.y};
 }
 
 template <typename U, typename T>
 sf::Rect<U> toRect(const Vector4<T>& v) {
-  return sf::Rect<U>(v.a, v.b, v.c, v.d);
+  return {{U(v.a), U(v.b)}, {U(v.c), U(v.d)}};
 }
 
 template <typename T>
 Vector4<T> fromColor(const sf::Color& color) {
-  return Vector4<T>(color.r, color.g, color.b, color.a);
+  return {color.r, color.g, color.b, color.a};
 }
 
 template <typename T>
 sf::Color toColor(const Vector4<T>& v) {
-  return sf::Color(std::clamp<sf::Uint8>(v.a, 0, 255), std::clamp<sf::Uint8>(v.b, 0, 255),
-                   std::clamp<sf::Uint8>(v.c, 0, 255), std::clamp<sf::Uint8>(v.d, 0, 255));
+  return {std::clamp<std::uint8_t>(v.a, 0, 255), std::clamp<std::uint8_t>(v.b, 0, 255),
+          std::clamp<std::uint8_t>(v.c, 0, 255), std::clamp<std::uint8_t>(v.d, 0, 255)};
 }
 
 #if 0

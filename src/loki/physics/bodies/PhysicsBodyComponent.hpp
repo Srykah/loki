@@ -15,6 +15,12 @@ namespace loki::physics {
 
 class PhysicsBodyComponent : public system::Component {
  public:
+  PhysicsBodyComponent() = default;
+  PhysicsBodyComponent(const PhysicsBodyComponent&) = delete;
+  PhysicsBodyComponent& operator=(const PhysicsBodyComponent&) = delete;
+  PhysicsBodyComponent(PhysicsBodyComponent&&) = default;
+  PhysicsBodyComponent& operator=(PhysicsBodyComponent&&) = default;
+
   void onBeginInit() override;
   void onEndInit() override;
   void onPrePhysics(sf::Time dt) override;

@@ -14,7 +14,7 @@ namespace loki::physics {
 
 struct PhysicsShapeParams : public core::BaseObject {
   virtual PhysicsShapeType getType() const = 0;
-  virtual b2ShapeId createShape(b2BodyId bodyId) const = 0;
+  virtual b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const = 0;
 
   PhysicsMaterial material;
   float density = 1.f;
@@ -35,7 +35,7 @@ struct PhysicsShapeParams : public core::BaseObject {
 
 struct CircleShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Circle; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   float radius = 0.f;
 
@@ -44,7 +44,7 @@ struct CircleShapeParams final : public PhysicsShapeParams {
 
 struct CapsuleShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Capsule; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   sf::Vector2f center1;
   sf::Vector2f center2;
@@ -55,7 +55,7 @@ struct CapsuleShapeParams final : public PhysicsShapeParams {
 
 struct SegmentShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Segment; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   sf::Vector2f point1;
   sf::Vector2f point2;
@@ -65,7 +65,7 @@ struct SegmentShapeParams final : public PhysicsShapeParams {
 
 struct PolygonShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Polygon; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   std::vector<sf::Vector2f> points;
   float radius = 0.f;
@@ -75,7 +75,7 @@ struct PolygonShapeParams final : public PhysicsShapeParams {
 
 struct BoxShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Polygon; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   sf::Vector2f halfSize;
   float radius = 0.f;
@@ -85,7 +85,7 @@ struct BoxShapeParams final : public PhysicsShapeParams {
 
 struct ChainShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Chain; }
-  b2ShapeId createShape(b2BodyId bodyId) const override;
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
   std::vector<sf::Vector2f> points;
   bool isLoop = false;

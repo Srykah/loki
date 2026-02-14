@@ -9,7 +9,7 @@ namespace loki::physics {
 class PhysicsShape {
  private:
   friend class PhysicsBody;
-  explicit PhysicsShape(const PhysicsShapeParams& shapeParams, PhysicsBody* parentBody);
+  explicit PhysicsShape(PhysicsBody* parentBody, const PhysicsShapeParams& shapeParams, const sf::Transformable& trs);
 
  public:
   ~PhysicsShape();

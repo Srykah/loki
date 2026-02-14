@@ -7,8 +7,8 @@
 
 namespace loki::system {
 
-const ::loki::system::BaseUpdateTraits& WindowModule::getUpdateTraits() const {
-  static const ::loki::system::UpdateTraits<WindowModule> updateTraits;
+const BaseUpdateTraits& WindowModule::getUpdateTraits() const {
+  static const UpdateTraits<WindowModule> updateTraits;
   assert(updateTraits.hasUpdateStep(UpdateStep::InputPolling));
   return updateTraits;
 }
@@ -19,20 +19,19 @@ void WindowModule::registerAsAService(core::ServiceRegistry& serviceRegistry) {
 
 void WindowModule::init() {
   window.create(windowSize, windowTitle, windowStyle);
-  if (internalResolution != sf::Vector2f{})
+  if (internalResolution != sf::Vector2u{})
     window.setInternalResolution(internalResolution);
-  if (minimumSize != sf::Vector2f{})
+  if (minimumSize != sf::Vector2u{})
     window.setMinimumSize(minimumSize);
 }
 
 void WindowModule::onInputPolling(sf::Time delta) {
   events.clear();
-  sf::Event event;
-  while (window.pollEvent(event)) {
-    if (event.type == sf::Event::Closed) {
+  while (auto event = window.pollEvent()) {
+    if (event->is<sf::Event::Closed>()) {
       getService<ApplicationInterface>().exit();
     }
-    events.push_back(std::move(event));
+    events.push_back(std::move(*event));
   }
 }
 

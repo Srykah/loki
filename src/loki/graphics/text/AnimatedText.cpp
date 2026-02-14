@@ -7,7 +7,7 @@
 namespace loki::graphics {
 
 AnimatedText::AnimatedText(const std::string& string, AnimatedTextStyle style)
-    : style(std::move(style)), vertices(sf::Triangles) {
+    : style(std::move(style)), vertices(sf::PrimitiveType::Triangles) {
   init(string);
 }
 
@@ -66,7 +66,7 @@ void AnimatedText::init(const std::string& str) {
   bool isBold =
       style.characterStyle.value_or(sf::Text::Regular) | sf::Text::Bold;
   float x = 0.f;
-  sf::Uint32 lastChar;
+  std::uint32_t lastChar;
   bool first = true;
   for (std::size_t i = 0; i < string.getSize(); ++i) {
     const auto& c = string[i];

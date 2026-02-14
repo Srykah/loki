@@ -6,6 +6,7 @@
 
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
 
 #include <loki/core/utils/Matrix.hpp>
 #include <loki/gui/Widget.hpp>

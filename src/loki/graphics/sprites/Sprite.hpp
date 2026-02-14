@@ -9,8 +9,6 @@ namespace loki::graphics {
 
 class Sprite : public sf::Drawable, public sf::Transformable {
  public:
-  Sprite();
-
   void setData(const SpriteData& data);
   void setAnim(const std::string& anim);
 
@@ -23,11 +21,11 @@ class Sprite : public sf::Drawable, public sf::Transformable {
  private:
   void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override;
 
-  void resetSprite();
+  void reset();
 
  private:
   const SpriteData* data = nullptr;
-  sf::Sprite sprite;
+  std::optional<sf::Sprite> sprite;
   ShapeAnimator<sf::Sprite> animator;
 };
 

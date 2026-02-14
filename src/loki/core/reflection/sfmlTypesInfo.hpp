@@ -74,10 +74,21 @@ LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(sf::FloatRect)
 LOKI_REFLECTION_CLASS_ATTRIBUTE(SerializeAsFlow)
-LOKI_REFLECTION_CLASS_FIELD(left)
-LOKI_REFLECTION_CLASS_FIELD(top)
-LOKI_REFLECTION_CLASS_FIELD(width)
-LOKI_REFLECTION_CLASS_FIELD(height)
+LOKI_REFLECTION_CLASS_FIELD(position)
+LOKI_REFLECTION_CLASS_FIELD(size)
+LOKI_REFLECTION_CLASS_END()
+
+LOKI_REFLECTION_CLASS_BEGIN(sf::Angle)
+LOKI_REFLECTION_CLASS_ATTRIBUTE(SerializeAsValue)
+LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
+    getTypeInfo<float>(),
+    "radians",
+    false,
+    [](void* obj) -> TmpObj { return TmpObj::makeOwned<float>(details::to<sf::Angle>(obj).asRadians()); },
+    [](const void* obj) -> ConstTmpObj {
+      return ConstTmpObj::makeOwned<float>(details::to<const sf::Angle>(obj).asRadians());
+    },
+    [](void* obj, void* data) { details::to<sf::Angle>(obj) = sf::radians(details::to<float>(data)); })
 LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(sf::Transformable)
@@ -132,9 +143,8 @@ LOKI_REFLECTION_ENUM_BEGIN(sf::Mouse::Button)
 LOKI_REFLECTION_ENUMERATOR(Left)
 LOKI_REFLECTION_ENUMERATOR(Right)
 LOKI_REFLECTION_ENUMERATOR(Middle)
-LOKI_REFLECTION_ENUMERATOR(XButton1)
-LOKI_REFLECTION_ENUMERATOR(XButton2)
-LOKI_REFLECTION_ENUMERATOR(ButtonCount)
+LOKI_REFLECTION_ENUMERATOR(Extra1)
+LOKI_REFLECTION_ENUMERATOR(Extra2)
 LOKI_REFLECTION_ENUM_END()
 
 LOKI_REFLECTION_ENUM_BEGIN(sf::Keyboard::Scancode)

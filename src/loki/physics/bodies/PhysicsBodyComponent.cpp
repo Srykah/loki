@@ -28,7 +28,7 @@ void PhysicsBodyComponent::onPrePhysics(sf::Time dt) {
 void PhysicsBodyComponent::onPhysicsResult(sf::Time dt) {
   auto transformable = getActor().getTransformable();
   transformable.setPosition(body.getPosition());
-  transformable.setRotation(body.getRotationInDegrees());
+  transformable.setRotation(body.getRotation());
   getActor().setTransformable(std::move(transformable));
 }
 

@@ -18,7 +18,7 @@ void RendererModule::registerAsAService(core::ServiceRegistry& serviceRegistry) 
 void RendererModule::init() {
   sceneManager = &getService<SceneManager>();
   windowModule = &getService<WindowModule>();
-  renderTarget.create(internalResolution.x, internalResolution.y);
+  [[maybe_unused]] bool ok = renderTarget.resize(internalResolution);
   windowModule->getWindow().setInternalResolution(internalResolution);
 }
 
@@ -29,8 +29,7 @@ void RendererModule::onRender(sf::Time delta) {
   renderTarget.display();
 
   // todo remove direct dependency ?
-  sf::Sprite sprite;
-  sprite.setTexture(renderTarget.getTexture());
+  sf::Sprite sprite{renderTarget.getTexture()};
   windowModule->getWindow().draw(sprite);
 }
 

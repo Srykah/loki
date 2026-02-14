@@ -43,7 +43,35 @@ macro_ensure_out_of_source_build("You must use an out-of-source build.")
 
 # DEPENDENCIES
 
-# We use CPM for dependencies
+#[[
+# Internal dependencies: make sure the user has initialized the submodules
+find_package(Git QUIET)
+if (GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+# Update submodules as needed
+    option(LOKI_USE_GIT_SUBMODULE "Check submodules during build" ON)
+    if (LOKI_USE_GIT_SUBMODULE)
+        message(STATUS "Submodule update")
+        execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+                        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                        RESULT_VARIABLE GIT_SUBMOD_RESULT)
+        if (NOT GIT_SUBMOD_RESULT EQUAL "0")
+            message(FATAL_ERROR "git submodule update --init --recursive failed with ${GIT_SUBMOD_RESULT}, please checkout submodules manually")
+        endif()
+    endif()
+endif()
+
+if (NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/dylib/CMakeLists.txt")
+    message(FATAL_ERROR "Dylib submodule was not downloaded! LOKI_USE_GIT_SUBMODULE was turned off or failed. Please update submodules manually and try again.")
+endif()
+if (NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/imgui/imgui.h")
+    message(FATAL_ERROR "ImGui submodule was not downloaded! LOKI_USE_GIT_SUBMODULE was turned off or failed. Please update submodules manually and try again.")
+endif()
+if (NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/imgui-sfml/CMakeLists.txt")
+    message(FATAL_ERROR "ImGui-SFML submodule was not downloaded! LOKI_USE_GIT_SUBMODULE was turned off or failed. Please update submodules manually and try again.")
+endif()
+#]]
+
+# We use CPM for external dependencies
 include(CPM)
 
 # Box2d
@@ -77,26 +105,18 @@ set(SFML_BUILD_WINDOW ON)
 set(SFML_BUILD_DOC OFF)
 set(SFML_BUILD_EXAMPLES OFF)
 set(SFML_BUILD_TEST_SUITE OFF)
-set(SFML_INSTALL_PKGCONFIG_FILES ON)
+set(SFML_INSTALL_PKGCONFIG_FILES OFF)
 set(SFML_OPENGL_ES OFF) # todo check for mobile version
+set(SFML_USE_MESA3D OFF)
 set(SFML_USE_STATIC_STD_LIBS OFF)
 set(SFML_USE_SYSTEM_DEPS OFF)
-CPMAddPackage(URI "gh:SFML/SFML#2.6.2")
+CPMAddPackage(URI "gh:SFML/SFML#3.0.2")
 
-# yaml-cpp
-set(YAML_BUILD_SHARED_LIBS ON)
-set(YAML_CPP_BUILD_CONTRIB ON)
-set(YAML_CPP_BUILD_TOOLS OFF)
-set(YAML_CPP_DISABLE_UNINSTALL OFF)
-set(YAML_CPP_FORMAT_SOURCE OFF)
-set(YAML_CPP_INSTALL ON)
-set(YAML_ENABLE_PIC ON)
-set(YAML_MSVC_SHARED_RT ON)
-set(YAML_USE_SYSTEM_GTEST ON)
-CPMAddPackage(URI "gh:jbeder/yaml-cpp#a83cd31548b19d50f3f983b069dceb4f4d50756d") # fix for cmake > 3.4
+# rapidyaml
+CPMAddPackage(URI "gh:biojppm/rapidyaml#v0.10.0")
 
 # ImGui (set after SFML because of FreeType) (as seen in https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets)
-CPMAddPackage(URI "gh:ocornut/imgui#v1.91.0-docking@1.91.0" DOWNLOAD_ONLY TRUE)
+CPMAddPackage(URI "gh:ocornut/imgui#v1.91.8-docking@1.91.8" DOWNLOAD_ONLY TRUE)
 file(COPY_FILE "${CMAKE_CURRENT_SOURCE_DIR}/extern/imgui/CMakeLists.txt" "${imgui_SOURCE_DIR}/CMakeLists.txt")
 set(IMGUI_DEMO ON)
 set(IMGUI_DISABLE_FILE_FUNCTIONS OFF)
@@ -131,10 +151,10 @@ set(IMGUI_SFML_IMGUI_DEMO ON)
 set(IMGUI_SFML_USE_DEFAULT_CONFIG ON)
 set(IMGUI_DIR ${imgui_SOURCE_DIR})
 set(SFML_DIR ${SFML_BINARY_DIR})
-CPMAddPackage(URI "gh:SFML/imgui-sfml#v2.6.1")
+CPMAddPackage(URI "gh:SFML/imgui-sfml#v3.0")
 
 # Install everything
-install(TARGETS box2d yaml-cpp ImGui-SFML EXPORT loki_targets)
+install(TARGETS box2d ryml ImGui-SFML EXPORT loki_targets)
 
 # TARGETS
 

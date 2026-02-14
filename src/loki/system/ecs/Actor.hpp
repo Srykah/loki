@@ -3,15 +3,12 @@
 #include <span>
 
 #include <SFML/Graphics/Transformable.hpp>
-#include <ecs/LifeCycleStep.hpp>
 #include <entt/entt.hpp>
+#include <ryml_std.hpp>
+#include <ryml.hpp>
 
+#include <loki/system/ecs/LifeCycleStep.hpp>
 #include <loki/system/ecs/VisitorConcepts.hpp>
-
-namespace YAML {
-class Node;
-class Emitter;
-}  // namespace YAML
 
 namespace loki::system {
 
@@ -22,8 +19,8 @@ class Actor {
  public:
   Actor() = default;
 
-  void loadFromYaml(Scene& scene, const YAML::Node& node);
-  void saveToYaml(YAML::Emitter& emitter);
+  void loadFromYaml(Scene& scene, const ryml::ConstNodeRef& node);
+  void saveToYaml(ryml::NodeRef destNode) const;
   void setName(std::string&& name);
   [[nodiscard]] const std::string& getName() const;
   void setTransformable(sf::Transformable&& transform);
@@ -64,7 +61,5 @@ class Actor {
   friend class ComponentRegistry;
   entt::handle handle;
 };
-
-YAML::Emitter& operator<<(YAML::Emitter& emitter, Actor actor);
 
 }  // namespace loki::system
