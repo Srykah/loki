@@ -11,10 +11,17 @@ class PhysicsShape {
   friend class PhysicsBody;
   explicit PhysicsShape(PhysicsBody* parentBody, const PhysicsShapeParams& shapeParams, const sf::Transformable& trs);
 
+  void clear();  // call before body destruction to avoid individual shape destruction and mass update
+  
  public:
+  PhysicsShape(const PhysicsShape&) = delete;
+  PhysicsShape& operator=(const PhysicsShape&) = delete;
+  PhysicsShape(PhysicsShape&& _other) noexcept;
+  PhysicsShape& operator=(PhysicsShape&& _other) noexcept;
   ~PhysicsShape();
 
- public:
+  void destroy(bool updateBodyMass);
+  
   [[nodiscard]] PhysicsShapeType getShapeType() const;
 
  private:

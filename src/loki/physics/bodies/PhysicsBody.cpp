@@ -13,9 +13,39 @@ PhysicsBody::PhysicsBody(const PhysicsBodyParams& bodyParams, PhysicsWorld* pare
   bodyId = b2CreateBody(parentWorld->getWorldId(), &bodyDef);
 }
 
-PhysicsBody::~PhysicsBody() {
-  b2DestroyBody(bodyId);
+void PhysicsBody::clear() {
+  parentWorld = nullptr;
   bodyId = b2_nullBodyId;
+  for (auto& shape : shapes) {
+    shape.clear();
+  }
+  shapes.clear();
+}
+
+PhysicsBody::PhysicsBody(PhysicsBody&& _other) noexcept
+    : parentWorld(_other.parentWorld), bodyId(_other.bodyId), shapes(std::move(_other.shapes)) {
+  _other.clear();
+}
+
+PhysicsBody& PhysicsBody::operator=(PhysicsBody&& _other) noexcept {
+  destroy();
+  parentWorld = _other.parentWorld;
+  bodyId = _other.bodyId;
+  shapes = std::move(_other.shapes);
+  _other.clear();
+  return *this;
+}
+
+PhysicsBody::~PhysicsBody() {
+  destroy();
+}
+
+void PhysicsBody::destroy() {
+  if (parentWorld == nullptr || B2_ID_EQUALS(bodyId, b2_nullBodyId)) {
+    return;
+  }
+  b2DestroyBody(bodyId);
+  clear();
 }
 
 PhysicsShape& PhysicsBody::createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs) {

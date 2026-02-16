@@ -84,29 +84,32 @@ Scene& Actor::getScene() const {
 }
 
 void Actor::loadFromYaml(Scene& scene, const ryml::ConstNodeRef& node) {
-  if (ryml::ConstNodeRef nameNode = node["name"]; !nameNode.invalid()) {
+  if (ryml::ConstNodeRef nameNode = node.find_child("name"); !nameNode.invalid()) {
     std::string name;
-    node >> name;
+    nameNode >> name;
     setName(std::move(name));
   }
-  if (ryml::ConstNodeRef transformNode = node["transform"]; !transformNode.invalid()) {
+  if (ryml::ConstNodeRef transformNode = node.find_child("transform"); !transformNode.invalid()) {
     core::fromYaml(transformNode, *getComponent<sf::Transformable>());
   }
   const auto& compReg = getService<ComponentRegistry>();
   const auto& classReg = getService<core::RuntimeObjectRegistry>();
-  for (ryml::ConstNodeRef componentNode : node["components"]) {
-    ryml::ConstNodeRef compTypeNode = componentNode["__type__"];
-    if (compTypeNode.invalid() || !compTypeNode.type().is_val()) {
-      return;
+  if (ryml::ConstNodeRef componentsNode = node.find_child("components");
+      !componentsNode.invalid() && componentsNode.type().is_seq()) {
+    for (ryml::ConstNodeRef componentNode : componentsNode) {
+      ryml::ConstNodeRef compTypeNode = componentNode["__type__"];
+      std::string compType;
+      compTypeNode >> compType;
+      void* newComp = compReg.addComponentToActor(*this, compType);
+      auto* compTypeInfo = classReg.getRuntimeTypeInfo(compType);
+      core::fromYaml(componentNode, newComp, *compTypeInfo);
     }
-    std::string compType;
-    compTypeNode >> compType;
-    void* newComp = compReg.addComponentToActor(*this, compType);
-    auto* compTypeInfo = classReg.getRuntimeTypeInfo(compType);
-    core::fromYaml(componentNode, newComp, *compTypeInfo);
   }
-  for (auto childNode : node["children"]) {
-    scene.instanciateActor(*this).loadFromYaml(scene, childNode);
+  if (ryml::ConstNodeRef childrenNode = node.find_child("children");
+      !childrenNode.invalid() && childrenNode.type().is_seq()) {
+    for (auto childNode : childrenNode) {
+      scene.instanciateActor(*this).loadFromYaml(scene, childNode);
+    }
   }
 }
 

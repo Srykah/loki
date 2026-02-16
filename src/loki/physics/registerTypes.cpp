@@ -13,6 +13,7 @@ void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::C
   runtimeObjectRegistry.registerClass<CircleShapeParams>();
   runtimeObjectRegistry.registerClass<SegmentShapeParams>();
   runtimeObjectRegistry.registerClass<PolygonShapeParams>();
+  runtimeObjectRegistry.registerClass<BoxShapeParams>();
   runtimeObjectRegistry.registerClass<ChainShapeParams>();
   runtimeObjectRegistry.registerClass<CollisionTileAttribute>();
 

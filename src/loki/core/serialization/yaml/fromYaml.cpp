@@ -158,7 +158,7 @@ void fromYaml(const ryml::ConstNodeRef& node, void* obj, const ClassInfo& classI
     }
   } else {
     for (const auto& field : classInfo.fields) {
-      auto childNode = node[field.name.data()];
+      auto childNode = node.find_child(field.name.data());
       if (childNode.invalid()) {
         continue;  // ignore absent values
       }

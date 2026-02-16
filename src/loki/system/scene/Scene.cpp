@@ -81,10 +81,10 @@ void Scene::setPath(const std::filesystem::path& _path) {
 }
 
 void Scene::loadFromYaml(const ryml::ConstNodeRef& sceneNode) {
-  if (ryml::ConstNodeRef nameNode = sceneNode["name"]; !nameNode.invalid() && nameNode.type().is_val()) {
+  if (ryml::ConstNodeRef nameNode = sceneNode.find_child("name"); !nameNode.invalid() && nameNode.type().is_val()) {
     nameNode >> name;
   }
-  if (ryml::ConstNodeRef rootNode = sceneNode["root"]; !rootNode.invalid() && rootNode.type().is_map()) {
+  if (ryml::ConstNodeRef rootNode = sceneNode.find_child("root"); !rootNode.invalid() && rootNode.type().is_map()) {
     root = instanciateActor();
     root.loadFromYaml(*this, rootNode);
   }

@@ -12,10 +12,19 @@ class PhysicsBody {
  private:
   friend class PhysicsWorld;
   explicit PhysicsBody(const PhysicsBodyParams& bodyParams, PhysicsWorld* parentWorld);
+  
+  // call before world destruction to avoid individual body and shapes destruction
+  void clear();
 
  public:
   PhysicsBody() = default;
+  PhysicsBody(const PhysicsBody&) = delete;
+  PhysicsBody& operator=(const PhysicsBody&) = delete;
+  PhysicsBody(PhysicsBody&& _other) noexcept;
+  PhysicsBody& operator=(PhysicsBody&& _other) noexcept;
   ~PhysicsBody();
+  
+  void destroy();
 
   PhysicsShape& createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs = {});
 
