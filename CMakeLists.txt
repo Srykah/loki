@@ -113,7 +113,7 @@ set(SFML_USE_SYSTEM_DEPS OFF)
 CPMAddPackage(URI "gh:SFML/SFML#3.0.2")
 
 # rapidyaml
-CPMAddPackage(URI "gh:biojppm/rapidyaml#v0.10.0")
+CPMAddPackage(URI "gh:biojppm/rapidyaml#f110282@0.10.0") # fix for Clang-CL
 
 # ImGui (as seen in https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets)
 CPMAddPackage(URI "gh:ocornut/imgui#v1.91.8-docking@1.91.8" DOWNLOAD_ONLY TRUE)
