@@ -1,4 +1,4 @@
-#include <print>
+#include <format>
 
 #include "Application.hpp"
 
@@ -8,7 +8,7 @@ int main() {
     app.run();
     return 0;
   } catch (const std::exception& e) {
-    std::println(stderr, "{}", e.what());
+    std::cerr << std::format("{}\n", e.what());
     return -1;
   }
 }
