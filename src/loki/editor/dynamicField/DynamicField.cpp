@@ -4,6 +4,7 @@
 #include <cstring>
 
 #include <imgui.h>
+#include <misc/cpp/imgui_stdlib.h>
 
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
@@ -85,16 +86,11 @@ bool DynamicField(void* obj, const core::CharacterInfo& characterInfo) {
 }
 
 bool DynamicField(void* obj, const core::StringInfo& stringInfo) {
-  constexpr std::size_t BUF_SIZE = 1024;
-  char buf[BUF_SIZE];
-  // todo
+  // todo handle other string types
   auto tmpObj = stringInfo.asUtf8StrGetter(obj);
-  const auto& asU8Str = to<std::string>(tmpObj.obj);
-  assert(asU8Str.size() < BUF_SIZE);
-  strcpy_s(buf, asU8Str.size() + 1, asU8Str.data());
-  if (ImGui::InputText("", buf, BUF_SIZE, ImGuiInputTextFlags_EnterReturnsTrue)) {
-    std::size_t newSize = strnlen_s(buf, BUF_SIZE);
-    stringInfo.setter(obj, buf, newSize);
+  auto buf = to<std::string>(tmpObj.obj);
+  if (ImGui::InputText("", &buf, ImGuiInputTextFlags_EnterReturnsTrue)) {
+    stringInfo.setter(obj, buf.c_str(), buf.size() + 1);
     return true;
   }
   return false;
