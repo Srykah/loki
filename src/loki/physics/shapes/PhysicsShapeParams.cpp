@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include <loki/core/math/Misc.hpp>
 #include <loki/physics/shapes/PhysicsShapeParams.hpp>
 #include <loki/physics/utils/conversions.hpp>
