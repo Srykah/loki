@@ -7,10 +7,11 @@
 #include <loki/physics/shapes/PhysicsShape.hpp>
 
 namespace loki::physics {
+class PhysicsWorld;
 
 class PhysicsBody {
  private:
-  friend class PhysicsWorld;
+  friend PhysicsWorld;
   explicit PhysicsBody(const PhysicsBodyParams& bodyParams, PhysicsWorld* parentWorld);
   
   // call before world destruction to avoid individual body and shapes destruction
