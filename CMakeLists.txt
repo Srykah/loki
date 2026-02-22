@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.30)
 project(
   loki
   VERSION 0.1.0
-  LANGUAGES CXX
+  LANGUAGES C CXX
 )
 
 
@@ -15,6 +15,9 @@ include(cmake/LocalConfig.cmake OPTIONAL)
 # todo make it work
 set(BUILD_SHARED_LIBS ON CACHE BOOL "Build shared libs" FORCE)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON CACHE BOOL "Export all symbols in dlls" FORCE)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
