@@ -5,10 +5,11 @@
 #include <loki/physics/shapes/PhysicsShapeType.hpp>
 
 namespace loki::physics {
+class PhysicsBody;
 
 class PhysicsShape {
  private:
-  friend class PhysicsBody;
+  friend PhysicsBody;
   explicit PhysicsShape(PhysicsBody* parentBody, const PhysicsShapeParams& shapeParams, const sf::Transformable& trs);
 
   void clear();  // call before body destruction to avoid individual shape destruction and mass update
