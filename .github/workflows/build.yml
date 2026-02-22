@@ -126,7 +126,7 @@ jobs:
       # Dependencies
       - name: Install SFML Linux dependencies
         if: matrix.platform.os == 'ubuntu-24.04'
-        run: conda install -qy freetype libflac libfreetype libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib mesa-libegl-devel-cos7-x86_64 mesa-libgbm-cos7-x86_64 mesa-libgl-devel-cos7-x86_64 mesalib openal-soft pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr
+        run: conda install -qy libflac libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxrandr xorg-libxi
 
       # Build
       - name: Create build folder
