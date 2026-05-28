@@ -96,8 +96,8 @@ jobs:
       - name: Use WinLibs GCC
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         run: |
-          echo "CC=$LOCALAPPDATA/mingw64/gcc" >> $GITHUB_ENV
-          echo "CXX=$LOCALAPPDATA/mingw64/g++" >> $GITHUB_ENV
+          echo "CC=$LOCALAPPDATA/mingw64/bin/${{ matrix.platform.compiler.c-exe }}.exe" >> $GITHUB_ENV
+          echo "CXX=$LOCALAPPDATA/mingw64/bin/${{ matrix.platform.compiler.cpp-exe }}.exe" >> $GITHUB_ENV
 
       - name: Install and use LLVM Clang on Windows
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
