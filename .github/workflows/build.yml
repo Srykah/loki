@@ -141,12 +141,22 @@ jobs:
         if: startsWith(matrix.platform.os, 'ubuntu')
         run: conda install -qy libflac libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib mesalib pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxi xorg-libxrandr
 
-      - name: Restore build deps cache
-        id: build-deps-cache-restore
+      - name: Restore deps source cache
+        id: deps-src-cache-restore
         uses: actions/cache/restore@v5.0.5
         with:
-          path: build-${{ env.matrix-key }}/_deps
-          key: deps-${{ env.matrix-key }}
+          path: build-${{ env.matrix-key }}/_deps/*-src
+          key: deps-src-${{ matrix.platform.os }}
+          restore-keys: deps-src-
+
+      - name: Restore deps build cache
+        id: deps-build-cache-restore
+        uses: actions/cache/restore@v5.0.5
+        with:
+          path: |
+            build-${{ env.matrix-key }}/_deps/*-subbuild
+            build-${{ env.matrix-key }}/_deps/*-build
+          key: deps-build-${{ env.matrix-key }}
 
       # Build
       - name: Configure CMake
@@ -170,9 +180,18 @@ jobs:
           path: ~/conda_pkgs_dir
           key: ${{ steps.conda-cache-restore.outputs.cache-primary-key }}
 
-      - name: Save build deps cache
-        if: always() && !steps.build-deps-cache-restore.outputs.cache-hit
+      - name: Save deps source cache
+        if: always() && !steps.deps-src-cache-restore.outputs.cache-hit
         uses: actions/cache/save@v5.0.5
         with:
-          path: build-${{ env.matrix-key }}/_deps
-          key: ${{ steps.build-deps-cache-restore.outputs.cache-primary-key }}
+          path: build-${{ env.matrix-key }}/_deps/*-src
+          key: ${{ steps.deps-src-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save deps build cache
+        if: always() && !steps.deps-build-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: |
+            build-${{ env.matrix-key }}/_deps/*-subbuild
+            build-${{ env.matrix-key }}/_deps/*-build
+          key: ${{ steps.deps-build-cache-restore.outputs.cache-primary-key }}
