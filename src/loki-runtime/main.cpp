@@ -8,7 +8,7 @@ int main() {
     app.run();
     return 0;
   } catch (const std::exception& e) {
-    std::cerr << std::format("An exception occurred: {}\n", e.what());  // todo show callstack
+    std::cerr << std::format("An exception occurred: {}\n", e.what());  // todo show callstack, cf <stacktrace>
     return -1;
   }
 }
