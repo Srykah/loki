@@ -22,6 +22,7 @@ jobs:
 
     env:
       matrix-key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+      ccache-variant: ${{ (startsWith(matrix.platform.os, 'windows') && 'sccache') || 'ccache' }}
 
     strategy:
       fail-fast: false
@@ -59,7 +60,7 @@ jobs:
         with:
           verbose: 2
           key: ${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-ccache
-          variant: ${{ (startsWith(matrix.platform.os, 'windows') && 'sccache') || 'ccache' }}
+          variant: ${{ env.ccache-variant }}
           create-symlink: true
 
       # Compilers
@@ -70,9 +71,17 @@ jobs:
           arch: x64
           toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
+      - name: Cache WinLibs GCC setup
+        id: winlibs-gcc-cache
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
+        uses: actions/cache@v5.0.5
+        with:
+          path: '%AppData%/../Local/mingw64'
+          key: ${{ env.matrix-key }}-winlibs-gcc
+
       - name: Install WinLibs GCC
         id: winlibs-gcc
-        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache.outputs.cache-hit
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
           architecture: '64'
@@ -132,7 +141,7 @@ jobs:
         run: mkdir build-${{ env.matrix-key }}
 
       - name: Configure CMake
-        run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+        run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_CXX_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
         run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
