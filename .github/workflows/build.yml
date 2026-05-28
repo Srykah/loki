@@ -151,3 +151,10 @@ jobs:
 
       - name: Build
         run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
+
+      - name: Check cached folders
+        run: |
+          echo "Contents of mingw64 folder:"
+          ls -la $LOCALAPPDATA/mingw64
+          echo "Contents of build folder:"
+          ls -la $GITHUB_WORKSPACE/build-${{ env.matrix-key }}
