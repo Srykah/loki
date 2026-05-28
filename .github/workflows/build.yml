@@ -56,7 +56,7 @@ jobs:
       - name: Setup CCache
         # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
         # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
-        uses: hendrikmuhs/ccache-action@v1.2.23
+        uses: Srykah/ccache-action@v1.2.24  # wait for upstream to integrate the fixes for the append-timestamp input
         with:
           verbose: 2
           key: ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
