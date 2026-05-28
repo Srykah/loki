@@ -59,7 +59,7 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2.23
         with:
           verbose: 2
-          key: ${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-ccache
+          key: ${{ env.matrix-key }}-ccache # shared between all PRs
           variant: ${{ env.ccache-variant }}
           create-symlink: true
 
@@ -76,7 +76,7 @@ jobs:
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         uses: actions/cache@v5.0.5
         with:
-          path: '%LocalAppData%/mingw64'
+          path: $LOCALAPPDATA/mingw64
           key: ${{ env.matrix-key }}-winlibs-gcc
 
       - name: Install WinLibs GCC
@@ -139,6 +139,12 @@ jobs:
       # Build
       - name: Create build folder
         run: mkdir build-${{ env.matrix-key }}
+
+      - name: Cache build folder
+        uses: actions/cache@v5.0.5
+        with:
+          path: $GITHUB_WORKSPACE/build-${{ env.matrix-key }}
+          key: ${{ env.matrix-key }}-cmake-build-PR#${{ github.event.pull_request.number }}
 
       - name: Configure CMake
         run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_CXX_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
