@@ -141,26 +141,21 @@ jobs:
         if: startsWith(matrix.platform.os, 'ubuntu')
         run: conda install -qy libflac libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib mesalib pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxi xorg-libxrandr
 
-      # Build
-      - name: Create build folder
-        run: mkdir build-${{ env.matrix-key }}
-
-      - name: Cache build folder
-        uses: actions/cache@v5.0.5
+      - name: Restore build deps cache
+        id: build-deps-cache-restore
+        uses: actions/cache/restore@v5.0.5
         with:
-          path: build-${{ env.matrix-key }}
-          key: build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.sha }}
-          restore-keys: |
-            build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
-            build-${{ env.matrix-key }}-
+          path: build-${{ env.matrix-key }}/_deps
+          key: deps-${{ env.matrix-key }}
 
+      # Build
       - name: Configure CMake
         run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_CXX_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
 
       - name: Build
         run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
 
-      # Save build tools caches (even if the build itself fails)
+      # Save build tools & deps caches (even if the build itself fails)
       - name: Save WinLibs GCC cache
         if: always() && startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
         uses: actions/cache/save@v5.0.5
@@ -174,3 +169,10 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key: ${{ steps.conda-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save build deps cache
+        if: always() && !steps.build-deps-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: build-${{ env.matrix-key }}/_deps
+          key: ${{ steps.build-deps-cache-restore.outputs.cache-primary-key }}
