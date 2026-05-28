@@ -5,12 +5,8 @@
 
 namespace loki::graphics {
 
-RoundedRectangle::RoundedRectangle(sf::Vector2f size,
-                                   float borderRadius,
-                                   std::size_t borderPointCount)
-    : size(size),
-      borderRadius(borderRadius),
-      borderPointCount(borderPointCount) {
+RoundedRectangle::RoundedRectangle(sf::Vector2f size, float borderRadius, std::size_t borderPointCount)
+    : size(size), borderRadius(borderRadius), borderPointCount(borderPointCount) {
   update();
 }
 

@@ -10,11 +10,8 @@ template <typename T>
 class EnumerateWrapper {
  public:
   class iterator {
-    using inner_iterator = std::conditional_t<std::is_const_v<T>,
-                                              typename T::const_iterator,
-                                              typename T::iterator>;
-    using inner_reference =
-        typename std::iterator_traits<inner_iterator>::reference;
+    using inner_iterator = std::conditional_t<std::is_const_v<T>, typename T::const_iterator, typename T::iterator>;
+    using inner_reference = typename std::iterator_traits<inner_iterator>::reference;
 
    public:
     using reference = std::pair<std::size_t, inner_reference>;
@@ -68,9 +65,8 @@ auto cenumerate(const T& t) {
 template <typename T>
 class ReversedWrapper {
  public:
-  using iterator = std::conditional_t<std::is_const_v<T>,
-                                      typename T::const_reverse_iterator,
-                                      typename T::reverse_iterator>;
+  using iterator =
+      std::conditional_t<std::is_const_v<T>, typename T::const_reverse_iterator, typename T::reverse_iterator>;
 
   explicit ReversedWrapper(T& t) : container(t) {}
 
@@ -99,22 +95,15 @@ template <typename T, typename U>
 class ZipWrapper {
  public:
   class iterator {
-    using inner_iterator1 = std::conditional_t<std::is_const_v<T>,
-                                               typename T::const_iterator,
-                                               typename T::iterator>;
-    using inner_reference1 =
-        typename std::iterator_traits<inner_iterator1>::reference;
-    using inner_iterator2 = std::conditional_t<std::is_const_v<U>,
-                                               typename U::const_iterator,
-                                               typename U::iterator>;
-    using inner_reference2 =
-        typename std::iterator_traits<inner_iterator2>::reference;
+    using inner_iterator1 = std::conditional_t<std::is_const_v<T>, typename T::const_iterator, typename T::iterator>;
+    using inner_reference1 = typename std::iterator_traits<inner_iterator1>::reference;
+    using inner_iterator2 = std::conditional_t<std::is_const_v<U>, typename U::const_iterator, typename U::iterator>;
+    using inner_reference2 = typename std::iterator_traits<inner_iterator2>::reference;
 
    public:
     using reference = std::pair<inner_reference1, inner_reference2>;
 
-    explicit iterator(inner_iterator1 it1, inner_iterator2 it2)
-        : _it1(it1), _it2(it2) {}
+    explicit iterator(inner_iterator1 it1, inner_iterator2 it2) : _it1(it1), _it2(it2) {}
 
     reference operator*() const { return reference(*_it1, *_it2); }
 
@@ -145,9 +134,7 @@ class ZipWrapper {
 
   ZipWrapper(T& t, U& u) : container1(t), container2(u) {}
 
-  iterator begin() const {
-    return iterator(container1.begin(), container2.begin());
-  }
+  iterator begin() const { return iterator(container1.begin(), container2.begin()); }
   iterator end() const { return iterator(container1.end(), container2.end()); }
 
  private:

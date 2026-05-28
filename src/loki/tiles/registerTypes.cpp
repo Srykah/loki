@@ -7,10 +7,10 @@ namespace loki::tiles {
 
 void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
   // runtime types
-  runtimeObjectRegistry.registerClass<TileAttribute>(); 
+  runtimeObjectRegistry.registerClass<TileAttribute>();
   runtimeObjectRegistry.registerClass<TileSetAttribute>();
   runtimeObjectRegistry.registerClass<SizeTileSetAttribute>();
-  
+
   // components
 #define LOKI_REGISTER_COMP(Comp)               \
   runtimeObjectRegistry.registerClass<Comp>(); \

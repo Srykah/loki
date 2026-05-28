@@ -2,8 +2,7 @@
 
 namespace loki::graphics {
 
-const AnimatedTextStyle& Stylesheet::getStyle(
-    const std::string& styleName) const {
+const AnimatedTextStyle& Stylesheet::getStyle(const std::string& styleName) const {
   return styles.at(styleName);
 }
 
@@ -11,8 +10,7 @@ const AnimatedTextStyle& Stylesheet::getDefaultStyle() const {
   return getStyle(".default");
 }
 
-void Stylesheet::setStyle(const std::string& styleName,
-                          const AnimatedTextStyle& style) {
+void Stylesheet::setStyle(const std::string& styleName, const AnimatedTextStyle& style) {
   styles.emplace(styleName, style);
 }
 
@@ -20,9 +18,8 @@ void Stylesheet::setDefaultStyle(const AnimatedTextStyle& defaultStyle) {
   setStyle(".default", defaultStyle);
 }
 
-AnimatedTextStyle Stylesheet::getNewStyleFromBase(
-    AnimatedTextStyle base,
-    const std::vector<std::string>& styleNames) const {
+AnimatedTextStyle Stylesheet::getNewStyleFromBase(AnimatedTextStyle base,
+                                                  const std::vector<std::string>& styleNames) const {
   for (const auto& styleName : styleNames) {
     base.overrideWith(getStyle(styleName));
   }

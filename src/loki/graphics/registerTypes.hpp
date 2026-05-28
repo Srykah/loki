@@ -5,4 +5,4 @@
 
 namespace loki::graphics {
 void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry);
-}  // namespace loki::system
+}  // namespace loki::graphics

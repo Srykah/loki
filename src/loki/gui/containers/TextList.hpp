@@ -14,8 +14,7 @@ class TextList : public sf::Drawable, public sf::Transformable {
   void setTextStyle(graphics::TextStyle textStyle);
   void setSpacing(float spacing);
 
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
 
  private:
   graphics::TextStyle textStyle;

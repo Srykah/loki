@@ -2,11 +2,9 @@
 
 namespace loki::graphics {
 
-AnnotatedStringEngine::AnnotatedStringEngine(const Stylesheet& _stylesheet)
-    : stylesheet(_stylesheet) {}
+AnnotatedStringEngine::AnnotatedStringEngine(const Stylesheet& _stylesheet) : stylesheet(_stylesheet) {}
 
-AnnotatedString AnnotatedStringEngine::parseAnnotatedString(
-    const std::string& annotatedString) {
+AnnotatedString AnnotatedStringEngine::parseAnnotatedString(const std::string& annotatedString) {
   begin = annotatedString.begin();
   it = annotatedString.begin();
   end = annotatedString.end();
@@ -74,8 +72,7 @@ void AnnotatedStringEngine::readStyle() {
         if (begin == it) {
           throw std::runtime_error("Empty style name not allowed");
         }
-        styleStack.back().overrideWith(
-            stylesheet.getStyle(std::string{begin, it}));
+        styleStack.back().overrideWith(stylesheet.getStyle(std::string{begin, it}));
         begin = it + 1;
         result.emplace_back(std::string{}, styleStack.back());
         styleStack.pop_back();
@@ -85,8 +82,7 @@ void AnnotatedStringEngine::readStyle() {
         if (begin == it) {
           throw std::runtime_error("Empty style name not allowed");
         }
-        styleStack.back().overrideWith(
-            stylesheet.getStyle(std::string{begin, it}));
+        styleStack.back().overrideWith(stylesheet.getStyle(std::string{begin, it}));
         begin = it + 1;
         break;
 
@@ -94,8 +90,7 @@ void AnnotatedStringEngine::readStyle() {
         if (begin == it) {
           throw std::runtime_error("Empty style name not allowed");
         }
-        styleStack.back().overrideWith(
-            stylesheet.getStyle(std::string{begin, it}));
+        styleStack.back().overrideWith(stylesheet.getStyle(std::string{begin, it}));
         begin = it + 1;
         return;
     }

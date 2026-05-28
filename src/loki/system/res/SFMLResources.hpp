@@ -14,7 +14,7 @@ class SFMLResource : public Resource<T> {
 
  protected:
   [[nodiscard]] bool load(const std::filesystem::path& path) override { return data.loadFromFile(path.string()); }
-  
+
  private:
   T data;
 };
@@ -25,10 +25,10 @@ class SoundBufferResource final : public SFMLResource<sf::SoundBuffer> {};
 class FontResource final : public Resource<sf::Font> {
  public:
   [[nodiscard]] const sf::Font& getData() const override { return data; }
-  
+
  protected:
   [[nodiscard]] bool load(const std::filesystem::path& path) override { return data.openFromFile(path.string()); }
-  
+
  private:
   sf::Font data;
 };

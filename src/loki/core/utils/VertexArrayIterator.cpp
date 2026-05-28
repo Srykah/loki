@@ -7,9 +7,7 @@
 
 namespace loki::core {
 
-VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va,
-                                         std::size_t _index)
-    : va(va), index(_index) {
+VertexArrayIterator::VertexArrayIterator(sf::VertexArray& va, std::size_t _index) : va(va), index(_index) {
   if (index > va.getVertexCount()) {
     index = va.getVertexCount();
   }
@@ -83,8 +81,7 @@ bool VertexArrayIterator::operator!=(const VertexArrayIterator& other) {
   return !(*this == other);
 }
 
-VertexArrayConstIterator::VertexArrayConstIterator(const sf::VertexArray& va,
-                                                   std::size_t _index)
+VertexArrayConstIterator::VertexArrayConstIterator(const sf::VertexArray& va, std::size_t _index)
     : va(va), index(_index) {
   if (index > va.getVertexCount()) {
     index = va.getVertexCount();
@@ -117,8 +114,7 @@ const VertexArrayConstIterator VertexArrayConstIterator::operator--(int) {
   return copy;
 }
 
-VertexArrayConstIterator& VertexArrayConstIterator::operator+=(
-    long long int x) {
+VertexArrayConstIterator& VertexArrayConstIterator::operator+=(long long int x) {
   if (index + x < 0) {
     index = 0;
   } else if (index + x > va.getVertexCount()) {
@@ -129,21 +125,18 @@ VertexArrayConstIterator& VertexArrayConstIterator::operator+=(
   return *this;
 }
 
-VertexArrayConstIterator& VertexArrayConstIterator::operator-=(
-    long long int x) {
+VertexArrayConstIterator& VertexArrayConstIterator::operator-=(long long int x) {
   return *this += -x;
 }
 const sf::Vertex& VertexArrayConstIterator::operator*() const {
   return va[index];
 }
 
-bool VertexArrayConstIterator::operator==(
-    const VertexArrayConstIterator& other) {
+bool VertexArrayConstIterator::operator==(const VertexArrayConstIterator& other) {
   return &va == &other.va && index == other.index;
 }
 
-bool VertexArrayConstIterator::operator!=(
-    const VertexArrayConstIterator& other) {
+bool VertexArrayConstIterator::operator!=(const VertexArrayConstIterator& other) {
   return !(*this == other);
 }
 

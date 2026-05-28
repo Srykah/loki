@@ -10,12 +10,8 @@ constexpr std::size_t combineHashImpl(std::size_t seed) {
 }
 
 template <typename T, typename... Args>
-std::size_t combineHashImpl(std::size_t seed,
-                            const T& val,
-                            const Args&... args) {
-  return combineHashImpl(seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 +
-                                    (seed << 6u) + (seed >> 2u),
-                         args...);
+std::size_t combineHashImpl(std::size_t seed, const T& val, const Args&... args) {
+  return combineHashImpl(seed ^ std::hash<T>()(val) + 0x9E3779B97F4A7C15 + (seed << 6u) + (seed >> 2u), args...);
 }
 
 template <typename... Args>

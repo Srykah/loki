@@ -54,10 +54,8 @@ PhysicsShape& PhysicsBody::createShape(const PhysicsShapeParams& shapeParams, co
 }
 
 void PhysicsBody::setTransformable(const sf::Transformable& transformable) {
-  b2Body_SetTransform(
-    bodyId,
-    toB2Vec2(transformable.getPosition() / parentWorld->getPixelsToMetersRatio()),
-    b2MakeRot(transformable.getRotation().asRadians()));
+  b2Body_SetTransform(bodyId, toB2Vec2(transformable.getPosition() / parentWorld->getPixelsToMetersRatio()),
+                      b2MakeRot(transformable.getRotation().asRadians()));
 }
 
 sf::Vector2f PhysicsBody::getPosition() const {

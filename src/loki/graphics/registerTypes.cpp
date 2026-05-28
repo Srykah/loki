@@ -21,4 +21,4 @@ void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::C
 #undef LOKI_REGISTER_COMP
 }
 
-}  // namespace loki::system
+}  // namespace loki::graphics

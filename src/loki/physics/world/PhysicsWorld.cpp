@@ -7,8 +7,7 @@
 
 namespace loki::physics {
 
-PhysicsWorld::PhysicsWorld(PhysicsWorldParams&& _params)
-    : params(std::move(_params)) {
+PhysicsWorld::PhysicsWorld(PhysicsWorldParams&& _params) : params(std::move(_params)) {
   b2WorldDef worldDef = b2DefaultWorldDef();
   worldDef.gravity = toB2Vec2(params.gravity);
   worldId = b2CreateWorld(&worldDef);

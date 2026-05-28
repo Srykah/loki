@@ -7,13 +7,9 @@ namespace nlohmann {
 
 template <>
 struct adl_serializer<sf::Time> {
-  static void to_json(json& j, const sf::Time& time) {
-    j = time.asMilliseconds();
-  }
+  static void to_json(json& j, const sf::Time& time) { j = time.asMilliseconds(); }
 
-  static void from_json(const json& j, sf::Time& time) {
-    time = sf::milliseconds(j.get<sf::Int32>());
-  }
+  static void from_json(const json& j, sf::Time& time) { time = sf::milliseconds(j.get<sf::Int32>()); }
 };
 
 }  // namespace nlohmann

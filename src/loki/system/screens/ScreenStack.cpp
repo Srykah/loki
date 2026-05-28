@@ -44,8 +44,7 @@ bool ScreenStack::empty() const {
   return stack.empty();
 }
 
-void ScreenStack::draw(sf::RenderTarget& target,
-                       sf::RenderStates states) const {
+void ScreenStack::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   for (const auto& screen : core::reversed(stack)) {
     if (!screen->render(target, states)) {
       break;
@@ -74,9 +73,7 @@ void ScreenStack::close(const Screen* screen) {
 }
 
 void ScreenStack::closeAbove(const Screen* screen) {
-  const auto it =
-      std::find_if(stack.begin(), stack.end(),
-                   [screen](const auto& ptr) { return ptr.get() == screen; });
+  const auto it = std::find_if(stack.begin(), stack.end(), [screen](const auto& ptr) { return ptr.get() == screen; });
   if (it != stack.end() && it + 1 != stack.end()) {
     for (auto it2 = stack.rbegin(); it2.base() != it + 1; ++it2) {
       sendSignal({it2->get(), "close"});

@@ -40,8 +40,7 @@ void AnimatedText::update(sf::Time delta) {
 #endif
 }
 
-void AnimatedText::draw(sf::RenderTarget& target,
-                        sf::RenderStates states) const {
+void AnimatedText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   states.transform *= getTransform();
   states.texture = &style.font.value()->getTexture(style.characterSize.value());
   target.draw(vertices, states);
@@ -51,8 +50,7 @@ void AnimatedText::skip() {
   if (!style.appear) {
     return;
   }
-  auto skippingMoment =
-      style.appear->duration + static_cast<float>(glyphs.size() - 1) * style.dt;
+  auto skippingMoment = style.appear->duration + static_cast<float>(glyphs.size() - 1) * style.dt;
   if (elapsedTime > skippingMoment) {
     return;
   }
@@ -63,8 +61,7 @@ void AnimatedText::init(const std::string& str) {
   auto string = sf::String::fromUtf8(str.begin(), str.end());
   auto& font = *style.font.value();
   auto charSize = style.characterSize.value_or(30);
-  bool isBold =
-      style.characterStyle.value_or(sf::Text::Regular) | sf::Text::Bold;
+  bool isBold = style.characterStyle.value_or(sf::Text::Regular) | sf::Text::Bold;
   float x = 0.f;
   std::uint32_t lastChar;
   bool first = true;
@@ -87,8 +84,7 @@ bool AnimatedText::hasFinishedAppearing() const {
   if (isEnding)
     return true;
   if (style.appear) {
-    return elapsedTime >= style.appear->duration +
-                              static_cast<float>(glyphs.size() - 1) * style.dt;
+    return elapsedTime >= style.appear->duration + static_cast<float>(glyphs.size() - 1) * style.dt;
   }
   return true;
 }

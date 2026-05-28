@@ -12,8 +12,7 @@ void TemplateEngine::addPtr(const std::string& name, const std::string* t) {
   refs.insert_or_assign(name, [t]() -> const std::string& { return *t; });
 }
 
-void TemplateEngine::addLambdaRef(const std::string& name,
-                                  const RefGenerator& gen) {
+void TemplateEngine::addLambdaRef(const std::string& name, const RefGenerator& gen) {
   refs.insert_or_assign(name, gen);
 }
 

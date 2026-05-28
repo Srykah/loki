@@ -36,9 +36,7 @@ namespace nlohmann {
 
 template <>
 struct adl_serializer<sf::Color> {
-  static void to_json(json& j, const sf::Color& color) {
-    j = loki::core::getHTMLColor(color);
-  }
+  static void to_json(json& j, const sf::Color& color) { j = loki::core::getHTMLColor(color); }
 
   static void from_json(const json& j, sf::Color& color) {
     if (j.type() == detail::value_t::string) {

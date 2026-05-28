@@ -14,11 +14,11 @@ enum class WindowStyle : std::uint32_t {
   RESIZE = sf::Style::Resize,
   CLOSE = sf::Style::Close,
   SFML_MASK = sf::Style::Titlebar | sf::Style::Resize | sf::Style::Close,
-  
+
   FULLSCREEN = 1u << 5u,
   LETTERBOXED = 1u << 6u,
   INTEGER_SCALING = 1u << 7u,
-  
+
   DEFAULT = sf::Style::Default,
   DEFAULT_LETTERBOXED = DEFAULT | LETTERBOXED,
   DEFAULT_INTEGER_SCALING = DEFAULT | INTEGER_SCALING,

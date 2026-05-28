@@ -10,7 +10,7 @@ PhysicsShape::PhysicsShape(PhysicsBody* parentBody, const PhysicsShapeParams& sh
   shapeId = shapeParams.createShape(parentBody->getBodyId(), trs);
 }
 
-void PhysicsShape::clear(){
+void PhysicsShape::clear() {
   parentBody = nullptr;
   shapeId = b2_nullShapeId;
   isChain = false;

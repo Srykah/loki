@@ -11,9 +11,7 @@ struct PairHash {
   /// \brief Hash operator
   /// \param val The pair to hash
   /// \return A hash of the pair (order matters)
-  std::size_t operator()(const Pair& val) const {
-    return combineHash(val.first, val.second);
-  }
+  std::size_t operator()(const Pair& val) const { return combineHash(val.first, val.second); }
 };
 
 template <typename S, typename T>
@@ -28,9 +26,7 @@ struct PairHashSym {
   /// \brief Symmetric hash operator
   /// \param val The pair to hash symmetrically
   /// \return A symmetric hash of the pair (order doesn't matter)
-  std::size_t operator()(const Pair& val) const {
-    return combineHashSym(val.first, val.second);
-  }
+  std::size_t operator()(const Pair& val) const { return combineHashSym(val.first, val.second); }
 };
 
 template <typename S, typename T = S>
@@ -49,8 +45,7 @@ struct PairAreEqualSym {
   /// \return `true` if both pair represent the same (mathematical) set, `false`
   /// otherwise
   bool operator()(const Pair1& lhs, const Pair2& rhs) const {
-    return (lhs.first == rhs.first && lhs.second == rhs.second) ||
-           (lhs.first == rhs.second && lhs.second == rhs.first);
+    return (lhs.first == rhs.first && lhs.second == rhs.second) || (lhs.first == rhs.second && lhs.second == rhs.first);
   }
 };
 

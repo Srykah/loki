@@ -10,8 +10,7 @@ class TextLabel : public Widget {
   explicit TextLabel(const std::string& str);
   ~TextLabel() override = default;
 
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = {}) const override {}
+  void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override {}
 
  private:
   graphics::AnnotatedText text;

@@ -41,7 +41,7 @@ struct TileSetData {
     }
     return nullptr;
   }
-  
+
   std::string_view getTileName(std::size_t tileIndex) const {
     if (tileIndex >= tilesData.size())
       return {};

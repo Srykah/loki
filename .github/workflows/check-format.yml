@@ -13,9 +13,9 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: jidicula/clang-format-action@v4.16.0
+      - uses: actions/checkout@v6.0.2
+      - uses: jidicula/clang-format-action@v4.18.0
         with:
           check-path: src
-          clang-format-version: 21
+          clang-format-version: 22
           fallback-style: Chromium

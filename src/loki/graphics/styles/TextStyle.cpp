@@ -5,14 +5,8 @@
 namespace loki::graphics {
 
 TextStyle TextStyle::fromDefaults() {
-  static const loki::graphics::TextStyle Defaults{30u,
-                                             sf::Text::Style::Regular,
-                                             sf::Color::White,
-                                             nullptr,
-                                             1.f,
-                                             1.f,
-                                             sf::Color::Black,
-                                             0.f};
+  static const loki::graphics::TextStyle Defaults{
+      30u, sf::Text::Style::Regular, sf::Color::White, nullptr, 1.f, 1.f, sf::Color::Black, 0.f};
   return Defaults;
 }
 
@@ -88,8 +82,7 @@ float TextStyle::getSpaceWidth() const {
     return 0;
   }
   return (*font)
-      ->getGlyph(' ', characterSize.value_or(30u),
-                 characterStyle.value_or(sf::Text::Regular) & sf::Text::Bold,
+      ->getGlyph(' ', characterSize.value_or(30u), characterStyle.value_or(sf::Text::Regular) & sf::Text::Bold,
                  outlineThickness.value_or(0.f))
       .advance;
 }

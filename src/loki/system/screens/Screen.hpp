@@ -20,8 +20,7 @@ class Screen {
   [[nodiscard]] bool isReady() const;
 
   virtual bool update(sf::Time delta) = 0;
-  virtual bool render(sf::RenderTarget& target,
-                      sf::RenderStates states) const = 0;
+  virtual bool render(sf::RenderTarget& target, sf::RenderStates states) const = 0;
 
  protected:
   // ScreenStack shortcuts
@@ -39,11 +38,9 @@ class Screen {
   template <typename... Args>
   void sendSignal(const std::string& signalName, Args&&... args);
 
-  void registerSignalHandler(const Signal::Trigger& trigger,
-                             std::function<bool()> fun);
+  void registerSignalHandler(const Signal::Trigger& trigger, std::function<bool()> fun);
   template <typename... Args>
-  void registerSignalHandler(const Signal::Trigger& trigger,
-                             std::function<bool(Args...)> fun);
+  void registerSignalHandler(const Signal::Trigger& trigger, std::function<bool(Args...)> fun);
   template <typename Fun>
   void registerSignalHandler(const Signal::Trigger& trigger, Fun fun);
   void removeSignalHandler(const Signal::Trigger& trigger);
@@ -51,8 +48,7 @@ class Screen {
 
  private:
   bool ready = false;
-  std::unordered_map<Signal::Trigger, std::function<bool(std::any&)>>
-      signalHandlers;
+  std::unordered_map<Signal::Trigger, std::function<bool(std::any&)>> signalHandlers;
 
   friend ScreenStack;
   bool handleSignal(Signal& signal);

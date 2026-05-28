@@ -9,7 +9,6 @@
 #include <loki/graphics/shapes/ShapeStyle.hpp>
 #include <loki/graphics/text/AnimatedText.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
-
 #include <loki/gui/interfaces/Widget.hpp>
 
 namespace loki::gui {

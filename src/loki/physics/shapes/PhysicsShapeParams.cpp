@@ -35,7 +35,7 @@ b2ShapeId CircleShapeParams::createShape(b2BodyId bodyId, const sf::Transformabl
   const auto shapeDef = toShapeDef();
   const auto totalTrs = trs.getTransform() * offset.getTransform();
   const float uniformScaling = getUniformScaling(totalTrs);
-  const b2Circle circleDef {
+  const b2Circle circleDef{
       .center = getCenter(totalTrs),
       .radius = uniformScaling * radius,
   };
@@ -46,10 +46,10 @@ b2ShapeId CapsuleShapeParams::createShape(b2BodyId bodyId, const sf::Transformab
   const auto shapeDef = toShapeDef();
   const auto totalTrs = trs.getTransform() * offset.getTransform();
   const float uniformScaling = getUniformScaling(totalTrs);
-  const b2Capsule segmentDef {
+  const b2Capsule segmentDef{
       .center1 = toB2Vec2(totalTrs.transformPoint(center1)),
       .center2 = toB2Vec2(totalTrs.transformPoint(center2)),
-    .radius = uniformScaling * radius,
+      .radius = uniformScaling * radius,
   };
   return b2CreateCapsuleShape(bodyId, &shapeDef, &segmentDef);
 }
@@ -57,7 +57,7 @@ b2ShapeId CapsuleShapeParams::createShape(b2BodyId bodyId, const sf::Transformab
 b2ShapeId SegmentShapeParams::createShape(b2BodyId bodyId, const sf::Transformable& trs) const {
   const auto shapeDef = toShapeDef();
   const auto totalTrs = trs.getTransform() * offset.getTransform();
-  const b2Segment segmentDef {
+  const b2Segment segmentDef{
       .point1 = toB2Vec2(totalTrs.transformPoint(point1)),
       .point2 = toB2Vec2(totalTrs.transformPoint(point2)),
   };
@@ -69,7 +69,8 @@ b2ShapeId PolygonShapeParams::createShape(b2BodyId bodyId, const sf::Transformab
   const auto totalTrs = trs.getTransform() * offset.getTransform();
   const float uniformScaling = getUniformScaling(totalTrs);
   std::vector<b2Vec2> pointsDef(points.size());
-  std::ranges::transform(points, pointsDef.begin(), [&totalTrs](const sf::Vector2f& point) { return toB2Vec2(totalTrs.transformPoint(point)); });
+  std::ranges::transform(points, pointsDef.begin(),
+                         [&totalTrs](const sf::Vector2f& point) { return toB2Vec2(totalTrs.transformPoint(point)); });
   const b2Hull hullDef = b2ComputeHull(pointsDef.data(), pointsDef.size());
   const b2Polygon polygonDef = b2MakePolygon(&hullDef, uniformScaling * radius);
   return b2CreatePolygonShape(bodyId, &shapeDef, &polygonDef);
@@ -81,16 +82,16 @@ b2ShapeId BoxShapeParams::createShape(b2BodyId bodyId, const sf::Transformable& 
   const float uniformScaling = getUniformScaling(totalTrs);
   const b2Vec2 center = getCenter(totalTrs);
   const b2Rot rotation = b2MakeRot((trs.getRotation() + offset.getRotation()).asRadians());
-  const b2Polygon polygonDef = b2MakeOffsetRoundedBox(uniformScaling * halfSize.x, uniformScaling * halfSize.y, center, rotation, uniformScaling * radius);
+  const b2Polygon polygonDef = b2MakeOffsetRoundedBox(uniformScaling * halfSize.x, uniformScaling * halfSize.y, center,
+                                                      rotation, uniformScaling * radius);
   return b2CreatePolygonShape(bodyId, &shapeDef, &polygonDef);
 }
 
 b2ShapeId ChainShapeParams::createShape(b2BodyId bodyId, const sf::Transformable& trs) const {
   const auto totalTrs = trs.getTransform() * offset.getTransform();
   std::vector<b2Vec2> pointsDef(points.size());
-  std::ranges::transform(points, pointsDef.begin(), [&totalTrs](const sf::Vector2f& point) {
-    return toB2Vec2(totalTrs.transformPoint(point));
-  });
+  std::ranges::transform(points, pointsDef.begin(),
+                         [&totalTrs](const sf::Vector2f& point) { return toB2Vec2(totalTrs.transformPoint(point)); });
   const b2SurfaceMaterial materialDef = material.toSurfaceMaterialDef();
   b2ChainDef chainDef = b2DefaultChainDef();
   chainDef.points = pointsDef.data();
@@ -100,7 +101,7 @@ b2ShapeId ChainShapeParams::createShape(b2BodyId bodyId, const sf::Transformable
   chainDef.filter = filter.toFilterDef();
   chainDef.isLoop = isLoop;
   chainDef.enableSensorEvents = enableSensorEvents;
-  static_assert(requires { B2_ID_EQUALS(b2ShapeId{}, b2ChainId{}); }); // size check is done in bitcast
+  static_assert(requires { B2_ID_EQUALS(b2ShapeId{}, b2ChainId{}); });  // size check is done in bitcast
   return std::bit_cast<b2ShapeId>(b2CreateChain(bodyId, &chainDef));
 }
 

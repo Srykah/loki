@@ -5,8 +5,7 @@
 
 namespace loki::graphics {
 
-Capsule::Capsule(sf::Vector2f size, std::size_t borderPointCount)
-    : size(size), borderPointCount(borderPointCount) {
+Capsule::Capsule(sf::Vector2f size, std::size_t borderPointCount) : size(size), borderPointCount(borderPointCount) {
   update();
 }
 

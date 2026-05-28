@@ -3,6 +3,7 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <box2d/box2d.h>
+
 #include <loki/physics/bodies/PhysicsBodyParams.hpp>
 #include <loki/physics/shapes/PhysicsShape.hpp>
 
@@ -13,7 +14,7 @@ class PhysicsBody {
  private:
   friend PhysicsWorld;
   explicit PhysicsBody(const PhysicsBodyParams& bodyParams, PhysicsWorld* parentWorld);
-  
+
   // call before world destruction to avoid individual body and shapes destruction
   void clear();
 
@@ -24,7 +25,7 @@ class PhysicsBody {
   PhysicsBody(PhysicsBody&& _other) noexcept;
   PhysicsBody& operator=(PhysicsBody&& _other) noexcept;
   ~PhysicsBody();
-  
+
   void destroy();
 
   PhysicsShape& createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs = {});

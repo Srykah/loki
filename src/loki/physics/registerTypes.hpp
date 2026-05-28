@@ -5,4 +5,4 @@
 
 namespace loki::physics {
 void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry);
-}  // namespace loki::system
+}  // namespace loki::physics

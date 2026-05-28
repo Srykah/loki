@@ -51,10 +51,8 @@ void Window::updateViewport() {
         sf::Vector2f{renderingArea.position} + 0.5f * (sf::Vector2f{renderingArea.size} - scaledInternalResolution);
     scaledRenderingArea = sf::FloatRect{scaledRenderingAreaPos, scaledInternalResolution};
   }
-  sf::FloatRect viewport{
-      core::compDiv(scaledRenderingArea.position, window.getSize()),
-      core::compDiv(scaledRenderingArea.size, window.getSize())
-  };
+  sf::FloatRect viewport{core::compDiv(scaledRenderingArea.position, window.getSize()),
+                         core::compDiv(scaledRenderingArea.size, window.getSize())};
   sf::View view = window.getDefaultView();
   view.setViewport(viewport);
   window.setView(view);
@@ -62,7 +60,7 @@ void Window::updateViewport() {
 
 std::optional<sf::Event> Window::pollEvent() {
   auto res = window.pollEvent();
-  
+
   if (auto* resized = res ? res->getIf<sf::Event::Resized>() : nullptr) {
     guardMinimumSize();
     auto resizedCopy = *resized;

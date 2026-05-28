@@ -2,13 +2,11 @@
 
 namespace loki::graphics {
 
-ObjectLayerView::ObjectLayerView(const ObjectLayerData& data)
-    : layerData(data) {
+ObjectLayerView::ObjectLayerView(const ObjectLayerData& data) : layerData(data) {
   initObjects();
 }
 
-void ObjectLayerView::draw(sf::RenderTarget& target,
-                           sf::RenderStates states) const {
+void ObjectLayerView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   states.transform *= getTransform();
   for (const auto& object : objects) {
     target.draw(*object, states);

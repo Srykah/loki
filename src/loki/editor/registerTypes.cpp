@@ -13,4 +13,4 @@ void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::C
   runtimeObjectRegistry.registerClass<ImGuiModule>();
 }
 
-}  // namespace loki::app
+}  // namespace loki::editor

@@ -5,4 +5,4 @@
 
 namespace loki::editor {
 void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry);
-}  // namespace loki::tiles
+}  // namespace loki::editor

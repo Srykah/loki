@@ -19,8 +19,7 @@ class StateMachine {
  public:
   explicit StateMachine(std::size_t size = 0);
   template <class Enum, enable_if_enum<Enum> = true>
-  explicit StateMachine(Enum count)
-      : StateMachine(static_cast<StateIndex>(count)) {}
+  explicit StateMachine(Enum count) : StateMachine(static_cast<StateIndex>(count)) {}
 
   void addState(StateIndex index, State state);
   template <class Enum, enable_if_enum<Enum> = true>
@@ -42,9 +41,7 @@ class StateMachine {
   void update(sf::Time delta);
 
  private:
-  void setCurrentStateWithTrigger(
-      StateIndex to,
-      const std::function<void()>& onTrigger = nullptr);
+  void setCurrentStateWithTrigger(StateIndex to, const std::function<void()>& onTrigger = nullptr);
   void checkTransitions();
 
  private:

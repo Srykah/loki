@@ -1,7 +1,7 @@
 #pragma once
 
-#include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <box2d/box2d.h>
 
 namespace loki::physics {

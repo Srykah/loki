@@ -1,8 +1,9 @@
 #pragma once
 
 #include <box2d/box2d.h>
-#include <loki/core/reflection/classMacros.hpp>
+
 #include <loki/core/reflection/basicTypesInfo.hpp>
+#include <loki/core/reflection/classMacros.hpp>
 
 namespace loki::physics {
 

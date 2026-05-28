@@ -137,8 +137,8 @@ void toYaml(ryml::NodeRef destNode, const void* obj, const ClassInfo& classInfo)
     toYaml(destNode, tmpObj.obj, field.type);
   } else {
     const bool asFlow = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
-                    return attr->getType() == ClassAttribute::Type::SerializeAsFlow;
-                  }) != classInfo.attributes.end();
+                          return attr->getType() == ClassAttribute::Type::SerializeAsFlow;
+                        }) != classInfo.attributes.end();
     if (asFlow) {
       destNode |= ryml::FLOW_SL;
     }

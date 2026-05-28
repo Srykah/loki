@@ -17,23 +17,15 @@ class Matrix {
   explicit Matrix(std::size_t width, std::size_t height);
   explicit Matrix(std::size_t width, std::size_t height, const T& defaultValue);
 
-  template <
-      typename Iterator,
-      std::enable_if_t<std::is_lvalue_reference_v<
-                           typename std::iterator_traits<Iterator>::reference>,
-                       int> = 0>
+  template <typename Iterator,
+            std::enable_if_t<std::is_lvalue_reference_v<typename std::iterator_traits<Iterator>::reference>, int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  template <
-      typename Iterator,
-      std::enable_if_t<std::is_rvalue_reference_v<
-                           typename std::iterator_traits<Iterator>::reference>,
-                       int> = 0>
+  template <typename Iterator,
+            std::enable_if_t<std::is_rvalue_reference_v<typename std::iterator_traits<Iterator>::reference>, int> = 0>
   explicit Matrix(std::size_t width, std::size_t height, Iterator iterator);
 
-  explicit Matrix(std::size_t width,
-                  std::size_t height,
-                  const std::function<T()>& gen);
+  explicit Matrix(std::size_t width, std::size_t height, const std::function<T()>& gen);
 
   T& operator[](std::pair<std::size_t, std::size_t> coords);
   const T& operator[](std::pair<std::size_t, std::size_t> coords) const;

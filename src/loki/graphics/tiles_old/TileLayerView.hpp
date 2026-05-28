@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 
 #include <loki/core/utils/Matrix.hpp>
-
 #include <loki/graphics/tiles/LayerData.hpp>
 #include <loki/graphics/tiles/TilesetData.hpp>
 
@@ -17,8 +16,7 @@ class TileLayerView : public sf::Drawable, public sf::Transformable {
   };
 
  public:
-  explicit TileLayerView(const TileLayerData& layerData,
-                         const TilesetData& tilesetData);
+  explicit TileLayerView(const TileLayerData& layerData, const TilesetData& tilesetData);
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
   void update(const sf::Time& delta);
