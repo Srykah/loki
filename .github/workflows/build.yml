@@ -23,6 +23,7 @@ jobs:
     env:
       matrix-key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
       ccache-variant: ${{ (startsWith(matrix.platform.os, 'windows') && 'sccache') || 'ccache' }}
+      winlibs-dir: D:/winlibs # optim: D drive is faster than C drive
 
     strategy:
       fail-fast: false
@@ -59,7 +60,7 @@ jobs:
         uses: Srykah/ccache-action@v1.2.24  # wait for upstream to integrate the fixes for the append-timestamp input
         with:
           verbose: 2
-          key: ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          key: ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.sha }}
           restore-keys: |
             ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
             ccache-${{ env.matrix-key }}-
@@ -80,7 +81,7 @@ jobs:
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         uses: actions/cache/restore@v5.0.5
         with:
-          path: ~/AppData/Local/mingw64
+          path: ${{ env.winlibs-dir }}
           key: winlibs-gcc-${{ env.matrix-key }}
 
       - name: Install WinLibs GCC
@@ -91,13 +92,13 @@ jobs:
           runtime: ucrt
           threads: posix
           with_clang: false
-          add_to_path: true
+          destination: ${{ env.winlibs-dir }}
 
       - name: Use WinLibs GCC
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         run: |
-          echo "CC=$LOCALAPPDATA/mingw64/bin/${{ matrix.platform.compiler.c-exe }}.exe" >> $GITHUB_ENV
-          echo "CXX=$LOCALAPPDATA/mingw64/bin/${{ matrix.platform.compiler.cpp-exe }}.exe" >> $GITHUB_ENV
+          echo "CC=${{ env.winlibs-dir }}/mingw64/bin/${{ matrix.platform.compiler.c-exe }}.exe" >> $GITHUB_ENV
+          echo "CXX=${{ env.winlibs-dir }}/mingw64/bin/${{ matrix.platform.compiler.cpp-exe }}.exe" >> $GITHUB_ENV
 
       - name: Install and use LLVM Clang on Windows
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
@@ -148,7 +149,7 @@ jobs:
         uses: actions/cache@v5.0.5
         with:
           path: build-${{ env.matrix-key }}
-          key: build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          key: build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.sha }}
           restore-keys: |
             build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
             build-${{ env.matrix-key }}-
@@ -164,7 +165,7 @@ jobs:
         if: always() && startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
         uses: actions/cache/save@v5.0.5
         with:
-          path: ~/AppData/Local/mingw64
+          path: ${{ env.winlibs-dir }}
           key: ${{ steps.winlibs-gcc-cache-restore.outputs.cache-primary-key }}
 
       - name: Save conda cache

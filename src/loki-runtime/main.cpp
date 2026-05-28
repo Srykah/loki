@@ -1,4 +1,4 @@
-#include <format> // todo link with -lstdc++exp to allow println instead
+#include <format>  // todo link with -lstdc++exp to allow println instead
 
 #include "Application.hpp"
 
