@@ -59,7 +59,10 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2.23
         with:
           verbose: 2
-          key: ${{ env.matrix-key }}-ccache # shared between all PRs
+          key: ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          restore-keys: |
+            ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
+            ccache-${{ env.matrix-key }}-
           variant: ${{ env.ccache-variant }}
           create-symlink: true
           append-timestamp: false
@@ -78,7 +81,7 @@ jobs:
         uses: actions/cache@v5.0.5
         with:
           path: ~/AppData/Local/mingw64
-          key: ${{ env.matrix-key }}-winlibs-gcc
+          key: winlibs-gcc-${{ env.matrix-key }}
 
       - name: Install WinLibs GCC
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache.outputs.cache-hit
@@ -108,7 +111,7 @@ jobs:
         uses: actions/cache@v5.0.5
         with:
           path: ~/conda_pkgs_dir
-          key: ${{ env.matrix-key }}-conda
+          key: conda-${{ env.matrix-key }}
 
       - name: Setup miniconda on Linux
         if: startsWith(matrix.platform.os, 'ubuntu')
@@ -144,7 +147,10 @@ jobs:
         uses: actions/cache@v5.0.5
         with:
           path: build-${{ env.matrix-key }}
-          key: ${{ env.matrix-key }}-cmake-build-PR#${{ github.event.pull_request.number }}
+          key: build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          restore-keys: |
+            build-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
+            build-${{ env.matrix-key }}-
 
       - name: Configure CMake
         run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_CXX_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
