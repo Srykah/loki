@@ -62,6 +62,7 @@ jobs:
           key: ${{ env.matrix-key }}-ccache # shared between all PRs
           variant: ${{ env.ccache-variant }}
           create-symlink: true
+          append-timestamp: false
 
       # Compilers
       - name: Set up MSVC toolchain
