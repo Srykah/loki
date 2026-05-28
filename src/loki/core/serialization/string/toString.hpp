@@ -13,4 +13,4 @@ void toString(std::string& str, const T& obj) {
   toString(str, static_cast<const void*>(&obj), getTypeInfo<T>());
 }
 
-}
+}  // namespace loki::core
