@@ -22,9 +22,9 @@ jobs:
 
     env:
       matrix-key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
-    #  # Use ccache to cache C/C++ compiler output
-    #  CMAKE_C_COMPILER_LAUNCHER: ccache
-    #  CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      # Use ccache to cache C/C++ compiler output
+      CMAKE_C_COMPILER_LAUNCHER: ccache
+      CMAKE_CXX_COMPILER_LAUNCHER: ccache
 
     strategy:
       fail-fast: false
@@ -55,13 +55,15 @@ jobs:
           cmakeVersion: '4.3.3'
           ninjaVersion: latest
 
-      #- name: Setup CCache
-      #  # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
-      #  # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
-      #  uses: hendrikmuhs/ccache-action@v1.2.19
-      #  with:
-      #    verbose: 2
-      #    key: ${{ env.matrix-key }}-ccache
+      - name: Setup CCache
+        # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
+        # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
+        uses: hendrikmuhs/ccache-action@v1.2.23
+        with:
+          verbose: 2
+          key: ${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-ccache
+          variant: ${{ (startsWith(matrix.platform.os, 'windows') && 'sccache') || 'ccache' }}
+          create-symlink: true
 
       # Compilers
       - name: Set up MSVC toolchain
@@ -95,12 +97,12 @@ jobs:
           version: ${{ matrix.platform.compiler.version }}
           env: true
 
-      # - name: Cache conda setup
-      #   if: matrix.platform.os == 'ubuntu-24.04'
-      #   uses: actions/cache@v4.3.0
-      #   with:
-      #     path: ~/conda_pkgs_dir
-      #     key: ${{ env.matrix-key }}-conda
+      - name: Cache conda setup
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        uses: actions/cache@v5.0.5
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ env.matrix-key }}-conda
 
       - name: Setup miniconda on Linux
         if: startsWith(matrix.platform.os, 'ubuntu')
@@ -113,7 +115,7 @@ jobs:
           conda-remove-defaults: true
           channel-priority: strict
           auto-update-conda: true
-          # use-only-tar-bz2: true # needed for cache
+          use-only-tar-bz2: true # needed for cache
           architecture: x64
 
       - name: Install and use compiler on Linux
