@@ -75,16 +75,16 @@ jobs:
           arch: x64
           toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
-      - name: Cache WinLibs GCC setup
-        id: winlibs-gcc-cache
+      - name: Restore WinLibs GCC cache
+        id: winlibs-gcc-cache-restore
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
-        uses: actions/cache@v5.0.5
+        uses: actions/cache/restore@v5.0.5
         with:
           path: ~/AppData/Local/mingw64
           key: winlibs-gcc-${{ env.matrix-key }}
 
       - name: Install WinLibs GCC
-        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache.outputs.cache-hit
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
           architecture: '64'
@@ -96,8 +96,8 @@ jobs:
       - name: Use WinLibs GCC
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         run: |
-          echo "CC=~/AppData/Local/mingw64/gcc" >> $GITHUB_ENV
-          echo "CXX=~/AppData/Local/mingw64/g++" >> $GITHUB_ENV
+          echo "CC=$LOCALAPPDATA/mingw64/gcc" >> $GITHUB_ENV
+          echo "CXX=$LOCALAPPDATA/mingw64/g++" >> $GITHUB_ENV
 
       - name: Install and use LLVM Clang on Windows
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
@@ -106,9 +106,10 @@ jobs:
           version: ${{ matrix.platform.compiler.version }}
           env: true
 
-      - name: Cache conda setup
+      - name: Restore conda cache
+        id: conda-cache-restore
         if: startsWith(matrix.platform.os, 'ubuntu')
-        uses: actions/cache@v5.0.5
+        uses: actions/cache/restore@v5.0.5
         with:
           path: ~/conda_pkgs_dir
           key: conda-${{ env.matrix-key }}
@@ -157,3 +158,18 @@ jobs:
 
       - name: Build
         run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
+
+      # Save build tools caches (even if the build itself fails)
+      - name: Save WinLibs GCC cache
+        if: always() && startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: ~/AppData/Local/mingw64
+          key: ${{ steps.winlibs-gcc-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save conda cache
+        if: always() && startsWith(matrix.platform.os, 'ubuntu') && !steps.conda-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ steps.conda-cache-restore.outputs.cache-primary-key }}
