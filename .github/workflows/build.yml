@@ -38,8 +38,8 @@ jobs:
           #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++ }
           - os: windows-2025
             compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++ }
-          - os: ubuntu-24.04
-            compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
+          #- os: ubuntu-24.04
+          #  compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
           #- os: ubuntu-24.04
           #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
 
@@ -64,12 +64,12 @@ jobs:
       #    key: ${{ env.matrix-key }}-ccache
 
       # Compilers
-      #- name: Set up MSVC toolchain
-      #  if: matrix.platform.compiler.msvc-toolset
-      #  uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
-      #  with:
-      #    arch: x64
-      #    toolset: ${{ matrix.platform.compiler.msvc-toolset }}
+      - name: Set up MSVC toolchain
+        if: matrix.platform.compiler.msvc-toolset
+        uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
+        with:
+          arch: x64
+          toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
       - name: Install WinLibs GCC
         id: winlibs-gcc
