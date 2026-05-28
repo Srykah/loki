@@ -2,8 +2,7 @@
 
 namespace loki::graphics {
 
-AnimatedTextStyle& AnimatedTextStyle::overrideWith(
-    const AnimatedTextStyle& other) {
+AnimatedTextStyle& AnimatedTextStyle::overrideWith(const AnimatedTextStyle& other) {
   TextStyle::overrideWith(other);
   if (other.appear.has_value()) {
     appear.emplace(*other.appear);
@@ -17,8 +16,7 @@ AnimatedTextStyle& AnimatedTextStyle::overrideWith(
   return *this;
 }
 
-AnimatedTextStyle AnimatedTextStyle::cloneAndOverrideWith(
-    const AnimatedTextStyle& other) const {
+AnimatedTextStyle AnimatedTextStyle::cloneAndOverrideWith(const AnimatedTextStyle& other) const {
   return AnimatedTextStyle(*this).overrideWith(other);
 }
 

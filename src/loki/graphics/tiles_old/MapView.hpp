@@ -4,9 +4,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <loki/graphics/tiles/MapData.hpp>
+
 #include "ObjectLayerView.hpp"
 #include "TileLayerView.hpp"
-#include <loki/graphics/tiles/MapData.hpp>
 
 namespace loki::graphics {
 
@@ -23,12 +24,8 @@ class MapView : public sf::Transformable {
   void update(sf::Time delta);
 
   const std::vector<LayerView>& getLayers() const { return layers; }
-  const LayerView& getLayer(std::size_t index) const {
-    return layers.at(index);
-  }
-  void drawLayer(std::size_t index,
-                 sf::RenderTarget& target,
-                 sf::RenderStates states = {}) const;
+  const LayerView& getLayer(std::size_t index) const { return layers.at(index); }
+  void drawLayer(std::size_t index, sf::RenderTarget& target, sf::RenderStates states = {}) const;
 
   const sf::RectangleShape& getBackground() const { return background; }
 

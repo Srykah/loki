@@ -116,4 +116,4 @@ struct ConstTmpObj {
     return ConstTmpObj{ptr, [](const void* obj) { delete static_cast<const T*>(obj); }, TmpObj::Ownership::Owned};
   }
 };
-}
+}  // namespace loki::core

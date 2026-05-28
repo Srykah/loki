@@ -23,9 +23,14 @@ struct TileAttribute : public core::BaseObject {
   LOKI_RTTI_CLASS_DECLARE(TileAttribute)
 };
 
+struct TileData {
+  std::string name;
+  std::vector<std::unique_ptr<TileAttribute>> attributes;
+};
+
 struct TileSetData {
   std::vector<std::unique_ptr<TileSetAttribute>> tileSetAttributes;
-  std::vector<std::vector<std::unique_ptr<TileAttribute>>> tilesAttributes;
+  std::vector<TileData> tilesData;
 
   template <class T>
   const T* getTileSetAttribute() const {
@@ -37,14 +42,21 @@ struct TileSetData {
     return nullptr;
   }
 
+  std::string_view getTileName(std::size_t tileIndex) const {
+    if (tileIndex >= tilesData.size())
+      return {};
+    return tilesData.at(tileIndex).name;
+  }
+
   template <class T>
   const T* getTileAttribute(std::size_t tileIndex) const {
-    if (tileIndex >= tilesAttributes.size())
+    if (tileIndex >= tilesData.size())
       return nullptr;
     const auto& classId = std::get<core::ClassInfo>(core::getTypeInfo<T>().info).id;
-    for (const auto& tileSetAttr : tilesAttributes.at(tileIndex)) {
-      if (std::get<core::ClassInfo>(tileSetAttr->getClassTypeInfo().info).id == classId)
+    for (const auto& tileSetAttr : tilesData.at(tileIndex).attributes) {
+      if (std::get<core::ClassInfo>(tileSetAttr->getClassTypeInfo().info).id == classId) {
         return static_cast<const T*>(tileSetAttr.get());
+      }
     }
     return nullptr;
   }
@@ -56,8 +68,8 @@ struct TileSetDataResource : public system::LogicResource<TileSetData> {
     for (auto& tileSetAttr : tileSetAttributes) {
       tileSetAttr->addChildResourcesToHolder(resourceHolder, *this);
     }
-    for (auto& tileAttrList : tilesAttributes) {
-      for (auto& tileAttr : tileAttrList) {
+    for (auto& tileData : tilesData) {
+      for (auto& tileAttr : tileData.attributes) {
         tileAttr->addChildResourcesToHolder(resourceHolder, *this);
       }
     }
@@ -80,9 +92,14 @@ LOKI_REFLECTION_CLASS_BEGIN_RTTI(loki::tiles::TileAttribute)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::tiles::TileAttribute)
 
+LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileData)
+LOKI_REFLECTION_CLASS_FIELD(name)
+LOKI_REFLECTION_CLASS_FIELD(attributes)
+LOKI_REFLECTION_CLASS_END()
+
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileSetData)
 LOKI_REFLECTION_CLASS_FIELD(tileSetAttributes)
-LOKI_REFLECTION_CLASS_FIELD(tilesAttributes)
+LOKI_REFLECTION_CLASS_FIELD(tilesData)
 LOKI_REFLECTION_CLASS_END()
 
 LOKI_REFLECTION_CLASS_BEGIN(loki::tiles::TileSetDataResource)

@@ -25,54 +25,53 @@ AnimatedGlyph::AnimatedGlyph(sf::VertexArray& va,
 }
 
 void AnimatedGlyph::initAnim() {
-  auto xCenter = glyph.bounds.left + 0.5f * glyph.bounds.width;
-  auto yCenter = glyph.bounds.top + 0.5f * glyph.bounds.height;
-  setOrigin(xCenter, yCenter);
-  setPosition(x + xCenter, yCenter);
-  setRotation(0.f);
-  setScale(1.f, 1.f);
+  const auto glyphCenter = glyph.bounds.getCenter();
+  setOrigin(glyphCenter);
+  setPosition({x + glyphCenter.x, glyphCenter.y});
+  setRotation(sf::Angle::Zero);
+  setScale({1.f, 1.f});
   setColor(style.fillColor.value_or(sf::Color::White));
 }
 
 void AnimatedGlyph::updateVertices() {
-  float padding = 1.0;
-  float shear = (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic) ? 0.209f : 0.f;
+  constexpr float padding = 1.f;
+  const float shear = (style.characterStyle.value_or(sf::Text::Regular) & sf::Text::Italic) ? 0.209f : 0.f;
 
-  float left = glyph.bounds.left - padding;
-  float top = glyph.bounds.top - padding;
-  float right = glyph.bounds.left + glyph.bounds.width + padding;
-  float bottom = glyph.bounds.top + glyph.bounds.height + padding;
+  const float left = glyph.bounds.position.x - padding;
+  const float top = glyph.bounds.position.y - padding;
+  const float right = glyph.bounds.position.x + glyph.bounds.size.x + padding;
+  const float bottom = glyph.bounds.position.y + glyph.bounds.size.y + padding;
 
   /*    0 - 1,4
    *    | / |
    *  2,3 - 5
    */
-  va[index * 6 + 0].position = getTransform().transformPoint(sf::Vector2f(left - shear * top, top));
-  va[index * 6 + 1].position = getTransform().transformPoint(sf::Vector2f(right - shear * top, top));
-  va[index * 6 + 2].position = getTransform().transformPoint(sf::Vector2f(left - shear * bottom, bottom));
+  va[index * 6 + 0].position = getTransform().transformPoint({left - shear * top, top});
+  va[index * 6 + 1].position = getTransform().transformPoint({right - shear * top, top});
+  va[index * 6 + 2].position = getTransform().transformPoint({left - shear * bottom, bottom});
   va[index * 6 + 3].position = va[index * 6 + 2].position;
   va[index * 6 + 4].position = va[index * 6 + 1].position;
-  va[index * 6 + 5].position = getTransform().transformPoint(sf::Vector2f(right - shear * bottom, bottom));
+  va[index * 6 + 5].position = getTransform().transformPoint({right - shear * bottom, bottom});
 }
 
 void AnimatedGlyph::initTexRect() {
-  float padding = 1.0;
+  constexpr float padding = 1.f;
 
-  float u1 = static_cast<float>(glyph.textureRect.left) - padding;
-  float v1 = static_cast<float>(glyph.textureRect.top) - padding;
-  float u2 = static_cast<float>(glyph.textureRect.left + glyph.textureRect.width) + padding;
-  float v2 = static_cast<float>(glyph.textureRect.top + glyph.textureRect.height) + padding;
+  const float u1 = static_cast<float>(glyph.textureRect.position.x) - padding;
+  const float v1 = static_cast<float>(glyph.textureRect.position.y) - padding;
+  const float u2 = static_cast<float>(glyph.textureRect.position.x + glyph.textureRect.size.x) + padding;
+  const float v2 = static_cast<float>(glyph.textureRect.position.y + glyph.textureRect.size.y) + padding;
 
   /*    0 - 1,4
    *    | / |
    *  2,3 - 5
    */
-  va[index * 6 + 0].texCoords = sf::Vector2f(u1, v1);
-  va[index * 6 + 1].texCoords = sf::Vector2f(u2, v1);
-  va[index * 6 + 2].texCoords = sf::Vector2f(u1, v2);
-  va[index * 6 + 3].texCoords = sf::Vector2f(u1, v2);
-  va[index * 6 + 4].texCoords = sf::Vector2f(u2, v1);
-  va[index * 6 + 5].texCoords = sf::Vector2f(u2, v2);
+  va[index * 6 + 0].texCoords = {u1, v1};
+  va[index * 6 + 1].texCoords = {u2, v1};
+  va[index * 6 + 2].texCoords = {u1, v2};
+  va[index * 6 + 3].texCoords = {u1, v2};
+  va[index * 6 + 4].texCoords = {u2, v1};
+  va[index * 6 + 5].texCoords = {u2, v2};
 }
 
 void AnimatedGlyph::setTime(sf::Time time) {

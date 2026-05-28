@@ -12,8 +12,7 @@ struct AnimatedTextStyle : public graphics::TextStyle {
   sf::Time dt;
 
   AnimatedTextStyle& overrideWith(const AnimatedTextStyle& other);
-  [[nodiscard]] AnimatedTextStyle cloneAndOverrideWith(
-      const AnimatedTextStyle& other) const;
+  [[nodiscard]] AnimatedTextStyle cloneAndOverrideWith(const AnimatedTextStyle& other) const;
 
   static AnimatedTextStyle fromDefaults();
 };

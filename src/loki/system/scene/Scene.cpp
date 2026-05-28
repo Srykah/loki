@@ -3,11 +3,8 @@
 #include <fstream>
 #include <ranges>
 
-#include <box/BoundingBoxComponent.hpp>
-#include <yaml-cpp/emitter.h>
-#include <yaml-cpp/node/impl.h>
-
 #include <loki/core/services/ServiceRegistry.hpp>
+#include <loki/system/box/BoundingBoxComponent.hpp>
 #include <loki/system/ecs/ActorHierarchy.hpp>
 #include <loki/system/ecs/Component.hpp>
 #include <loki/system/ecs/ComponentRegistry.hpp>
@@ -83,25 +80,27 @@ void Scene::setPath(const std::filesystem::path& _path) {
   path = _path;
 }
 
-void Scene::loadFromYaml(const YAML::Node& sceneNode) {
-  if (YAML::Node nameNode = sceneNode["name"]; nameNode && nameNode.Type() == YAML::NodeType::Scalar)
-    name = nameNode.as<std::string>();
-  if (YAML::Node rootNode = sceneNode["root"]; rootNode && rootNode.Type() == YAML::NodeType::Map) {
+void Scene::loadFromYaml(const ryml::ConstNodeRef& sceneNode) {
+  if (ryml::ConstNodeRef nameNode = sceneNode.find_child("name"); !nameNode.invalid() && nameNode.type().is_val()) {
+    nameNode >> name;
+  }
+  if (ryml::ConstNodeRef rootNode = sceneNode.find_child("root"); !rootNode.invalid() && rootNode.type().is_map()) {
     root = instanciateActor();
     root.loadFromYaml(*this, rootNode);
   }
 }
 
 void Scene::saveToYaml() {
-  YAML::Emitter emitter;
-  emitter << YAML::BeginMap;
-  emitter << YAML::Key << "name" << YAML::Value << name;
-  emitter << YAML::Key << "root" << YAML::Value << root;
-  emitter << YAML::EndMap;
+  ryml::Tree tree;
+  ryml::NodeRef treeNode = tree.rootref();
+  treeNode |= ryml::MAP;
+  treeNode.append_child() << ryml::key("name") << name;
+  auto rootNode = treeNode.append_child();
+  rootNode << ryml::key("root");
+  root.saveToYaml(rootNode);
 
   std::ofstream file{path};
-  file << emitter.c_str();
-  file.flush();
+  file << treeNode;
 }
 
 }  // namespace loki::system

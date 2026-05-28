@@ -1,30 +1,35 @@
 #pragma once
 
-#include <box2d/b2_fixture.h>
+#include <box2d/box2d.h>
 
-#include <loki/physics/shapes/ChainShape.hpp>
-#include <loki/physics/shapes/CircleShape.hpp>
-#include <loki/physics/shapes/EdgeShape.hpp>
+#include <loki/physics/shapes/PhysicsShapeParams.hpp>
 #include <loki/physics/shapes/PhysicsShapeType.hpp>
-#include <loki/physics/shapes/PolygonShape.hpp>
 
 namespace loki::physics {
 class PhysicsBody;
 
-// encapsulates both a fixture and its shape
 class PhysicsShape {
+ private:
+  friend PhysicsBody;
+  explicit PhysicsShape(PhysicsBody* parentBody, const PhysicsShapeParams& shapeParams, const sf::Transformable& trs);
+
+  void clear();  // call before body destruction to avoid individual shape destruction and mass update
+
  public:
-  explicit PhysicsShape(b2Fixture* fixture, PhysicsBody* parentBody);
+  PhysicsShape(const PhysicsShape&) = delete;
+  PhysicsShape& operator=(const PhysicsShape&) = delete;
+  PhysicsShape(PhysicsShape&& _other) noexcept;
+  PhysicsShape& operator=(PhysicsShape&& _other) noexcept;
+  ~PhysicsShape();
+
+  void destroy(bool updateBodyMass);
 
   [[nodiscard]] PhysicsShapeType getShapeType() const;
-  [[nodiscard]] CircleShape getAsCircleShape();
-  [[nodiscard]] EdgeShape getAsEdgeShape();
-  [[nodiscard]] PolygonShape getAsPolygonShape();
-  [[nodiscard]] ChainShape getAsChainShape();
 
  private:
-  PhysicsBody* parentBody;
-  b2Fixture* fixture;
+  PhysicsBody* parentBody = nullptr;
+  b2ShapeId shapeId = b2_nullShapeId;
+  bool isChain = false;
 };
 
 }  // namespace loki::physics

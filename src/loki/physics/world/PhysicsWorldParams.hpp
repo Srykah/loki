@@ -9,8 +9,7 @@ namespace loki::physics {
 struct PhysicsWorldParams {
   sf::Vector2f gravity;
   float pixelsToMetersRatio = 10.f;
-  int velocityIterationCount = 8;
-  int positionIterationCount = 3;
+  int subStepCount = 4;
 
   LOKI_REFLECTION_CLASS_DECLARE(PhysicsWorldParams)
 };
@@ -20,6 +19,5 @@ struct PhysicsWorldParams {
 LOKI_REFLECTION_CLASS_BEGIN(loki::physics::PhysicsWorldParams)
 LOKI_REFLECTION_CLASS_FIELD(gravity)
 LOKI_REFLECTION_CLASS_FIELD(pixelsToMetersRatio)
-LOKI_REFLECTION_CLASS_FIELD(velocityIterationCount)
-LOKI_REFLECTION_CLASS_FIELD(positionIterationCount)
+LOKI_REFLECTION_CLASS_FIELD(subStepCount)
 LOKI_REFLECTION_CLASS_END()

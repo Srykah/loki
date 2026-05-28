@@ -17,8 +17,7 @@ class ObjectLayerView : public sf::Drawable, public sf::Transformable {
   ObjectLayerView(ObjectLayerView&) = delete;
   ObjectLayerView(ObjectLayerView&&) = default;
 
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
   void update(const sf::Time& delta) {}
 
  private:

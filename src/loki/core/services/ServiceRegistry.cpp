@@ -4,19 +4,22 @@
 
 namespace loki::core {
 
-const ServiceRegistry* ServiceRegistry::s_instance = nullptr;
-
 ServiceRegistry::ServiceRegistry() {
-  assert(!s_instance);
-  s_instance = this;
+  assert(!getInstancePtr());
+  getInstancePtr() = this;
 }
 
 void ServiceRegistry::setInstance(const ServiceRegistry* instance) {
-  s_instance = instance;
+  getInstancePtr() = instance;
 }
 
 const ServiceRegistry& ServiceRegistry::getInstance() {
-  return *s_instance;
+  return *getInstancePtr();
+}
+
+const ServiceRegistry*& ServiceRegistry::getInstancePtr() {
+  static const ServiceRegistry* s_instance = nullptr;
+  return s_instance;
 }
 
 }  // namespace loki::core

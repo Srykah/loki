@@ -40,7 +40,7 @@ class MouseButtonTrigger : public InputTrigger {
   InputTriggerStatus getStatus(InputMethod inputMethod) const override;
 
  private:
-  sf::Mouse::Button button = sf::Mouse::ButtonCount;
+  sf::Mouse::Button button = static_cast<sf::Mouse::Button>(-1);
 
   LOKI_RTTI_CLASS_DECLARE(MouseButtonTrigger)
 };
@@ -50,7 +50,7 @@ class JoystickAxisTrigger : public InputTrigger {
   InputTriggerStatus getStatus(InputMethod inputMethod) const override;
 
  private:
-  sf::Joystick::Axis axis = sf::Joystick::X;
+  sf::Joystick::Axis axis = sf::Joystick::Axis::X;
   JoystickAxisDirection direction = JoystickAxisDirection::BOTH;
 
   LOKI_RTTI_CLASS_DECLARE(JoystickAxisTrigger)

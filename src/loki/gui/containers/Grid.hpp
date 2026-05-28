@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+#include <SFML/Graphics/RenderStates.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
@@ -20,8 +21,7 @@ class Grid : public Widget {
 
   void update(sf::Time delta) override;
 
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = {}) const override {}
+  void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override {}
 
  protected:
   void hideImpl() override {}

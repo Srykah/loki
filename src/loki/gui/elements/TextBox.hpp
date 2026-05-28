@@ -7,8 +7,7 @@ namespace loki::gui {
 
 class TextBox : public Widget {
  public:
-  TextBox(const loki::system::InputModule& eventHandler,
-          std::string nextInputName);
+  TextBox(const loki::system::InputModule& eventHandler, std::string nextInputName);
 
   void setNextInputName(std::string nextInputName);
   [[nodiscard]] const std::string& getNextInputName() const;
@@ -16,8 +15,7 @@ class TextBox : public Widget {
   void setAnnotatedString(const std::string& annotatedString);
 
   void update(sf::Time delta) override;
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = {}) const override {}
+  void draw(sf::RenderTarget& target, sf::RenderStates states = {}) const override {}
 
  private:
   const loki::system::InputModule& eventHandler;

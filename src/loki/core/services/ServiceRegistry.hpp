@@ -22,7 +22,7 @@ class ServiceRegistry {
   static const ServiceRegistry& getInstance();
 
  private:
-  static const ServiceRegistry* s_instance;
+  static const ServiceRegistry*& getInstancePtr();
 
   std::unordered_map<ClassId, BaseObject*> services;
 };

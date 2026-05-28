@@ -32,17 +32,14 @@ void StateMachine::update(sf::Time delta) {
 
 void StateMachine::checkTransitions() {
   for (auto& transition : transitions) {
-    if ((transition.from == ANY || transition.from == curState) &&
-        transition.isActive()) {
+    if ((transition.from == ANY || transition.from == curState) && transition.isActive()) {
       setCurrentStateWithTrigger(transition.to, transition.onTrigger);
       return;
     }
   }
 }
 
-void StateMachine::setCurrentStateWithTrigger(
-    StateIndex to,
-    const std::function<void()>& onTrigger) {
+void StateMachine::setCurrentStateWithTrigger(StateIndex to, const std::function<void()>& onTrigger) {
   if (curState != NONE && states.at(curState).onLeave) {
     states.at(curState).onLeave();
   }

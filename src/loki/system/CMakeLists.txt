@@ -1,5 +1,6 @@
 loki_create_module(system
   HEADERS
+  registerTypes.hpp
   # app
   app/ApplicationInterface.hpp
   # box
@@ -51,6 +52,7 @@ loki_create_module(system
   window/WindowStyle.hpp
 
   SOURCES
+  registerTypes.cpp
   # box
   box/BoundingBoxComponent.cpp
   # ecs
@@ -81,6 +83,6 @@ loki_create_module(system
 
   PUBLIC_DEPS
   loki::core
-  EnTT::EnTT
-  ImGui-SFML::ImGui-SFML
+  EnTT
+  ImGui-SFML
 )

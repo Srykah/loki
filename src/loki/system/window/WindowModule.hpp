@@ -1,5 +1,7 @@
 #pragma once
 
+#include <span>
+
 #include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/system/modules/GameModule.hpp>
@@ -23,10 +25,10 @@ class WindowModule final : public GameModule {
 
  private:
   std::string windowTitle;
-  sf::Vector2f windowSize;
+  sf::Vector2u windowSize;
   WindowStyle windowStyle = WindowStyle::DEFAULT;
-  sf::Vector2f minimumSize;
-  sf::Vector2f internalResolution;
+  sf::Vector2u minimumSize;
+  sf::Vector2u internalResolution;
 
   Window window;
   std::vector<sf::Event> events;

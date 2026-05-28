@@ -1,4 +1,4 @@
-#include <cstdlib>
+#include <format>  // todo link with -lstdc++exp to allow println instead
 
 #include "Application.hpp"
 
@@ -8,7 +8,7 @@ int main() {
     app.run();
     return 0;
   } catch (const std::exception& e) {
-    std::fprintf(stderr, e.what());
+    std::cerr << std::format("An exception occurred: {}\n", e.what());  // todo show callstack, cf <stacktrace>
     return -1;
   }
 }

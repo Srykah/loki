@@ -17,7 +17,7 @@ class BaseResource : public ResourceListener {
   void onResourcesLoaded() override { onChildResourcesLoaded(); }
 
  protected:
-  virtual void load(const std::filesystem::path& path) = 0;
+  [[nodiscard]] virtual bool load(const std::filesystem::path& path) = 0;
   virtual bool addChildResourcesToHolder(ResourceHolder& holder) { return false; }
   virtual void onChildResourcesLoaded() {}
   virtual void unload() {}

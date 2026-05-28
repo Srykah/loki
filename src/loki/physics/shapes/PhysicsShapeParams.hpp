@@ -1,56 +1,94 @@
 #pragma once
 
-#include <box2d/b2_chain_shape.h>
-#include <box2d/b2_circle_shape.h>
-#include <box2d/b2_edge_shape.h>
-#include <box2d/b2_polygon_shape.h>
+#include <box2d/box2d.h>
 
+#include <loki/core/reflection/basicTypesInfo.hpp>
 #include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/reflection/sfmlTypesInfo.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
-
-#include "PhysicsShapeType.hpp"
+#include <loki/physics/materials/PhysicsFilter.hpp>
+#include <loki/physics/materials/PhysicsMaterial.hpp>
+#include <loki/physics/shapes/PhysicsShapeType.hpp>
 
 namespace loki::physics {
 
 struct PhysicsShapeParams : public core::BaseObject {
   virtual PhysicsShapeType getType() const = 0;
-  virtual const b2Shape* getB2Shape() const = 0;
+  virtual b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const = 0;
+
+  PhysicsMaterial material;
+  float density = 1.f;
+  PhysicsFilter filter;
+  bool isSensor = false;
+  bool enableSensorEvents = false;
+  bool enableContactEvents = false;
+  bool enableHitEvents = false;
+  bool enablePreSolveEvents = false;
+  bool invokeContactCreation = false;
+  bool updateBodyMass = true;
+  sf::Transformable offset;
+
+  b2ShapeDef toShapeDef() const;
 
   LOKI_RTTI_CLASS_DECLARE(PhysicsShapeParams)
 };
 
 struct CircleShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Circle; }
-  const b2Shape* getB2Shape() const override { return &circleShape; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
-  b2CircleShape circleShape;
+  float radius = 0.f;
 
   LOKI_RTTI_CLASS_DECLARE(CircleShapeParams)
 };
 
-struct EdgeShapeParams final : public PhysicsShapeParams {
-  PhysicsShapeType getType() const override { return PhysicsShapeType::Edge; }
-  const b2Shape* getB2Shape() const override { return &edgeShape; }
+struct CapsuleShapeParams final : public PhysicsShapeParams {
+  PhysicsShapeType getType() const override { return PhysicsShapeType::Capsule; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
-  b2EdgeShape edgeShape;
+  sf::Vector2f center1;
+  sf::Vector2f center2;
+  float radius = 0.f;
 
-  LOKI_RTTI_CLASS_DECLARE(EdgeShapeParams)
+  LOKI_RTTI_CLASS_DECLARE(CapsuleShapeParams)
+};
+
+struct SegmentShapeParams final : public PhysicsShapeParams {
+  PhysicsShapeType getType() const override { return PhysicsShapeType::Segment; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
+
+  sf::Vector2f point1;
+  sf::Vector2f point2;
+
+  LOKI_RTTI_CLASS_DECLARE(SegmentShapeParams)
 };
 
 struct PolygonShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Polygon; }
-  const b2Shape* getB2Shape() const override { return &polygonShape; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
-  b2PolygonShape polygonShape;
+  std::vector<sf::Vector2f> points;
+  float radius = 0.f;
 
   LOKI_RTTI_CLASS_DECLARE(PolygonShapeParams)
 };
 
+struct BoxShapeParams final : public PhysicsShapeParams {
+  PhysicsShapeType getType() const override { return PhysicsShapeType::Polygon; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
+
+  sf::Vector2f halfSize;
+  float radius = 0.f;
+
+  LOKI_RTTI_CLASS_DECLARE(BoxShapeParams)
+};
+
 struct ChainShapeParams final : public PhysicsShapeParams {
   PhysicsShapeType getType() const override { return PhysicsShapeType::Chain; }
-  const b2Shape* getB2Shape() const override { return &chainShape; }
+  b2ShapeId createShape(b2BodyId bodyId, const sf::Transformable& trs) const override;
 
-  b2ChainShape chainShape;
+  std::vector<sf::Vector2f> points;
+  bool isLoop = false;
 
   LOKI_RTTI_CLASS_DECLARE(ChainShapeParams)
 };
@@ -58,76 +96,51 @@ struct ChainShapeParams final : public PhysicsShapeParams {
 }  // namespace loki::physics
 
 LOKI_REFLECTION_CLASS_BEGIN_RTTI_NO_FACTORY(loki::physics::PhysicsShapeParams)
+LOKI_REFLECTION_CLASS_FIELD(material)
+LOKI_REFLECTION_CLASS_FIELD(density)
+LOKI_REFLECTION_CLASS_FIELD(filter)
+LOKI_REFLECTION_CLASS_FIELD(isSensor)
+LOKI_REFLECTION_CLASS_FIELD(enableSensorEvents)
+LOKI_REFLECTION_CLASS_FIELD(enableContactEvents)
+LOKI_REFLECTION_CLASS_FIELD(enableHitEvents)
+LOKI_REFLECTION_CLASS_FIELD(enablePreSolveEvents)
+LOKI_REFLECTION_CLASS_FIELD(invokeContactCreation)
+LOKI_REFLECTION_CLASS_FIELD(updateBodyMass)
+LOKI_REFLECTION_CLASS_FIELD(offset)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PhysicsShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::CircleShapeParams, loki::physics::PhysicsShapeParams)
-LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
-    loki::core::getTypeInfo<float>(),
-    "radius",
-    true,
-    [](void* obj) -> TmpObj {
-      return TmpObj::fromPtrNonOwned(&static_cast<loki::physics::CircleShapeParams*>(obj)->circleShape.m_radius);
-    },
-    [](const void* obj) -> ConstTmpObj {
-      return ConstTmpObj::fromPtrNonOwned(
-          &static_cast<const loki::physics::CircleShapeParams*>(obj)->circleShape.m_radius);
-    },
-    [](void* obj, const void* data) -> void {
-      static_cast<loki::physics::CircleShapeParams*>(obj)->circleShape.m_radius = *static_cast<const float*>(data);
-    })
+LOKI_REFLECTION_CLASS_FIELD(radius)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::CircleShapeParams)
 
-LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::EdgeShapeParams, loki::physics::PhysicsShapeParams)
-LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
-    loki::core::getTypeInfo<float>(),
-    "radius",
-    true,
-    [](void* obj) -> TmpObj {
-      return TmpObj::fromPtrNonOwned(&static_cast<loki::physics::EdgeShapeParams*>(obj)->edgeShape.m_radius);
-    },
-    [](const void* obj) -> ConstTmpObj {
-      return ConstTmpObj::fromPtrNonOwned(&static_cast<const loki::physics::EdgeShapeParams*>(obj)->edgeShape.m_radius);
-    },
-    [](void* obj, const void* data) -> void {
-      static_cast<loki::physics::EdgeShapeParams*>(obj)->edgeShape.m_radius = *static_cast<const float*>(data);
-    })
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::CapsuleShapeParams, loki::physics::PhysicsShapeParams)
+LOKI_REFLECTION_CLASS_FIELD(center1)
+LOKI_REFLECTION_CLASS_FIELD(center2)
+LOKI_REFLECTION_CLASS_FIELD(radius)
 LOKI_REFLECTION_CLASS_END()
-LOKI_RTTI_CLASS_DEFINE(loki::physics::EdgeShapeParams)
+LOKI_RTTI_CLASS_DEFINE(loki::physics::CapsuleShapeParams)
+
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::SegmentShapeParams, loki::physics::PhysicsShapeParams)
+LOKI_REFLECTION_CLASS_FIELD(point1)
+LOKI_REFLECTION_CLASS_FIELD(point2)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::SegmentShapeParams)
 
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::PolygonShapeParams, loki::physics::PhysicsShapeParams)
-LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
-    loki::core::getTypeInfo<float>(),
-    "radius",
-    true,
-    [](void* obj) -> TmpObj {
-      return TmpObj::fromPtrNonOwned(&static_cast<loki::physics::PolygonShapeParams*>(obj)->polygonShape.m_radius);
-    },
-    [](const void* obj) -> ConstTmpObj {
-      return ConstTmpObj::fromPtrNonOwned(
-          &static_cast<const loki::physics::PolygonShapeParams*>(obj)->polygonShape.m_radius);
-    },
-    [](void* obj, const void* data) -> void {
-      static_cast<loki::physics::PolygonShapeParams*>(obj)->polygonShape.m_radius = *static_cast<const float*>(data);
-    })
+LOKI_REFLECTION_CLASS_FIELD(points)
+LOKI_REFLECTION_CLASS_FIELD(radius)
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::PolygonShapeParams)
 
+LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::BoxShapeParams, loki::physics::PhysicsShapeParams)
+LOKI_REFLECTION_CLASS_FIELD(halfSize)
+LOKI_REFLECTION_CLASS_FIELD(radius)
+LOKI_REFLECTION_CLASS_END()
+LOKI_RTTI_CLASS_DEFINE(loki::physics::BoxShapeParams)
+
 LOKI_REFLECTION_CLASS_BEGIN_CHILD(loki::physics::ChainShapeParams, loki::physics::PhysicsShapeParams)
-LOKI_REFLECTION_CLASS_FIELD_CUSTOM(
-    loki::core::getTypeInfo<float>(),
-    "radius",
-    true,
-    [](void* obj) -> TmpObj {
-      return TmpObj::fromPtrNonOwned(&static_cast<loki::physics::ChainShapeParams*>(obj)->chainShape.m_radius);
-    },
-    [](const void* obj) -> ConstTmpObj {
-      return ConstTmpObj::fromPtrNonOwned(
-          &static_cast<const loki::physics::ChainShapeParams*>(obj)->chainShape.m_radius);
-    },
-    [](void* obj, const void* data) -> void {
-      static_cast<loki::physics::ChainShapeParams*>(obj)->chainShape.m_radius = *static_cast<const float*>(data);
-    })
+// todo
 LOKI_REFLECTION_CLASS_END()
 LOKI_RTTI_CLASS_DEFINE(loki::physics::ChainShapeParams)

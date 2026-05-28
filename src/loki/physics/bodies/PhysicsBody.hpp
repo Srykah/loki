@@ -1,38 +1,49 @@
 #pragma once
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Vector2.hpp>
-#include <box2d/b2_body.h>
+#include <box2d/box2d.h>
 
-#include <loki/physics/shapes/PhysicsFixtureParams.hpp>
+#include <loki/physics/bodies/PhysicsBodyParams.hpp>
+#include <loki/physics/shapes/PhysicsShape.hpp>
 
 namespace loki::physics {
 class PhysicsWorld;
 
-class PhysicsBody : public sf::Drawable {
+class PhysicsBody {
+ private:
+  friend PhysicsWorld;
+  explicit PhysicsBody(const PhysicsBodyParams& bodyParams, PhysicsWorld* parentWorld);
+
+  // call before world destruction to avoid individual body and shapes destruction
+  void clear();
+
  public:
   PhysicsBody() = default;
-  explicit PhysicsBody(b2Body* body, PhysicsWorld* parentWorld);
+  PhysicsBody(const PhysicsBody&) = delete;
+  PhysicsBody& operator=(const PhysicsBody&) = delete;
+  PhysicsBody(PhysicsBody&& _other) noexcept;
+  PhysicsBody& operator=(PhysicsBody&& _other) noexcept;
+  ~PhysicsBody();
 
-  void createFixture(PhysicsFixtureParams&& shapeParams);
+  void destroy();
+
+  PhysicsShape& createShape(const PhysicsShapeParams& shapeParams, const sf::Transformable& trs = {});
 
   void setTransformable(const sf::Transformable& transformable);
   [[nodiscard]] sf::Vector2f getPosition() const;
-  [[nodiscard]] float getRotationInDegrees() const;
+  [[nodiscard]] sf::Angle getRotation() const;
 
   void applyForce(const sf::Vector2f& force);
   void applyLinearImpulse(const sf::Vector2f& linearImpulse);
 
   PhysicsWorld* getWorld() const { return parentWorld; }
+  b2BodyId getBodyId() const { return bodyId; }
   sf::FloatRect getBoundingBox() const;
 
-  void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-
- private:
   PhysicsWorld* parentWorld = nullptr;
-  b2Body* body = nullptr;
+  b2BodyId bodyId = b2_nullBodyId;
+  std::vector<PhysicsShape> shapes;
 };
 
 }  // namespace loki::physics

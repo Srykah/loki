@@ -1,0 +1,197 @@
+name: build
+
+# Inspired by SFML's ci.yml
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review 
+
+defaults:
+  run:
+    shell: bash -el {0}
+
+jobs:
+  build:
+    if: ${{ !github.event.pull_request.draft }}
+    name: ${{ matrix.platform.os }} ${{ matrix.platform.compiler.name }} ${{ matrix.platform.compiler.version }}
+    runs-on: ${{ matrix.platform.os }}
+
+    env:
+      matrix-key: ${{ matrix.platform.os }}-${{ matrix.platform.compiler.name }}-${{ matrix.platform.compiler.version }}
+      ccache-variant: ${{ (startsWith(matrix.platform.os, 'windows') && 'sccache') || 'ccache' }}
+      winlibs-dir: D:/winlibs # optim: D drive is faster than C drive
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          #- os: windows-2025
+          #  compiler: { name: MSVC, version: '19.44', msvc-toolset: '14.44', c-exe: cl, cpp-exe: cl }
+          #- os: windows-2025
+          #  compiler: { name: ClangCL, version: '19.1', msvc-toolset: '14.44', cmake-toolset: ClangCL }
+          #- os: windows-2025
+          #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++ }
+          - os: windows-2025
+            compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++ }
+          #- os: ubuntu-24.04
+          #  compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
+          #- os: ubuntu-24.04
+          #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
+
+    steps:
+      # Code
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      # Common Tools
+      - name: Get CMake and Ninja
+        uses: lukka/get-cmake@v4.3.3
+        with:
+          cmakeVersion: '4.3.3'
+          ninjaVersion: latest
+
+      - name: Setup CCache
+        # In addition to installing a known working version of CCache, this action also takes care of saving and restoring the cache for us
+        # Additionally it outputs information at the end of each job that helps us to verify if the cache is working properly
+        uses: Srykah/ccache-action@v1.2.24  # wait for upstream to integrate the fixes for the append-timestamp input
+        with:
+          verbose: 2
+          key: ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-${{ github.sha }}
+          restore-keys: |
+            ccache-${{ env.matrix-key }}-PR#${{ github.event.pull_request.number }}-
+            ccache-${{ env.matrix-key }}-
+          variant: ${{ env.ccache-variant }}
+          create-symlink: true
+          append-timestamp: false
+
+      # Compilers
+      - name: Set up MSVC toolchain
+        if: matrix.platform.compiler.msvc-toolset
+        uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
+        with:
+          arch: x64
+          toolset: ${{ matrix.platform.compiler.msvc-toolset }}
+
+      - name: Restore WinLibs GCC cache
+        id: winlibs-gcc-cache-restore
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
+        uses: actions/cache/restore@v5.0.5
+        with:
+          path: ${{ env.winlibs-dir }}
+          key: winlibs-gcc-${{ env.matrix-key }}
+
+      - name: Install WinLibs GCC
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
+        uses: bwoodsend/setup-winlibs-action@v1.16
+        with:
+          architecture: '64'
+          runtime: ucrt
+          threads: posix
+          with_clang: false
+          destination: ${{ env.winlibs-dir }}
+
+      - name: Use WinLibs GCC
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
+        run: |
+          echo "CC=${{ env.winlibs-dir }}/mingw64/bin/${{ matrix.platform.compiler.c-exe }}.exe" >> $GITHUB_ENV
+          echo "CXX=${{ env.winlibs-dir }}/mingw64/bin/${{ matrix.platform.compiler.cpp-exe }}.exe" >> $GITHUB_ENV
+
+      - name: Install and use LLVM Clang on Windows
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
+        uses: KyleMayes/install-llvm-action@v2.0.9
+        with:
+          version: ${{ matrix.platform.compiler.version }}
+          env: true
+
+      - name: Restore conda cache
+        id: conda-cache-restore
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        uses: actions/cache/restore@v5.0.5
+        with:
+          path: ~/conda_pkgs_dir
+          key: conda-${{ env.matrix-key }}
+
+      - name: Setup miniconda on Linux
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        uses: conda-incubator/setup-miniconda@v4.0.1
+        with:
+          miniforge-variant: Miniforge3
+          miniforge-version: '26.3.2-2'
+          activate-environment: build
+          channels: conda-forge
+          conda-remove-defaults: true
+          channel-priority: strict
+          auto-update-conda: true
+          use-only-tar-bz2: true # needed for cache
+          architecture: x64
+
+      - name: Install and use compiler on Linux
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        run: |
+          conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
+          echo "CC=$CONDA/envs/build/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
+          echo "CXX=$CONDA/envs/build/bin/${{ matrix.platform.compiler.cpp-exe }}" >> $GITHUB_ENV
+
+      # Dependencies
+      - name: Install SFML Linux dependencies
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        run: conda install -qy libflac libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib mesalib pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxi xorg-libxrandr
+
+      - name: Restore deps source cache
+        id: deps-src-cache-restore
+        uses: actions/cache/restore@v5.0.5
+        with:
+          path: build-${{ env.matrix-key }}/_deps/*-src
+          key: deps-src-${{ matrix.platform.os }}
+          restore-keys: deps-src-
+
+      - name: Restore deps build cache
+        id: deps-build-cache-restore
+        uses: actions/cache/restore@v5.0.5
+        with:
+          path: |
+            build-${{ env.matrix-key }}/_deps/*-subbuild
+            build-${{ env.matrix-key }}/_deps/*-build
+          key: deps-build-${{ env.matrix-key }}
+
+      # Build
+      - name: Configure CMake
+        run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build-${{ env.matrix-key }} -DCMAKE_C_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_CXX_COMPILER_LAUNCHER=${{ env.ccache-variant }} -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install-${{ env.matrix-key }} ${{ (matrix.platform.compiler.cmake-toolset && format('-T {0}', matrix.platform.compiler.cmake-toolset)) || '-G Ninja' }}
+
+      - name: Build
+        run: cmake --build $GITHUB_WORKSPACE/build-${{ env.matrix-key }} --config Debug --target install
+
+      # Save build tools & deps caches (even if the build itself fails)
+      - name: Save WinLibs GCC cache
+        if: always() && startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: ${{ env.winlibs-dir }}
+          key: ${{ steps.winlibs-gcc-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save conda cache
+        if: always() && startsWith(matrix.platform.os, 'ubuntu') && !steps.conda-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ steps.conda-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save deps source cache
+        if: always() && !steps.deps-src-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: build-${{ env.matrix-key }}/_deps/*-src
+          key: ${{ steps.deps-src-cache-restore.outputs.cache-primary-key }}
+
+      - name: Save deps build cache
+        if: always() && !steps.deps-build-cache-restore.outputs.cache-hit
+        uses: actions/cache/save@v5.0.5
+        with:
+          path: |
+            build-${{ env.matrix-key }}/_deps/*-subbuild
+            build-${{ env.matrix-key }}/_deps/*-build
+          key: ${{ steps.deps-build-cache-restore.outputs.cache-primary-key }}

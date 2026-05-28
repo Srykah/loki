@@ -2,8 +2,7 @@
 
 #include <fstream>
 
-#include <yaml-cpp/node/node.h>
-#include <yaml-cpp/node/parse.h>
+#include <ryml.hpp>
 
 #include <loki/core/serialization/yaml/fromYaml.hpp>
 #include <loki/core/utils/Macros.hpp>
@@ -18,10 +17,15 @@ class LogicResource : public Resource<T>, public T {
   const T& getData() const override { return static_cast<const T&>(*this); }
 
  protected:
-  void load(const std::filesystem::path& path) override {
-    std::fstream file{path};
-    YAML::Node node = YAML::Load(file);
-    core::fromYaml(node, static_cast<T*>(this), core::getTypeInfo<T>());
+  bool load(const std::filesystem::path& path) override {
+    ryml::Tree tree;
+    {
+      std::fstream file{path};
+      std::string fileContents{std::istreambuf_iterator(file), std::istreambuf_iterator<char>()};
+      tree = ryml::parse_in_arena(fileContents.c_str());
+    }
+    core::fromYaml(tree, static_cast<T*>(this), core::getTypeInfo<T>());
+    return true;
   }
 };
 

@@ -25,7 +25,6 @@ void PhysicsTileMapComponent::onEndInit() {
   assert(dataComp);
   createShapes(dataComp->getDataHandle().getData());
   body.setTransformable(getActor().getTransformable());  // init position and rotation
-  getService<system::RendererModule>().getRenderQueue().registerDrawable(&body, {});
 }
 
 void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
@@ -34,7 +33,7 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
              ->getRoot()
              .getComponent<PhysicsWorldComponent>()
              ->getWorld()
-             ->createBody(auto{bodyParams});
+             ->createBody(PhysicsBodyParams{bodyParams});
   const auto* tileSizeAttr = data.tileset->getTileSetAttribute<tiles::SizeTileSetAttribute>();
   assert(tileSizeAttr);
   sf::Vector2f tileSize = tileSizeAttr->tileSize;
@@ -49,11 +48,9 @@ void PhysicsTileMapComponent::createShapes(const tiles::TileMapData& data) {
     coordsInTiles += {0.5f, 0.5f};
     auto coordsInPixels = core::compMult(coordsInTiles, tileSize);
     auto coordsInMeters = coordsInPixels / pixelsToMeters;
-    PhysicsFixtureParams fixtureParams = collTileAttr->fixtureParams;
-    auto boxParams = std::make_shared<PolygonShapeParams>();
-    boxParams->polygonShape.SetAsBox(halfTileSizeInMeters.x, halfTileSizeInMeters.y, toB2Vec2(coordsInMeters), 0.f);
-    fixtureParams.shapeParams = std::move(boxParams);
-    body.createFixture(auto{fixtureParams});
+    sf::Transformable shapeTrs;
+    shapeTrs.setPosition(coordsInMeters);
+    body.createShape(*collTileAttr->shapeParams, shapeTrs);
   }
 }
 

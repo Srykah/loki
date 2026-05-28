@@ -4,50 +4,47 @@
 
 namespace loki::graphics {
 
-Sprite::Sprite() {
-  animator.setAnimated(sprite);
-}
-
 void Sprite::setData(const SpriteData& _data) {
   animator.resetData();
   data = &_data;
-  sprite.setTexture(data->texture.getData());
+  sprite.emplace(data->texture.getData());
+  animator.setAnimated(*sprite);
 }
 
 void Sprite::setAnim(const std::string& anim) {
-  assert(data);
+  assert(data && sprite);
   animator.setData(data->animations.at(anim));
   animator.start();
 }
 
 void Sprite::start() {
+  assert(sprite);
   animator.start();
   animator.setTime(sf::Time::Zero);
 }
 
 void Sprite::update(sf::Time delta) {
+  assert(sprite);
   animator.update(delta);
 }
 
 void Sprite::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+  assert(sprite);
   states.transform *= getTransform();
-  target.draw(sprite, states);
+  target.draw(*sprite, states);
 }
 
-void Sprite::resetSprite() {
-  sprite.setOrigin(0.f, 0.f);
-  sprite.setPosition(0.f, 0.f);
-  sprite.setRotation(0.f);
-  sprite.setScale(1.f, 1.f);
-  sprite.setColor(sf::Color::White);
+void Sprite::reset() {
+  sprite.reset();
+  animator.resetData();
 }
 
 sf::FloatRect Sprite::getLocalBounds() const {
-  return sprite.getLocalBounds();
+  return sprite ? sprite->getLocalBounds() : sf::FloatRect{};
 }
 
 sf::FloatRect Sprite::getGlobalBounds() const {
-  return getTransform().transformRect(sprite.getGlobalBounds());
+  return sprite ? getTransform().transformRect(sprite->getGlobalBounds()) : sf::FloatRect{};
 }
 
 }  // namespace loki::graphics

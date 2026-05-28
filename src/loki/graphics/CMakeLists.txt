@@ -1,5 +1,6 @@
 loki_create_module(graphics
   HEADERS
+  registerTypes.hpp
   # anim
   anim/ShapeAnimationData.hpp
   anim/ShapeAnimator.hpp
@@ -29,6 +30,7 @@ loki_create_module(graphics
   tiles/TextureTileSetAttribute.hpp
 
   SOURCES
+  registerTypes.cpp
   # shapes
   shapes/Capsule.cpp
   shapes/RoundedRectangle.cpp

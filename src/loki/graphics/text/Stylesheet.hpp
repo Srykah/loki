@@ -2,6 +2,7 @@
 
 #include <filesystem>
 #include <string>
+
 #include "AnimatedTextStyle.hpp"
 
 #if 0

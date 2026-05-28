@@ -3,13 +3,11 @@
 #include <filesystem>
 #include <map>
 
+#include <ryml.hpp>
+
 #include <loki/core/reflection/classMacros.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
 #include <loki/system/scene/Scene.hpp>
-
-namespace YAML {
-class Node;
-}
 
 namespace loki::system {
 class Window;
@@ -26,7 +24,7 @@ class SceneManager : public core::BaseObject {
   Scene* loadScene(const std::string& sceneName, bool setActive = true);
 
  private:
-  Scene* loadSceneFromYaml(const YAML::Node& sceneNode);
+  Scene* loadSceneFromYaml(const ryml::ConstNodeRef& sceneNode);
   Scene* loadSceneFromYamlString(const std::string& sceneData);
   Scene* loadSceneFromYamlFile(const std::filesystem::path& scenePath);
 

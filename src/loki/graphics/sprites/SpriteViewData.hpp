@@ -9,9 +9,7 @@
 namespace loki::graphics {
 
 struct SpriteViewData {
-  explicit SpriteViewData(
-      const SpriteData& data,
-      const std::filesystem::path& cd = std::filesystem::current_path());
+  explicit SpriteViewData(const SpriteData& data, const std::filesystem::path& cd = std::filesystem::current_path());
 
   std::map<sf::String, graphics::ShapeAnimationData> animations;
   sf::Texture texture;

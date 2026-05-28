@@ -44,10 +44,8 @@ bool Screen::handleSignal(Signal& signal) {
   }
 }
 
-void Screen::registerSignalHandler(const Signal::Trigger& trigger,
-                                   std::function<bool()> fun) {
-  signalHandlers.emplace(
-      trigger, [fun = std::move(fun)](std::any& args) { return fun(); });
+void Screen::registerSignalHandler(const Signal::Trigger& trigger, std::function<bool()> fun) {
+  signalHandlers.emplace(trigger, [fun = std::move(fun)](std::any& args) { return fun(); });
 }
 
 void Screen::removeSignalHandler(const Signal::Trigger& trigger) {

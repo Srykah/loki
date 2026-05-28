@@ -4,8 +4,7 @@
 
 namespace loki::graphics {
 
-TileLayerView::TileLayerView(const TileLayerData& layerData,
-                             const TilesetData& tilesetData)
+TileLayerView::TileLayerView(const TileLayerData& layerData, const TilesetData& tilesetData)
     : vertices(sf::Quads), layerData(layerData), tilesetData(tilesetData) {
   initGrid();
 }
@@ -19,8 +18,7 @@ void TileLayerView::initGrid() {
       auto tileId = layerData.data[{x, y}] - 1;
       if (tileId == -1) {
         setTileTransparent(x, y);
-      } else if (tilesetData.tiles.count(tileId) &&
-                 !tilesetData.tiles.at(tileId).animation.empty()) {
+      } else if (tilesetData.tiles.count(tileId) && !tilesetData.tiles.at(tileId).animation.empty()) {
         animatedTiles.emplace(tileId, AnimatedTile{
                                           0,
                                           sf::Time::Zero,
@@ -55,8 +53,7 @@ void TileLayerView::update(const sf::Time& delta) {
   }
 }
 
-void TileLayerView::draw(sf::RenderTarget& target,
-                         sf::RenderStates states) const {
+void TileLayerView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   states.transform *= getTransform();
   states.texture = &tilesetData.texture.getData();
   target.draw(vertices, states);
@@ -70,8 +67,7 @@ void TileLayerView::initVertices(unsigned int x, unsigned int y) {
 
   vertices[i].position = tilePositionOrigin;
   vertices[i + 1].position = tilePositionOrigin + sf::Vector2f(tileWidth, 0.f);
-  vertices[i + 2].position =
-      tilePositionOrigin + sf::Vector2f(tileWidth, tileHeight);
+  vertices[i + 2].position = tilePositionOrigin + sf::Vector2f(tileWidth, tileHeight);
   vertices[i + 3].position = tilePositionOrigin + sf::Vector2f(0.f, tileHeight);
 }
 
@@ -80,16 +76,12 @@ void TileLayerView::setTile(int x, int y, int tileId) {
   auto tileWidth = tilesetData.tileSize.x;
   auto tileHeight = tilesetData.tileSize.y;
   auto tileTexCoordsOrigin =
-      sf::Vector2f((tileId % tilesetData.dimensions.x) * tileWidth,
-                   (tileId / tilesetData.dimensions.x) * tileHeight);
+      sf::Vector2f((tileId % tilesetData.dimensions.x) * tileWidth, (tileId / tilesetData.dimensions.x) * tileHeight);
 
   vertices[i].texCoords = tileTexCoordsOrigin;
-  vertices[i + 1].texCoords =
-      tileTexCoordsOrigin + sf::Vector2f(tileWidth, 0.f);
-  vertices[i + 2].texCoords =
-      tileTexCoordsOrigin + sf::Vector2f(tileWidth, tileHeight);
-  vertices[i + 3].texCoords =
-      tileTexCoordsOrigin + sf::Vector2f(0.f, tileHeight);
+  vertices[i + 1].texCoords = tileTexCoordsOrigin + sf::Vector2f(tileWidth, 0.f);
+  vertices[i + 2].texCoords = tileTexCoordsOrigin + sf::Vector2f(tileWidth, tileHeight);
+  vertices[i + 3].texCoords = tileTexCoordsOrigin + sf::Vector2f(0.f, tileHeight);
 }
 
 void TileLayerView::setTileTransparent(unsigned int x, unsigned int y) {

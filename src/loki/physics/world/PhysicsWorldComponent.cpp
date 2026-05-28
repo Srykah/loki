@@ -3,7 +3,7 @@
 namespace loki::physics {
 
 void PhysicsWorldComponent::onBeginInit() {
-  world = std::make_unique<PhysicsWorld>(auto{worldParams});
+  world = std::make_unique<PhysicsWorld>(PhysicsWorldParams{worldParams});
 }
 
 void PhysicsWorldComponent::onPhysicsSimulation(sf::Time delta) {

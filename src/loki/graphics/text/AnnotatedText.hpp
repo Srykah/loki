@@ -15,15 +15,12 @@ using AnnotatedString = std::vector<std::pair<std::string, AnimatedTextStyle>>;
 class AnnotatedText : public sf::Drawable, public sf::Transformable {
  public:
   explicit AnnotatedText() = default;
-  explicit AnnotatedText(const AnnotatedString& annotatedString) {
-    setAnnotatedString(annotatedString);
-  }
+  explicit AnnotatedText(const AnnotatedString& annotatedString) { setAnnotatedString(annotatedString); }
 
   void setAnnotatedString(const AnnotatedString& annotatedString);
 
   void update(sf::Time delta);
-  void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+  void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates()) const override;
 
   void skip();
 

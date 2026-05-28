@@ -17,7 +17,7 @@ endfunction()
 # Complete module creation helper
 function(loki_create_module module)
   cmake_parse_arguments(MODULE "" "" "HEADERS;SOURCES;PRIVATE_DEPS;PUBLIC_DEPS" ${ARGN})
-  add_library(${module})
+  add_library(${module} SHARED)
   add_library(loki::${module} ALIAS ${module})
   target_sources(${module} PRIVATE ${MODULE_SOURCES})
   target_sources(${module} PUBLIC

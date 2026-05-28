@@ -2,8 +2,6 @@
 
 #include <cassert>
 
-#include <fmt/format.h>
-
 #include <loki/core/reflection/reflectionUtils.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
 
@@ -162,10 +160,10 @@ void toString(std::string& str, const void* obj, const ClassInfo& classInfo) {
       while (std::get<ClassInfo>(rootTypeInfo->info).parentType != nullptr)
         rootTypeInfo = std::get<ClassInfo>(rootTypeInfo->info).parentType;
       if (std::get<ClassInfo>(rootTypeInfo->info).id == std::get<ClassInfo>(getTypeInfo<BaseObject>().info).id)
-        str += fmt::format(R"("__type__": {}, )", classInfo.id);  // only write type for polymorphic types
+        str += std::format(R"("__type__": {}, )", classInfo.id);  // only write type for polymorphic types
     }
     for (const auto& field : classInfo.fields) {
-      str += fmt::format(R"("{}": )", field.name);
+      str += std::format(R"("{}": )", field.name);
       TmpObj fieldObj = field.getter(const_cast<void*>(obj));
       toString(str, fieldObj.obj, field.type);
       str += ", ";

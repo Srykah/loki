@@ -42,9 +42,11 @@ loki_create_module(core
   states/StateIndex.hpp
   states/StateMachine.hpp
   states/Transition.hpp
+  #[[
   # tpl
   tpl/TemplateEngine.hpp
   tpl/TemplateEngine.hxx
+  #]]
   # utils
   utils/EnumAsBitField.hpp
   utils/IterAdapters.hpp
@@ -74,14 +76,15 @@ loki_create_module(core
   services/ServiceRegistry.cpp
   # states
   states/StateMachine.cpp
+  #[[
   # tpl
   tpl/TemplateEngine.cpp
+  #]]
   # utils
   utils/Random.cpp
   utils/VertexArrayIterator.cpp
 
   PUBLIC_DEPS
-  sfml-graphics
-  yaml-cpp::yaml-cpp
-  fmt::fmt
+  SFML::Graphics
+  ryml
 )

@@ -4,21 +4,18 @@
 
 namespace loki::gui {
 
-RectangleShapeFrame::RectangleShapeFrame(sf::Vector2f size,
-                                         float padding,
-                                         const graphics::ShapeStyle& style)
+RectangleShapeFrame::RectangleShapeFrame(sf::Vector2f size, float padding, const graphics::ShapeStyle& style)
     : padding(padding) {
   shape.setSize(size);
   style.applyTo(shape);
 }
 
 sf::FloatRect RectangleShapeFrame::getInternalBounds() const {
-  return sf::FloatRect{padding, padding, shape.getSize().x - padding,
-                       shape.getSize().y - padding};
+  const sf::Vector2f padding2d{padding, padding};
+  return {padding2d, shape.getSize() - padding2d};
 }
 
-void RectangleShapeFrame::draw(sf::RenderTarget& target,
-                               sf::RenderStates states) const {
+void RectangleShapeFrame::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   states.transform *= getTransform();
   target.draw(shape, states);
 }

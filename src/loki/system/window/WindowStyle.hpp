@@ -1,22 +1,24 @@
 #pragma once
 
 #include <SFML/Config.hpp>
-#include <SFML/Window/WindowStyle.hpp>
+#include <SFML/Window/WindowEnums.hpp>
 
 #include <loki/core/reflection/enumMacros.hpp>
 #include <loki/core/utils/EnumAsBitField.hpp>
 
 namespace loki::system {
 
-enum class WindowStyle : sf::Uint32 {
+enum class WindowStyle : std::uint32_t {
   NONE = sf::Style::None,
   TITLEBAR = sf::Style::Titlebar,
   RESIZE = sf::Style::Resize,
   CLOSE = sf::Style::Close,
-  FULLSCREEN = sf::Style::Fullscreen,
-  SFML_MASK = sf::Style::Titlebar | sf::Style::Resize | sf::Style::Close | sf::Style::Fullscreen,
+  SFML_MASK = sf::Style::Titlebar | sf::Style::Resize | sf::Style::Close,
+
+  FULLSCREEN = 1u << 5u,
   LETTERBOXED = 1u << 6u,
   INTEGER_SCALING = 1u << 7u,
+
   DEFAULT = sf::Style::Default,
   DEFAULT_LETTERBOXED = DEFAULT | LETTERBOXED,
   DEFAULT_INTEGER_SCALING = DEFAULT | INTEGER_SCALING,
@@ -24,11 +26,11 @@ enum class WindowStyle : sf::Uint32 {
 
 LOKI_ENUM_AS_BITFIELD(WindowStyle)
 
-[[nodiscard]] constexpr sf::Uint32 toSFMLWindowStyle(WindowStyle style) noexcept {
+[[nodiscard]] constexpr std::uint32_t toSFMLWindowStyle(WindowStyle style) noexcept {
   return std::to_underlying(style & WindowStyle::SFML_MASK);
 }
 
-[[nodiscard]] constexpr WindowStyle fromSMFLWindowStyle(sf::Uint32 sfmlStyle) noexcept {
+[[nodiscard]] constexpr WindowStyle fromSMFLWindowStyle(std::uint32_t sfmlStyle) noexcept {
   return static_cast<WindowStyle>(sfmlStyle) & WindowStyle::SFML_MASK;
 }
 

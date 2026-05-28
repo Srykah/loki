@@ -6,8 +6,7 @@
 
 namespace loki::gui {
 
-TextBox::TextBox(const system::InputModule& eventHandler,
-                 std::string nextInputName)
+TextBox::TextBox(const system::InputModule& eventHandler, std::string nextInputName)
     : eventHandler(eventHandler), nextInputName(std::move(nextInputName)) {}
 
 void TextBox::setNextInputName(std::string _nextInputName) {
@@ -29,8 +28,7 @@ void TextBox::setAnnotatedString(const std::string& annotatedString) {
 }
 
 void TextBox::update(sf::Time delta) {
-  if (eventHandler.getInputState(nextInputName).status ==
-      loki::system::InputState::TRIGGERED) {
+  if (auto state = eventHandler.getInputState(nextInputName); state.hasChanged && state.isActive) {
 #if 0
     if (!view.hasAnimationStopped()) {
       view.skipAnimation();
