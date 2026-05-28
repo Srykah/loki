@@ -30,29 +30,29 @@ jobs:
       fail-fast: false
       matrix:
         platform:
+          #- os: windows-2025
+          #  compiler: { name: MSVC, version: '19.44', msvc-toolset: '14.44', c-exe: cl, cpp-exe: cl }
+          #- os: windows-2025
+          #  compiler: { name: ClangCL, version: '19.1', msvc-toolset: '14.44', cmake-toolset: ClangCL }
+          #- os: windows-2025
+          #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++ }
           - os: windows-2025
-            compiler: { name: MSVC, version: '19.44', msvc-toolset: '14.44', c-exe: cl, cpp-exe: cl }
-          - os: windows-2025
-            compiler: { name: ClangCL, version: '19.1', msvc-toolset: '14.44', cmake-toolset: ClangCL }
-          - os: windows-2025
-            compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++ }
-          - os: windows-2025
-            compiler: { name: GCC, version: '15.2', c-exe: gcc, cpp-exe: g++ }
+            compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++ }
           - os: ubuntu-24.04
-            compiler: { name: GCC, version: '15.2', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
-          - os: ubuntu-24.04
-            compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
+            compiler: { name: GCC, version: '16.1', c-exe: gcc, cpp-exe: g++, conda-cpp-exe: gxx }
+          #- os: ubuntu-24.04
+          #  compiler: { name: Clang, version: '21.1', c-exe: clang, cpp-exe: clang++, conda-cpp-exe: clangxx }
 
     steps:
       # Code
       - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.2
 
       # Common Tools
       - name: Get CMake and Ninja
-        uses: lukka/get-cmake@v4.1.2
+        uses: lukka/get-cmake@v4.3.3
         with:
-          cmakeVersion: '4.1.2'
+          cmakeVersion: '4.3.3'
           ninjaVersion: latest
 
       #- name: Setup CCache
@@ -64,16 +64,16 @@ jobs:
       #    key: ${{ env.matrix-key }}-ccache
 
       # Compilers
-      - name: Set up MSVC toolchain
-        if: matrix.platform.compiler.msvc-toolset
-        uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
-        with:
-          arch: x64
-          toolset: ${{ matrix.platform.compiler.msvc-toolset }}
+      #- name: Set up MSVC toolchain
+      #  if: matrix.platform.compiler.msvc-toolset
+      #  uses: TheMrMilchmann/setup-msvc-dev@v4.0.0
+      #  with:
+      #    arch: x64
+      #    toolset: ${{ matrix.platform.compiler.msvc-toolset }}
 
       - name: Install WinLibs GCC
         id: winlibs-gcc
-        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
           architecture: '64'
@@ -83,14 +83,14 @@ jobs:
           add_to_path: true
 
       - name: Use WinLibs GCC
-        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'GCC'
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         run: |
           echo "CC=${{ steps.winlibs-gcc.outputs.bin }}/gcc" >> $GITHUB_ENV
           echo "CXX=${{ steps.winlibs-gcc.outputs.bin }}/g++" >> $GITHUB_ENV
 
       - name: Install and use LLVM Clang on Windows
-        if: matrix.platform.os == 'windows-2025' && matrix.platform.compiler.name == 'Clang'
-        uses: KyleMayes/install-llvm-action@v2.0.8
+        if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
+        uses: KyleMayes/install-llvm-action@v2.0.9
         with:
           version: ${{ matrix.platform.compiler.version }}
           env: true
@@ -103,11 +103,11 @@ jobs:
       #     key: ${{ env.matrix-key }}-conda
 
       - name: Setup miniconda on Linux
-        if: matrix.platform.os == 'ubuntu-24.04'
-        uses: conda-incubator/setup-miniconda@v3.2.0
+        if: startsWith(matrix.platform.os, 'ubuntu')
+        uses: conda-incubator/setup-miniconda@v4.0.1
         with:
           miniforge-variant: Miniforge3
-          miniforge-version: '25.9.1-0'
+          miniforge-version: '26.3.2'
           activate-environment: build
           channels: conda-forge
           conda-remove-defaults: true
@@ -117,7 +117,7 @@ jobs:
           architecture: x64
 
       - name: Install and use compiler on Linux
-        if: matrix.platform.os == 'ubuntu-24.04'
+        if: startsWith(matrix.platform.os, 'ubuntu')
         run: |
           conda install -qy ${{ matrix.platform.compiler.c-exe }}=${{ matrix.platform.compiler.version }} ${{ matrix.platform.compiler.conda-cpp-exe }}=${{ matrix.platform.compiler.version }}
           echo "CC=$CONDA/envs/build/bin/${{ matrix.platform.compiler.c-exe }}" >> $GITHUB_ENV
@@ -125,7 +125,7 @@ jobs:
 
       # Dependencies
       - name: Install SFML Linux dependencies
-        if: matrix.platform.os == 'ubuntu-24.04'
+        if: startsWith(matrix.platform.os, 'ubuntu')
         run: conda install -qy libflac libglx-devel libopengl-devel libogg libpng libudev libvorbis libzlib mesalib pthread-stubs xorg-libx11 xorg-libxcursor xorg-libxi xorg-libxrandr
 
       # Build
