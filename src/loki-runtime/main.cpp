@@ -8,7 +8,7 @@ int main() {
     app.run();
     return 0;
   } catch (const std::exception& e) {
-    std::cerr << std::format("An exception occurred: {}. This is terrible!!! :-((((\n", e.what());
+    std::cerr << std::format("An exception occurred: {}\n", e.what());
     return -1;
   }
 }
