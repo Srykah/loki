@@ -77,11 +77,10 @@ jobs:
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         uses: actions/cache@v5.0.5
         with:
-          path: ~\AppData\Local\mingw64
+          path: ~/AppData/Local/mingw64
           key: ${{ env.matrix-key }}-winlibs-gcc
 
       - name: Install WinLibs GCC
-        id: winlibs-gcc
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC' && !steps.winlibs-gcc-cache.outputs.cache-hit
         uses: bwoodsend/setup-winlibs-action@v1.16
         with:
@@ -94,8 +93,8 @@ jobs:
       - name: Use WinLibs GCC
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'GCC'
         run: |
-          echo "CC=${{ steps.winlibs-gcc.outputs.bin }}/gcc" >> $GITHUB_ENV
-          echo "CXX=${{ steps.winlibs-gcc.outputs.bin }}/g++" >> $GITHUB_ENV
+          echo "CC=~/AppData/Local/mingw64/gcc" >> $GITHUB_ENV
+          echo "CXX=~/AppData/Local/mingw64/g++" >> $GITHUB_ENV
 
       - name: Install and use LLVM Clang on Windows
         if: startsWith(matrix.platform.os, 'windows') && matrix.platform.compiler.name == 'Clang'
