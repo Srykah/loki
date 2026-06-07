@@ -8,8 +8,7 @@
 
 namespace loki::app {
 
-void registerLokiTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry,
-                       system::ComponentRegistry& componentRegistry) {
+void registerLokiTypes(core::TypeRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
   system::registerTypes(runtimeObjectRegistry, componentRegistry);
   physics::registerTypes(runtimeObjectRegistry, componentRegistry);
   tiles::registerTypes(runtimeObjectRegistry, componentRegistry);

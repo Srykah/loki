@@ -3,7 +3,7 @@
 #include <cassert>
 
 #include <loki/core/reflection/reflectionUtils.hpp>
-#include <loki/core/rtti/RuntimeObjectRegistry.hpp>
+#include <loki/core/reflection/TypeRegistry.hpp>
 #include <loki/core/services/ServiceRegistry.hpp>
 
 namespace loki::core {
@@ -74,8 +74,8 @@ void fromYaml(const ryml::ConstNodeRef& node, void* obj, const EnumInfo& enumInf
   if (it != enumInfo.enumerators.end())
     value = it->value;
   // assign it to the obj
-  unsigned int size = enumInfo.backingType.size;
-  if (enumInfo.backingType.isUnsigned) {
+  unsigned int size = enumInfo.underlyingType.size;
+  if (enumInfo.underlyingType.isUnsigned) {
     if (size == sizeof(uint8_t)) {
       to<uint8_t>(obj) = static_cast<uint8_t>(value);
     } else if (size == sizeof(uint16_t)) {
@@ -109,7 +109,7 @@ void fromYaml(const ryml::ConstNodeRef& node, void* obj, const CharacterInfo& ch
 void fromYaml(const ryml::ConstNodeRef& node, void* obj, const StringInfo& stringInfo) {
   std::string str;
   node >> str;
-  stringInfo.setter(obj, str.data(), str.size());
+  stringInfo.fromUtf8StrSetter(obj, str.data(), str.size());
 }
 
 void fromYaml(const ryml::ConstNodeRef& node, void* obj, const ListInfo& listInfo) {
@@ -144,7 +144,7 @@ void fromYaml(const ryml::ConstNodeRef& node, void* obj, const DictInfo& dictInf
 
 void fromYaml(const ryml::ConstNodeRef& node, void* obj, const ClassInfo& classInfo) {
   bool asValue = std::ranges::find_if(classInfo.attributes, [](const auto& attr) {
-                   return attr->getType() == ClassAttribute::Type::SerializeAsValue;
+                   return attr->getType() == ClassAttribute::Type::SerializeBlockStyle;
                  }) != classInfo.attributes.end();
   if (asValue) {
     const auto& field = classInfo.fields.at(0);
@@ -178,7 +178,7 @@ void fromYaml(const ryml::ConstNodeRef& node, void* obj, const PtrInfo& ptrInfo)
   if (std::holds_alternative<ClassInfo>(ptrInfo.innerType.info)) {
     ClassId classId;
     node["__type__"] >> classId;
-    const TypeInfo* actualTypeInfo = getService<RuntimeObjectRegistry>().getRuntimeTypeInfo(classId);
+    const TypeInfo* actualTypeInfo = getService<TypeRegistry>().getRuntimeTypeInfo(classId);
     assert(actualTypeInfo);
     TmpObj data = actualTypeInfo->factory(obj, TmpObj::Ownership::NonOwned);
     fromYaml(node, data.obj, *actualTypeInfo);

@@ -116,4 +116,7 @@ struct ConstTmpObj {
     return ConstTmpObj{ptr, [](const void* obj) { delete static_cast<const T*>(obj); }, TmpObj::Ownership::Owned};
   }
 };
+
+using Factory = std::function<TmpObj(void* ctx, TmpObj::Ownership)>;
+
 }  // namespace loki::core

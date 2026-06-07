@@ -10,7 +10,7 @@
       static const TypeInfo TYPEINFO = []() {          \
 TypeInfo TYPEINFO {\
 .factory = details::getBasicFactory<Enum>(), \
-.info = EnumInfo { .backingType = std::get<IntegerInfo>(getTypeInfo<std::underlying_type_t<Enum>>().info) } }; \
+.info = EnumInfo { .underlyingType = std::get<IntegerInfo>(getTypeInfo<std::underlying_type_t<Enum>>().info) } }; \
 EnumInfo& ENUMINFO = std::get<EnumInfo>(TYPEINFO.info); \
 using ENUMNAME = Enum;
 #define LOKI_REFLECTION_ENUMERATOR(Enumerator) \

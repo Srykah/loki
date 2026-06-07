@@ -1,8 +1,9 @@
 #pragma once
 
 #include <cassert>
+#include <meta>
 
-#include <loki/core/reflection/TypeInfo.hpp>
+#include <loki/core/utils/TmpObj.hpp>
 
 namespace loki::core::details {
 
@@ -35,17 +36,36 @@ void* from(T& obj) {
   return static_cast<void*>(&obj);
 }
 
-inline void* asAncestor(void* ptr, const TypeInfo* ptrType, const ClassId& ancestorId) {
-  void* result = ptr;
-  while (true) {
-    auto& currentClassInfo = std::get<ClassInfo>(ptrType->info);
-    if (currentClassInfo.id == ancestorId)
-      break;
-    assert(currentClassInfo.parentType != nullptr);
-    result = currentClassInfo.toParentType(result);
-    ptrType = currentClassInfo.parentType;
-  }
-  return result;
+}  // namespace loki::core::details
+
+namespace loki::core {
+
+struct ReflectAnnotation {};
+
+template <std::meta::info stuffMeta>
+consteval bool hasReflectAnnotation() {
+  static constexpr auto annotsMeta =
+      std::define_static_array(std::meta::annotations_of_with_type(stuffMeta, ^^ReflectAnnotation));
+  return !annotsMeta.empty();
 }
 
-}  // namespace loki::core::details
+template <class T>
+concept Reflected = hasReflectAnnotation<^^T>();
+
+using TypeId = std::string;
+
+template <std::meta::info classOrNamespaceMeta>
+TypeId getTypeId() {
+  static constexpr auto parentMeta = std::meta::parent_of(classOrNamespaceMeta);
+  if constexpr (parentMeta == ^^::) {
+    return TypeId{std::meta::identifier_of(classOrNamespaceMeta)};
+  } else {
+    return getTypeId<parentMeta>() + "::" + std::meta::identifier_of(classOrNamespaceMeta);
+  }
+}
+
+}  // namespace loki::core
+
+namespace loki {
+loki::core::ReflectAnnotation reflect;  // put it in the outer namespace for readability
+}  // namespace loki

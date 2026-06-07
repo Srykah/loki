@@ -3,21 +3,23 @@
 #include <cassert>
 #include <print>
 
-#include <loki/core/reflection/classMacros.hpp>
+#include <loki/core/reflection/reflectionUtils.hpp>
 #include <loki/core/rtti/rttiMacros.hpp>
 
 namespace loki::core {
 
-class BaseObject {
+struct TypeInfo;
+struct ClassInfo;
+
+class[[= loki::reflect]] BaseObject {
  public:
   virtual ~BaseObject() = default;
-  [[nodiscard]] virtual const TypeInfo& getClassTypeInfo() const = 0;
+  [[nodiscard]] virtual const TypeInfo& getTypeInfo() const = 0;
 
-  LOKI_REFLECTION_CLASS_DECLARE(BaseObject)
+  [[nodiscard]] static bool isAncestorOf(const ClassInfo& classInfo);
 };
 
-}  // namespace loki::core
+template <class T>
+concept RuntimeObject = std::is_base_of_v<BaseObject, T>;
 
-LOKI_REFLECTION_CLASS_BEGIN_NO_FACTORY(loki::core::BaseObject)
-LOKI_REFLECTION_CLASS_END()
-LOKI_RTTI_CLASS_DEFINE(loki::core::BaseObject)
+}  // namespace loki::core

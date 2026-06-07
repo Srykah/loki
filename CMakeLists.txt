@@ -1,6 +1,6 @@
 # BASIC SETUP
 
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 4.3)
 project(
   loki
   VERSION 0.1.0
@@ -15,16 +15,19 @@ include(cmake/LocalConfig.cmake OPTIONAL)
 # todo make it work
 set(BUILD_SHARED_LIBS ON CACHE BOOL "Build shared libs" FORCE)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON CACHE BOOL "Export all symbols in dlls" FORCE)
-set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 if (WIN32)
   add_compile_definitions(NOMINMAX)
 endif ()
+#if (CMAKE_CXX_COMPILER_ID EQUAL GNU)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -freflection")
+#endif()
 if (CMAKE_CXX_COMPILER_FRONTEND_VARIANT EQUAL MSVC)
   add_compile_options("/bigobj")
 elseif (CMAKE_CXX_COMPILER_FRONTEND_VARIANT EQUAL GNU)
