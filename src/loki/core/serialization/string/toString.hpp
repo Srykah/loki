@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include <loki/core/reflection/TypeInfo.hpp>
+#include <loki/core/reflection/TypeRegistry.hpp>
 
 namespace loki::core {
 
@@ -10,7 +10,7 @@ void toString(std::string& str, const void* obj, const TypeInfo& typeInfo);
 
 template <class T>
 void toString(std::string& str, const T& obj) {
-  toString(str, static_cast<const void*>(&obj), getTypeInfo<T>());
+  toString(str, static_cast<const void*>(&obj), TypeRegistry::get<T>());
 }
 
 }  // namespace loki::core

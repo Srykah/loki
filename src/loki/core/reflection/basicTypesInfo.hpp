@@ -14,171 +14,173 @@ namespace loki::core {
 
 template <>
 struct TypeInfoHolder<std::nullptr_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo NULL_TYPEINFO{.factory = [](void*, TmpObj::Ownership) -> TmpObj { return TmpObj{}; },
-                                  .info = NullInfo{}};
-    return NULL_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = [](void*, TmpObj::Ownership) -> TmpObj { return TmpObj{}; }, .info = NullInfo{}};
   }
 };
 
 template <>
 struct TypeInfoHolder<bool> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo BOOLEAN_TYPEINFO{.factory = details::getBasicFactory<bool>(), .info = BooleanInfo{}};
-    return BOOLEAN_TYPEINFO;
-  }
+  static TypeInfo getTypeInfo() { return {.factory = details::getBasicFactory<bool>(), .info = BooleanInfo{}}; }
 };
 
 template <>
 struct TypeInfoHolder<uint8_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo UINT8_TYPEINFO{.factory = details::getBasicFactory<uint8_t>(),
-                                   .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint8_t)}};
-    return UINT8_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<uint8_t>(),
+            .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint8_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<uint16_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo UINT16_TYPEINFO{.factory = details::getBasicFactory<uint16_t>(),
-                                    .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint16_t)}};
-    return UINT16_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<uint16_t>(),
+            .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint16_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<uint32_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo UINT32_TYPEINFO{.factory = details::getBasicFactory<uint32_t>(),
-                                    .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint32_t)}};
-    return UINT32_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<uint32_t>(),
+            .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint32_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<uint64_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo UINT64_TYPEINFO{.factory = details::getBasicFactory<uint64_t>(),
-                                    .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint64_t)}};
-    return UINT64_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<uint64_t>(),
+            .info = IntegerInfo{.isUnsigned = true, .size = sizeof(uint64_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<int8_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo INT8_TYPEINFO{.factory = details::getBasicFactory<int8_t>(),
-                                  .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int8_t)}};
-    return INT8_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<int8_t>(),
+            .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int8_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<int16_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo INT16_TYPEINFO{.factory = details::getBasicFactory<int16_t>(),
-                                   .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int16_t)}};
-    return INT16_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<int16_t>(),
+            .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int16_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<int32_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo INT32_TYPEINFO{.factory = details::getBasicFactory<int32_t>(),
-                                   .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int32_t)}};
-    return INT32_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<int32_t>(),
+            .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int32_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<int64_t> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo INT64_TYPEINFO{.factory = details::getBasicFactory<int64_t>(),
-                                   .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int64_t)}};
-    return INT64_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<int64_t>(),
+            .info = IntegerInfo{.isUnsigned = false, .size = sizeof(int64_t)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<float> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo FLOAT_TYPEINFO{.factory = details::getBasicFactory<float>(),
-                                   .info = FloatingPointInfo{.size = sizeof(float)}};
-    return FLOAT_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<float>(), .info = FloatingPointInfo{.size = sizeof(float)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<double> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo DOUBLE_TYPEINFO{.factory = details::getBasicFactory<double>(),
-                                    .info = FloatingPointInfo{.size = sizeof(double)}};
-    return DOUBLE_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<double>(), .info = FloatingPointInfo{.size = sizeof(double)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<long double> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo LONGDOUBLE_TYPEINFO{.factory = details::getBasicFactory<long double>(),
-                                        .info = FloatingPointInfo{.size = sizeof(long double)}};
-    return LONGDOUBLE_TYPEINFO;
+  static TypeInfo getTypeInfo() {
+    return {.factory = details::getBasicFactory<long double>(), .info = FloatingPointInfo{.size = sizeof(long double)}};
   }
 };
 
 template <>
 struct TypeInfoHolder<char> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo CHAR_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<char>(),
-        .info = CharacterInfo{},
+        .info = CharacterInfo{.size = sizeof(char), .isUnicode = false},
     };
-    return CHAR_INFO;
   }
 };
 
 template <>
 struct TypeInfoHolder<std::string> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo STRING_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::string>(),
-        .info = StringInfo{
-            .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
-              return ConstTmpObj::fromPtrNonOwned(&details::to<std::string>(obj));
-            },
-            .setter = [](void* obj, const char* data,
-                         std::size_t size) { details::to<std::string>(obj) = std::string_view(data, size); }},
+        .info = StringInfo{.charType = getFullyQualifiedNameOf<^^char>(),
+                           .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
+                             return ConstTmpObj::fromPtrNonOwned(&details::to<std::string>(obj));
+                           },
+                           .fromUtf8StrSetter =
+                               [](void* obj, const char* data, std::size_t size) {
+                                 details::to<std::string>(obj) = std::string_view(data, size);
+                               }},
     };
-    return STRING_INFO;
   }
 };
+
+#if 0
+template <class CharT>
+  requires(!std::is_same_v<std::decay_t<CharT>, char>)
+struct TypeInfoHolder<std::basic_string<CharT>> {
+  static TypeInfo getTypeInfo() {
+    return {
+        .factory = details::getBasicFactory<std::basic_string<CharT>>(),
+        .info = StringInfo{.charType = getFullyQualifiedNameOf<^^CharT>(),
+                           .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
+                             // todo
+                           },
+                           .fromUtf8StrSetter =
+                               [](void* obj, const char* data, std::size_t size) {
+                                 //todo
+                               }},
+    };
+  }
+};
+#endif
 
 template <>
 struct TypeInfoHolder<std::filesystem::path> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo STRING_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::filesystem::path>(),
-        .info = StringInfo{
-            .asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
-              return ConstTmpObj::makeOwned<std::string>(details::to<std::filesystem::path>(obj).generic_string());
-            },
-            .setter = [](void* obj, const char* data,
-                         std::size_t size) { details::to<std::filesystem::path>(obj) = std::string_view(data, size); }},
+        .info = StringInfo{.asUtf8StrGetter = [](const void* obj) -> ConstTmpObj {
+                             return ConstTmpObj::makeOwned<std::u8string>(
+                                 details::to<std::filesystem::path>(obj).generic_u8string());
+                           },
+                           .fromUtf8StrSetter =
+                               [](void* obj, const char* data, std::size_t size) {
+                                 details::to<std::filesystem::path>(obj) = std::string_view(data, size);
+                               }},
     };
-    return STRING_INFO;
   }
 };
 
-template <Reflected T>
+template <class T>
   requires(!std::is_same_v<std::decay_t<T>, bool>)
 struct TypeInfoHolder<std::vector<T>> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo VECTOR_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::vector<T>>(),
         .info = ListInfo{
-            .valueType = getTypeInfo<T>(),
+            .valueType = getFullyQualifiedNameOf<^^T>(),
             .isSortable = true,
             .elemGetter = [](void* obj, std::size_t index) -> TmpObj {
               return TmpObj::fromPtrNonOwned(&details::to<std::vector<T>>(obj)[index]);
@@ -212,18 +214,17 @@ struct TypeInfoHolder<std::vector<T>> {
                 },
             .clear = [](void* obj) { details::to<std::vector<T>>(obj).clear(); }},
     };
-    return VECTOR_INFO;
   }
 };
 
-template <Reflected Key, Reflected Value>
+template <class Key, class Value>
 struct TypeInfoHolder<std::map<Key, Value>> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo MAP_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::map<Key, Value>>(),
         .info = DictInfo{
-            .keyType = getTypeInfo<Key>(),
-            .valueType = getTypeInfo<Value>(),
+            .keyType = getFullyQualifiedNameOf<^^Key>(),
+            .valueType = getFullyQualifiedNameOf<^^Value>(),
             .elemGetter = [](void* obj, const void* key) -> TmpObj {
               auto& dict = details::to<std::map<Key, Value>>(obj);
               auto it = dict.find(details::to<Key>(key));
@@ -277,17 +278,16 @@ struct TypeInfoHolder<std::map<Key, Value>> {
             },
             .clear = [](void* obj) { details::to<std::map<Key, Value>>(obj).clear(); }},
     };
-    return MAP_INFO;
   }
 };
 
-template <Reflected T>
+template <class T>
 struct TypeInfoHolder<std::unique_ptr<T>> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo PTR_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::unique_ptr<T>>(),
         .info = PtrInfo{
-            .innerType = getTypeInfo<T>(),
+            .innerType = getFullyQualifiedNameOf<^^T>(),
             .getter = [](void* obj) -> TmpObj {
               return TmpObj::fromPtrNonOwned(details::to<std::unique_ptr<T>>(obj).get());
             },
@@ -298,20 +298,18 @@ struct TypeInfoHolder<std::unique_ptr<T>> {
             .emplacer = [](void* obj) -> TmpObj {
               TmpObj newDataTmpObj = getTypeInfo<T>().factory(obj, TmpObj::Ownership::NonOwned);
               details::to<std::unique_ptr<T>>(obj).reset(&details::to<T>(newDataTmpObj.obj));
-              return newDataTmpObj;
             }},
     };
-    return PTR_INFO;
   }
 };
 
-template <Reflected T>
+template <class T>
 struct TypeInfoHolder<std::shared_ptr<T>> {
-  static const TypeInfo& getTypeInfo_internal() {
-    static TypeInfo PTR_INFO{
+  static TypeInfo getTypeInfo() {
+    return {
         .factory = details::getBasicFactory<std::shared_ptr<T>>(),
         .info = PtrInfo{
-            .innerType = getTypeInfo<T>(),
+            .innerType = getFullyQualifiedNameOf<^^T>(),
             .getter = [](void* obj) -> TmpObj {
               return TmpObj::fromPtrNonOwned(details::to<std::shared_ptr<T>>(obj).get());
             },
@@ -322,10 +320,8 @@ struct TypeInfoHolder<std::shared_ptr<T>> {
             .emplacer = [](void* obj) -> TmpObj {
               TmpObj newDataTmpObj = getTypeInfo<T>().factory(obj, TmpObj::Ownership::NonOwned);
               details::to<std::shared_ptr<T>>(obj).reset(&details::to<T>(newDataTmpObj.obj));
-              return newDataTmpObj;
             }},
     };
-    return PTR_INFO;
   }
 };
 }  // namespace loki::core

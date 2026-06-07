@@ -8,7 +8,7 @@
 
 namespace loki::system {
 
-void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
+void registerTypes(core::TypeRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
   // runtime types
   runtimeObjectRegistry.registerClass<InputTrigger>();
   runtimeObjectRegistry.registerClass<KeyTrigger>();

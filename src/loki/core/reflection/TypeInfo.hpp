@@ -8,39 +8,43 @@
 #include <variant>
 #include <vector>
 
-#include <loki/core/reflection/classAttributes.hpp>
-#include <loki/core/reflection/fieldAttributes.hpp>
+#include <loki/core/reflection/Annotation.hpp>
 #include <loki/core/utils/TmpObj.hpp>
 
 namespace loki::core {
-struct TypeInfo;
-using ClassId = std::string;
-using Factory = std::function<TmpObj(void* ctx, TmpObj::Ownership)>;
+using TypeId = std::string;
+using NameId = std::string;
 
 struct NullInfo {};
 struct BooleanInfo {};
 struct IntegerInfo {
   bool isUnsigned;
-  unsigned int size;
+  std::uint8_t size;
 };
 struct FloatingPointInfo {
-  unsigned int size;
+  std::uint8_t size;
 };
 struct EnumeratorInfo {
-  std::string_view name;
+  NameId name;
   std::int64_t value;
+  std::vector<std::unique_ptr<Annotation>> annotations;
 };
 struct EnumInfo {
-  const IntegerInfo& backingType;
+  TypeId underlyingType;
   std::vector<EnumeratorInfo> enumerators;
+  std::vector<std::unique_ptr<Annotation>> annotations;
 };
-struct CharacterInfo {};
+struct CharacterInfo {
+  std::uint8_t size;
+  bool isUnicode;
+};
 struct StringInfo {
+  TypeId charType;
   std::function<ConstTmpObj(const void* obj)> asUtf8StrGetter;
-  std::function<void(void* obj, const char* data, std::size_t size)> setter;
+  std::function<void(void* obj, const char* data, std::size_t size)> fromUtf8StrSetter;
 };
 struct ListInfo {
-  const TypeInfo& valueType;
+  TypeId valueType;
   bool isSortable;
   std::function<TmpObj(void* obj, std::size_t index)> elemGetter;
   std::function<ConstTmpObj(const void* obj, std::size_t index)> elemGetterConst;
@@ -61,8 +65,8 @@ struct ConstKeyValuePair {
   const void* value = nullptr;
 };
 struct DictInfo {
-  const TypeInfo& keyType;
-  const TypeInfo& valueType;
+  TypeId keyType;
+  TypeId valueType;
   std::function<TmpObj(void* obj, const void* key)> elemGetter;
   std::function<ConstTmpObj(const void* obj, const void* key)> elemGetterConst;
   std::function<KeyValuePair(void* obj, std::size_t index)> kvpGetter;
@@ -76,23 +80,22 @@ struct DictInfo {
   std::function<void(void* obj)> clear;
 };
 struct FieldInfo {
-  const TypeInfo& type;
-  std::string_view name;
-  bool isInPlace = true;
+  TypeId type;
+  NameId name;
+  std::ptrdiff_t offset = -1z;
   std::function<TmpObj(void* parent)> getter;
   std::function<ConstTmpObj(const void* parent)> getterConst;
   std::function<void(void* parent, void* data)> setter;
-  std::vector<std::unique_ptr<FieldAttribute>> attributes;
+  std::vector<std::unique_ptr<Annotation>> annotations;
 };
 struct ClassInfo {
-  ClassId id;
-  const TypeInfo* parentType = nullptr;
+  TypeId parentType;
   std::function<void*(void* obj)> toParentType;
   std::vector<FieldInfo> fields;
-  std::vector<std::unique_ptr<ClassAttribute>> attributes;
+  std::vector<std::unique_ptr<Annotation>> annotations;
 };
 struct PtrInfo {
-  const TypeInfo& innerType;
+  TypeId innerType;
   std::function<TmpObj(void* obj)> getter;
   std::function<ConstTmpObj(const void* obj)> getterConst;
   std::function<void(void* obj, void* data)> setter;
@@ -101,6 +104,7 @@ struct PtrInfo {
 };
 
 struct TypeInfo {
+  TypeId id;
   Factory factory;
   std::variant<NullInfo,
                BooleanInfo,
@@ -114,16 +118,11 @@ struct TypeInfo {
                ClassInfo,
                PtrInfo>
       info;
+
+  template <class T>
+  const T& as() const {
+    return std::get<T>(info);
+  }
 };
 
-template <class T>
-struct TypeInfoHolder;
-
-template <class T>
-concept Reflected = requires { TypeInfoHolder<T>::getTypeInfo_internal(); };
-
-template <Reflected T>
-const TypeInfo& getTypeInfo() {
-  return TypeInfoHolder<T>::getTypeInfo_internal();
-}
 }  // namespace loki::core

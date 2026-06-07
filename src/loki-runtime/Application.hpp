@@ -26,7 +26,7 @@ class Application final : public system::ApplicationInterface {
 
  private:
   std::unique_ptr<dylib> gameScriptsLibrary;  // keep it at the top (the library must outlive the registries)
-  core::RuntimeObjectRegistry runtimeObjectRegistry;
+  core::TypeRegistry runtimeObjectRegistry;
   core::ServiceRegistry serviceRegistry;
   system::ComponentRegistry componentRegistry;
   system::ResourceHolder resourceHolder;

@@ -6,7 +6,7 @@
 
 namespace loki::editor {
 
-void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
+void registerTypes(core::TypeRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
   // modules
   runtimeObjectRegistry.registerClass<DebugDrawModule>();
   runtimeObjectRegistry.registerClass<EditorModule>();

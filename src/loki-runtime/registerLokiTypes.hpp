@@ -4,6 +4,5 @@
 #include <loki/system/ecs/ComponentRegistry.hpp>
 
 namespace loki::app {
-void registerLokiTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry,
-                       system::ComponentRegistry& componentRegistry);
+void registerLokiTypes(core::TypeRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry);
 }  // namespace loki::app

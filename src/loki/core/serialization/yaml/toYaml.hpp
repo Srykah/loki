@@ -3,7 +3,7 @@
 #include <ryml.hpp>
 #include <ryml_std.hpp>
 
-#include <loki/core/reflection/TypeInfo.hpp>
+#include <loki/core/reflection/TypeRegistry.hpp>
 
 namespace loki::core {
 

@@ -1,38 +1,52 @@
 #pragma once
 
+#include <stdexcept>
 #include <unordered_map>
 
-#include <loki/core/reflection/TypeInfo.hpp>
 #include <loki/core/rtti/BaseObject.hpp>
-#include <loki/core/rtti/rttiConcepts.hpp>
 
 namespace loki::core {
 
+using TypeId = std::string;
+
 class ServiceRegistry {
  public:
-  ServiceRegistry();
+  template <RuntimeObject T>
+  bool registerService(T& service) {
+    auto [it, ok] = services.emplace(getTypeId<^^T>(), &service);
+    if (!ok) {
+      throw std::runtime_error("Service of this type is already registered!");
+    }
+    return ok;
+  }
 
-  template <ReflectedRuntimeObject T>
-  bool registerService(T& service);
+  template <RuntimeObject T>
+  T& get() const {
+    return static_cast<T&>(*services.at(getTypeId<^^T>()));
+  }
 
-  template <ReflectedRuntimeObject T>
-  T& get() const;
-
-  static void setInstance(const ServiceRegistry* instance);
-  static const ServiceRegistry& getInstance();
+  static void setInstance(const ServiceRegistry* instance) { s_instance = instance; }
+  static const ServiceRegistry& getInstance() {
+    if (s_instance == nullptr) {
+      throw std::runtime_error("ServiceRegistry instance is not set!");
+    }
+    return *s_instance;
+  }
 
  private:
-  static const ServiceRegistry*& getInstancePtr();
+  inline static const ServiceRegistry* s_instance = nullptr;
 
-  std::unordered_map<ClassId, BaseObject*> services;
+  std::unordered_map<TypeId, BaseObject*> services;
 };
 
 }  // namespace loki::core
 
-// shortcut
 namespace loki {
-template <core::ReflectedRuntimeObject T>
-T& getService();
-}  // namespace loki
 
-#include "ServiceRegistry.hxx"
+// shortcut
+template <core::RuntimeObject T>
+T& getService() {
+  return core::ServiceRegistry::getInstance().get<T>();
+}
+
+}  // namespace loki

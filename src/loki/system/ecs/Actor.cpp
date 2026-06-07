@@ -93,7 +93,7 @@ void Actor::loadFromYaml(Scene& scene, const ryml::ConstNodeRef& node) {
     core::fromYaml(transformNode, *getComponent<sf::Transformable>());
   }
   const auto& compReg = getService<ComponentRegistry>();
-  const auto& classReg = getService<core::RuntimeObjectRegistry>();
+  const auto& classReg = getService<core::TypeRegistry>();
   if (ryml::ConstNodeRef componentsNode = node.find_child("components");
       !componentsNode.invalid() && componentsNode.type().is_seq()) {
     for (ryml::ConstNodeRef componentNode : componentsNode) {

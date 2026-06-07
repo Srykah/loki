@@ -90,7 +90,7 @@ bool DynamicField(void* obj, const core::StringInfo& stringInfo) {
   auto tmpObj = stringInfo.asUtf8StrGetter(obj);
   auto buf = to<std::string>(tmpObj.obj);
   if (ImGui::InputText("", &buf, ImGuiInputTextFlags_EnterReturnsTrue)) {
-    stringInfo.setter(obj, buf.c_str(), buf.size() + 1);
+    stringInfo.fromUtf8StrSetter(obj, buf.c_str(), buf.size() + 1);
     return true;
   }
   return false;

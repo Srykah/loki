@@ -7,7 +7,7 @@
 
 namespace loki::physics {
 
-void registerTypes(core::RuntimeObjectRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
+void registerTypes(core::TypeRegistry& runtimeObjectRegistry, system::ComponentRegistry& componentRegistry) {
   // runtime types
   runtimeObjectRegistry.registerClass<PhysicsShapeParams>();
   runtimeObjectRegistry.registerClass<CircleShapeParams>();
